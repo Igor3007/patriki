@@ -1,0 +1,88 @@
+.section-login-block {
+    @include section-padding;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.login-block {
+    max-width: 372px;
+    margin: 0 auto;
+
+    &__title {
+        @include section-title;
+        padding-bottom: 15px;
+    }
+
+    &__desc {
+        padding-bottom: 30px;
+        text-align: center;
+        color: $main;
+    }
+
+    &__oauth {
+
+        padding: 30px 0 35px 0;
+
+        & ul {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        & li {
+
+            margin: 0 5px;
+
+            & a {
+                width: 52px;
+                height: 52px;
+                border: 1px solid $main;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in;
+
+                &:hover {
+                    background-color: $main;
+                    color: #fff;
+
+                    & svg {
+                        fill: #fff;
+                    }
+                }
+
+                & svg {
+                    fill: $main;
+                    transition: 0.3s ease-in;
+                }
+
+            }
+        }
+    }
+
+    &__signup {
+        text-align: center;
+        color: $main;
+        padding-bottom: 20px;
+
+        & a {
+            text-decoration: underline;
+        }
+
+        & span {
+            display: block;
+            padding-bottom: 3px;
+        }
+
+    }
+
+    &__recovery {
+        text-align: center;
+        color: $main;
+
+        & a {
+            text-decoration: underline;
+        }
+    }
+}

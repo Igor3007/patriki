@@ -1,5 +1,7 @@
 header {
     border-bottom: 1px solid $main;
+    position: relative;
+    z-index: 10;
 
     & .container {
         @media screen and (max-width: $w760) {

@@ -1,4 +1,23 @@
 mixin login-block
-    section.login-block
+    section.section-login-block
         .container
-            .login-block login-block
+            .login-block
+                .login-block__title Вход
+                .login-block__desc Пожалуйста введите свой логин и пароль или авторизируйтесь через социальные сети
+                .login-block__form
+                    .form
+                      .form__item
+                        .form__subitem: input(type="text" placeholder="Логин")
+                      .form__item
+                        .form__subitem: input(type="password" placeholder="Пароль")
+                      .form__item
+                        .form__subitem: button.btn.btn-full(type="submit") Войти в личный кабинет
+                .login-block__oauth
+                    ul
+                        li: a(href='#'): +icons('#ic_vk')
+                .login-block__signup
+                    span Нет личного аккаунта?
+                    a(href='/rigistration.html') Зарегистрироваться
+                .login-block__recovery
+                    a(href='/recovery.html') Восстановить пароль
+                

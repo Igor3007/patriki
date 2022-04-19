@@ -1,16 +1,16 @@
 extends ../layouts/page
-include ../../blocks/modules/login-block/login-block.pug
+include ../../blocks/modules/recovery-password/recovery-password.pug
 
 
 
 block variables
   include ../../data/data.pug
   -
-    title = 'Войти'
+    title = 'Востановление пароля'
 
 
 block content
-  +login-block
+  +recovery-password
 
 
 block scripts

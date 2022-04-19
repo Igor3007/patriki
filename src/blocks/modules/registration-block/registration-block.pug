@@ -1,4 +1,50 @@
 mixin registration-block
-    section.registration-block
+    section.sectionn-registration-block
         .container
-            .registration-block registration-block
+            .registration-block
+                form(action="#")
+                    .registration-block__title Регистрация
+                    .registration-block__photo
+                        .box-photo
+                            .box-photo__image: +bgimage(src="/img/common/logo.png")
+                            .box-photo__add
+                                label(class="attach-text")
+                                    input(type="file")
+                                    span Добавить фото
+                    .registration-block__form
+                        .form
+                            .form__item
+                                .form__subitem: input(type="text" placeholder="Имя")
+                                .form__subitem: input(type="text" placeholder="Фамилия")
+                            .form__item
+                                .form__subitem
+                                    select
+                                        option Страна
+                                        option Россия
+                                        option Беларусь
+                                        option Украина
+                                .form__subitem
+                                    .form__item
+                                        .form__subitem
+                                            select
+                                                option Год рождения
+                                                option 1990
+                                                option 1991
+                                                option 1992
+                                        .form__subitem
+                                            select
+                                                option Пол
+                                                option Мужской
+                                                option Женский
+                            .form__item
+                                .form__subitem: input(type="text" placeholder="Email")
+                                .form__subitem Привязать соцсеть
+
+                            .form__label Пароль
+
+                            .form__item
+                                .form__subitem: input(type="password" placeholder="Пароль")
+                                .form__subitem: input(type="password" placeholder="Повторите пароль")
+                            .form__item
+                                .form__subitem
+                                    button.btn(type="submit") Зарегистрировтаься

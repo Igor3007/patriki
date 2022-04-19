@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         this.open = function () {
             this.el.classList.add('open')
             this.button.classList.add('open')
+            document.body.classList.add('hidden')
             this.state = 'open';
         }
 
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             setTimeout(() => {
                 this.el.classList.remove('open')
                 this.el.classList.remove('close-animate')
+                document.body.classList.remove('hidden')
                 this.state = 'close'
             }, 200)
 
