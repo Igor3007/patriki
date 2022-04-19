@@ -1,0 +1,30 @@
+include ../main-menu/main-menu.pug
+ 
+.container
+  .footer
+    .footer__logo
+      .footer__logo-img: +bgimage('/img/common/logo.png')
+      .footer__logo-desc Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы
+    .footer__nav
+      nav
+        ul
+          each item in app.mainMenu 
+            li: a(href=item.href)= item.text 
+    .footer__social
+      ul
+        li
+          a(href='#')
+            +icons('#ic_vk')
+            span vkontakte
+        li
+          a(href='#')
+            +icons('#ic_tg')
+            span Telegram
+
+    .footer__contact
+      ul
+        li: a(href='tel:+7 (905) 504-73-70') +7 (905) 504-73-70
+        li: a(href='mailto:info@patrikifilmfestival.ru') info@patrikifilmfestival.ru
+
++main-menu(app.mainMenu)
+

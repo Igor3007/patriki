@@ -1,0 +1,62 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "vendor/import/smart-grid";
+
+
+
+@mixin section-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 117.2%;
+    color: #1B1A1C;
+
+
+
+}
+
+@mixin section-subtitle {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 117.2%;
+    color: #1B1A1C;
+
+    @media screen and (min-width: $w992) {
+        font-size: 48px;
+    }
+
+}
+
+@mixin section-label {
+    display: none;
+
+    @media screen and (min-width: $w760) {
+        padding-bottom: 15px;
+        display: block;
+
+        & span {
+            padding: 7px 16px;
+            background: #BF3232;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #fff;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+    }
+
+}
+
+
+@mixin section-padding {
+    padding: 55px 0;
+
+    @media screen and (min-width: $w576) {
+        padding: 70px 0;
+    }
+}
+
+
+@import '../blocks/modules/advantages/advantages';
+@import '../blocks/modules/min-about/min-about';
+@import '../blocks/modules/how-we-work/how-we-work';

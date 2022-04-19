@@ -1,0 +1,128 @@
+.btn {
+
+    padding: 0.8em 2.8em 0.85em 2.8em;
+    background: $green;
+    color: #fff;
+    border: none;
+    border-radius: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: rem(130);
+    height: 55px;
+
+    text-transform: uppercase;
+    font-size: 15px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    transition: .3s cubic-bezier(.1, .82, .25, 1);
+
+
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    &:active,
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &:disabled {
+        background-color: #9D9D9D;
+        color: #fff;
+        cursor: not-allowed;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    & svg {
+        fill: #fff;
+        margin-right: 1em;
+    }
+
+    &.btn-full {
+        width: 100%;
+    }
+
+    &.btn-radius {
+        border-radius: 60px;
+    }
+
+
+    &.btn-small {
+        height: rem(50);
+    }
+
+
+    &.btn-black {
+        color: #fff;
+        background-color: #1B1A1C;
+
+        &:hover {
+            background-color: #1B1A1C;
+            opacity: 0.9;
+        }
+    }
+
+
+    &.btn-line {
+        border: 2px solid #fff;
+        background: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff;
+
+        & svg {
+            fill: $main;
+            margin-right: 1em;
+        }
+
+        &:hover {
+            border-color: $main;
+
+            & svg {
+                fill: #fff;
+            }
+        }
+    }
+
+
+
+
+
+}
+
+
+.link-arr {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    &:hover {
+
+        &::after {
+            transform: translateX(10px);
+        }
+    }
+
+    &::after {
+        content: '';
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik00Ljg5NyA0Ljk0NkwxLjU1MyA4LjI4OGEuMzc1LjM3NSAwIDExLS41MzItLjUzTDQuMSA0LjY4IDEuMDIyIDEuNjAzYS4zNzUuMzc1IDAgMTEuNTMxLS41M2wzLjM0NCAzLjM0MmEuMzc5LjM3OSAwIDAxMCAuNTN6IiBmaWxsPSIjNDhBMjE2Ii8+PC9zdmc+);
+        width: 0.8em;
+        height: 0.8em;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-left: 5px;
+        transition: 0.3s ease;
+    }
+}
