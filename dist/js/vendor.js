@@ -91,6 +91,7 @@ class customSelect {
         elem.style.width = (elem.offsetWidth) + 'px'
         elem.querySelector('.select-styled').classList.toggle('active')
         elem.querySelector('.select-options').classList.toggle('active')
+        elem.querySelector('.select-list').classList.toggle('active')
         document.querySelector('body').classList.toggle('af-select-open')
     }
 
@@ -100,6 +101,7 @@ class customSelect {
 
         document.querySelector('.select-styled.active').classList.remove('active')
         document.querySelector('.select-options.active').classList.remove('active')
+        document.querySelector('.select-list.active').classList.remove('active')
         document.querySelector('body').classList.remove('af-select-open')
     }
 

@@ -110,7 +110,7 @@ main {
     }
 
     @media screen and (min-width: $w1440) {
-        padding: 0 30px;
+        padding: 0 0;
         max-width: 1440px;
     }
 }
@@ -349,11 +349,15 @@ main {
 
 @mixin section-title {
     font-weight: 700;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 133%;
     text-align: center;
     text-transform: uppercase;
     color: $main;
+
+    @media screen and (min-width: $w480) {
+        font-size: 36px;
+    }
 }
 
 @mixin section-subtitle {

@@ -110,6 +110,19 @@ select {
     }
 }
 
+.select-list.active {
+    @media screen and (max-width: $w480) {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 900;
+        left: 0;
+        right: 0;
+        background-color: rgba(69, 62, 79, 0.69);
+    }
+}
+
 .select-options {
     display: none;
     position: absolute;
@@ -141,10 +154,9 @@ select {
     }
 
     @media screen and (max-width: $w480) {
-        position: fixed;
-        top: 0;
+        top: auto;
         bottom: 0;
-        max-height: 100vh;
+        max-height: 50vh;
         margin: auto;
     }
 

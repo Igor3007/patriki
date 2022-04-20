@@ -30,7 +30,7 @@
     <header class="header-layout-page">
       <div class="container">
         <div class="header">
-          <div class="header__logo"><a href="#"><span class="bgimage" style="background-image: url(/img/common/logo.png)"></span></a></div>
+          <div class="header__logo"><a href="/"><span class="bgimage" style="background-image: url(/img/common/logo.png)"></span></a></div>
           <div class="header__nav">
             <div class="header__nav-container" data-menu="container">
               <div class="header__nav-info">
@@ -75,9 +75,9 @@
                       </svg></a></li>
                 </ul>
               </div>
-              <div class="header__login"><a href="#">Личный кабинет</a></div>
+              <div class="header__login"><a href="/login.html">Личный кабинет</a></div>
             </div>
-            <div class="header__pa-btn"><a href="#lc">
+            <div class="header__pa-btn"><a href="/login.html">
                 <svg width="25" height="25">
                   <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
                 </svg></a></div>
@@ -89,15 +89,14 @@
       <section class="sectionn-registration-block">
         <div class="container">
           <div class="registration-block">
-            <form action="#">
+            <form action="./">
               <div class="registration-block__title">Регистрация</div>
               <div class="registration-block__photo">
                 <div class="box-photo">
-                  <div class="box-photo__image"><span class="bgimage" style="background-image: url(undefined)"></span>
-                  </div>
+                  <div class="box-photo__image"><span class="bgimage" data-attach="preview"></span></div>
                   <div class="box-photo__add">
                     <label class="attach-text">
-                      <input type="file"/><span>Добавить фото</span>
+                      <input type="file" data-attach="photo" name="photo"/><span>Добавить фото</span>
                     </label>
                   </div>
                 </div>
@@ -106,36 +105,44 @@
                 <div class="form">
                   <div class="form__item">
                     <div class="form__subitem">
-                      <input type="text" placeholder="Имя"/>
+                      <input type="text" required="required" placeholder="Имя" name="name"/>
                     </div>
                     <div class="form__subitem">
-                      <input type="text" placeholder="Фамилия"/>
+                      <input type="text" required="required" placeholder="Фамилия" name="lastname"/>
                     </div>
                   </div>
                   <div class="form__item">
                     <div class="form__subitem">
-                      <select>
-                        <option>Страна</option>
-                        <option>Россия</option>
-                        <option>Беларусь</option>
-                        <option>Украина</option>
+                      <select name="country" required="required">
+                        <option value="0">Страна</option>
+                        <option value="ru">Россия</option>
+                        <option value="by">Беларусь</option>
+                        <option value="ua">Украина</option>
+                        <option value="ua">Азербайджан</option>
+                        <option value="ua">Армения</option>
+                        <option value="ua">Белоруссия</option>
+                        <option value="ua">Грузия</option>
+                        <option value="ua">Казахстан</option>
+                        <option value="ua">Киргизия</option>
+                        <option value="ua">Латвия</option>
+                        <option value="ua">Литва</option>
                       </select>
                     </div>
                     <div class="form__subitem">
                       <div class="form__item">
                         <div class="form__subitem">
-                          <select>
-                            <option>Год рождения</option>
-                            <option>1990</option>
-                            <option>1991</option>
-                            <option>1992</option>
+                          <select name="year" required="required">
+                            <option value="0">Год рождения</option>
+                            <option value="1990">1990</option>
+                            <option value="1991">1991</option>
+                            <option value="1992">1992</option>
                           </select>
                         </div>
                         <div class="form__subitem">
-                          <select>
-                            <option>Пол</option>
-                            <option>Мужской</option>
-                            <option>Женский</option>
+                          <select name="sex" required="required">
+                            <option value="0">Пол</option>
+                            <option value="1">Мужской</option>
+                            <option value="2">Женский</option>
                           </select>
                         </div>
                       </div>
@@ -143,17 +150,29 @@
                   </div>
                   <div class="form__item">
                     <div class="form__subitem">
-                      <input type="text" placeholder="Email"/>
+                      <input type="email" required="required" placeholder="Email" name="email"/>
                     </div>
-                    <div class="form__subitem">Привязать соцсеть</div>
+                    <div class="form__subitem"> 
+                      <div class="bind-account">
+                        <div class="bind-account__text">Привязать соцсеть</div>
+                        <div class="bind-account__list">
+                          <ul>
+                            <li><a href="#">
+                                <svg width="25" height="25">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                                </svg></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="form__label">Пароль</div>
                   <div class="form__item">
                     <div class="form__subitem">
-                      <input type="password" placeholder="Пароль"/>
+                      <input type="password" required="required" placeholder="Пароль" name="password" data-password-repeat="reg"/>
                     </div>
                     <div class="form__subitem">
-                      <input type="password" placeholder="Повторите пароль"/>
+                      <input type="password" required="required" placeholder="Повторите пароль" name="password-repeat" data-password-repeat="reg"/>
                     </div>
                   </div>
                   <div class="form__item">
@@ -234,5 +253,6 @@
     </footer>
     <script src="/js/vendor.js"></script>
     <script src="/js/common.js"></script>
+    <script src="/js/registration.js"></script>
   </body>
 </html>

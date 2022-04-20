@@ -27,6 +27,28 @@ input {
         }
     }
 
+    & input[type="text"][aria-valid="false"],
+    & input[type="number"][aria-valid="false"],
+    & input[type="tel"][aria-valid="false"],
+    & input[type="password"][aria-valid="false"],
+    & input[type="email"][aria-valid="false"] {
+        border-color: #f00;
+    }
+
+    & .af-select[aria-valid="false"] {
+        border-color: #f00;
+    }
+
+    & input[type="password"][aria-valid="true"],
+    & input[type="email"][aria-valid="true"] {
+        //border-color: #0f0;
+        padding-right: 3em;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMuNTY3IDEwLjI5OUwxMy41NDkuMzE3bDEuNDE0IDEuNDE0LTkuOTgyIDkuOTgyLTEuNDE0LTEuNDE0eiIgZmlsbD0iIzRBQzYzNSIvPjxwYXRoIGQ9Ik0xLjUxIDUuNDM0bDQuNDMgNC40MzItMS40MTMgMS40MTRMLjA5NiA2Ljg0OSAxLjUxIDUuNDM0eiIgZmlsbD0iIzRBQzYzNSIvPjwvc3ZnPg==);
+        background-size: 1em auto;
+        background-repeat: no-repeat;
+        background-position: 96% center;
+    }
+
     & textarea {
         min-height: 120px;
         max-width: 100%;

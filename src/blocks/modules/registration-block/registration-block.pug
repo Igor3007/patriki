@@ -2,49 +2,64 @@ mixin registration-block
     section.sectionn-registration-block
         .container
             .registration-block
-                form(action="#")
+                form(action="./")
                     .registration-block__title Регистрация
                     .registration-block__photo
                         .box-photo
-                            .box-photo__image: +bgimage(src="/img/common/logo.png")
+                            .box-photo__image
+                                span(class="bgimage" data-attach="preview")
                             .box-photo__add
                                 label(class="attach-text")
-                                    input(type="file")
+                                    input(type="file" data-attach="photo" name="photo")
                                     span Добавить фото
                     .registration-block__form
                         .form
                             .form__item
-                                .form__subitem: input(type="text" placeholder="Имя")
-                                .form__subitem: input(type="text" placeholder="Фамилия")
+                                .form__subitem: input(type="text" required placeholder="Имя" name="name")
+                                .form__subitem: input(type="text" required placeholder="Фамилия" name="lastname")
                             .form__item
                                 .form__subitem
-                                    select
-                                        option Страна
-                                        option Россия
-                                        option Беларусь
-                                        option Украина
+                                    select(name="country" required)
+                                        option(value="0") Страна
+                                        option(value="ru") Россия
+                                        option(value="by") Беларусь
+                                        option(value="ua") Украина
+                                        option(value="ua") Азербайджан
+                                        option(value="ua") Армения
+                                        option(value="ua") Белоруссия
+                                        option(value="ua") Грузия
+                                        option(value="ua") Казахстан
+                                        option(value="ua") Киргизия
+                                        option(value="ua") Латвия
+                                        option(value="ua") Литва
                                 .form__subitem
                                     .form__item
                                         .form__subitem
-                                            select
-                                                option Год рождения
-                                                option 1990
-                                                option 1991
-                                                option 1992
+                                            select(name="year" required)
+                                                option(value="0") Год рождения
+                                                option(value="1990") 1990
+                                                option(value="1991") 1991
+                                                option(value="1992") 1992
                                         .form__subitem
-                                            select
-                                                option Пол
-                                                option Мужской
-                                                option Женский
+                                            select(name="sex" required)
+                                                option(value="0") Пол
+                                                option(value="1") Мужской
+                                                option(value="2") Женский
                             .form__item
-                                .form__subitem: input(type="text" placeholder="Email")
-                                .form__subitem Привязать соцсеть
+                                .form__subitem: input(type="email" required placeholder="Email" name="email")
+                                .form__subitem 
+                                    .bind-account
+                                        .bind-account__text Привязать соцсеть
+                                        .bind-account__list
+                                            ul
+                                                li: a(href='#'): +icons('#ic_vk')
+                                    
 
                             .form__label Пароль
 
                             .form__item
-                                .form__subitem: input(type="password" placeholder="Пароль")
-                                .form__subitem: input(type="password" placeholder="Повторите пароль")
+                                .form__subitem: input(type="password" required placeholder="Пароль" name="password" data-password-repeat="reg")
+                                .form__subitem: input(type="password" required placeholder="Повторите пароль" name="password-repeat" data-password-repeat="reg")
                             .form__item
                                 .form__subitem
                                     button.btn(type="submit") Зарегистрировтаься

@@ -76,3 +76,72 @@
         }
     }
 }
+
+.bind-account {
+    display: flex;
+    flex-direction: column;
+
+
+    @media screen and (min-width: $w760) {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+
+
+    }
+
+    &__text {
+        font-size: 14px;
+        color: $main;
+        padding-right: 10px;
+        padding-bottom: 14px;
+
+
+        @media screen and (min-width: $w760) {
+            font-size: 13px;
+            padding-bottom: 0;
+
+        }
+
+    }
+
+    &__list {
+        & ul {
+            display: flex;
+            align-items: center;
+            margin: 0 -5px;
+        }
+
+        & li {
+
+            margin: 0 5px;
+
+            & a {
+                width: 52px;
+                height: 52px;
+                border: 1px solid $main;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in;
+
+                &.active,
+                &:hover {
+                    background-color: $main;
+                    color: #fff;
+
+                    & svg {
+                        fill: #fff;
+                    }
+                }
+
+                & svg {
+                    fill: $main;
+                    transition: 0.3s ease-in;
+                }
+
+            }
+        }
+    }
+}

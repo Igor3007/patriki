@@ -42,8 +42,8 @@ header {
         }
 
         @media screen and (min-width: $w1440) {
-            border-left: 1px solid $main;
-            padding: 15px 30px;
+            //border-left: 1px solid $main;
+            padding: 23px 30px;
         }
     }
 
@@ -181,7 +181,7 @@ header {
         &-container {
             display: none;
 
-            @media screen and (min-width: $w1376) {
+            @media screen and (min-width: $w1200) {
                 display: flex;
                 border-left: 1px solid $main;
                 border-right: 1px solid $main;
@@ -203,7 +203,7 @@ header {
                 width: 100px;
             }
 
-            @media screen and (min-width: $w1376) {
+            @media screen and (min-width: $w1200) {
                 display: none;
             }
         }
@@ -249,7 +249,7 @@ header {
 
                 & svg {
                     width: 22px;
-                    height: 15px;
+                    height: 17px;
                     fill: $main;
                     transition: 0.6s ease;
                 }
@@ -276,6 +276,10 @@ header {
             text-transform: uppercase;
             padding: 0 2.7em;
 
+            @media screen and (min-width: $w1376) {
+                padding: 0 3.5em;
+            }
+
             &:hover {
                 //background-color: $select-background;
                 text-decoration: underline;
@@ -299,7 +303,7 @@ header {
     }
 
     &>div {
-        margin-right: 1em;
+        margin-right: 2.5em;
 
         &:last-child {
             margin-right: 0;
@@ -325,6 +329,24 @@ header {
     }
 }
 
+.header__nav-container.open {
+
+    @media screen and (min-width: $w480) {
+        & .select-styled {
+            background-color: #d5d6da;
+            height: 37px;
+        }
+
+        & .select-options {
+            bottom: calc(100% + 6px);
+            box-shadow: 0px -1px 8px -2px rgba(0, 0, 0, 0.25);
+            top: auto;
+        }
+    }
+
+
+}
+
 .header__nav-container {
     &.open {
         position: fixed;
@@ -334,10 +356,14 @@ header {
         flex-direction: column-reverse;
         bottom: 0;
         top: 80px;
-        max-width: 360px;
+
         width: 100%;
         animation: slide-right 0.5s ease forwards;
         overflow-y: auto;
+
+        @media screen and (min-width: $w480) {
+            max-width: 360px;
+        }
 
         @media screen and (min-width: $w1200) {
             display: none;
@@ -391,16 +417,7 @@ header {
                     }
                 }
 
-                & .select-styled {
-                    background-color: #d5d6da;
-                    height: 37px;
-                }
 
-                & .select-options {
-                    bottom: calc(100% + 6px);
-                    box-shadow: 0px -1px 8px -2px rgba(0, 0, 0, 0.25);
-                    top: auto;
-                }
             }
         }
     }
