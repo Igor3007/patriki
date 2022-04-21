@@ -1,0 +1,52 @@
+mixin orders-block()
+    .orders-block
+        .orders-block__sort
+            ul
+                li: a(href='#') Новые
+                li: a.active(href='#') Одобренные
+                li: a(href='#') Отклоненные
+
+        .orders-block__list
+            .table-card
+                .table-card__tr
+                    .table-card__th Название
+                    .table-card__th Режисер
+                    .table-card__th Дата подачи
+                    .table-card__th Статус
+                    .table-card__th Действия
+
+                .table-card__tr
+                    .table-card__td(data-title="Название")
+                        span.ob-name Паразиты (2019)
+                        span.ob-number 22-00650
+                    .table-card__td(data-title="Режисер") Пон Джун-хо
+                    .table-card__td(data-title="Дата подачи") 20.11.2022
+                    .table-card__td(data-title="Статус")
+                        span.ob-status
+                            button.btn.btn-line.btn-line--success.active Одобрен
+                            button.btn.btn-line.btn-line--reject.active отклонeн
+                    .table-card__td(data-title="Действия")
+                        a.ob-link(href='#'): +icons('#ic_chain', 20)
+                        span.ob-menu
+
+
+                .table-card__tr
+                    .table-card__th Название
+                    .table-card__th Режисер
+                    .table-card__th Дата подачи
+                    .table-card__th Статус
+                    .table-card__th Действия
+
+                .table-card__tr
+                    .table-card__td(data-title="Название")
+                        span.ob-name Паразиты (2019)
+                        span.ob-number 22-00650
+                    .table-card__td(data-title="Режисер") Пон Джун-хо
+                    .table-card__td(data-title="Дата подачи") 20.11.2022
+                    .table-card__td(data-title="Статус")
+                        span.ob-status
+                            button.btn.btn-line.btn-line--success Одобрен
+                            button.btn.btn-line.btn-line--reject отклонeн
+                    .table-card__td(data-title="Действия")
+                        a.ob-link(href='#'): +icons('#ic_chain', 20)
+                        span.ob-menu

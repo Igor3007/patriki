@@ -1,0 +1,10 @@
+mixin head-moderator(data)
+    .head-moderator
+        .head-moderator__breadcrumb
+            ul
+              each item in data.nav
+                li: a(href='#')= item
+        .head-moderator__title
+          h1= data.title
+          if(data.button)
+            a(href='#'): button.btn.btn-small= data.button

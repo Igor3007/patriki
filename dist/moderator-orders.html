@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PFF</title>
+    <title>Заявки</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -88,6 +88,107 @@
       </div>
     </header>
     <main>
+      <section class="section-page-moderator">
+        <div class="container">
+          <div class="page-moderator">
+            <div class="page-moderator__aside">
+              <div class="moderator-aside">
+                <div class="moderator-aside__wrp">
+                  <div class="moderator-aside__photo">
+                    <picture>
+                      <source srcset="/img/common/img_user.webp" type="image/webp"/><img src="/img/common/img_user.jpg" loading="lazy" alt="image"/>
+                    </picture>
+                  </div>
+                  <div class="moderator-aside__name">Николай Петров</div>
+                  <div class="moderator-aside__email">nik_petrov@mail.ru</div>
+                  <div class="moderator-aside__invite">
+                    <button class="btn btn-small">Пригласить</button>
+                  </div>
+                  <div class="moderator-aside__nav">
+                    <ul>
+                      <li><a href="#">Заявки</a></li>
+                      <li><a class="badge" href="#">Сообщения</a></li>
+                      <li><a href="#">Фильмы</a></li>
+                      <li><a href="#">Рейтинги</a></li>
+                      <li><a href="#">Рецензии</a></li>
+                      <li><a href="#">Профиль</a></li>
+                      <li><a href="#">Выйти</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page-moderator__content">
+              <div class="head-moderator">
+                <div class="head-moderator__breadcrumb">
+                  <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                    <li><a href="#">Заявки</a></li>
+                  </ul>
+                </div>
+                <div class="head-moderator__title">
+                  <h1>Заявки</h1><a href="#">
+                    <button class="btn btn-small">Добавить фильм</button></a>
+                </div>
+              </div>
+              <div class="main-moderator">
+                <div class="orders-block">
+                  <div class="orders-block__sort">
+                    <ul>
+                      <li><a href="#">Новые</a></li>
+                      <li><a class="active" href="#">Одобренные</a></li>
+                      <li><a href="#">Отклоненные</a></li>
+                    </ul>
+                  </div>
+                  <div class="orders-block__list">
+                    <div class="table-card">
+                      <div class="table-card__tr">
+                        <div class="table-card__th">Название</div>
+                        <div class="table-card__th">Режисер</div>
+                        <div class="table-card__th">Дата подачи</div>
+                        <div class="table-card__th">Статус</div>
+                        <div class="table-card__th">Действия</div>
+                      </div>
+                      <div class="table-card__tr">
+                        <div class="table-card__td" data-title="Название"><span class="ob-name">Паразиты (2019)</span><span class="ob-number">22-00650</span></div>
+                        <div class="table-card__td" data-title="Режисер">Пон Джун-хо</div>
+                        <div class="table-card__td" data-title="Дата подачи">20.11.2022</div>
+                        <div class="table-card__td" data-title="Статус"><span class="ob-status">
+                            <button class="btn btn-line btn-line--success active">Одобрен</button>
+                            <button class="btn btn-line btn-line--reject active">отклонeн</button></span></div>
+                        <div class="table-card__td" data-title="Действия"><a class="ob-link" href="#">
+                            <svg width="20" height="20">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
+                            </svg></a><span class="ob-menu"></span></div>
+                      </div>
+                      <div class="table-card__tr">
+                        <div class="table-card__th">Название</div>
+                        <div class="table-card__th">Режисер</div>
+                        <div class="table-card__th">Дата подачи</div>
+                        <div class="table-card__th">Статус</div>
+                        <div class="table-card__th">Действия</div>
+                      </div>
+                      <div class="table-card__tr">
+                        <div class="table-card__td" data-title="Название"><span class="ob-name">Паразиты (2019)</span><span class="ob-number">22-00650</span></div>
+                        <div class="table-card__td" data-title="Режисер">Пон Джун-хо</div>
+                        <div class="table-card__td" data-title="Дата подачи">20.11.2022</div>
+                        <div class="table-card__td" data-title="Статус"><span class="ob-status">
+                            <button class="btn btn-line btn-line--success">Одобрен</button>
+                            <button class="btn btn-line btn-line--reject">отклонeн</button></span></div>
+                        <div class="table-card__td" data-title="Действия"><a class="ob-link" href="#">
+                            <svg width="20" height="20">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
+                            </svg></a><span class="ob-menu"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="container">
@@ -153,7 +254,7 @@
               </div>
             </div>
     </footer>
-    <script src="/js/vendor.js"> </script>
-    <script src="/js/common.js"> </script>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/common.js"></script>
   </body>
 </html>

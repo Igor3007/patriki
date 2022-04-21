@@ -4,7 +4,7 @@ header {
     z-index: 10;
 
     & .container {
-        @media screen and (max-width: $w760) {
+        @media screen and (max-width: $w480) {
             max-width: none;
             padding-right: 0;
         }
@@ -17,6 +17,13 @@ header {
     align-items: stretch;
 
     &__logo {
+
+        @media screen and (min-width: $w1200) {
+            min-width: 235px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
         & .bgimage {
             width: 106px;
             height: 80px;
@@ -36,15 +43,23 @@ header {
 
         }
 
+        @media screen and (min-width: $w1440) {
+            //border-left: 1px solid $main;
+            padding: 23px 45px;
+        }
+
+        @media screen and (min-width: $w1376) {
+            padding: 8px 45px;
+        }
+
         @media screen and (min-width: $w1200) {
             border-right: 1px solid $main;
             padding-right: 15px;
+            justify-content: flex-start;
+            padding: 8px 30px;
         }
 
-        @media screen and (min-width: $w1440) {
-            //border-left: 1px solid $main;
-            padding: 23px 30px;
-        }
+
     }
 
     &__nav {

@@ -1,0 +1,174 @@
+.orders-block {
+    &__sort {
+
+        padding-bottom: 25px;
+
+        & ul {
+            display: flex;
+            justify-content: flex-start;
+            margin: -6px;
+
+            overflow-x: auto;
+        }
+
+        & li {
+
+            margin: 6px;
+
+            & a {
+                background-color: #fff;
+                border: 1px solid #BCBCBC;
+                color: #92919F;
+                height: 39px;
+                font-size: 12px;
+                padding: 0.8em 2em 0.75em 2em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                min-width: 130px;
+                font-weight: 600;
+                text-transform: uppercase;
+                white-space: nowrap;
+                transition: 0.1s ease-out;
+
+                &.active {
+                    color: $main;
+                }
+
+                &:hover {
+                    background-color: $main;
+                    border: 1px solid $main;
+                    color: #fff;
+                }
+
+            }
+        }
+    }
+}
+
+.ob {
+    &-name {
+        font-weight: 600;
+        font-size: 14px;
+        display: block;
+        color: $main;
+    }
+
+    &-number {
+        font-weight: 400;
+        font-size: 13px;
+        display: block;
+        color: #92919F;
+    }
+
+    &-status {
+        display: flex;
+        margin: -6px;
+
+        & .btn-line {
+            font-size: 0;
+            min-width: auto;
+            width: 39px;
+            margin: 6px;
+
+            &--success {
+
+
+                &::before {
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3IDFMNiAxMiAxIDciIHN0cm9rZT0iIzkyOTE5RiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+
+                }
+
+                &.active {
+                    &::before {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+
+
+
+            }
+
+            &--reject {
+
+                &::before {
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEzIDFMMSAxM00xIDFsMTIgMTIiIHN0cm9rZT0iIzkyOTE5RiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+
+                }
+
+                &.active {
+                    &::before {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+.table-card {
+
+    &__tr {
+        border: 1px solid #BCBCBC;
+        border-radius: 4px;
+        padding: 20px 24px;
+        display: flex;
+        flex-wrap: wrap;
+
+        &:first-child {
+            display: none;
+
+            @media screen and (min-width: $w760) {
+                display: table-row;
+            }
+        }
+    }
+
+    &__th {
+        display: none;
+
+        @media screen and (min-width: $w760) {
+            display: table-cell;
+        }
+    }
+
+    &__td {
+        font-weight: 600;
+        font-size: 14px;
+        padding-bottom: 15px;
+        width: 100%;
+
+
+        &::before {
+            content: attr(data-title);
+            display: block;
+            font-weight: 400;
+            color: #92919F;
+            padding-bottom: 3px;
+        }
+
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+            width: 50%;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

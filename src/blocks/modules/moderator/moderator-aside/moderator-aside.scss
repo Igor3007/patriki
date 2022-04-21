@@ -1,0 +1,163 @@
+.moderator-aside {
+
+    display: none;
+
+    @media screen and (min-width: $w1200) {
+        padding: 30px;
+        display: block;
+    }
+
+    @media screen and (min-width: $w1440) {
+        padding: 48px;
+    }
+
+    &__photo {
+
+        padding-bottom: 25px;
+
+        & picture {
+            & img {
+                width: 80px;
+                height: 80px;
+                display: block;
+                border-radius: 50%;
+                object-fit: cover;
+                margin: 0 auto;
+
+                @media screen and (min-width: $w1200) {
+                    margin-left: 0;
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+        }
+    }
+
+    &__name {
+
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 125%;
+        text-align: center;
+        color: $main;
+
+        @media screen and (min-width: $w1200) {
+            display: none;
+        }
+    }
+
+    &__email {
+
+        text-align: center;
+        padding-bottom: 25px;
+
+        @media screen and (min-width: $w1200) {
+            display: none;
+        }
+    }
+
+    &__invite {
+        padding-bottom: 25px;
+        display: flex;
+        justify-content: center;
+
+        @media screen and (min-width: $w1200) {
+            justify-content: flex-start;
+        }
+    }
+
+    &__nav {
+        & ul {
+
+
+
+            & li {
+                padding: 12px 0;
+                text-align: center;
+
+                @media screen and (min-width: $w1200) {
+                    text-align: left;
+                    padding: 8px 0;
+                }
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                @media screen and (max-width: 1199px) {
+                    &:last-child {
+
+                        padding-top: 30px;
+
+                        & a {
+                            border-top: 1px solid #D6D6D6;
+                            display: inline-flex;
+                            padding: 1.2em 1.7em;
+                        }
+                    }
+                }
+
+                & a {
+
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    color: $main;
+
+                    @media screen and (min-width: $w1200) {
+                        font-size: 12px;
+                        color: #92919F;
+                    }
+
+                    &.badge {
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            width: 6px;
+                            height: 6px;
+                            display: block;
+                            border-radius: 50%;
+                            background-color: #ED1E69;
+                            position: absolute;
+                            right: -0.9em;
+                            top: -0.3em;
+                        }
+                    }
+
+                    &.active,
+                    &:hover {
+                        color: $main;
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+.moderator-aside {
+    &.open {
+
+        position: fixed;
+        display: flex;
+        background-color: #eeecf2;
+        left: 0;
+        bottom: 0;
+        top: 81px;
+        width: 100%;
+        animation: slide-right 0.5s ease forwards;
+        overflow-y: auto;
+        max-width: 360px;
+        z-index: 10;
+
+        & .moderator-aside {
+            &__wrp {
+                padding: 30px;
+                width: 100%;
+            }
+        }
+    }
+}

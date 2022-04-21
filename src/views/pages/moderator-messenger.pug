@@ -1,0 +1,21 @@
+extends ../layouts/page
+include ../../blocks/modules/login-block/login-block.pug
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Войти'
+
+
+block content
+  +login-block
+
+
+block scripts
+  script(src="/js/vendor.js")
+  script(src="/js/common.js")
+
+
+

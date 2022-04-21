@@ -1,0 +1,35 @@
+extends ../layouts/moderator
+include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
+include ../../blocks/modules/moderator/orders-block/orders-block.pug
+ 
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Заявки'
+
+
+block content
+  +head-moderator({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Заявки',
+    ],
+
+    title: 'Заявки',
+    button: 'Добавить фильм'
+  })
+
+  .main-moderator
+    +orders-block
+
+
+block scripts
+  script(src="/js/vendor.js")
+  script(src="/js/common.js")
+
+
+

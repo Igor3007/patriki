@@ -1,0 +1,13 @@
+.moderator-aside
+  .moderator-aside__wrp
+    .moderator-aside__photo
+      +picture('/img/common/img_user')
+    .moderator-aside__name Николай Петров
+    .moderator-aside__email nik_petrov@mail.ru
+    .moderator-aside__invite
+      button.btn.btn-small Пригласить
+    .moderator-aside__nav
+      ul
+        each item,index in app.moderatorNav
+          li: a(href=item.href class=(index == 1 ? 'badge':''))= item.text
+      
