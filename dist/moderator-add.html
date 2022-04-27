@@ -133,8 +133,68 @@
               </div>
               <div class="main-moderator">
                 <div class="layout-column">
-                  <div class="layout-column__left"></div>
-                  <div class="layout-column__right"> </div>
+                  <div class="layout-column__left">
+                    <div class="film-poster">
+                      <div class="film-poster__cover">
+                        <div class="film-poster__btn">
+                          <label class="attach-label"><span class="bgimage" style="background-image: url(/img/common/camera.png)"></span><span class="text-upload">Добавить афишу</span>
+                            <input type="file" name="poster-img" data-attach="poster"/>
+                          </label>
+                        </div>
+                        <div class="film-poster__image">
+                          <picture><img src="" data-attach="preview-poster"/></picture>
+                        </div>
+                      </div>
+                      <div class="film-poster__upload">
+                        <label class="attach-label">
+                          <button class="btn">Загрузить фильм на платформу</button>
+                          <input type="file" name="film-file"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layout-column__right">
+                    <div class="film-add">
+                      <div class="form">
+                        <div class="form__item">
+                          <div class="form__subitem">
+                            <input type="text" placeholder="Название фильма"/>
+                          </div>
+                        </div>
+                        <div class="form__item">
+                          <div class="form__subitem">
+                            <input type="text" placeholder="Заявитель (ФИО)"/>
+                          </div>
+                          <div class="form__subitem">
+                            <input type="text" placeholder="Производитель"/>
+                          </div>
+                        </div>
+                        <div class="form__item">
+                          <div class="form__subitem">
+                            <input type="text" placeholder="Телефон"/>
+                          </div>
+                          <div class="form__subitem">
+                            <input type="text" placeholder="Email"/>
+                          </div>
+                        </div>
+                        <div class="form__item">
+                          <div class="form__label">Фестиваль</div>
+                        </div>
+                        <div class="form__item">
+                          <div class="form__subitem">
+                            <select>
+                              <option value="">Статус</option>
+                            </select>
+                          </div>
+                          <div class="form__subitem">
+                            <select>
+                              <option value="">Программа</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 extends ../layouts/moderator
 include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
+include ../../blocks/modules/moderator/film-poster/film-poster.pug 
 include ../../blocks/modules/moderator/film-add/film-add.pug 
 
 
@@ -26,8 +27,8 @@ block content
 
   .main-moderator
     .layout-column
-      .layout-column__left
-      .layout-column__right 
+      .layout-column__left: +film-poster()
+      .layout-column__right: +film-add() 
 
 
 

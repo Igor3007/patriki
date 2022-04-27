@@ -2663,6 +2663,97 @@ footer {
   display: none;
 }
 
+.film-poster__upload .btn {
+  padding: 0.8em 2.2em 0.85em 2.2em;
+  width: 100%;
+}
+
+.film-poster__cover {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  border: 1px solid #bcbcbc;
+}
+
+.film-poster__cover.cover--loaded .film-poster__image {
+  z-index: 2;
+}
+
+.film-poster__cover.cover--loaded .film-poster__image img {
+  opacity: 1;
+}
+
+.film-poster__cover.cover--loaded:hover .film-poster__image {
+  z-index: 1;
+}
+
+.film-poster__cover.cover--loaded:hover .film-poster__btn {
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: 0.4s ease;
+}
+
+.film-poster__image {
+  position: relative;
+  z-index: 1;
+}
+
+.film-poster__image picture {
+  display: block;
+  padding-top: 134%;
+  background-color: #DDDDDD;
+}
+
+.film-poster__image picture img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.film-poster__btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.film-poster__btn .bgimage {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.film-poster__btn label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.film-poster__btn label .text-upload {
+  color: #92919F;
+  text-decoration: underline;
+  padding-top: 5px;
+}
+
+.attach-label input {
+  display: none;
+}
+
 @media screen and (min-width: 480px) {
   .container {
     padding: 0 16px;
@@ -2884,6 +2975,21 @@ footer {
 
   .table-card__td::before {
     display: none;
+  }
+
+  .layout-column {
+    display: flex;
+    margin: 0 -30px;
+  }
+
+  .layout-column__left {
+    width: 28%;
+    padding: 0 30px;
+  }
+
+  .layout-column__right {
+    width: 72%;
+    padding: 0 30px;
   }
 }
 

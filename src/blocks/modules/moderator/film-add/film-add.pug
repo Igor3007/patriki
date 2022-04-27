@@ -1,0 +1,19 @@
+mixin film-add()
+    .film-add
+        .form
+          .form__item: .form__subitem: input(type="text" placeholder="Название фильма")
+          .form__item
+            .form__subitem: input(type="text" placeholder="Заявитель (ФИО)")
+            .form__subitem: input(type="text" placeholder="Производитель")
+          .form__item
+            .form__subitem: input(type="text" placeholder="Телефон")
+            .form__subitem: input(type="text" placeholder="Email")
+          .form__item
+            .form__label Фестиваль
+          .form__item
+            .form__subitem
+              select
+                option(value="") Статус
+            .form__subitem
+              select
+                option(value="") Программа

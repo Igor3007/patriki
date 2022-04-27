@@ -1,0 +1,22 @@
+.layout-column {
+
+
+    @media screen and (min-width: $w760) {
+        display: flex;
+        margin: 0 -30px;
+    }
+
+    &__left {
+        @media screen and (min-width: $w760) {
+            width: 28%;
+            padding: 0 30px;
+        }
+    }
+
+    &__right {
+        @media screen and (min-width: $w760) {
+            width: 72%;
+            padding: 0 30px;
+        }
+    }
+}
