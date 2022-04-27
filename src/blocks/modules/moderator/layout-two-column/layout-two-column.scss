@@ -1,22 +1,38 @@
 .layout-column {
 
-
-    @media screen and (min-width: $w760) {
-        display: flex;
+    @media screen and (min-width: $w1440) {
         margin: 0 -30px;
     }
 
+    @media screen and (min-width: $w992) {
+        display: flex;
+        margin: 0 -15px;
+    }
+
     &__left {
-        @media screen and (min-width: $w760) {
-            width: 28%;
+
+        @media screen and (min-width: $w1440) {
             padding: 0 30px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 28%;
+            padding: 0 15px;
         }
     }
 
     &__right {
-        @media screen and (min-width: $w760) {
-            width: 72%;
+
+        padding-top: 35px;
+
+        @media screen and (min-width: $w1440) {
             padding: 0 30px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 72%;
+            padding: 0 15px;
+            padding-top: 0;
         }
     }
 }

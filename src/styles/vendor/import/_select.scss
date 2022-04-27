@@ -43,6 +43,19 @@ select {
     }
 }
 
+.af-selected-placeholder::before {
+    content: attr(data-af-placeholder);
+    display: block;
+    font-size: 12px;
+    color: #92919F;
+    line-height: 140%;
+    font-weight: normal;
+}
+
+.af-selected-placeholder {
+    font-weight: 600;
+}
+
 .select-styled {
     // position: absolute;
     // top: 0;

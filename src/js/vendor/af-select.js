@@ -29,10 +29,12 @@ class customSelect {
     renderOption(item) {
 
         var _this = this;
+        var select = item.querySelector('select')
+        var placeholder = select.getAttribute('placeholder')
 
         const styledSelect = document.createElement('div')
         styledSelect.classList.add('select-styled');
-        styledSelect.innerHTML = '<span>Р’С‹Р±РµСЂРёС‚Рµ</span>';
+        styledSelect.innerHTML = '<span>' + placeholder + '</span>';
 
         const styledOptions = document.createElement('ul')
         styledOptions.classList.add('select-options');
@@ -51,14 +53,28 @@ class customSelect {
 
         item.querySelectorAll('select > option').forEach(function (item, index) {
 
-            if (index == 0) styledSelect.innerHTML = '<span>' + item.innerText + '</span>';
-
+            // create li elem
             const li = document.createElement('li')
             li.innerHTML = item.innerText
             li.setAttribute('rel', item.value)
 
-            styledOptions.appendChild(li)
+            //если не задан placeholder, сделать им первый элемент
+            if (index == 0 && !placeholder) {
+                styledSelect.innerHTML = '<span>' + item.innerText + '</span>';
+            }
 
+            //если есть selected элемент
+            if (item.getAttribute('selected')) {
+                if (!placeholder) {
+                    styledSelect.innerHTML = '<span>' + item.innerText + '</span>';
+                    li.classList.add('active')
+                } else {
+                    styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + item.innerText + '</span>';
+                    li.classList.add('active')
+                }
+            }
+
+            styledOptions.appendChild(li)
             _this.clickEventListItem(li)
 
         })
@@ -81,7 +97,6 @@ class customSelect {
         })
 
         document.querySelectorAll('.af-select').forEach(function (item, index) {
-
             _this.renderOption(item)
 
         })
