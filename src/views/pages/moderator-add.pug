@@ -1,21 +1,33 @@
-extends ../layouts/page
-include ../../blocks/modules/login-block/login-block.pug
+extends ../layouts/moderator
+include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
+include ../../blocks/modules/moderator/film-add/film-add.pug 
 
 
 
 block variables
   include ../../data/data.pug
   -
-    title = 'Войти'
+    title = 'Добавить фильм'
 
 
 block content
-  +login-block
+  +head-moderator({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Добавить фильм',
+    ],
 
+    title: 'Добавить фильм',
+    button: false
+  })
 
-block scripts
-  script(src="/js/vendor.js")
-  script(src="/js/common.js")
+  
+
+  .main-moderator
+    .layout-column
+      .layout-column__left
+      .layout-column__right 
 
 
 

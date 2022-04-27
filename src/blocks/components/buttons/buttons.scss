@@ -20,6 +20,8 @@
     transition: .3s cubic-bezier(.1, .82, .25, 1);
 
 
+
+
     // line
     &.btn-line {
         background-color: #fff;
@@ -90,7 +92,6 @@
 
     &:active,
     &:focus {
-        border: none;
         outline: none;
     }
 

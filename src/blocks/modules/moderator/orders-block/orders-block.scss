@@ -47,12 +47,217 @@
     }
 }
 
+
+.table-card {
+
+    @media screen and (min-width: $w760) {
+        display: table;
+        border-spacing: 0 10px;
+
+
+    }
+
+    &__tr {
+        border: 1px solid #BCBCBC;
+        border-radius: 4px;
+        padding: 20px 24px 10px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: $w760) {
+            display: table-row;
+        }
+
+        &.state {
+            position: relative;
+
+            &--success {
+
+                border-left: 5px solid $green;
+
+                @media screen and (min-width: $w760) {
+
+                    border-left: none;
+
+                    & .table-card__td {
+                        &:first-child {
+                            border-left: 5px solid $green;
+                        }
+                    }
+                }
+
+
+            }
+
+            &--reject {
+
+                border-left: 5px solid $red;
+
+                @media screen and (min-width: $w760) {
+
+                    border-left: none;
+
+                    & .table-card__td {
+                        &:first-child {
+                            border-left: 5px solid $red;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:first-child {
+            display: none;
+
+            @media screen and (min-width: $w760) {
+                display: table-row;
+            }
+        }
+
+
+    }
+
+    &__th {
+        display: none;
+
+        @media screen and (min-width: $w1440) {
+            padding: 0 20px;
+
+            &:first-child {
+                padding-left: 20px;
+            }
+        }
+
+        @media screen and (min-width: $w992) {
+            @media screen and (min-width: $w992) {
+                padding: 0 10px;
+
+                &:first-child {
+                    padding-left: 15px;
+                }
+            }
+        }
+
+        @media screen and (min-width: $w760) {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            padding: 0 5px;
+            font-size: 12px;
+            color: #92919F;
+            line-height: 120%;
+
+
+            &:first-child {
+                text-align: left;
+            }
+
+            &:nth-child(2) {
+                text-align: left;
+            }
+        }
+    }
+
+    &__td {
+        font-weight: 600;
+        font-size: 14px;
+        padding-bottom: 15px;
+        width: 100%;
+
+        & span,
+        a {
+            font-size: inherit;
+        }
+
+        @media screen and (min-width: $w1440) {
+            padding: 20px;
+            font-size: 14px;
+
+            &:first-child {
+                padding-left: 20px;
+            }
+        }
+
+        @media screen and (min-width: $w992) {
+            padding: 10px;
+
+            &:first-child {
+                padding-left: 15px;
+            }
+        }
+
+
+        @media screen and (min-width: $w760) {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 5px;
+            border-bottom: 1px solid #bcbcbc;
+            border-top: 1px solid #bcbcbc;
+            font-size: 13px;
+            width: 20%;
+            text-align: center;
+
+
+
+
+
+            &:first-child {
+                width: 60%;
+                border-left: 1px solid #bcbcbc;
+                padding-left: 10px;
+                border-radius: 4px 0 0 4px;
+                text-align: left;
+            }
+
+            &:last-child {
+                border-right: 1px solid #bcbcbc;
+                padding-right: 10px;
+                border-radius: 0 4px 4px 0;
+            }
+
+            &:nth-child(2) {
+                text-align: left;
+            }
+        }
+
+
+        &::before {
+            content: attr(data-title);
+            display: block;
+            font-weight: 400;
+            color: #92919F;
+            padding-bottom: 3px;
+
+            @media screen and (min-width: $w760) {
+                display: none;
+            }
+        }
+
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+            width: 50%;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
 .ob {
     &-name {
         font-weight: 600;
         font-size: 14px;
         display: block;
         color: $main;
+
+        & a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
     }
 
     &-number {
@@ -60,6 +265,7 @@
         font-size: 13px;
         display: block;
         color: #92919F;
+        padding-top: 0.5em;
     }
 
     &-status {
@@ -71,6 +277,17 @@
             min-width: auto;
             width: 39px;
             margin: 6px;
+
+            @media screen and (min-width: $w1440) {
+                font-size: 12px;
+                padding-left: 2em;
+                padding-right: 2em;
+                width: auto;
+
+                &::before {
+                    display: none;
+                }
+            }
 
             &--success {
 
@@ -121,54 +338,98 @@
     }
 }
 
-.table-card {
 
-    &__tr {
-        border: 1px solid #BCBCBC;
-        border-radius: 4px;
-        padding: 20px 24px;
+.ob-action {
+    display: flex;
+    align-items: center;
+
+    & a {
         display: flex;
-        flex-wrap: wrap;
+        width: 39px;
+        height: 39px;
+        align-items: center;
+        justify-content: center;
+        //border: 1px solid #BCBCBC;
+        border-radius: 5px;
+        margin-left: auto;
 
-        &:first-child {
-            display: none;
+        & svg {
+            opacity: 0.3;
+        }
 
-            @media screen and (min-width: $w760) {
-                display: table-row;
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
+        &.active svg {
+            opacity: 1;
+        }
+    }
+}
+
+.ob-menu {
+
+    margin-left: 10px;
+    position: relative;
+
+    &.open {
+        & .ob-menu {
+
+            &__icon {
+                background-color: #f5f5f5;
+            }
+
+            &__list {
+                display: block;
+                position: absolute;
+                bottom: 100%;
+                right: 0;
+                background-color: #fff;
+                min-width: 150px;
+                max-width: 280px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+                & ul {
+                    list-style-type: none;
+                    width: 100%;
+
+                    & li {
+                        width: 100%;
+
+                        & a {
+                            width: 100%;
+                            padding: 10px 20px;
+                            display: block;
+                            text-align: left;
+                            height: auto;
+                            font-weight: normal;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+                }
             }
         }
     }
 
-    &__th {
+    &__icon {
+        display: flex;
+        width: 39px;
+        height: 39px;
+        align-items: center;
+        justify-content: center;
+        //border: 1px solid #BCBCBC;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+    }
+
+    &__list {
         display: none;
-
-        @media screen and (min-width: $w760) {
-            display: table-cell;
-        }
-    }
-
-    &__td {
-        font-weight: 600;
-        font-size: 14px;
-        padding-bottom: 15px;
-        width: 100%;
-
-
-        &::before {
-            content: attr(data-title);
-            display: block;
-            font-weight: 400;
-            color: #92919F;
-            padding-bottom: 3px;
-        }
-
-        &:nth-last-child(1),
-        &:nth-last-child(2) {
-            width: 50%;
-
-            &::before {
-                display: none;
-            }
-        }
     }
 }

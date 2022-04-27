@@ -13,40 +13,34 @@ mixin orders-block()
                     .table-card__th Режисер
                     .table-card__th Дата подачи
                     .table-card__th Статус
-                    .table-card__th Действия
+                    .table-card__th Действия 
+                //- =======================================
+                //- =======================================
 
-                .table-card__tr
-                    .table-card__td(data-title="Название")
-                        span.ob-name Паразиты (2019)
-                        span.ob-number 22-00650
-                    .table-card__td(data-title="Режисер") Пон Джун-хо
-                    .table-card__td(data-title="Дата подачи") 20.11.2022
-                    .table-card__td(data-title="Статус")
-                        span.ob-status
-                            button.btn.btn-line.btn-line--success.active Одобрен
-                            button.btn.btn-line.btn-line--reject.active отклонeн
-                    .table-card__td(data-title="Действия")
-                        a.ob-link(href='#'): +icons('#ic_chain', 20)
-                        span.ob-menu
+                each item in moderator.orders
+                    .table-card__tr(class=item.state)
+                        .table-card__td(data-title="Название")
+                            span.ob-name
+                                a(href='#')= item.name
+                            span.ob-number 22-00650
+                        .table-card__td(data-title="Режисер")= item.autor
+                        .table-card__td(data-title="Дата подачи")= item.date
+                        .table-card__td(data-title="Статус")
+                            span.ob-status
+                                button.btn.btn-line.btn-line--success(class=(item.state == 'state--success'? 'active':'') data-ob="status") Одобрен
+                                button.btn.btn-line.btn-line--reject(class=(item.state == 'state--reject'? 'active':'') data-ob="status") отклонeн
+                        .table-card__td(data-title="Действия")
+                            +ob-action()
+                 
 
 
-                .table-card__tr
-                    .table-card__th Название
-                    .table-card__th Режисер
-                    .table-card__th Дата подачи
-                    .table-card__th Статус
-                    .table-card__th Действия
-
-                .table-card__tr
-                    .table-card__td(data-title="Название")
-                        span.ob-name Паразиты (2019)
-                        span.ob-number 22-00650
-                    .table-card__td(data-title="Режисер") Пон Джун-хо
-                    .table-card__td(data-title="Дата подачи") 20.11.2022
-                    .table-card__td(data-title="Статус")
-                        span.ob-status
-                            button.btn.btn-line.btn-line--success Одобрен
-                            button.btn.btn-line.btn-line--reject отклонeн
-                    .table-card__td(data-title="Действия")
-                        a.ob-link(href='#'): +icons('#ic_chain', 20)
-                        span.ob-menu
+mixin ob-action
+    .ob-action
+        a.ob-link(href='#'): +icons('#ic_chain', 20)
+        span.ob-menu(data-menu="dots")
+            .ob-menu__icon: +icons('#ic_dots-menu', 20)
+            .ob-menu__list
+                ul
+                    li: a(href='#') Редактировать
+                    li: a(href='#') Удалить
+                    li: a(href='#') Перейти к фильму

@@ -69,6 +69,50 @@ document.addEventListener("DOMContentLoaded", function (event) {
     STATUS.init();
 
 
+
+    /******************************************** 
+     * ajax request
+     ********************************************/
+
+    window.ajax = function (params, btn, response) {
+
+        //params Object
+        //dom element
+        //collback function
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', params.url)
+        xhr.responseType = 'json';
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        xhr.send(JSON.stringify(params.data))
+
+        xhr.onload = function () {
+            response(xhr.status, xhr.response)
+        };
+
+        xhr.onerror = function () {
+            window.STATUS.err('Error: ajax request failed')
+        };
+
+        xhr.onreadystatechange = function () {
+
+            if (xhr.readyState == 3 && btn) {
+                btn.classList.add('btn-loading')
+            }
+
+            if (xhr.readyState == 4 && btn) {
+                setTimeout(function () {
+                    btn.classList.remove('btn-loading')
+                }, 300)
+            }
+
+        };
+    }
+
+
+
+
     /* ==============================================
     mobile menu
     ============================================== */
