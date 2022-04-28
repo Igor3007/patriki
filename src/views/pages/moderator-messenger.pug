@@ -1,14 +1,28 @@
-extends ../layouts/page
-include ../../blocks/modules/login-block/login-block.pug
+extends ../layouts/moderator
+include ../../blocks/modules/moderator/messenger/messenger.pug
+include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
 
 
 
 block variables
   include ../../data/data.pug
   -
-    title = 'Войти'
+    title = 'Сообщения'
 
 
 block content
-  +login-block
+  +head-moderator({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Сообщения',
+    ],
 
+    title: 'Сообщения',
+    button: false
+  })
+
+  
+
+  .main-moderator
+    +messenger()
