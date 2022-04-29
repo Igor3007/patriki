@@ -11,12 +11,9 @@ mixin film-add()
 
           .form__label Фестиваль
           .form__item
-            .form__subitem
-              select
-                option(value="") Статус
-            .form__subitem
-              select
-                option(value="") Программа
+            .form__subitem: +select('Статус', ['Статус 1','Статус 2'])
+            .form__subitem: +select('Программа', ['Программа 1','Программа 2'])
+              
            
           .form__label Информация о фильме
           .form__item
@@ -30,34 +27,36 @@ mixin film-add()
 
           .form__item
             .form__item 
-              .form__subitem: +select(['Год производства','2020','2021'])
+              .form__subitem: +select('Год производства', ['2020','2021'])
               .form__subitem: input(type="date" placeholder="Дата подачи")
             .form__item 
               .form__subitem: input(type="text" placeholder="Хронометраж (мин)")
-              .form__subitem: +select(['Язык','2020','2021'])
+              .form__subitem: +select('Язык',['Русский','English'])
 
           .form__label информация о съемочной группе
           .form__item
-            .form__subitem: input(type="text" placeholder="ФИО")
+            .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
             .form__subitem
-              input(type="text" placeholder="Продюсер")
-              span.form-repitter
+              input(type="text" name="post[]" placeholder="Продюсер" disabled value="Продюсер")
           .form__item
-            .form__subitem: input(type="text" placeholder="ФИО")
+            .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
             .form__subitem
-              input(type="text" placeholder="Режиссер")
-              span.form-repitter
+              input(type="text" name="post[]" placeholder="Режиссер" disabled value="Режиссер")
           .form__item
             .form__subitem: .form__note: span Заполнить карточку режисера
 
+          .form__group(data-repeeat="container")
+            .form__item
+              .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
+              .form__subitem 
+                input(type="text" placeholder="Оператор" name="post[]" disabled value="Оператор")
+            .form__item
+              .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
+              .form__subitem 
+                input(type="text" placeholder="Звукорежиссер" name="post[]" disabled value="Звукорежиссер")
+          
           .form__item
-            .form__subitem: input(type="text" placeholder="ФИО")
-            .form__subitem: input(type="text" placeholder="Оператор")
-          .form__item
-            .form__subitem: input(type="text" placeholder="ФИО")
-            .form__subitem: input(type="text" placeholder="Звукорежиссер")
-          .form__item
-            .form__subitem: .form__note: span + Добавить члена съемочной группы
+            .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
           
           .form__label Логлайн
           .form__item
@@ -65,14 +64,33 @@ mixin film-add()
 
           .form__label Расписание показов
           .form__item
-            .form__subitem
-              input(type="date")
+            .form__subitem: +lineup()
+
+              
+              
 
           .form__item
             .form__subitem
               .form__note.form__note--col2
-                span + Добавить члена съемочной группы
+                span + Добавить дату и время
                 +checkbox('Фильм в постоянном доступе')
           .form__item
             .form__subitem
               .form__submit: button.btn(type="submit") сохранить
+
+
+mixin lineup
+  .lineup
+    .lineup__date: input(type="date" placeholder="Date")
+    .lineup__time
+      .lineup__timeline
+        .lineup__title Время
+        .lineup__list
+          ul
+            each li in [17,18,19,20,21]
+              li
+                span= li+':00'
+                input(type="checkbox" name="time[]" value=li+":00" checked)
+        .lineup__add: span.timepicker(data-timepicker="")
+
+      .lineup__remove: span.remove-repeeatter

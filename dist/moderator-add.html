@@ -180,13 +180,15 @@
                         <div class="form__label">Фестиваль</div>
                         <div class="form__item">
                           <div class="form__subitem">
-                            <select>
-                              <option value="">Статус</option>
+                            <select placeholder="Статус">
+                              <option value="0">Статус 1</option>
+                              <option value="1">Статус 2</option>
                             </select>
                           </div>
                           <div class="form__subitem">
-                            <select>
-                              <option value="">Программа</option>
+                            <select placeholder="Программа">
+                              <option value="0">Программа 1</option>
+                              <option value="1">Программа 2</option>
                             </select>
                           </div>
                         </div>
@@ -207,10 +209,9 @@
                         <div class="form__item">
                           <div class="form__item"> 
                             <div class="form__subitem">
-                              <select>
-                                <option value="0">Год производства</option>
-                                <option value="1">2020</option>
-                                <option value="2">2021</option>
+                              <select placeholder="Год производства">
+                                <option value="0">2020</option>
+                                <option value="1">2021</option>
                               </select>
                             </div>
                             <div class="form__subitem">
@@ -222,10 +223,9 @@
                               <input type="text" placeholder="Хронометраж (мин)"/>
                             </div>
                             <div class="form__subitem">
-                              <select>
-                                <option value="0">Язык</option>
-                                <option value="1">2020</option>
-                                <option value="2">2021</option>
+                              <select placeholder="Язык">
+                                <option value="0">Русский</option>
+                                <option value="1">English</option>
                               </select>
                             </div>
                           </div>
@@ -233,18 +233,18 @@
                         <div class="form__label">информация о съемочной группе</div>
                         <div class="form__item">
                           <div class="form__subitem">
-                            <input type="text" placeholder="ФИО"/>
+                            <input type="text" name="fio[]" placeholder="ФИО"/>
                           </div>
                           <div class="form__subitem">
-                            <input type="text" placeholder="Продюсер"/><span class="form-repitter"></span>
+                            <input type="text" name="post[]" placeholder="Продюсер" disabled="disabled" value="Продюсер"/>
                           </div>
                         </div>
                         <div class="form__item">
                           <div class="form__subitem">
-                            <input type="text" placeholder="ФИО"/>
+                            <input type="text" name="fio[]" placeholder="ФИО"/>
                           </div>
                           <div class="form__subitem">
-                            <input type="text" placeholder="Режиссер"/><span class="form-repitter"></span>
+                            <input type="text" name="post[]" placeholder="Режиссер" disabled="disabled" value="Режиссер"/>
                           </div>
                         </div>
                         <div class="form__item">
@@ -252,25 +252,27 @@
                             <div class="form__note"><span>Заполнить карточку режисера</span></div>
                           </div>
                         </div>
-                        <div class="form__item">
-                          <div class="form__subitem">
-                            <input type="text" placeholder="ФИО"/>
+                        <div class="form__group" data-repeeat="container">
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <input type="text" name="fio[]" placeholder="ФИО"/>
+                            </div>
+                            <div class="form__subitem"> 
+                              <input type="text" placeholder="Оператор" name="post[]" disabled="disabled" value="Оператор"/>
+                            </div>
                           </div>
-                          <div class="form__subitem">
-                            <input type="text" placeholder="Оператор"/>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <input type="text" name="fio[]" placeholder="ФИО"/>
+                            </div>
+                            <div class="form__subitem"> 
+                              <input type="text" placeholder="Звукорежиссер" name="post[]" disabled="disabled" value="Звукорежиссер"/>
+                            </div>
                           </div>
                         </div>
                         <div class="form__item">
                           <div class="form__subitem">
-                            <input type="text" placeholder="ФИО"/>
-                          </div>
-                          <div class="form__subitem">
-                            <input type="text" placeholder="Звукорежиссер"/>
-                          </div>
-                        </div>
-                        <div class="form__item">
-                          <div class="form__subitem">
-                            <div class="form__note"><span>+ Добавить члена съемочной группы</span></div>
+                            <div class="form__note"><span data-repeeat="add">+ Добавить члена съемочной группы</span></div>
                           </div>
                         </div>
                         <div class="form__label">Логлайн</div>
@@ -282,12 +284,42 @@
                         <div class="form__label">Расписание показов</div>
                         <div class="form__item">
                           <div class="form__subitem">
-                            <input type="date"/>
+                            <div class="lineup">
+                              <div class="lineup__date">
+                                <input type="date" placeholder="Date"/>
+                              </div>
+                              <div class="lineup__time">
+                                <div class="lineup__timeline">
+                                  <div class="lineup__title">Время</div>
+                                  <div class="lineup__list">
+                                    <ul>
+                                      <li><span>17:00</span>
+                                        <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                      </li>
+                                      <li><span>18:00</span>
+                                        <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                      </li>
+                                      <li><span>19:00</span>
+                                        <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                      </li>
+                                      <li><span>20:00</span>
+                                        <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                      </li>
+                                      <li><span>21:00</span>
+                                        <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="lineup__add"><span class="timepicker" data-timepicker=""></span></div>
+                                </div>
+                                <div class="lineup__remove"><span class="remove-repeeatter"></span></div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div class="form__item">
                           <div class="form__subitem">
-                            <div class="form__note form__note--col2"><span>+ Добавить члена съемочной группы</span>
+                            <div class="form__note form__note--col2"><span>+ Добавить дату и время</span>
                               <label class="checkbox">
                                 <input type="checkbox" name="undefined"/><span class="checkbox__elem"></span><span class="checkbox__text">Фильм в постоянном доступе</span>
                               </label>

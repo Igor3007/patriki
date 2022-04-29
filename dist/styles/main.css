@@ -1447,7 +1447,7 @@ input {
   max-width: none;
 }
 
-.form-repitter {
+.remove-repeeatter {
   min-width: 52px;
   width: 52px;
   height: 52px;
@@ -1461,11 +1461,11 @@ input {
   cursor: pointer;
 }
 
-.form-repitter:hover {
+.remove-repeeatter:hover {
   background-color: #eee;
 }
 
-.form-repitter::before {
+.remove-repeeatter::before {
   content: '';
   width: 40%;
   display: inline-block;
@@ -2309,6 +2309,7 @@ footer {
 .bind-account {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .bind-account__text {
@@ -2905,6 +2906,85 @@ footer {
 
 .attach-label input {
   display: none;
+}
+
+.lineup {
+  display: flex;
+  width: 100%;
+}
+
+.lineup__time {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.lineup__timeline {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid #BCBCBC;
+  box-sizing: border-box;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.lineup__list ul {
+  display: flex;
+  align-items: center;
+}
+
+.lineup__list ul li {
+  margin: 0 3px;
+}
+
+.lineup__list ul li input {
+  display: none;
+}
+
+.lineup__list ul li span {
+  display: inline-flex;
+  border: 1px solid #bcbcbc;
+  border-radius: 5px;
+  padding: 0.4em 0.5em;
+  font-size: 12px;
+  font-weight: bold;
+  color: #525166;
+}
+
+.lineup__title {
+  color: #525166;
+  margin-right: 1em;
+}
+
+.lineup__add {
+  width: 2em;
+  height: 2em;
+  background-color: #525166;
+  border-radius: 5px;
+  margin-left: auto;
+  color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lineup__add::before,
+.lineup__add::after {
+  content: '';
+  width: 40%;
+  height: 40%;
+  display: block;
+  position: absolute;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNy41aDE1TTcuNSAwdjE1IiBzdHJva2U9IiNmZmYiLz48L3N2Zz4=);
+  background-size: contain;
+  background-position: center;
 }
 
 .layout-column__right {

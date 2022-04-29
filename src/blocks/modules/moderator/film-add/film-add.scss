@@ -1,0 +1,85 @@
+.lineup {
+    display: flex;
+    width: 100%;
+
+    &__time {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        width: 100%;
+    }
+
+    &__timeline {
+        display: flex;
+        align-items: center;
+
+        height: 52px;
+        font-size: 14px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 1px solid #BCBCBC;
+        box-sizing: border-box;
+        border-radius: 5px;
+        flex-grow: 1;
+    }
+
+    &__list {
+        & ul {
+            display: flex;
+            align-items: center;
+
+            & li {
+
+                margin: 0 3px;
+
+                & input {
+                    display: none;
+                }
+
+                & span {
+                    display: inline-flex;
+                    border: 1px solid #bcbcbc;
+                    border-radius: 5px;
+                    padding: 0.4em 0.5em;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: #525166;
+                }
+            }
+        }
+    }
+
+    &__title {
+        color: $main;
+        margin-right: 1em;
+    }
+
+    &__add {
+        width: 2em;
+        height: 2em;
+        background-color: $main;
+        border-radius: 5px;
+        margin-left: auto;
+        color: transparent;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 40%;
+            height: 40%;
+            display: block;
+            position: absolute;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNy41aDE1TTcuNSAwdjE1IiBzdHJva2U9IiNmZmYiLz48L3N2Zz4=);
+            background-size: contain;
+            background-position: center;
+        }
+
+
+
+    }
+}

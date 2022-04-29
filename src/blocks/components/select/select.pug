@@ -1,5 +1,5 @@
-mixin select(data)
-    select
+mixin select(placeholder, data)
+    select( placeholder=''+(placeholder ? placeholder: '')+'' )
       each item, index in data
         option(value=index)= item
 
