@@ -96,23 +96,26 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
-    document.querySelector('[data-attach=poster]').addEventListener('change', function () {
+    if (document.querySelector('[data-attach=poster]')) {
+        document.querySelector('[data-attach=poster]').addEventListener('change', function () {
 
-        let files = this.files;
-        let elem = this;
+            let files = this.files;
+            let elem = this;
 
-        sendFiles(files, elem, function (dataImage) {
+            sendFiles(files, elem, function (dataImage) {
 
-            elem.closest('.film-poster__cover').classList.add('cover--loaded')
-            elem.closest('.film-poster__cover').querySelector('[data-attach="preview-poster"]').src = dataImage
+                elem.closest('.film-poster__cover').classList.add('cover--loaded')
+                elem.closest('.film-poster__cover').querySelector('[data-attach="preview-poster"]').src = dataImage
 
-        });
+            });
 
-    })
+        })
+    }
+
 
 
     /* =============================================
-    repeeter
+    repeater
     ============================================= */
 
     if (document.querySelector('[data-repeeat="add"]')) {
@@ -190,6 +193,90 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
 
     }
+
+    /* ===========================================
+    load message
+    =========================================== */
+
+    if (document.querySelector('.messenger')) {
+
+        const chat = document.querySelector('[data-pane="chat"]')
+        const contacts = document.querySelector('[data-pane="contacts"]')
+        const instanseContacts = OverlayScrollbars(document.querySelector(".messenger__list"), {});
+        const instanseMessages = OverlayScrollbars(document.querySelector(".scroll-min"), {
+            scrollbars: {
+                autoHide: "scroll",
+                autoHideDelay: 300,
+            },
+            callbacks: {
+                onScroll: function (event) {
+                    if (event.target.scrollTop < 100) {
+                        instanseMessages.scroll([0, 2], 100);
+                        loadMessages()
+                    }
+                }
+            }
+        });
+
+        // load messages
+
+        function loadMessages() {
+            window.ajax({
+                url: '/_messages.html',
+                type: 'get',
+                data: {
+                    id: 'user_id'
+                }
+            }, function (status, response) {
+                let div = document.createElement('div')
+                div.innerHTML = response
+                document.querySelector('.scroll-min .os-content').prepend(div)
+            })
+        }
+
+
+
+        document.querySelectorAll('[data-user]').forEach(function (item) {
+            item.addEventListener('click', function () {
+
+                document.querySelector('.messenger__user').innerText = item.querySelector('.messenger-contact__name').innerText
+
+                if (document.body.clientWidth <= 766) {
+                    chat.style.display = 'block'
+                    contacts.style.display = 'none'
+                }
+
+                let user_id = this.dataset.user;
+                console.log(user_id)
+
+                //load messages
+                window.ajax({
+                    url: '/_messages.html',
+                    type: 'get',
+                    data: {
+                        id: user_id
+                    }
+                }, function (status, response) {
+
+                    document.querySelector('.scroll-min .os-content').innerHTML = response
+                    console.log(document.querySelector('.messenger__messages'))
+                    instanseMessages.scroll([0, "100%"], 100);
+                })
+
+            })
+        })
+
+        //back to contacts
+        document.querySelector('.messenger__back').addEventListener('click', function () {
+            contacts.style.display = 'block'
+            chat.style.display = 'none'
+        })
+    }
+
+
+
+
+
 
 
 

@@ -1,0 +1,45 @@
+mixin messenger()
+  .messenger
+    .messenger__contacts(data-pane="contacts")
+      .messenger__new: button.btn.btn-small Новое сообщение
+      .messenger__list
+        each item in moderator.msgrUser
+          +messenger-contact(item)
+    .messenger__chat(data-pane="chat")
+      .messenger__back
+        span Все сообщения
+      .messenger__user Иван зверев
+      .messenger__messages
+        .messenger__scroll.scroll-min
+          +item-message()
+          +item-message(true)
+          +item-message()
+      .messenger__send
+        .messenger__form
+          .messenger__field: textarea(placeholder="Сообщение")
+          .messenger__button
+            +icons('#ic_send', 24)
+
+   
+        
+
+
+mixin messenger-contact(data)
+  .messenger-contact(class=(data.unread ? 'messenger-contact--unread':'') data-user="232130943")
+    .messenger-contact__photo
+      +bgimage(data.logo)
+    .messenger-contact__detail
+      .messenger-contact__name= data.name
+      .messenger-contact__last= data.last
+      .messenger-contact__date= data.date
+
+
+mixin item-message(data)
+  .item-message(class=(data ? 'item-message--my':''))
+    .item-message__head
+      .item-message__photo: +bgimage('/img/common/user.jpg')
+      .item-message__detail
+        .item-message__name Иван зверев
+        .item-message__date Сегодня 19.30
+    .item-message__main
+      span Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. 

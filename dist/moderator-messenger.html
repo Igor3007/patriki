@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Войти</title>
+    <title>Сообщения</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="#{title}">
+    <meta name="keywords" content="#{title}">
     <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
     <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
@@ -26,8 +28,8 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/main.css?v=1.0">
   </head>
-  <body>
-    <header class="header-layout-page">
+  <body class="perf-no-animation">
+    <header>
       <div class="container">
         <div class="header">
           <div class="header__logo"><a href="/"><span class="bgimage" style="background-image: url(/img/common/logo.png)"></span></a></div>
@@ -86,42 +88,186 @@
       </div>
     </header>
     <main>
-      <section class="section-login-block">
+      <section class="section-page-moderator">
         <div class="container">
-          <div class="login-block">
-            <div class="login-block__title">Вход</div>
-            <div class="login-block__desc">Пожалуйста введите свой логин и пароль или авторизируйтесь через социальные сети</div>
-            <div class="login-block__form">
-              <form action="#" method="POST">
-                <div class="form">
-                  <div class="form__item">
-                    <div class="form__subitem">
-                      <input type="text" placeholder="Логин"/>
+          <div class="page-moderator">
+            <div class="page-moderator__aside">
+              <div class="moderator-aside">
+                <div class="moderator-aside__wrp">
+                  <div class="moderator-aside__photo">
+                    <picture>
+                      <source srcset="/img/common/img_user.webp" type="image/webp"/><img src="/img/common/img_user.jpg" loading="lazy" alt="image"/>
+                    </picture>
+                  </div>
+                  <div class="moderator-aside__name">Николай Петров</div>
+                  <div class="moderator-aside__email">nik_petrov@mail.ru</div>
+                  <div class="moderator-aside__invite">
+                    <button class="btn btn-small">Пригласить</button>
+                  </div>
+                  <div class="moderator-aside__nav">
+                    <ul>
+                      <li><a href="moderator-orders.html">Заявки</a></li>
+                      <li><a class="badge" href="moderator-messenger.html">Сообщения</a></li>
+                      <li><a href="moderator-films.html">Фильмы</a></li>
+                      <li><a href="moderator-rating.html">Рейтинги</a></li>
+                      <li><a href="moderator-review.html">Рецензии</a></li>
+                      <li><a href="moderator-profile.html">Профиль</a></li>
+                      <li><a href="moderator-logout.html">Выйти</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page-moderator__content">
+              <div class="head-moderator">
+                <div class="head-moderator__breadcrumb">
+                  <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                    <li><a href="#">Сообщения</a></li>
+                  </ul>
+                </div>
+                <div class="head-moderator__title">
+                  <h1>Сообщения</h1>
+                </div>
+              </div>
+              <div class="main-moderator">
+                <div class="messenger">
+                  <div class="messenger__contacts" data-pane="contacts">
+                    <div class="messenger__new">
+                      <button class="btn btn-small">Новое сообщение</button>
+                    </div>
+                    <div class="messenger__list">
+                      <div class="messenger-contact" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/user.jpg)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Иван зверев</div>
+                          <div class="messenger-contact__last">Три билборда на границе Эббинга, Миссури (2017) / 22-00651</div>
+                          <div class="messenger-contact__date">Сегодня 19.30</div>
+                        </div>
+                      </div>
+                      <div class="messenger-contact messenger-contact--unread" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/user2.jpg)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Анна Жигулёва</div>
+                          <div class="messenger-contact__last">Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй</div>
+                          <div class="messenger-contact__date">Вчера в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="messenger-contact" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/img_user.png)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Иван Иванов</div>
+                          <div class="messenger-contact__last">всеми силами пытается в строй</div>
+                          <div class="messenger-contact__date">Вчера в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="messenger-contact" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/user.jpg)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Иван зверев</div>
+                          <div class="messenger-contact__last">Три билборда на границе Эббинга, Миссури (2017) / 22-00651</div>
+                          <div class="messenger-contact__date">Сегодня 19.30</div>
+                        </div>
+                      </div>
+                      <div class="messenger-contact" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/user2.jpg)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Анастасия Старовойтова</div>
+                          <div class="messenger-contact__last">Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй</div>
+                          <div class="messenger-contact__date">Вчера в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="messenger-contact" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/img_user.png)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Иван зверев</div>
+                          <div class="messenger-contact__last">всеми силами пытается в строй</div>
+                          <div class="messenger-contact__date">Вчера в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="messenger-contact" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/user.jpg)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Иван зверев</div>
+                          <div class="messenger-contact__last">Три билборда на границе Эббинга, Миссури (2017) / 22-00651</div>
+                          <div class="messenger-contact__date">Сегодня 19.30</div>
+                        </div>
+                      </div>
+                      <div class="messenger-contact" data-user="232130943">
+                        <div class="messenger-contact__photo"><span class="bgimage" style="background-image: url(/img/common/user2.jpg)"></span>
+                        </div>
+                        <div class="messenger-contact__detail">
+                          <div class="messenger-contact__name">Анастасия Старовойтова</div>
+                          <div class="messenger-contact__last">Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй</div>
+                          <div class="messenger-contact__date">Вчера в 19.30</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="form__item">
-                    <div class="form__subitem">
-                      <input type="password" placeholder="Пароль"/>
+                  <div class="messenger__chat" data-pane="chat">
+                    <div class="messenger__back"><span>Все сообщения</span></div>
+                    <div class="messenger__user">Иван зверев</div>
+                    <div class="messenger__messages">
+                      <div class="messenger__scroll scroll-min">
+                        <div class="item-message">
+                          <div class="item-message__head">
+                            <div class="item-message__photo"><span class="bgimage" style="background-image: url(/img/common/user.jpg)"></span>
+                            </div>
+                            <div class="item-message__detail">
+                              <div class="item-message__name">Иван зверев</div>
+                              <div class="item-message__date">Сегодня 19.30</div>
+                            </div>
+                          </div>
+                          <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. </span></div>
+                        </div>
+                        <div class="item-message item-message--my">
+                          <div class="item-message__head">
+                            <div class="item-message__photo"><span class="bgimage" style="background-image: url(/img/common/user.jpg)"></span>
+                            </div>
+                            <div class="item-message__detail">
+                              <div class="item-message__name">Иван зверев</div>
+                              <div class="item-message__date">Сегодня 19.30</div>
+                            </div>
+                          </div>
+                          <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. </span></div>
+                        </div>
+                        <div class="item-message">
+                          <div class="item-message__head">
+                            <div class="item-message__photo"><span class="bgimage" style="background-image: url(/img/common/user.jpg)"></span>
+                            </div>
+                            <div class="item-message__detail">
+                              <div class="item-message__name">Иван зверев</div>
+                              <div class="item-message__date">Сегодня 19.30</div>
+                            </div>
+                          </div>
+                          <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. </span></div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form__item">
-                    <div class="form__subitem">
-                      <button class="btn btn-full" type="submit">Войти в личный кабинет</button>
+                    <div class="messenger__send">
+                      <div class="messenger__form">
+                        <div class="messenger__field">
+                          <textarea placeholder="Сообщение"></textarea>
+                        </div>
+                        <div class="messenger__button">
+                          <svg width="24" height="24">
+                            <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                          </svg>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
-            <div class="login-block__oauth">
-              <ul>
-                <li><a href="#">
-                    <svg width="25" height="25">
-                      <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
-                    </svg></a></li>
-              </ul>
-            </div>
-            <div class="login-block__signup"><span>Нет личного аккаунта?</span><a href="/rigistration.html">Зарегистрироваться</a></div>
-            <div class="login-block__recovery"><a href="/recovery.html">Восстановить пароль</a></div>
           </div>
         </div>
       </section>
@@ -190,7 +336,9 @@
               </div>
             </div>
     </footer>
-    <script src="js/main.js"></script>
-    <script src="js/vendor.js"></script>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/lib/OverlayScrollbars.min.js"></script>
+    <script src="/js/moderator.js"></script>
   </body>
 </html>
