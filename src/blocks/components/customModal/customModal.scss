@@ -33,22 +33,36 @@
 }
 
 .af-popup__wrp {
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: auto;
+    // max-width: 600px;
+    // min-height: 80%;
+    // margin: 50px 15px 50px 15px;
+    // z-index: 102;
+    // height: auto;
+    // margin: 50px auto;
+
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: 40%;
     bottom: auto;
     max-width: 600px;
-    min-height: 80%;
+    min-height: auto;
     margin: 50px 15px 50px 15px;
     z-index: 102;
     height: auto;
+    margin: 50px auto;
+    transform: translateY(-50%);
 }
 
 .af-popup__content {
     width: 100%;
     height: 100%;
-    background-color: #eee;
+    background-color: #fff;
     animation: 0.2s ease both fancybox-zoomInUp;
     padding: 20px;
 
@@ -58,7 +72,7 @@
     height: 24px;
     text-align: right;
     position: absolute;
-    bottom: 101%;
+    bottom: calc(100% + 15px);
     right: 0;
     cursor: pointer;
     z-index: 101;

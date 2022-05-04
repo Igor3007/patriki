@@ -1,15 +1,34 @@
 extends ../layouts/moderator
-include ../../blocks/modules/login-block/login-block.pug
+include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
+include ../../blocks/modules/moderator/film-poster/film-poster.pug 
+include ../../blocks/modules/moderator/film-edit/film-edit.pug 
 
 
 
 block variables
   include ../../data/data.pug
   -
-    title = 'Войти'
+    title = 'Редактировать карточку фильма'
 
 
 block content
-  +login-block
+  +head-moderator({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Редактировать карточку фильма',
+    ],
+
+    title: 'Редактировать карточку фильма',
+    button: false
+  })
+
+  
+
+  .main-moderator
+    .layout-column
+      .layout-column__left: +film-poster-edit()
+      .layout-column__right: +film-edit() 
+
 
 

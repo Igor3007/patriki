@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Войти</title>
+    <title>Редактировать карточку фильма</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -119,45 +119,269 @@
               </div>
             </div>
             <div class="page-moderator__content">
-              <section class="section-login-block">
-                <div class="container">
-                  <div class="login-block">
-                    <div class="login-block__title">Вход</div>
-                    <div class="login-block__desc">Пожалуйста введите свой логин и пароль или авторизируйтесь через социальные сети</div>
-                    <div class="login-block__form">
+              <div class="head-moderator">
+                <div class="head-moderator__breadcrumb">
+                  <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                    <li><a href="#">Редактировать карточку фильма</a></li>
+                  </ul>
+                </div>
+                <div class="head-moderator__title">
+                  <h1>Редактировать карточку фильма</h1>
+                </div>
+              </div>
+              <div class="main-moderator">
+                <div class="layout-column">
+                  <div class="layout-column__left">
+                    <div class="film-poster">
+                      <div class="film-poster__cover cover--loaded">
+                        <div class="film-poster__btn">
+                          <label class="attach-label"><span class="bgimage" style="background-image: url(/img/common/camera.png)"></span><span class="text-upload">Изменить афишу</span>
+                            <input type="file" name="poster-img" data-attach="poster"/>
+                          </label>
+                        </div>
+                        <div class="film-poster__image">
+                          <picture><img src="/img/common/cover.jpg" data-attach="preview-poster"/></picture>
+                        </div>
+                      </div>
+                      <div class="film-poster__title">Фильм загружен на платформу</div>
+                      <div class="film-poster__upload">
+                        <label class="attach-label">
+                          <button class="btn">Редактировать</button>
+                          <input type="file" name="film-file"/>
+                        </label>
+                      </div>
+                      <div class="film-poster__link">
+                        <div class="film-poster__link-title">Ссылка для скачивания:</div>
+                        <div class="film-poster__link-url"><a href="#">
+                            <svg width="20" height="20">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
+                            </svg><span>https://somevideohosting.com/film2</span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layout-column__right">
+                    <div class="film-add">
                       <form action="#" method="POST">
                         <div class="form">
                           <div class="form__item">
                             <div class="form__subitem">
-                              <input type="text" placeholder="Логин"/>
+                              <label class="edit-input"><span>Название фильма</span>
+                                <input type="text" value="" placeholder="Название фильма"/>
+                              </label>
                             </div>
                           </div>
                           <div class="form__item">
                             <div class="form__subitem">
-                              <input type="password" placeholder="Пароль"/>
+                              <label class="edit-input"><span>Заявитель (ФИО)</span>
+                                <input type="text" placeholder="Заявитель (ФИО)"/>
+                              </label>
+                            </div>
+                            <div class="form__subitem">
+                              <label class="edit-input"><span>Производитель</span>
+                                <input type="text" placeholder="Производитель"/>
+                              </label>
                             </div>
                           </div>
                           <div class="form__item">
                             <div class="form__subitem">
-                              <button class="btn btn-full" type="submit">Войти в личный кабинет</button>
+                              <label class="edit-input"> <span>Телефон</span>
+                                <input type="tel" placeholder="Телефон"/>
+                              </label>
+                            </div>
+                            <div class="form__subitem">
+                              <label class="edit-input"> <span>Email</span>
+                                <input type="email" placeholder="Email"/>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="form__label">Фестиваль</div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <select placeholder="Статус">
+                                <option value="0" selected="selected">В конкурсе</option>
+                                <option value="1">Статус 2</option>
+                              </select>
+                            </div>
+                            <div class="form__subitem">
+                              <select placeholder="Программа">
+                                <option value="0" selected="selected">Полный метр</option>
+                                <option value="1">Программа 2</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form__label">Информация о фильме</div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <select placeholder="Страна происхождения">
+                                <option value="0" selected="selected">Россия</option>
+                                <option value="1">Армения</option>
+                                <option value="2">Китай</option>
+                                <option value="3">Турция</option>
+                              </select>
+                            </div>
+                            <div class="form__subitem">
+                              <label class="edit-input"><span>Жанр</span>
+                                <input type="text" placeholder="Жанр"/>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__item"> 
+                              <div class="form__subitem">
+                                <select placeholder="Год производства">
+                                  <option value="0" selected="selected">2020</option>
+                                  <option value="1">2021</option>
+                                </select>
+                              </div>
+                              <div class="form__subitem">
+                                <label class="edit-input"><span>Дата подачи</span>
+                                  <input type="date" placeholder="Дата подачи"/>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="form__item"> 
+                              <div class="form__subitem">
+                                <label class="edit-input"><span>Хронометраж (мин)</span>
+                                  <input type="text" placeholder="Хронометраж (мин)"/>
+                                </label>
+                              </div>
+                              <div class="form__subitem">
+                                <select placeholder="Язык">
+                                  <option value="0" selected="selected">Русский</option>
+                                  <option value="1">English</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__label">информация о съемочной группе</div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <label class="edit-input"><span>ФИО</span>
+                                <input type="text" name="fio[]" placeholder="ФИО"/>
+                              </label>
+                            </div>
+                            <div class="form__subitem">
+                              <label class="edit-input"><span>Продюсер</span>
+                                <input type="text" name="post[]" placeholder="Продюсер" disabled="disabled" value="Продюсер"/>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <label class="edit-input"><span>ФИО</span>
+                                <input type="text" name="fio[]" placeholder="ФИО"/>
+                              </label>
+                            </div>
+                            <div class="form__subitem">
+                              <label class="edit-input"><span>Режиссер</span>
+                                <input type="text" name="post[]" placeholder="Режиссер" disabled="disabled" value="Режиссер"/>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="form__note"><span>Заполнить карточку режисера</span></div>
+                            </div>
+                          </div>
+                          <div class="form__group" data-repeeat="container">
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <label class="edit-input"><span>ФИО</span>
+                                  <input type="text" name="fio[]" placeholder="ФИО"/>
+                                </label>
+                              </div>
+                              <div class="form__subitem">
+                                <label class="edit-input"><span>Оператор</span>
+                                  <input type="text" placeholder="Оператор" name="post[]" disabled="disabled" value="Оператор"/>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <label class="edit-input"><span>ФИО</span>
+                                  <input type="text" name="fio[]" placeholder="ФИО"/>
+                                </label>
+                              </div>
+                              <div class="form__subitem"> 
+                                <label class="edit-input"><span>Звукорежиссер</span>
+                                  <input type="text" placeholder="Звукорежиссер" name="post[]" disabled="disabled" value="Звукорежиссер"/>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="form__note"><span data-repeeat="add">+ Добавить члена съемочной группы</span></div>
+                            </div>
+                          </div>
+                          <div class="form__label">Логлайн</div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <textarea placeholder="Описание фильма"></textarea>
+                            </div>
+                          </div>
+                          <div class="form__label">Расписание показов</div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="lineup-container" data-lineup="container">
+                                <div class="lineup" data-lineup="1">
+                                  <div class="lineup__date">
+                                    <input type="date" placeholder="Date"/>
+                                  </div>
+                                  <div class="lineup__time">
+                                    <div class="lineup__timeline">
+                                      <div class="lineup__title">Время</div>
+                                      <div class="lineup__list">
+                                        <ul>
+                                          <li><span>17:00</span>
+                                            <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                          </li>
+                                          <li><span>18:00</span>
+                                            <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                          </li>
+                                          <li><span>19:00</span>
+                                            <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                          </li>
+                                          <li><span>20:00</span>
+                                            <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                          </li>
+                                          <li><span>21:00</span>
+                                            <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                      <div class="lineup__add"><span class="timepicker" data-timepicker=""></span></div>
+                                    </div>
+                                    <div class="lineup__remove"><span class="remove-repeeatter"></span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="form__note form__note--col2"><span data-lineup="repeeat">+ Добавить дату и время</span>
+                                <label class="checkbox">
+                                  <input type="checkbox" name="undefined"/><span class="checkbox__elem"></span><span class="checkbox__text">Фильм в постоянном доступе</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="form__submit">
+                                <button class="btn" type="submit">сохранить</button>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </form>
                     </div>
-                    <div class="login-block__oauth">
-                      <ul>
-                        <li><a href="#">
-                            <svg width="25" height="25">
-                              <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
-                            </svg></a></li>
-                      </ul>
-                    </div>
-                    <div class="login-block__signup"><span>Нет личного аккаунта?</span><a href="/rigistration.html">Зарегистрироваться</a></div>
-                    <div class="login-block__recovery"><a href="/recovery.html">Восстановить пароль</a></div>
                   </div>
                 </div>
-              </section>
+              </div>
             </div>
           </div>
         </div>

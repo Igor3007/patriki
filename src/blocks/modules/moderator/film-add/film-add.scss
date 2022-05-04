@@ -1,12 +1,40 @@
-.lineup {
-    display: flex;
+.lineup-container {
+    margin: -5px 0;
     width: 100%;
+}
+
+.lineup__list {
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.lineup {
+
+    width: 100%;
+    margin: 5px 0;
+
+    @media screen and (min-width: $w760) {
+        display: flex;
+    }
+
+    &__date {
+        margin-bottom: 10px;
+
+        @media screen and (min-width: $w760) {
+            margin-bottom: 0;
+        }
+    }
 
     &__time {
         display: flex;
         align-items: center;
-        margin-left: 10px;
         width: 100%;
+        overflow-x: auto;
+
+        @media screen and (min-width: $w760) {
+            margin-left: 10px;
+        }
     }
 
     &__timeline {
@@ -24,6 +52,19 @@
     }
 
     &__list {
+
+        @media screen and (min-width: $w1440) {
+            max-width: 457px;
+        }
+
+        @media screen and (min-width: $w1200) {
+            max-width: 194px;
+        }
+
+        @media screen and (min-width: $w760) {
+            max-width: 300px;
+        }
+
         & ul {
             display: flex;
             align-items: center;
@@ -44,6 +85,29 @@
                     font-size: 12px;
                     font-weight: bold;
                     color: #525166;
+                    position: relative;
+
+                    &:hover {
+                        background-color: #525166;
+                        border-color: $main;
+
+                        &::before {
+                            content: '+';
+                            transform: rotate(-45deg);
+                            color: #fff;
+                            font-weight: normal;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            font-size: 16px;
+                        }
+                    }
                 }
             }
         }
@@ -55,31 +119,84 @@
     }
 
     &__add {
-        width: 2em;
-        height: 2em;
-        background-color: $main;
-        border-radius: 5px;
-        margin-left: auto;
-        color: transparent;
-        position: relative;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
+        margin-left: auto;
 
-        &::before,
-        &::after {
-            content: '';
-            width: 40%;
-            height: 40%;
-            display: block;
-            position: absolute;
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNy41aDE1TTcuNSAwdjE1IiBzdHJva2U9IiNmZmYiLz48L3N2Zz4=);
-            background-size: contain;
-            background-position: center;
+
+        & span {
+            width: 2em;
+            height: 2em;
+            background-color: $main;
+            border-radius: 5px;
+            color: transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 40%;
+                height: 40%;
+                display: block;
+                position: absolute;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNy41aDE1TTcuNSAwdjE1IiBzdHJva2U9IiNmZmYiLz48L3N2Zz4=);
+                background-size: contain;
+                background-position: center;
+            }
         }
 
 
 
+    }
+}
+
+.af-timepicker {
+
+    padding: 30px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 133%;
+        color: $main;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    &__fields {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
+
+        & span {
+            font-size: 22px;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+
+        & input {
+            height: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 0 0.8em;
+            max-width: 7em;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid $gray;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
     }
 }

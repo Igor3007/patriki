@@ -170,27 +170,144 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         document.querySelectorAll('[data-timepicker]').forEach(function (item) {
 
-
-            item.addEventListener('click', function (event) {
-                console.log(item)
-            })
-
-            //add event
-            // item.addEventListener('click', function () {
-
-            //     console.log('inMapPopup')
-
-            //     var inMapPopup = new customModal()
-
-            //     console.log(inMapPopup)
-
-
-            //     inMapPopup.open('<div id="af-timepicker">timepicker</div>', function (instanse) {
-
-            //     })
-            // })
+            initTimepicker(item)
 
         })
+
+        function addEventRemoveTime(collection) {
+            collection.forEach(function (item) {
+                item.removeEventListener('click', function () {}, false)
+                item.addEventListener('click', function () {
+                    if (confirm('Вы действительно хотите удалить?')) {
+                        this.remove()
+                    }
+                })
+            })
+        }
+
+        function sortableElem(parent) {
+
+            let nodeList = parent.querySelectorAll('.lineup__list li')
+            let arr = Array.prototype.slice.call(nodeList, 0).sort((a, b) => {
+
+                if (a.innerText > b.innerText) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+
+            });
+
+            arr.forEach(function (item) {
+                parent.querySelector('.lineup__list ul').append(item)
+            })
+
+        }
+
+        function initTimepicker(item) {
+
+            //add event
+            item.addEventListener('click', function (event) {
+
+                var timepickerPopup = new customModal()
+
+                var template = `
+                    <div id="af-timepicker" class="af-timepicker">
+                        <div class="af-timepicker__title" >Добавить время</div>
+                        <div class="af-timepicker__fields" >
+                            <input type="text" value="" placeholder="Часы" data-timepicker="hour">
+                            <span>:</span>
+                            <input type="text" value="" placeholder="Минуты" data-timepicker="min">
+                        </div>
+                        <div class="af-timepicker__btn" >
+                            <button class="btn" >Добавить</button>
+                        </div>
+                    </div>
+                `
+
+                let parent = item.closest('.lineup__timeline')
+
+                timepickerPopup.open(template, function (instanse) {
+
+                    //mask init 
+
+                    let inputHour = document.querySelector('[data-timepicker="hour"]')
+                    var mask = Maska.create(inputHour, {
+                        mask: '#*',
+                        preprocessor: function (value) {
+                            if (value > 23) {
+                                return '23'
+                            } else {
+                                return value
+                            }
+                        }
+                    });
+                    let inputMin = document.querySelector('[data-timepicker="min"]')
+                    var mask = Maska.create(inputMin, {
+                        mask: '#*',
+                        preprocessor: function (value) {
+                            if (value > 59) {
+                                return '59'
+                            } else {
+                                return value
+                            }
+                        }
+                    });
+
+
+                    //click add time
+                    document.querySelector('.af-timepicker__btn').addEventListener('click', function () {
+
+                        if (!inputHour.value.length || !inputMin.value.length) {
+                            return false
+                        }
+
+                        let li = document.createElement('li')
+                        let inputTime = inputHour.value + ':' + inputMin.value
+
+                        li.innerHTML = `
+                            <span>${inputTime}</span>
+                            <input type="checkbox" name="time[]" value="${inputTime}" checked="checked">
+                        `
+                        parent.querySelector('.lineup__list ul').append(li)
+
+                        //remove add elem
+                        li.addEventListener('click', function () {
+                            if (confirm('Вы действительно хотите удалить?')) {
+                                this.remove()
+                            }
+                        })
+
+                        // close popup
+                        timepickerPopup.close()
+
+                        // sortable add elems
+                        sortableElem(parent)
+
+
+
+                    })
+                })
+            })
+
+        }
+
+
+
+        //remove item lineup
+
+        function addEventremoveLineup(item) {
+            item.querySelector('.remove-repeeatter').addEventListener('click', function (event) {
+                if (confirm('Вы действительно хотите удалить?')) {
+                    event.target.closest('.lineup').remove()
+                }
+
+            })
+        }
+
+
+        addEventRemoveTime(document.querySelectorAll('.lineup__list li'))
+
 
     }
 
@@ -273,7 +390,41 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     }
 
+    /* ===========================================
+        load message
+    =========================================== */
 
+    if (document.querySelector('[data-lineup="container"]')) {
+
+
+        document.querySelectorAll('[data-lineup="repeeat"]').forEach(function (item) {
+
+
+            item.addEventListener('click', function () {
+                const container = document.querySelector('[data-lineup="container"]')
+                const fieldRepeeat = container.children[0].cloneNode(true)
+                const lastElem = fieldRepeeat.children[(fieldRepeeat.children.length - 1)]
+
+                //max 10 fields
+                if (container.querySelectorAll('.remove-repeeatter').length > 9) {
+                    window.STATUS.err('Допустимо не более 10 элементов')
+                    return false;
+                }
+
+                fieldRepeeat.querySelectorAll('li').forEach(function (item, index) {
+                    if (index) item.remove()
+                })
+
+                initTimepicker(fieldRepeeat.querySelector('[data-timepicker=""]'))
+                addEventremoveLineup(fieldRepeeat)
+
+                container.append(fieldRepeeat)
+
+                addEventRemoveTime(fieldRepeeat.querySelectorAll('.lineup__list li'))
+            })
+        })
+
+    }
 
 
 

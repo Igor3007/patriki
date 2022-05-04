@@ -1,0 +1,137 @@
+mixin film-edit()
+    .film-add
+      form(action='#' method='POST')
+        .form
+          .form__item: .form__subitem
+            label.edit-input
+              span Название фильма
+              input(type="text" value="" placeholder="Название фильма")
+          .form__item
+            .form__subitem
+              label.edit-input
+                span Заявитель (ФИО)
+                input(type="text" placeholder="Заявитель (ФИО)")
+            .form__subitem
+              label.edit-input
+                span Производитель
+                input(type="text" placeholder="Производитель")
+          .form__item
+            .form__subitem
+              label.edit-input 
+                span Телефон
+                input(type="tel" placeholder="Телефон")
+            .form__subitem
+              label.edit-input 
+                span Email
+                input(type="email" placeholder="Email")
+
+          .form__label Фестиваль
+          .form__item
+            .form__subitem: +select-edit('Статус', ['В конкурсе','Статус 2'])
+            .form__subitem: +select-edit('Программа', ['Полный метр','Программа 2'])
+              
+           
+          .form__label Информация о фильме
+          .form__item
+            .form__subitem: +select-edit('Страна происхождения', ['Россия','Армения','Китай','Турция'])
+            .form__subitem
+              label.edit-input
+                span Жанр
+                input(type="text" placeholder="Жанр")
+
+          .form__item
+            .form__item 
+              .form__subitem: +select-edit('Год производства', ['2020','2021'])
+              .form__subitem
+                label.edit-input
+                  span Дата подачи
+                  input(type="date" placeholder="Дата подачи")
+            .form__item 
+              .form__subitem
+                label.edit-input
+                  span Хронометраж (мин)
+                  input(type="text" placeholder="Хронометраж (мин)")
+              .form__subitem: +select-edit('Язык',['Русский','English'])
+
+          .form__label информация о съемочной группе
+          .form__item
+            .form__subitem
+              label.edit-input
+                span ФИО
+                input(type="text" name="fio[]" placeholder="ФИО")
+            .form__subitem
+              label.edit-input
+                span Продюсер
+                input(type="text" name="post[]" placeholder="Продюсер" disabled value="Продюсер")
+          .form__item
+            .form__subitem
+              label.edit-input
+                span ФИО
+                input(type="text" name="fio[]" placeholder="ФИО")
+            .form__subitem
+              label.edit-input
+                span Режиссер
+                input(type="text" name="post[]" placeholder="Режиссер" disabled value="Режиссер")
+          .form__item
+            .form__subitem: .form__note: span Заполнить карточку режисера
+
+          .form__group(data-repeeat="container")
+            .form__item
+              .form__subitem
+                label.edit-input
+                  span ФИО
+                  input(type="text" name="fio[]" placeholder="ФИО")
+              .form__subitem
+                label.edit-input
+                  span Оператор
+                  input(type="text" placeholder="Оператор" name="post[]" disabled value="Оператор")
+            .form__item
+              .form__subitem
+                label.edit-input
+                  span ФИО
+                  input(type="text" name="fio[]" placeholder="ФИО")
+              .form__subitem 
+                label.edit-input
+                  span Звукорежиссер
+                  input(type="text" placeholder="Звукорежиссер" name="post[]" disabled value="Звукорежиссер")
+          
+          .form__item
+            .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
+          
+          .form__label Логлайн
+          .form__item
+            .form__subitem: textarea(placeholder="Описание фильма")
+
+          .form__label Расписание показов
+          .form__item
+            .form__subitem
+              .lineup-container(data-lineup="container"): +lineup()
+
+              
+              
+
+          .form__item
+            .form__subitem
+              .form__note.form__note--col2
+                span(data-lineup="repeeat") + Добавить дату и время
+                +checkbox('Фильм в постоянном доступе')
+          .form__item
+            .form__subitem
+              .form__submit: button.btn(type="submit") сохранить
+
+
+mixin lineup
+  .lineup(data-lineup="1")
+    .lineup__date: input(type="date" placeholder="Date")
+    .lineup__time
+      .lineup__timeline
+        .lineup__title Время
+        .lineup__list
+          ul
+            each li in [17,18,19,20,21]
+              li
+                span= li+':00'
+                input(type="checkbox" name="time[]" value=li+":00" checked)
+        .lineup__add: span.timepicker(data-timepicker="")
+
+      .lineup__remove: span.remove-repeeatter

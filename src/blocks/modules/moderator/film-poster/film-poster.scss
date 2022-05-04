@@ -30,6 +30,7 @@
                 & .film-poster__btn {
                     background-color: rgba($color: #fff, $alpha: 0.7);
                     transition: 0.4s ease;
+
                 }
             }
         }
@@ -90,6 +91,48 @@
             }
         }
     }
+
+    &__title {
+        text-align: center;
+        color: $main;
+        padding-bottom: 10px;
+        font-weight: 500;
+    }
+
+    &__link {
+
+        padding-top: 30px;
+        overflow: hidden;
+
+        &-title {
+            text-align: center;
+            padding-bottom: 5px;
+            color: #92919F;
+        }
+
+        &-url {
+            & a {
+                display: flex;
+                align-items: center;
+
+                & span {
+                    margin-left: 10px;
+                    font-weight: 600;
+                    text-decoration: underline;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: block;
+                    @include line-clamp(2);
+                }
+
+                & svg {
+                    min-width: 20px;
+                }
+            }
+        }
+    }
+
+
 }
 
 .attach-label {

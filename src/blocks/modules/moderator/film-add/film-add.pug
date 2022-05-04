@@ -1,5 +1,6 @@
 mixin film-add()
     .film-add
+      form(action='#' method='POST')
         .form
           .form__item: .form__subitem: input(type="text" placeholder="Название фильма")
           .form__item
@@ -64,7 +65,8 @@ mixin film-add()
 
           .form__label Расписание показов
           .form__item
-            .form__subitem: +lineup()
+            .form__subitem
+              .lineup-container(data-lineup="container"): +lineup()
 
               
               
@@ -72,7 +74,7 @@ mixin film-add()
           .form__item
             .form__subitem
               .form__note.form__note--col2
-                span + Добавить дату и время
+                span(data-lineup="repeeat") + Добавить дату и время
                 +checkbox('Фильм в постоянном доступе')
           .form__item
             .form__subitem
@@ -80,7 +82,7 @@ mixin film-add()
 
 
 mixin lineup
-  .lineup
+  .lineup(data-lineup="1")
     .lineup__date: input(type="date" placeholder="Date")
     .lineup__time
       .lineup__timeline
