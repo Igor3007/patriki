@@ -132,255 +132,529 @@
                 </div>
               </div>
               <div class="main-moderator">
-                <div class="layout-column">
-                  <div class="layout-column__left">
-                    <div class="film-poster">
-                      <div class="film-poster__cover cover--loaded">
-                        <div class="film-poster__btn">
-                          <label class="attach-label"><span class="bgimage" style="background-image: url(/img/common/camera.png)"></span><span class="text-upload">Изменить афишу</span>
-                            <input type="file" name="poster-img" data-attach="poster"/>
+                <form action="#" method="POST" onsubmit="return false">
+                  <div class="layout-column">
+                    <div class="layout-column__left">
+                      <div class="film-poster">
+                        <div class="film-poster__cover cover--loaded active" data-lang="ru">
+                          <div class="film-poster__btn">
+                            <label class="attach-label"><span class="bgimage" style="background-image: url(/img/common/camera.png)"></span><span class="text-upload">Изменить афишу</span>
+                              <input type="file" name="poster-img-ru" data-attach="poster"/>
+                            </label>
+                          </div>
+                          <div class="film-poster__image">
+                            <picture><img src="/img/common/cover.jpg" data-attach="preview-poster"/></picture>
+                          </div>
+                        </div>
+                        <div class="film-poster__cover cover--loaded" data-lang="en">
+                          <div class="film-poster__btn">
+                            <label class="attach-label"><span class="bgimage" style="background-image: url(/img/common/camera.png)"></span><span class="text-upload">Изменить афишу</span>
+                              <input type="file" name="poster-img-en" data-attach="poster"/>
+                            </label>
+                          </div>
+                          <div class="film-poster__image">
+                            <picture><img src="/img/common/cover.jpg" data-attach="preview-poster"/></picture>
+                          </div>
+                        </div>
+                        <div class="film-poster__title">Фильм загружен на платформу</div>
+                        <div class="film-poster__upload">
+                          <label class="attach-label">
+                            <button class="btn">Редактировать</button>
+                            <input type="file" name="film-file"/>
                           </label>
                         </div>
-                        <div class="film-poster__image">
-                          <picture><img src="/img/common/cover.jpg" data-attach="preview-poster"/></picture>
+                        <div class="film-poster__link">
+                          <div class="film-poster__link-title">Ссылка для скачивания:</div>
+                          <div class="film-poster__link-url"><a href="#">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
+                              </svg><span>https://somevideohosting.com/film2</span></a></div>
                         </div>
                       </div>
-                      <div class="film-poster__title">Фильм загружен на платформу</div>
-                      <div class="film-poster__upload">
-                        <label class="attach-label">
-                          <button class="btn">Редактировать</button>
-                          <input type="file" name="film-file"/>
-                        </label>
-                      </div>
-                      <div class="film-poster__link">
-                        <div class="film-poster__link-title">Ссылка для скачивания:</div>
-                        <div class="film-poster__link-url"><a href="#">
-                            <svg width="20" height="20">
-                              <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
-                            </svg><span>https://somevideohosting.com/film2</span></a></div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="layout-column__right">
-                    <div class="film-add">
-                      <form action="#" method="POST">
-                        <div class="form">
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>Название фильма</span>
-                                <input type="text" value="" placeholder="Название фильма"/>
-                              </label>
-                            </div>
+                    <div class="layout-column__right">
+                      <div class="film-edit">
+                        <div class="film-edit__metric">
+                          <div class="film-metric">
+                            <div class="film-metric__title">Количество <br> просмотров</div>
+                            <div class="film-metric__total">98</div>
                           </div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>Заявитель (ФИО)</span>
-                                <input type="text" placeholder="Заявитель (ФИО)"/>
-                              </label>
-                            </div>
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>Производитель</span>
-                                <input type="text" placeholder="Производитель"/>
-                              </label>
-                            </div>
+                          <div class="film-metric">
+                            <div class="film-metric__title">Средняя оценка <br> зрителей</div>
+                            <div class="film-metric__total">9.2</div>
                           </div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <label class="edit-input"> <span>Телефон</span>
-                                <input type="tel" placeholder="Телефон"/>
-                              </label>
-                            </div>
-                            <div class="form__subitem">
-                              <label class="edit-input"> <span>Email</span>
-                                <input type="email" placeholder="Email"/>
-                              </label>
-                            </div>
+                          <div class="film-metric">
+                            <div class="film-metric__title">Общее время <br> просмотра</div>
+                            <div class="film-metric__total">10:34</div>
                           </div>
-                          <div class="form__label">Фестиваль</div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <select placeholder="Статус">
-                                <option value="0" selected="selected">В конкурсе</option>
-                                <option value="1">Статус 2</option>
-                              </select>
-                            </div>
-                            <div class="form__subitem">
-                              <select placeholder="Программа">
-                                <option value="0" selected="selected">Полный метр</option>
-                                <option value="1">Программа 2</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="form__label">Информация о фильме</div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <select placeholder="Страна происхождения">
-                                <option value="0" selected="selected">Россия</option>
-                                <option value="1">Армения</option>
-                                <option value="2">Китай</option>
-                                <option value="3">Турция</option>
-                              </select>
-                            </div>
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>Жанр</span>
-                                <input type="text" placeholder="Жанр"/>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="form__item">
-                            <div class="form__item"> 
-                              <div class="form__subitem">
-                                <select placeholder="Год производства">
-                                  <option value="0" selected="selected">2020</option>
-                                  <option value="1">2021</option>
-                                </select>
+                          <div class="film-metric">
+                            <div class="film-metric__title">Выбор экпертов</div>
+                            <div class="film-metric__vote">
+                              <div class="film-metric__like">
+                                <svg width="20" height="20">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                                </svg><span>5</span>
                               </div>
-                              <div class="form__subitem">
-                                <label class="edit-input"><span>Дата подачи</span>
-                                  <input type="date" placeholder="Дата подачи"/>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="form__item"> 
-                              <div class="form__subitem">
-                                <label class="edit-input"><span>Хронометраж (мин)</span>
-                                  <input type="text" placeholder="Хронометраж (мин)"/>
-                                </label>
-                              </div>
-                              <div class="form__subitem">
-                                <select placeholder="Язык">
-                                  <option value="0" selected="selected">Русский</option>
-                                  <option value="1">English</option>
-                                </select>
+                              <div class="film-metric__dislike">
+                                <svg width="20" height="20">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                                </svg><span>2</span>
                               </div>
                             </div>
                           </div>
-                          <div class="form__label">информация о съемочной группе</div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>ФИО</span>
-                                <input type="text" name="fio[]" placeholder="ФИО"/>
-                              </label>
-                            </div>
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>Продюсер</span>
-                                <input type="text" name="post[]" placeholder="Продюсер" disabled="disabled" value="Продюсер"/>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>ФИО</span>
-                                <input type="text" name="fio[]" placeholder="ФИО"/>
-                              </label>
-                            </div>
-                            <div class="form__subitem">
-                              <label class="edit-input"><span>Режиссер</span>
-                                <input type="text" name="post[]" placeholder="Режиссер" disabled="disabled" value="Режиссер"/>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <div class="form__note"><span>Заполнить карточку режисера</span></div>
-                            </div>
-                          </div>
-                          <div class="form__group" data-repeeat="container">
-                            <div class="form__item">
-                              <div class="form__subitem">
-                                <label class="edit-input"><span>ФИО</span>
-                                  <input type="text" name="fio[]" placeholder="ФИО"/>
-                                </label>
-                              </div>
-                              <div class="form__subitem">
-                                <label class="edit-input"><span>Оператор</span>
-                                  <input type="text" placeholder="Оператор" name="post[]" disabled="disabled" value="Оператор"/>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="form__item">
-                              <div class="form__subitem">
-                                <label class="edit-input"><span>ФИО</span>
-                                  <input type="text" name="fio[]" placeholder="ФИО"/>
-                                </label>
-                              </div>
-                              <div class="form__subitem"> 
-                                <label class="edit-input"><span>Звукорежиссер</span>
-                                  <input type="text" placeholder="Звукорежиссер" name="post[]" disabled="disabled" value="Звукорежиссер"/>
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <div class="form__note"><span data-repeeat="add">+ Добавить члена съемочной группы</span></div>
-                            </div>
-                          </div>
-                          <div class="form__label">Логлайн</div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <textarea placeholder="Описание фильма"></textarea>
-                            </div>
-                          </div>
-                          <div class="form__label">Расписание показов</div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <div class="lineup-container" data-lineup="container">
-                                <div class="lineup" data-lineup="1">
-                                  <div class="lineup__date">
-                                    <input type="date" placeholder="Date"/>
+                        </div>
+                        <div class="film-edit__tabs">
+                          <ul class="form-tabs" data-tab-nav="">
+                            <li class="active"><a href="#ru">
+                                <button class="btn btn-line">Фильм на русском</button></a></li>
+                            <li><a href="#en">
+                                <button class="btn btn-line">Фильм на английском</button></a></li>
+                            <li><a href="#comments">
+                                <button class="btn btn-line">Комментарии</button></a></li>
+                            <li><a href="#vote">
+                                <button class="btn btn-line">Оценки</button></a></li>
+                          </ul>
+                        </div>
+                        <div class="film-tab-container">
+                          <div class="film-tab-item active" data-tab-item="ru">
+                            <div class="form">
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="Левиафан"/>
+                                    <label>Название фильма</label>
                                   </div>
-                                  <div class="lineup__time">
-                                    <div class="lineup__timeline">
-                                      <div class="lineup__title">Время</div>
-                                      <div class="lineup__list">
-                                        <ul>
-                                          <li><span>17:00</span>
-                                            <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
-                                          </li>
-                                          <li><span>18:00</span>
-                                            <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
-                                          </li>
-                                          <li><span>19:00</span>
-                                            <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
-                                          </li>
-                                          <li><span>20:00</span>
-                                            <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
-                                          </li>
-                                          <li><span>21:00</span>
-                                            <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="lineup__add"><span class="timepicker" data-timepicker=""></span></div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="Екатерина Самойлова"/>
+                                    <label>Заявитель (ФИО)</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="New Line Cinema"/>
+                                    <label>Производитель</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="tel" value="+7(384)409-45-56"/>
+                                    <label>Телефон</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="email" value="leviafan_film@mail.ru"/>
+                                    <label>Email</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Фестиваль</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <select placeholder="Статус">
+                                    <option value="0" selected="selected">В конкурсе</option>
+                                    <option value="1">Статус 2</option>
+                                  </select>
+                                </div>
+                                <div class="form__subitem">
+                                  <select placeholder="Программа">
+                                    <option value="0" selected="selected">Полный метр</option>
+                                    <option value="1">Программа 2</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form__label">Информация о фильме</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <select placeholder="Страна происхождения">
+                                    <option value="0" selected="selected">Россия</option>
+                                    <option value="1">Армения</option>
+                                    <option value="2">Китай</option>
+                                    <option value="3">Турция</option>
+                                  </select>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="драма, криминал"/>
+                                    <label>Жанр</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__item"> 
+                                  <div class="form__subitem">
+                                    <select placeholder="Год производства">
+                                      <option value="0" selected="selected">2020</option>
+                                      <option value="1">2021</option>
+                                    </select>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <input type="date" value="26.02.2022"/>
+                                  </div>
+                                </div>
+                                <div class="form__item"> 
+                                  <div class="form__subitem">
+                                    <div class="input-material">
+                                      <input type="text" value="141"/>
+                                      <label>Хронометраж (мин)</label>
                                     </div>
-                                    <div class="lineup__remove"><span class="remove-repeeatter"></span></div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <select placeholder="Язык">
+                                      <option value="0" selected="selected">Русский</option>
+                                      <option value="1">English</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">информация о съемочной группе</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="Олег Негин"/>
+                                    <label>ФИО</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <input type="text" name="post[]" placeholder="Должность" disabled="disabled" value="Продюсер"/>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="Андрей Звягинцев"/>
+                                    <label>ФИО</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <input type="text" name="post[]" disabled="disabled" value="Режиссер"/>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__note"><span>Заполнить карточку режисера </span></div>
+                                </div>
+                              </div>
+                              <div class="form__group" data-repeeat="container">
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="input-material">
+                                      <input type="text" value="Михаил Кричман"/>
+                                      <label>ФИО</label>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <input type="text" name="post[]" disabled="disabled" value="Оператор"/>
+                                  </div>
+                                </div>
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="input-material">
+                                      <input type="text" value="Филип Гласс"/>
+                                      <label>ФИО</label>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <input type="text" name="post[]" disabled="disabled" value="Звукорежиссер"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__note"><span data-repeeat="add">+ Добавить члена съемочной группы</span></div>
+                                </div>
+                              </div>
+                              <div class="form__label">Логлайн</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <textarea placeholder="Описание фильма">Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.</textarea>
+                                </div>
+                              </div>
+                              <div class="form__label">Расписание показов</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="lineup-container" data-lineup="container">
+                                    <div class="lineup" data-lineup="1">
+                                      <div class="lineup__date">
+                                        <input type="date" placeholder="Date"/>
+                                      </div>
+                                      <div class="lineup__time">
+                                        <div class="lineup__timeline">
+                                          <div class="lineup__title">Время</div>
+                                          <div class="lineup__list">
+                                            <ul>
+                                              <li><span>17:00</span>
+                                                <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                              </li>
+                                              <li><span>18:00</span>
+                                                <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                              </li>
+                                              <li><span>19:00</span>
+                                                <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                              </li>
+                                              <li><span>20:00</span>
+                                                <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                              </li>
+                                              <li><span>21:00</span>
+                                                <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                          <div class="lineup__add"><span class="timepicker" data-timepicker=""></span></div>
+                                        </div>
+                                        <div class="lineup__remove"><span class="remove-repeeatter"></span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__note form__note--col2"><span data-lineup="repeeat">+ Добавить дату и время</span>
+                                    <label class="checkbox">
+                                      <input type="checkbox" name="undefined"/><span class="checkbox__elem"></span><span class="checkbox__text">Фильм в постоянном доступе</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__submit">
+                                    <button class="btn" type="submit">сохранить</button>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <div class="form__note form__note--col2"><span data-lineup="repeeat">+ Добавить дату и время</span>
-                                <label class="checkbox">
-                                  <input type="checkbox" name="undefined"/><span class="checkbox__elem"></span><span class="checkbox__text">Фильм в постоянном доступе</span>
-                                </label>
+                          <div class="film-tab-item" data-tab-item="en">
+                            <div class="form">
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="leviafan"/>
+                                    <label>Название фильма</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="Ekaterina Samoylova"/>
+                                    <label>Заявитель (ФИО)</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="New Line Cinema"/>
+                                    <label>Производитель</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="tel" value="+7(384)409-45-56"/>
+                                    <label>Телефон</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="email" value="leviafan_film@mail.ru"/>
+                                    <label>Email</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Фестиваль</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <select placeholder="Статус">
+                                    <option value="0" selected="selected">В конкурсе</option>
+                                    <option value="1">Статус 2</option>
+                                  </select>
+                                </div>
+                                <div class="form__subitem">
+                                  <select placeholder="Программа">
+                                    <option value="0" selected="selected">Полный метр</option>
+                                    <option value="1">Программа 2</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form__label">Информация о фильме</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <select placeholder="Страна происхождения">
+                                    <option value="0" selected="selected">Russia</option>
+                                    <option value="1">Армения</option>
+                                    <option value="2">Китай</option>
+                                    <option value="3">Турция</option>
+                                  </select>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="драма, криминал"/>
+                                    <label>Жанр</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__item"> 
+                                  <div class="form__subitem">
+                                    <select placeholder="Год производства">
+                                      <option value="0" selected="selected">2020</option>
+                                      <option value="1">2021</option>
+                                    </select>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <input type="date" value="26.02.2022"/>
+                                  </div>
+                                </div>
+                                <div class="form__item"> 
+                                  <div class="form__subitem">
+                                    <div class="input-material">
+                                      <input type="text" value="141"/>
+                                      <label>Хронометраж (мин)</label>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <select placeholder="Язык">
+                                      <option value="0" selected="selected">Russian</option>
+                                      <option value="1">English</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">информация о съемочной группе</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="Oleg Negin"/>
+                                    <label>ФИО</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <input type="text" name="post[]" placeholder="Должность" disabled="disabled" value="Продюсер"/>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="input-material">
+                                    <input type="text" value="Andrei Zaytsev"/>
+                                    <label>ФИО</label>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <input type="text" name="post[]" disabled="disabled" value="Режиссер"/>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__note"><span>Заполнить карточку режисера </span></div>
+                                </div>
+                              </div>
+                              <div class="form__group" data-repeeat="container">
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="input-material">
+                                      <input type="text" value="Mihail Kritchman"/>
+                                      <label>ФИО</label>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <input type="text" name="post[]" disabled="disabled" value="Оператор"/>
+                                  </div>
+                                </div>
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="input-material">
+                                      <input type="text" value="Philip Glass"/>
+                                      <label>ФИО</label>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <input type="text" name="post[]" disabled="disabled" value="Звукорежиссер"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__note"><span data-repeeat="add">+ Добавить члена съемочной группы</span></div>
+                                </div>
+                              </div>
+                              <div class="form__label">Логлайн</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <textarea placeholder="Описание фильма">Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.</textarea>
+                                </div>
+                              </div>
+                              <div class="form__label">Расписание показов</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="lineup-container" data-lineup="container">
+                                    <div class="lineup" data-lineup="1">
+                                      <div class="lineup__date">
+                                        <input type="date" placeholder="Date"/>
+                                      </div>
+                                      <div class="lineup__time">
+                                        <div class="lineup__timeline">
+                                          <div class="lineup__title">Время</div>
+                                          <div class="lineup__list">
+                                            <ul>
+                                              <li><span>17:00</span>
+                                                <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                              </li>
+                                              <li><span>18:00</span>
+                                                <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                              </li>
+                                              <li><span>19:00</span>
+                                                <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                              </li>
+                                              <li><span>20:00</span>
+                                                <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                              </li>
+                                              <li><span>21:00</span>
+                                                <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                          <div class="lineup__add"><span class="timepicker" data-timepicker=""></span></div>
+                                        </div>
+                                        <div class="lineup__remove"><span class="remove-repeeatter"></span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__note form__note--col2"><span data-lineup="repeeat">+ Добавить дату и время</span>
+                                    <label class="checkbox">
+                                      <input type="checkbox" name="undefined"/><span class="checkbox__elem"></span><span class="checkbox__text">Фильм в постоянном доступе</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="form__submit">
+                                    <button class="btn" type="submit">сохранить</button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                          <div class="form__item">
-                            <div class="form__subitem">
-                              <div class="form__submit">
-                                <button class="btn" type="submit">сохранить</button>
-                              </div>
-                            </div>
-                          </div>
+                          <div class="film-tab-item" data-tab-item="comments">Комментарии</div>
+                          <div class="film-tab-item" data-tab-item="vote">Оценки</div>
                         </div>
-                      </form>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>

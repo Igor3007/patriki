@@ -93,13 +93,11 @@ mixin radio-desc(label, desc, name, val, check)
       span.radio__title!= label
       span.radio__desc!= desc
 
-mixin input-material(type, placeholder, tooltip, valid)
+mixin input-material(type, placeholder, value)
   .input-material
-    input(type=''+type+'', data-valid-type=''+(valid ? valid : '')+'' )
-    span.bar
+    input(type=''+type+'' value=(value?value:''))
     label= placeholder 
-    if tooltip
-      span.tooltip= tooltip
+     
 
 mixin input(type, placeholder, valid, required)
   .input-primary

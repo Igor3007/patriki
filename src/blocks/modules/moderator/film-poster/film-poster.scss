@@ -116,7 +116,7 @@
                 align-items: center;
 
                 & span {
-                    margin-left: 10px;
+                    margin-left: 5px;
                     font-weight: 600;
                     text-decoration: underline;
                     text-overflow: ellipsis;
@@ -138,5 +138,16 @@
 .attach-label {
     & input {
         display: none;
+    }
+}
+
+.film-poster__cover {
+    &[data-lang] {
+
+        display: none;
+
+        &.active {
+            display: block;
+        }
     }
 }

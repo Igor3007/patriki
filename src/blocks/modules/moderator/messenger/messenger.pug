@@ -11,9 +11,7 @@ mixin messenger()
       .messenger__user Иван зверев
       .messenger__messages
         .messenger__scroll.scroll-min
-          +item-message()
-          +item-message(true)
-          +item-message()
+          .messanger-text-preview Выберите чат
       .messenger__send
         .messenger__form
           .messenger__field: textarea(placeholder="Сообщение")

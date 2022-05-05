@@ -135,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
             lastElem.querySelector('input').removeAttribute('disabled')
             lastElem.querySelector('input').setAttribute('placeholder', 'Должность')
             lastElem.querySelector('input').setAttribute('value', '')
+            fieldRepeeat.querySelector('input').value = ''
+            fieldRepeeat.querySelector('input').removeAttribute('area-valid')
 
             //create remove button
             const removeElem = document.createElement('span')
@@ -149,6 +151,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             })
 
+
+            if (MATERIAL_INPUT) {
+                MATERIAL_INPUT.addEvent(fieldRepeeat.querySelector('input'))
+            }
 
             //append elem
             lastElem.append(removeElem)
@@ -317,6 +323,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     if (document.querySelector('.messenger')) {
 
+        let loadMessageFlag = false;
+        let stopScrollFlag = false;
+
         const chat = document.querySelector('[data-pane="chat"]')
         const contacts = document.querySelector('[data-pane="contacts"]')
         const instanseContacts = OverlayScrollbars(document.querySelector(".messenger__list"), {});
@@ -327,9 +336,29 @@ document.addEventListener('DOMContentLoaded', function (event) {
             },
             callbacks: {
                 onScroll: function (event) {
+
+                    if (stopScrollFlag) return false;
+
                     if (event.target.scrollTop < 100) {
+
                         instanseMessages.scroll([0, 2], 100);
-                        loadMessages()
+
+
+                        if (!loadMessageFlag) {
+
+                            loadMessageFlag = true;
+
+
+                            setTimeout(function () {
+                                loadMessages(function () {
+
+                                    loadMessageFlag = false;
+                                })
+                            }, 500)
+                        }
+
+
+
                     }
                 }
             }
@@ -337,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         // load messages
 
-        function loadMessages() {
+        function loadMessages(callback) {
             window.ajax({
                 url: '/_messages.html',
                 type: 'get',
@@ -348,6 +377,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 let div = document.createElement('div')
                 div.innerHTML = response
                 document.querySelector('.scroll-min .os-content').prepend(div)
+
+                //callback
+                callback()
             })
         }
 
@@ -357,6 +389,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             item.addEventListener('click', function () {
 
                 document.querySelector('.messenger__user').innerText = item.querySelector('.messenger-contact__name').innerText
+                stopScrollFlag = true;
 
                 if (document.body.clientWidth <= 766) {
                     chat.style.display = 'block'
@@ -376,9 +409,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 }, function (status, response) {
 
                     document.querySelector('.scroll-min .os-content').innerHTML = response
-                    console.log(document.querySelector('.messenger__messages'))
                     instanseMessages.scroll([0, "100%"], 100);
+                    setTimeout(function () {
+                        stopScrollFlag = false;
+                    }, 300)
+
                 })
+
 
             })
         })
@@ -391,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     /* ===========================================
-        load message
+        repeeater lineup
     =========================================== */
 
     if (document.querySelector('[data-lineup="container"]')) {
@@ -425,6 +462,94 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
 
     }
+
+    /* ===========================================
+    tabs
+    =========================================== */
+
+    document.querySelectorAll('[data-tab-nav] a').forEach(function (item) {
+
+        item.addEventListener('click', function () {
+
+            if (document.querySelector('[data-tab-nav] li.active')) {
+                document.querySelector('[data-tab-nav] li.active').classList.remove('active')
+            }
+
+            item.parentNode.classList.add('active')
+
+            document.querySelectorAll('[data-tab-item]').forEach(function (tab) {
+                if (item.getAttribute('href') == '#' + tab.dataset.tabItem) {
+                    tab.classList.add('active')
+                } else {
+                    tab.classList.remove('active')
+                }
+            })
+
+            document.querySelectorAll('[data-lang]').forEach(function (lang) {
+                if (item.getAttribute('href') == '#' + lang.dataset.lang) {
+                    lang.classList.add('active')
+                } else {
+                    lang.classList.remove('active')
+                }
+            })
+
+
+
+            if (!document.querySelectorAll('[data-lang].active').length) {
+                document.querySelector('[data-lang]').classList.add('active')
+            }
+
+
+        })
+    })
+
+    /* ===========================================
+        input material
+        =========================================== */
+
+    function materialInput() {
+        this.init = function () {
+
+            let _this = this
+
+            document.querySelectorAll('.input-material input').forEach(function (input) {
+
+                if (input.value.length) {
+                    input.setAttribute('area-valid', '')
+                }
+
+                _this.addEvent(input)
+            })
+        }
+
+        this.addEvent = function (input) {
+            input.addEventListener('keyup', function (event) {
+                if (event.target.value.length) {
+                    event.target.setAttribute('area-valid', 'true')
+                } else {
+                    event.target.removeAttribute('area-valid')
+                }
+            })
+        }
+
+
+    }
+
+    const MATERIAL_INPUT = new materialInput()
+    MATERIAL_INPUT.init()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

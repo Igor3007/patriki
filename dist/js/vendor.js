@@ -3,6 +3,7 @@ class customSelect {
     constructor(option) {
         this.selector = option.selector;
         this.selectAll = document.querySelectorAll(this.selector)
+
     }
 
     init() {
@@ -42,6 +43,8 @@ class customSelect {
         const styledList = document.createElement('div')
         styledList.classList.add('select-list');
         styledList.appendChild(styledOptions)
+
+
 
 
         item.appendChild(styledSelect)
@@ -103,7 +106,7 @@ class customSelect {
     }
 
     openSelect(elem) {
-        elem.style.width = (elem.offsetWidth) + 'px'
+        elem.style.maxWidth = (elem.offsetWidth) + 'px'
         elem.querySelector('.select-styled').classList.toggle('active')
         elem.querySelector('.select-options').classList.toggle('active')
         elem.querySelector('.select-list').classList.toggle('active')
@@ -131,6 +134,8 @@ class customSelect {
 
         const parentElem = elem.parentNode.parentNode.parentNode
         const _this = this;
+        const placeholder = parentElem.querySelector('select').getAttribute('placeholder')
+        const styledSelect = parentElem.querySelector('.select-styled')
 
         elem.addEventListener('click', function (event) {
 
@@ -141,11 +146,19 @@ class customSelect {
                 parentElem.querySelector('.select-options li.active').classList.remove('active')
 
             this.classList.add('active')
-            parentElem.querySelector('.select-styled span').innerHTML = this.innerHTML
+
+            if (placeholder) {
+                styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + this.innerHTML + '</span>';
+            } else {
+                parentElem.querySelector('.select-styled span').innerHTML = this.innerHTML
+            }
+
             parentElem.querySelector('select').value = this.getAttribute('rel')
 
             var event = new Event('change');
             parentElem.querySelector('select').dispatchEvent(event);
+
+
 
             _this.closeSelect()
         })

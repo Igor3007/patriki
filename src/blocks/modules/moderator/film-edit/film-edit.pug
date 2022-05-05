@@ -1,137 +1,191 @@
+include ../film-add/film-add.pug
+
 mixin film-edit()
-    .film-add
-      form(action='#' method='POST')
-        .form
-          .form__item: .form__subitem
-            label.edit-input
-              span Название фильма
-              input(type="text" value="" placeholder="Название фильма")
-          .form__item
-            .form__subitem
-              label.edit-input
-                span Заявитель (ФИО)
-                input(type="text" placeholder="Заявитель (ФИО)")
-            .form__subitem
-              label.edit-input
-                span Производитель
-                input(type="text" placeholder="Производитель")
-          .form__item
-            .form__subitem
-              label.edit-input 
-                span Телефон
-                input(type="tel" placeholder="Телефон")
-            .form__subitem
-              label.edit-input 
-                span Email
-                input(type="email" placeholder="Email")
+    .film-edit
+      .film-edit__metric
+        .film-metric
+          .film-metric__title Количество <br> просмотров
+          .film-metric__total 98
+        .film-metric
+          .film-metric__title Средняя оценка <br> зрителей
+          .film-metric__total 9.2
+        .film-metric
+          .film-metric__title Общее время <br> просмотра
+          .film-metric__total 10:34
+        .film-metric
+          .film-metric__title Выбор экпертов
+          .film-metric__vote
+            .film-metric__like
+              +icons('#ic_like', 20)
+              span 5
+            .film-metric__dislike
+              +icons('#ic_dislike', 20)
+              span 2
+      .film-edit__tabs
+        +form-tabs-nav
 
-          .form__label Фестиваль
-          .form__item
-            .form__subitem: +select-edit('Статус', ['В конкурсе','Статус 2'])
-            .form__subitem: +select-edit('Программа', ['Полный метр','Программа 2'])
+      .film-tab-container
+        .film-tab-item(data-tab-item="ru" class="active")
+          .form
+            .form__item: .form__subitem: +input-material('text', 'Название фильма', 'Левиафан')
+            .form__item
+              .form__subitem: +input-material('text', 'Заявитель (ФИО)', 'Екатерина Самойлова')
+              .form__subitem: +input-material('text', 'Производитель', 'New Line Cinema')
+                 
+            .form__item
+              .form__subitem: +input-material('tel', 'Телефон', '+7(384)409-45-56')
+              .form__subitem: +input-material('email', 'Email', 'leviafan_film@mail.ru')
+               
+
+            .form__label Фестиваль
+            .form__item
+              .form__subitem: +select-edit('Статус', ['В конкурсе','Статус 2'])
+              .form__subitem: +select-edit('Программа', ['Полный метр','Программа 2'])
+                
               
-           
-          .form__label Информация о фильме
-          .form__item
-            .form__subitem: +select-edit('Страна происхождения', ['Россия','Армения','Китай','Турция'])
-            .form__subitem
-              label.edit-input
-                span Жанр
-                input(type="text" placeholder="Жанр")
+            .form__label Информация о фильме
+            .form__item
+              .form__subitem: +select-edit('Страна происхождения', ['Россия','Армения','Китай','Турция'])
+              .form__subitem: +input-material('text', 'Жанр', 'драма, криминал')
+              
+            .form__item
+              .form__item 
+                .form__subitem: +select-edit('Год производства', ['2020','2021'])
+                .form__subitem: input(type="date" value="26.02.2022"  )
+              .form__item 
+                .form__subitem: +input-material('text', 'Хронометраж (мин)', '141')
+                .form__subitem: +select-edit('Язык',['Русский','English'])
 
-          .form__item
-            .form__item 
-              .form__subitem: +select-edit('Год производства', ['2020','2021'])
-              .form__subitem
-                label.edit-input
-                  span Дата подачи
-                  input(type="date" placeholder="Дата подачи")
-            .form__item 
-              .form__subitem
-                label.edit-input
-                  span Хронометраж (мин)
-                  input(type="text" placeholder="Хронометраж (мин)")
-              .form__subitem: +select-edit('Язык',['Русский','English'])
+            .form__label информация о съемочной группе
+            .form__item
+              .form__subitem: +input-material('text', 'ФИО', 'Олег Негин')
+              .form__subitem: input(type="text" name="post[]" placeholder="Должность" disabled value="Продюсер") 
+                
+            .form__item
+              .form__subitem: +input-material('text', 'ФИО', 'Андрей Звягинцев')
+              .form__subitem: input(type="text" name="post[]" disabled value="Режиссер") 
+               
+            .form__item
+              .form__subitem: .form__note: span Заполнить карточку режисера 
 
-          .form__label информация о съемочной группе
-          .form__item
-            .form__subitem
-              label.edit-input
-                span ФИО
-                input(type="text" name="fio[]" placeholder="ФИО")
-            .form__subitem
-              label.edit-input
-                span Продюсер
-                input(type="text" name="post[]" placeholder="Продюсер" disabled value="Продюсер")
-          .form__item
-            .form__subitem
-              label.edit-input
-                span ФИО
-                input(type="text" name="fio[]" placeholder="ФИО")
-            .form__subitem
-              label.edit-input
-                span Режиссер
-                input(type="text" name="post[]" placeholder="Режиссер" disabled value="Режиссер")
-          .form__item
-            .form__subitem: .form__note: span Заполнить карточку режисера
+            .form__group(data-repeeat="container")
+              .form__item
+                .form__subitem: +input-material('text', 'ФИО', 'Михаил Кричман')
+                .form__subitem: input(type="text" name="post[]" disabled value="Оператор")
+              .form__item
+                .form__subitem: +input-material('text', 'ФИО', 'Филип Гласс')
+                .form__subitem: input(type="text" name="post[]" disabled value="Звукорежиссер")
+            
+            .form__item
+              .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
+            
+            .form__label Логлайн
+            .form__item
+              .form__subitem: textarea(placeholder="Описание фильма") Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.
 
-          .form__group(data-repeeat="container")
+            .form__label Расписание показов
             .form__item
               .form__subitem
-                label.edit-input
-                  span ФИО
-                  input(type="text" name="fio[]" placeholder="ФИО")
-              .form__subitem
-                label.edit-input
-                  span Оператор
-                  input(type="text" placeholder="Оператор" name="post[]" disabled value="Оператор")
+                .lineup-container(data-lineup="container"): +lineup()
+
+                
+                
+
             .form__item
               .form__subitem
-                label.edit-input
-                  span ФИО
-                  input(type="text" name="fio[]" placeholder="ФИО")
-              .form__subitem 
-                label.edit-input
-                  span Звукорежиссер
-                  input(type="text" placeholder="Звукорежиссер" name="post[]" disabled value="Звукорежиссер")
-          
-          .form__item
-            .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
-          
-          .form__label Логлайн
-          .form__item
-            .form__subitem: textarea(placeholder="Описание фильма")
+                .form__note.form__note--col2
+                  span(data-lineup="repeeat") + Добавить дату и время
+                  +checkbox('Фильм в постоянном доступе')
+            .form__item
+              .form__subitem
+                .form__submit: button.btn(type="submit") сохранить
 
-          .form__label Расписание показов
-          .form__item
-            .form__subitem
-              .lineup-container(data-lineup="container"): +lineup()
 
+        .film-tab-item(data-tab-item="en")
+           .form
+            .form__item: .form__subitem: +input-material('text', 'Название фильма', 'leviafan')
+            .form__item
+              .form__subitem: +input-material('text', 'Заявитель (ФИО)', 'Ekaterina Samoylova')
+              .form__subitem: +input-material('text', 'Производитель', 'New Line Cinema')
+                 
+            .form__item
+              .form__subitem: +input-material('tel', 'Телефон', '+7(384)409-45-56')
+              .form__subitem: +input-material('email', 'Email', 'leviafan_film@mail.ru')
+               
+
+            .form__label Фестиваль
+            .form__item
+              .form__subitem: +select-edit('Статус', ['В конкурсе','Статус 2'])
+              .form__subitem: +select-edit('Программа', ['Полный метр','Программа 2'])
+                
               
+            .form__label Информация о фильме
+            .form__item
+              .form__subitem: +select-edit('Страна происхождения', ['Russia','Армения','Китай','Турция'])
+              .form__subitem: +input-material('text', 'Жанр', 'драма, криминал')
               
+            .form__item
+              .form__item 
+                .form__subitem: +select-edit('Год производства', ['2020','2021'])
+                .form__subitem: input(type="date" value="26.02.2022"  )
+              .form__item 
+                .form__subitem: +input-material('text', 'Хронометраж (мин)', '141')
+                .form__subitem: +select-edit('Язык',['Russian','English'])
 
-          .form__item
-            .form__subitem
-              .form__note.form__note--col2
-                span(data-lineup="repeeat") + Добавить дату и время
-                +checkbox('Фильм в постоянном доступе')
-          .form__item
-            .form__subitem
-              .form__submit: button.btn(type="submit") сохранить
+            .form__label информация о съемочной группе
+            .form__item
+              .form__subitem: +input-material('text', 'ФИО', 'Oleg Negin')
+              .form__subitem: input(type="text" name="post[]" placeholder="Должность" disabled value="Продюсер") 
+                
+            .form__item
+              .form__subitem: +input-material('text', 'ФИО', 'Andrei Zaytsev')
+              .form__subitem: input(type="text" name="post[]" disabled value="Режиссер") 
+               
+            .form__item
+              .form__subitem: .form__note: span Заполнить карточку режисера 
+
+            .form__group(data-repeeat="container")
+              .form__item
+                .form__subitem: +input-material('text', 'ФИО', 'Mihail Kritchman')
+                .form__subitem: input(type="text" name="post[]" disabled value="Оператор")
+              .form__item
+                .form__subitem: +input-material('text', 'ФИО', 'Philip Glass')
+                .form__subitem: input(type="text" name="post[]" disabled value="Звукорежиссер")
+            
+            .form__item
+              .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
+            
+            .form__label Логлайн
+            .form__item
+              .form__subitem: textarea(placeholder="Описание фильма") Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.
+
+            .form__label Расписание показов
+            .form__item
+              .form__subitem
+                .lineup-container(data-lineup="container"): +lineup()
+
+                
+                
+
+            .form__item
+              .form__subitem
+                .form__note.form__note--col2
+                  span(data-lineup="repeeat") + Добавить дату и время
+                  +checkbox('Фильм в постоянном доступе')
+            .form__item
+              .form__subitem
+                .form__submit: button.btn(type="submit") сохранить
 
 
-mixin lineup
-  .lineup(data-lineup="1")
-    .lineup__date: input(type="date" placeholder="Date")
-    .lineup__time
-      .lineup__timeline
-        .lineup__title Время
-        .lineup__list
-          ul
-            each li in [17,18,19,20,21]
-              li
-                span= li+':00'
-                input(type="checkbox" name="time[]" value=li+":00" checked)
-        .lineup__add: span.timepicker(data-timepicker="")
+        .film-tab-item(data-tab-item="comments") Комментарии
+        .film-tab-item(data-tab-item="vote") Оценки
 
-      .lineup__remove: span.remove-repeeatter
+
+
+
+mixin form-tabs-nav
+  ul.form-tabs(data-tab-nav="")
+    li(class="active"): a(href='#ru'): button.btn.btn-line Фильм на русском
+    li: a(href='#en'): button.btn.btn-line Фильм на английском
+    li: a(href='#comments'): button.btn.btn-line Комментарии
+    li: a(href='#vote'): button.btn.btn-line Оценки

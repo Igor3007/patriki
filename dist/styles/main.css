@@ -2063,6 +2063,7 @@ input {
   border-radius: 5px;
   font-size: 14px;
   padding: 15px;
+  line-height: 140%;
 }
 
 .form textarea:focus {
@@ -2178,6 +2179,121 @@ input {
   display: inline-block;
   height: 1px;
   background-color: #525166;
+}
+
+/* ========================================================
+.input-material
+ ======================================================== */
+
+.input-material {
+  position: relative;
+  width: 100%;
+  border: 1px solid #bcbcbc;
+  border-radius: 5px;
+  padding: 0 15px;
+  height: 52px;
+  /* active state */
+}
+
+.input-material input[type="text"],
+.input-material input[type="date"],
+.input-material input[type="number"],
+.input-material input[type="password"],
+.input-material input[type="email"],
+.input-material input[type="tel"] {
+  font-size: 14px;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #525166;
+  font-weight: 600;
+  height: 20px;
+  transform: translateY(15px);
+  color: #525166;
+}
+
+.input-material input[type="text"]:invalid,
+.input-material input[type="date"]:invalid,
+.input-material input[type="number"]:invalid,
+.input-material input[type="password"]:invalid,
+.input-material input[type="email"]:invalid,
+.input-material input[type="tel"]:invalid {
+  box-shadow: none !important;
+}
+
+.input-material input:focus {
+  outline: none;
+}
+
+.input-material label {
+  display: block;
+  color: #92919F;
+  line-height: 140%;
+  font-weight: normal;
+  font-size: 14px;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  padding-left: 15px;
+  top: 15px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.input-material input:focus ~ label,
+.input-material input[area-valid] ~ label,
+.input-material textarea:focus ~ label,
+.input-material textarea[area-valid=true] ~ label,
+.input-material textarea[area-valid=false] ~ label {
+  top: 5px;
+  font-size: 12px;
+  height: 15px;
+  font-size: 12px;
+}
+
+.input-material textarea[area-valid=false] ~ .bar::before,
+.input-material textarea[area-valid=false] ~ .bar::after,
+.input-material input[area-valid=false] ~ .bar::before,
+.input-material input[area-valid=false] ~ .bar::after {
+  background: #cf1c5d;
+  width: 50%;
+}
+
+.input-material textarea[area-valid=false] ~ .tooltip,
+.input-material input[area-valid=false] ~ .tooltip {
+  color: #cf1c5d;
+}
+
+.input-material textarea:focus[area-valid=false] ~ .bar::before,
+.input-material textarea:focus[area-valid=false] ~ .bar::after,
+.input-material input:focus[area-valid=false] ~ .bar::before,
+.input-material input:focus[area-valid=false] ~ .bar::after {
+  background: #86A5C1;
+  width: 50%;
+}
+
+.input-material input[area-valid],
+.input-material input:focus {
+  transform: translateY(22px);
+}
+
+.input-material textarea[area-valid=true] ~ .tooltip,
+.input-material input[area-valid=true] ~ .tooltip {
+  width: 13px;
+  height: 13px;
+  display: block;
+  background-image: url(/img/svg/ic_checked-green.svg);
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-material textarea[area-valid=true] ~ .tooltip::before,
+.input-material input[area-valid=true] ~ .tooltip::before {
+  display: none;
 }
 
 /* burger */
@@ -3710,7 +3826,7 @@ footer {
 }
 
 .film-poster__link-url a span {
-  margin-left: 10px;
+  margin-left: 5px;
   font-weight: 600;
   text-decoration: underline;
   text-overflow: ellipsis;
@@ -3729,6 +3845,18 @@ footer {
 
 .attach-label input {
   display: none;
+}
+
+.film-poster__cover[data-lang] {
+  display: none;
+}
+
+.film-poster__cover[data-lang].active {
+  display: block;
+}
+
+.film-add__tabs {
+  padding-bottom: 35px;
 }
 
 .lineup-container {
@@ -3928,6 +4056,7 @@ footer {
   border-radius: 5px;
   padding: 0;
   font-weight: 600;
+  color: #525166;
 }
 
 .edit-input input[type="text"]::placeholder,
@@ -3937,6 +4066,85 @@ footer {
 .edit-input input[type="email"]::placeholder,
 .edit-input input[type="tel"]::placeholder {
   font-weight: normal;
+}
+
+.film-edit__metric {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  color: #525166;
+  margin: -15px -10px;
+  padding-bottom: 35px;
+}
+
+.film-edit__tabs {
+  padding-bottom: 35px;
+}
+
+.film-metric {
+  margin: 15px 10px;
+  width: calc(50% - 20px);
+}
+
+.film-metric__title {
+  color: #92919F;
+  min-height: 3em;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.film-metric__vote {
+  display: flex;
+  align-items: center;
+}
+
+.film-metric__total {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.film-metric__like,
+.film-metric__dislike {
+  display: flex;
+  align-items: center;
+}
+
+.film-metric__like span,
+.film-metric__dislike span {
+  font-size: 36px;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+.film-metric__dislike {
+  margin-left: 10px;
+}
+
+.form-tabs {
+  display: flex;
+  margin: 0 -5px;
+  overflow-x: auto;
+}
+
+.form-tabs li {
+  margin: 0 5px;
+}
+
+.form-tabs li.active .btn {
+  color: #525166;
+}
+
+.form-tabs li.active .btn:hover {
+  color: #fff;
+}
+
+.film-tab-item {
+  display: none;
+}
+
+.film-tab-item.active {
+  display: block;
+  animation: slide-up 0.3s ease;
 }
 
 .layout-column__right {
@@ -4196,6 +4404,15 @@ footer {
   padding-right: 1em;
 }
 
+.messanger-text-preview {
+  top: 50%;
+  position: relative;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  color: #ccc;
+}
+
 @media screen and (min-width: 480px) {
   .container {
     padding: 0 16px;
@@ -4442,6 +4659,14 @@ footer {
 
   .lineup__list {
     max-width: 300px;
+  }
+
+  .film-edit__metric {
+    flex-wrap: nowrap;
+  }
+
+  .film-metric {
+    width: 100%;
   }
 
   .messenger {
@@ -4702,7 +4927,7 @@ footer {
   }
 
   .page-moderator__content {
-    padding: 40px 0px 75px 45px;
+    padding: 40px 45px 75px 45px;
   }
 
   .lineup__list {
@@ -4926,6 +5151,11 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+  .input-material {
+    margin-bottom: 20px;
+    margin-top: 25px;
+  }
+
   .main-menu__nav li a {
     font-size: 14px;
   }

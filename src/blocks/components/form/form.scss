@@ -69,6 +69,7 @@ input {
         border-radius: 5px;
         font-size: 14px;
         padding: rem(15);
+        line-height: 140%;
 
         &:focus {
             outline: none !important;
@@ -230,4 +231,137 @@ input {
         height: 1px;
         background-color: $main;
     }
+}
+
+
+/* ========================================================
+.input-material
+ ======================================================== */
+
+.input-material {
+    position: relative;
+    width: 100%;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    padding: 0 15px;
+    height: 52px;
+
+    @media screen and (max-width: $w576) {
+        margin-bottom: rem(20);
+        margin-top: rem(25);
+    }
+
+    & input[type="text"],
+    & input[type="date"],
+    & input[type="number"],
+    & input[type="password"],
+    & input[type="email"],
+    & input[type="tel"] {
+        font-size: 14px;
+        padding: rem(10) 0;
+        display: block;
+        width: 100%;
+        border: none;
+        background: transparent;
+        color: $main;
+        font-weight: 600;
+        height: 20px;
+        transform: translateY(15px);
+        color: #525166;
+
+        &:invalid {
+            box-shadow: none !important;
+        }
+    }
+
+
+
+    & input:focus {
+        outline: none;
+    }
+
+    & label {
+
+
+        display: block;
+
+        color: #92919F;
+        line-height: 140%;
+        font-weight: normal;
+
+
+        font-size: 14px;
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        padding-left: 15px;
+
+        top: 15px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+
+    /* active state */
+    & input:focus~label,
+    & input[area-valid]~label,
+    & textarea:focus~label,
+    & textarea[area-valid=true]~label,
+    & textarea[area-valid=false]~label {
+        top: 5px;
+        font-size: 12px;
+        height: 15px;
+        font-size: 12px;
+    }
+
+    & textarea[area-valid=false]~.bar,
+    & input[area-valid=false]~.bar {
+
+        &::before,
+        &::after {
+            background: $red;
+            width: 50%;
+        }
+    }
+
+    & textarea[area-valid=false]~.tooltip,
+    & input[area-valid=false]~.tooltip {
+
+        color: $red;
+    }
+
+    & textarea:focus[area-valid=false]~.bar,
+    & input:focus[area-valid=false]~.bar {
+
+        &::before,
+        &::after {
+            background: $grayBlue;
+            width: 50%;
+        }
+    }
+
+    & input[area-valid],
+    & input:focus {
+        transform: translateY(22px);
+    }
+
+    & textarea[area-valid=true]~.tooltip,
+    & input[area-valid=true]~.tooltip {
+        width: 13px;
+        height: 13px;
+        display: block;
+        background-image: url(/img/svg/ic_checked-green.svg);
+        font-size: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &::before {
+            display: none;
+        }
+    }
+
+
+
+
 }
