@@ -1,0 +1,178 @@
+.review-block {
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__tabs {
+
+        padding-bottom: 25px;
+        margin-right: -9px;
+
+        @media screen and (min-width: $w360) {
+            margin-right: 0;
+        }
+
+        & ul {
+            display: flex;
+            align-items: center;
+            margin: 0 -6px;
+            overflow-x: auto;
+
+
+            & li {
+                margin: 0 6px;
+
+                & .active {
+                    & .btn {
+                        color: #525166;
+
+                        &:hover {
+                            color: #fff
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.item-review {
+
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    padding: 24px;
+
+    &--open {
+        & .item-review {
+            &__main {
+                & span {
+                    display: block;
+                    line-clamp: none;
+                }
+            }
+        }
+    }
+
+    &__head {
+        padding-bottom: 10px;
+    }
+
+    &__user {
+        font-weight: bold;
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #525166;
+    }
+
+    &__date {
+        font-size: 12px;
+        line-height: 20px;
+        color: #92919F;
+    }
+
+    &__main {
+        padding-bottom: 15px;
+
+        & span {
+            @include line-clamp(3);
+        }
+    }
+
+    &__action {
+        @media screen and (min-width: $w760) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__read {
+
+        padding-bottom: 15px;
+
+        @media screen and (min-width: $w760) {
+            padding-bottom: 0;
+            display: flex;
+
+        }
+
+        & span {
+            display: inline-flex;
+            height: 32px;
+            padding: 0 1em;
+            border: 1px solid #bcbcbc;
+            font-size: 13px;
+            font-weight: 600;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+    }
+
+
+
+    &__state {
+        display: flex;
+        justify-content: flex-start;
+
+        padding-top: 10px;
+
+        @media screen and (min-width: $w760) {
+            padding-top: 0;
+        }
+    }
+
+    &__reject,
+    &__resolve {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #eee;
+        }
+
+        & svg {
+            fill: #525166;
+        }
+
+        & span {
+
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #525166;
+            padding-left: 10px;
+        }
+    }
+
+    &__resolve {
+        &.active {
+            & svg {
+                fill: $green
+            }
+
+            & span {
+                color: $green;
+            }
+        }
+    }
+
+    &__reject {
+        &.active {
+            & svg {
+                fill: $red
+            }
+
+            & span {
+                color: $red;
+            }
+        }
+    }
+}

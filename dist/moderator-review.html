@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Рецензии</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="#{title}">
+    <meta name="keywords" content="#{title}">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css?v=1.0">
+  </head>
+  <body class="perf-no-animation">
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="header__logo"><a href="/"><span class="bgimage" style="background-image: url(/img/common/logo.png)"></span></a></div>
+          <div class="header__nav">
+            <div class="header__nav-container" data-menu="container">
+              <div class="header__nav-info">
+                <div class="header-info">
+                  <div class="header-info__email"><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></div>
+                  <div class="header-info__phone"><a href="tel:+79055047370">+7 (905) 504-73-70</a></div>
+                  <div class="header-info__lang">
+                    <select>
+                      <option val="ru">Русский</option>
+                      <option val="en">English</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="header__nav-menu">
+                <nav>
+                  <ul>
+                    <li><a href="">О фестивале</a></li>
+                    <li><a href="">Программы</a></li>
+                    <li><a href="">Кинозал</a></li>
+                    <li><a href="">участникам</a></li>
+                    <li><a href="">События</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="header__nav-btn">
+              <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="header__pa">
+            <div class="header__pa-container">
+              <div class="header__social">
+                <ul>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                      </svg></a></li>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+              <div class="header__login"><a href="/login.html">Личный кабинет</a></div>
+            </div>
+            <div class="header__pa-btn"><a href="/login.html">
+                <svg width="25" height="25">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-page-moderator">
+        <div class="container">
+          <div class="page-moderator">
+            <div class="page-moderator__aside">
+              <div class="moderator-aside">
+                <div class="moderator-aside__wrp">
+                  <div class="moderator-aside__photo">
+                    <picture>
+                      <source srcset="/img/common/img_user.webp" type="image/webp"/><img src="/img/common/img_user.jpg" loading="lazy" alt="image"/>
+                    </picture>
+                  </div>
+                  <div class="moderator-aside__name">Николай Петров</div>
+                  <div class="moderator-aside__email">nik_petrov@mail.ru</div>
+                  <div class="moderator-aside__invite">
+                    <button class="btn btn-small">Пригласить</button>
+                  </div>
+                  <div class="moderator-aside__nav">
+                    <ul>
+                      <li><a href="moderator-orders.html">Заявки</a></li>
+                      <li><a class="badge" href="moderator-messenger.html">Сообщения</a></li>
+                      <li><a href="moderator-films.html">Фильмы</a></li>
+                      <li><a href="moderator-rating.html">Рейтинги</a></li>
+                      <li><a href="moderator-review.html">Рецензии</a></li>
+                      <li><a href="moderator-profile.html">Профиль</a></li>
+                      <li><a href="moderator-logout.html">Выйти</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page-moderator__content">
+              <div class="head-moderator">
+                <div class="head-moderator__breadcrumb">
+                  <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                    <li><a href="#">Рецензии</a></li>
+                  </ul>
+                </div>
+                <div class="head-moderator__title">
+                  <h1>Рецензии</h1>
+                </div>
+              </div>
+              <div class="main-moderator">
+                <div class="review-block">
+                  <div class="review-block__tabs">
+                    <ul>
+                      <li><a class="active" href="#">
+                          <button class="btn btn-line">Новые</button></a></li>
+                      <li><a href="#">
+                          <button class="btn btn-line">Одобренные</button></a></li>
+                      <li><a href="#">
+                          <button class="btn btn-line">Отклоненные</button></a></li>
+                    </ul>
+                  </div>
+                  <div class="review-block__list">
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve active">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject active">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject active">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-block__item">
+                      <div class="item-review">
+                        <div class="item-review__head">
+                          <div class="item-review__user">Иван зверев</div>
+                          <div class="item-review__date">Сегодня 19.30</div>
+                        </div>
+                        <div class="item-review__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.</span></div>
+                        <div class="item-review__action">
+                          <div class="item-review__read"><span>Читать всю рецензию</span></div>
+                          <div class="item-review__state">
+                            <div class="item-review__resolve">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>Одобрить</span>
+                            </div>
+                            <div class="item-review__reject">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>Отклонить</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer__logo">
+            <div class="footer__logo-img"><span class="bgimage" style="background-image: url(/img/common/logo.png)"></span>
+            </div>
+            <div class="footer__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
+          </div>
+          <div class="footer__nav">
+            <nav>
+              <ul>
+                <li><a href="">О фестивале</a></li>
+                <li><a href="">Программы</a></li>
+                <li><a href="">Кинозал</a></li>
+                <li><a href="">участникам</a></li>
+                <li><a href="">События</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__social">
+            <ul>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                  </svg><span>vkontakte</span></a></li>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                  </svg><span>Telegram</span></a></li>
+            </ul>
+          </div>
+          <div class="footer__contact">
+            <ul>
+              <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
+              <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+            <div class="main-menu">
+              <div class="main-menu__wrp">
+                <div class="main-menu__close" data-menu="close">
+                  <svg width="35" height="35">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_cross"></use>
+                  </svg>
+                </div>
+                <div class="main-menu__nav">
+                  <nav>
+                    <ul>
+                      <li><a href="">О фестивале</a></li>
+                      <li><a href="">Программы</a></li>
+                      <li><a href="">Кинозал</a></li>
+                      <li><a href="">участникам</a></li>
+                      <li><a href="">События</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="main-menu__phones">
+                  <div class="main-menu__number"><a href="#">+375 (33) 799 34 99</a></div>
+                  <div class="main-menu__worktime"><span>Работаем с 9.00 до 19.00</span></div>
+                </div>
+              </div>
+            </div>
+    </footer>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/lib/OverlayScrollbars.min.js"></script>
+    <script src="/js/moderator.js"></script>
+  </body>
+</html>

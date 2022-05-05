@@ -1,4 +1,4 @@
-modules.define('all-films', ['i-bem-dom'], function(provide, bemDom) {
+modules.define('moderator-review', ['i-bem-dom'], function(provide, bemDom) {
 
 provide(bemDom.declBlock(this.name, {
     onSetMod: {

@@ -1,0 +1,29 @@
+mixin moderator-review
+    .review-block
+        .review-block__tabs
+            ul
+                li: a.active(href='#'): button.btn.btn-line Новые
+                li: a(href='#'): button.btn.btn-line Одобренные
+                li: a(href='#'): button.btn.btn-line Отклоненные
+        .review-block__list
+            each item in [2,3,1,3,1,1,1,1]
+                .review-block__item: +item-review(item)
+
+
+mixin item-review(data)
+    .item-review
+        .item-review__head
+            .item-review__user Иван зверев
+            .item-review__date Сегодня 19.30
+        .item-review__main
+            span Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский.
+        .item-review__action
+            .item-review__read: span Читать всю рецензию
+            .item-review__state
+                .item-review__resolve(class=(data == 2 ? 'active':''))
+                    +icons('#ic_like', 20)
+                    span Одобрить
+                .item-review__reject(class=(data == 3 ? 'active':''))
+                    +icons('#ic_dislike', 20)
+                    span Отклонить
+            

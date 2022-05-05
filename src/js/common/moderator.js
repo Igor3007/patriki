@@ -539,6 +539,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
     MATERIAL_INPUT.init()
 
 
+    /* =================================================
+    show more review 
+    =================================================*/
+
+    if (document.querySelector('.item-review')) {
+        document.querySelectorAll('.item-review').forEach(function (item) {
+            item.querySelector('.item-review__read span').addEventListener('click', function () {
+                item.classList.toggle('item-review--open')
+
+                if (item.classList.contains('item-review--open')) {
+                    item.querySelector('.item-review__read span').innerText = 'Скрыть'
+                } else {
+                    item.querySelector('.item-review__read span').innerText = 'Читать всю рецензию'
+                }
+            })
+        })
+    }
 
 
 
