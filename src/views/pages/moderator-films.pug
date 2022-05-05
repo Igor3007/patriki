@@ -1,0 +1,35 @@
+extends ../layouts/moderator
+include ../../blocks/modules/moderator/all-films/all-films.pug
+include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Фильмы'
+
+
+block content
+  +head-moderator({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Фильмы',
+    ],
+
+    title: 'Фильмы',
+    button: false
+  })
+
+  
+
+  .main-moderator
+    +all-films()
+
+block scripts
+    script(src="/js/vendor.js")
+    script(src="/js/common.js")
+    script(src="/js/lib/OverlayScrollbars.min.js")
+    script(src="/js/moderator.js")
+

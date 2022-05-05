@@ -4413,6 +4413,265 @@ footer {
   color: #ccc;
 }
 
+.all-films__competition {
+  padding-bottom: 25px;
+}
+
+.all-films__competition ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.all-films__competition ul li {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #92919F;
+  display: inline-flex;
+  align-items: center;
+}
+
+.all-films__competition ul li::after {
+  content: '/';
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: 18px;
+  color: inherit;
+  display: inline-block;
+  padding: 0 0.5em;
+}
+
+.all-films__competition ul li:last-child::after {
+  display: none;
+}
+
+.all-films__competition ul li a {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.all-films__competition ul li a.active {
+  font-size: 20px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #525166;
+  font-weight: 700;
+}
+
+.all-films__tabs {
+  padding-bottom: 25px;
+  margin-right: -9px;
+}
+
+.all-films__tabs ul {
+  display: flex;
+  align-items: center;
+  margin: 0 -6px;
+  overflow-x: auto;
+}
+
+.all-films__tabs ul li {
+  margin: 0 6px;
+}
+
+.all-films__tabs ul li .active .btn {
+  color: #525166;
+}
+
+.all-films__tabs ul li .active .btn:hover {
+  color: #fff;
+}
+
+.all-films__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.all-films__item {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+}
+
+.all-films__item--light {
+  background-color: #E7E6F5;
+}
+
+.minicard-film {
+  display: flex;
+  flex-direction: column;
+}
+
+.minicard-film__cover {
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.minicard-film__cover picture {
+  display: block;
+  padding-top: 131%;
+  position: relative;
+  background-color: #eee;
+}
+
+.minicard-film__cover picture img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.minicard-film__image {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.minicard-film__image:hover .minicard-film__details {
+  opacity: 1;
+  visibility: visible;
+}
+
+.minicard-film__image:hover .minicard-film__details ul {
+  transform: translateY(0);
+}
+
+.minicard-film__details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #525166;
+  color: #fff;
+  padding: 10px 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  border-radius: 5px;
+}
+
+.minicard-film__details ul {
+  transform: translateY(10px);
+  transition: 0.2s ease;
+}
+
+.minicard-film__details ul li {
+  padding-bottom: 0.2em;
+}
+
+.minicard-film__details ul li span {
+  display: block;
+}
+
+.minicard-film__details ul li span:last-child {
+  font-weight: 600;
+}
+
+.minicard-film__rate {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.minicard-film__rate span {
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+  top: 15px;
+  padding: 0.14em 0.6em 0.14em 0.5em;
+}
+
+.minicard-film__title {
+  padding-bottom: 0.5em;
+}
+
+.minicard-film__title:hover a {
+  text-decoration: underline !important;
+}
+
+.minicard-film__title a {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #525166;
+}
+
+.minicard-film__year {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #92919F;
+  margin-top: auto;
+  padding-bottom: 0.5em;
+}
+
+.minicard-film__country {
+  display: flex;
+  align-items: center;
+}
+
+.minicard-film__flags ul {
+  display: flex;
+  align-items: center;
+  margin: -2px;
+}
+
+.minicard-film__flags ul li {
+  margin: 2px;
+}
+
+.minicard-film__flags ul li .bgimage {
+  width: 23px;
+  height: 17px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  transition: 0.3s ease;
+  background-color: #eee;
+}
+
+.minicard-film__duration {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #92919F;
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 359px) {
+  .all-films__item {
+    width: 50%;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 360.98px) {
+  .all-films__tabs {
+    margin-right: 0;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .container {
     padding: 0 16px;
@@ -4709,6 +4968,23 @@ footer {
   .messenger__user {
     display: none;
   }
+
+  .all-films__competition ul li {
+    font-size: 16px;
+  }
+
+  .all-films__competition ul li::after {
+    font-size: 24px;
+  }
+
+  .all-films__competition ul li a.active {
+    font-size: 24px;
+  }
+
+  .all-films__item {
+    width: 33.33%;
+    padding: 8px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -4772,6 +5048,11 @@ footer {
     display: block;
     width: 70%;
     padding: 0 7px;
+  }
+
+  .all-films__item {
+    width: 25%;
+    padding: 10px;
   }
 }
 
@@ -5111,6 +5392,11 @@ footer {
 
   .layout-column__right {
     padding: 0 30px;
+  }
+
+  .all-films__item {
+    width: 20%;
+    padding: 10px;
   }
 }
 

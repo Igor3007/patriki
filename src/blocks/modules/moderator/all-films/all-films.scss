@@ -1,0 +1,295 @@
+.all-films {
+    &__competition {
+
+        padding-bottom: 25px;
+
+        & ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            & li {
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 36px;
+                text-transform: uppercase;
+                color: #92919F;
+                display: inline-flex;
+                align-items: center;
+
+                @media screen and (min-width: $w760) {
+                    font-size: 16px;
+                }
+
+                &::after {
+                    content: '/';
+                    font-size: inherit;
+                    font-weight: inherit;
+                    color: inherit;
+                    font-size: 18px;
+                    color: inherit;
+                    display: inline-block;
+                    padding: 0 0.5em;
+
+                    @media screen and (min-width: $w760) {
+                        font-size: 24px;
+                    }
+                }
+
+                &:last-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                & a {
+
+                    font-size: inherit;
+                    font-weight: inherit;
+                    color: inherit;
+
+                    &.active {
+                        font-size: 20px;
+                        line-height: 36px;
+                        text-transform: uppercase;
+                        color: #525166;
+                        font-weight: 700;
+
+                        @media screen and (min-width: $w760) {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__tabs {
+
+        padding-bottom: 25px;
+        margin-right: -9px;
+
+        @media screen and (min-width: $w360) {
+            margin-right: 0;
+        }
+
+        & ul {
+            display: flex;
+            align-items: center;
+            margin: 0 -6px;
+            overflow-x: auto;
+
+
+            & li {
+                margin: 0 6px;
+
+                & .active {
+                    & .btn {
+                        color: #525166;
+
+                        &:hover {
+                            color: #fff
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__list {
+        @include row-flex;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 8px;
+
+        &--light {
+            background-color: #E7E6F5;
+        }
+
+        @media screen and (min-width: 359px) {
+            width: 50%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w760) {
+            width: 33.33%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 25%;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            width: 20%;
+            padding: 10px;
+        }
+
+    }
+}
+
+.minicard-film {
+
+    display: flex;
+    flex-direction: column;
+
+
+    &__cover {
+
+        position: relative;
+        z-index: 1;
+        border-radius: 5px;
+
+        & picture {
+            display: block;
+            padding-top: 131%;
+            position: relative;
+            background-color: #eee;
+
+            & img {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+    }
+
+    &__image {
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 1em;
+
+        &:hover {
+            & .minicard-film__details {
+                opacity: 1;
+                visibility: visible;
+
+                & ul {
+                    transform: translateY(0);
+                }
+            }
+        }
+
+
+    }
+
+    &__details {
+        @include layer(3);
+        background-color: #525166;
+        color: #fff;
+        padding: 10px 12px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+        border-radius: 5px;
+
+
+
+        & ul {
+
+            transform: translateY(10px);
+            transition: 0.2s ease;
+
+            & li {
+                padding-bottom: 0.2em;
+
+                & span {
+                    display: block;
+
+                    &:last-child {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    &__rate {
+        @include layer(2);
+
+        & span {
+            color: #fff;
+            font-weight: 600;
+            position: relative;
+            top: 15px;
+            padding: 0.14em 0.6em 0.14em 0.5em;
+        }
+    }
+
+    &__title {
+
+        &:hover {
+            & a {
+                text-decoration: underline !important;
+            }
+        }
+
+        & a {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 150%;
+            color: #525166;
+
+
+        }
+
+        padding-bottom: 0.5em;
+    }
+
+    &__year {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #92919F;
+        margin-top: auto;
+        padding-bottom: 0.5em;
+
+    }
+
+    &__country {
+        display: flex;
+        align-items: center;
+    }
+
+    &__flags {
+        & ul {
+
+            display: flex;
+            align-items: center;
+            margin: -2px;
+
+            & li {
+
+                margin: 2px;
+
+                & .bgimage {
+                    width: 23px;
+                    height: 17px;
+                    @include bgimage-cover;
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+
+    &__duration {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #92919F;
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,44 @@
+mixin all-films
+    .all-films__competition
+        ul
+            li: a.active(href='#') В конкурсе
+            li: a(href='#') Вне конкурса
+    .all-films__tabs
+        ul
+            li: a.active(href="#"): button.btn.btn-line Полный метр
+            li: a(href="#"): button.btn.btn-line Kороткий метр
+            li: a(href="#"): button.btn.btn-line Анимационный
+            li: a(href="#"): button.btn.btn-line Документальный
+    .all-films__list
+        each item in moderator.films
+            .all-films__item(class=(item.light ? 'all-films__item--light':'')): +minicard-film(item)
+
+mixin minicard-film(data)
+    .minicard-film
+        .minicard-film__image
+            .minicard-film__cover: +picture(data.image)
+            .minicard-film__rate
+                span(style="background-color: "+data.colorRate+"")= data.rate
+            .minicard-film__details
+                ul
+                    li
+                        span Программа:
+                        span Полный метр
+                    li
+                        span Страна:
+                        span США
+                    li
+                        span Жанр:
+                        span Боевик
+                    li
+                        span Рейтинг зрителей:
+                        span 6.2
+
+        .minicard-film__title: a(href='#')= data.title
+        .minicard-film__year=data.year
+        .minicard-film__country
+            .minicard-film__flags
+                ul
+                    li: +bgimage('/img/flags/ru.svg')
+                    li: +bgimage('/img/flags/de.svg')
+            .minicard-film__duration 85 мин
