@@ -13,17 +13,15 @@ class customSelect {
 
     reinit(elem) {
         const _this = this;
-        document.querySelectorAll(elem).forEach(function (item, index) {
-            item = item.parentNode
 
-            if (item.querySelector('.select-styled')) {
-                item.querySelector('.select-styled').remove()
-                item.querySelector('.select-options').remove()
-            }
+        let item = elem.parentNode
 
-            _this.renderOption(item)
+        if (item.querySelector('.select-styled')) {
+            item.querySelector('.select-styled').remove()
+            item.querySelector('.select-list').remove()
+        }
 
-        })
+        _this.renderOption(item)
 
     }
 
@@ -44,13 +42,8 @@ class customSelect {
         styledList.classList.add('select-list');
         styledList.appendChild(styledOptions)
 
-
-
-
         item.appendChild(styledSelect)
         item.appendChild(styledList)
-
-        _this.clickEventOpenSelect(item)
 
         //====
 
@@ -81,6 +74,21 @@ class customSelect {
             _this.clickEventListItem(li)
 
         })
+
+        //add public methods
+
+        select['afSelect'] = new Object;
+        select.afSelect.open = function () {
+            _this.openSelect(item)
+        }
+        select.afSelect.close = function () {
+            _this.closeSelect()
+        }
+        select.afSelect.update = function () {
+            _this.reinit(select)
+        }
+
+        console.log(select)
     }
 
     renderTemplate() {
@@ -89,12 +97,17 @@ class customSelect {
 
         this.selectAll.forEach(function (item, index) {
 
+
+
             if (!item.classList.contains('select-hidden')) {
                 item.classList.add('select-hidden');
                 const wrapper = document.createElement('div');
                 wrapper.classList.add('af-select');
                 wrapper.innerHTML = item.outerHTML;
                 item.parentNode.replaceChild(wrapper, item);
+
+                //add event 
+                _this.clickEventOpenSelect(wrapper)
             }
 
         })
@@ -103,6 +116,8 @@ class customSelect {
             _this.renderOption(item)
 
         })
+
+
     }
 
     openSelect(elem) {
@@ -167,11 +182,14 @@ class customSelect {
     clickEventOpenSelect(elem) {
         const _this = this;
 
-        elem.addEventListener('click', function (event) {
+        function addEventOpen(event) {
             event.stopPropagation()
             event.preventDefault()
             _this.openSelect(this)
-        })
+        }
+
+        elem.removeEventListener('click', addEventOpen)
+        elem.addEventListener('click', addEventOpen)
     }
 
 }
