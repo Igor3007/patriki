@@ -221,6 +221,34 @@ header {
             @media screen and (min-width: $w1200) {
                 display: none;
             }
+
+            & .user-login-mobile {
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                border-left: 1px solid $main;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: 0.3s ease;
+
+                &.open {
+                    background-color: $main;
+
+                    & .bgimage {
+                        background-size: 24px !important;
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE4IDZMNiAxOE02IDZsMTIgMTIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) !important;
+                    }
+                }
+
+                & .bgimage {
+                    width: 36px;
+                    height: 36px;
+                    @include bgimage-cover;
+                    border-radius: 50%;
+                }
+            }
         }
     }
 
@@ -300,6 +328,67 @@ header {
                 text-decoration: underline;
             }
         }
+
+        & .user-login {
+            background-color: #525166;
+            height: 100%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 200px;
+            width: 200px;
+            padding: 0 1em;
+
+            &:hover {
+                opacity: 0.9;
+            }
+
+            & a {
+                color: #fff;
+                padding: 0;
+            }
+
+            & svg {
+                width: 16px;
+                height: 14px;
+            }
+
+            &__name {
+                & a {
+                    font-weight: 600;
+                    text-decoration: none;
+
+                    & span {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            &__tooltip {
+
+                position: relative;
+
+                & a {
+                    font-size: 11px;
+                    color: #fff;
+                    background-color: #cf1c5d;
+                    line-height: 1em;
+                    position: absolute;
+                    right: -1em;
+                    bottom: 3px;
+                    padding: 2px;
+                    min-width: 1.5em;
+                    transform: translateX(50%);
+                    border-radius: 12px;
+                    text-align: center;
+                    display: block;
+                    height: 1.5em;
+                    font-weight: 600;
+                    width: auto;
+                }
+            }
+        }
     }
 }
 
@@ -318,7 +407,10 @@ header {
     }
 
     &>div {
-        margin-right: 2.5em;
+
+        @media screen and (min-width: $w1200) {
+            margin-right: 2.5em;
+        }
 
         &:last-child {
             margin-right: 0;

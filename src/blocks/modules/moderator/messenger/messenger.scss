@@ -198,6 +198,32 @@
          background-color: #f5f5f5;
      }
 
+     &.active {
+         background-color: #92919F;
+
+         &.messenger-contact {
+             &--unread {
+                 &::after {
+                     background-color: #fff;
+                 }
+             }
+
+
+         }
+
+         & .messenger-contact {
+
+             &__last,
+             &__name {
+                 color: #fff
+             }
+
+
+         }
+     }
+
+
+
      &--unread {
          &::after {
              width: 10px;

@@ -34,7 +34,9 @@ input {
         background-size: 1.2em auto;
         background-repeat: no-repeat;
         background-position: calc(100% - 1.25em) center;
+        min-width: 165px;
         cursor: pointer;
+
     }
 
     & input[type="date"][aria-valid="false"],
@@ -207,7 +209,7 @@ input {
 
 }
 
-.remove-repeeatter {
+.remove-repeater {
     min-width: 52px;
     width: 52px;
     height: 52px;
@@ -245,11 +247,6 @@ input {
     border-radius: 5px;
     padding: 0 15px;
     height: 52px;
-
-    @media screen and (max-width: $w576) {
-        margin-bottom: rem(20);
-        margin-top: rem(25);
-    }
 
     & input[type="text"],
     & input[type="date"],

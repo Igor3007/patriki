@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     data: {
                         id: '10'
                     }
-                }, false, function (response) {
+                }, function (response) {
                     //response true
                     item.classList.toggle('active')
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     data: {
                         id: '10'
                     }
-                }, false, function (response) {
+                }, function (response) {
                     //response true
                     item.classList.toggle('active')
 
@@ -97,18 +97,20 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('[data-attach=poster]')) {
-        document.querySelector('[data-attach=poster]').addEventListener('change', function () {
+        document.querySelectorAll('[data-attach=poster]').forEach(function (poster) {
+            poster.addEventListener('change', function () {
 
-            let files = this.files;
-            let elem = this;
+                let files = this.files;
+                let elem = this;
 
-            sendFiles(files, elem, function (dataImage) {
+                sendFiles(files, elem, function (dataImage) {
 
-                elem.closest('.film-poster__cover').classList.add('cover--loaded')
-                elem.closest('.film-poster__cover').querySelector('[data-attach="preview-poster"]').src = dataImage
+                    elem.closest('.film-poster__cover').classList.add('cover--loaded')
+                    elem.closest('.film-poster__cover').querySelector('[data-attach="preview-poster"]').src = dataImage
 
-            });
+                });
 
+            })
         })
     }
 
@@ -118,14 +120,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
     repeater
     ============================================= */
 
-    if (document.querySelector('[data-repeeat="add"]')) {
-        document.querySelector('[data-repeeat="add"]').addEventListener('click', function (event) {
-            const container = document.querySelector('[data-repeeat="container"]')
+    if (document.querySelector('[data-repeat="add"]')) {
+        document.querySelector('[data-repeat="add"]').addEventListener('click', function (event) {
+            const container = document.querySelector('[data-repeat="container"]')
             const fieldRepeeat = container.children[0].cloneNode(true)
             const lastElem = fieldRepeeat.children[(fieldRepeeat.children.length - 1)]
 
             //max 10 fields
-            if (container.querySelectorAll('.remove-repeeatter').length > 9) {
+            if (container.querySelectorAll('.remove-repeater').length > 9) {
                 window.STATUS.err('Допустимо не более 10 элементов')
 
                 return false;
@@ -140,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             //create remove button
             const removeElem = document.createElement('span')
-            removeElem.classList.add('remove-repeeatter')
+            removeElem.classList.add('remove-repeater')
 
             //remove string
             removeElem.addEventListener('click', function (event) {
@@ -303,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         //remove item lineup
 
         function addEventremoveLineup(item) {
-            item.querySelector('.remove-repeeatter').addEventListener('click', function (event) {
+            item.querySelector('.remove-repeater').addEventListener('click', function (event) {
                 if (confirm('Вы действительно хотите удалить?')) {
                     event.target.closest('.lineup').remove()
                 }
@@ -388,6 +390,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
         document.querySelectorAll('[data-user]').forEach(function (item) {
             item.addEventListener('click', function () {
 
+                if (document.querySelector('.messenger-contact.active')) {
+                    document.querySelector('.messenger-contact.active').classList.remove('active')
+                }
+
+                this.classList.add('active')
+
                 document.querySelector('.messenger__user').innerText = item.querySelector('.messenger-contact__name').innerText
                 stopScrollFlag = true;
 
@@ -428,13 +436,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     /* ===========================================
-        repeeater lineup
+        repeater lineup
     =========================================== */
 
     if (document.querySelector('[data-lineup="container"]')) {
 
 
-        document.querySelectorAll('[data-lineup="repeeat"]').forEach(function (item) {
+        document.querySelectorAll('[data-lineup="repeat"]').forEach(function (item) {
 
 
             item.addEventListener('click', function () {
@@ -443,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 const lastElem = fieldRepeeat.children[(fieldRepeeat.children.length - 1)]
 
                 //max 10 fields
-                if (container.querySelectorAll('.remove-repeeatter').length > 9) {
+                if (container.querySelectorAll('.remove-repeater').length > 9) {
                     window.STATUS.err('Допустимо не более 10 элементов')
                     return false;
                 }
@@ -486,10 +494,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
             })
 
             document.querySelectorAll('[data-lang]').forEach(function (lang) {
-                if (item.getAttribute('href') == '#' + lang.dataset.lang) {
+
+                let href = item.getAttribute('href').replace('#', '')
+
+                if (lang.dataset.lang.indexOf(href) !== -1) {
                     lang.classList.add('active')
+
                 } else {
                     lang.classList.remove('active')
+
+                    console.log(lang)
                 }
             })
 
@@ -556,6 +570,54 @@ document.addEventListener('DOMContentLoaded', function (event) {
             })
         })
     }
+
+    /* ================================================
+    user-menu data-user-menu="open"
+    ================================================*/
+
+    if (document.querySelector('[data-user-menu="open"]')) {
+
+
+
+        function userMenu() {
+
+            this.btn = document.querySelector('[data-user-menu="open"]')
+            this.container = document.querySelector('.moderator-aside')
+
+            this.open = function () {
+                this.container.classList.add('open')
+                this.btn.classList.add('open')
+
+                if (window.menuInstanse) {
+                    window.menuInstanse.close()
+                }
+            }
+
+            this.close = function () {
+                this.container.classList.remove('open')
+                this.btn.classList.remove('open')
+            }
+
+            this.toggle = function () {
+                if (!this.btn.classList.contains('open')) this.open()
+                else this.close()
+
+            }
+
+            this.init = function () {
+                document.querySelector('[data-user-menu="open"]').addEventListener('click', () => {
+                    this.toggle()
+                })
+            }
+        }
+
+        window.userMenuInstance = new userMenu()
+        window.userMenuInstance.init()
+
+
+
+    }
+
 
 
 

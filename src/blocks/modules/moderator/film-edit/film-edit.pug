@@ -28,6 +28,8 @@ mixin film-edit()
         .film-tab-item(data-tab-item="ru" class="active")
           .form
             .form__item: .form__subitem: +input-material('text', 'Название фильма', 'Левиафан')
+            .form__item: .form__subitem: +input-material('text', 'Жанр', 'драма, криминал')
+            
             .form__item
               .form__subitem: +input-material('text', 'Заявитель (ФИО)', 'Екатерина Самойлова')
               .form__subitem: +input-material('text', 'Производитель', 'New Line Cinema')
@@ -37,24 +39,7 @@ mixin film-edit()
               .form__subitem: +input-material('email', 'Email', 'leviafan_film@mail.ru')
                
 
-            .form__label Фестиваль
-            .form__item
-              .form__subitem: +select-edit('Статус', ['В конкурсе','Статус 2'])
-              .form__subitem: +select-edit('Программа', ['Полный метр','Программа 2'])
-                
-              
-            .form__label Информация о фильме
-            .form__item
-              .form__subitem: +select-edit('Страна происхождения', ['Россия','Армения','Китай','Турция'])
-              .form__subitem: +input-material('text', 'Жанр', 'драма, криминал')
-              
-            .form__item
-              .form__item 
-                .form__subitem: +select-edit('Год производства', ['2020','2021'])
-                .form__subitem: input(type="date" value="26.02.2022"  )
-              .form__item 
-                .form__subitem: +input-material('text', 'Хронометраж (мин)', '141')
-                .form__subitem: +select-edit('Язык',['Русский','English'])
+            
 
             .form__label информация о съемочной группе
             .form__item
@@ -68,7 +53,7 @@ mixin film-edit()
             .form__item
               .form__subitem: .form__note: span Заполнить карточку режисера 
 
-            .form__group(data-repeeat="container")
+            .form__group(data-repeat="container")
               .form__item
                 .form__subitem: +input-material('text', 'ФИО', 'Михаил Кричман')
                 .form__subitem: input(type="text" name="post[]" disabled value="Оператор")
@@ -77,33 +62,20 @@ mixin film-edit()
                 .form__subitem: input(type="text" name="post[]" disabled value="Звукорежиссер")
             
             .form__item
-              .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
+              .form__subitem: .form__note: span(data-repeat="add") + Добавить члена съемочной группы
             
             .form__label Логлайн
             .form__item
               .form__subitem: textarea(placeholder="Описание фильма") Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.
 
-            .form__label Расписание показов
-            .form__item
-              .form__subitem
-                .lineup-container(data-lineup="container"): +lineup()
-
-                
-                
-
-            .form__item
-              .form__subitem
-                .form__note.form__note--col2
-                  span(data-lineup="repeeat") + Добавить дату и время
-                  +checkbox('Фильм в постоянном доступе')
-            .form__item
-              .form__subitem
-                .form__submit: button.btn(type="submit") сохранить
+            
 
 
         .film-tab-item(data-tab-item="en")
            .form
             .form__item: .form__subitem: +input-material('text', 'Название фильма', 'leviafan')
+            .form__item: .form__subitem: +input-material('text', 'Жанр', 'criminal')
+
             .form__item
               .form__subitem: +input-material('text', 'Заявитель (ФИО)', 'Ekaterina Samoylova')
               .form__subitem: +input-material('text', 'Производитель', 'New Line Cinema')
@@ -111,26 +83,7 @@ mixin film-edit()
             .form__item
               .form__subitem: +input-material('tel', 'Телефон', '+7(384)409-45-56')
               .form__subitem: +input-material('email', 'Email', 'leviafan_film@mail.ru')
-               
-
-            .form__label Фестиваль
-            .form__item
-              .form__subitem: +select-edit('Статус', ['В конкурсе','Статус 2'])
-              .form__subitem: +select-edit('Программа', ['Полный метр','Программа 2'])
-                
               
-            .form__label Информация о фильме
-            .form__item
-              .form__subitem: +select-edit('Страна происхождения', ['Russia','Армения','Китай','Турция'])
-              .form__subitem: +input-material('text', 'Жанр', 'драма, криминал')
-              
-            .form__item
-              .form__item 
-                .form__subitem: +select-edit('Год производства', ['2020','2021'])
-                .form__subitem: input(type="date" value="26.02.2022"  )
-              .form__item 
-                .form__subitem: +input-material('text', 'Хронометраж (мин)', '141')
-                .form__subitem: +select-edit('Язык',['Russian','English'])
 
             .form__label информация о съемочной группе
             .form__item
@@ -144,7 +97,7 @@ mixin film-edit()
             .form__item
               .form__subitem: .form__note: span Заполнить карточку режисера 
 
-            .form__group(data-repeeat="container")
+            .form__group(data-repeat="container")
               .form__item
                 .form__subitem: +input-material('text', 'ФИО', 'Mihail Kritchman')
                 .form__subitem: input(type="text" name="post[]" disabled value="Оператор")
@@ -153,34 +106,48 @@ mixin film-edit()
                 .form__subitem: input(type="text" name="post[]" disabled value="Звукорежиссер")
             
             .form__item
-              .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
+              .form__subitem: .form__note: span(data-repeat="add") + Добавить члена съемочной группы
             
             .form__label Логлайн
             .form__item
-              .form__subitem: textarea(placeholder="Описание фильма") Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.
-
-            .form__label Расписание показов
-            .form__item
-              .form__subitem
-                .lineup-container(data-lineup="container"): +lineup()
-
-                
-                
-
-            .form__item
-              .form__subitem
-                .form__note.form__note--col2
-                  span(data-lineup="repeeat") + Добавить дату и время
-                  +checkbox('Фильм в постоянном доступе')
-            .form__item
-              .form__subitem
-                .form__submit: button.btn(type="submit") сохранить
+              .form__subitem: textarea(placeholder="Описание фильма") Car mechanic Nikolai Sergeev lives with his second wife Lilya and his son from his first marriage in a small northern town on the seashore. The dishonest mayor of the city of Shelevyat is trying to seize his house and land for his own needs. After two lost trials, Nikolai turns to his former colleague Dmitry, a successful Moscow lawyer, for help. But the arrival of a Moscow guest only complicates the already difficult life of Nikolai.
 
 
         .film-tab-item(data-tab-item="comments") Комментарии
         .film-tab-item(data-tab-item="vote") Оценки
 
+        .form.active(data-lang="ru en") 
+          .form__label Фестиваль
+          .form__item
+            .form__subitem: +select-edit('Статус', ['В конкурсе','Статус 2'])
+            .form__subitem: +select-edit('Программа', ['Полный метр','Программа 2'])
+                
+          .form__label Информация о фильме
+          .form__item
+            .form__subitem: +select-edit('Страна происхождения', ['Россия','Армения','Китай','Турция'])
+            
+          .form__item
+            .form__item 
+              .form__subitem: +select-edit('Год производства', ['2020','2021'])
+              .form__subitem: input(type="date" value="26.02.2022"  )
+            .form__item 
+              .form__subitem: +input-material('text', 'Хронометраж (мин)', '141')
+              .form__subitem: +select-edit('Язык',['Русский','English'])
 
+          .form__label Расписание показов
+          .form__item
+            .form__subitem
+              .lineup-container(data-lineup="container"): +lineup()
+
+          .form__item
+            .form__subitem
+              .form__note.form__note--col2
+                span(data-lineup="repeat") + Добавить дату и время
+                +checkbox('Фильм в постоянном доступе')
+
+          .form__item
+            .form__subitem
+              .form__submit: button.btn(type="submit") сохранить
 
 
 mixin form-tabs-nav

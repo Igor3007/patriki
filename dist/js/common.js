@@ -129,10 +129,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
         this.state = 'close';
 
         this.open = function () {
+
+            if (window.userMenuInstance) {
+                window.userMenuInstance.close()
+            }
+
             this.el.classList.add('open')
             this.button.classList.add('open')
             document.body.classList.add('hidden')
             this.state = 'open';
+
         }
 
         this.close = function () {
@@ -156,13 +162,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     }
 
-    const menuInstanse = new mobileMenu({
+    window.menuInstanse = new mobileMenu({
         elButton,
         elContainer
     })
 
     elButton.addEventListener('click', function () {
-        menuInstanse.toggle()
+        window.menuInstanse.toggle()
     })
 
 

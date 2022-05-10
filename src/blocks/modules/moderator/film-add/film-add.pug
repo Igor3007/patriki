@@ -8,49 +8,30 @@ mixin film-add()
           .form
             .form__item: .form__subitem: +input-material('text', 'Название фильма')
             .form__item
+              .form__subitem: +input-material('text', 'Жанр') 
+            .form__item
               .form__subitem: +input-material('text', 'Заявитель (ФИО)') 
               .form__subitem: +input-material('text', 'Производитель') 
             .form__item
               .form__subitem: +input-material('tel', 'Телефон')
               .form__subitem: +input-material('email', 'Email')
-
-            .form__label Фестиваль
-            .form__item
-              .form__subitem: +select('Статус', ['Статус 1','Статус 2'])
-              .form__subitem: +select('Программа', ['Программа 1','Программа 2'])
-                
-              
-            .form__label Информация о фильме
-            .form__item
-              .form__subitem
-                select(placeholder="Страна происхождения")
-                  option(value="") Россия
-                  option(value="") Армения
-                  option(value="") Китай
-                  option(value="") Турция
-              .form__subitem: +input-material('text', 'Жанр') 
-
-            .form__item
-              .form__item 
-                .form__subitem: +select('Год производства', ['2020','2021'])
-                .form__subitem: input(type="date" placeholder="Дата подачи")
-              .form__item 
-                .form__subitem: +input-material('text', 'Хронометраж (мин)')
-                .form__subitem: +select('Язык',['Русский','English'])
+            
 
             .form__label информация о съемочной группе
             .form__item
               .form__subitem: +input-material('text', 'ФИО') 
               .form__subitem
                 input(type="text" name="post[]" placeholder="Продюсер" disabled value="Продюсер")
+
             .form__item
               .form__subitem: +input-material('text', 'ФИО') 
               .form__subitem
                 input(type="text" name="post[]" placeholder="Режиссер" disabled value="Режиссер")
+
             .form__item
               .form__subitem: .form__note: span Заполнить карточку режисера
 
-            .form__group(data-repeeat="container")
+            .form__group(data-repeat="container")
               .form__item
                 .form__subitem: +input-material('text', 'ФИО') 
                 .form__subitem 
@@ -61,28 +42,13 @@ mixin film-add()
                   input(type="text" placeholder="Звукорежиссер" name="post[]" disabled value="Звукорежиссер")
             
             .form__item
-              .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
+              .form__subitem: .form__note: span(data-repeat="add") + Добавить члена съемочной группы
             
             .form__label Логлайн
             .form__item
               .form__subitem: textarea(placeholder="Описание фильма")
 
-            .form__label Расписание показов
-            .form__item
-              .form__subitem
-                .lineup-container(data-lineup="container"): +lineup()
-
-                
-                
-
-            .form__item
-              .form__subitem
-                .form__note.form__note--col2
-                  span(data-lineup="repeeat") + Добавить дату и время
-                  +checkbox('Фильм в постоянном доступе')
-            .form__item
-              .form__subitem
-                .form__submit: button.btn(type="submit") сохранить
+            
 
         //- en
         //- en
@@ -95,35 +61,16 @@ mixin film-add()
           .form
             .form__item: .form__subitem: input(type="text" placeholder="Название фильма")
             .form__item
+              .form__subitem: +input-material('text', 'Жанр') 
+            .form__item
               .form__subitem: input(type="text" placeholder="Заявитель (ФИО)")
               .form__subitem: input(type="text" placeholder="Производитель")
             .form__item
               .form__subitem: input(type="tel" placeholder="Телефон")
               .form__subitem: input(type="email" placeholder="Email")
+            
 
-            .form__label Фестиваль
-            .form__item
-              .form__subitem: +select('Статус', ['Статус 1','Статус 2'])
-              .form__subitem: +select('Программа', ['Программа 1','Программа 2'])
-                
-              
-            .form__label Информация о фильме
-            .form__item
-              .form__subitem
-                select(placeholder="Страна происхождения")
-                  option(value="") Россия
-                  option(value="") Армения
-                  option(value="") Китай
-                  option(value="") Турция
-              .form__subitem: input(type="text" placeholder="Жанр")
-
-            .form__item
-              .form__item 
-                .form__subitem: +select('Год производства', ['2020','2021'])
-                .form__subitem: input(type="date" placeholder="Дата подачи")
-              .form__item 
-                .form__subitem: input(type="text" placeholder="Хронометраж (мин)")
-                .form__subitem: +select('Язык',['Русский','English'])
+             
 
             .form__label информация о съемочной группе
             .form__item
@@ -137,7 +84,7 @@ mixin film-add()
             .form__item
               .form__subitem: .form__note: span Заполнить карточку режисера
 
-            .form__group(data-repeeat="container")
+            .form__group(data-repeat="container")
               .form__item
                 .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
                 .form__subitem 
@@ -148,29 +95,48 @@ mixin film-add()
                   input(type="text" placeholder="Звукорежиссер" name="post[]" disabled value="Звукорежиссер")
             
             .form__item
-              .form__subitem: .form__note: span(data-repeeat="add") + Добавить члена съемочной группы
+              .form__subitem: .form__note: span(data-repeat="add") + Добавить члена съемочной группы
             
             .form__label Логлайн
             .form__item
               .form__subitem: textarea(placeholder="Описание фильма")
+           
+        .form.active(data-lang="ru en")
+          .form__label Фестиваль
+          .form__item
+            .form__subitem: +select('Статус', ['Статус 1','Статус 2'])
+            .form__subitem: +select('Программа', ['Программа 1','Программа 2'])
 
-            .form__label Расписание показов
-            .form__item
-              .form__subitem
-                .lineup-container(data-lineup="container"): +lineup()
+          .form__label Информация о фильме
+          .form__item
+            .form__subitem
+              select(placeholder="Страна происхождения")
+                option(value="") Россия
+                option(value="") Армения
+                option(value="") Китай
+                option(value="") Турция
+          .form__item
+            .form__item 
+              .form__subitem: +select('Год производства', ['2020','2021'])
+              .form__subitem: input(type="date" placeholder="Дата подачи")
+            .form__item 
+              .form__subitem: +input-material('text', 'Хронометраж (мин)')
+              .form__subitem: +select('Язык',['Русский','English'])
 
-                
-                
+          .form__label Расписание показов
+          .form__item
+            .form__subitem
+              .lineup-container(data-lineup="container"): +lineup()
 
-            .form__item
-              .form__subitem
-                .form__note.form__note--col2
-                  span(data-lineup="repeeat") + Добавить дату и время
-                  +checkbox('Фильм в постоянном доступе')
-            .form__item
-              .form__subitem
-                .form__submit: button.btn(type="submit") сохранить
-
+          .form__item
+            .form__subitem
+              .form__note.form__note--col2
+                span(data-lineup="repeat") + Добавить дату и время
+                +checkbox('Фильм в постоянном доступе')
+          .form__item
+            .form__subitem
+              .form__submit: button.btn(type="submit") сохранить
+            
 
 mixin lineup
   .lineup(data-lineup="1")
@@ -186,7 +152,7 @@ mixin lineup
                 input(type="checkbox" name="time[]" value=li+":00" checked)
         .lineup__add: span.timepicker(data-timepicker="")
 
-      .lineup__remove: span.remove-repeeatter
+      .lineup__remove: span.remove-repeater
 
 
 mixin form-tabs-nav

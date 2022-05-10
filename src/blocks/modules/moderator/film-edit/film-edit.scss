@@ -133,3 +133,11 @@
         animation: slide-up 0.3s ease;
     }
 }
+
+div[data-lang] {
+
+    &:not(.active) {
+        display: none;
+    }
+
+}
