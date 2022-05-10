@@ -1,14 +1,14 @@
 mixin all-films
-    .all-films__competition
-        ul
-            li: a.active(href='#') В конкурсе
-            li: a(href='#') Вне конкурса
+     
     .all-films__tabs
         ul
-            li: a.active(href="#"): button.btn.btn-line Полный метр
-            li: a(href="#"): button.btn.btn-line Kороткий метр
-            li: a(href="#"): button.btn.btn-line Анимационный
-            li: a(href="#"): button.btn.btn-line Документальный
+            li
+                +select(false, ['Российские','Зарубежные','Спецпоказы'])
+            li
+                +select(false, ['В конкурсе','Вне конкурса',])
+            li
+                +select(false, ['Полный метр','Kороткий метр','Анимационный','Документальный'])
+            
     .all-films__list
         each item in moderator.films
             .all-films__item(class=(item.light ? 'all-films__item--light':'')): +minicard-film(item)

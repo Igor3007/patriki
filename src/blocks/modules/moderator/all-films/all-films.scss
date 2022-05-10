@@ -67,21 +67,21 @@
 
     &__tabs {
 
-        padding-bottom: 25px;
+        padding-bottom: 35px;
         margin-right: -9px;
 
         @media screen and (min-width: $w360) {
             margin-right: 0;
         }
 
-        & ul {
+        &>ul {
             display: flex;
             align-items: center;
             margin: 0 -6px;
-            overflow-x: auto;
+            //overflow-x: auto;
 
 
-            & li {
+            &>li {
                 margin: 0 6px;
 
                 & .active {
@@ -93,6 +93,19 @@
                         }
                     }
                 }
+            }
+        }
+
+        & .af-select {
+
+            max-width: 300px !important;
+
+            & .select-styled {
+                border: 1px solid $main2;
+                border-radius: 5px;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 12px
             }
         }
     }
