@@ -4780,17 +4780,16 @@ div[data-lang]:not(.active) {
 
 .all-films__tabs {
   padding-bottom: 35px;
-  margin-right: -9px;
 }
 
 .all-films__tabs > ul {
   display: flex;
-  align-items: center;
-  margin: 0 -6px;
+  margin: -6px;
+  flex-direction: column;
 }
 
 .all-films__tabs > ul > li {
-  margin: 0 6px;
+  margin: 6px;
 }
 
 .all-films__tabs > ul > li .active .btn {
@@ -4802,7 +4801,7 @@ div[data-lang]:not(.active) {
 }
 
 .all-films__tabs .af-select {
-  max-width: 300px !important;
+  max-width: 360px !important;
 }
 
 .all-films__tabs .af-select .select-styled {
@@ -5073,6 +5072,11 @@ div[data-lang]:not(.active) {
     justify-content: space-between;
     align-content: center;
     width: 100%;
+  }
+
+  .all-films__tabs > ul {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
