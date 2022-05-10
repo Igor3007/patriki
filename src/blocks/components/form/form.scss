@@ -132,6 +132,7 @@ input {
 
         @media screen and (min-width: $w760) {
             flex-direction: row;
+            align-items: flex-start;
             margin: -10px;
             width: calc(100% + 20px);
         }
@@ -153,6 +154,14 @@ input {
         margin-right: 0;
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
+
+        & div.error {
+            color: $red;
+            font-size: 12px;
+            padding-top: 5px;
+            padding-left: 3px;
+        }
 
 
         & .form__item {

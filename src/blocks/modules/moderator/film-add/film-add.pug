@@ -59,7 +59,9 @@ mixin film-add()
 
         .film-tab-item(data-tab-item="en" )
           .form
-            .form__item: .form__subitem: input(type="text" placeholder="Название фильма")
+            .form__item: .form__subitem
+              input(type="text" placeholder="Название фильма")
+              .error Поле обязательно для заполнения
             .form__item
               .form__subitem: +input-material('text', 'Жанр') 
             .form__item
@@ -67,7 +69,9 @@ mixin film-add()
               .form__subitem: input(type="text" placeholder="Производитель")
             .form__item
               .form__subitem: input(type="tel" placeholder="Телефон")
-              .form__subitem: input(type="email" placeholder="Email")
+              .form__subitem
+                input(type="email" placeholder="Email")
+                .error Поле обязательно для заполнения
             
 
              
@@ -89,6 +93,7 @@ mixin film-add()
                 .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
                 .form__subitem 
                   input(type="text" placeholder="Оператор" name="post[]" disabled value="Оператор")
+                  .error Поле обязательно для заполнения
               .form__item
                 .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
                 .form__subitem 
@@ -118,7 +123,9 @@ mixin film-add()
           .form__item
             .form__item 
               .form__subitem: +select('Год производства', ['2020','2021'])
-              .form__subitem: input(type="date" placeholder="Дата подачи")
+              .form__subitem
+                input(type="date" placeholder="Дата подачи")
+                .error Поле обязательно для заполнения
             .form__item 
               .form__subitem: +input-material('text', 'Хронометраж (мин)')
               .form__subitem: +select('Язык',['Русский','English'])

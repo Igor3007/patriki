@@ -159,6 +159,7 @@
                             <label class="attach-label"><span class="bgimage" style="background-image: url(/img/common/camera.png)"></span><span class="text-upload">Добавить афишу</span>
                               <input type="file" name="poster-img" data-attach="poster"/>
                             </label>
+                            <div class="error">Поле обязательно для заполнения</div>
                           </div>
                           <div class="film-poster__image">
                             <picture><img src="" data-attach="preview-poster"/></picture>
@@ -168,6 +169,12 @@
                           <label class="attach-label"><span class="btn">Загрузить фильм на платформу</span>
                             <input type="file" name="film-file"/>
                           </label>
+                        </div>
+                        <div class="film-poster__progress">
+                          <div class="progress-bar">
+                            <div class="progress-bar__title">Зарузка 66%</div>
+                            <div class="progress-bar__state"><span style="width: 66%"></span></div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -298,6 +305,7 @@
                               <div class="form__item">
                                 <div class="form__subitem">
                                   <input type="text" placeholder="Название фильма"/>
+                                  <div class="error">Поле обязательно для заполнения</div>
                                 </div>
                               </div>
                               <div class="form__item">
@@ -322,6 +330,7 @@
                                 </div>
                                 <div class="form__subitem">
                                   <input type="email" placeholder="Email"/>
+                                  <div class="error">Поле обязательно для заполнения</div>
                                 </div>
                               </div>
                               <div class="form__label">информация о съемочной группе</div>
@@ -353,6 +362,7 @@
                                   </div>
                                   <div class="form__subitem"> 
                                     <input type="text" placeholder="Оператор" name="post[]" disabled="disabled" value="Оператор"/>
+                                    <div class="error">Поле обязательно для заполнения</div>
                                   </div>
                                 </div>
                                 <div class="form__item">
@@ -414,6 +424,7 @@
                                 </div>
                                 <div class="form__subitem">
                                   <input type="date" placeholder="Дата подачи"/>
+                                  <div class="error">Поле обязательно для заполнения</div>
                                 </div>
                               </div>
                               <div class="form__item"> 

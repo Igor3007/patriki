@@ -1,4 +1,12 @@
 .film-poster {
+
+    & div.error {
+        color: $red;
+        font-size: 12px;
+        padding-top: 5px;
+        text-align: center;
+    }
+
     &__upload {
         & .btn {
             padding: 0.8em 2.2em 0.85em 2.2em;
@@ -70,6 +78,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
 
         & .bgimage {
             width: 30px;
@@ -90,6 +99,8 @@
                 padding-top: 5px;
             }
         }
+
+
     }
 
     &__title {
@@ -124,12 +135,21 @@
                     overflow: hidden;
                     display: block;
                     @include line-clamp(2);
+                    position: relative;
+
+
                 }
 
                 & svg {
                     min-width: 20px;
                 }
             }
+        }
+    }
+
+    &__progress {
+        & .progress-bar {
+            padding-top: 15px;
         }
     }
 
@@ -149,6 +169,40 @@
 
         &.active {
             display: block;
+        }
+    }
+}
+
+.progress-bar {
+
+    &__title {
+        text-align: center;
+        font-weight: 600;
+        color: $main;
+        padding-bottom: 5px;
+    }
+
+    &__state {
+        height: 15px;
+        padding: 2px;
+        border: 1px solid #bcbcbc;
+
+        & span {
+            display: block;
+            height: 100%;
+            background-color: $main;
+            transition: width 0.3s ease;
+
+            &::before {
+                content: '';
+                background: -o-linear-gradient(315deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+                background: linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+                background-size: 17px 17px;
+                display: block;
+                height: 100%;
+                -webkit-animation: 1s linear infinite progress-bar-stripes;
+                animation: 1s linear infinite progress-bar-stripes
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ mixin film-poster()
           +bgimage('/img/common/camera.png')
           span.text-upload Добавить афишу
           input(type="file" name="poster-img" data-attach="poster" )
+        .error Поле обязательно для заполнения
       .film-poster__image
         picture
           img(src="" data-attach="preview-poster")
@@ -22,6 +23,11 @@ mixin film-poster()
       label.attach-label
         span.btn Загрузить фильм на платформу
         input(type="file" name="film-file")
+    .film-poster__progress
+      .progress-bar
+        .progress-bar__title Зарузка 66%
+        .progress-bar__state
+          span(style="width: 66%")
 
 mixin film-poster-edit()
   .film-poster
