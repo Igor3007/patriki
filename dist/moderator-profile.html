@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Сообщения</title>
+    <title>Профиль</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -132,114 +132,115 @@
                   <ul>
                     <li><a href="#">Главная</a></li>
                     <li><a href="#">Личный кабинет</a></li>
-                    <li><a href="#">Сообщения</a></li>
+                    <li><a href="#">Профиль</a></li>
                   </ul>
                 </div>
                 <div class="head-moderator__title">
-                  <h1>Сообщения</h1>
+                  <h1>Профиль</h1>
                 </div>
               </div>
               <div class="main-moderator">
-                <div class="messenger">
-                  <div class="messenger__contacts" data-pane="contacts">
-                    <div class="messenger__new">
-                      <button class="btn btn-small">Новое сообщение</button>
-                    </div>
-                    <div class="messenger__list">
-                      <div class="messenger-contact" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Иван зверев</div>
-                          <div class="messenger-contact__last">Три билборда на границе Эббинга, Миссури (2017) / 22-00651</div>
-                          <div class="messenger-contact__date">Сегодня 19.30</div>
+                <div class="profile-block">
+                  <div class="profile-block__form">
+                    <form method="get">
+                      <div class="profile-block__photo">
+                        <div class="box-photo">
+                          <div class="box-photo__image"><span class="bgimage lazyload" data-attach="preview" data-bg="/img/common/img_user.webp"></span></div>
+                          <div class="box-photo__add">
+                            <label class="attach-text">
+                              <input type="file" data-attach="photo" name="photo"/><span>Изменить фото</span>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                      <div class="messenger-contact messenger-contact--unread" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Анна Жигулёва</div>
-                          <div class="messenger-contact__last">Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй</div>
-                          <div class="messenger-contact__date">Вчера в 19.30</div>
+                      <div class="profile-block__fields">
+                        <div class="form">
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="input-material">
+                                <input type="text" value="Николай"/>
+                                <label>Имя</label>
+                              </div>
+                            </div>
+                            <div class="form__subitem">
+                              <div class="input-material">
+                                <input type="text" value="Петров"/>
+                                <label>Фамилия</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <select name="country" required="required" placeholder="Страна">
+                                <option value="ru" selected="selected">Россия</option>
+                                <option value="by">Беларусь</option>
+                                <option value="ua">Украина</option>
+                                <option value="ua">Азербайджан</option>
+                                <option value="ua">Армения</option>
+                                <option value="ua">Белоруссия</option>
+                                <option value="ua">Грузия</option>
+                                <option value="ua">Казахстан</option>
+                                <option value="ua">Киргизия</option>
+                                <option value="ua">Латвия</option>
+                                <option value="ua">Литва</option>
+                              </select>
+                            </div>
+                            <div class="form__subitem">
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <select name="year" required="required" placeholder="Год рождения">
+                                    <option value="1990" selected="selected">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                  </select>
+                                </div>
+                                <div class="form__subitem">
+                                  <select name="sex" required="required" placeholder="Мужской">
+                                    <option value="1" selected="selected">Мужской</option>
+                                    <option value="2">Женский</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="input-material">
+                                <input type="email" value="ivan@gmail.com"/>
+                                <label>Email</label>
+                              </div>
+                            </div>
+                            <div class="form__subitem"> 
+                              <div class="bind-account">
+                                <div class="bind-account__text">Привязать соцсеть</div>
+                                <div class="bind-account__list">
+                                  <ul>
+                                    <li><a href="#">
+                                        <svg width="25" height="25">
+                                          <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                                        </svg></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__label">Пароль</div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <input type="password" required="required" placeholder="Пароль" name="password"/>
+                            </div>
+                            <div class="form__subitem">
+                              <input type="password" required="required" placeholder="Повторите пароль" name="password-repeat"/>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <button class="btn" type="submit">Сохранить изменения</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="messenger-contact" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/img_user.png"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Иван Иванов</div>
-                          <div class="messenger-contact__last">всеми силами пытается в строй</div>
-                          <div class="messenger-contact__date">Вчера в 19.30</div>
-                        </div>
-                      </div>
-                      <div class="messenger-contact" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Иван зверев</div>
-                          <div class="messenger-contact__last">Три билборда на границе Эббинга, Миссури (2017) / 22-00651</div>
-                          <div class="messenger-contact__date">Сегодня 19.30</div>
-                        </div>
-                      </div>
-                      <div class="messenger-contact" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Анастасия Старовойтова</div>
-                          <div class="messenger-contact__last">Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй</div>
-                          <div class="messenger-contact__date">Вчера в 19.30</div>
-                        </div>
-                      </div>
-                      <div class="messenger-contact" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/img_user.png"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Иван зверев</div>
-                          <div class="messenger-contact__last">всеми силами пытается в строй</div>
-                          <div class="messenger-contact__date">Вчера в 19.30</div>
-                        </div>
-                      </div>
-                      <div class="messenger-contact" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Иван зверев</div>
-                          <div class="messenger-contact__last">Три билборда на границе Эббинга, Миссури (2017) / 22-00651</div>
-                          <div class="messenger-contact__date">Сегодня 19.30</div>
-                        </div>
-                      </div>
-                      <div class="messenger-contact" data-user="232130943">
-                        <div class="messenger-contact__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
-                        </div>
-                        <div class="messenger-contact__detail">
-                          <div class="messenger-contact__name">Анастасия Старовойтова</div>
-                          <div class="messenger-contact__last">Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй</div>
-                          <div class="messenger-contact__date">Вчера в 19.30</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="messenger__chat" data-pane="chat">
-                    <div class="messenger__back"><span>Все сообщения</span></div>
-                    <div class="messenger__user">Иван зверев</div>
-                    <div class="messenger__messages">
-                      <div class="messenger__scroll scroll-min">
-                        <div class="messanger-text-preview">Выберите чат</div>
-                      </div>
-                    </div>
-                    <div class="messenger__send">
-                      <div class="messenger__form">
-                        <div class="messenger__field">
-                          <textarea placeholder="Сообщение"></textarea>
-                        </div>
-                        <div class="messenger__button">
-                          <svg width="24" height="24">
-                            <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>

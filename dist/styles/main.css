@@ -4975,6 +4975,7 @@ div[data-lang]:not(.active) {
   display: block;
   transition: 0.3s ease;
   background-color: #eee;
+  border: 1px solid #e7e6f5;
 }
 
 .minicard-film__duration {
@@ -4983,6 +4984,33 @@ div[data-lang]:not(.active) {
   line-height: 150%;
   color: #92919F;
   margin-left: 10px;
+}
+
+.profile-block {
+  max-width: 760px;
+}
+
+.profile-block__photo {
+  margin-bottom: 40px;
+}
+
+.profile-block__photo .box-photo {
+  max-width: 120px;
+  width: 100%;
+  margin-right: auto;
+}
+
+.profile-block__photo .box-photo__photo {
+  margin-left: 0;
+}
+
+.profile-block__photo .box-photo__add {
+  white-space: nowrap;
+  user-select: none;
+}
+
+.profile-block .btn {
+  margin-left: auto;
 }
 
 @media screen and (min-width: 359px) {

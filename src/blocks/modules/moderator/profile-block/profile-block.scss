@@ -1,0 +1,26 @@
+.profile-block {
+    max-width: 760px;
+
+    &__photo {
+        margin-bottom: 40px;
+
+        & .box-photo {
+            max-width: 120px;
+            width: 100%;
+            margin-right: auto;
+
+            &__photo {
+                margin-left: 0;
+            }
+
+            &__add {
+                white-space: nowrap;
+                user-select: none;
+            }
+        }
+    }
+
+    & .btn {
+        margin-left: auto;
+    }
+}

@@ -114,6 +114,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     }
 
+    /* ========================================
+    upload photo
+    ======================================== */
+
+    document.querySelector('[data-attach=photo]').addEventListener('change', function () {
+
+        let files = this.files;
+        let elem = this;
+
+        sendFiles(files, elem, function (dataImage) {
+
+            elem.closest('form').querySelector('[data-attach="preview"]').style.backgroundImage = 'url(' + dataImage + ')'
+
+        });
+
+    })
+
 
 
     /* =============================================
