@@ -247,6 +247,25 @@ header {
                     height: 36px;
                     @include bgimage-cover;
                     border-radius: 50%;
+
+                    & span {
+                        font-size: 10px;
+                        color: #fff;
+                        background-color: #cf1c5d;
+                        line-height: 1em;
+                        position: absolute;
+                        right: 0.2em;
+                        bottom: 0;
+                        padding: 2px 4px;
+                        min-width: 1.5em;
+                        transform: translateX(50%);
+                        border-radius: 12px;
+                        text-align: center;
+                        display: block;
+                        height: 1.5em;
+                        font-weight: 600;
+                        width: auto;
+                    }
                 }
             }
         }

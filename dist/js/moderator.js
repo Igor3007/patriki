@@ -118,18 +118,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
     upload photo
     ======================================== */
 
-    document.querySelector('[data-attach=photo]').addEventListener('change', function () {
+    if (document.querySelector('[data-attach=photo]')) {
 
-        let files = this.files;
-        let elem = this;
+        document.querySelector('[data-attach=photo]').addEventListener('change', function () {
 
-        sendFiles(files, elem, function (dataImage) {
+            let files = this.files;
+            let elem = this;
 
-            elem.closest('form').querySelector('[data-attach="preview"]').style.backgroundImage = 'url(' + dataImage + ')'
+            sendFiles(files, elem, function (dataImage) {
+                elem.closest('form').querySelector('[data-attach="preview"]').style.backgroundImage = 'url(' + dataImage + ')'
+            });
 
-        });
+        })
+    }
 
-    })
+
 
 
 
@@ -608,11 +611,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 if (window.menuInstanse) {
                     window.menuInstanse.close()
                 }
+
+                document.body.classList.add('hidden-profile')
+
             }
 
             this.close = function () {
                 this.container.classList.remove('open')
                 this.btn.classList.remove('open')
+                document.body.classList.remove('hidden-profile')
             }
 
             this.toggle = function () {
@@ -622,7 +629,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
 
             this.init = function () {
-                document.querySelector('[data-user-menu="open"]').addEventListener('click', () => {
+                this.btn.addEventListener('click', () => {
                     this.toggle()
                 })
             }

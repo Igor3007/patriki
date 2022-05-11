@@ -80,7 +80,7 @@
             //overflow-x: auto;
             flex-direction: column;
 
-            @media screen and (min-width: $w576) {
+            @media screen and (min-width: $w760) {
                 flex-direction: row;
                 align-items: center;
 
@@ -105,13 +105,16 @@
         & .af-select {
 
             max-width: 360px !important;
+            height: auto;
 
             & .select-styled {
                 border: 1px solid $main2;
                 border-radius: 5px;
-                text-transform: uppercase;
                 font-weight: 600;
-                font-size: 12px
+            }
+
+            & .af-selected-placeholder::before {
+                text-transform: none;
             }
         }
     }
