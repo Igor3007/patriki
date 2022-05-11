@@ -620,6 +620,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 this.container.classList.remove('open')
                 this.btn.classList.remove('open')
                 document.body.classList.remove('hidden-profile')
+
+                if (document.querySelector('.moderator-aside__form')) {
+                    document.querySelector('.moderator-aside__form').remove('open')
+                }
             }
 
             this.toggle = function () {
@@ -639,6 +643,64 @@ document.addEventListener('DOMContentLoaded', function (event) {
         window.userMenuInstance.init()
 
 
+
+    }
+
+    /* ========================================
+    invite form
+    ======================================== */
+
+    if (document.querySelectorAll('[data-modal="invite"]').length) {
+
+        // init modal
+        var invitePopup = new customModal()
+
+        function submitInviteForm(elem) {
+            //elem - dom element
+
+            elem.querySelector('[data-form="invite-member"]').addEventListener('submit', function (event) {
+                event.preventDefault()
+
+                //ajax true
+
+                invitePopup.close()
+                window.STATUS.msg('Сообщение успешно отправлено!')
+
+            })
+        }
+
+        document.querySelectorAll('[data-modal="invite"]').forEach(function (item) {
+            item.addEventListener('click', function () {
+
+                if (document.body.clientWidth <= 360) {
+
+                    let elem = document.querySelector('.moderator-aside__form');
+                    elem.classList.add('open')
+
+                    //init submit
+                    submitInviteForm(elem)
+
+                    return false
+                }
+
+                //desctop
+
+                let template = document.querySelector(item.dataset.src).outerHTML
+                invitePopup.open(template, function (instanse) {
+
+                    instanse.querySelectorAll('input').forEach(function (input) {
+                        if (MATERIAL_INPUT) {
+                            MATERIAL_INPUT.addEvent(input)
+                        }
+
+                        //init submit
+                        submitInviteForm(instanse)
+                    })
+
+
+                })
+            })
+        })
 
     }
 

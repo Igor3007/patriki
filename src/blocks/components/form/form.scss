@@ -22,6 +22,8 @@ input {
         border: 1px solid #BCBCBC;
         box-sizing: border-box;
         border-radius: 5px;
+        width: auto;
+        flex-grow: 1;
 
         &::placeholder {
             color: $main;
@@ -161,6 +163,7 @@ input {
             font-size: 12px;
             padding-top: 5px;
             padding-left: 3px;
+            width: 100%;
         }
 
 

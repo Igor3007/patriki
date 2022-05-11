@@ -29,7 +29,18 @@ html(lang="ru")
     link(rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png")
     link(rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png")
     link(rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png")
+
+    link(rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin)
+    link(rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin)
+    link(rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin)
+    link(rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin)
+
+    style
+      include ../../styles/base/_critical-fonts.scss
+
     link(rel="stylesheet" href="styles/main.css?v=1.0")
+
+
 
   body
     header.header-layout-page

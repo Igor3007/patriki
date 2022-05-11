@@ -26,6 +26,50 @@
     <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
+    <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
+    <style>@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+    </style>
     <link rel="stylesheet" href="styles/main.css?v=1.0">
   </head>
   <body class="perf-no-animation">
@@ -109,7 +153,7 @@
                   <div class="moderator-aside__name">Николай Петров</div>
                   <div class="moderator-aside__email">nik_petrov@mail.ru</div>
                   <div class="moderator-aside__invite">
-                    <button class="btn btn-small">Пригласить</button>
+                    <button class="btn btn-small" data-modal="invite" data-src="#invite-member">Пригласить</button>
                   </div>
                   <div class="moderator-aside__nav">
                     <ul>
@@ -121,6 +165,54 @@
                       <li><a href="moderator-profile.html">Профиль</a></li>
                       <li><a href="moderator-logout.html">Выйти</a></li>
                     </ul>
+                  </div>
+                </div>
+                <div class="moderator-aside__form">
+                  <div class="invite-member" id="invite-member">
+                    <div class="invite-member__title">Пригласить участника</div>
+                    <div class="invite-member__form">
+                      <form action="#" method="POST" data-form="invite-member"> 
+                        <div class="invite-member__label">Язык приглашения</div>
+                        <div class="invite-member__lang">
+                          <label class="radio">
+                            <input type="radio" name="lang" checked="" value="val"/><span class="radio__elem"></span><span class="radio__text">Русский</span>
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="lang" value="val"/><span class="radio__elem"></span><span class="radio__text">Английский</span>
+                          </label>
+                        </div>
+                        <div class="invite-member__fields">
+                          <div class="form">
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <div class="input-material">
+                                  <input type="email" value=""/>
+                                  <label>Email</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <div class="input-material">
+                                  <input type="text" value=""/>
+                                  <label>Тема</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <textarea placeholder="Текст приглашения"></textarea>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <button class="btn btn-large">Отправить</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>

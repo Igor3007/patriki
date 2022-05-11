@@ -5,9 +5,26 @@
     .moderator-aside__name Николай Петров
     .moderator-aside__email nik_petrov@mail.ru
     .moderator-aside__invite
-      button.btn.btn-small Пригласить
+      button.btn.btn-small(data-modal="invite" data-src="#invite-member") Пригласить
     .moderator-aside__nav
       ul
         each item,index in app.moderatorNav
           li: a(href=item.href class=(index == 1 ? 'badge':''))= item.text
+
+  .moderator-aside__form
+    .invite-member(id="invite-member")
+      .invite-member__title Пригласить участника
+      .invite-member__form
+        form(action='#' method='POST' data-form="invite-member") 
+          .invite-member__label Язык приглашения
+          .invite-member__lang
+            +radio('Русский', 'lang', 'val', true)
+            +radio('Английский', 'lang', 'val')
+          .invite-member__fields
+            .form
+              .form__item: .form__subitem: +input-material('email', 'Email')
+              .form__item: .form__subitem: +input-material('text', 'Тема')
+              .form__item: .form__subitem: textarea(placeholder="Текст приглашения")
+              .form__item
+                .form__subitem: button.btn.btn-large Отправить
       
