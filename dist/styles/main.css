@@ -2554,6 +2554,9 @@ input {
   min-height: 100%;
   background: #000000c2;
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .af-popup__bg {
@@ -2566,18 +2569,12 @@ input {
 }
 
 .af-popup__wrp {
-  position: absolute;
-  left: 50%;
-  right: auto;
-  top: 50%;
-  bottom: auto;
   max-width: 600px;
   min-height: auto;
-  /* margin: 50px 15px 50px 15px; */
   z-index: 102;
   height: auto;
   margin: 0px auto 50px auto;
-  transform: translateY(-50%) translateX(-50%);
+  position: relative;
 }
 
 .af-popup__content {
@@ -4788,6 +4785,8 @@ div[data-lang]:not(.active) {
   align-items: center;
   margin: 0 -6px;
   overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: -10px;
 }
 
 .review-block__tabs ul li {
@@ -5198,6 +5197,217 @@ div[data-lang]:not(.active) {
   margin-left: auto;
 }
 
+.block-rating__head {
+  display: none;
+}
+
+.block-rating__head ul {
+  display: flex;
+  width: 100%;
+}
+
+.block-rating__head-name {
+  width: 37%;
+}
+
+.block-rating__head-grade {
+  width: 51%;
+}
+
+.block-rating__head-total {
+  width: 12%;
+  white-space: nowrap;
+}
+
+.block-rating__item {
+  margin-bottom: 20px;
+}
+
+.block-rating__tabs {
+  padding-bottom: 25px;
+  margin-right: -9px;
+}
+
+.block-rating__tabs ul {
+  display: flex;
+  align-items: center;
+  margin: 0 -6px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+}
+
+.block-rating__tabs ul li {
+  margin: 0 6px;
+}
+
+.block-rating__tabs ul li .active .btn {
+  color: #525166;
+}
+
+.block-rating__tabs ul li .active .btn:hover {
+  color: #fff;
+}
+
+.card-rating {
+  background: #FFFFFF;
+  border: 1px solid #BCBCBC;
+  border-radius: 4px;
+  padding: 25px;
+}
+
+.card-rating__position {
+  display: none;
+}
+
+.card-rating__details {
+  display: flex;
+  padding-bottom: 25px;
+}
+
+.card-rating__info {
+  padding-left: 15px;
+}
+
+.card-rating__number {
+  padding-top: 0.3em;
+  padding-bottom: 0.4em;
+  font-weight: 600;
+  font-size: 12px;
+  color: #525166;
+}
+
+.card-rating__name {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-bottom: 0.4em;
+}
+
+.card-rating__name a {
+  font-weight: 600;
+  font-size: 14px;
+  color: #525166;
+}
+
+.card-rating__year {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 140%;
+  color: #92919F;
+  margin-top: auto;
+  padding-bottom: 0.5em;
+}
+
+.card-rating__duration {
+  display: flex;
+  color: #92919F;
+}
+
+.card-rating__duration span {
+  padding-left: 0.9em;
+}
+
+.card-rating__duration ul {
+  display: flex;
+  align-items: center;
+  margin: -2px;
+}
+
+.card-rating__duration ul li {
+  margin: 2px;
+}
+
+.card-rating__duration ul li .bgimage {
+  width: 23px;
+  height: 17px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  transition: 0.3s ease;
+  background-color: #eee;
+  border: 1px solid #e7e6f5;
+}
+
+.card-rating__cover {
+  max-width: 80px;
+  width: 100%;
+}
+
+.card-rating__cover picture {
+  display: block;
+  padding-top: 134%;
+  background-color: #eee;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-rating__cover picture img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.card-rating__grade {
+  padding-bottom: 25px;
+}
+
+.card-rating__grade::before {
+  content: attr(data-title);
+  padding-bottom: 10px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 167%;
+  color: #92919F;
+  display: block;
+}
+
+.card-rating__grade ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.card-rating__grade ul li span {
+  color: #525166;
+  font-weight: 500;
+}
+
+.card-rating__grade ul li span:last-child {
+  color: #525166;
+  border: 1px solid #BCBCBC;
+  border-radius: 5px;
+  padding: 0.3em 0.5em;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+.card-rating__total::before {
+  content: attr(data-title);
+  padding-bottom: 10px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 167%;
+  color: #92919F;
+  display: block;
+  white-space: nowrap;
+}
+
+.card-rating__total span {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: #525166;
+}
+
 @media screen and (min-width: 359px) {
   .all-films__item {
     width: 50%;
@@ -5211,6 +5421,10 @@ div[data-lang]:not(.active) {
   }
 
   .all-films__tabs {
+    margin-right: 0;
+  }
+
+  .block-rating__tabs {
     margin-right: 0;
   }
 }
@@ -5565,6 +5779,42 @@ div[data-lang]:not(.active) {
     width: 33.33%;
     padding: 8px;
   }
+
+  .card-rating {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 18px;
+  }
+
+  .card-rating__details {
+    flex-grow: 1;
+  }
+
+  .card-rating__grade {
+    order: 2;
+    padding-bottom: 0;
+  }
+
+  .card-rating__grade ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+
+  .card-rating__grade ul li {
+    width: 50%;
+    padding: 3px 10px;
+  }
+
+  .card-rating__grade ul li span:last-child {
+    min-width: 33px;
+    font-size: 13px;
+    padding: 0.1em 0.3em;
+  }
+
+  .card-rating__total {
+    text-align: right;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -5633,6 +5883,56 @@ div[data-lang]:not(.active) {
   .all-films__item {
     width: 25%;
     padding: 10px;
+  }
+
+  .block-rating__head {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 327%;
+    color: #92919F;
+    padding-bottom: 10px;
+    display: block;
+  }
+
+  .card-rating {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .card-rating__details {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .card-rating__grade {
+    order: unset;
+  }
+
+  .card-rating__grade::before {
+    display: none;
+  }
+
+  .card-rating__grade ul li span {
+    font-size: 13px;
+    color: #92919F;
+  }
+
+  .card-rating__total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 0.5em 0.5em 25px;
+    text-align: center;
+  }
+
+  .card-rating__total::before {
+    display: none;
+  }
+
+  .card-rating__total span {
+    display: inline-block;
+    min-width: 1.5em;
   }
 }
 
@@ -5981,6 +6281,35 @@ div[data-lang]:not(.active) {
   .all-films__item {
     width: 20%;
     padding: 10px;
+  }
+
+  .block-rating__head-name {
+    padding-left: 37px;
+  }
+
+  .card-rating__position {
+    display: flex;
+    align-items: center;
+    min-width: 2.2em;
+    justify-content: center;
+    font-weight: 600;
+    margin-left: -1em;
+  }
+
+  .card-rating__number {
+    display: none;
+  }
+
+  .card-rating__cover {
+    max-width: 95px;
+  }
+
+  .card-rating__grade ul li {
+    padding: 1.5px 10px;
+  }
+
+  .card-rating__total {
+    width: 30%;
   }
 }
 

@@ -1,0 +1,66 @@
+mixin moderator-rating
+    .block-rating 
+        .block-rating__tabs
+            ul
+                li: a(href='#' class="active"): button.btn.btn-line Рейтинг жюри
+                li: a(href='#'): button.btn.btn-line Рейтинг зрителей
+        .block-rating__head
+            ul
+                li.block-rating__head-name Название
+                li.block-rating__head-grade Оценки
+                li.block-rating__head-total Итоговый рейтинг
+        .block-rating__list
+            each item in [1,1,1,1,1,1,1]
+                .block-rating__item: +card-rating
+             
+
+mixin card-rating
+    .card-rating
+        .card-rating__details
+            .card-rating__position 1
+            .card-rating__cover
+                +picture('/img/common/cover')
+            .card-rating__info
+                .card-rating__number 1 место
+                .card-rating__name: a(href='#') Паразиты 
+                .card-rating__year 2021, Пон Джун-хо  
+                .card-rating__duration 
+                    ul.car-rating-flag
+                        li: +bgimage('/img/flags/cg.svg')
+                    span 85 мин.
+                
+        .card-rating__grade(data-title="Оценки")
+            ul
+                li
+                    span Инновационный подход
+                    span 92
+                li
+                    span Режиссерская работа
+                    span 54
+                li
+                    span Актуальность
+                    span 12
+                li
+                    span Художественная ценность
+                    span 76
+                li
+                    span Сценарий
+                    span 54
+                li
+                    span Актерская игра
+                    span 22
+                li
+                    span Операторская работа
+                    span 54
+                li
+                    span Графика
+                    span 3
+                li
+                    span Монтаж
+                    span 100
+                li
+                    span Музыка
+                    span 45
+        .card-rating__total(data-title="Итоговый рейтинг")
+            span 8.4
+        
