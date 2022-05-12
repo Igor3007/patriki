@@ -2569,14 +2569,14 @@ input {
   position: absolute;
   left: 50%;
   right: auto;
-  top: 40%;
+  top: 50%;
   bottom: auto;
   max-width: 600px;
   min-height: auto;
-  margin: 50px 15px 50px 15px;
+  /* margin: 50px 15px 50px 15px; */
   z-index: 102;
   height: auto;
-  margin: 50px auto;
+  margin: 0px auto 50px auto;
   transform: translateY(-50%) translateX(-50%);
 }
 
@@ -3622,7 +3622,7 @@ footer {
   width: 100%;
   animation: slide-right 0.5s ease forwards;
   overflow-y: auto;
-  max-width: 360px;
+  max-width: 480px;
   z-index: 10;
 }
 
@@ -3651,6 +3651,20 @@ footer {
   padding-bottom: 10px;
 }
 
+.invite-member__back {
+  text-align: center;
+  color: #92919F;
+  padding: 10px 0 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.invite-member__back span {
+  padding-left: 1em;
+}
+
 .invite-member__lang {
   display: flex;
   padding-bottom: 25px;
@@ -3662,6 +3676,10 @@ footer {
 
 .invite-member__fields .btn {
   width: 100%;
+}
+
+.invite-member__fields textarea {
+  min-height: 80px;
 }
 
 .section-page-moderator {
@@ -5234,12 +5252,20 @@ div[data-lang]:not(.active) {
     font-size: 36px;
   }
 
+  .moderator-aside.open {
+    max-width: 360px;
+  }
+
   .invite-member__title {
     font-size: 36px;
   }
 
   .invite-member__title {
     font-size: 28px;
+  }
+
+  .invite-member__back {
+    display: none;
   }
 
   .head-moderator__title h1 {
@@ -6065,9 +6091,7 @@ div[data-lang]:not(.active) {
     min-width: 30px;
     height: 30px;
   }
-}
 
-@media screen and (max-width: 360.98px) {
   .moderator-aside__form.open {
     display: block;
     position: fixed;

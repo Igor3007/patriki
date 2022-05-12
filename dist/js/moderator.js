@@ -621,8 +621,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 this.btn.classList.remove('open')
                 document.body.classList.remove('hidden-profile')
 
+                //close invite form
                 if (document.querySelector('.moderator-aside__form')) {
-                    document.querySelector('.moderator-aside__form').remove('open')
+                    document.querySelector('.moderator-aside__form').classList.remove('open')
                 }
             }
 
@@ -663,6 +664,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 //ajax true
 
+                this.reset()
                 invitePopup.close()
                 window.STATUS.msg('Сообщение успешно отправлено!')
 
@@ -672,10 +674,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
         document.querySelectorAll('[data-modal="invite"]').forEach(function (item) {
             item.addEventListener('click', function () {
 
-                if (document.body.clientWidth <= 360) {
+                if (document.body.clientWidth <= 480) {
 
                     let elem = document.querySelector('.moderator-aside__form');
-                    elem.classList.add('open')
+                    elem.classList.toggle('open')
 
                     //init submit
                     submitInviteForm(elem)
@@ -700,6 +702,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 })
             })
+        })
+
+        //back to menu
+
+        document.querySelector('[data-invete-form="close"]').addEventListener('click', function () {
+            if (document.querySelector('.moderator-aside__form')) {
+                document.querySelector('.moderator-aside__form').classList.remove('open')
+            }
         })
 
     }

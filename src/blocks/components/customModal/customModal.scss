@@ -36,14 +36,14 @@
     position: absolute;
     left: 50%;
     right: auto;
-    top: 40%;
+    top: 50%;
     bottom: auto;
     max-width: 600px;
     min-height: auto;
-    margin: 50px 15px 50px 15px;
+    /* margin: 50px 15px 50px 15px; */
     z-index: 102;
     height: auto;
-    margin: 50px auto;
+    margin: 0px auto 50px auto;
     transform: translateY(-50%) translateX(-50%);
 }
 

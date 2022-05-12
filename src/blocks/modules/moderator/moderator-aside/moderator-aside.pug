@@ -13,6 +13,9 @@
 
   .moderator-aside__form
     .invite-member(id="invite-member")
+      .invite-member__back(data-invete-form="close")
+        +icons('#ic_arr-back-popup', 10) 
+        span Назад в меню
       .invite-member__title Пригласить участника
       .invite-member__form
         form(action='#' method='POST' data-form="invite-member") 
@@ -26,5 +29,5 @@
               .form__item: .form__subitem: +input-material('text', 'Тема')
               .form__item: .form__subitem: textarea(placeholder="Текст приглашения")
               .form__item
-                .form__subitem: button.btn.btn-large Отправить
+                .form__subitem: button.btn.btn-large Отправить 
       
