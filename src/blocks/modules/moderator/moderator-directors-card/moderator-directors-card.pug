@@ -1,2 +1,68 @@
 mixin moderator-directors-card
-    .block-directors-card
+    .directors-card
+        form(action='#' method='POST')
+            .directors-card__photo
+                .box-photo
+                    .box-photo__image
+                        span(class="bgimage lazyload" data-attach="preview"  )
+                    .box-photo__add
+                        label(class="attach-text")
+                            input(type="file" data-attach="photo" name="photo")
+                            span Изменить фото
+            .directors-card__tabs
+                ul
+                    li: a.active(href='#'): button.btn.btn-line на русском 
+                    li: a(href='#'): button.btn.btn-line на английском
+            .directors-card__fields
+                .form
+                    .form__item
+                        .form__subitem: +input-material('text', 'ФИО')
+                    .form__item
+                        .form__subitem: +select('Страна', ['Россия','Турция'])
+                        .form__subitem: +select('Год рождения', ['1900','1901','1902','1903'])
+                    .form__label Награды и премии
+                    .form__group
+                        .form__item
+                            .form__subitem
+                                input(type="text" placeholder="Название награды или премии")
+                                span.remove-repeater
+                        span.add-field + Добавить награду
+
+                    .form__label Фильмография
+                    .form__group
+                        .form__item
+                            .form__subitem: +input-material('text', 'Фильм')
+                            .form__subitem
+                                +input-material('text', 'Ссылка')
+                                span.remove-repeater
+                        span.add-field + Добавить фильм
+
+                    .form__label Дополнительная информация
+                    .form__item
+                        .form__subitem
+                            textarea(placeholder="Дополнительная информация")
+                    .form__label Заявки на фестивали
+
+            .directors-card__orders
+                .table-card
+                    .table-card__tr
+                        .table-card__th Фильм
+                        .table-card__th Год производства
+                        .table-card__th Название фестиваля
+                        .table-card__th Рейтинг жюри
+                        .table-card__th Рейтинг зрителей
+                    .table-card__tr
+                        .table-card__td(data-title="Фильм") Левиафан
+                        .table-card__td(data-title="Год производства") 2014
+                        .table-card__td(data-title="Название фестиваля") Patriki Film Festival
+                        .table-card__td(data-title="Рейтинг жюри") 8.4
+                        .table-card__td(data-title="Рейтинг зрителей") 8.5
+                    .table-card__tr
+                        .table-card__td(data-title="Фильм") Тупой и еще тупее тупого: Когда Гарри встретил Ллойда (2003)
+                        .table-card__td(data-title="Год производства") 2014
+                        .table-card__td(data-title="Название фестиваля") Patriki Film Festival
+                        .table-card__td(data-title="Рейтинг жюри") 8.4
+                        .table-card__td(data-title="Рейтинг зрителей") 8.5
+            .directors-card__submit
+                button.btn(type="submit") Сохранить изменения
+                         

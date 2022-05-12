@@ -1,5 +1,5 @@
 extends ../layouts/moderator
-include ../../blocks/modules/moderator/moderator-rating/moderator-rating.pug
+include ../../blocks/modules/moderator/moderator-directors-card/moderator-directors-card.pug
 include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
 
 
@@ -7,7 +7,7 @@ include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
 block variables
   include ../../data/data.pug
   -
-    title = 'Рейтинги'
+    title = 'Карточка режиссера'
 
 
 block content
@@ -15,17 +15,17 @@ block content
     nav: [
       'Главная',
       'Личный кабинет',
-      'Рейтинги',
+      'Карточка режиссера',
     ],
 
-    title: 'Рейтинги',
+    title: 'Карточка режиссера',
     button: false
   })
 
   
 
   .main-moderator
-    +moderator-rating()
+    +moderator-directors-card()
 
 block scripts
     script(src="/js/vendor.js")

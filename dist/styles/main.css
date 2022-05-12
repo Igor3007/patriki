@@ -2318,11 +2318,12 @@ input {
 
 .input-material {
   position: relative;
-  width: 100%;
+  width: auto;
   border: 1px solid #bcbcbc;
   border-radius: 5px;
   padding: 0 15px;
   height: 52px;
+  flex-grow: 1;
   /* active state */
 }
 
@@ -5372,6 +5373,7 @@ div[data-lang]:not(.active) {
 .card-rating__grade ul li {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 4px 0;
 }
 
@@ -5408,6 +5410,93 @@ div[data-lang]:not(.active) {
   color: #525166;
 }
 
+.directors-card__photo {
+  margin-bottom: 40px;
+}
+
+.directors-card__photo .box-photo {
+  max-width: 120px;
+  width: 100%;
+  margin-right: auto;
+}
+
+.directors-card__photo .box-photo__photo {
+  margin-left: 0;
+}
+
+.directors-card__photo .box-photo__add {
+  white-space: nowrap;
+  user-select: none;
+}
+
+.directors-card__tabs {
+  padding-bottom: 25px;
+  margin-right: -9px;
+}
+
+.directors-card__tabs ul {
+  display: flex;
+  align-items: center;
+  margin: 0 -6px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+}
+
+.directors-card__tabs ul li {
+  margin: 0 6px;
+}
+
+.directors-card__tabs ul li .active .btn {
+  color: #525166;
+}
+
+.directors-card__tabs ul li .active .btn:hover {
+  color: #fff;
+}
+
+.directors-card__fields {
+  max-width: 760px;
+}
+
+.directors-card__orders .table-card__th {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.directors-card__orders .table-card__td:nth-last-child(1),
+.directors-card__orders .table-card__td:nth-last-child(2) {
+  font-size: 22px;
+}
+
+.directors-card__orders .table-card__td::before {
+  content: attr(data-title);
+  display: block;
+  font-weight: 400;
+  color: #92919F;
+  padding-bottom: 3px;
+  font-size: 13px;
+}
+
+.directors-card__submit {
+  padding-top: 25px;
+}
+
+.directors-card__submit .btn {
+  width: 100%;
+}
+
+.directors-card .add-field {
+  color: #525166;
+  padding-top: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.directors-card .add-field:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 359px) {
   .all-films__item {
     width: 50%;
@@ -5425,6 +5514,10 @@ div[data-lang]:not(.active) {
   }
 
   .block-rating__tabs {
+    margin-right: 0;
+  }
+
+  .directors-card__tabs {
     margin-right: 0;
   }
 }
@@ -5515,6 +5608,10 @@ div[data-lang]:not(.active) {
     justify-content: space-between;
     align-content: center;
     width: 100%;
+  }
+
+  .directors-card__submit .btn {
+    width: auto;
   }
 }
 
@@ -5814,6 +5911,15 @@ div[data-lang]:not(.active) {
 
   .card-rating__total {
     text-align: right;
+  }
+
+  .directors-card__orders .table-card__td:nth-last-child(1),
+  .directors-card__orders .table-card__td:nth-last-child(2) {
+    font-size: 14px;
+  }
+
+  .directors-card__orders .table-card__td::before {
+    display: none;
   }
 }
 
@@ -6467,6 +6573,13 @@ div[data-lang]:not(.active) {
     width: 18px;
     height: 14px;
     fill: #525166;
+  }
+}
+
+@media screen and (max-width: 1376px) and (min-width: 767px) {
+  .directors-card__orders .table-card__td {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */

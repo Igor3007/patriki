@@ -1,0 +1,123 @@
+.directors-card {
+    &__photo {
+        margin-bottom: 40px;
+
+        & .box-photo {
+            max-width: 120px;
+            width: 100%;
+            margin-right: auto;
+
+            &__photo {
+                margin-left: 0;
+            }
+
+            &__add {
+                white-space: nowrap;
+                user-select: none;
+            }
+        }
+    }
+
+    &__tabs {
+
+        padding-bottom: 25px;
+        margin-right: -9px;
+
+        @media screen and (min-width: $w360) {
+            margin-right: 0;
+        }
+
+        & ul {
+            display: flex;
+            align-items: center;
+            margin: 0 -6px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: -10px;
+
+
+            & li {
+                margin: 0 6px;
+
+                & .active {
+                    & .btn {
+                        color: #525166;
+
+                        &:hover {
+                            color: #fff
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__fields {
+        max-width: 760px;
+    }
+
+    &__orders {
+        & .table-card {
+
+            &__th {
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            &__td {
+
+                @media screen and (max-width: $w1376) and (min-width: $w760) {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
+
+                &:nth-last-child(1),
+                &:nth-last-child(2) {
+                    font-size: 22px;
+
+                    @media screen and (min-width: $w760) {
+                        font-size: 14px;
+                    }
+                }
+
+                &::before {
+                    content: attr(data-title);
+                    display: block;
+                    font-weight: 400;
+                    color: #92919F;
+                    padding-bottom: 3px;
+                    font-size: 13px;
+
+                    @media screen and (min-width: $w760) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__submit {
+        padding-top: 25px;
+
+        & .btn {
+            width: 100%;
+
+            @media screen and (min-width: $w576) {
+                width: auto;
+            }
+        }
+    }
+
+    & .add-field {
+        color: $main;
+        padding-top: 10px;
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+
+}

@@ -10,18 +10,18 @@ mixin moderator-rating
                 li.block-rating__head-grade Оценки
                 li.block-rating__head-total Итоговый рейтинг
         .block-rating__list
-            each item in [1,1,1,1,1,1,1]
-                .block-rating__item: +card-rating
+            each item in [1,2,3,4,2,4,3]
+                .block-rating__item: +card-rating(item)
              
 
-mixin card-rating
+mixin card-rating(data)
     .card-rating
         .card-rating__details
-            .card-rating__position 1
+            .card-rating__position= data
             .card-rating__cover
-                +picture('/img/common/cover')
+                +picture('/img/common/cover'+data)
             .card-rating__info
-                .card-rating__number 1 место
+                .card-rating__number= data+' место' 
                 .card-rating__name: a(href='#') Паразиты 
                 .card-rating__year 2021, Пон Джун-хо  
                 .card-rating__duration 
