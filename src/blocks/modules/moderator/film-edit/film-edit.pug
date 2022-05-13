@@ -1,4 +1,5 @@
 include ../film-add/film-add.pug
+include ../card-comment/card-comment.pug
 
 mixin film-edit()
     .film-edit
@@ -113,7 +114,7 @@ mixin film-edit()
               .form__subitem: textarea(placeholder="Описание фильма") Car mechanic Nikolai Sergeev lives with his second wife Lilya and his son from his first marriage in a small northern town on the seashore. The dishonest mayor of the city of Shelevyat is trying to seize his house and land for his own needs. After two lost trials, Nikolai turns to his former colleague Dmitry, a successful Moscow lawyer, for help. But the arrival of a Moscow guest only complicates the already difficult life of Nikolai.
 
 
-        .film-tab-item(data-tab-item="comments") Комментарии
+        .film-tab-item(data-tab-item="comments"): +card-comment()
         .film-tab-item(data-tab-item="vote") Оценки
 
         .form.active(data-lang="ru en") 

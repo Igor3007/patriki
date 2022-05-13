@@ -1,0 +1,27 @@
+mixin card-comment 
+    .card-comment 
+        .card-comment__list
+            each item in ['img_user.png', 'user.jpg', 'user2.jpg', 'img_user.png', 'user.jpg', 'user2.jpg']
+                +item-message(item)
+
+mixin item-message(data)
+  .item-message(data-comment="item" data-comment-id="123")
+    .item-message__head
+      .item-message__photo: +bgimage('/img/common/'+data)
+      .item-message__detail
+        .item-message__name Иван Зверев
+        .item-message__date Сегодня 19.30
+    .item-message__main
+      span Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.
+    .item-message__action(data-comment-action="container")
+        .item-message__default(data-comment-action="pane-default")
+            span.item-message__default-edit(data-comment-action="edit") Редактировать
+            span.item-message__default-remove(data-comment-action="delete") Удалить 
+            span.item-message__default-reply(data-comment-action="reply") Ответить
+        .item-message__edit(data-comment-action="pane-edit")
+            span.item-message__edit-save(data-comment-action="save") Сохранить
+            span.item-message__edit-cancel(data-comment-action="cancel") Отмена
+        .item-message__delete(data-comment-action="pane-remove")
+            span.item-message__delete-msg Вы уверены?
+            span.item-message__delete-remove(data-comment-action="remove") Удалить
+            span.item-message__delete-cancel(data-comment-action="cancel") Отмена

@@ -1452,6 +1452,16 @@ select {
   }
 }
 
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 html {
   font-family: Museo Sans Cyrl, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-style: normal;
@@ -5535,6 +5545,78 @@ div[data-lang]:not(.active) {
 .form__group[data-add-container="awards"] .form__item:first-child .remove-repeater,
 .form__group[data-add-container="filmography"] .form__item:first-child .remove-repeater {
   display: none;
+}
+
+.item-message.fade-out-hide {
+  animation: fade-out .6s ease;
+}
+
+.item-message__action {
+  padding-top: 10px;
+  padding-left: 48px;
+}
+
+.item-message__edit span.item-message__edit-save {
+  color: #525166;
+}
+
+.item-message__delete span.item-message__delete-msg {
+  font-weight: normal;
+  color: #525166;
+}
+
+.item-message__delete span.item-message__delete-remove {
+  color: #cf1c5d !important;
+}
+
+.item-message__default,
+.item-message__edit,
+.item-message__delete {
+  display: none;
+}
+
+.item-message__default.open,
+.item-message__edit.open,
+.item-message__delete.open {
+  display: flex;
+}
+
+.item-message__default-reply,
+.item-message__edit-reply,
+.item-message__delete-reply {
+  margin-left: auto;
+}
+
+.item-message__default span,
+.item-message__edit span,
+.item-message__delete span {
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1em;
+  color: #92919F;
+}
+
+.item-message__default span:hover,
+.item-message__edit span:hover,
+.item-message__delete span:hover {
+  color: #525166;
+}
+
+.item-message__main textarea {
+  min-height: 120px;
+  max-width: 100%;
+  resize: vertical;
+  width: 100%;
+  border: 1px solid #BCBCBC;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 15px;
+  line-height: 140%;
+}
+
+.item-message__main textarea:focus {
+  outline: none !important;
 }
 
 @media screen and (min-width: 359px) {

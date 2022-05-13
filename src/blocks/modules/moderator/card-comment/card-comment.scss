@@ -1,0 +1,93 @@
+.item-message {
+
+    &.fade-out-hide {
+        animation: fade-out .6s ease;
+    }
+
+    &__action {
+        padding-top: 10px;
+        padding-left: 48px;
+    }
+
+    // &__default {
+    //     display: flex;
+    // }
+
+    &__edit {
+        & span {
+            &.item-message {
+                &__edit {
+                    &-save {
+                        color: $main;
+                    }
+
+
+                }
+            }
+        }
+    }
+
+    &__delete {
+        & span {
+            &.item-message {
+                &__delete {
+                    &-msg {
+                        font-weight: normal;
+                        color: $main;
+                    }
+
+                    &-remove {
+                        color: $red !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &__default,
+    &__edit,
+    &__delete {
+
+        display: none;
+
+        &.open {
+            display: flex;
+        }
+
+
+        &-reply {
+            margin-left: auto;
+        }
+
+        & span {
+            font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            margin-right: 1em;
+            color: $main2;
+
+            &:hover {
+                color: $main;
+            }
+        }
+    }
+
+    &__main textarea {
+        min-height: 120px;
+        max-width: 100%;
+        resize: vertical;
+        width: 100%;
+        border: 1px solid #BCBCBC;
+        border-radius: 5px;
+        font-size: 14px;
+        padding: rem(15);
+        line-height: 140%;
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+
+
+
+}

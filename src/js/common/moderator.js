@@ -772,6 +772,140 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
+    /* ==================================================
+    Редактировать/Удалить комментарий
+    ================================================== */
+
+    function comentEdit(elem) {
+
+        this.elem = elem;
+
+        this.paneDefault = elem.querySelector('[data-comment-action="pane-default"]')
+        this.paneEdit = elem.querySelector('[data-comment-action="pane-edit"]')
+        this.paneRemove = elem.querySelector('[data-comment-action="pane-remove"]')
+
+        this.btnSave = elem.querySelector('[data-comment-action="save"]')
+        this.btnCancel = elem.querySelectorAll('[data-comment-action="cancel"]')
+        this.btnRemove = elem.querySelector('[data-comment-action="remove"]')
+
+        this.btnEdit = elem.querySelector('[data-comment-action="edit"]')
+        this.btnDelete = elem.querySelector('[data-comment-action="delete"]')
+        this.btnReply = elem.querySelector('[data-comment-action="reply"]')
+
+        this.mianContainer = elem.querySelector('.item-message__main')
+        this.textComment = this.mianContainer.innerText;
+        this.idComment = elem.dataset.commentId
+
+
+        this.init = function () {
+            this.addEvent()
+            this.openDefault()
+        }
+
+        this.openEdit = function () {
+            this.paneEdit.classList.add('open')
+            this.closeDefault()
+            this.textarea = document.createElement('textarea')
+            this.textarea.innerText = this.textComment
+            this.mianContainer.querySelector('span').replaceWith(this.textarea)
+        }
+
+        this.cancelEdit = function () {
+            this.paneEdit.classList.remove('open')
+            this.mianContainer.innerHTML = '<span>' + this.textComment + '</span>'
+        }
+
+        this.closeEdit = function () {
+            this.paneEdit.classList.remove('open')
+            this.mianContainer.innerHTML = '<span>' + this.textarea.value + '</span>'
+            this.textComment = this.textarea.value
+            this.openDefault()
+        }
+
+        this.openDefault = function () {
+            this.paneDefault.classList.add('open')
+        }
+
+        this.closeDefault = function () {
+            this.paneDefault.classList.remove('open')
+        }
+
+        this.openRemove = function () {
+            this.paneRemove.classList.add('open')
+            this.closeDefault()
+        }
+
+        this.closeRemove = function () {
+            this.paneRemove.classList.remove('open')
+        }
+
+        this.cancel = function () {
+            this.cancelEdit()
+            this.closeRemove()
+            this.openDefault()
+        }
+
+
+
+        this.addEvent = function () {
+
+            let _this = this
+
+            this.btnSave.addEventListener('click', function () {
+                _this.submitData()
+            })
+            this.btnDelete.addEventListener('click', function () {
+                _this.openRemove()
+            })
+            this.btnEdit.addEventListener('click', function () {
+                _this.openEdit()
+            })
+            this.btnRemove.addEventListener('click', function () {
+                _this.submitDeleteComment()
+            })
+
+            this.btnCancel.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    _this.cancel()
+                })
+            })
+
+        }
+
+
+        this.submitData = function () {
+
+            //значение из textarea
+            console.log(this.textarea.value)
+            console.log(this.idComment)
+
+            //ajax true
+            this.closeEdit()
+
+        }
+
+        this.submitDeleteComment = function () {
+
+            //id
+            console.log(this.idComment)
+
+            //ajax true
+            this.elem.classList.add('fade-out-hide')
+            setTimeout(() => {
+                this.elem.remove()
+            }, 600)
+
+        }
+
+
+
+    }
+
+    document.querySelectorAll('[data-comment="item"]').forEach(function (elem) {
+        let instanse = new comentEdit(elem);
+        instanse.init()
+    })
+
 
 
 
