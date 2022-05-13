@@ -3,7 +3,7 @@
         margin-bottom: 40px;
 
         & .box-photo {
-            max-width: 120px;
+            max-width: 126px;
             width: 100%;
             margin-right: auto;
 
@@ -66,6 +66,8 @@
 
             &__td {
 
+                color: $main;
+
                 @media screen and (max-width: $w1376) and (min-width: $w760) {
                     padding-top: 15px;
                     padding-bottom: 15px;
@@ -90,6 +92,12 @@
 
                     @media screen and (min-width: $w760) {
                         display: none;
+                    }
+                }
+
+                & a {
+                    &:hover {
+                        text-decoration: underline;
                     }
                 }
             }
@@ -120,4 +128,9 @@
     }
 
 
+}
+
+.form__group[data-add-container="awards"] .form__item:first-child .remove-repeater,
+.form__group[data-add-container="filmography"] .form__item:first-child .remove-repeater {
+    display: none
 }

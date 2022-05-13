@@ -383,7 +383,13 @@ header {
                     text-decoration: none;
 
                     & span {
-                        margin-left: 10px;
+                        margin-left: 7px;
+                        display: block;
+                        max-width: 125px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        line-height: 110%;
                     }
                 }
             }
@@ -395,11 +401,11 @@ header {
                 & a {
                     font-size: 11px;
                     color: #fff;
-                    background-color: #cf1c5d;
+                    background-color: $red;
                     line-height: 1em;
                     position: absolute;
-                    right: -1em;
-                    bottom: 3px;
+                    right: 3px;
+                    bottom: 1em;
                     padding: 2px;
                     min-width: 1.5em;
                     transform: translateX(50%);
@@ -409,6 +415,7 @@ header {
                     height: 1.5em;
                     font-weight: 600;
                     width: auto;
+                    position: relative;
                 }
             }
         }

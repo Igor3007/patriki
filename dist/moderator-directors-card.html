@@ -243,7 +243,7 @@
                         <div class="box-photo__image"><span class="bgimage lazyload" data-attach="preview"></span></div>
                         <div class="box-photo__add">
                           <label class="attach-text">
-                            <input type="file" data-attach="photo" name="photo"/><span>Изменить фото</span>
+                            <input type="file" data-attach="photo" name="photo"/><span>Добавить фото</span>
                           </label>
                         </div>
                       </div>
@@ -283,15 +283,15 @@
                           </div>
                         </div>
                         <div class="form__label">Награды и премии</div>
-                        <div class="form__group">
+                        <div class="form__group" data-add-container="awards">
                           <div class="form__item">
                             <div class="form__subitem">
                               <input type="text" placeholder="Название награды или премии"/><span class="remove-repeater"></span>
                             </div>
-                          </div><span class="add-field">+ Добавить награду</span>
-                        </div>
+                          </div>
+                        </div><span class="add-field" data-add="awards">+ Добавить награду</span>
                         <div class="form__label">Фильмография</div>
-                        <div class="form__group">
+                        <div class="form__group" data-add-container="filmography">
                           <div class="form__item">
                             <div class="form__subitem">
                               <div class="input-material">
@@ -305,8 +305,8 @@
                                 <label>Ссылка</label>
                               </div><span class="remove-repeater"></span>
                             </div>
-                          </div><span class="add-field">+ Добавить фильм</span>
-                        </div>
+                          </div>
+                        </div><span class="add-field" data-add="filmography">+ Добавить фильм</span>
                         <div class="form__label">Дополнительная информация</div>
                         <div class="form__item">
                           <div class="form__subitem">
@@ -326,14 +326,14 @@
                           <div class="table-card__th">Рейтинг зрителей</div>
                         </div>
                         <div class="table-card__tr">
-                          <div class="table-card__td" data-title="Фильм">Левиафан</div>
+                          <div class="table-card__td" data-title="Фильм"><a href="" target="_blank">Левиафан</a></div>
                           <div class="table-card__td" data-title="Год производства">2014</div>
                           <div class="table-card__td" data-title="Название фестиваля">Patriki Film Festival</div>
                           <div class="table-card__td" data-title="Рейтинг жюри">8.4</div>
                           <div class="table-card__td" data-title="Рейтинг зрителей">8.5</div>
                         </div>
                         <div class="table-card__tr">
-                          <div class="table-card__td" data-title="Фильм">Тупой и еще тупее тупого: Когда Гарри встретил Ллойда (2003)</div>
+                          <div class="table-card__td" data-title="Фильм"><a href="" target="_blank">Тупой и еще тупее тупого: Когда Гарри встретил Ллойда (2003)</a></div>
                           <div class="table-card__td" data-title="Год производства">2014</div>
                           <div class="table-card__td" data-title="Название фестиваля">Patriki Film Festival</div>
                           <div class="table-card__td" data-title="Рейтинг жюри">8.4</div>

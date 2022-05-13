@@ -2144,6 +2144,11 @@ input {
   color: #525166;
 }
 
+.form select {
+  height: 52px;
+  width: 100%;
+}
+
 .form input[type="date"] {
   padding-right: 3em;
   background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNDQ0IiB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjY4Mi42NjciIGhlaWdodD0iNjgyLjY2NyIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGQ9Ik0xMjEuNSAxLjRjLTMuNyAxLjctNyA1LjItOC40IDguOS0uNiAxLjYtMS4xIDguOC0xLjEgMTYuMnYxMy4zbC0yOS4yLjRjLTI4LjcuMy0yOS41LjQtMzYuOSAzLTIwLjggNy4zLTM1LjMgMjEuNy00Mi42IDQyLjNsLTIuOCA4djM2NWwyLjggOGM3LjMgMjAuNiAyMS43IDM0LjkgNDIuNiA0Mi4zbDcuNiAyLjdoNDA1bDgtMi44YzIwLjYtNy4zIDM0LjktMjEuNyA0Mi4zLTQyLjZsMi43LTcuNnYtMzY1bC0yLjctNy42Yy03LjQtMjAuOS0yMS43LTM1LjMtNDIuMy00Mi42LTcuOS0yLjctOC4yLTIuOC0zNy4yLTMuMWwtMjkuMi0uNC0uMy0xNC44Yy0uMy0xNi4yLS44LTE3LjctNy4yLTIyLjQtMy45LTIuOS0xMy4zLTIuOS0xNy4yIDAtNi40IDQuNy02LjkgNi4yLTcuMiAyMi41bC0uMyAxNC45SDE0NC4xbC0uMy0xNC45Yy0uMy0xNi4yLS44LTE3LjgtNy0yMi40LTMuNC0yLjUtMTEuMy0zLjItMTUuMy0xLjN6bS05LjMgODEuNWMuMyAxMS44IDEuMiAxNC4xIDcuMiAxOC41IDMuOSAyLjkgMTMuMyAyLjkgMTcuMiAwIDYtNC40IDYuOS02LjcgNy4yLTE4LjVsLjQtMTAuOWgyMjMuNmwuNCAxMC45Yy4zIDExLjggMS4yIDE0LjEgNy4yIDE4LjUgMy45IDIuOSAxMy4zIDIuOSAxNy4yIDAgNi00LjQgNi45LTYuNyA3LjItMTguNWwuNC0xMSAyNy4xLjMgMjcuMi4zIDUuNyAyLjhjNy4yIDMuNSAxMyA5LjMgMTYuNSAxNi41IDIuOCA1LjcgMi44IDUuOCAzLjEgMjguOWwuMyAyMy4zSDMydi0yMS4zYzAtMTUuOC40LTIyLjYgMS40LTI2LjIgMy4xLTEwLjEgMTEuOC0xOS4yIDIxLjktMjIuNyA0LjUtMS41IDguOS0xLjcgMzAuOS0xLjhoMjUuNmwuNCAxMC45em0zNjcuNiAyMzIuM2wtLjMgMTM5LjMtMi43IDUuNWMtMy41IDcuMS05LjcgMTMuMy0xNi43IDE2LjhsLTUuNiAyLjdoLTM5N2wtNS41LTIuN2MtNy4xLTMuNS0xMy4zLTkuNy0xNi44LTE2LjdsLTIuNy01LjYtLjMtMTM5LjNMMzIgMTc2aDQ0OGwtLjIgMTM5LjJ6Ii8+PC9zdmc+);
@@ -2190,6 +2195,14 @@ input {
 
 .form textarea:focus {
   outline: none !important;
+}
+
+.form div.error {
+  color: #cf1c5d;
+  font-size: 12px;
+  padding-top: 5px;
+  text-align: center;
+  width: 100%;
 }
 
 .form__note {
@@ -2884,7 +2897,13 @@ header {
 }
 
 .header__login .user-login__name a span {
-  margin-left: 10px;
+  margin-left: 7px;
+  display: block;
+  max-width: 125px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 110%;
 }
 
 .header__login .user-login__tooltip {
@@ -2897,8 +2916,8 @@ header {
   background-color: #cf1c5d;
   line-height: 1em;
   position: absolute;
-  right: -1em;
-  bottom: 3px;
+  right: 3px;
+  bottom: 1em;
   padding: 2px;
   min-width: 1.5em;
   transform: translateX(50%);
@@ -2908,6 +2927,7 @@ header {
   height: 1.5em;
   font-weight: 600;
   width: auto;
+  position: relative;
 }
 
 .header-info {
@@ -3550,6 +3570,8 @@ footer {
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto;
+  background-color: #E7E6F5;
+  color: transparent;
 }
 
 .moderator-aside__name {
@@ -4964,6 +4986,10 @@ div[data-lang]:not(.active) {
   padding-bottom: 35px;
 }
 
+.all-films__tabs select {
+  height: 57px;
+}
+
 .all-films__tabs > ul {
   display: flex;
   margin: -6px;
@@ -5009,6 +5035,7 @@ div[data-lang]:not(.active) {
   border-radius: 5px;
   width: 100%;
   padding: 8px;
+  border: 1px solid #fff;
 }
 
 .all-films__item--light {
@@ -5180,7 +5207,7 @@ div[data-lang]:not(.active) {
 }
 
 .profile-block__photo .box-photo {
-  max-width: 120px;
+  max-width: 126px;
   width: 100%;
   margin-right: auto;
 }
@@ -5415,7 +5442,7 @@ div[data-lang]:not(.active) {
 }
 
 .directors-card__photo .box-photo {
-  max-width: 120px;
+  max-width: 126px;
   width: 100%;
   margin-right: auto;
 }
@@ -5464,6 +5491,10 @@ div[data-lang]:not(.active) {
   white-space: nowrap;
 }
 
+.directors-card__orders .table-card__td {
+  color: #525166;
+}
+
 .directors-card__orders .table-card__td:nth-last-child(1),
 .directors-card__orders .table-card__td:nth-last-child(2) {
   font-size: 22px;
@@ -5476,6 +5507,10 @@ div[data-lang]:not(.active) {
   color: #92919F;
   padding-bottom: 3px;
   font-size: 13px;
+}
+
+.directors-card__orders .table-card__td a:hover {
+  text-decoration: underline;
 }
 
 .directors-card__submit {
@@ -5495,6 +5530,11 @@ div[data-lang]:not(.active) {
 
 .directors-card .add-field:hover {
   text-decoration: underline;
+}
+
+.form__group[data-add-container="awards"] .form__item:first-child .remove-repeater,
+.form__group[data-add-container="filmography"] .form__item:first-child .remove-repeater {
+  display: none;
 }
 
 @media screen and (min-width: 359px) {

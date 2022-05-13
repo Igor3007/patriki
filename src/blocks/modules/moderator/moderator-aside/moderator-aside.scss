@@ -39,6 +39,8 @@
                 border-radius: 50%;
                 object-fit: cover;
                 margin: 0 auto;
+                background-color: #E7E6F5;
+                color: transparent;
 
                 @media screen and (min-width: $w1200) {
                     margin-left: 0;

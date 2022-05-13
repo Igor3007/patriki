@@ -149,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             //max 10 fields
             if (container.querySelectorAll('.remove-repeater').length > 9) {
                 window.STATUS.err('Допустимо не более 10 элементов')
-
                 return false;
             }
 
@@ -538,8 +537,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
     })
 
     /* ===========================================
-        input material
-        =========================================== */
+    input material
+    =========================================== */
 
     function materialInput() {
         this.init = function () {
@@ -710,6 +709,65 @@ document.addEventListener('DOMContentLoaded', function (event) {
             if (document.querySelector('.moderator-aside__form')) {
                 document.querySelector('.moderator-aside__form').classList.remove('open')
             }
+        })
+
+    }
+
+    /* ==================================================
+    добавить Награды и премии
+    ================================================== */
+
+    function addFields(elem) {
+        const container = document.querySelector('[data-add-container="' + elem + '"]')
+        const fieldRepeeat = container.children[0].cloneNode(true)
+
+        //max 10 fields
+        if (container.querySelectorAll('.remove-repeater').length > 9) {
+            window.STATUS.err('Допустимо не более 10 элементов')
+            return false;
+        }
+
+        //remove attr
+        fieldRepeeat.querySelector('input').value = ''
+        fieldRepeeat.querySelector('input').removeAttribute('area-valid')
+
+        //remove button
+        const removeElem = fieldRepeeat.querySelector('.remove-repeater')
+
+        //remove string
+        removeElem.addEventListener('click', function (event) {
+
+            if (confirm('Удалить?')) {
+                event.target.closest('.form__item').remove()
+            }
+
+        })
+
+        if (MATERIAL_INPUT) {
+            fieldRepeeat.querySelectorAll('input').forEach(function (item) {
+                MATERIAL_INPUT.addEvent(item)
+            })
+        }
+
+        //append elem
+        container.append(fieldRepeeat)
+    }
+
+    if (document.querySelector('[data-add="awards"]')) {
+
+        document.querySelector('[data-add="awards"]').addEventListener('click', function () {
+            addFields('awards')
+        })
+
+    }
+
+    /* ==================================================
+    добавить Фильмография
+    ================================================== */
+
+    if (document.querySelector('[data-add="filmography"]')) {
+        document.querySelector('[data-add="filmography"]').addEventListener('click', function () {
+            addFields('filmography')
         })
 
     }

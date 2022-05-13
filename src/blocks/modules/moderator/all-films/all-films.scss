@@ -69,6 +69,10 @@
 
         padding-bottom: 35px;
 
+        & select {
+            height: 57px;
+        }
+
 
         @media screen and (min-width: $w360) {
             margin-right: 0;
@@ -128,6 +132,7 @@
         border-radius: 5px;
         width: 100%;
         padding: 8px;
+        border: 1px solid #fff;
 
         &--light {
             background-color: #E7E6F5;
