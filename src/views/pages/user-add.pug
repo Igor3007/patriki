@@ -1,0 +1,35 @@
+extends ../layouts/user
+include ../../blocks/modules/user/head-user/head-user.pug
+include ../../blocks/modules/user/film-add/film-add.pug 
+include ../../blocks/modules/user/film-poster/film-poster.pug
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Добавить фильм'
+
+
+block content
+  +head-user({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Добавить фильм',
+    ],
+
+    title: 'Добавить фильм',
+    button: false
+  })
+
+  
+
+  .main-moderator
+    form(action='#' method='POST' onsubmit="return false")
+      .layout-column
+        .layout-column__left: +film-poster()
+        .layout-column__right: +film-add() 
+
+
+

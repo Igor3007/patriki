@@ -23,8 +23,15 @@
 @import "moderator/moderator-review/moderator-review.scss";
 @import "moderator/all-films/all-films.scss";
 @import "moderator/profile-block/profile-block.scss";
+@import "moderator/profile-block/profile-block.scss";
 
 @import "moderator/moderator-rating/moderator-rating.scss";
 @import "moderator/moderator-directors-card/moderator-directors-card.scss";
 @import "moderator/card-grade/card-grade.scss";
 @import "moderator/card-comment/card-comment.scss";
+
+
+//user account
+@import "user/user-aside/user-aside.scss";
+@import "user/head-user/head-user.scss";
+@import "user/page-user/page-user";

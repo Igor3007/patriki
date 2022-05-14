@@ -1,0 +1,28 @@
+extends ../layouts/user
+include ../../blocks/modules/user/head-user/head-user.pug
+include ../../blocks/modules/moderator/orders-block/orders-block.pug
+ 
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Заявки'
+
+
+block content
+  +head-user({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Заявки',
+    ],
+
+    title: 'Заявки',
+    button: 'Добавить фильм'
+  })
+
+  .main-moderator
+    +orders-block
+

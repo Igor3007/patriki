@@ -1,0 +1,68 @@
+.head-user {
+    &__breadcrumb {
+
+        padding-bottom: 25px;
+
+        & ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        & li {
+
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: '';
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4yNTUgMy43MUwwIC42OTEuNzQ1IDAgNCAzLjAxOWwtLjc0NS42OTF6IiBmaWxsPSIjNTI1MTY2Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00IDMuMDE5TC43ODYgNiAuMDggNS4zNDRsMy4yMTMtMi45ODEuNzA4LjY1NnoiIGZpbGw9IiM1MjUxNjYiLz48L3N2Zz4=);
+                width: 1em;
+                height: 1em;
+                display: inline-block;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 0 1em;
+            }
+
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+
+            & span,
+            & a {
+                color: #92919F;
+            }
+
+            & a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__title {
+
+        @media screen and (min-width: $w576) {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            width: 100%;
+        }
+
+        & h1 {
+            @include section-title;
+            text-align: left;
+        }
+
+        & a {
+            margin-top: 20px;
+            display: block;
+
+            & button {
+                width: 100%;
+            }
+        }
+    }
+}

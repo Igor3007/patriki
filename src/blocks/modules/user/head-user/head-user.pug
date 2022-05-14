@@ -1,0 +1,10 @@
+mixin head-user(data)
+    .head-user
+        .head-user__breadcrumb
+            ul
+              each item in data.nav
+                li: a(href='#')= item
+        .head-user__title
+          h1= data.title
+          if(data.button)
+            a(href='/user-add.html'): button.btn.btn-small= data.button

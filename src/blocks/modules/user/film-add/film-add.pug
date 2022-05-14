@@ -1,0 +1,167 @@
+mixin film-add()
+    .film-add
+      .film-add__tabs
+          +form-tabs-nav
+
+      .film-tab-container
+        .film-tab-item(data-tab-item="ru" class="active")
+          .form
+            .form__item: .form__subitem: +input-material('text', 'Название фильма')
+            .form__item
+              .form__subitem: +input-material('text', 'Жанр') 
+            .form__item
+              .form__subitem: +input-material('text', 'Заявитель (ФИО)') 
+              .form__subitem: +input-material('text', 'Производитель') 
+            .form__item
+              .form__subitem: +input-material('tel', 'Телефон')
+              .form__subitem: +input-material('email', 'Email')
+            
+
+            .form__label информация о съемочной группе
+            .form__item
+              .form__subitem: +input-material('text', 'ФИО') 
+              .form__subitem
+                input(type="text" name="post[]" placeholder="Продюсер" disabled value="Продюсер")
+
+            .form__item
+              .form__subitem
+                 
+                select(placeholder="ФИО" data-ajax="/js/select.json" data-select-edit="/user/edit/$id" data-selected="8787")
+                  option(value="1") Андрей Звягинцев
+                  option(value="1") Михаил Кричман
+                  option(value="1") Филип Гласс
+
+
+              .form__subitem
+                input(type="text" name="post[]" placeholder="Режиссер" disabled value="Режиссер")
+
+            .form__item
+              .form__subitem: .form__note
+                a(href='/moderator-directors-card.html' target="_blank"): span Заполнить карточку режисера 
+                a(href='/moderator-directors-card.html' target="_blank" class="card-director-edit"): span (Изменить) 
+
+            .form__group(data-repeat="container")
+              .form__item
+                .form__subitem: +input-material('text', 'ФИО') 
+                .form__subitem 
+                  input(type="text" placeholder="Оператор" name="post[]" disabled value="Оператор")
+              .form__item
+                .form__subitem: +input-material('text', 'ФИО') 
+                .form__subitem 
+                  input(type="text" placeholder="Звукорежиссер" name="post[]" disabled value="Звукорежиссер")
+            
+            .form__item
+              .form__subitem: .form__note: span(data-repeat="add") + Добавить члена съемочной группы
+            
+            .form__label Логлайн
+            .form__item
+              .form__subitem: textarea(placeholder="Описание фильма")
+
+            
+
+        //- en
+        //- en
+        //- en
+        //- en
+        //- en
+        //- en
+
+        .film-tab-item(data-tab-item="en" )
+          .form
+            .form__item: .form__subitem
+              input(type="text" placeholder="Название фильма")
+              .error Поле обязательно для заполнения
+            .form__item
+              .form__subitem: +input-material('text', 'Жанр') 
+            .form__item
+              .form__subitem: input(type="text" placeholder="Заявитель (ФИО)")
+              .form__subitem: input(type="text" placeholder="Производитель")
+            .form__item
+              .form__subitem: input(type="tel" placeholder="Телефон")
+              .form__subitem
+                input(type="email" placeholder="Email")
+                .error Поле обязательно для заполнения
+            
+
+             
+
+            .form__label информация о съемочной группе
+            .form__item
+              .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
+              .form__subitem
+                input(type="text" name="post[]" placeholder="Продюсер" disabled value="Продюсер")
+            .form__item
+              .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
+              .form__subitem
+                input(type="text" name="post[]" placeholder="Режиссер" disabled value="Режиссер")
+            .form__item
+              .form__subitem: .form__note: span Заполнить карточку режисера
+
+            .form__group(data-repeat="container")
+              .form__item
+                .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
+                .form__subitem 
+                  input(type="text" placeholder="Оператор" name="post[]" disabled value="Оператор")
+                  .error Поле обязательно для заполнения
+              .form__item
+                .form__subitem: input(type="text" name="fio[]" placeholder="ФИО")
+                .form__subitem 
+                  input(type="text" placeholder="Звукорежиссер" name="post[]" disabled value="Звукорежиссер")
+            
+            .form__item
+              .form__subitem: .form__note: span(data-repeat="add") + Добавить члена съемочной группы
+            
+            .form__label Логлайн
+            .form__item
+              .form__subitem: textarea(placeholder="Описание фильма")
+           
+        .form.active(data-lang="ru en")
+          .form__label Фестиваль
+          .form__item
+            .form__subitem: +select('Статус', ['Статус 1','Статус 2'])
+            .form__subitem: +select('Программа', ['Программа 1','Программа 2'])
+
+          .form__label Информация о фильме
+          .form__item
+            .form__subitem
+              select(placeholder="Страна происхождения")
+                option(value="") Россия
+                option(value="") Армения
+                option(value="") Китай
+                option(value="") Турция
+          .form__item
+            .form__item 
+              .form__subitem: +select('Год производства', ['2020','2021'])
+              .form__subitem
+                input(type="date" placeholder="Дата подачи")
+            .form__item 
+              .form__subitem: +input-material('text', 'Хронометраж (мин)')
+              .form__subitem: +select('Язык',['Русский','English'])
+
+         
+          .form__item
+            .form__subitem
+              .form__submit: button.btn(type="submit") сохранить
+            
+
+mixin lineup
+  .lineup(data-lineup="1")
+    .lineup__date: input(type="date" placeholder="Date")
+    .lineup__time
+      .lineup__timeline
+        .lineup__title Время
+        .lineup__list
+          ul
+            each li in [17,18,19,20,21]
+              li
+                span= li+':00'
+                input(type="checkbox" name="time[]" value=li+":00" checked)
+        .lineup__add: span.timepicker(data-timepicker="")
+
+      .lineup__remove: span.remove-repeater
+
+
+mixin form-tabs-nav
+  ul.form-tabs(data-tab-nav="")
+    li(class="active"): a(href='#ru'): button.btn.btn-line Русская версия
+    li: a(href='#en'): button.btn.btn-line Английская версия

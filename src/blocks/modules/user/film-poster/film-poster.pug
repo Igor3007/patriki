@@ -1,0 +1,65 @@
+mixin film-poster()
+  .film-poster
+    .film-poster__cover(data-lang="ru" class="active")
+      .film-poster__btn
+        label.attach-label
+          +bgimage('/img/common/camera.png')
+          span.text-upload Добавить афишу
+          input(type="file" name="poster-img" data-attach="poster" )
+      .film-poster__image
+        picture
+          img(src="" data-attach="preview-poster")
+    .film-poster__cover(data-lang="en")
+      .film-poster__btn
+        label.attach-label
+          +bgimage('/img/common/camera.png')
+          span.text-upload Добавить афишу
+          input(type="file" name="poster-img" data-attach="poster" )
+        .error Поле обязательно для заполнения
+      .film-poster__image
+        picture
+          img(src="" data-attach="preview-poster")
+    .film-poster__upload
+      label.attach-label
+        span.btn Загрузить фильм
+        input(type="file" name="film-file")
+    .film-poster__progress
+      .progress-bar
+        .progress-bar__title Зарузка 66%
+        .progress-bar__state
+          span(style="width: 66%")
+
+mixin film-poster-edit()
+  .film-poster
+    .film-poster__cover.cover--loaded(data-lang="ru" class="active")
+      .film-poster__btn
+        label.attach-label
+          +bgimage('/img/common/camera.png')
+          span.text-upload Изменить афишу
+          input(type="file" name="poster-img-ru" data-attach="poster" )
+      .film-poster__image
+        picture
+          img(src="/img/common/cover.jpg" data-attach="preview-poster")
+    .film-poster__cover.cover--loaded(data-lang="en")
+      .film-poster__btn
+        label.attach-label
+          +bgimage('/img/common/camera.png')
+          span.text-upload Изменить афишу
+          input(type="file" name="poster-img-en" data-attach="poster" )
+      .film-poster__image
+        picture
+          img(src="/img/common/cover.jpg" data-attach="preview-poster")
+    .film-poster__title Фильм загружен на платформу
+    .film-poster__upload
+      label.attach-label
+        span.btn Редактировать
+        input(type="file" name="film-file")
+    .film-poster__link
+      .film-poster__link-title Ссылка для скачивания:
+      .film-poster__link-url
+       a(href='#')
+        +icons('#ic_chain', 20)
+        span https://somevideohosting.com/film2
+
+  
+       

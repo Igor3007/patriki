@@ -1,0 +1,35 @@
+extends ../layouts/user
+include ../../blocks/modules/moderator/profile-block/profile-block.pug
+include ../../blocks/modules/user/head-user/head-user.pug
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Профиль'
+
+
+block content
+  +head-user({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Профиль',
+    ],
+
+    title: 'Профиль',
+    button: false
+  })
+
+  
+
+  .main-moderator
+    +profile-block-user()
+
+block scripts
+    script(src="/js/vendor.js")
+    script(src="/js/common.js")
+    script(src="/js/lib/OverlayScrollbars.min.js")
+    script(src="/js/moderator.js")
+
