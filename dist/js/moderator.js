@@ -590,67 +590,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     }
 
-    /* ================================================
-    user-menu data-user-menu="open"
-    ================================================*/
 
-    if (document.querySelector('[data-user-menu="open"]')) {
-
-
-
-        function userMenu() {
-
-            this.btn = document.querySelector('[data-user-menu="open"]')
-            this.container = document.querySelector('.moderator-aside')
-
-            this.open = function () {
-
-                if (!document.querySelector('.moderator-aside')) {
-                    window.location = this.btn.dataset.link;
-                    return false
-                }
-
-                this.container.classList.add('open')
-                this.btn.classList.add('open')
-
-                if (window.menuInstanse) {
-                    window.menuInstanse.close()
-                }
-
-                document.body.classList.add('hidden-profile')
-
-            }
-
-            this.close = function () {
-                this.container.classList.remove('open')
-                this.btn.classList.remove('open')
-                document.body.classList.remove('hidden-profile')
-
-                //close invite form
-                if (document.querySelector('.moderator-aside__form')) {
-                    document.querySelector('.moderator-aside__form').classList.remove('open')
-                }
-            }
-
-            this.toggle = function () {
-                if (!this.btn.classList.contains('open')) this.open()
-                else this.close()
-
-            }
-
-            this.init = function () {
-                this.btn.addEventListener('click', () => {
-                    this.toggle()
-                })
-            }
-        }
-
-        window.userMenuInstance = new userMenu()
-        window.userMenuInstance.init()
-
-
-
-    }
 
     /* ========================================
     invite form

@@ -120,10 +120,24 @@ class customSelect {
 
                 select.innerHTML = '';
 
+                let attrSelectedId = select.dataset.selected;
+                let arrtPlaceholder = select.getAttribute('placeholder')
+
+                arr.unshift({
+                    text: (arrtPlaceholder ? arrtPlaceholder : '-Выберите-'),
+                    value: ''
+                });
+
                 arr.forEach(function (item) {
                     let option = document.createElement('option')
                     option.value = item.value
                     option.innerText = item.text
+
+                    if (attrSelectedId == item.value) {
+                        option.setAttribute('selected', true)
+                        select.removeAttribute('data-selected')
+                    }
+
                     select.append(option)
                 })
 
