@@ -19,14 +19,14 @@
             border-right: 1px solid $main;
             width: 100%;
             max-width: 235px;
-            min-width: 230px;
+            min-width: 235px;
         }
     }
 
     &__content {
         padding: 25px 0px 25px 0px;
         flex-grow: 1;
-        width: 100%;
+        width: calc(100% - 235px);
 
         @media screen and (min-width: $w1200) {
             padding: 40px 45px 75px 45px;

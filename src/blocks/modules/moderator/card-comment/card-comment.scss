@@ -88,6 +88,67 @@
         }
     }
 
+    &__answers {
+        padding-left: 75px;
+    }
+
+    &__reply {
+        display: none;
+        align-items: stretch;
+        border: 1px solid #bcbcbc;
+        padding: 4px 4px 2px 4px;
+        border-radius: 5px;
+
+        &.open {
+            display: flex;
+        }
+
+        &-field {
+            flex-grow: 1;
+
+
+            & textarea {
+                width: 100%;
+                max-width: 100%;
+                resize: none;
+                border: 1px solid transparent;
+                outline: none;
+                padding: 9px;
+                min-height: 40px;
+                height: 40px;
+                max-height: 100px;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:focus,
+                &:hover {
+                    resize: vertical;
+                    outline: none;
+                    border: 1px solid #eee;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        &-button {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5px;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #eee;
+                cursor: pointer;
+            }
+        }
+    }
+
+
 
 
 }

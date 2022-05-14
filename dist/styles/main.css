@@ -1227,6 +1227,26 @@ select {
   display: none;
 }
 
+.select-list.active.select-list--load li {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.select-list.active.select-list--load ul::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  display: block;
+  border-radius: 50%;
+  border-left-color: transparent;
+  animation: loadingrotate 0.5s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  margin-left: -10px;
+}
+
 .loading {
   width: 100%;
   overflow: hidden;
@@ -2691,6 +2711,7 @@ header {
   color: #525166;
   text-transform: uppercase;
   position: relative;
+  font-size: 13px;
 }
 
 .header__nav-menu ul li a:hover {
@@ -3730,7 +3751,7 @@ footer {
 .page-moderator__content {
   padding: 25px 0px 25px 0px;
   flex-grow: 1;
-  width: 100%;
+  width: calc(100% - 235px);
 }
 
 .main-moderator {
@@ -4088,7 +4109,7 @@ footer {
 
 .film-poster__image picture {
   display: block;
-  padding-top: 80%;
+  padding-top: 134%;
   background-color: #DDDDDD;
 }
 
@@ -4398,6 +4419,12 @@ footer {
   justify-content: center;
 }
 
+.card-director-edit {
+  color: #92919F;
+  padding-left: 1em;
+  text-decoration: none !important;
+}
+
 .edit-input {
   padding-left: 15px;
   padding-right: 15px;
@@ -4465,6 +4492,7 @@ footer {
   min-height: 3em;
   display: flex;
   margin-bottom: 1em;
+  font-size: 13px;
 }
 
 .film-metric__vote {
@@ -4473,7 +4501,7 @@ footer {
 }
 
 .film-metric__total {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 600;
 }
 
@@ -4485,9 +4513,9 @@ footer {
 
 .film-metric__like span,
 .film-metric__dislike span {
-  font-size: 36px;
   font-weight: 600;
   padding-left: 5px;
+  font-size: 28px;
 }
 
 .film-metric__dislike {
@@ -5484,11 +5512,11 @@ div[data-lang]:not(.active) {
   margin: 0 6px;
 }
 
-.directors-card__tabs ul li .active .btn {
+.directors-card__tabs ul li.active .btn {
   color: #525166;
 }
 
-.directors-card__tabs ul li .active .btn:hover {
+.directors-card__tabs ul li.active .btn:hover {
   color: #fff;
 }
 
@@ -5619,6 +5647,65 @@ div[data-lang]:not(.active) {
   outline: none !important;
 }
 
+.item-message__answers {
+  padding-left: 75px;
+}
+
+.item-message__reply {
+  display: none;
+  align-items: stretch;
+  border: 1px solid #bcbcbc;
+  padding: 4px 4px 2px 4px;
+  border-radius: 5px;
+}
+
+.item-message__reply.open {
+  display: flex;
+}
+
+.item-message__reply-field {
+  flex-grow: 1;
+}
+
+.item-message__reply-field textarea {
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 9px;
+  min-height: 40px;
+  height: 40px;
+  max-height: 100px;
+}
+
+.item-message__reply-field textarea:focus {
+  outline: none;
+}
+
+.item-message__reply-field textarea:focus,
+.item-message__reply-field textarea:hover {
+  resize: vertical;
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.item-message__reply-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.item-message__reply-button:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 359px) {
   .all-films__item {
     width: 50%;
@@ -5665,28 +5752,8 @@ div[data-lang]:not(.active) {
     max-width: 360px;
   }
 
-  .page-404__title {
-    font-size: 36px;
-  }
-
-  .login-block__title {
-    font-size: 36px;
-  }
-
-  .registration-block__title {
-    font-size: 36px;
-  }
-
-  .recovery-password__title {
-    font-size: 36px;
-  }
-
   .moderator-aside.open {
     max-width: 360px;
-  }
-
-  .invite-member__title {
-    font-size: 36px;
   }
 
   .invite-member__title {
@@ -5695,10 +5762,6 @@ div[data-lang]:not(.active) {
 
   .invite-member__back {
     display: none;
-  }
-
-  .head-moderator__title h1 {
-    font-size: 36px;
   }
 }
 
@@ -5730,6 +5793,10 @@ div[data-lang]:not(.active) {
     justify-content: space-between;
     align-content: center;
     width: 100%;
+  }
+
+  .film-poster__image picture {
+    padding-top: 80%;
   }
 
   .directors-card__submit .btn {
@@ -6316,7 +6383,7 @@ div[data-lang]:not(.active) {
     border-right: 1px solid #525166;
     width: 100%;
     max-width: 235px;
-    min-width: 230px;
+    min-width: 235px;
   }
 
   .page-moderator__content {
@@ -6450,6 +6517,10 @@ div[data-lang]:not(.active) {
     padding: 23px 45px;
   }
 
+  .header__nav-menu ul li a {
+    font-size: 14px;
+  }
+
   .header-info {
     padding: 0 15px 0 35px;
   }
@@ -6458,8 +6529,32 @@ div[data-lang]:not(.active) {
     padding: 15px 30px;
   }
 
+  .page-404__title {
+    font-size: 36px;
+  }
+
+  .login-block__title {
+    font-size: 36px;
+  }
+
+  .registration-block__title {
+    font-size: 36px;
+  }
+
+  .recovery-password__title {
+    font-size: 36px;
+  }
+
   .moderator-aside {
     padding: 48px;
+  }
+
+  .invite-member__title {
+    font-size: 36px;
+  }
+
+  .head-moderator__title h1 {
+    font-size: 36px;
   }
 
   .table-card__th {
@@ -6491,7 +6586,22 @@ div[data-lang]:not(.active) {
   }
 
   .lineup__list {
-    max-width: 457px;
+    max-width: 415px;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .film-metric__title {
+    font-size: 14px;
+  }
+
+  .film-metric__total {
+    font-size: 36px;
+  }
+
+  .film-metric__like span,
+  .film-metric__dislike span {
+    font-size: 36px;
   }
 
   .layout-column {

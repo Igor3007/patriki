@@ -25,3 +25,10 @@ mixin item-message(data)
             span.item-message__delete-msg Вы уверены?
             span.item-message__delete-remove(data-comment-action="remove") Удалить
             span.item-message__delete-cancel(data-comment-action="cancel") Отмена
+        .item-message__reply(data-comment-action="pane-reply")
+          .item-message__reply-field: textarea(placeholder="Введите")
+          .item-message__reply-button(data-comment-action="send"): +icons('#ic_send')
+    .item-message__answers(data-comment="answers") 
+          
+                         
+             

@@ -132,7 +132,7 @@
               </div>
             </div>
             <div class="header__pa-btn">
-              <div class="user-login-mobile" title="Николай" data-user-menu="open"><span class="bgimage lazyload" data-bg="/img/common/img_user.webp"><span class="total-messages">3</span></span></div>
+              <div class="user-login-mobile" title="Николай" data-user-menu="open" data-link="/moderator-orders.html"><span class="bgimage lazyload" data-bg="/img/common/img_user.webp"><span class="total-messages">3</span></span></div>
             </div>
           </div>
         </div>
@@ -262,7 +262,7 @@
                           </div>
                         </div>
                         <div class="film-poster__upload">
-                          <label class="attach-label"><span class="btn">Загрузить фильм на платформу</span>
+                          <label class="attach-label"><span class="btn">Загрузить фильм</span>
                             <input type="file" name="film-file"/>
                           </label>
                         </div>
@@ -345,10 +345,11 @@
                               </div>
                               <div class="form__item">
                                 <div class="form__subitem">
-                                  <div class="input-material">
-                                    <input type="text" value=""/>
-                                    <label>ФИО</label>
-                                  </div>
+                                  <select placeholder="ФИО" data-ajax="/js/select.json" data-select-edit="/user/edit/$id">
+                                    <option value="1">Андрей Звягинцев</option>
+                                    <option value="1">Михаил Кричман</option>
+                                    <option value="1">Филип Гласс</option>
+                                  </select>
                                 </div>
                                 <div class="form__subitem">
                                   <input type="text" name="post[]" placeholder="Режиссер" disabled="disabled" value="Режиссер"/>
@@ -356,7 +357,7 @@
                               </div>
                               <div class="form__item">
                                 <div class="form__subitem">
-                                  <div class="form__note"><a href="/moderator-directors-card.html" target="_blank"><span>Заполнить карточку режисера</span></a></div>
+                                  <div class="form__note"><a href="/moderator-directors-card.html" target="_blank"><span>Заполнить карточку режисера </span></a><a class="card-director-edit" href="/moderator-directors-card.html" target="_blank"><span>(Изменить) </span></a></div>
                                 </div>
                               </div>
                               <div class="form__group" data-repeat="container">

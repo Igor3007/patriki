@@ -221,6 +221,28 @@ select {
 }
 
 
+.select-list.active.select-list--load li {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+
+.select-list.active.select-list--load ul::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    display: block;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: loadingrotate 0.5s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin-left: -10px
+}
+
+
 .loading {
     width: 100%;
     overflow: hidden;

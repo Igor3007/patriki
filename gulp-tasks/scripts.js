@@ -60,7 +60,7 @@ gulp.task('vendor', function () {
 // });
 
 gulp.task("common", () => {
-    return gulp.src('./src/js/common/*.js')
+    return gulp.src('./src/js/common/*.{js,json}')
 
         .pipe(gulp.dest('./dist/js/'))
         .pipe(debug({

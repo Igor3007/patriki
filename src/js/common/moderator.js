@@ -604,6 +604,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
             this.container = document.querySelector('.moderator-aside')
 
             this.open = function () {
+
+                if (!document.querySelector('.moderator-aside')) {
+                    window.location = this.btn.dataset.link;
+                    return false
+                }
+
                 this.container.classList.add('open')
                 this.btn.classList.add('open')
 
@@ -783,17 +789,26 @@ document.addEventListener('DOMContentLoaded', function (event) {
         this.paneDefault = elem.querySelector('[data-comment-action="pane-default"]')
         this.paneEdit = elem.querySelector('[data-comment-action="pane-edit"]')
         this.paneRemove = elem.querySelector('[data-comment-action="pane-remove"]')
+        this.paneReply = elem.querySelector('[data-comment-action="pane-reply"]')
+        this.paneAnswers = elem.querySelector('[data-comment="answers"]')
 
-        this.btnSave = elem.querySelector('[data-comment-action="save"]')
-        this.btnCancel = elem.querySelectorAll('[data-comment-action="cancel"]')
-        this.btnRemove = elem.querySelector('[data-comment-action="remove"]')
-
-        this.btnEdit = elem.querySelector('[data-comment-action="edit"]')
+        //delete
         this.btnDelete = elem.querySelector('[data-comment-action="delete"]')
+        this.btnRemove = elem.querySelector('[data-comment-action="remove"]')
+        //edit
+        this.btnEdit = elem.querySelector('[data-comment-action="edit"]')
+        this.btnSave = elem.querySelector('[data-comment-action="save"]')
+        //reply
         this.btnReply = elem.querySelector('[data-comment-action="reply"]')
+        this.btnSend = elem.querySelector('[data-comment-action="send"]')
+        //cancel
+        this.btnCancel = elem.querySelectorAll('[data-comment-action="cancel"]')
+
+
 
         this.mianContainer = elem.querySelector('.item-message__main')
         this.textComment = this.mianContainer.innerText;
+        this.textareaReply = this.paneReply.querySelector('textarea')
         this.idComment = elem.dataset.commentId
 
 
@@ -829,6 +844,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
         this.closeDefault = function () {
             this.paneDefault.classList.remove('open')
         }
+        this.openReply = function () {
+            this.paneReply.classList.add('open')
+        }
+
+        this.closeReply = function () {
+            this.paneReply.classList.remove('open')
+        }
 
         this.openRemove = function () {
             this.paneRemove.classList.add('open')
@@ -863,11 +885,27 @@ document.addEventListener('DOMContentLoaded', function (event) {
             this.btnRemove.addEventListener('click', function () {
                 _this.submitDeleteComment()
             })
+            this.btnReply.addEventListener('click', function () {
+                _this.closeDefault()
+                _this.openReply()
+            })
+            this.btnSend.addEventListener('click', function () {
+                _this.closeReply()
+                _this.openDefault()
+                _this.submitReply()
+            })
 
             this.btnCancel.forEach(function (btn) {
                 btn.addEventListener('click', function () {
                     _this.cancel()
                 })
+            })
+
+            this.textareaReply.addEventListener('blur', (event) => {
+                if (event.target.value == '') {
+                    this.closeReply()
+                    this.openDefault()
+                }
             })
 
         }
@@ -897,7 +935,30 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         }
 
+        this.submitReply = function () {
 
+            let _this = this;
+
+            //id
+            console.log(this.idComment)
+
+            //ajax true
+
+            window.ajax({
+                url: '/reply-comment.html',
+                type: 'GET',
+                data: {
+                    id: this.idComment
+                }
+            }, function (status, response) {
+
+                let div = document.createElement('div')
+                div.innerHTML = response;
+                _this.paneAnswers.append(div)
+                _this.textareaReply.value = '';
+            })
+
+        }
 
     }
 
@@ -905,6 +966,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
         let instanse = new comentEdit(elem);
         instanse.init()
     })
+
+
+    /* ==========================================
+    ссылка редатировать режисера
+    ========================================== */
+
+    if (document.querySelector('[data-select-edit]')) {
+        document.querySelector('[data-select-edit]').addEventListener('change', function () {
+            let link = this.dataset.selectEdit
+            let id = this.value;
+            document.querySelector('.card-director-edit').setAttribute('href', link.replace('$id', id))
+        })
+    }
 
 
 

@@ -54,8 +54,12 @@
 
         & picture {
             display: block;
-            padding-top: 80%;
+            padding-top: 134%;
             background-color: #DDDDDD;
+
+            @media screen and (min-width: $w576) {
+                padding-top: 80%;
+            }
 
             @media screen and (min-width: $w992) {
                 padding-top: 134%;

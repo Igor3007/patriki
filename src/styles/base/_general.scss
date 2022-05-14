@@ -356,7 +356,7 @@ main {
     text-transform: uppercase;
     color: $main;
 
-    @media screen and (min-width: $w480) {
+    @media screen and (min-width: $w1440) {
         font-size: 36px;
     }
 }

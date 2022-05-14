@@ -62,7 +62,9 @@
     &__list {
 
         @media screen and (min-width: $w1440) {
-            max-width: 457px;
+            max-width: 415px;
+            flex-grow: 1;
+            width: 100%;
         }
 
         @media screen and (min-width: $w1200) {
@@ -207,4 +209,10 @@
         display: flex;
         justify-content: center;
     }
+}
+
+.card-director-edit {
+    color: $main2;
+    padding-left: 1em;
+    text-decoration: none !important;
 }
