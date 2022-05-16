@@ -98,6 +98,11 @@ mixin input-material(type, placeholder, value)
   .input-material
     input(type=''+type+'' value=(value?value:''))
     label= placeholder 
+
+mixin input-material-date(type, placeholder, value)
+  .input-material.input-material--date
+    input(type=''+type+'' value=(value?value:'') class="input-datepicker" data-datepicker-lang="ru")
+    label= placeholder 
      
 
 mixin input(type, placeholder, valid, required)

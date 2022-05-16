@@ -485,6 +485,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 container.append(fieldRepeeat)
 
                 addEventRemoveTime(fieldRepeeat.querySelectorAll('.lineup__list li'))
+
+                //init datepicker
+
+                let inputDatepicker = fieldRepeeat.querySelector('.input-datepicker')
+                inputDatepicker.value = ''
+                inputDatepicker.removeAttribute('area-valid')
+
+                fieldRepeeat.querySelector('.datepicker').remove()
+
+                window.initDatepicker(inputDatepicker, {
+                    autoShow: false
+                })
             })
         })
 

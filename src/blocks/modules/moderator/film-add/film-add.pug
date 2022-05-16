@@ -133,7 +133,7 @@ mixin film-add()
             .form__item 
               .form__subitem: +select('Год производства', ['2020','2021'])
               .form__subitem
-                input(type="date" placeholder="Дата подачи")
+                +input-material-date('text', 'Дата подачи')
                 .error Поле обязательно для заполнения
             .form__item 
               .form__subitem: +input-material('text', 'Хронометраж (мин)')
@@ -156,7 +156,7 @@ mixin film-add()
 
 mixin lineup
   .lineup(data-lineup="1")
-    .lineup__date: input(type="date" placeholder="Date")
+    .lineup__date: +input-material-date('text', 'Дата показа')
     .lineup__time
       .lineup__timeline
         .lineup__title Время
