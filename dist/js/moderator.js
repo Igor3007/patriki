@@ -700,9 +700,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     if (document.querySelector('[data-add="awards"]')) {
-
-        document.querySelector('[data-add="awards"]').addEventListener('click', function () {
-            addFields('awards')
+        document.querySelectorAll('[data-add="awards"]').forEach(function (item) {
+            item.addEventListener('click', function () {
+                addFields('awards')
+            })
         })
 
     }
@@ -712,8 +713,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
     ================================================== */
 
     if (document.querySelector('[data-add="filmography"]')) {
-        document.querySelector('[data-add="filmography"]').addEventListener('click', function () {
-            addFields('filmography')
+        document.querySelectorAll('[data-add="filmography"]').forEach(function (item) {
+            item.addEventListener('click', function () {
+                addFields('filmography')
+            })
         })
 
     }
