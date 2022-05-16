@@ -1,0 +1,40 @@
+mixin user-orders
+    .user-orders
+        .user-orders__list
+            .table-card
+                .table-card__tr
+                    .table-card__th Фильм
+                    .table-card__th Просмотры / Комментари / Сообщения / Рейтинг
+                    .table-card__th Статус
+                //- =======================================
+                //- =======================================
+
+                each item in [1,1,1,1,1]
+                    .table-card__tr(class=item.state)
+                        .table-card__td(data-title="Фильм")
+                            .user-orders-film
+                                .user-orders-film__poster
+                                    +bgimage('/dist/img/common/cover.jpg')
+                                .user-orders-film__details
+                                    .user-orders-film__name Огонь
+                                    .user-orders-film__code 22-00650
+                        .table-card__td(data-title="Просмотры / Комментари / Сообщения / Рейтинг")
+                            +metric
+                        .table-card__td(data-title="Статус")
+                            span.status-order.status-order--green В конкурсе
+                         
+mixin metric
+    .film-metrics
+        ul
+            li
+                +icons('#ic_eye', 16)
+                span 98
+            li
+                +icons('#ic_comment', 16)
+                span 21
+            li
+                +icons('#ic_mail', 16)
+                span 2
+            li
+                +icons('#ic_star', 16)
+                span 2

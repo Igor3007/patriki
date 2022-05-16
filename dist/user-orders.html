@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Заявки</title>
+    <title>Мои заявки</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -227,156 +227,212 @@
                 </div>
                 <div class="head-user__title">
                   <h1>Заявки</h1><a href="/user-add.html">
-                    <button class="btn btn-small">Добавить фильм</button></a>
+                    <button class="btn btn-small">Подать заявку</button></a>
                 </div>
               </div>
               <div class="main-user">
-                <div class="orders-block">
-                  <div class="orders-block__sort">
-                    <ul>
-                      <li><a href="#">Новые</a></li>
-                      <li><a class="active" href="#">Одобренные</a></li>
-                      <li><a href="#">Отклоненные</a></li>
-                    </ul>
-                  </div>
-                  <div class="orders-block__list">
+                <div class="user-orders">
+                  <div class="user-orders__list">
                     <div class="table-card">
                       <div class="table-card__tr">
-                        <div class="table-card__th">Название</div>
-                        <div class="table-card__th">Режисер</div>
-                        <div class="table-card__th">Дата подачи</div>
+                        <div class="table-card__th">Фильм</div>
+                        <div class="table-card__th">Просмотры / Комментари / Сообщения / Рейтинг</div>
                         <div class="table-card__th">Статус</div>
-                        <div class="table-card__th">Действия </div>
-                      </div>
-                      <div class="table-card__tr state--success">
-                        <div class="table-card__td" data-title="Название"><span class="ob-name"><a href="#">Паразиты (2019)</a></span><span class="ob-number">22-00650</span></div>
-                        <div class="table-card__td" data-title="Режисер">Пон Джун-хо</div>
-                        <div class="table-card__td" data-title="Дата подачи">20.11.2022</div>
-                        <div class="table-card__td" data-title="Статус"><span class="ob-status">
-                            <button class="btn btn-line btn-line--success active" data-ob="status">Одобрен</button>
-                            <button class="btn btn-line btn-line--reject" data-ob="status">отклонeн</button></span></div>
-                        <div class="table-card__td" data-title="Действия">
-                          <div class="ob-action"><a class="ob-link" href="#">
-                              <svg width="20" height="20">
-                                <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
-                              </svg></a><span class="ob-menu" data-menu="dots">
-                              <div class="ob-menu__icon">
-                                <svg width="20" height="20">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_dots-menu"></use>
-                                </svg>
-                              </div>
-                              <div class="ob-menu__list">
-                                <ul>
-                                  <li><a href="moderator-edit.html">Редактировать</a></li>
-                                  <li><a href="#">Удалить</a></li>
-                                  <li><a href="#">Перейти к фильму</a></li>
-                                </ul>
-                              </div></span></div>
-                        </div>
-                      </div>
-                      <div class="table-card__tr state--reject">
-                        <div class="table-card__td" data-title="Название"><span class="ob-name"><a href="#">Три билборда на границе Эббинга, Миссури (2017)</a></span><span class="ob-number">22-00650</span></div>
-                        <div class="table-card__td" data-title="Режисер">Мартин МакДона</div>
-                        <div class="table-card__td" data-title="Дата подачи">18.09.2022</div>
-                        <div class="table-card__td" data-title="Статус"><span class="ob-status">
-                            <button class="btn btn-line btn-line--success" data-ob="status">Одобрен</button>
-                            <button class="btn btn-line btn-line--reject active" data-ob="status">отклонeн</button></span></div>
-                        <div class="table-card__td" data-title="Действия">
-                          <div class="ob-action"><a class="ob-link" href="#">
-                              <svg width="20" height="20">
-                                <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
-                              </svg></a><span class="ob-menu" data-menu="dots">
-                              <div class="ob-menu__icon">
-                                <svg width="20" height="20">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_dots-menu"></use>
-                                </svg>
-                              </div>
-                              <div class="ob-menu__list">
-                                <ul>
-                                  <li><a href="moderator-edit.html">Редактировать</a></li>
-                                  <li><a href="#">Удалить</a></li>
-                                  <li><a href="#">Перейти к фильму</a></li>
-                                </ul>
-                              </div></span></div>
-                        </div>
-                      </div>
-                      <div class="table-card__tr state--success">
-                        <div class="table-card__td" data-title="Название"><span class="ob-name"><a href="#">Тупой и еще тупее тупого: Когда Гарри встретил Ллойда (2003)</a></span><span class="ob-number">22-00650</span></div>
-                        <div class="table-card__td" data-title="Режисер">Трой Миллер</div>
-                        <div class="table-card__td" data-title="Дата подачи">20.11.2022</div>
-                        <div class="table-card__td" data-title="Статус"><span class="ob-status">
-                            <button class="btn btn-line btn-line--success active" data-ob="status">Одобрен</button>
-                            <button class="btn btn-line btn-line--reject" data-ob="status">отклонeн</button></span></div>
-                        <div class="table-card__td" data-title="Действия">
-                          <div class="ob-action"><a class="ob-link" href="#">
-                              <svg width="20" height="20">
-                                <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
-                              </svg></a><span class="ob-menu" data-menu="dots">
-                              <div class="ob-menu__icon">
-                                <svg width="20" height="20">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_dots-menu"></use>
-                                </svg>
-                              </div>
-                              <div class="ob-menu__list">
-                                <ul>
-                                  <li><a href="moderator-edit.html">Редактировать</a></li>
-                                  <li><a href="#">Удалить</a></li>
-                                  <li><a href="#">Перейти к фильму</a></li>
-                                </ul>
-                              </div></span></div>
-                        </div>
                       </div>
                       <div class="table-card__tr">
-                        <div class="table-card__td" data-title="Название"><span class="ob-name"><a href="#">Три билборда на границе Эббинга, Миссури (2017)</a></span><span class="ob-number">22-00650</span></div>
-                        <div class="table-card__td" data-title="Режисер">Мартин МакДона</div>
-                        <div class="table-card__td" data-title="Дата подачи">18.09.2022</div>
-                        <div class="table-card__td" data-title="Статус"><span class="ob-status">
-                            <button class="btn btn-line btn-line--success" data-ob="status">Одобрен</button>
-                            <button class="btn btn-line btn-line--reject" data-ob="status">отклонeн</button></span></div>
-                        <div class="table-card__td" data-title="Действия">
-                          <div class="ob-action"><a class="ob-link" href="#">
-                              <svg width="20" height="20">
-                                <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
-                              </svg></a><span class="ob-menu" data-menu="dots">
-                              <div class="ob-menu__icon">
-                                <svg width="20" height="20">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_dots-menu"></use>
-                                </svg>
-                              </div>
-                              <div class="ob-menu__list">
-                                <ul>
-                                  <li><a href="moderator-edit.html">Редактировать</a></li>
-                                  <li><a href="#">Удалить</a></li>
-                                  <li><a href="#">Перейти к фильму</a></li>
-                                </ul>
-                              </div></span></div>
+                        <div class="table-card__td" data-title="Фильм">
+                          <div class="user-orders-film">
+                            <div class="user-orders-film__poster"><span class="bgimage lazyload" data-bg="/dist/img/common/cover.jpg"></span>
+                            </div>
+                            <div class="user-orders-film__details">
+                              <div class="user-orders-film__name">Огонь</div>
+                              <div class="user-orders-film__code">22-00650</div>
+                            </div>
+                          </div>
                         </div>
+                        <div class="table-card__td" data-title="Просмотры / Комментари / Сообщения / Рейтинг">
+                          <div class="film-metrics">
+                            <ul>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_eye"></use>
+                                </svg><span>98</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_comment"></use>
+                                </svg><span>21</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_mail"></use>
+                                </svg><span>2</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_star"></use>
+                                </svg><span>2</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Статус"><span class="status-order status-order--green">В конкурсе</span></div>
                       </div>
                       <div class="table-card__tr">
-                        <div class="table-card__td" data-title="Название"><span class="ob-name"><a href="#">Тупой и еще тупее тупого: Когда Гарри встретил Ллойда (2003)</a></span><span class="ob-number">22-00650</span></div>
-                        <div class="table-card__td" data-title="Режисер">Трой Миллер</div>
-                        <div class="table-card__td" data-title="Дата подачи">20.11.2022</div>
-                        <div class="table-card__td" data-title="Статус"><span class="ob-status">
-                            <button class="btn btn-line btn-line--success" data-ob="status">Одобрен</button>
-                            <button class="btn btn-line btn-line--reject" data-ob="status">отклонeн</button></span></div>
-                        <div class="table-card__td" data-title="Действия">
-                          <div class="ob-action"><a class="ob-link" href="#">
-                              <svg width="20" height="20">
-                                <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
-                              </svg></a><span class="ob-menu" data-menu="dots">
-                              <div class="ob-menu__icon">
-                                <svg width="20" height="20">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_dots-menu"></use>
-                                </svg>
-                              </div>
-                              <div class="ob-menu__list">
-                                <ul>
-                                  <li><a href="moderator-edit.html">Редактировать</a></li>
-                                  <li><a href="#">Удалить</a></li>
-                                  <li><a href="#">Перейти к фильму</a></li>
-                                </ul>
-                              </div></span></div>
+                        <div class="table-card__td" data-title="Фильм">
+                          <div class="user-orders-film">
+                            <div class="user-orders-film__poster"><span class="bgimage lazyload" data-bg="/dist/img/common/cover.jpg"></span>
+                            </div>
+                            <div class="user-orders-film__details">
+                              <div class="user-orders-film__name">Огонь</div>
+                              <div class="user-orders-film__code">22-00650</div>
+                            </div>
+                          </div>
                         </div>
+                        <div class="table-card__td" data-title="Просмотры / Комментари / Сообщения / Рейтинг">
+                          <div class="film-metrics">
+                            <ul>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_eye"></use>
+                                </svg><span>98</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_comment"></use>
+                                </svg><span>21</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_mail"></use>
+                                </svg><span>2</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_star"></use>
+                                </svg><span>2</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Статус"><span class="status-order status-order--green">В конкурсе</span></div>
+                      </div>
+                      <div class="table-card__tr">
+                        <div class="table-card__td" data-title="Фильм">
+                          <div class="user-orders-film">
+                            <div class="user-orders-film__poster"><span class="bgimage lazyload" data-bg="/dist/img/common/cover.jpg"></span>
+                            </div>
+                            <div class="user-orders-film__details">
+                              <div class="user-orders-film__name">Огонь</div>
+                              <div class="user-orders-film__code">22-00650</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Просмотры / Комментари / Сообщения / Рейтинг">
+                          <div class="film-metrics">
+                            <ul>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_eye"></use>
+                                </svg><span>98</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_comment"></use>
+                                </svg><span>21</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_mail"></use>
+                                </svg><span>2</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_star"></use>
+                                </svg><span>2</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Статус"><span class="status-order status-order--green">В конкурсе</span></div>
+                      </div>
+                      <div class="table-card__tr">
+                        <div class="table-card__td" data-title="Фильм">
+                          <div class="user-orders-film">
+                            <div class="user-orders-film__poster"><span class="bgimage lazyload" data-bg="/dist/img/common/cover.jpg"></span>
+                            </div>
+                            <div class="user-orders-film__details">
+                              <div class="user-orders-film__name">Огонь</div>
+                              <div class="user-orders-film__code">22-00650</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Просмотры / Комментари / Сообщения / Рейтинг">
+                          <div class="film-metrics">
+                            <ul>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_eye"></use>
+                                </svg><span>98</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_comment"></use>
+                                </svg><span>21</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_mail"></use>
+                                </svg><span>2</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_star"></use>
+                                </svg><span>2</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Статус"><span class="status-order status-order--green">В конкурсе</span></div>
+                      </div>
+                      <div class="table-card__tr">
+                        <div class="table-card__td" data-title="Фильм">
+                          <div class="user-orders-film">
+                            <div class="user-orders-film__poster"><span class="bgimage lazyload" data-bg="/dist/img/common/cover.jpg"></span>
+                            </div>
+                            <div class="user-orders-film__details">
+                              <div class="user-orders-film__name">Огонь</div>
+                              <div class="user-orders-film__code">22-00650</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Просмотры / Комментари / Сообщения / Рейтинг">
+                          <div class="film-metrics">
+                            <ul>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_eye"></use>
+                                </svg><span>98</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_comment"></use>
+                                </svg><span>21</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_mail"></use>
+                                </svg><span>2</span>
+                              </li>
+                              <li>
+                                <svg width="16" height="16">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_star"></use>
+                                </svg><span>2</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="table-card__td" data-title="Статус"><span class="status-order status-order--green">В конкурсе</span></div>
                       </div>
                     </div>
                   </div>

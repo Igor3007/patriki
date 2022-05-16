@@ -1,6 +1,6 @@
 extends ../layouts/user
 include ../../blocks/modules/user/head-user/head-user.pug
-include ../../blocks/modules/moderator/orders-block/orders-block.pug
+include ../../blocks/modules/user/user-orders/user-orders
  
 
 
@@ -8,7 +8,7 @@ include ../../blocks/modules/moderator/orders-block/orders-block.pug
 block variables
   include ../../data/data.pug
   -
-    title = 'Заявки'
+    title = 'Мои заявки'
 
 
 block content
@@ -20,9 +20,9 @@ block content
     ],
 
     title: 'Заявки',
-    button: 'Добавить фильм'
+    button: 'Подать заявку'
   })
 
   .main-user
-    +orders-block
+    +user-orders 
 

@@ -5978,8 +5978,24 @@ div[data-lang]:not(.active) {
   width: calc(100% - 235px);
 }
 
-.main-moderator {
+.main-user {
   padding-top: 30px;
+}
+
+.film-metrics {
+  display: flex;
+  justify-content: center;
+}
+
+.film-metrics ul {
+  display: flex;
+  margin: 0 auto;
+}
+
+.film-metrics ul li span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #525166;
 }
 
 @media screen and (min-width: 359px) {
