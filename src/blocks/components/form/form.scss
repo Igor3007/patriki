@@ -365,7 +365,7 @@ input {
 
     & input[area-valid],
     & input:focus {
-        transform: translateY(22px);
+        margin-top: 8px;
     }
 
     & textarea[area-valid=true]~.tooltip,

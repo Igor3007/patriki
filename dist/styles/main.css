@@ -2771,7 +2771,7 @@ input {
 
 .input-material input[area-valid],
 .input-material input:focus {
-  transform: translateY(22px);
+  margin-top: 8px;
 }
 
 .input-material textarea[area-valid=true] ~ .tooltip,
@@ -6306,10 +6306,124 @@ div[data-lang]:not(.active) {
   margin: 0 auto;
 }
 
+.film-metrics ul li {
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+}
+
 .film-metrics ul li span {
   font-size: 20px;
   font-weight: 600;
   color: #525166;
+  margin-left: 0.5em;
+}
+
+.film-metrics ul li svg {
+  width: 16px;
+}
+
+.user-orders__list .table-card__th {
+  text-align: center;
+}
+
+.user-orders__list .table-card__th:nth-child(2) {
+  text-align: center;
+}
+
+.user-orders__list .table-card__td:first-child {
+  padding: 0;
+}
+
+.user-orders-film {
+  display: flex;
+}
+
+.user-orders-film__poster {
+  width: 100px;
+  min-width: 100px;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.user-orders-film__poster picture {
+  display: block;
+  padding-top: 131%;
+  position: relative;
+  background-color: #eee;
+}
+
+.user-orders-film__poster picture img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.user-orders-film__details {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-orders-film__code {
+  color: #92919F;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.user-orders-film__name a {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-orders-film__name a:hover {
+  text-decoration: underline;
+}
+
+.status-order {
+  min-width: 150px;
+  display: block;
+  color: #92919F;
+  padding-left: 20px;
+  position: relative;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.status-order::before {
+  content: '';
+  display: inline-block;
+  min-width: 12px;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  background-color: #92919F;
+  border-radius: 50%;
+}
+
+.status-order--green {
+  color: #2FA81A;
+}
+
+.status-order--green::before {
+  background-color: #2FA81A;
+}
+
+.status-order--orange {
+  color: #EB7D00;
+}
+
+.status-order--orange::before {
+  background-color: #EB7D00;
 }
 
 @media screen and (min-width: 359px) {

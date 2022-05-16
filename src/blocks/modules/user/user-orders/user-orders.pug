@@ -9,20 +9,22 @@ mixin user-orders
                 //- =======================================
                 //- =======================================
 
-                each item in [1,1,1,1,1]
-                    .table-card__tr(class=item.state)
+                each item, index in moderator.orders
+                    .table-card__tr
                         .table-card__td(data-title="Фильм")
                             .user-orders-film
                                 .user-orders-film__poster
-                                    +bgimage('/dist/img/common/cover.jpg')
+                                    +picture('/img/common/cover'+index)
                                 .user-orders-film__details
-                                    .user-orders-film__name Огонь
+                                    .user-orders-film__name: a(href='#')= item.name
                                     .user-orders-film__code 22-00650
                         .table-card__td(data-title="Просмотры / Комментари / Сообщения / Рейтинг")
                             +metric
                         .table-card__td(data-title="Статус")
-                            span.status-order.status-order--green В конкурсе
-                         
+                            if item.state
+                                span.status-order.status-order--green В конкурсе
+                            else
+                                span.status-order.status-order--orange Отправлен экспертам
 mixin metric
     .film-metrics
         ul

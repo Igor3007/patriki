@@ -184,10 +184,20 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         })
 
-
-
-
     }
+
+    //add event remove-repeater
+    document.querySelectorAll('.remove-repeater').forEach(function (item, index) {
+
+        if (!index) return false;
+
+        item.addEventListener('click', function (event) {
+            if (confirm('Удалить?')) {
+                event.target.closest('.form__item').remove()
+            }
+
+        })
+    })
 
     /* =================================================
     timepicker

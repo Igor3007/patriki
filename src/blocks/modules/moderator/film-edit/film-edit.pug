@@ -138,7 +138,10 @@ mixin film-edit()
           .form__label Расписание показов
           .form__item
             .form__subitem
-              .lineup-container(data-lineup="container"): +lineup()
+              .lineup-container(data-lineup="container")
+                +lineup()
+                +lineup()
+                +lineup()
 
           .form__item
             .form__subitem
