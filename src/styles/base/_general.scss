@@ -77,6 +77,21 @@ main {
     min-height: 85vh;
 }
 
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.5;
+    background-color: transparent;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 95%;
+    cursor: pointer;
+}
+
+input[type="date"] {
+    position: relative;
+}
+
 
 .container {
     max-width: 360px;
