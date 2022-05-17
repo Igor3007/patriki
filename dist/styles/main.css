@@ -4309,6 +4309,7 @@ footer {
 .ob-action {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .ob-action a {
@@ -5101,6 +5102,7 @@ div[data-lang]:not(.active) {
   border-radius: 50%;
   background-color: #ddd;
   margin-bottom: -10px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0Ljk5IDI0LjU4N2MuMDk0Ljc3Ni0uNTQ0IDEuNDEzLTEuMzE3IDEuNDEzSDEyLjMyN2MtLjc3MyAwLTEuNDExLS42MzctMS4zMTgtMS40MTMuNTI3LTQuMzcxIDMuNDU2LTYuNzE3IDYuOTkxLTYuNzE3IDMuNTM1IDAgNi40NjQgMi4zNDYgNi45OSA2LjcxN3ptLTMuNjQ3LTExLjIwM2MwIDEuODctMS40OTcgMy4zODQtMy4zNDMgMy4zODQtMS44NDYgMC0zLjM0My0xLjUxNS0zLjM0My0zLjM4NFMxNi4xNTQgMTAgMTggMTBjMS44NDYgMCAzLjM0MyAxLjUxNSAzLjM0MyAzLjM4NHoiIGZpbGw9IiM5MjkxOUYiLz48L3N2Zz4=);
 }
 
 .item-message__detail {
@@ -6453,6 +6455,14 @@ div[data-lang]:not(.active) {
   background-color: #EB7D00;
 }
 
+.status-order--red {
+  color: #cf1c5d;
+}
+
+.status-order--red::before {
+  background-color: #cf1c5d;
+}
+
 @media screen and (min-width: 359px) {
   .all-films__item {
     width: 50%;
@@ -6652,6 +6662,10 @@ div[data-lang]:not(.active) {
   .bind-account__text {
     font-size: 13px;
     padding-bottom: 0;
+  }
+
+  .head-moderator__title a {
+    margin-top: 5px;
   }
 
   .table-card {
@@ -6879,6 +6893,10 @@ div[data-lang]:not(.active) {
 
   .directors-card__orders .table-card__td::before {
     display: none;
+  }
+
+  .head-user__title a {
+    margin-top: 5px;
   }
 
   .film-metrics {

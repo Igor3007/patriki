@@ -219,4 +219,12 @@
             background-color: $orange;
         }
     }
+
+    &--red {
+        color: $red;
+
+        &::before {
+            background-color: $red;
+        }
+    }
 }
