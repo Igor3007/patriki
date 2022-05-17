@@ -1,0 +1,38 @@
+extends ../layouts/user
+include ../../blocks/modules/user/head-user/head-user.pug
+include ../../blocks/modules/user/film-card/film-card.pug
+include ../../blocks/modules/user/film-poster/film-poster.pug
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Карточка фильма'
+
+
+block content
+  +head-user({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Карточка фильма',
+    ],
+
+    title: 'Карточка фильма',
+    button: false
+  })
+
+  
+
+  .main-user
+    .layout-column
+      .layout-column__left: +film-poster-card()
+      .layout-column__right: +film-card()  
+
+
+block scripts
+    script(src="/js/vendor.js")
+    script(src="/js/common.js")
+    script(src="/js/moderator.js")
+

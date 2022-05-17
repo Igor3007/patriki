@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Профиль</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="#{title}">
+    <meta name="keywords" content="#{title}">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
+    <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
+    <style>@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+    </style>
+    <link rel="stylesheet" href="styles/main.css?v=1.0">
+  </head>
+  <body class="perf-no-animation">
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span></a></div>
+          <div class="header__nav">
+            <div class="header__nav-container" data-menu="container">
+              <div class="header__nav-info">
+                <div class="header-info">
+                  <div class="header-info__email"><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></div>
+                  <div class="header-info__phone"><a href="tel:+79055047370">+7 (905) 504-73-70</a></div>
+                  <div class="header-info__lang">
+                    <select>
+                      <option val="ru">Русский</option>
+                      <option val="en">English</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="header__nav-menu">
+                <nav>
+                  <ul>
+                    <li><a href="">О фестивале</a></li>
+                    <li><a href="">Программы</a></li>
+                    <li><a href="">Кинозал</a></li>
+                    <li><a href="">участникам</a></li>
+                    <li><a href="">События</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="header__nav-btn">
+              <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="header__pa">
+            <div class="header__pa-container">
+              <div class="header__social">
+                <ul>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                      </svg></a></li>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+              <div class="header__login">
+                <div class="user-login">
+                  <div class="user-login__name"><a href="/moderator-profile.html">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
+                      </svg><span>Анастасия</span></a></div>
+                  <div class="user-login__tooltip"><a href="/moderator-messenger.html">1</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="header__pa-btn">
+              <div class="user-login-mobile" title="Николай" data-user-menu="open" data-link="/user-orders.html"><span class="bgimage lazyload" data-bg="/img/common/user-wooman.jpg"><span class="total-messages">3</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-page-user">
+        <div class="container">
+          <div class="page-user">
+            <div class="page-user__aside">
+              <div class="user-aside">
+                <div class="user-aside__wrp">
+                  <div class="user-aside__photo">
+                    <picture>
+                      <source srcset="/img/common/user-wooman.webp" type="image/webp"/><img src="/img/common/user-wooman.jpg" loading="lazy" alt="image"/>
+                    </picture>
+                  </div>
+                  <div class="user-aside__name">Анастасия Старовойтова</div>
+                  <div class="user-aside__email">annaStar@mail.ru</div>
+                  <div class="user-aside__nav">
+                    <ul>
+                      <li><a href="user-orders.html">Заявки</a></li>
+                      <li><a class="badge" href="moderator-messenger.html">Сообщения</a></li>
+                      <li><a href="user-profile.html">Профиль</a></li>
+                      <li><a href="#">Выйти</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="user-aside__form">
+                  <div class="invite-member" id="invite-member">
+                    <div class="invite-member__back" data-invete-form="close">
+                      <svg width="10" height="10">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_arr-back-popup"></use>
+                      </svg><span>Назад в меню</span>
+                    </div>
+                    <div class="invite-member__title">Пригласить участника</div>
+                    <div class="invite-member__form">
+                      <form action="#" method="POST" data-form="invite-member"> 
+                        <div class="invite-member__label">Язык приглашения</div>
+                        <div class="invite-member__lang">
+                          <label class="radio">
+                            <input type="radio" name="lang" checked="" value="val"/><span class="radio__elem"></span><span class="radio__text">Русский</span>
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="lang" value="val"/><span class="radio__elem"></span><span class="radio__text">Английский</span>
+                          </label>
+                        </div>
+                        <div class="invite-member__fields">
+                          <div class="form">
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <div class="input-material">
+                                  <input type="email" value=""/>
+                                  <label>Email</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <div class="input-material">
+                                  <input type="text" value=""/>
+                                  <label>Тема</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <textarea placeholder="Текст приглашения"></textarea>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <button class="btn btn-large">Отправить </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page-user__content">
+              <div class="head-user">
+                <div class="head-user__breadcrumb">
+                  <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                    <li><a href="#">Профиль</a></li>
+                  </ul>
+                </div>
+                <div class="head-user__title">
+                  <h1>Профиль</h1>
+                </div>
+              </div>
+              <div class="main-user">
+                <div class="profile-block">
+                  <div class="profile-block__form">
+                    <form method="get">
+                      <div class="profile-block__photo">
+                        <div class="box-photo">
+                          <div class="box-photo__image"><span class="bgimage lazyload" data-attach="preview" data-bg="/img/common/user-wooman.jpg"></span></div>
+                          <div class="box-photo__add">
+                            <label class="attach-text">
+                              <input type="file" data-attach="photo" name="photo"/><span>Изменить фото</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="profile-block__fields">
+                        <div class="form">
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="input-material">
+                                <input type="text" value="Николай"/>
+                                <label>Имя</label>
+                              </div>
+                            </div>
+                            <div class="form__subitem">
+                              <div class="input-material">
+                                <input type="text" value="Петров"/>
+                                <label>Фамилия</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <select name="country" required="required" placeholder="Страна">
+                                <option value="ru" selected="selected">Россия</option>
+                                <option value="by">Беларусь</option>
+                                <option value="ua">Украина</option>
+                                <option value="ua">Азербайджан</option>
+                                <option value="ua">Армения</option>
+                                <option value="ua">Белоруссия</option>
+                                <option value="ua">Грузия</option>
+                                <option value="ua">Казахстан</option>
+                                <option value="ua">Киргизия</option>
+                                <option value="ua">Латвия</option>
+                                <option value="ua">Литва</option>
+                              </select>
+                            </div>
+                            <div class="form__subitem">
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <select name="year" required="required" placeholder="Год рождения">
+                                    <option value="1990" selected="selected">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                  </select>
+                                </div>
+                                <div class="form__subitem">
+                                  <select name="sex" required="required" placeholder="Мужской">
+                                    <option value="1" selected="selected">Мужской</option>
+                                    <option value="2">Женский</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <div class="input-material">
+                                <input type="email" value="ivan@gmail.com"/>
+                                <label>Email</label>
+                              </div>
+                            </div>
+                            <div class="form__subitem"> 
+                              <div class="bind-account">
+                                <div class="bind-account__text">Привязать соцсеть</div>
+                                <div class="bind-account__list">
+                                  <ul>
+                                    <li><a href="#">
+                                        <svg width="25" height="25">
+                                          <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                                        </svg></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__label">Пароль</div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <input type="password" required="required" placeholder="Пароль" name="password"/>
+                            </div>
+                            <div class="form__subitem">
+                              <input type="password" required="required" placeholder="Повторите пароль" name="password-repeat"/>
+                            </div>
+                          </div>
+                          <div class="form__item">
+                            <div class="form__subitem">
+                              <button class="btn" type="submit">Сохранить изменения</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer__logo">
+            <div class="footer__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span>
+            </div>
+            <div class="footer__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
+          </div>
+          <div class="footer__nav">
+            <nav>
+              <ul>
+                <li><a href="">О фестивале</a></li>
+                <li><a href="">Программы</a></li>
+                <li><a href="">Кинозал</a></li>
+                <li><a href="">участникам</a></li>
+                <li><a href="">События</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__social">
+            <ul>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                  </svg><span>vkontakte</span></a></li>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                  </svg><span>Telegram</span></a></li>
+            </ul>
+          </div>
+          <div class="footer__contact">
+            <ul>
+              <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
+              <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+            <div class="main-menu">
+              <div class="main-menu__wrp">
+                <div class="main-menu__close" data-menu="close">
+                  <svg width="35" height="35">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_cross"></use>
+                  </svg>
+                </div>
+                <div class="main-menu__nav">
+                  <nav>
+                    <ul>
+                      <li><a href="">О фестивале</a></li>
+                      <li><a href="">Программы</a></li>
+                      <li><a href="">Кинозал</a></li>
+                      <li><a href="">участникам</a></li>
+                      <li><a href="">События</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="main-menu__phones">
+                  <div class="main-menu__number"><a href="#">+375 (33) 799 34 99</a></div>
+                  <div class="main-menu__worktime"><span>Работаем с 9.00 до 19.00</span></div>
+                </div>
+              </div>
+            </div>
+    </footer>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/lib/OverlayScrollbars.min.js"></script>
+    <script src="/js/moderator.js"></script>
+  </body>
+</html>

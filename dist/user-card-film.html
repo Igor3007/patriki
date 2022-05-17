@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Карточка фильма</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="#{title}">
+    <meta name="keywords" content="#{title}">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
+    <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
+    <style>@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+    </style>
+    <link rel="stylesheet" href="styles/main.css?v=1.0">
+  </head>
+  <body class="perf-no-animation">
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span></a></div>
+          <div class="header__nav">
+            <div class="header__nav-container" data-menu="container">
+              <div class="header__nav-info">
+                <div class="header-info">
+                  <div class="header-info__email"><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></div>
+                  <div class="header-info__phone"><a href="tel:+79055047370">+7 (905) 504-73-70</a></div>
+                  <div class="header-info__lang">
+                    <select>
+                      <option val="ru">Русский</option>
+                      <option val="en">English</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="header__nav-menu">
+                <nav>
+                  <ul>
+                    <li><a href="">О фестивале</a></li>
+                    <li><a href="">Программы</a></li>
+                    <li><a href="">Кинозал</a></li>
+                    <li><a href="">участникам</a></li>
+                    <li><a href="">События</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="header__nav-btn">
+              <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="header__pa">
+            <div class="header__pa-container">
+              <div class="header__social">
+                <ul>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                      </svg></a></li>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+              <div class="header__login">
+                <div class="user-login">
+                  <div class="user-login__name"><a href="/moderator-profile.html">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
+                      </svg><span>Анастасия</span></a></div>
+                  <div class="user-login__tooltip"><a href="/moderator-messenger.html">1</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="header__pa-btn">
+              <div class="user-login-mobile" title="Николай" data-user-menu="open" data-link="/user-orders.html"><span class="bgimage lazyload" data-bg="/img/common/user-wooman.jpg"><span class="total-messages">3</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-page-user">
+        <div class="container">
+          <div class="page-user">
+            <div class="page-user__aside">
+              <div class="user-aside">
+                <div class="user-aside__wrp">
+                  <div class="user-aside__photo">
+                    <picture>
+                      <source srcset="/img/common/user-wooman.webp" type="image/webp"/><img src="/img/common/user-wooman.jpg" loading="lazy" alt="image"/>
+                    </picture>
+                  </div>
+                  <div class="user-aside__name">Анастасия Старовойтова</div>
+                  <div class="user-aside__email">annaStar@mail.ru</div>
+                  <div class="user-aside__nav">
+                    <ul>
+                      <li><a href="user-orders.html">Заявки</a></li>
+                      <li><a class="badge" href="moderator-messenger.html">Сообщения</a></li>
+                      <li><a href="user-profile.html">Профиль</a></li>
+                      <li><a href="#">Выйти</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="user-aside__form">
+                  <div class="invite-member" id="invite-member">
+                    <div class="invite-member__back" data-invete-form="close">
+                      <svg width="10" height="10">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_arr-back-popup"></use>
+                      </svg><span>Назад в меню</span>
+                    </div>
+                    <div class="invite-member__title">Пригласить участника</div>
+                    <div class="invite-member__form">
+                      <form action="#" method="POST" data-form="invite-member"> 
+                        <div class="invite-member__label">Язык приглашения</div>
+                        <div class="invite-member__lang">
+                          <label class="radio">
+                            <input type="radio" name="lang" checked="" value="val"/><span class="radio__elem"></span><span class="radio__text">Русский</span>
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="lang" value="val"/><span class="radio__elem"></span><span class="radio__text">Английский</span>
+                          </label>
+                        </div>
+                        <div class="invite-member__fields">
+                          <div class="form">
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <div class="input-material">
+                                  <input type="email" value=""/>
+                                  <label>Email</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <div class="input-material">
+                                  <input type="text" value=""/>
+                                  <label>Тема</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <textarea placeholder="Текст приглашения"></textarea>
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <button class="btn btn-large">Отправить </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page-user__content">
+              <div class="head-user">
+                <div class="head-user__breadcrumb">
+                  <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
+                    <li><a href="#">Карточка фильма</a></li>
+                  </ul>
+                </div>
+                <div class="head-user__title">
+                  <h1>Карточка фильма</h1>
+                </div>
+              </div>
+              <div class="main-user">
+                <div class="layout-column">
+                  <div class="layout-column__left">
+                    <div class="film-poster">
+                      <div class="film-poster__cover cover--loaded">
+                        <div class="film-poster__image">
+                          <picture><img src="/img/common/cover.jpg" data-attach="preview-poster"/></picture>
+                        </div>
+                      </div>
+                      <div class="film-poster__title">Фильм загружен на платформу</div>
+                      <div class="film-poster__upload"><a href="#">
+                          <button class="btn">Перейти на платформу</button></a></div>
+                      <div class="film-poster__link">
+                        <div class="film-poster__link-title">Ссылка для скачивания:</div>
+                        <div class="film-poster__link-url"><a href="#">
+                            <svg width="20" height="20">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_chain"></use>
+                            </svg><span>https://somevideohosting.com/film2</span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layout-column__right">
+                    <div class="film-card"> 
+                      <div class="film-card__metric">
+                        <div class="film-metric">
+                          <div class="film-metric__title">Количество <br> просмотров</div>
+                          <div class="film-metric__total">98</div>
+                        </div>
+                        <div class="film-metric">
+                          <div class="film-metric__title">Средняя оценка <br> зрителей</div>
+                          <div class="film-metric__total">9.2</div>
+                        </div>
+                        <div class="film-metric">
+                          <div class="film-metric__title">Общее время <br> просмотра</div>
+                          <div class="film-metric__total">10:34</div>
+                        </div>
+                        <div class="film-metric">
+                          <div class="film-metric__title">Выбор экпертов</div>
+                          <div class="film-metric__vote">
+                            <div class="film-metric__like">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_like"></use>
+                              </svg><span>5</span>
+                            </div>
+                            <div class="film-metric__dislike">
+                              <svg width="20" height="20">
+                                <use xlink:href="/img/sprites/sprite.svg#ic_dislike"></use>
+                              </svg><span>2</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="film-card__tabs">
+                        <ul class="form-tabs" data-tab-nav="">
+                          <li class="active"><a href="#film">
+                              <button class="btn btn-line">О фильме</button></a></li>
+                          <li><a href="#comments">
+                              <button class="btn btn-line">Комментарии</button></a></li>
+                        </ul>
+                      </div>
+                      <div class="film-tab-container">
+                        <div class="film-tab-item active" data-tab-item="film">
+                          <div class="film-card__fields">
+                            <div class="form">
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Название фильма</div>
+                                    <div class="item-field__value">Огонь</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Заявитель (ФИО)</div>
+                                    <div class="item-field__value">Екатерина Самойлова</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Производитель</div>
+                                    <div class="item-field__value">New Line Cinema</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Телефон</div>
+                                    <div class="item-field__value">+7(384)409-45-56</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Email</div>
+                                    <div class="item-field__value">leviafan_film@mail.ru</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Фестиваль</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Статус</div>
+                                    <div class="item-field__value">В конкурсе</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Программа</div>
+                                    <div class="item-field__value">Полный метр</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Информация о фильме</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Страна происхождения</div>
+                                    <div class="item-field__value">Россия</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Жанр</div>
+                                    <div class="item-field__value">драма, криминал</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Год производства</div>
+                                      <div class="item-field__value">2014</div>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Дата подачи</div>
+                                      <div class="item-field__value">26/22/2022</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Хронометраж (мин)</div>
+                                      <div class="item-field__value">141</div>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Язык</div>
+                                      <div class="item-field__value">Русский</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">информация о съемочной группе</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Олег Негин</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Продюсер</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Андрей Звягинцев</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Режиссер</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Михаил Кричман</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Оператор</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Филип Гласс</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Звукорежиссер</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Логлайн</div>
+                              <div class="form__item"> 
+                                <div class="form__subitem">
+                                  <div class="film-logline" data-logline="container">
+                                    <div class="film-logline__version">
+                                      <div class="film-logline__current" data-logline="current">
+                                        <label>Старый </label>
+                                        <textarea name="current" disabled="disabled">Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.</textarea>
+                                      </div>
+                                      <div class="film-logline__new" data-logline="new">
+                                        <label>Новый </label>
+                                        <textarea name="new" disabled="disabled"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="film-logline__action"><span data-logline="edit">Редактировать логлайн</span><span data-logline="send" data-msg="Изменения отправлены!">Отправить запрос</span><span data-logline="cancel">Отмена </span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item"> 
+                                <div class="form__subitem"> 
+                                  <div class="lineup lineup--disabled" data-lineup="1">
+                                    <div class="lineup__date">
+                                      <div class="item-field">
+                                        <div class="item-field__label">Дата показа</div>
+                                        <div class="item-field__value">16/05/2022</div>
+                                      </div>
+                                    </div>
+                                    <div class="lineup__time">
+                                      <div class="lineup__timeline">
+                                        <div class="lineup__title">Время</div>
+                                        <div class="lineup__list">
+                                          <ul>
+                                            <li><span>17:00</span>
+                                              <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                            </li>
+                                            <li><span>18:00</span>
+                                              <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                            </li>
+                                            <li><span>19:00</span>
+                                              <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                            </li>
+                                            <li><span>20:00</span>
+                                              <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                            </li>
+                                            <li><span>21:00</span>
+                                              <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="lineup lineup--disabled" data-lineup="1">
+                                    <div class="lineup__date">
+                                      <div class="item-field">
+                                        <div class="item-field__label">Дата показа</div>
+                                        <div class="item-field__value">16/05/2022</div>
+                                      </div>
+                                    </div>
+                                    <div class="lineup__time">
+                                      <div class="lineup__timeline">
+                                        <div class="lineup__title">Время</div>
+                                        <div class="lineup__list">
+                                          <ul>
+                                            <li><span>17:00</span>
+                                              <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                            </li>
+                                            <li><span>18:00</span>
+                                              <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                            </li>
+                                            <li><span>19:00</span>
+                                              <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                            </li>
+                                            <li><span>20:00</span>
+                                              <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                            </li>
+                                            <li><span>21:00</span>
+                                              <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="film-tab-item" data-tab-item="comments">
+                          <div class="card-comment"> 
+                            <div class="card-comment__list">
+                              <div class="item-message" data-comment="item" data-comment-id="123">
+                                <div class="item-message__head">
+                                  <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/img_user.png"></span>
+                                  </div>
+                                  <div class="item-message__detail">
+                                    <div class="item-message__name">Иван Зверев</div>
+                                    <div class="item-message__date">Сегодня 19.30</div>
+                                  </div>
+                                </div>
+                                <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                                <div class="item-message__action" data-comment-action="container">
+                                  <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-edit" data-comment-action="edit">Редактировать</span><span class="item-message__default-remove" data-comment-action="delete">Удалить </span><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                                  <div class="item-message__edit" data-comment-action="pane-edit"><span class="item-message__edit-save" data-comment-action="save">Сохранить</span><span class="item-message__edit-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__delete" data-comment-action="pane-remove"><span class="item-message__delete-msg">Вы уверены?</span><span class="item-message__delete-remove" data-comment-action="remove">Удалить</span><span class="item-message__delete-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__reply" data-comment-action="pane-reply">
+                                    <div class="item-message__reply-field">
+                                      <textarea placeholder="Введите"></textarea>
+                                    </div>
+                                    <div class="item-message__reply-button" data-comment-action="send">
+                                      <svg width="25" height="25">
+                                        <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item-message__answers" data-comment="answers"> </div>
+                              </div>
+                              <div class="item-message" data-comment="item" data-comment-id="123">
+                                <div class="item-message__head">
+                                  <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
+                                  </div>
+                                  <div class="item-message__detail">
+                                    <div class="item-message__name">Иван Зверев</div>
+                                    <div class="item-message__date">Сегодня 19.30</div>
+                                  </div>
+                                </div>
+                                <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                                <div class="item-message__action" data-comment-action="container">
+                                  <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-edit" data-comment-action="edit">Редактировать</span><span class="item-message__default-remove" data-comment-action="delete">Удалить </span><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                                  <div class="item-message__edit" data-comment-action="pane-edit"><span class="item-message__edit-save" data-comment-action="save">Сохранить</span><span class="item-message__edit-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__delete" data-comment-action="pane-remove"><span class="item-message__delete-msg">Вы уверены?</span><span class="item-message__delete-remove" data-comment-action="remove">Удалить</span><span class="item-message__delete-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__reply" data-comment-action="pane-reply">
+                                    <div class="item-message__reply-field">
+                                      <textarea placeholder="Введите"></textarea>
+                                    </div>
+                                    <div class="item-message__reply-button" data-comment-action="send">
+                                      <svg width="25" height="25">
+                                        <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item-message__answers" data-comment="answers"> </div>
+                              </div>
+                              <div class="item-message" data-comment="item" data-comment-id="123">
+                                <div class="item-message__head">
+                                  <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
+                                  </div>
+                                  <div class="item-message__detail">
+                                    <div class="item-message__name">Иван Зверев</div>
+                                    <div class="item-message__date">Сегодня 19.30</div>
+                                  </div>
+                                </div>
+                                <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                                <div class="item-message__action" data-comment-action="container">
+                                  <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-edit" data-comment-action="edit">Редактировать</span><span class="item-message__default-remove" data-comment-action="delete">Удалить </span><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                                  <div class="item-message__edit" data-comment-action="pane-edit"><span class="item-message__edit-save" data-comment-action="save">Сохранить</span><span class="item-message__edit-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__delete" data-comment-action="pane-remove"><span class="item-message__delete-msg">Вы уверены?</span><span class="item-message__delete-remove" data-comment-action="remove">Удалить</span><span class="item-message__delete-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__reply" data-comment-action="pane-reply">
+                                    <div class="item-message__reply-field">
+                                      <textarea placeholder="Введите"></textarea>
+                                    </div>
+                                    <div class="item-message__reply-button" data-comment-action="send">
+                                      <svg width="25" height="25">
+                                        <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item-message__answers" data-comment="answers"> </div>
+                              </div>
+                              <div class="item-message" data-comment="item" data-comment-id="123">
+                                <div class="item-message__head">
+                                  <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/img_user.png"></span>
+                                  </div>
+                                  <div class="item-message__detail">
+                                    <div class="item-message__name">Иван Зверев</div>
+                                    <div class="item-message__date">Сегодня 19.30</div>
+                                  </div>
+                                </div>
+                                <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                                <div class="item-message__action" data-comment-action="container">
+                                  <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-edit" data-comment-action="edit">Редактировать</span><span class="item-message__default-remove" data-comment-action="delete">Удалить </span><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                                  <div class="item-message__edit" data-comment-action="pane-edit"><span class="item-message__edit-save" data-comment-action="save">Сохранить</span><span class="item-message__edit-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__delete" data-comment-action="pane-remove"><span class="item-message__delete-msg">Вы уверены?</span><span class="item-message__delete-remove" data-comment-action="remove">Удалить</span><span class="item-message__delete-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__reply" data-comment-action="pane-reply">
+                                    <div class="item-message__reply-field">
+                                      <textarea placeholder="Введите"></textarea>
+                                    </div>
+                                    <div class="item-message__reply-button" data-comment-action="send">
+                                      <svg width="25" height="25">
+                                        <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item-message__answers" data-comment="answers"> </div>
+                              </div>
+                              <div class="item-message" data-comment="item" data-comment-id="123">
+                                <div class="item-message__head">
+                                  <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
+                                  </div>
+                                  <div class="item-message__detail">
+                                    <div class="item-message__name">Иван Зверев</div>
+                                    <div class="item-message__date">Сегодня 19.30</div>
+                                  </div>
+                                </div>
+                                <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                                <div class="item-message__action" data-comment-action="container">
+                                  <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-edit" data-comment-action="edit">Редактировать</span><span class="item-message__default-remove" data-comment-action="delete">Удалить </span><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                                  <div class="item-message__edit" data-comment-action="pane-edit"><span class="item-message__edit-save" data-comment-action="save">Сохранить</span><span class="item-message__edit-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__delete" data-comment-action="pane-remove"><span class="item-message__delete-msg">Вы уверены?</span><span class="item-message__delete-remove" data-comment-action="remove">Удалить</span><span class="item-message__delete-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__reply" data-comment-action="pane-reply">
+                                    <div class="item-message__reply-field">
+                                      <textarea placeholder="Введите"></textarea>
+                                    </div>
+                                    <div class="item-message__reply-button" data-comment-action="send">
+                                      <svg width="25" height="25">
+                                        <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item-message__answers" data-comment="answers"> </div>
+                              </div>
+                              <div class="item-message" data-comment="item" data-comment-id="123">
+                                <div class="item-message__head">
+                                  <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
+                                  </div>
+                                  <div class="item-message__detail">
+                                    <div class="item-message__name">Иван Зверев</div>
+                                    <div class="item-message__date">Сегодня 19.30</div>
+                                  </div>
+                                </div>
+                                <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                                <div class="item-message__action" data-comment-action="container">
+                                  <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-edit" data-comment-action="edit">Редактировать</span><span class="item-message__default-remove" data-comment-action="delete">Удалить </span><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                                  <div class="item-message__edit" data-comment-action="pane-edit"><span class="item-message__edit-save" data-comment-action="save">Сохранить</span><span class="item-message__edit-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__delete" data-comment-action="pane-remove"><span class="item-message__delete-msg">Вы уверены?</span><span class="item-message__delete-remove" data-comment-action="remove">Удалить</span><span class="item-message__delete-cancel" data-comment-action="cancel">Отмена</span></div>
+                                  <div class="item-message__reply" data-comment-action="pane-reply">
+                                    <div class="item-message__reply-field">
+                                      <textarea placeholder="Введите"></textarea>
+                                    </div>
+                                    <div class="item-message__reply-button" data-comment-action="send">
+                                      <svg width="25" height="25">
+                                        <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item-message__answers" data-comment="answers"> </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer__logo">
+            <div class="footer__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span>
+            </div>
+            <div class="footer__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
+          </div>
+          <div class="footer__nav">
+            <nav>
+              <ul>
+                <li><a href="">О фестивале</a></li>
+                <li><a href="">Программы</a></li>
+                <li><a href="">Кинозал</a></li>
+                <li><a href="">участникам</a></li>
+                <li><a href="">События</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__social">
+            <ul>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                  </svg><span>vkontakte</span></a></li>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                  </svg><span>Telegram</span></a></li>
+            </ul>
+          </div>
+          <div class="footer__contact">
+            <ul>
+              <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
+              <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+            <div class="main-menu">
+              <div class="main-menu__wrp">
+                <div class="main-menu__close" data-menu="close">
+                  <svg width="35" height="35">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_cross"></use>
+                  </svg>
+                </div>
+                <div class="main-menu__nav">
+                  <nav>
+                    <ul>
+                      <li><a href="">О фестивале</a></li>
+                      <li><a href="">Программы</a></li>
+                      <li><a href="">Кинозал</a></li>
+                      <li><a href="">участникам</a></li>
+                      <li><a href="">События</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="main-menu__phones">
+                  <div class="main-menu__number"><a href="#">+375 (33) 799 34 99</a></div>
+                  <div class="main-menu__worktime"><span>Работаем с 9.00 до 19.00</span></div>
+                </div>
+              </div>
+            </div>
+    </footer>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/moderator.js"></script>
+  </body>
+</html>

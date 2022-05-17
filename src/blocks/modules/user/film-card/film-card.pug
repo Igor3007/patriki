@@ -1,0 +1,111 @@
+include ../../moderator/card-comment/card-comment.pug
+
+mixin film-card()
+    .film-card 
+        .film-card__metric
+            .film-metric
+                .film-metric__title Количество <br> просмотров
+                .film-metric__total 98
+            .film-metric
+                .film-metric__title Средняя оценка <br> зрителей
+                .film-metric__total 9.2
+            .film-metric
+                .film-metric__title Общее время <br> просмотра
+                .film-metric__total 10:34
+            .film-metric
+                .film-metric__title Выбор экпертов
+                .film-metric__vote
+                    .film-metric__like
+                        +icons('#ic_like', 20)
+                        span 5
+                    .film-metric__dislike
+                        +icons('#ic_dislike', 20)
+                        span 2
+        .film-card__tabs
+            ul.form-tabs(data-tab-nav="")
+                li(class="active"): a(href='#film'): button.btn.btn-line О фильме
+                li: a(href='#comments'): button.btn.btn-line Комментарии
+        .film-tab-container
+            .film-tab-item(data-tab-item="film" class="active")
+                .film-card__fields
+                    .form
+                        .form__item
+                            .form__subitem: +item-field('Название фильма', 'Огонь')
+                        .form__item
+                            .form__subitem: +item-field('Заявитель (ФИО)', 'Екатерина Самойлова')
+                            .form__subitem: +item-field('Производитель', 'New Line Cinema')
+                        .form__item
+                            .form__subitem: +item-field('Телефон', '+7(384)409-45-56')
+                            .form__subitem: +item-field('Email', 'leviafan_film@mail.ru')
+                        .form__label Фестиваль
+                        .form__item
+                            .form__subitem: +item-field('Статус', 'В конкурсе')
+                            .form__subitem: +item-field('Программа', 'Полный метр')
+                        .form__label Информация о фильме
+                        .form__item
+                            .form__subitem: +item-field('Страна происхождения', 'Россия')
+                            .form__subitem: +item-field('Жанр', 'драма, криминал')
+                        .form__item
+                            .form__item
+                                .form__subitem: +item-field('Год производства', '2014')
+                                .form__subitem: +item-field('Дата подачи', '26/22/2022')
+                            .form__item
+                                .form__subitem: +item-field('Хронометраж (мин)', '141')
+                                .form__subitem: +item-field('Язык', 'Русский')
+                        .form__label информация о съемочной группе
+                        .form__item
+                            .form__subitem: +item-field('ФИО', 'Олег Негин')
+                            .form__subitem: +item-field('Должность', 'Продюсер')
+                        .form__item
+                            .form__subitem: +item-field('ФИО', 'Андрей Звягинцев')
+                            .form__subitem: +item-field('Должность', 'Режиссер')
+                        .form__item
+                            .form__subitem: +item-field('ФИО', 'Михаил Кричман')
+                            .form__subitem: +item-field('Должность', 'Оператор')
+                        .form__item
+                            .form__subitem: +item-field('ФИО', 'Филип Гласс')
+                            .form__subitem: +item-field('Должность', 'Звукорежиссер')
+                        .form__label Логлайн
+                        .form__item 
+                            .form__subitem
+                                .film-logline(data-logline="container")
+                                    .film-logline__version
+                                        .film-logline__current(data-logline="current")
+                                            label Старый 
+                                            textarea( name="current" disabled) Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.
+                                        .film-logline__new(data-logline="new")
+                                            label Новый 
+                                            textarea(name="new" disabled)
+                                    .film-logline__action
+                                        span(data-logline="edit") Редактировать логлайн
+                                        span(data-logline="send" data-msg="Изменения отправлены!") Отправить запрос
+                                        span(data-logline="cancel") Отмена 
+                                    
+                        .form__item 
+                            .form__subitem 
+                                +lineup()
+                                +lineup()
+            .film-tab-item(data-tab-item="comments" ): +card-comment()
+                
+
+
+
+
+mixin item-field(label, text, icon)
+    .item-field
+        .item-field__label= label
+        .item-field__value= text
+
+mixin lineup
+  .lineup.lineup--disabled(data-lineup="1"  )
+    .lineup__date: +item-field('Дата показа', '16/05/2022')
+    .lineup__time
+      .lineup__timeline
+        .lineup__title Время
+        .lineup__list
+          ul
+            each li in [17,18,19,20,21]
+              li
+                span= li+':00'
+                input(type="checkbox" name="time[]" value=li+":00" checked)
+      

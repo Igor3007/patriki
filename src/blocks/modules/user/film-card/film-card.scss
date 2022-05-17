@@ -1,0 +1,144 @@
+.item-field {
+    position: relative;
+    width: auto;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    padding: 0 15px;
+    height: 52px;
+    flex-grow: 1;
+    background-color: #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__label {
+        display: block;
+        color: #92919F;
+        line-height: 140%;
+        font-weight: normal;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__value {
+        font-weight: 600;
+    }
+}
+
+.lineup {
+    &--disabled {}
+
+    & .item-field {
+        min-width: 150px;
+    }
+
+    & .lineup__time {
+        background-color: #eee;
+
+        & .lineup__list {
+            & ul li span {
+                background-color: #fff;
+
+                &:hover {
+                    background-color: #fff;
+                    cursor: default;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+.film-logline {
+    width: 100%;
+
+    &--edit {
+        & .film-logline__current label {
+            display: block;
+        }
+
+        & .film-logline__new {
+            display: block;
+        }
+    }
+
+    &__version {}
+
+    &__current {
+        width: 100%;
+
+        & label {
+            color: $red;
+            font-weight: 600;
+            padding-bottom: 8px;
+            padding-top: 4px;
+            display: none;
+        }
+    }
+
+    &__new {
+        width: 100%;
+        display: none;
+
+        & label {
+            color: $green;
+            font-weight: 600;
+            padding-bottom: 8px;
+            padding-top: 4px;
+            display: block;
+        }
+
+        &.open {
+            display: block;
+        }
+    }
+
+    &__action {
+        padding-top: 0.9em;
+
+        & span {
+            text-decoration: underline;
+            margin-right: 1em;
+            cursor: pointer;
+
+            &[data-logline="cancel"],
+            &[data-logline="send"] {
+                display: none;
+            }
+        }
+    }
+
+
+
+    & textarea {
+        &[disabled] {
+            background-color: #eee;
+            resize: none;
+            height: 100%;
+            overflow: visible;
+        }
+    }
+}
+
+.film-card {
+    &__metric {
+
+        flex-wrap: wrap;
+
+        @media screen and (min-width: $w760) {
+            flex-wrap: nowrap;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        color: $main;
+        margin: -15px -10px;
+        padding-bottom: 35px;
+    }
+
+    &__tabs {
+        padding-bottom: 35px;
+    }
+}

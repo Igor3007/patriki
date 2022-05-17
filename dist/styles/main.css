@@ -1702,12 +1702,16 @@ select {
 } */
 
 @keyframes slide-up {
-  from {
-    transform: translateY(20px);
+  0% {
+    transform: translateY(10px);
     opacity: 0;
   }
 
-  to {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
     transform: translateY(0);
     opacity: 1;
   }
@@ -2531,7 +2535,7 @@ input {
 }
 
 .form textarea {
-  min-height: 120px;
+  min-height: 129px;
   max-width: 100%;
   resize: vertical;
   width: 100%;
@@ -6463,6 +6467,129 @@ div[data-lang]:not(.active) {
   background-color: #cf1c5d;
 }
 
+.item-field {
+  position: relative;
+  width: auto;
+  border: 1px solid #bcbcbc;
+  border-radius: 5px;
+  padding: 0 15px;
+  height: 52px;
+  flex-grow: 1;
+  background-color: #EBEBEB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-field__label {
+  display: block;
+  color: #92919F;
+  line-height: 140%;
+  font-weight: normal;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-field__value {
+  font-weight: 600;
+}
+
+.lineup .item-field {
+  min-width: 150px;
+}
+
+.lineup .lineup__time {
+  background-color: #eee;
+}
+
+.lineup .lineup__time .lineup__list ul li span {
+  background-color: #fff;
+}
+
+.lineup .lineup__time .lineup__list ul li span:hover {
+  background-color: #fff;
+  cursor: default;
+  pointer-events: none;
+}
+
+.film-logline {
+  width: 100%;
+}
+
+.film-logline--edit .film-logline__current label {
+  display: block;
+}
+
+.film-logline--edit .film-logline__new {
+  display: block;
+}
+
+.film-logline__current {
+  width: 100%;
+}
+
+.film-logline__current label {
+  color: #cf1c5d;
+  font-weight: 600;
+  padding-bottom: 8px;
+  padding-top: 4px;
+  display: none;
+}
+
+.film-logline__new {
+  width: 100%;
+  display: none;
+}
+
+.film-logline__new label {
+  color: #2FA81A;
+  font-weight: 600;
+  padding-bottom: 8px;
+  padding-top: 4px;
+  display: block;
+}
+
+.film-logline__new.open {
+  display: block;
+}
+
+.film-logline__action {
+  padding-top: 0.9em;
+}
+
+.film-logline__action span {
+  text-decoration: underline;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.film-logline__action span[data-logline="cancel"],
+.film-logline__action span[data-logline="send"] {
+  display: none;
+}
+
+.film-logline textarea[disabled] {
+  background-color: #eee;
+  resize: none;
+  height: 100%;
+  overflow: visible;
+}
+
+.film-card__metric {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  color: #525166;
+  margin: -15px -10px;
+  padding-bottom: 35px;
+}
+
+.film-card__tabs {
+  padding-bottom: 35px;
+}
+
 @media screen and (min-width: 359px) {
   .all-films__item {
     width: 50%;
@@ -6924,6 +7051,10 @@ div[data-lang]:not(.active) {
   .status-order {
     padding-left: 20px;
     padding-top: 0px;
+  }
+
+  .film-card__metric {
+    flex-wrap: nowrap;
   }
 }
 

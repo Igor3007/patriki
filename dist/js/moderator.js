@@ -932,6 +932,86 @@ document.addEventListener('DOMContentLoaded', function (event) {
         instanse.init()
     })
 
+    /* =================================================
+    Логлайн в карточке фильма
+    ================================================= */
+
+    function logline(elem) {
+        this.container = elem;
+
+        this.btnEdit = elem.querySelector('[data-logline="edit"]')
+        this.btnSend = elem.querySelector('[data-logline="send"]')
+        this.btnCancel = elem.querySelector('[data-logline="cancel"]')
+        this.elemNew = elem.querySelector('[data-logline="new"]')
+        this.elemCurrent = elem.querySelector('[data-logline="current"]')
+
+        this.init = function () {
+            this.addEvent()
+        }
+
+        this.openNewTextarea = function () {
+            this.elemNew.classList.add('open')
+            this.container.classList.add('film-logline--edit')
+
+            this.elemCurrent.style.display = 'none';
+            this.btnEdit.style.display = 'none';
+            this.btnSend.style.display = 'inline-block';
+            this.btnCancel.style.display = 'inline-block';
+
+            let currentText = this.elemCurrent.querySelector('textarea').value
+            this.elemNew.querySelector('textarea').value = currentText
+            this.elemNew.querySelector('textarea').removeAttribute('disabled')
+
+        }
+        this.closeNewTextarea = function () {
+            this.elemNew.classList.remove('open')
+            this.container.classList.remove('film-logline--edit')
+            this.elemCurrent.style.display = 'block';
+            this.btnEdit.style.display = 'inline-block';
+            this.btnSend.style.display = 'none';
+            this.btnCancel.style.display = 'none';
+        }
+
+        this.addEvent = function () {
+            this.btnEdit.addEventListener('click', () => {
+                this.openNewTextarea()
+            })
+            this.btnCancel.addEventListener('click', () => {
+                this.closeNewTextarea()
+                this.elemNew.querySelector('textarea').value = ''
+            })
+            this.btnCancel.addEventListener('click', () => {
+                this.closeNewTextarea()
+            })
+            this.btnSend.addEventListener('click', (event) => {
+
+                let _this = this
+
+                window.ajax({
+                    type: 'POST',
+                    url: '/index.php',
+                    data: {
+                        id: 123
+                    }
+                }, function () {
+                    _this.elemCurrent.style.display = 'block';
+                    _this.btnEdit.style.display = 'inline-block';
+                    _this.btnSend.style.display = 'none';
+                    _this.btnCancel.style.display = 'none';
+                    _this.elemNew.querySelector('textarea').setAttribute('disabled', true)
+
+                    window.STATUS.msg(event.target.dataset.msg, ' ')
+                })
+
+            })
+        }
+    }
+
+    if (document.querySelector('[data-logline="container"]')) {
+        const instanse = new logline(document.querySelector('[data-logline="container"]'))
+        instanse.init();
+    }
+
 
     /* ==========================================
     ссылка редатировать режисера

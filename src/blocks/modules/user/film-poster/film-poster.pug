@@ -61,5 +61,22 @@ mixin film-poster-edit()
         +icons('#ic_chain', 20)
         span https://somevideohosting.com/film2
 
+
+mixin film-poster-card()
+  .film-poster
+    .film-poster__cover.cover--loaded
+      .film-poster__image
+        picture
+          img(src="/img/common/cover.jpg" data-attach="preview-poster")
+    .film-poster__title Фильм загружен на платформу
+    .film-poster__upload
+        a(href='#'): button.btn Перейти на платформу
+    .film-poster__link
+      .film-poster__link-title Ссылка для скачивания:
+      .film-poster__link-url
+       a(href='#')
+        +icons('#ic_chain', 20)
+        span https://somevideohosting.com/film2
+
   
        
