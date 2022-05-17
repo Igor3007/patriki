@@ -6304,11 +6304,12 @@ div[data-lang]:not(.active) {
 .film-metrics ul {
   display: flex;
   margin: 0 auto;
-  margin: 0 -10px;
+  flex-wrap: wrap;
+  margin: -5px -10px;
 }
 
 .film-metrics ul li {
-  padding: 0 10px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
 }
@@ -6349,10 +6350,6 @@ div[data-lang]:not(.active) {
 .user-orders__list .table-card__td:nth-last-child(2)::before {
   display: block;
   font-size: 12px;
-}
-
-.user-orders__list .table-card__td:last-child {
-  padding-bottom: 0;
 }
 
 .user-orders__list .table-card__tr {
@@ -6479,10 +6476,6 @@ div[data-lang]:not(.active) {
   .directors-card__tabs {
     margin-right: 0;
   }
-
-  .film-metrics ul li span {
-    font-size: 20px;
-  }
 }
 
 @media screen and (min-width: 480px) {
@@ -6574,6 +6567,10 @@ div[data-lang]:not(.active) {
     justify-content: space-between;
     align-content: center;
     width: 100%;
+  }
+
+  .film-metrics ul li span {
+    font-size: 20px;
   }
 }
 
@@ -6904,6 +6901,7 @@ div[data-lang]:not(.active) {
 
   .status-order {
     padding-left: 20px;
+    padding-top: 0px;
   }
 }
 
@@ -7026,11 +7024,11 @@ div[data-lang]:not(.active) {
   }
 
   .film-metrics ul {
-    margin: 0 -14px;
+    margin: -5px -14px;
   }
 
   .film-metrics ul li {
-    padding: 0 14px;
+    padding: 5px 14px;
   }
 
   .film-metrics ul li span {
@@ -7558,6 +7556,12 @@ div[data-lang]:not(.active) {
 
   .main-menu {
     padding: 25px 25px 40px 25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .user-orders__list .table-card__td:last-child {
+    padding-bottom: 0;
   }
 }
 

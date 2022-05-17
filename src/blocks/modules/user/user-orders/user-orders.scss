@@ -10,20 +10,21 @@
     & ul {
         display: flex;
         margin: 0 auto;
-        margin: 0 -10px;
+        flex-wrap: wrap;
+        margin: -5px -10px;
 
         @media screen and (min-width: $w992) {
-            margin: 0 -14px;
+            margin: -5px -14px;
         }
 
         & li {
 
-            padding: 0 10px;
+            padding: 5px 10px;
             display: flex;
             align-items: center;
 
             @media screen and (min-width: $w992) {
-                padding: 0 14px;
+                padding: 5px 14px;
             }
 
             & span {
@@ -40,7 +41,7 @@
                     font-size: 16px;
                 }
 
-                @media screen and (min-width: $w360) {
+                @media screen and (min-width: $w576) {
                     font-size: 20px;
                 }
             }
@@ -93,7 +94,9 @@
                 }
 
                 &:last-child {
-                    padding-bottom: 0;
+                    @media screen and (max-width: $w760) {
+                        padding-bottom: 0;
+                    }
                 }
 
             }
@@ -182,6 +185,7 @@
 
     @media screen and (min-width: $w760) {
         padding-left: 20px;
+        padding-top: 0px;
     }
 
     &::before {
