@@ -1,22 +1,48 @@
 .film-metrics {
     display: flex;
-    justify-content: center;
+    padding-top: 12px;
+
+    @media screen and (min-width: $w760) {
+        padding-top: 0;
+        justify-content: center;
+    }
 
     & ul {
         display: flex;
         margin: 0 auto;
+        margin: 0 -10px;
+
+        @media screen and (min-width: $w992) {
+            margin: 0 -14px;
+        }
 
         & li {
 
-            padding: 0 14px;
+            padding: 0 10px;
             display: flex;
             align-items: center;
 
+            @media screen and (min-width: $w992) {
+                padding: 0 14px;
+            }
+
             & span {
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: 600;
                 color: $main;
                 margin-left: 0.5em;
+
+                @media screen and (min-width: $w992) {
+                    font-size: 20px;
+                }
+
+                @media screen and (min-width: $w760) {
+                    font-size: 16px;
+                }
+
+                @media screen and (min-width: $w360) {
+                    font-size: 20px;
+                }
             }
 
             & svg {
@@ -36,14 +62,44 @@
                 &:nth-child(2) {
                     text-align: center;
                 }
+
+
             }
 
             &__td {
 
+
+
                 &:first-child {
                     padding: 0;
+
+                    &::before {
+                        display: none;
+                    }
                 }
 
+                &:nth-last-child(1),
+                &:nth-last-child(2) {
+                    width: 100%;
+
+                    &::before {
+                        display: block;
+                        font-size: 12px;
+
+                        @media screen and (min-width: $w760) {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
+            }
+
+            &__tr {
+                padding: 15px;
             }
         }
     }
@@ -51,10 +107,15 @@
 
 .user-orders-film {
     display: flex;
+    padding-bottom: 15px;
+
+    @media screen and (min-width: $w760) {
+        padding-bottom: 0;
+    }
 
     &__poster {
-        width: 100px;
-        min-width: 100px;
+        width: 76px;
+        min-width: 76px;
 
         position: relative;
         z-index: 1;
@@ -98,6 +159,7 @@
         & a {
             font-size: 13px;
             font-weight: 600;
+            @include line-clamp(3);
 
             &:hover {
                 text-decoration: underline;
@@ -112,11 +174,15 @@
     min-width: 150px;
     display: block;
     color: $main2;
-    padding-left: 20px;
     position: relative;
     text-align: left;
     display: flex;
     align-items: center;
+    padding-top: 5px;
+
+    @media screen and (min-width: $w760) {
+        padding-left: 20px;
+    }
 
     &::before {
         content: '';

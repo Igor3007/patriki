@@ -14,9 +14,9 @@ mixin user-orders
                         .table-card__td(data-title="Фильм")
                             .user-orders-film
                                 .user-orders-film__poster
-                                    +picture('/img/common/cover'+index)
+                                    a(href='/user-edit.html'): +picture('/img/common/cover'+index)
                                 .user-orders-film__details
-                                    .user-orders-film__name: a(href='#')= item.name
+                                    .user-orders-film__name: a(href='/user-edit.html')= item.name
                                     .user-orders-film__code 22-00650
                         .table-card__td(data-title="Просмотры / Комментари / Сообщения / Рейтинг")
                             +metric

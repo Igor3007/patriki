@@ -6298,22 +6298,23 @@ div[data-lang]:not(.active) {
 
 .film-metrics {
   display: flex;
-  justify-content: center;
+  padding-top: 12px;
 }
 
 .film-metrics ul {
   display: flex;
   margin: 0 auto;
+  margin: 0 -10px;
 }
 
 .film-metrics ul li {
-  padding: 0 14px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
 }
 
 .film-metrics ul li span {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #525166;
   margin-left: 0.5em;
@@ -6335,13 +6336,37 @@ div[data-lang]:not(.active) {
   padding: 0;
 }
 
+.user-orders__list .table-card__td:first-child::before {
+  display: none;
+}
+
+.user-orders__list .table-card__td:nth-last-child(1),
+.user-orders__list .table-card__td:nth-last-child(2) {
+  width: 100%;
+}
+
+.user-orders__list .table-card__td:nth-last-child(1)::before,
+.user-orders__list .table-card__td:nth-last-child(2)::before {
+  display: block;
+  font-size: 12px;
+}
+
+.user-orders__list .table-card__td:last-child {
+  padding-bottom: 0;
+}
+
+.user-orders__list .table-card__tr {
+  padding: 15px;
+}
+
 .user-orders-film {
   display: flex;
+  padding-bottom: 15px;
 }
 
 .user-orders-film__poster {
-  width: 100px;
-  min-width: 100px;
+  width: 76px;
+  min-width: 76px;
   position: relative;
   z-index: 1;
   border-radius: 5px;
@@ -6382,6 +6407,11 @@ div[data-lang]:not(.active) {
 .user-orders-film__name a {
   font-size: 13px;
   font-weight: 600;
+  letter-spacing: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .user-orders-film__name a:hover {
@@ -6392,11 +6422,11 @@ div[data-lang]:not(.active) {
   min-width: 150px;
   display: block;
   color: #92919F;
-  padding-left: 20px;
   position: relative;
   text-align: left;
   display: flex;
   align-items: center;
+  padding-top: 5px;
 }
 
 .status-order::before {
@@ -6448,6 +6478,10 @@ div[data-lang]:not(.active) {
 
   .directors-card__tabs {
     margin-right: 0;
+  }
+
+  .film-metrics ul li span {
+    font-size: 20px;
   }
 }
 
@@ -6849,6 +6883,28 @@ div[data-lang]:not(.active) {
   .directors-card__orders .table-card__td::before {
     display: none;
   }
+
+  .film-metrics {
+    padding-top: 0;
+    justify-content: center;
+  }
+
+  .film-metrics ul li span {
+    font-size: 16px;
+  }
+
+  .user-orders__list .table-card__td:nth-last-child(1)::before,
+  .user-orders__list .table-card__td:nth-last-child(2)::before {
+    display: none;
+  }
+
+  .user-orders-film {
+    padding-bottom: 0;
+  }
+
+  .status-order {
+    padding-left: 20px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -6967,6 +7023,18 @@ div[data-lang]:not(.active) {
   .card-rating__total span {
     display: inline-block;
     min-width: 1.5em;
+  }
+
+  .film-metrics ul {
+    margin: 0 -14px;
+  }
+
+  .film-metrics ul li {
+    padding: 0 14px;
+  }
+
+  .film-metrics ul li span {
+    font-size: 20px;
   }
 }
 
