@@ -6588,6 +6588,18 @@ div[data-lang]:not(.active) {
 
 .film-card__tabs {
   padding-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: -20px;
+}
+
+.film-card__tabs > * {
+  margin-top: 10px;
+}
+
+.film-card__tabs .btn {
+  width: 100%;
 }
 
 @media screen and (min-width: 359px) {
@@ -6708,6 +6720,10 @@ div[data-lang]:not(.active) {
 
   .film-metrics ul li span {
     font-size: 20px;
+  }
+
+  .film-card__tabs .btn {
+    width: auto;
   }
 }
 

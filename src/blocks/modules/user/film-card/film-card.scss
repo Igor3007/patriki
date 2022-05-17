@@ -140,5 +140,22 @@
 
     &__tabs {
         padding-bottom: 35px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: -20px;
+
+        &>* {
+            margin-top: 10px;
+        }
+
+        & .btn {
+            width: 100%;
+
+            @media screen and (min-width: $w576) {
+                width: auto;
+            }
+        }
+
     }
 }

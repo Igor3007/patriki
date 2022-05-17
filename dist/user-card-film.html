@@ -283,14 +283,17 @@
                       </div>
                       <div class="film-card__tabs">
                         <ul class="form-tabs" data-tab-nav="">
-                          <li class="active"><a href="#film">
-                              <button class="btn btn-line">О фильме</button></a></li>
+                          <li class="active"><a href="#ru">
+                              <button class="btn btn-line">На русском</button></a></li>
+                          <li><a href="#en">
+                              <button class="btn btn-line">На английском</button></a></li>
                           <li><a href="#comments">
                               <button class="btn btn-line">Комментарии</button></a></li>
                         </ul>
+                        <button class="btn btn-small">Написать модератору</button>
                       </div>
                       <div class="film-tab-container">
-                        <div class="film-tab-item active" data-tab-item="film">
+                        <div class="film-tab-item active" data-tab-item="ru">
                           <div class="film-card__fields">
                             <div class="form">
                               <div class="form__item">
@@ -395,6 +398,251 @@
                                   <div class="item-field">
                                     <div class="item-field__label">ФИО</div>
                                     <div class="item-field__value">Олег Негин</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Продюсер</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Андрей Звягинцев</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Режиссер</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Михаил Кричман</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Оператор</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Филип Гласс</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Должность</div>
+                                    <div class="item-field__value">Звукорежиссер</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Логлайн</div>
+                              <div class="form__item"> 
+                                <div class="form__subitem">
+                                  <div class="film-logline" data-logline="container">
+                                    <div class="film-logline__version">
+                                      <div class="film-logline__current" data-logline="current">
+                                        <label>Старый </label>
+                                        <textarea name="current" disabled="disabled">Автослесарь Николай Сергеев живет со второй женой Лилей и сыном от первого брака в маленьком северном городке на берегу моря. Нечистый на руку мэр города Шелевят пытается изъять его дом и землю для собственных нужд. После двух проигранных судов Николай обращается за помощью к бывшему сослуживцу Дмитрию, успешному столичному адвокату. Но приезд московского гостя лишь усложняет и без того непростую жизнь Николая.</textarea>
+                                      </div>
+                                      <div class="film-logline__new" data-logline="new">
+                                        <label>Новый </label>
+                                        <textarea name="new" disabled="disabled"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="film-logline__action"><span data-logline="edit">Редактировать логлайн</span><span data-logline="send" data-msg="Изменения отправлены!">Отправить запрос</span><span data-logline="cancel">Отмена </span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item"> 
+                                <div class="form__subitem"> 
+                                  <div class="lineup lineup--disabled" data-lineup="1">
+                                    <div class="lineup__date">
+                                      <div class="item-field">
+                                        <div class="item-field__label">Дата показа</div>
+                                        <div class="item-field__value">16/05/2022</div>
+                                      </div>
+                                    </div>
+                                    <div class="lineup__time">
+                                      <div class="lineup__timeline">
+                                        <div class="lineup__title">Время</div>
+                                        <div class="lineup__list">
+                                          <ul>
+                                            <li><span>17:00</span>
+                                              <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                            </li>
+                                            <li><span>18:00</span>
+                                              <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                            </li>
+                                            <li><span>19:00</span>
+                                              <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                            </li>
+                                            <li><span>20:00</span>
+                                              <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                            </li>
+                                            <li><span>21:00</span>
+                                              <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="lineup lineup--disabled" data-lineup="1">
+                                    <div class="lineup__date">
+                                      <div class="item-field">
+                                        <div class="item-field__label">Дата показа</div>
+                                        <div class="item-field__value">16/05/2022</div>
+                                      </div>
+                                    </div>
+                                    <div class="lineup__time">
+                                      <div class="lineup__timeline">
+                                        <div class="lineup__title">Время</div>
+                                        <div class="lineup__list">
+                                          <ul>
+                                            <li><span>17:00</span>
+                                              <input type="checkbox" name="time[]" value="17:00" checked="checked"/>
+                                            </li>
+                                            <li><span>18:00</span>
+                                              <input type="checkbox" name="time[]" value="18:00" checked="checked"/>
+                                            </li>
+                                            <li><span>19:00</span>
+                                              <input type="checkbox" name="time[]" value="19:00" checked="checked"/>
+                                            </li>
+                                            <li><span>20:00</span>
+                                              <input type="checkbox" name="time[]" value="20:00" checked="checked"/>
+                                            </li>
+                                            <li><span>21:00</span>
+                                              <input type="checkbox" name="time[]" value="21:00" checked="checked"/>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="film-tab-item active" data-tab-item="en">
+                          <div class="film-card__fields">
+                            <div class="form">
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Название фильма</div>
+                                    <div class="item-field__value">Fire</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Заявитель (ФИО)</div>
+                                    <div class="item-field__value">Ekaterina Samoylova</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Производитель</div>
+                                    <div class="item-field__value">New Line Cinema</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Телефон</div>
+                                    <div class="item-field__value">+7(384)409-45-56</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Email</div>
+                                    <div class="item-field__value">leviafan_film@mail.ru</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Фестиваль</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Статус</div>
+                                    <div class="item-field__value"></div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Программа</div>
+                                    <div class="item-field__value">Full meter</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">Информация о фильме</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Страна происхождения</div>
+                                    <div class="item-field__value">Russia</div>
+                                  </div>
+                                </div>
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">Жанр</div>
+                                    <div class="item-field__value">Action</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__item">
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Год производства</div>
+                                      <div class="item-field__value">2014</div>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Дата подачи</div>
+                                      <div class="item-field__value">26/22/2022</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form__item">
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Хронометраж (мин)</div>
+                                      <div class="item-field__value">141</div>
+                                    </div>
+                                  </div>
+                                  <div class="form__subitem">
+                                    <div class="item-field">
+                                      <div class="item-field__label">Язык</div>
+                                      <div class="item-field__value">Russian</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__label">информация о съемочной группе</div>
+                              <div class="form__item">
+                                <div class="form__subitem">
+                                  <div class="item-field">
+                                    <div class="item-field__label">ФИО</div>
+                                    <div class="item-field__value">Оleg Negin</div>
                                   </div>
                                 </div>
                                 <div class="form__subitem">
