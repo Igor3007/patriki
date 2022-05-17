@@ -6886,6 +6886,10 @@ div[data-lang]:not(.active) {
     justify-content: center;
   }
 
+  .film-metrics ul {
+    flex-wrap: nowrap;
+  }
+
   .film-metrics ul li span {
     font-size: 16px;
   }
