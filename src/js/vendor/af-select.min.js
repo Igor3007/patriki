@@ -105,8 +105,10 @@ class customSelect {
                     }
                 }
 
-                styledOptions.appendChild(li)
-                _this.clickEventListItem(li, item)
+                if (!item.getAttribute('disabled')) {
+                    styledOptions.appendChild(li)
+                    _this.clickEventListItem(li, item)
+                }
 
             })
         }

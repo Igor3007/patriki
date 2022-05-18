@@ -3,7 +3,11 @@ mixin all-films
     .all-films__tabs
         ul
             li
-                +select-edit('1. Тип конкурса', ['Международный','Российский','Спецпоказы'])
+                 
+                select(placeholder="Тип конкурса")
+                    option( value="" selected) Международный 
+                    option( value="" ) Российский 
+                    option( value="" disabled) Спецпоказы 
             li
                 +select-edit('2. Участие', ['В конкурсе','Вне конкурса'])
             li
