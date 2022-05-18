@@ -1036,9 +1036,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
 
-    function inputSuggest(input) {
+    function inputSuggest(option) {
 
-        this.elem = input
+        this.option = option
+        this.elem = option.elem
         this.list = document.createElement('ul');
 
         this.init = function () {
@@ -1053,7 +1054,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             this.loadSuggestElem(this.elem.dataset.url, function (arr) {
 
-                //_this.list = document.createElement('ul')
+                _this.list.querySelectorAll('li').forEach((removeItem) => {
+                    removeItem.remove()
+                })
 
                 arr.forEach((item) => {
                     let li = document.createElement('li')
@@ -1112,12 +1115,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
         this.closeList = function () {
             this.list.style.display = 'none'
 
-            if (!this.elem.value.length) this.elem.removeAttribute('area-valid')
+            if (!this.elem.value.length) {
+                this.elem.removeAttribute('area-valid')
+                this.option.on.change('', false)
+            }
 
         }
         this.openList = function () {
             this.list.style.display = 'block'
             this.elem.setAttribute('area-valid', true)
+            this.createSuggestList()
         }
 
         this.addEvent = function () {
@@ -1141,14 +1148,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 this.elem.value = event.target.innerText
                 this.closeList()
 
-
-                //change edit link
-                if (document.querySelector('.card-director-edit')) {
-                    let elem = document.querySelector('.card-director-edit')
-                    let link = elem.dataset.ajax
-                    let id = event.target.getAttribute('rel')
-                    elem.setAttribute('data-url', link.replace('$id', id))
-                }
+                this.option.on.change(event.target.innerText, event.target.getAttribute('rel'))
             })
         }
 
@@ -1157,7 +1157,28 @@ document.addEventListener('DOMContentLoaded', function (event) {
     if (document.querySelectorAll('.input-suggest')) {
         document.querySelectorAll('.input-suggest').forEach(function (input) {
 
-            let instanse = new inputSuggest(input);
+            let instanse = new inputSuggest({
+                elem: input,
+                on: {
+                    change: function (text, value) {
+
+                        if (document.querySelector('.card-director-edit')) {
+                            let elem = document.querySelector('.card-director-edit')
+                            let link = elem.dataset.ajax
+
+                            if (text || value) {
+                                elem.setAttribute('data-url', link.replace('$id', value))
+                            } else {
+                                elem.removeAttribute('data-url')
+                            }
+
+                        }
+
+
+
+                    }
+                }
+            });
             instanse.init()
 
         })
