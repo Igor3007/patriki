@@ -1,4 +1,18 @@
 .directors-card {
+
+    &__title {
+        background-color: $main;
+        padding: 17px 25px;
+        color: #fff;
+        margin: -10px -10px 0 -10px;
+        text-align: left;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        margin-bottom: 40px;
+    }
+
     &__photo {
         margin-bottom: 40px;
 
@@ -133,4 +147,15 @@
 .form__group[data-add-container="awards"] .form__item:first-child .remove-repeater,
 .form__group[data-add-container="filmography"] .form__item:first-child .remove-repeater {
     display: none
+}
+
+.af-popup {
+    & .directors-card {
+
+        max-width: 900px;
+
+        & form {
+            padding: 20px;
+        }
+    }
 }

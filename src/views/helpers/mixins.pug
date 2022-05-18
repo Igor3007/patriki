@@ -103,6 +103,11 @@ mixin input-material-date(type, placeholder, value)
   .input-material.input-material--date
     input(type=''+type+'' value=(value?value:'') class="input-datepicker" data-datepicker-lang="ru")
     label= placeholder 
+
+mixin input-material-suggest(type, placeholder, value)
+  .input-material.input-material--suggest
+    input(type=''+type+'' value=(value?value:'') class="input-suggest" data-url="/js/select.json")
+    label= placeholder 
      
 
 mixin input(type, placeholder, valid, required)

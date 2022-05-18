@@ -1,5 +1,10 @@
-mixin moderator-directors-card
+mixin moderator-directors-card(popup)
     .directors-card
+
+        if popup
+            .directors-card__title Карточка режисера
+        
+
         form(action='#' method='POST')
             .directors-card__photo
                 .box-photo

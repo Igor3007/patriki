@@ -27,29 +27,7 @@
     }
 }
 
-.lineup {
-    &--disabled {}
 
-    & .item-field {
-        min-width: 150px;
-    }
-
-    & .lineup__time {
-        background-color: #eee;
-
-        & .lineup__list {
-            & ul li span {
-                background-color: #fff;
-
-                &:hover {
-                    background-color: #fff;
-                    cursor: default;
-                    pointer-events: none;
-                }
-            }
-        }
-    }
-}
 
 .film-logline {
     width: 100%;
@@ -157,5 +135,29 @@
             }
         }
 
+    }
+
+    .lineup {
+        &--disabled {}
+
+        & .item-field {
+            min-width: 150px;
+        }
+
+        & .lineup__time {
+            background-color: #eee;
+
+            & .lineup__list {
+                & ul li span {
+                    background-color: #fff;
+
+                    &:hover {
+                        background-color: #fff;
+                        cursor: default;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
     }
 }

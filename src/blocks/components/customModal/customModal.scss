@@ -1,6 +1,6 @@
 /* popup */
 
-@keyframes fancybox-zoomInUp {
+@keyframes zoomInUp {
     from {
         transform: scale(0.97) translate3d(0, 16px, 0);
         opacity: 0;
@@ -14,16 +14,13 @@
 
 .af-popup {
     position: fixed;
-    z-index: 100;
-    left: 0;
     top: 0;
+    left: 0;
+    bottom: 0;
     right: 0;
-    min-height: 100%;
-    background: #000000c2;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    overflow-x: auto;
+    z-index: 100;
 }
 
 .af-popup__bg {
@@ -35,39 +32,33 @@
     z-index: 101;
 }
 
-// .af-popup__wrp {
-//     // position: absolute;
-//     // left: 50%;
-//     // right: auto;
-//     // top: 50%;
-//     // bottom: auto;
-//     // max-width: 600px;
-//     // min-height: auto;
-//     // /* margin: 50px 15px 50px 15px; */
-//     // z-index: 102;
-//     // height: auto;
-//     // margin: 0px auto 50px auto;
-//     // transform: translateY(-50%) translateX(-50%);
-
-
-// }
-
 .af-popup__wrp {
-    max-width: 600px;
-    min-height: auto;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
     z-index: 102;
-    height: auto;
-    margin: 0px auto 50px auto;
     position: relative;
+    min-height: 100%;
 }
 
 .af-popup__content {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    animation: 0.2s ease both fancybox-zoomInUp;
-    padding: 20px;
-    border-radius: 5px;
+    border-radius: 4px;
+    background: #fff;
+    padding: 10px;
+}
+
+.af-popup__container {
+    width: auto;
+    max-width: 90%;
+    margin: auto;
+    padding: 50px 0;
+    position: relative;
+    animation: 0.2s ease both zoomInUp;
 
 }
 
@@ -79,6 +70,7 @@
     right: 0;
     cursor: pointer;
     z-index: 101;
+    top: 11px;
 }
 
 .af-popup__close svg {

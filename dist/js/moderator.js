@@ -927,10 +927,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
-    document.querySelectorAll('[data-comment="item"]').forEach(function (elem) {
-        let instanse = new comentEdit(elem);
-        instanse.init()
-    })
+    if (document.querySelector('[data-logline="container"]')) {
+
+        document.querySelectorAll('[data-logline="container"]').forEach(function (container) {
+            const instanse = new logline(container)
+            instanse.init();
+        })
+
+
+    }
 
     /* =================================================
     Логлайн в карточке фильма
@@ -1022,6 +1027,218 @@ document.addEventListener('DOMContentLoaded', function (event) {
             let link = this.dataset.selectEdit
             let id = this.value;
             document.querySelector('.card-director-edit').setAttribute('href', link.replace('$id', id))
+        })
+    }
+
+    /* ==========================================
+    suggest input
+    ========================================== */
+
+
+
+    function inputSuggest(input) {
+
+        this.elem = input
+        this.list = document.createElement('ul');
+
+        this.init = function () {
+            this.createSuggestList()
+            this.addEvent()
+        }
+
+        this.createSuggestList = function () {
+
+
+            let _this = this
+
+            this.loadSuggestElem(this.elem.dataset.url, function (arr) {
+
+                //_this.list = document.createElement('ul')
+
+                arr.forEach((item) => {
+                    let li = document.createElement('li')
+                    li.innerText = item.text
+                    li.setAttribute('rel', item.value)
+
+                    _this.eventListItem(li)
+                    _this.list.append(li)
+                })
+            })
+
+            this.list.classList.add('suggest-list')
+
+            this.mountList()
+
+        }
+
+        this.mountList = function () {
+            this.elem.parentNode.append(this.list)
+        }
+
+        this.loadSuggestElem = function (url, callback) {
+            window.ajax({
+                type: 'GET',
+                responseType: 'json',
+                url: url
+            }, function (status, response) {
+                callback(response)
+            })
+        }
+
+        this.changeInput = function (event) {
+
+            let value = event.target.value.toLowerCase()
+
+            if (true) {
+
+                this.list.style.display = 'initial'
+
+                this.list.querySelectorAll('li').forEach(function (li) {
+
+                    if (li.classList.contains('hide')) {
+                        li.classList.remove('hide')
+                    }
+
+                    if (li.innerText.toLowerCase().indexOf(value) == -1 && value.length) {
+                        li.classList.add('hide')
+                    }
+                })
+
+                //update list
+                this.mountList()
+            }
+        }
+
+        this.closeList = function () {
+            this.list.style.display = 'none'
+
+            if (!this.elem.value.length) this.elem.removeAttribute('area-valid')
+
+        }
+        this.openList = function () {
+            this.list.style.display = 'block'
+            this.elem.setAttribute('area-valid', true)
+        }
+
+        this.addEvent = function () {
+            this.elem.addEventListener('keyup', (event) => {
+                this.changeInput(event)
+            })
+            this.elem.addEventListener('focus', (event) => {
+                this.openList()
+            })
+            document.addEventListener('click', () => {
+                this.closeList()
+            })
+            this.elem.addEventListener('click', (event) => {
+                event.stopPropagation()
+            })
+        }
+
+        this.eventListItem = function (li) {
+            li.addEventListener('click', (event) => {
+                this.elem.setAttribute('area-valid', true)
+                this.elem.value = event.target.innerText
+                this.closeList()
+
+
+                //change edit link
+                if (document.querySelector('.card-director-edit')) {
+                    let elem = document.querySelector('.card-director-edit')
+                    let link = elem.dataset.ajax
+                    let id = event.target.getAttribute('rel')
+                    elem.setAttribute('data-url', link.replace('$id', id))
+                }
+            })
+        }
+
+    }
+
+    if (document.querySelectorAll('.input-suggest')) {
+        document.querySelectorAll('.input-suggest').forEach(function (input) {
+
+            let instanse = new inputSuggest(input);
+            instanse.init()
+
+        })
+    }
+
+    /* ==========================================
+    Карточка режисера popup
+    ========================================== */
+
+
+
+    if (document.querySelectorAll('[data-modal-director="open"]').length) {
+        document.querySelectorAll('[data-modal-director="open"]').forEach(function (item) {
+            item.addEventListener('click', function (event) {
+
+                // if not data-url
+                if (!event.target.dataset.url) return false;
+
+                var directorPopup = new customModal()
+
+                window.ajax({
+                    type: 'GET',
+                    url: event.target.dataset.url,
+                }, function (status, response) {
+
+                    directorPopup.open(response, function (instanse) {
+
+                        //init select
+                        const select = new customSelect({
+                            selector: 'select'
+                        })
+                        select.init()
+
+                        //init repeat fields
+                        document.querySelectorAll('[data-add="awards"]').forEach(function (item) {
+                            item.addEventListener('click', function () {
+                                addFields('awards')
+                            })
+                        })
+                        document.querySelectorAll('[data-add="filmography"]').forEach(function (item) {
+                            item.addEventListener('click', function () {
+                                addFields('filmography')
+                            })
+                        })
+
+                        //init attach photo
+                        document.querySelectorAll('[data-attach=photo]').forEach(function (item) {
+                            item.addEventListener('change', function () {
+
+                                sendFiles(this.files, this, (dataImage) => {
+                                    this.closest('form').querySelector('[data-attach="preview"]').style.backgroundImage = 'url(' + dataImage + ')'
+                                });
+                            })
+                        })
+
+                        //init submit form
+
+                        let form = document.querySelector('.af-popup form')
+
+                        form.addEventListener('submit', function (event) {
+                            event.preventDefault()
+                            event.target.querySelector('[type="submit"]').classList.add('btn-loading')
+
+
+                            //ajax send data
+
+                            setTimeout(() => {
+                                directorPopup.close()
+                            }, 1000)
+
+                        })
+
+
+                    })
+
+                })
+
+
+
+
+            })
         })
     }
 

@@ -2498,6 +2498,10 @@ input {
   color: #525166;
 }
 
+.form input[disabled] {
+  background-color: #eee;
+}
+
 .form select {
   height: 52px;
   width: 100%;
@@ -2804,6 +2808,54 @@ input {
   cursor: pointer;
 }
 
+.input-material--suggest {
+  padding-right: 3em;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNTI1MTY2IiB3aWR0aD0iMTciIGhlaWdodD0iMTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2LjgwNSAxNS44NjZMMTIuMDEgMTEuMDdjMi4xODUtMi42NTkgMi4wMzctNi42MDYtLjQ0Ni05LjA4OWE2Ljc4MyA2Ljc4MyAwIDAwLTkuNTgyIDAgNi43ODMgNi43ODMgMCAwMDAgOS41ODJjMi40ODMgMi40ODIgNi40MjkgMi42MzIgOS4wODkuNDQ2bDQuNzk2IDQuNzk2YS42NjQuNjY0IDAgMDAuOTQtLjkzOXptLTYuMTgyLTUuMjQzYTUuNDUzIDUuNDUzIDAgMDEtNy43MDIgMCA1LjQ1MyA1LjQ1MyAwIDAxMC03LjcwMyA1LjQ1MyA1LjQ1MyAwIDAxNy43MDIgMCA1LjQ1MyA1LjQ1MyAwIDAxMCA3LjcwM3oiLz48L3N2Zz4=);
+  background-size: 1.2em auto;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1.25em) center;
+  min-width: 165px;
+  cursor: pointer;
+}
+
+.input-material--suggest .suggest-list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: auto;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #e9e9e9;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.25);
+  color: #000;
+  min-width: 100%;
+  width: auto;
+  max-height: 300px;
+}
+
+.input-material--suggest .suggest-list li {
+  margin: 0;
+  padding: 0.75rem 15px;
+  border-top: 1px solid #e3e0ea;
+  transition: all 0.15s ease-in;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.input-material--suggest .suggest-list li.active,
+.input-material--suggest .suggest-list li:hover {
+  background-color: #E7E6F5;
+}
+
 /* burger */
 
 .btn-burger {
@@ -2910,7 +2962,7 @@ input {
 
 /* popup */
 
-@keyframes fancybox-zoomInUp {
+@keyframes zoomInUp {
   from {
     transform: scale(0.97) translate3d(0, 16px, 0);
     opacity: 0;
@@ -2924,16 +2976,13 @@ input {
 
 .af-popup {
   position: fixed;
-  z-index: 100;
-  left: 0;
   top: 0;
+  left: 0;
+  bottom: 0;
   right: 0;
-  min-height: 100%;
-  background: #000000c2;
-  overflow-y: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  overflow-x: auto;
+  z-index: 100;
 }
 
 .af-popup__bg {
@@ -2946,21 +2995,32 @@ input {
 }
 
 .af-popup__wrp {
-  max-width: 600px;
-  min-height: auto;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -ms-flex-direction: column;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
   z-index: 102;
-  height: auto;
-  margin: 0px auto 50px auto;
   position: relative;
+  min-height: 100%;
 }
 
 .af-popup__content {
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  animation: 0.2s ease both fancybox-zoomInUp;
-  padding: 20px;
-  border-radius: 5px;
+  border-radius: 4px;
+  background: #fff;
+  padding: 10px;
+}
+
+.af-popup__container {
+  width: auto;
+  max-width: 90%;
+  margin: auto;
+  padding: 50px 0;
+  position: relative;
+  animation: 0.2s ease both zoomInUp;
 }
 
 .af-popup__close {
@@ -2971,6 +3031,7 @@ input {
   right: 0;
   cursor: pointer;
   z-index: 101;
+  top: 11px;
 }
 
 .af-popup__close svg {
@@ -4757,6 +4818,11 @@ footer {
   color: #92919F;
   padding-left: 1em;
   text-decoration: none !important;
+  display: none;
+}
+
+.card-director-edit[data-url] {
+  display: inline;
 }
 
 .edit-input {
@@ -5837,6 +5903,18 @@ div[data-lang]:not(.active) {
   color: #525166;
 }
 
+.directors-card__title {
+  background-color: #525166;
+  padding: 17px 25px;
+  color: #fff;
+  margin: -10px -10px 0 -10px;
+  text-align: left;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
 .directors-card__photo {
   margin-bottom: 40px;
 }
@@ -5935,6 +6013,14 @@ div[data-lang]:not(.active) {
 .form__group[data-add-container="awards"] .form__item:first-child .remove-repeater,
 .form__group[data-add-container="filmography"] .form__item:first-child .remove-repeater {
   display: none;
+}
+
+.af-popup .directors-card {
+  max-width: 900px;
+}
+
+.af-popup .directors-card form {
+  padding: 20px;
 }
 
 .item-message.fade-out-hide {
@@ -6496,24 +6582,6 @@ div[data-lang]:not(.active) {
   font-weight: 600;
 }
 
-.lineup .item-field {
-  min-width: 150px;
-}
-
-.lineup .lineup__time {
-  background-color: #eee;
-}
-
-.lineup .lineup__time .lineup__list ul li span {
-  background-color: #fff;
-}
-
-.lineup .lineup__time .lineup__list ul li span:hover {
-  background-color: #fff;
-  cursor: default;
-  pointer-events: none;
-}
-
 .film-logline {
   width: 100%;
 }
@@ -6600,6 +6668,24 @@ div[data-lang]:not(.active) {
 
 .film-card__tabs .btn {
   width: 100%;
+}
+
+.film-card .lineup .item-field {
+  min-width: 150px;
+}
+
+.film-card .lineup .lineup__time {
+  background-color: #eee;
+}
+
+.film-card .lineup .lineup__time .lineup__list ul li span {
+  background-color: #fff;
+}
+
+.film-card .lineup .lineup__time .lineup__list ul li span:hover {
+  background-color: #fff;
+  cursor: default;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 359px) {

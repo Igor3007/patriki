@@ -345,11 +345,10 @@
                               </div>
                               <div class="form__item">
                                 <div class="form__subitem">
-                                  <select placeholder="ФИО" data-ajax="/js/select.json" data-select-edit="/user/edit/$id" data-selected="8787">
-                                    <option value="1">Андрей Звягинцев</option>
-                                    <option value="1">Михаил Кричман</option>
-                                    <option value="1">Филип Гласс</option>
-                                  </select>
+                                  <div class="input-material input-material--suggest">
+                                    <input class="input-suggest" type="text" value="" data-url="/js/select.json"/>
+                                    <label>ФИО</label>
+                                  </div>
                                 </div>
                                 <div class="form__subitem">
                                   <input type="text" name="post[]" placeholder="Режиссер" disabled="disabled" value="Режиссер"/>
@@ -357,7 +356,7 @@
                               </div>
                               <div class="form__item">
                                 <div class="form__subitem">
-                                  <div class="form__note"><a href="/moderator-directors-card.html" target="_blank"><span>Заполнить карточку режисера </span></a><a class="card-director-edit" href="/moderator-directors-card.html" target="_blank"><span>(Изменить) </span></a></div>
+                                  <div class="form__note"><span data-modal-director="open" data-url="/_card-director.html">Заполнить карточку режисера </span><span class="card-director-edit" data-modal-director="open" data-ajax="/_card-director.html?id=$id">(Изменить) </span></div>
                                 </div>
                               </div>
                               <div class="form__group" data-repeat="container">

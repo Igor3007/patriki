@@ -215,4 +215,9 @@
     color: $main2;
     padding-left: 1em;
     text-decoration: none !important;
+    display: none;
+
+    &[data-url] {
+        display: inline;
+    }
 }
