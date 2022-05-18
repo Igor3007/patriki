@@ -1174,8 +1174,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                         }
 
-
-
                     }
                 }
             });
@@ -1197,14 +1195,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 // if not data-url
                 if (!event.target.dataset.url) return false;
 
-                var directorPopup = new customModal()
+                let directorPopup = new customModal()
+                let url = event.target.dataset.url
 
-                window.ajax({
-                    type: 'GET',
-                    url: event.target.dataset.url,
-                }, function (status, response) {
 
-                    directorPopup.open(response, function (instanse) {
+                directorPopup.open('<div>Loading</div>', function (instanse) {
+
+                    window.ajax({
+                        type: 'GET',
+                        url: url,
+                    }, function (status, response) {
+
+                        directorPopup.changeContent(response)
 
                         //init select
                         const select = new customSelect({
@@ -1251,11 +1253,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                         })
 
-
                     })
-
                 })
-
 
 
 

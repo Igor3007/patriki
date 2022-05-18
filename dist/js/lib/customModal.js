@@ -1,12 +1,7 @@
 class customModal {
     constructor(opion) {
 
-        this.selector = '[data-inmap]',
-            this.src = null,
-            this.instanse = null,
-            this.on = {
-                afterShow: null
-            }
+        this.modal = '';
     }
 
     init() {
@@ -30,7 +25,6 @@ class customModal {
                 `
 
         document.body.append(template)
-
         this.instanse = template;
 
         return template;
@@ -39,17 +33,20 @@ class customModal {
     open(content, afterShow) {
 
         let _this = this;
-        let modal = this.createTemplate();
-        modal.querySelector('.af-popup__content').innerHTML = content
-        modal.querySelector('.af-popup__close').addEventListener('click', function () {
+        this.modal = this.createTemplate();
+        this.modal.querySelector('.af-popup__content').innerHTML = content
+        this.modal.querySelector('.af-popup__close').addEventListener('click', function () {
             _this.close()
         })
 
-
-        if (afterShow) afterShow(modal);
+        if (afterShow) afterShow(this.modal);
 
         this.createEvent();
 
+    }
+
+    changeContent(content) {
+        this.modal.querySelector('.af-popup__content').innerHTML = content
     }
 
     createEvent() {
