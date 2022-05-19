@@ -487,15 +487,15 @@
                             <div class="form__label">Фестиваль</div>
                             <div class="form__item">
                               <div class="form__subitem">
-                                <select placeholder="Статус">
-                                  <option value="0">Статус 1</option>
-                                  <option value="1">Статус 2</option>
+                                <select placeholder="Статус" data-related="state">
+                                  <option value="1">Статус 1</option>
+                                  <option value="2">Статус 2</option>
                                 </select>
                               </div>
                               <div class="form__subitem">
-                                <select placeholder="Программа">
-                                  <option value="0">Программа 1</option>
-                                  <option value="1">Программа 2</option>
+                                <select placeholder="Программа" data-related="program" data-ajax="/js/select.json" data-url="/js/select.json?id=$id">
+                                  <option value="1">Программа</option>
+                                  <option value="2">Программа</option>
                                 </select>
                               </div>
                             </div>

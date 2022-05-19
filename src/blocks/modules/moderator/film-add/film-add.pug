@@ -116,8 +116,15 @@ mixin film-add()
         .form.active(data-lang="ru en")
           .form__label Фестиваль
           .form__item
-            .form__subitem: +select('Статус', ['Статус 1','Статус 2'])
-            .form__subitem: +select('Программа', ['Программа 1','Программа 2'])
+            .form__subitem
+              select(placeholder="Статус" data-related="state")
+                option(value="1") Статус 1
+                option(value="2") Статус 2
+
+            .form__subitem
+              select(placeholder="Программа" data-related="program" data-ajax="/js/select.json" data-url="/js/select.json?id=$id")
+                option(value="1") Программа
+                option(value="2") Программа
 
           .form__label Информация о фильме
           .form__item

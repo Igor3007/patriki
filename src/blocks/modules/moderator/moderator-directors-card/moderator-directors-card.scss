@@ -154,6 +154,10 @@
 
         max-width: 900px;
 
+        @media screen and (min-width: $w992) {
+            min-width: 850px;
+        }
+
         & form {
             padding: 20px;
         }

@@ -2230,6 +2230,20 @@ a.link-primary {
   color: #fff;
 }
 
+.btn.btn-line-large {
+  background-color: #fff;
+  border: 1px solid #BCBCBC;
+  color: #92919F;
+  font-size: 12px;
+  padding: 0.8em 2.5em 0.75em 2.5em;
+}
+
+.btn.btn-line-large:hover {
+  background-color: #525166;
+  border: 1px solid #525166;
+  color: #fff;
+}
+
 .btn:hover {
   opacity: 0.9;
 }
@@ -6688,6 +6702,10 @@ div[data-lang]:not(.active) {
   pointer-events: none;
 }
 
+.form__subitem.form__subitem--send > div:last-child {
+  margin-left: auto;
+}
+
 @media screen and (min-width: 359px) {
   .all-films__item {
     width: 50%;
@@ -7276,6 +7294,10 @@ div[data-lang]:not(.active) {
   .card-rating__total span {
     display: inline-block;
     min-width: 1.5em;
+  }
+
+  .af-popup .directors-card {
+    min-width: 850px;
   }
 
   .film-metrics ul {

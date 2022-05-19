@@ -1199,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 let url = event.target.dataset.url
 
 
-                directorPopup.open('<div>Loading</div>', function (instanse) {
+                directorPopup.open('<div>Loading...</div>', function (instanse) {
 
                     window.ajax({
                         type: 'GET',
@@ -1236,6 +1236,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             })
                         })
 
+                        //init material input
+                        directorPopup.modal.querySelectorAll('input[type=text]').forEach(function (input) {
+                            if (MATERIAL_INPUT) MATERIAL_INPUT.addEvent(input)
+                            if (input.value) input.setAttribute('area-valid', true)
+                        })
+
+
                         //init submit form
 
                         let form = document.querySelector('.af-popup form')
@@ -1259,6 +1266,25 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
             })
+        })
+    }
+
+    /* ==========================================
+    связанные селекты
+    ========================================== */
+
+    if (document.querySelector('[data-related="state"]')) {
+
+        let selectState = document.querySelector('[data-related="state"]');
+        let selectProgram = document.querySelector('[data-related="program"]');
+
+        selectState.addEventListener('change', function () {
+
+            let link = selectProgram.dataset.url
+            let id = this.value;
+            selectProgram.setAttribute('data-ajax', link.replace('$id', id))
+
+            selectProgram.afSelect.update()
         })
     }
 

@@ -140,8 +140,10 @@ mixin film-add()
 
          
           .form__item
-            .form__subitem
-              .form__submit: button.btn(type="submit") сохранить
+            .form__subitem.form__subitem--send
+              .form__submit: button.btn.btn-line-large(type="submit") Черновик
+              .form__submit: button.btn(type="submit") Сохранить
+
             
 
 mixin lineup
