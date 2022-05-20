@@ -376,6 +376,19 @@ input[type="date"] {
     }
 }
 
+@mixin section-title-h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $main;
+
+    @media screen and (min-width: $w1440) {
+        font-size: 28px;
+    }
+}
+
 @mixin section-subtitle {
     font-weight: bold;
     font-size: 26px;

@@ -13,9 +13,8 @@
     color: #fff;
     z-index: 100000;
     max-width: 450px;
-    display: none;
+    visibility: hidden;
 
-    animation: slide-Y 0.3s ease forwards;
 }
 
 #status_header {
@@ -29,6 +28,7 @@
     border-left-width: 4px;
     height: auto;
     display: block;
+    visibility: visible;
 }
 
 #status.error #status_header {
@@ -50,6 +50,7 @@
     transform: translateY(0);
     border-left-width: 4px;
     display: block;
+    visibility: visible;
 }
 
 #status.complete {
@@ -57,6 +58,7 @@
     transform: translateY(0);
     border-left-width: 4px;
     display: block;
+    visibility: visible;
 }
 
 #status_msg {

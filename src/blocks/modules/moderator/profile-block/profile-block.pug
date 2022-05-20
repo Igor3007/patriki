@@ -60,7 +60,7 @@ mixin profile-block
                         .form__item
                             .form__subitem
                                 button.btn(type="submit") Сохранить изменения
-mixin profile-block-user
+mixin profile-block-user 
     .profile-block
         .profile-block__form
             form(method="get")
@@ -77,16 +77,16 @@ mixin profile-block-user
                     .form
                         //- +select-edit('Год рождения', ['1990','1991'])
                         .form__item
-                            .form__subitem: +input-material('text', 'Имя', 'Николай')   
-                            .form__subitem: +input-material('text', 'Фамилия', 'Петров')  
+                            .form__subitem: +input-material('text', 'Имя', 'Анастасия')   
+                            .form__subitem: +input-material('text', 'Фамилия', 'Петрова')  
                         .form__item
                             .form__subitem
                                 select(name="country" required placeholder="Страна")
-                                    option(value="ru" selected) Россия
+                                    option(value="ru" ) Россия
                                     option(value="by") Беларусь
                                     option(value="ua") Украина
                                     option(value="ua") Азербайджан
-                                    option(value="ua") Армения
+                                    option(value="ua" selected) Армения
                                     option(value="ua") Белоруссия
                                     option(value="ua") Грузия
                                     option(value="ua") Казахстан
@@ -102,8 +102,8 @@ mixin profile-block-user
                                             option(value="1992") 1992
                                     .form__subitem
                                         select(name="sex" required placeholder="Мужской")
-                                            option(value="1" selected) Мужской
-                                            option(value="2") Женский
+                                            option(value="1" ) Мужской
+                                            option(value="2" selected) Женский
                         .form__item
                             .form__subitem: +input-material('email', 'Email', 'ivan@gmail.com')
                             .form__subitem 

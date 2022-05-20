@@ -1,0 +1,16 @@
+mixin send-message-popup
+    .send-message-popup
+        .send-message-popup__form
+            form(action='#' method='POST')
+                .send-message-popup__title Написать модератору
+                .send-message-popup__link
+                    .send-message-popup__label Ссылка на фильм
+                    .send-message-popup__value
+                        a(href='#' target="_blank")
+                            +icons('#ic_chain')
+                            input(type="text" disabled value="https://patrikifilmfestival.ru/film/22-00650") 
+                        
+                .send-message-popup__textarea
+                    textarea(placeholder="Ваше сообщение")
+                .send-message-popup__submit
+                    button.btn(type="submit" data-msg="Ваше сообщение отправлено!") Отправить 

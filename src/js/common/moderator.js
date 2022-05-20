@@ -1288,6 +1288,60 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     }
 
+    /* =========================================
+    написать модератору
+    ========================================= */
+
+    if (document.querySelector('[data-modal="message-on-moder"]')) {
+        document.querySelectorAll('[data-modal="message-on-moder"]').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+
+                // if not data-src
+                if (!event.target.dataset.src) return false;
+
+                let messagePopup = new customModal()
+                let url = event.target.dataset.src
+
+
+                messagePopup.open('<div>Loading...</div>', function (instanse) {
+
+                    window.ajax({
+                        type: 'GET',
+                        url: url,
+                    }, function (status, response) {
+
+                        //append content
+                        messagePopup.changeContent(response)
+
+
+                        //init submit form
+                        let form = document.querySelector('.af-popup form')
+
+                        form.addEventListener('submit', function (event) {
+                            event.preventDefault()
+                            let submitBtn = event.target.querySelector('[type="submit"]')
+                            submitBtn.classList.add('btn-loading')
+
+
+                            //ajax send data
+
+
+                            setTimeout(() => {
+                                messagePopup.close()
+                                window.STATUS.msg(submitBtn.dataset.msg, ' ')
+
+                            }, 1000)
+
+                        })
+
+                    })
+
+                })
+
+            })
+        })
+    }
+
 
 
 

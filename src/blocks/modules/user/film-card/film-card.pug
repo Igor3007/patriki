@@ -26,7 +26,7 @@ mixin film-card()
                 li(class="active"): a(href='#ru'): button.btn.btn-line На русском
                 li: a(href='#en'): button.btn.btn-line На английском
                 li: a(href='#comments'): button.btn.btn-line Комментарии
-            button.btn.btn-small Написать модератору
+            button.btn.btn-small(data-modal="message-on-moder" data-src="/_message-moderator-popup.html") Написать модератору
         .film-tab-container
             .film-tab-item(data-tab-item="ru" class="active")
                 .film-card__fields
