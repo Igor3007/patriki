@@ -163,9 +163,27 @@
 }
 
 .form__subitem.form__subitem--send {
+
+    flex-direction: column;
+
+    @media screen and (min-width: $w576) {
+        flex-direction: row;
+    }
+
     &>div {
+
+
+        & .btn {
+            width: 100%;
+        }
+
         &:last-child {
-            margin-left: auto;
+            padding-top: 10px;
+
+            @media screen and (min-width: $w576) {
+                margin-left: auto;
+                padding-top: 3em;
+            }
         }
     }
 }

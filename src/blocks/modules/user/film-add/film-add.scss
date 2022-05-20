@@ -210,11 +210,3 @@
         justify-content: center;
     }
 }
-
-.form__subitem.form__subitem--send {
-    &>div {
-        &:last-child {
-            margin-left: auto;
-        }
-    }
-}

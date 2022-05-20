@@ -200,6 +200,10 @@ class customSelect {
     }
 
     openSelect(elem) {
+        //close all open select 
+        document.querySelectorAll('select').forEach(function (select) {
+            if (select.afSelect) select.afSelect.close()
+        })
 
         if (elem.querySelector('select').dataset.ajax && !elem.querySelector('.select-styled').classList.contains('active')) {
             elem.querySelector('.select-list').remove()

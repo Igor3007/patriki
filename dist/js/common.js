@@ -305,6 +305,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
         })
     }
 
+    /* =========================================
+    закрывать селекты 
+    ========================================= */
+
+    // document.addEventListener('click', function () {
+    //     document.querySelectorAll('select').forEach(function (select) {
+    //         if (select.afSelect) select.afSelect.close()
+    //     })
+    // })
+
 
 
 

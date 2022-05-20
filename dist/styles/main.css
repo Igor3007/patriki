@@ -6702,8 +6702,16 @@ div[data-lang]:not(.active) {
   pointer-events: none;
 }
 
+.form__subitem.form__subitem--send {
+  flex-direction: column;
+}
+
+.form__subitem.form__subitem--send > div .btn {
+  width: 100%;
+}
+
 .form__subitem.form__subitem--send > div:last-child {
-  margin-left: auto;
+  padding-top: 10px;
 }
 
 @media screen and (min-width: 359px) {
@@ -6828,6 +6836,15 @@ div[data-lang]:not(.active) {
 
   .film-card__tabs .btn {
     width: auto;
+  }
+
+  .form__subitem.form__subitem--send {
+    flex-direction: row;
+  }
+
+  .form__subitem.form__subitem--send > div:last-child {
+    margin-left: auto;
+    padding-top: 3em;
   }
 }
 
