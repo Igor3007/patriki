@@ -1,0 +1,22 @@
+extends ../layouts/page
+
+include ../../blocks/modules/common/indevelop/indevelop.pug
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Раздел в разработке'
+
+
+block content
+  +page-in-develop
+
+
+block scripts
+  script(src="/js/vendor.js")
+  script(src="/js/common.js")
+
+
+

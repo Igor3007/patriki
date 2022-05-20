@@ -1,0 +1,41 @@
+.page-indevelop {
+
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__title {
+        @include section-title;
+        padding-bottom: 10px;
+
+        @media screen and (max-width: $w480) {
+            font-size: 24px;
+        }
+    }
+
+    &__image {
+
+        max-width: 150px;
+        width: 100%;
+        padding-bottom: 15px;
+
+        @media screen and (min-width: $w576) {
+            max-width: 200px;
+        }
+
+        & .bgimage {
+            padding-top: 100%;
+            @include bgimage-contain;
+        }
+    }
+
+    &__desc {
+        padding-bottom: 25px;
+
+        @media screen and (min-width: $w480) {
+            font-size: 16px;
+        }
+    }
+}

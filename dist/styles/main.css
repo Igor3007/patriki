@@ -3584,161 +3584,41 @@ footer {
   border-color: #000;
 }
 
-.main-menu {
-  position: fixed;
-  z-index: 9;
-  background: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: #242424;
-  display: none;
-  overflow-y: scroll;
-  padding: 80px 25px;
-  animation: slide-Y 0.3s ease forwards;
-}
-
-.main-menu__wrp {
-  margin: auto;
-  margin-left: 0;
+.page-indevelop {
+  min-height: 90vh;
   display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.main-menu.open {
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.main-menu__logo a {
-  display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.main-menu__logo a img {
-  height: 40px;
-  width: auto;
-}
-
-.main-menu__logo a span {
-  font-size: 14px;
-  line-height: 130%;
+.page-indevelop__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 133%;
+  text-align: center;
   text-transform: uppercase;
-  color: #888888;
-  margin-left: 20px;
-  padding-top: 20px;
-}
-
-.main-menu__nav {
-  flex-grow: 1;
-  padding-top: 50px;
-}
-
-.main-menu__nav nav {
-  height: 100%;
-}
-
-.main-menu__nav ul {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.main-menu__nav li {
-  padding-bottom: 0px;
-  text-align: left;
-  min-height: 40px;
-  padding-bottom: 20px;
-}
-
-.main-menu__nav li a {
-  font-size: 16px;
-  line-height: 140%;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.main-menu__nav li a:hover {
-  text-decoration: underline;
-}
-
-.main-menu__msgr {
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-.main-menu__msgr ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-menu__msgr ul li {
-  margin: 10px;
-}
-
-.main-menu__msgr ul li:first-child {
-  margin-left: 0;
-}
-
-.main-menu__msgr ul li a {
-  width: 25px;
-  min-width: 25px;
-  height: 25px;
-  background-color: transparent;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
-.main-menu__msgr ul li a:hover {
-  background-color: #F6F6F6;
-  box-shadow: 0 0 0 5px #F6F6F6;
-  transition: 0.4s ease;
-}
-
-.main-menu__msgr ul li a svg {
-  width: 20px;
-  min-width: 20px;
-  height: 20px;
-}
-
-.main-menu__worktime span {
-  font-size: 14px;
-  line-height: 16px;
-  text-align: right;
   color: #525166;
+  padding-bottom: 10px;
 }
 
-.main-menu__close {
-  cursor: pointer;
+.page-indevelop__image {
+  max-width: 150px;
+  width: 100%;
+  padding-bottom: 15px;
 }
 
-.main-menu__phones {
-  margin-left: 0;
-  margin-right: auto;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
+.page-indevelop__image .bgimage {
+  padding-top: 100%;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
 }
 
-.main-menu__phones a {
-  color: #222B32;
-  font-size: 16px;
-  line-height: 1em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.main-menu__phones a:hover {
-  text-decoration: underline;
+.page-indevelop__desc {
+  padding-bottom: 25px;
 }
 
 .section-login-block {
@@ -6760,6 +6640,10 @@ div[data-lang]:not(.active) {
     max-width: 360px;
   }
 
+  .page-indevelop__desc {
+    font-size: 16px;
+  }
+
   .moderator-aside.open {
     max-width: 360px;
   }
@@ -6789,6 +6673,10 @@ div[data-lang]:not(.active) {
   .container {
     padding: 0 16px;
     max-width: 480px;
+  }
+
+  .page-indevelop__image {
+    max-width: 200px;
   }
 
   .section-login-block {
@@ -7677,6 +7565,10 @@ div[data-lang]:not(.active) {
     font-size: 36px;
   }
 
+  .page-indevelop__title {
+    font-size: 36px;
+  }
+
   .login-block__title {
     font-size: 36px;
   }
@@ -7847,33 +7739,11 @@ div[data-lang]:not(.active) {
   .select-options {
     max-height: 30vh;
   }
-
-  .main-menu {
-    padding: 25px 25px 40px 25px;
-  }
 }
 
 @media screen and (max-width: 767px) {
   .user-orders__list .table-card__td:last-child {
     padding-bottom: 0;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .main-menu__nav li a {
-    font-size: 14px;
-  }
-
-  .main-menu__msgr ul li a {
-    width: 38px;
-    min-width: 38px;
-    height: 38px;
-  }
-
-  .main-menu__msgr ul li a svg {
-    width: 18px;
-    min-width: 18px;
-    height: 18px;
   }
 }
 
@@ -7921,14 +7791,8 @@ div[data-lang]:not(.active) {
     padding-right: 0;
   }
 
-  .main-menu__msgr ul {
-    margin-right: 10px;
-  }
-
-  .main-menu__msgr ul li a {
-    width: 30px;
-    min-width: 30px;
-    height: 30px;
+  .page-indevelop__title {
+    font-size: 24px;
   }
 
   .moderator-aside__form.open {

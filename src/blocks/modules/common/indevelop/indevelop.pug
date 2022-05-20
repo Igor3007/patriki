@@ -1,0 +1,9 @@
+mixin page-in-develop
+    .container
+        .page-indevelop
+            .page-indevelop__image: +bgimage('/img/common/icons-gears.svg')
+            .page-indevelop__title Раздел в разработке
+            .page-indevelop__desc но скоро все будет готово
+            .page-indevelop__button
+                button.btn.btn-large(onClick="history.back()") вернуться назад
+        
