@@ -54,11 +54,15 @@
 
 .af-popup__container {
     width: auto;
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
     padding: 50px 0;
     position: relative;
     animation: 0.2s ease both zoomInUp;
+
+    @media screen and (min-width: $w480) {
+        max-width: 90%;
+    }
 
 }
 

@@ -14,7 +14,16 @@
       <div class="send-message-popup__textarea">
         <textarea placeholder="Ваше сообщение"></textarea>
       </div>
+      <div class="send-message-popup__filelist" data-attach="filelist">
+        <ul></ul>
+      </div>
       <div class="send-message-popup__submit">
+        <label class="attach-label">
+          <input type="file" name="attach-on-message" data-attach="attach-on-message"/><span>
+            <svg width="25" height="25">
+              <use xlink:href="/img/sprites/sprite.svg#ic_attach"></use>
+            </svg></span>
+        </label>
         <button class="btn" type="submit" data-msg="Ваше сообщение отправлено!">Отправить </button>
       </div>
     </form>

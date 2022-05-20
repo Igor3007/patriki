@@ -1313,6 +1313,49 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         //append content
                         messagePopup.changeContent(response)
 
+                        //init attach file
+                        document.querySelectorAll('[data-attach="attach-on-message"]').forEach(function (item) {
+                            item.addEventListener('change', function () {
+
+                                console.log(this.files.item(0))
+
+                                let fileData = this.files.item(0)
+                                let mimeType = ['image/jpeg', 'image/jpg', 'image/png', 'video/mp4', 'application/pdf', 'text/plain', 'application/msword']
+                                let fileContainer = document.querySelector('[data-attach="filelist"] ul')
+
+                                if (mimeType.indexOf(fileData.type) !== -1) {
+
+                                    let form = item.closest('form');
+
+                                    let spanRemove = document.createElement('span')
+                                    let listItem = document.createElement('li')
+                                    let list = document.createElement('ul')
+
+                                    spanRemove.addEventListener('click', function () {
+                                        this.parentNode.remove()
+                                        item.value = ""
+                                    })
+
+                                    listItem.innerHTML = fileData.name;
+                                    listItem.append(spanRemove)
+                                    list.append(listItem)
+                                    fileContainer.replaceWith(list)
+
+
+                                } else {
+                                    window.STATUS.err('Только JPG, PNG, PDF, DOC, TXT')
+                                    item.value = ""
+                                }
+
+
+
+
+
+
+
+
+                            })
+                        })
 
                         //init submit form
                         let form = document.querySelector('.af-popup form')

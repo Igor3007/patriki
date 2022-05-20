@@ -12,5 +12,9 @@ mixin send-message-popup
                         
                 .send-message-popup__textarea
                     textarea(placeholder="Ваше сообщение")
+                .send-message-popup__filelist(data-attach="filelist"): ul
                 .send-message-popup__submit
+                    label.attach-label
+                        input(type="file" name="attach-on-message" data-attach="attach-on-message")
+                        span: +icons('#ic_attach', 25)
                     button.btn(type="submit" data-msg="Ваше сообщение отправлено!") Отправить 

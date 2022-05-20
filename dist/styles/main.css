@@ -3032,7 +3032,7 @@ input {
 
 .af-popup__container {
   width: auto;
-  max-width: 90%;
+  max-width: 100%;
   margin: auto;
   padding: 50px 0;
   position: relative;
@@ -6051,7 +6051,7 @@ div[data-lang]:not(.active) {
 }
 
 .send-message-popup {
-  padding: 25px;
+  padding: 20px;
 }
 
 .send-message-popup__title {
@@ -6125,8 +6125,90 @@ div[data-lang]:not(.active) {
   outline: none !important;
 }
 
+.send-message-popup__submit {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .send-message-popup__submit .btn {
+  min-width: 200px;
+}
+
+.send-message-popup__submit label {
+  margin-right: 10px;
+}
+
+.send-message-popup__submit label span {
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.send-message-popup__submit label span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: transparent;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.send-message-popup__submit label span svg {
+  position: relative;
+  z-index: 2;
+}
+
+.send-message-popup__submit label span:hover::before {
+  background-color: #E7E6F5;
   width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 0;
+}
+
+.send-message-popup__filelist ul li {
+  padding-bottom: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: #525166;
+}
+
+.send-message-popup__filelist ul li span {
+  width: 18px;
+  height: 18px;
+  background-color: #eee;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEzIDFMMSAxM00xIDFsMTIgMTIiIHN0cm9rZT0iIzkyOTE5RiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
+  background-size: 8px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.send-message-popup__filelist ul li span:hover {
+  background-color: #E7E6F5;
 }
 
 .user-aside {
@@ -6706,6 +6788,10 @@ div[data-lang]:not(.active) {
     max-width: 360px;
   }
 
+  .af-popup__container {
+    max-width: 90%;
+  }
+
   .header__nav-container.open .select-styled {
     background-color: #d5d6da;
     height: 37px;
@@ -6735,6 +6821,10 @@ div[data-lang]:not(.active) {
 
   .invite-member__back {
     display: none;
+  }
+
+  .send-message-popup {
+    padding: 25px;
   }
 
   .user-aside.open {
