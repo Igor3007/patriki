@@ -29,7 +29,15 @@ mixin moderator-directors-card(popup)
                     .form__group(data-add-container="awards")
                         .form__item
                             .form__subitem
-                                input(type="text" placeholder="Название награды или премии")
+                                input(type="text" placeholder="Название награды или премии" value="Награда 1")
+                                span.remove-repeater
+                        .form__item
+                            .form__subitem
+                                input(type="text" placeholder="Название награды или премии" value="Награда 2")
+                                span.remove-repeater
+                        .form__item
+                            .form__subitem
+                                input(type="text" placeholder="Название награды или премии" value="Награда 3")
                                 span.remove-repeater
                     span.add-field(data-add="awards") + Добавить награду
 

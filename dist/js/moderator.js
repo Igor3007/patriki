@@ -1242,6 +1242,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             if (input.value) input.setAttribute('area-valid', true)
                         })
 
+                        //add event remove-repeater
+                        directorPopup.modal.querySelectorAll('.remove-repeater').forEach(function (item, index) {
+                            if (!index) return false;
+                            item.addEventListener('click', function (event) {
+                                if (confirm('Удалить?')) {
+                                    event.target.closest('.form__item').remove()
+                                }
+                            })
+                        })
+
 
                         //init submit form
 
