@@ -1396,6 +1396,79 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
 
+    /* =========================================
+    новый чат
+    ========================================= */
+
+    if (document.querySelector('[data-modal="add-chat"]')) {
+
+        function findUser(container, string) {
+            container.querySelectorAll('[data-find-user="item"]').forEach(function (item) {
+                let name = item.querySelector('.item-user__name').innerText
+                let email = item.querySelector('.item-user__email').innerText
+
+                if (email.toLowerCase().indexOf(string.toLowerCase()) == -1 && name.toLowerCase().indexOf(string.toLowerCase()) == -1) {
+                    item.style.display = 'none';
+                } else {
+                    item.style.display = 'flex';
+                }
+
+
+            })
+        }
+
+        document.querySelectorAll('[data-modal="add-chat"]').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+
+                // if not data-src
+                if (!event.target.dataset.src) return false;
+
+                let addChatPopup = new customModal({
+                    mobileInBottom: true
+                })
+                let url = event.target.dataset.src
+
+
+                addChatPopup.open('<div>Loading...</div>', function (instanse) {
+
+                    window.ajax({
+                        type: 'GET',
+                        url: url,
+                    }, function (status, response) {
+
+                        //append content
+                        addChatPopup.changeContent(response)
+
+                        //init findUser
+                        let container = addChatPopup.modal.querySelector('[data-find-user="list"]')
+                        let input = addChatPopup.modal.querySelector('[data-find-user="input"]')
+
+                        //add event input
+                        input.addEventListener('keyup', function (event) {
+                            findUser(container, event.target.value)
+                        })
+
+                        //add event elem
+                        container.querySelectorAll('[data-find-user="item"]').forEach(function (item) {
+                            item.addEventListener('click', function (event) {
+
+
+                                //close
+                                addChatPopup.close()
+
+                            })
+                        })
+
+
+                    })
+
+                })
+
+            })
+        })
+    }
+
+
 
 
 

@@ -1,7 +1,7 @@
 mixin messenger()
   .messenger
     .messenger__contacts(data-pane="contacts")
-      .messenger__new: button.btn.btn-small Новое сообщение
+      .messenger__new: button.btn.btn-small(data-modal="add-chat" data-src="/_new-chat.html") Новое сообщение
       .messenger__list
         each item in moderator.msgrUser
           +messenger-contact(item)

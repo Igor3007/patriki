@@ -1,0 +1,21 @@
+include ../../../../data/data.pug
+
+mixin modal-add-chat
+    .modal-add-chat
+        .modal-add-chat__title Новая беседа
+        .modal-add-chat__find 
+            input(type="text" placeholder="Введите Имя или Email" data-find-user="input")
+        .modal-add-chat__list(data-find-user="list")
+            each item in moderator.msgrUser
+                +item-user(item)
+            
+        .modal-add-chat__add
+            button.btn Начать беседу
+
+mixin item-user(data)
+    .item-user(data-find-user="item")
+        .item-user__image
+            +bgimage(data.logo)
+        .item-user__details
+            .item-user__name= data.name
+            .item-user__email= data.email

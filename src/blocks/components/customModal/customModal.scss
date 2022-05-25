@@ -21,6 +21,31 @@
     background: rgba(0, 0, 0, 0.75);
     overflow-x: auto;
     z-index: 100;
+
+
+}
+
+.af-popup--mobile {
+    & .af-popup {
+        &__container {
+            @media screen and (max-width: 480px) {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                width: 100%;
+            }
+        }
+
+        // &__close {
+        //     top: 10px;
+        //     right: 5px;
+        //     bottom: 100%;
+
+        //     & svg {
+        //         fill: $main;
+        //         stroke: $main;
+        //     }
+        // }
+    }
 }
 
 .af-popup__bg {

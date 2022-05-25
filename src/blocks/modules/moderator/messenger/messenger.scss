@@ -274,7 +274,7 @@
          line-height: 150%;
          color: #525166;
          margin-bottom: 0.2em;
-         @include line-clamp(2);
+         @include line-clamp(1);
      }
 
      &__date {

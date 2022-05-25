@@ -1,0 +1,105 @@
+.modal-add-chat {
+    padding: 10px;
+    width: 480px;
+    width: 100%;
+
+    @media screen and (min-width: $w480) {
+        width: 70vw;
+        padding: 25px;
+    }
+
+    @media screen and (min-width: $w760) {
+        width: 480px;
+    }
+
+
+    &__title {
+        @include section-title;
+        padding-bottom: 20px;
+    }
+
+    &__find {
+        & input {
+            height: 52px;
+            font-size: 14px;
+            padding-left: rem(15);
+            padding-right: rem(15);
+            border: 1px solid #BCBCBC;
+            box-sizing: border-box;
+            border-radius: 5px;
+            width: auto;
+            flex-grow: 1;
+            width: 100%;
+            padding-right: 3em;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNTI1MTY2IiB3aWR0aD0iMTciIGhlaWdodD0iMTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2LjgwNSAxNS44NjZMMTIuMDEgMTEuMDdjMi4xODUtMi42NTkgMi4wMzctNi42MDYtLjQ0Ni05LjA4OWE2Ljc4MyA2Ljc4MyAwIDAwLTkuNTgyIDAgNi43ODMgNi43ODMgMCAwMDAgOS41ODJjMi40ODMgMi40ODIgNi40MjkgMi42MzIgOS4wODkuNDQ2bDQuNzk2IDQuNzk2YS42NjQuNjY0IDAgMDAuOTQtLjkzOXptLTYuMTgyLTUuMjQzYTUuNDUzIDUuNDUzIDAgMDEtNy43MDIgMCA1LjQ1MyA1LjQ1MyAwIDAxMC03LjcwMyA1LjQ1MyA1LjQ1MyAwIDAxNy43MDIgMCA1LjQ1MyA1LjQ1MyAwIDAxMCA3LjcwM3oiLz48L3N2Zz4=);
+            background-size: 18px auto;
+            background-repeat: no-repeat;
+            background-position: calc(100% - 15px) center;
+
+            &::placeholder {
+                color: $main;
+            }
+        }
+
+        padding-bottom: 20px;
+    }
+
+    &__list {
+        height: calc(55vh - 100px);
+        overflow: auto;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $w480) {
+            height: calc(45vh - 100px);
+        }
+    }
+
+    &__add {
+        & .btn {
+            width: 100%;
+        }
+    }
+}
+
+.item-user {
+
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $main-gray;
+
+    }
+
+    &__image {
+        & .bgimage {
+            width: 48px;
+            height: 48px;
+            @include bgimage-cover;
+            border-radius: 50%;
+            background-color: $main-gray;
+        }
+    }
+
+    &__details {
+        padding-left: 1em;
+    }
+
+    &__name {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: bold;
+        color: $main;
+    }
+
+    &__email {
+        font-size: 13px;
+        color: $main2;
+    }
+
+
+}

@@ -2,6 +2,9 @@ class customModal {
     constructor(opion) {
 
         this.modal = '';
+        if (opion) {
+            this.mobileBottom = (opion.mobileInBottom ? opion.mobileInBottom : false)
+        }
     }
 
     init() {
@@ -34,6 +37,11 @@ class customModal {
 
         let _this = this;
         this.modal = this.createTemplate();
+
+        if (window.innerWidth <= 480 && this.mobileBottom) {
+            this.modal.querySelector(".af-popup").classList.add("af-popup--mobile")
+        }
+
         this.modal.querySelector('.af-popup__content').innerHTML = content
         this.modal.querySelector('.af-popup__close').addEventListener('click', function () {
             _this.close()
