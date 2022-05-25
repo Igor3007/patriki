@@ -422,6 +422,10 @@ header {
                     font-weight: 600;
                     width: auto;
                     position: relative;
+
+                    & .hide-tooltip {
+                        display: none;
+                    }
                 }
             }
         }

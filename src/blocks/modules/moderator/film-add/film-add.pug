@@ -134,6 +134,13 @@ mixin film-add()
                 option(value="") Армения
                 option(value="") Китай
                 option(value="") Турция
+            .form__subitem
+              select(placeholder="Субтитры" multiple name="subtitles[]")
+                option(value="") Русский
+                option(value="" selected ) Немецкий
+                option(value="" selected ) Английский
+                option(value="") Португальский
+                option(value="") Польский
           .form__item
             .form__item 
               .form__subitem: +select('Год производства', ['2020','2021'])

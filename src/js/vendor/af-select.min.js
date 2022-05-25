@@ -60,6 +60,7 @@ class customSelect {
         var _this = this;
         var select = item.querySelector('select')
         var placeholder = select.getAttribute('placeholder')
+        var multiple = select.getAttribute('multiple')
 
         const styledSelect = document.createElement('div')
         styledSelect.classList.add('select-styled');
@@ -89,6 +90,12 @@ class customSelect {
                 li.innerHTML = item.innerText
                 li.setAttribute('rel', item.value)
 
+                if (multiple) {
+                    let check = document.createElement('span')
+                    check.classList.add('af-check-multiple')
+                    li.append(check)
+                }
+
                 //если не задан placeholder, сделать им первый элемент
                 if (index == 0 && !placeholder) {
                     styledSelect.innerHTML = '<span>' + item.innerText + '</span>';
@@ -96,18 +103,35 @@ class customSelect {
 
                 //если есть selected элемент
                 if (item.getAttribute('selected')) {
+
+                    function selectedText(option) {
+                        if (multiple) {
+
+                            let selected_arr = [];
+
+                            option.parentNode.querySelectorAll('option[selected]').forEach(function (item) {
+                                selected_arr.push(item.innerText)
+                            })
+
+                            return (selected_arr.length ? selected_arr.join(',') : placeholder);
+                        } else {
+                            return option.innerText
+                        }
+                    }
+
                     if (!placeholder) {
-                        styledSelect.innerHTML = '<span>' + item.innerText + '</span>';
+
+                        styledSelect.innerHTML = '<span>' + selectedText(item) + '</span>';
                         li.classList.add('active')
                     } else {
-                        styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + item.innerText + '</span>';
+                        styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + selectedText(item) + '</span>';
                         li.classList.add('active')
                     }
                 }
 
                 if (!item.getAttribute('disabled')) {
                     styledOptions.appendChild(li)
-                    _this.clickEventListItem(li, item)
+                    _this.clickEventListItem(li, item, index)
                 }
 
             })
@@ -182,6 +206,11 @@ class customSelect {
                 item.classList.add('select-hidden');
                 const wrapper = document.createElement('div');
                 wrapper.classList.add('af-select');
+
+                if (item.getAttribute('multiple')) {
+                    wrapper.classList.add('af-select--multiple');
+                }
+
                 wrapper.innerHTML = item.outerHTML;
                 item.parentNode.replaceChild(wrapper, item);
 
@@ -234,37 +263,72 @@ class customSelect {
         })
     }
 
-    clickEventListItem(elem, _select) {
+    clickEventListItem(elem, option, index) {
 
-        const parentElem = _select.parentNode.parentNode
+        const parentElem = option.parentNode.parentNode
         const _this = this;
         const placeholder = parentElem.querySelector('select').getAttribute('placeholder')
+        const multiple = parentElem.querySelector('select').getAttribute('multiple')
         const styledSelect = parentElem.querySelector('.select-styled')
+
+
+
 
         elem.addEventListener('click', function (event) {
 
             event.stopPropagation()
             event.preventDefault()
+            //console.log(options)
 
-            if (parentElem.querySelector('.select-options li.active'))
-                parentElem.querySelector('.select-options li.active').classList.remove('active')
+            if (parentElem.querySelector('.select-options li.active')) {
 
-            this.classList.add('active')
+                // если мульти то не сбрасывать active
+                if (!multiple) {
+                    parentElem.querySelector('.select-options li.active').classList.remove('active')
+                }
+            }
 
-            if (placeholder) {
-                styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + this.innerHTML + '</span>';
+            if (this.classList.contains('active')) {
+                this.classList.remove('active')
+                option.removeAttribute('selected')
             } else {
-                parentElem.querySelector('.select-styled span').innerHTML = this.innerHTML
+                this.classList.add('active')
+                option.setAttribute('selected', 'selected')
+            }
+
+            function selectedText(option) {
+                if (multiple) {
+
+                    let selected_arr = [];
+
+                    option.parentNode.querySelectorAll('option[selected]').forEach(function (item) {
+                        selected_arr.push(item.innerText)
+                    })
+
+                    return (selected_arr.length ? selected_arr.join(',') : placeholder);
+                } else {
+                    return option.innerText
+                }
+            }
+
+            //если есть placeholder
+            if (placeholder) {
+                styledSelect.innerHTML = '<span class="af-selected-placeholder" data-af-placeholder="' + placeholder + '">' + selectedText(option) + '</span>';
+            } else {
+                parentElem.querySelector('.select-styled span').innerHTML = selectedText(option)
             }
 
             parentElem.querySelector('select').value = this.getAttribute('rel')
+            var dispatchEvent = new Event('change');
+            parentElem.querySelector('select').dispatchEvent(dispatchEvent);
 
-            var event = new Event('change');
-            parentElem.querySelector('select').dispatchEvent(event);
+            if (!event.target.classList.contains('af-check-multiple')) {
+                _this.closeSelect()
+            }
 
 
 
-            _this.closeSelect()
+
         })
     }
 
