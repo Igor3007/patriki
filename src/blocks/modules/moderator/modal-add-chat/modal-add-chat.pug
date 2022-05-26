@@ -10,7 +10,7 @@ mixin modal-add-chat
                 +item-user(item)
             
         .modal-add-chat__add
-            button.btn Начать беседу
+            button.btn(data-find-user="begin") Начать беседу
 
 mixin item-user(data)
     .item-user(data-find-user="item")

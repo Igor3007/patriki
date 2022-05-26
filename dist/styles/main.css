@@ -6335,6 +6335,10 @@ div[data-lang]:not(.active) {
   cursor: pointer;
 }
 
+.item-user.active {
+  background-color: #E7E6F5;
+}
+
 .item-user:hover {
   background-color: #E7E6F5;
 }

@@ -1452,11 +1452,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         container.querySelectorAll('[data-find-user="item"]').forEach(function (item) {
                             item.addEventListener('click', function (event) {
 
+                                if (addChatPopup.modal.querySelector('[data-find-user="item"].active')) {
+                                    addChatPopup.modal.querySelector('[data-find-user="item"].active').classList.remove('active')
+                                }
 
-                                //close
-                                addChatPopup.close()
+                                item.classList.toggle('active')
 
                             })
+                        })
+
+                        //add event click
+                        addChatPopup.modal.querySelector('[data-find-user="begin"]').addEventListener('click', function () {
+                            //close
+                            addChatPopup.close()
                         })
 
 
