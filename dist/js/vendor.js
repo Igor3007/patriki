@@ -315,7 +315,10 @@ class customSelect {
                 parentElem.querySelector('.select-styled span').innerHTML = selectedText(option)
             }
 
-            parentElem.querySelector('select').value = this.getAttribute('rel')
+            if (!multiple) {
+                parentElem.querySelector('select').value = this.getAttribute('rel')
+            }
+
             var dispatchEvent = new Event('change');
             parentElem.querySelector('select').dispatchEvent(dispatchEvent);
 
