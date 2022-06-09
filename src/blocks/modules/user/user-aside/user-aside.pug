@@ -24,9 +24,12 @@
             +radio('Английский', 'lang', 'val')
           .invite-member__fields
             .form
+              .form__item: .form__subitem
+                +input-material('link', 'Ссылка на приглашение', 'https://pff.ru/invite/id/122')
+                span(class="copy-to-clipboard" data-copy="https://pff.ru/invite/id/122")
               .form__item: .form__subitem: +input-material('email', 'Email')
               .form__item: .form__subitem: +input-material('text', 'Тема')
               .form__item: .form__subitem: textarea(placeholder="Текст приглашения")
               .form__item
-                .form__subitem: button.btn.btn-large Отправить 
+                .form__subitem: button.btn.btn-large Отправить  
       

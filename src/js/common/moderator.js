@@ -666,6 +666,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         submitInviteForm(instanse)
                     })
 
+                    instanse.querySelectorAll('[data-copy]').forEach(function (item) {
+                        item.addEventListener('click', function (event) {
+                            navigator.clipboard.writeText(event.target.dataset.copy)
+                                .then(() => {
+                                    window.STATUS.msg('Ссылка скопирована в буфер обмена')
+                                })
+                                .catch(err => {
+                                    console.log('Error', err);
+                                });
+                        })
+                    })
+
 
                 })
             })

@@ -242,3 +242,16 @@
         }
     }
 }
+
+.copy-to-clipboard {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #bcbcbc;
+    margin-left: 5px;
+    border-radius: 6px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIgZmlsbD0iIzUyNTE2NiI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xNiAxSDRjLTEuMSAwLTIgLjktMiAydjE0aDJWM2gxMlYxem0zIDRIOGMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxMWMxLjEgMCAyLS45IDItMlY3YzAtMS4xLS45LTItMi0yem0wIDE2SDhWN2gxMXYxNHoiLz48L3N2Zz4=);
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}

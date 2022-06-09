@@ -306,15 +306,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     /* =========================================
-    закрывать селекты 
+    копировать в буфер
     ========================================= */
 
-    // document.addEventListener('click', function () {
-    //     document.querySelectorAll('select').forEach(function (select) {
-    //         if (select.afSelect) select.afSelect.close()
-    //     })
-    // })
-
+    document.querySelectorAll('[data-copy]').forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            navigator.clipboard.writeText(event.target.dataset.copy)
+                .then(() => {
+                    window.STATUS.msg('Ссылка скопирована в буфер обмена')
+                })
+                .catch(err => {
+                    console.log('Error', err);
+                });
+        })
+    })
 
 
 
