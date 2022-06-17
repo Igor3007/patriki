@@ -1539,6 +1539,39 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     })
 
+    /* ==============================================
+    export datepicker
+    ============================================== */
+
+    // document.querySelectorAll('.export-order__drop input').forEach(function (input) {
+    //     input.addEventListener('focus', function (event) {
+    //         window.initDatepicker(input, {
+    //             autoShow: true
+    //         })
+    //     })
+    // })
+
+    const elem = document.querySelector('.export-order__drop');
+    const input = elem.querySelector('input')
+    const rangepicker = new DateRangePicker(elem, {
+        language: (input.dataset.datepickerLang ? input.dataset.datepickerLang : 'ru')
+    });
+
+    document.querySelector('.export-order__btn').addEventListener('click', function () {
+        this.classList.toggle('open')
+        document.querySelector('.export-order__drop').classList.toggle('open')
+    })
+
+    document.addEventListener('click', function (event) {
+        if (!event.target.closest('.export-order')) {
+
+            if (!document.querySelector('.datepicker.active')) {
+                document.querySelector('.export-order__btn').classList.remove('open')
+                document.querySelector('.export-order__drop').classList.remove('open')
+            }
+        }
+    })
+
 
 
 

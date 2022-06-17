@@ -257,6 +257,7 @@ input[type="date"] {
         text-decoration: underline;
     }
 
+    & div:not([class]),
     & p {
         margin: 20px 0;
         color: #666;

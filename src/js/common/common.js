@@ -276,8 +276,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     }
 
-    if (document.querySelector('.input-datepicker')) {
-
+    if (document.querySelector('[data-datepicker-lang]')) {
         (function () {
             Datepicker.locales.ru = {
                 days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
@@ -292,7 +291,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 monthsTitle: 'Месяцы'
             }
         })();
+    }
 
+    if (document.querySelector('.input-datepicker')) {
 
         document.querySelectorAll('.input-datepicker').forEach(function (input) {
             input.addEventListener('focus', function (event) {

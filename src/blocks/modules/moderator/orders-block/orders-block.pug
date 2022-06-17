@@ -6,6 +6,19 @@ mixin orders-block()
                 li: a.active(href='#') Одобренные
                 li: a(href='#') Отклоненные
 
+            .export-order
+                .export-order__btn
+                    button.btn.btn-line Экспорт
+                .export-order__drop
+                    form(action="/" )
+                        .export-order__from
+                            input(type="text" placeholder="от" data-export="datepicker" data-datepicker-lang="ru")
+                        span —
+                        .export-order__before
+                            input(type="text" placeholder="до" data-export="datepicker" data-datepicker-lang="ru")
+                        .export-order__dl
+                            button.ic_dl(title="Скачать" type="submit")
+
         .orders-block__list
             .table-card
                 .table-card__tr

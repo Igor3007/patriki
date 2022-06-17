@@ -253,6 +253,24 @@
                       <li><a class="active" href="#">Одобренные</a></li>
                       <li><a href="#">Отклоненные</a></li>
                     </ul>
+                    <div class="export-order">
+                      <div class="export-order__btn">
+                        <button class="btn btn-line">Экспорт</button>
+                      </div>
+                      <div class="export-order__drop">
+                        <form action="/">
+                          <div class="export-order__from">
+                            <input type="text" placeholder="от" data-export="datepicker" data-datepicker-lang="ru"/>
+                          </div><span>—</span>
+                          <div class="export-order__before">
+                            <input type="text" placeholder="до" data-export="datepicker" data-datepicker-lang="ru"/>
+                          </div>
+                          <div class="export-order__dl">
+                            <button class="ic_dl" title="Скачать" type="submit"></button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
                   </div>
                   <div class="orders-block__list">
                     <div class="table-card">
