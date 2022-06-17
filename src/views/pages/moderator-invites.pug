@@ -1,0 +1,119 @@
+extends ../layouts/moderator
+include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
+include ../../blocks/modules/moderator/orders-block/orders-block.pug
+ 
+
+
+
+block variables
+  include ../../data/data.pug
+  -
+    title = 'Приглашения'
+
+
+block content
+  +head-moderator({
+    nav: [
+      'Главная',
+      'Личный кабинет',
+      'Приглашения',
+    ],
+
+    title: 'Приглашения',
+    button: false
+  })
+
+  .main-moderator
+    .orders-block.orders-block--invites
+      .orders-block__sort
+        form(action='https://patrikfilm.fvds.ru/personal/invites/export' method='POST')
+          input(type='hidden' name='_token' value='LAMf8FVLHgjwA1aPUNvH6CEefdgiOGDsA8IztS8R')
+          .form__item
+            .form__subitem
+              .input-material.input-material--date
+                input.input-datepicker.datepicker-input(autocomplete='off' name='filter[from]' value='' type='text' data-datepicker-lang='ru')
+                
+                label от
+            .form__subitem
+              .input-material.input-material--date
+                input.input-datepicker(autocomplete='off' name='filter[to]' value='' type='text' data-datepicker-lang='ru')
+                label до
+            .form__subitem
+              button.btn(type='submit') Экспорт
+      .orders-block__list
+        .table-card
+          .table-card__tr
+            .table-card__th E-mail
+            .table-card__th Дата отправки
+            .table-card__th Дата регистрации
+            .table-card__th Ссылка
+            .table-card__th Тема
+            .table-card__th Текст
+          .table-card__tr.state--success
+            .table-card__td(data-title='E-mail')
+              span.ob-name ds@gmail.com
+              span.ob-number 5
+            .table-card__td(data-title='Дата отправки')
+              | 2022-06-14 12:02:37
+            .table-card__td(data-title='Дата регистрации')
+              | 2022-06-13 13:40:35
+            .table-card__td(data-title='Ссылка')
+              .minify-link
+                span.minify-link-text(title="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R") https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R
+                span.minify-link-url.copy-to-clipboard(data-copy="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R")
+            .table-card__td(data-title='Тема')
+              .minify-link
+                span.minify-link-text(title="Оператор ставит своей важнейшей целью") Оператор ставит своей важнейшей целью
+                span.minify-link-url.copy-to-clipboard(data-copy="Оператор ставит своей важнейшей целью") 
+            .table-card__td(data-title='Текст')
+              .minify-link
+                span.minify-link-text(title="Пользователю или иному субъекту персональных данных;") Пользователю или иному субъекту персональных данных;
+                span.minify-link-url.copy-to-clipboard(data-copy="Пользователю или иному субъекту персональных данных;") 
+               
+          .table-card__tr.state--success
+            .table-card__td(data-title='E-mail')
+              span.ob-name
+                | danilkin.sergey@gmail.com
+              span.ob-number 4
+            .table-card__td(data-title='Дата отправки')
+              | 2022-06-13 13:40:35
+            .table-card__td(data-title='Дата регистрации')
+              | 2022-06-13 13:40:35
+            .table-card__td(data-title='Ссылка')
+              .minify-link
+                span.minify-link-text(title="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R") https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R
+                span.minify-link-url.copy-to-clipboard(data-copy="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R")
+            .table-card__td(data-title='Тема')
+              | tttt
+            .table-card__td(data-title='Текст')
+              | 66666
+          .table-card__tr.state--success
+            .table-card__td(data-title='E-mail')
+              span.ob-name danilkiny@gmail.com
+              span.ob-number 3
+            .table-card__td(data-title='Дата отправки')
+              | 2022-06-13 13:40:04
+            .table-card__td(data-title='Дата регистрации')
+              | 2022-06-13 13:40:35
+            .table-card__td(data-title='Ссылка')
+              .minify-link
+                span.minify-link-text(title="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R") https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R
+                span.minify-link-url.copy-to-clipboard(data-copy="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R")
+            .table-card__td(data-title='Тема') -
+            .table-card__td(data-title='Текст') -
+          .table-card__tr.state--success
+            .table-card__td(data-title='E-mail')
+              span.ob-name sergey@gmail.com
+              span.ob-number 1
+            .table-card__td(data-title='Дата отправки')
+              | 2022-06-13 13:25:48
+            .table-card__td(data-title='Дата регистрации')
+              | 2022-06-13 13:30:56
+            .table-card__td(data-title='Ссылка')
+              .minify-link
+                span.minify-link-text(title="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R") https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R
+                span.minify-link-url.copy-to-clipboard(data-copy="https://patrikfilm.fvds.ru/en/register?hash=4w5wMgNwgYHTXv4ArMFy03EX16fJql0R")
+            .table-card__td(data-title='Тема') -
+            .table-card__td(data-title='Текст') -
+
+

@@ -1488,6 +1488,57 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     }
 
+    /* =========================================
+    attach file for msg
+    ========================================= */
+
+    //init attach photo
+    document.querySelectorAll('[data-attach=msg]').forEach(function (item) {
+        item.addEventListener('change', function () {
+
+
+            let fileData = this.files.item(0)
+            let mimeType = ['image/jpeg', 'image/jpg', 'image/png', 'video/mp4', 'application/pdf', 'text/plain', 'application/msword']
+
+            if (mimeType.indexOf(fileData.type) !== -1) {
+
+                let container = document.querySelector('.messenger__filelist')
+                let template = `
+                    <div class="filelist-item"> 
+                        <span class="filelist-name">Файл ${fileData.name} </span>
+                        <span class="filelist-remove">+</span>
+                    </div>
+                    `;
+
+                container.innerHTML = template
+
+                container.querySelectorAll('.filelist-remove').forEach(function (item) {
+                    item.addEventListener('click', function (event) {
+                        this.closest('.filelist-item').remove()
+                        item.value = ""
+                    })
+                })
+
+
+            } else {
+                window.STATUS.err('Только JPG, PNG, PDF, DOC, TXT')
+                item.value = ""
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        })
+    })
+
 
 
 

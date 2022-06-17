@@ -13,8 +13,14 @@ mixin messenger()
         .messenger__scroll.scroll-min
           .messanger-text-preview Выберите чат
       .messenger__send
+
+        .messenger__filelist
         .messenger__form
           .messenger__field: textarea(placeholder="Сообщение")
+          .messenger__attach
+            label
+              input(type="file" data-attach="msg")
+              +icons('#ic_attach', 20)
           .messenger__button
             +icons('#ic_send', 24)
 

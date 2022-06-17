@@ -163,6 +163,7 @@
                       <li><a href="moderator-rating.html">Рейтинги</a></li>
                       <li><a href="moderator-review.html">Рецензии</a></li>
                       <li><a href="moderator-profile.html">Профиль</a></li>
+                      <li><a href="moderator-invites.html">Приглашения</a></li>
                       <li><a href="moderator-logout.html">Выйти</a></li>
                     </ul>
                   </div>
@@ -333,9 +334,18 @@
                       </div>
                     </div>
                     <div class="messenger__send">
+                      <div class="messenger__filelist"></div>
                       <div class="messenger__form">
                         <div class="messenger__field">
                           <textarea placeholder="Сообщение"></textarea>
+                        </div>
+                        <div class="messenger__attach">
+                          <label>
+                            <input type="file" data-attach="msg"/>
+                            <svg width="20" height="20">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_attach"></use>
+                            </svg>
+                          </label>
                         </div>
                         <div class="messenger__button">
                           <svg width="24" height="24">

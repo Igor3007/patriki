@@ -83,6 +83,85 @@
     opacity: 1;
 }
 
+.page-text {
+    padding-top: 60px;
+
+    &__h1 {
+
+        padding-bottom: 40px;
+
+        & h1 {
+            @include section-title;
+            text-align: left;
+        }
+    }
+
+    &__acticle {
+        padding-bottom: 60px;
+    }
+}
+
+
+.minify-link {
+    display: flex;
+    margin: 0 auto;
+
+    @media screen and (min-width: $w760) {
+        width: 140px;
+    }
+}
+
+.minify-link-url.minify-link-url {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 3px;
+    min-width: 18px;
+    border: none;
+    background-size: 14px auto;
+}
+
+.minify-link-url.minify-link-url:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+
+
+.minify-link-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+    @media screen and (min-width: $w760) {
+        max-width: 235px;
+    }
+}
+
+.orders-block.orders-block--invites .table-card__td:nth-last-child(1) {
+    @media screen and (min-width: $w1200) {
+        padding-right: 20px;
+    }
+}
+
+.orders-block.orders-block--invites .table-card__td:nth-last-child(1),
+.orders-block.orders-block--invites .table-card__td:nth-last-child(2) {
+    width: 100%;
+
+    &::before {
+        display: block;
+
+        @media screen and (min-width: $w760) {
+            display: none;
+        }
+    }
+}
+
+.orders-block.orders-block--invites .table-card__td:first-child {
+    width: auto;
+}
+
 @media screen and (max-width: 480px) {
     #status {
         left: 0;
