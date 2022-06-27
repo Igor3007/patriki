@@ -122,3 +122,71 @@ mixin profile-block-user
                         .form__item
                             .form__subitem
                                 button.btn(type="submit") Сохранить изменения
+mixin profile-block-jury 
+    .profile-block
+        .profile-block__form
+            form(method="get")
+                .profile-block__photo
+                    .box-photo
+                        .box-photo__image
+                            span(class="bgimage lazyload" data-attach="preview" data-bg="/img/common/user3.jpg")
+                        .box-photo__add
+                            label(class="attach-text")
+                                input(type="file" data-attach="photo" name="photo")
+                                span Изменить фото
+
+                .profile-block__fields
+                    .form
+                        //- +select-edit('Год рождения', ['1990','1991'])
+                        .form__item
+                            .form__subitem: +input-material('text', 'Имя', 'Анастасия')   
+                            .form__subitem: +input-material('text', 'Фамилия', 'Петрова')  
+                        .form__item
+                            .form__subitem
+                                select(name="country" required placeholder="Страна")
+                                    option(value="ru" ) Россия
+                                    option(value="by") Беларусь
+                                    option(value="ua") Украина
+                                    option(value="ua") Азербайджан
+                                    option(value="ua" selected) Армения
+                                    option(value="ua") Белоруссия
+                                    option(value="ua") Грузия
+                                    option(value="ua") Казахстан
+                                    option(value="ua") Киргизия
+                                    option(value="ua") Латвия
+                                    option(value="ua") Литва
+                            .form__subitem
+                                .form__item
+                                    .form__subitem
+                                        select(name="year" required placeholder="Год рождения")
+                                            option(value="1990" selected) 1990
+                                            option(value="1991") 1991
+                                            option(value="1992") 1992
+                                    .form__subitem
+                                        select(name="sex" required placeholder="Мужской")
+                                            option(value="1" ) Мужской
+                                            option(value="2" selected) Женский
+                        .form__item
+                            .form__subitem: +input-material('email', 'Email', 'ivan@gmail.com')
+                            .form__subitem 
+                                .bind-account
+                                    .bind-account__text Привязать соцсеть
+                                    .bind-account__list
+                                        ul
+                                            li: a(href='#'): +icons('#ic_vk')
+                                
+
+                        .form__label Пароль
+
+                        .form__item
+                            .form__subitem: input(type="password" required placeholder="Пароль" name="password" )
+                            .form__subitem: input(type="password" required placeholder="Повторите пароль" name="password-repeat")
+
+                        .form__label Дополнительная информация
+
+                        .form__item
+                            .form__subitem: textarea(placeholder="Введите..." )
+                             
+                        .form__item
+                            .form__subitem
+                                button.btn(type="submit") Сохранить изменения

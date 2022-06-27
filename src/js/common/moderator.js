@@ -1551,26 +1551,48 @@ document.addEventListener('DOMContentLoaded', function (event) {
     //     })
     // })
 
-    const elem = document.querySelector('.export-order__drop');
-    const input = elem.querySelector('input')
-    const rangepicker = new DateRangePicker(elem, {
-        language: (input.dataset.datepickerLang ? input.dataset.datepickerLang : 'ru')
-    });
+    if (document.querySelector('.export-order__drop')) {
 
-    document.querySelector('.export-order__btn').addEventListener('click', function () {
-        this.classList.toggle('open')
-        document.querySelector('.export-order__drop').classList.toggle('open')
-    })
+        const elem = document.querySelector('.export-order__drop');
+        const input = elem.querySelector('input')
+        const rangepicker = new DateRangePicker(elem, {
+            language: (input.dataset.datepickerLang ? input.dataset.datepickerLang : 'ru')
+        });
 
-    document.addEventListener('click', function (event) {
-        if (!event.target.closest('.export-order')) {
+        document.querySelector('.export-order__btn').addEventListener('click', function () {
+            this.classList.toggle('open')
+            document.querySelector('.export-order__drop').classList.toggle('open')
+        })
 
-            if (!document.querySelector('.datepicker.active')) {
-                document.querySelector('.export-order__btn').classList.remove('open')
-                document.querySelector('.export-order__drop').classList.remove('open')
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.export-order')) {
+
+                if (!document.querySelector('.datepicker.active')) {
+                    document.querySelector('.export-order__btn').classList.remove('open')
+                    document.querySelector('.export-order__drop').classList.remove('open')
+                }
             }
-        }
+        })
+    }
+
+    /* ======================================
+    scroll to film
+    ====================================== */
+
+    document.querySelectorAll('[data-scroll="group"]').forEach(function (item) {
+        item.addEventListener('change', function (event) {
+
+            if (this.value) {
+                let href = '[data-scroll-group="' + this.value + '"]'
+                window.scrollToTargetAdjusted(href)
+            }
+
+
+        })
     })
+
+
+
 
 
 

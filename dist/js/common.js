@@ -322,6 +322,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
         })
     })
 
+    /* =================================================
+    scroll
+    ================================================= */
+    window.scrollToTargetAdjusted = function (elem) {
+
+        //elem string selector
+
+        if (!document.querySelector(elem)) return false;
+
+        var element = document.querySelector(elem);
+        var headerOffset = -120;
+        var elementPosition = element.offsetTop
+        var offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition - 100
+        });
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+
+
 
 
 });
