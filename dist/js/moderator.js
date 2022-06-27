@@ -1584,15 +1584,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             document.querySelectorAll('[data-scroll-group]').forEach(function (item) {
 
-                console.log(item.dataset.scrollGroup)
-                console.log(event.target.value)
+                item.closest('.film-group').classList.add('hide')
 
                 if (item.dataset.scrollGroup == event.target.value || event.target.value == 0) {
                     if (item.closest('.film-group').classList.contains('hide')) item.closest('.film-group').classList.remove('hide')
-                } else {
-                    item.closest('.film-group').classList.add('hide')
                 }
-
 
             })
 
