@@ -5871,6 +5871,10 @@ div[data-lang]:not(.active) {
   margin-left: 10px;
 }
 
+.film-group {
+  animation: slide-up 0.3s ease;
+}
+
 .film-group__list {
   display: flex;
   flex-wrap: wrap;

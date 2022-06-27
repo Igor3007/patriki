@@ -23,7 +23,8 @@ mixin all-films-group
         ul
             li
                 select(placeholder="Показать" data-scroll="group")
-                    option( value="" selected) Не просмотренные 
+                    option( value=0 selected) Все фильмы
+                    option( value="1" ) Не просмотренные 
                     option( value="2" ) Не поставлены оценки 
                     option( value="3" ) Просмотренные 
            
@@ -34,10 +35,12 @@ mixin all-films-group
             .film-group__list
                 each item in moderator.films
                     .film-group__item: +minicard-film(item)
+        .film-group
             .film-group__title.film-group__title--not-vote(data-scroll-group="2")  Не поставлены оценки
             .film-group__list
                 each item in moderator.films
                     .film-group__item: +minicard-film(item)
+        .film-group
             .film-group__title.film-group__title--viewed(data-scroll-group="3")  Просмотренные
             .film-group__list
                 each item in moderator.films

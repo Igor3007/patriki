@@ -329,6 +329,9 @@
 }
 
 .film-group {
+
+    animation: slide-up 0.3s ease;
+
     &__list {
         @include row-flex;
     }
