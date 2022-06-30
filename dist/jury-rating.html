@@ -147,86 +147,19 @@
                 <div class="moderator-aside__wrp">
                   <div class="moderator-aside__photo">
                     <picture>
-                      <source srcset="/img/common/img_user.webp" type="image/webp"/><img src="/img/common/img_user.jpg" loading="lazy" alt="image"/>
+                      <source srcset="/img/common/user3.webp" type="image/webp"/><img src="/img/common/user3.jpg" loading="lazy" alt="image"/>
                     </picture>
                   </div>
                   <div class="moderator-aside__name">Николай Петров</div>
                   <div class="moderator-aside__email">nik_petrov@mail.ru</div>
-                  <div class="moderator-aside__invite">
-                    <button class="btn btn-small" data-modal="invite" data-src="#invite-member">Пригласить</button>
-                  </div>
                   <div class="moderator-aside__nav">
                     <ul>
-                      <li><a href="moderator-orders.html">Заявки</a></li>
-                      <li><a class="badge" href="moderator-messenger.html">Сообщения</a></li>
-                      <li><a href="moderator-films.html">Фильмы</a></li>
-                      <li><a href="moderator-rating.html">Рейтинги</a></li>
-                      <li><a href="moderator-review.html">Рецензии</a></li>
-                      <li><a href="moderator-profile.html">Профиль</a></li>
-                      <li><a href="moderator-invites.html">Приглашения</a></li>
+                      <li><a href="jury-films.html">Фильмы</a></li>
+                      <li><a class="badge" href="jury-rating.html">Рейтинги</a></li>
+                      <li><a href="moderator-messenger.html">Сообщения</a></li>
+                      <li><a href="jury-profile.html">Профиль</a></li>
                       <li><a href="moderator-logout.html">Выйти</a></li>
                     </ul>
-                  </div>
-                </div>
-                <div class="moderator-aside__form">
-                  <div class="invite-member" id="invite-member">
-                    <div class="invite-member__back" data-invete-form="close">
-                      <svg width="10" height="10">
-                        <use xlink:href="/img/sprites/sprite.svg#ic_arr-back-popup"></use>
-                      </svg><span>Назад в меню</span>
-                    </div>
-                    <div class="invite-member__title">Пригласить участника</div>
-                    <div class="invite-member__form">
-                      <form action="#" method="POST" data-form="invite-member"> 
-                        <div class="invite-member__label">Язык приглашения</div>
-                        <div class="invite-member__lang">
-                          <label class="radio">
-                            <input type="radio" name="lang" checked="" value="val"/><span class="radio__elem"></span><span class="radio__text">Русский</span>
-                          </label>
-                          <label class="radio">
-                            <input type="radio" name="lang" value="val"/><span class="radio__elem"></span><span class="radio__text">Английский</span>
-                          </label>
-                        </div>
-                        <div class="invite-member__fields">
-                          <div class="form">
-                            <div class="form__item">
-                              <div class="form__subitem">
-                                <div class="input-material">
-                                  <input type="text" value="https://pff.ru/invite/id/122"/>
-                                  <label>Ссылка на приглашение</label>
-                                </div><span class="copy-to-clipboard" data-copy="https://pff.ru/invite/id/122"></span>
-                              </div>
-                            </div>
-                            <div class="form__item">
-                              <div class="form__subitem">
-                                <div class="input-material">
-                                  <input type="email" value=""/>
-                                  <label>Email</label>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form__item">
-                              <div class="form__subitem">
-                                <div class="input-material">
-                                  <input type="text" value=""/>
-                                  <label>Тема</label>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form__item">
-                              <div class="form__subitem">
-                                <textarea placeholder="Текст приглашения"></textarea>
-                              </div>
-                            </div>
-                            <div class="form__item">
-                              <div class="form__subitem">
-                                <button class="btn btn-large">Отправить </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -249,16 +182,22 @@
                   <div class="block-rating__tabs">
                     <ul>
                       <li><a class="active" href="#">
-                          <button class="btn btn-line">Рейтинг жюри</button></a></li>
+                          <button class="btn btn-line">Личный рейтинг</button></a></li>
                       <li><a href="#">
                           <button class="btn btn-line">Рейтинг зрителей</button></a></li>
                     </ul>
                   </div>
                   <div class="block-rating__head">
                     <ul>
-                      <li class="block-rating__head-name">Название</li>
+                      <li class="block-rating__head-name">
+                         Название и год производства<span class="table-sort" data-rating="sort-title">
+                          <ul> 
+                            <li data-rating="sort-name">По названию</li>
+                            <li data-rating="sort-year">Год производства</li>
+                          </ul></span></li>
                       <li class="block-rating__head-grade">Оценки</li>
-                      <li class="block-rating__head-total">Итоговый рейтинг</li>
+                      <li class="block-rating__head-total">
+                         Итоговый рейтинг<span class="table-sort-total" data-rating="sort-total"></span></li>
                     </ul>
                   </div>
                   <div class="block-rating__list">
@@ -273,7 +212,7 @@
                           </div>
                           <div class="card-rating__info">
                             <div class="card-rating__number">1 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 9</a></div>
+                            <div class="card-rating__name"><a href="#">Паразиты 8</a></div>
                             <div class="card-rating__year" data-year="2021">2021, Пон Джун-хо</div>
                             <div class="card-rating__duration"> 
                               <ul class="car-rating-flag">
@@ -297,7 +236,7 @@
                             <li><span>Музыка</span><span>45</span></li>
                           </ul>
                         </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.97</span></div>
+                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.11</span></div>
                       </div>
                     </div>
                     <div class="block-rating__item">
@@ -311,7 +250,7 @@
                           </div>
                           <div class="card-rating__info">
                             <div class="card-rating__number">2 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 9</a></div>
+                            <div class="card-rating__name"><a href="#">Паразиты 7</a></div>
                             <div class="card-rating__year" data-year="2022">2022, Пон Джун-хо</div>
                             <div class="card-rating__duration"> 
                               <ul class="car-rating-flag">
@@ -335,7 +274,7 @@
                             <li><span>Музыка</span><span>45</span></li>
                           </ul>
                         </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>5.99</span></div>
+                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>6.82</span></div>
                       </div>
                     </div>
                     <div class="block-rating__item">
@@ -349,7 +288,7 @@
                           </div>
                           <div class="card-rating__info">
                             <div class="card-rating__number">3 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 5</a></div>
+                            <div class="card-rating__name"><a href="#">Паразиты 7</a></div>
                             <div class="card-rating__year" data-year="2023">2023, Пон Джун-хо</div>
                             <div class="card-rating__duration"> 
                               <ul class="car-rating-flag">
@@ -373,7 +312,7 @@
                             <li><span>Музыка</span><span>45</span></li>
                           </ul>
                         </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.10</span></div>
+                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.85</span></div>
                       </div>
                     </div>
                     <div class="block-rating__item">
@@ -387,7 +326,7 @@
                           </div>
                           <div class="card-rating__info">
                             <div class="card-rating__number">4 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
+                            <div class="card-rating__name"><a href="#">Паразиты 5</a></div>
                             <div class="card-rating__year" data-year="2024">2024, Пон Джун-хо</div>
                             <div class="card-rating__duration"> 
                               <ul class="car-rating-flag">
@@ -411,7 +350,7 @@
                             <li><span>Музыка</span><span>45</span></li>
                           </ul>
                         </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.86</span></div>
+                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>5.58</span></div>
                       </div>
                     </div>
                     <div class="block-rating__item">
@@ -425,7 +364,7 @@
                           </div>
                           <div class="card-rating__info">
                             <div class="card-rating__number">2 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 9</a></div>
+                            <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
                             <div class="card-rating__year" data-year="2022">2022, Пон Джун-хо</div>
                             <div class="card-rating__duration"> 
                               <ul class="car-rating-flag">
@@ -449,7 +388,7 @@
                             <li><span>Музыка</span><span>45</span></li>
                           </ul>
                         </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.84</span></div>
+                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.56</span></div>
                       </div>
                     </div>
                     <div class="block-rating__item">
@@ -487,7 +426,7 @@
                             <li><span>Музыка</span><span>45</span></li>
                           </ul>
                         </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.72</span></div>
+                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>5.46</span></div>
                       </div>
                     </div>
                     <div class="block-rating__item">
@@ -501,7 +440,7 @@
                           </div>
                           <div class="card-rating__info">
                             <div class="card-rating__number">3 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 10</a></div>
+                            <div class="card-rating__name"><a href="#">Паразиты 7</a></div>
                             <div class="card-rating__year" data-year="2023">2023, Пон Джун-хо</div>
                             <div class="card-rating__duration"> 
                               <ul class="car-rating-flag">
@@ -525,7 +464,7 @@
                             <li><span>Музыка</span><span>45</span></li>
                           </ul>
                         </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.34</span></div>
+                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>6.12</span></div>
                       </div>
                     </div>
                   </div>

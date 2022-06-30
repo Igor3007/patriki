@@ -1,5 +1,5 @@
 extends ../layouts/jury
-include ../../blocks/modules/moderator/all-films/all-films.pug
+include ../../blocks/modules/jury/jury-rating/jury-rating.pug
 include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
 
 
@@ -7,7 +7,7 @@ include ../../blocks/modules/moderator/head-moderator/head-moderator.pug
 block variables
   include ../../data/data.pug
   -
-    title = 'Фильмы'
+    title = 'Рейтинги'
 
 
 block content
@@ -15,17 +15,17 @@ block content
     nav: [
       'Главная',
       'Личный кабинет',
-      'Фильмы',
+      'Рейтинги',
     ],
 
-    title: 'Фильмы',
+    title: 'Рейтинги',
     button: false
   })
 
   
 
   .main-moderator
-    +all-films-group()
+    +jury-rating()
 
 block scripts
     script(src="/js/vendor.js")

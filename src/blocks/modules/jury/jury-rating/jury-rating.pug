@@ -1,0 +1,23 @@
+include ../../moderator/moderator-rating/moderator-rating.pug
+
+mixin jury-rating
+    .block-rating 
+        .block-rating__tabs
+            ul
+                li: a(href='#' class="active"): button.btn.btn-line Личный рейтинг
+                li: a(href='#'): button.btn.btn-line Рейтинг зрителей
+        .block-rating__head
+            ul
+                li.block-rating__head-name 
+                    | Название и год производства
+                    span(data-rating="sort-title" class="table-sort")
+                        ul  
+                         li(data-rating="sort-name") По названию
+                         li(data-rating="sort-year") Год производства
+                li.block-rating__head-grade Оценки
+                li.block-rating__head-total 
+                    | Итоговый рейтинг
+                    span.table-sort-total(data-rating="sort-total")
+        .block-rating__list
+            each item in [1,2,3,4,2,4,3]
+                .block-rating__item: +card-rating(item)

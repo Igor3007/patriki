@@ -6183,6 +6183,58 @@ div[data-lang]:not(.active) {
   color: #525166;
 }
 
+.table-sort-total {
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 1C10.5 0.723858 10.2761 0.5 10 0.5C9.72386 0.5 9.5 0.723858 9.5 1H10.5ZM9.64645 9.35355C9.84171 9.54882 10.1583 9.54882 10.3536 9.35355L13.5355 6.17157C13.7308 5.97631 13.7308 5.65973 13.5355 5.46447C13.3403 5.2692 13.0237 5.2692 12.8284 5.46447L10 8.29289L7.17157 5.46447C6.97631 5.2692 6.65973 5.2692 6.46447 5.46447C6.2692 5.65973 6.2692 5.97631 6.46447 6.17157L9.64645 9.35355ZM9.5 1V9H10.5V1H9.5Z' fill='%23525166'/%3E%3Cline x1='0.5' y1='7.5' x2='3.5' y2='7.5' stroke='%23525166' stroke-linecap='round'/%3E%3Cline x1='0.5' y1='4.5' x2='5.5' y2='4.5' stroke='%23525166' stroke-linecap='round'/%3E%3Cline x1='0.5' y1='1.5' x2='7.5' y2='1.5' stroke='%23525166' stroke-linecap='round'/%3E%3C/svg%3E ");
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  background-size: contain;
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: -5px;
+}
+
+.table-sort {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.5 9C11.5 9.27614 11.7239 9.5 12 9.5C12.2761 9.5 12.5 9.27614 12.5 9L11.5 9ZM12.3536 0.646447C12.1583 0.451184 11.8417 0.451184 11.6464 0.646447L8.46447 3.82843C8.2692 4.02369 8.2692 4.34027 8.46447 4.53553C8.65973 4.7308 8.97631 4.7308 9.17157 4.53553L12 1.70711L14.8284 4.53553C15.0237 4.7308 15.3403 4.7308 15.5355 4.53553C15.7308 4.34027 15.7308 4.02369 15.5355 3.82843L12.3536 0.646447ZM12.5 9L12.5 1L11.5 1L11.5 9L12.5 9Z' fill='%2392919F'/%3E%3Cpath d='M4.5 1C4.5 0.723858 4.27614 0.5 4 0.5C3.72386 0.5 3.5 0.723858 3.5 1H4.5ZM3.64645 9.35355C3.84171 9.54882 4.15829 9.54882 4.35355 9.35355L7.53553 6.17157C7.7308 5.97631 7.7308 5.65973 7.53553 5.46447C7.34027 5.2692 7.02369 5.2692 6.82843 5.46447L4 8.29289L1.17157 5.46447C0.976311 5.2692 0.659728 5.2692 0.464466 5.46447C0.269204 5.65973 0.269204 5.97631 0.464466 6.17157L3.64645 9.35355ZM3.5 1V9H4.5V1H3.5Z' fill='%2392919F'/%3E%3C/svg%3E%0A");
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  background-size: contain;
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: -5px;
+}
+
+.table-sort ul {
+  display: none;
+}
+
+.table-sort:hover ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100%);
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 140px;
+}
+
+.table-sort:hover ul li {
+  padding: 10px 15px;
+  color: #333;
+}
+
+.table-sort:hover ul li.open,
+.table-sort:hover ul li:hover {
+  background-color: #f5f5f5;
+}
+
 .directors-card__title {
   background-color: #525166;
   padding: 17px 25px;

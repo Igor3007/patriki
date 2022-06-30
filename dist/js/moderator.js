@@ -1596,6 +1596,93 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     })
 
+    /* =====================================
+    sort rating
+    ===================================== */
+
+    function classSortableRating() {
+
+        this.sortTitle = document.querySelector('[data-rating="sort-title"]')
+        this.sortName = document.querySelector('[data-rating="sort-name"]')
+        this.sortYear = document.querySelector('[data-rating="sort-year"]')
+        this.sortTotal = document.querySelector('[data-rating="sort-total"]')
+        this.container = document.querySelector('.block-rating__list')
+        this.nodeList = this.container.querySelectorAll('.block-rating__item')
+        this.nodeArray = Array.prototype.slice.call(this.nodeList, 0)
+
+        this.direction = 'DESC'
+        this.type = 'sort-name'
+
+        this.init = function () {
+            this.addEvent()
+        }
+
+        this.sorting = function () {
+
+            switch (this.type) {
+
+                case 'sort-name':
+                    this.nodeArray.sort((a, b) => {
+                        if (this.direction == 'ASC') return (a.querySelector('.card-rating__name').innerText > b.querySelector('.card-rating__name').innerText ? 1 : -1)
+                        if (this.direction == 'DESC') return (a.querySelector('.card-rating__name').innerText < b.querySelector('.card-rating__name').innerText ? 1 : -1)
+                    });
+                    break;
+                case 'sort-year':
+                    this.nodeArray.sort((a, b) => {
+                        if (this.direction == 'ASC') return (a.querySelector('.card-rating__year').dataset.year > b.querySelector('.card-rating__year').dataset.year ? 1 : -1)
+                        if (this.direction == 'DESC') return (a.querySelector('.card-rating__year').dataset.year < b.querySelector('.card-rating__year').dataset.year ? 1 : -1)
+                    });
+                    break;
+                case 'sort-total':
+                    this.nodeArray.sort((a, b) => {
+                        if (this.direction == 'ASC') return (a.querySelector('.card-rating__total').innerText > b.querySelector('.card-rating__total').innerText ? 1 : -1)
+                        if (this.direction == 'DESC') return (a.querySelector('.card-rating__total').innerText < b.querySelector('.card-rating__total').innerText ? 1 : -1)
+                    });
+                    break;
+            }
+
+            this.render()
+
+
+        }
+
+        this.render = function () {
+            this.nodeArray.forEach((item) => {
+                this.container.append(item)
+            })
+        }
+
+        this.switchDirection = function (target) {
+            this.type = target.dataset.rating
+            if (target.dataset.rating == this.type) {
+                this.direction = (this.direction == 'DESC' ? 'ASC' : 'DESC');
+            }
+
+        }
+
+        this.addEvent = function () {
+            this.sortName.addEventListener('click', (event) => {
+                this.switchDirection(event.target)
+                this.sorting()
+            })
+
+            this.sortTotal.addEventListener('click', (event) => {
+                this.switchDirection(event.target)
+                this.sorting()
+            })
+
+            this.sortYear.addEventListener('click', (event) => {
+                this.switchDirection(event.target)
+                this.sorting()
+            })
+        }
+    }
+
+    const SORTING = new classSortableRating()
+
+    SORTING.init()
+
+
 
 
 
