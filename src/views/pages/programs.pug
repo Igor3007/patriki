@@ -1,0 +1,31 @@
+extends ../layouts/site
+include ../../blocks/modules/site/programs/programs.pug
+ 
+
+block variables
+  include ../../data/data.pug
+  - const title = "PFF"
+
+
+block content
+    .container
+        .page-site
+            .page-site__breadcrumbs
+                ul
+                    li: a(href='#') Главная
+                    li: a(href='#') Программы                 
+            .page-site__title
+                h1 Программы    
+
+            .page-site__content
+                +programs 
+                
+           
+
+
+
+
+block scripts
+  script(src="/js/vendor.js") 
+  script(src="/js/common.js") 
+ 

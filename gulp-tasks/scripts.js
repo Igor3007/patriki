@@ -12,6 +12,7 @@ import browsersync from "browser-sync";
 import debug from "gulp-debug";
 import yargs from "yargs";
 import concat from "gulp-concat";
+import uglify from 'gulp-uglify';
 
 const webpackConfig = require("../webpack.config.js"),
     argv = yargs.argv,
@@ -50,6 +51,7 @@ gulp.task("libs", () => {
 gulp.task('vendor', function () {
     return gulp.src('./src/js/vendor/*.js')
         .pipe(concat('vendor.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./dist/js/'));
 });
 

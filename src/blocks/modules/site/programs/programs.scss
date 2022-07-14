@@ -1,0 +1,192 @@
+.programs-item {
+    &__list {
+        @include row-flex;
+    }
+
+    &__film {
+        margin-bottom: 20px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #fff;
+
+        &--light {
+            background-color: #E7E6F5;
+        }
+
+        @media screen and (min-width: 359px) {
+            width: 50%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w760) {
+            width: 33.33%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 25%;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            width: 20%;
+            padding: 10px;
+        }
+
+    }
+
+    &__nav {
+        margin-left: auto;
+        margin-top: -1px;
+
+        & span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background-color: $main;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        & svg {
+            stroke: rgb(255, 255, 255);
+            stroke-width: 2px;
+        }
+    }
+
+    &__head {
+
+        background: #F5F5F5;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        border-top: 1px solid #ABA9BC;
+        margin-bottom: 35px
+    }
+
+    &__title {
+        @include section-title;
+
+        & a {
+            color: $main;
+        }
+    }
+
+    &__desc {
+        color: $main2;
+    }
+
+
+}
+
+.programs {
+    &__tabs {
+        display: flex;
+        align-items: center;
+        padding-top: 25px;
+        padding-bottom: 45px;
+    }
+
+    &__btn {
+
+        & ul {
+            display: flex;
+            align-items: center;
+            margin: -5px;
+
+            & li {
+                padding: 5px;
+
+                &.active {
+                    & .btn {
+                        font-weight: 700;
+                        color: #000;
+                    }
+                }
+            }
+        }
+
+        & .btn {
+            height: 52px;
+            font-size: 13px;
+            text-transform: uppercase;
+            border-radius: 0;
+        }
+    }
+
+    &__sort {
+        margin-left: auto;
+    }
+
+}
+
+
+
+.programs-sort {
+    position: relative;
+
+    &:hover {
+        & .programs-sort__list {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__title {
+        border: 1px solid #BCBCBC;
+        height: 52px;
+        padding: 0 25px 0 25px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3IDFIMW0xNiA2SDVtMTIgNkg5IiBzdHJva2U9IiM1MjUxNjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 16px;
+            margin-left: 10px;
+            margin-right: -10px;
+        }
+    }
+
+    &__list {
+        visibility: hidden;
+
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        z-index: 10;
+        background-color: #fff;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        transition: 0.34s ease;
+        transform: translateY(-10px);
+        opacity: 0;
+
+        & ul {
+            & li {
+                & a {
+                    padding: 11px 25px;
+                    display: block;
+                }
+
+                &:hover {
+                    background-color: #EBEBEB;
+                }
+            }
+        }
+    }
+}

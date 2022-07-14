@@ -20,6 +20,7 @@ const requireDir = require("require-dir"),
         styles: {
             src: [
                 "./src/styles/main.{scss,sass}",
+                "./src/styles/site.{scss,sass}",
                 "./src/styles/critical.{scss,sass}",
             ],
             dist: "./dist/styles/",

@@ -8341,6 +8341,65 @@ div[data-lang]:not(.active) {
     flex-direction: row;
   }
 
+  .header--site .header__logo {
+    padding: 28px 21px;
+  }
+
+  .header--site .header__logo .bgimage {
+    width: 192px;
+    height: 104px;
+  }
+
+  .header--site .header__nav-menu ul li {
+    flex-basis: 194px;
+  }
+
+  .header--site .header__nav-menu ul li a {
+    font-size: 18px;
+    transition: background-color .7s;
+  }
+
+  .header--site .header__nav-menu ul li a:hover {
+    color: #A8A8B2;
+    background: #515064;
+    text-decoration: none;
+  }
+
+  .header--site .header__nav-menu ul li a:hover::before {
+    opacity: 0;
+  }
+
+  .header--site .header__nav-menu ul li a::before {
+    width: 28px;
+    height: 28px;
+    transition: 0.4s ease;
+  }
+
+  .header--site .header__login a {
+    padding: 0 1.6em;
+    font-size: 18px;
+    transition: background-color .7s;
+  }
+
+  .header--site .header__login a:hover {
+    color: #A8A8B2;
+    background: #515064;
+    text-decoration: none;
+  }
+
+  .header--site .header__social ul li svg {
+    width: 28px;
+    height: 19px;
+  }
+
+  .header--site .header-info a {
+    font-size: 18px;
+  }
+
+  .header--site .header-info .af-select .select-styled {
+    font-size: 16px;
+  }
+
   .header__logo {
     padding: 23px 45px;
   }
@@ -8351,6 +8410,28 @@ div[data-lang]:not(.active) {
 
   .header-info {
     padding: 0 15px 0 35px;
+  }
+
+  .footer--site .footer__nav ul a {
+    font-size: 16px;
+  }
+
+  .footer--site .footer__social ul li a {
+    font-size: 16px;
+  }
+
+  .footer--site .footer__social ul li a svg {
+    width: 24px;
+    height: 16px;
+  }
+
+  .footer--site .footer__contact ul a {
+    font-size: 16px;
+  }
+
+  .footer--site .footer__logo .bgimage {
+    width: 190.8px;
+    height: 144px;
   }
 
   .footer__logo {

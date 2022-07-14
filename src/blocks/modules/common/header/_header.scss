@@ -16,6 +16,88 @@ header {
     display: flex;
     align-items: stretch;
 
+    &--site {
+        & .header {
+            @media screen and (min-width: $w1440) {
+                &__logo {
+
+                    padding: 28px 21px;
+
+                    & .bgimage {
+                        width: 192px;
+                        height: 104px;
+                    }
+                }
+
+                &__nav-menu ul li {
+
+                    flex-basis: 194px;
+
+                    & a {
+                        font-size: 18px;
+                        transition: background-color .7s;
+
+                        &:hover {
+                            color: #A8A8B2;
+                            background: #515064;
+                            text-decoration: none;
+
+                            &::before {
+                                opacity: 0;
+                            }
+
+                        }
+
+                        &::before {
+                            width: 28px;
+                            height: 28px;
+                            transition: 0.4s ease;
+                        }
+                    }
+
+                }
+
+                &__login a {
+                    padding: 0 1.6em;
+                    font-size: 18px;
+                    transition: background-color .7s;
+
+                    &:hover {
+                        color: #A8A8B2;
+                        background: #515064;
+                        text-decoration: none;
+                    }
+                }
+
+                &__social ul li svg {
+                    width: 28px;
+                    height: 19px;
+
+                }
+
+
+
+
+            }
+        }
+
+        @media screen and (min-width: $w1440) {
+            & .header-info {
+                & a {
+                    font-size: 18px;
+                }
+
+                & .af-select {
+                    .select-styled {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+
+        }
+    }
+
     &__logo {
 
         @media screen and (min-width: $w1200) {

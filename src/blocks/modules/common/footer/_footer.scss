@@ -7,6 +7,37 @@ footer {
     display: flex;
 
 
+    &--site {
+        @media screen and (min-width: $w1440) {
+            & .footer {
+                &__nav ul a {
+                    font-size: 16px;
+                }
+
+                &__social ul li a {
+                    font-size: 16px;
+
+                    & svg {
+                        width: 24px;
+                        height: 16px;
+                    }
+                }
+
+                &__contact ul a {
+                    font-size: 16px;
+                }
+
+                &__logo {
+                    & .bgimage {
+                        width: (106px * 1.8);
+                        height: (80px * 1.8);
+                    }
+                }
+            }
+        }
+    }
+
+
 
     &__logo {
 

@@ -1,0 +1,37 @@
+.container
+  .header.header--site
+    .header__logo
+      a(href='/'): +bgimage('/img/common/logo-large.png')
+    .header__nav
+      .header__nav-container(data-menu="container")
+        .header__nav-info
+          .header-info
+            .header-info__email: a(href='mailto:info@patrikifilmfestival.ru') info@patrikifilmfestival.ru
+            .header-info__phone: a(href='tel:+79055047370') +7 (905) 504-73-70
+            .header-info__lang
+              select
+                option(val="ru") Русский
+                option(val="en") English
+        .header__nav-menu
+          nav
+            ul
+              each item in app.mainMenu
+                li: a(href=item.href)= item.text
+
+      .header__nav-btn
+        .btn-burger(data-menu="btn")
+          i
+          i
+          i
+    .header__pa
+      .header__pa-container
+        .header__social
+          ul
+            li: a(href='#'): +icons('#ic_vk')
+            li: a(href='#'): +icons('#ic_tg')
+        .header__login
+          a(href='/login.html') Личный кабинет
+           
+      .header__pa-btn
+        a(href='/login.html'): +icons('#ic_user') 
+      

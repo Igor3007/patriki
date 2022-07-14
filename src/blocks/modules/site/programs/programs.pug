@@ -1,0 +1,61 @@
+include ../../moderator/all-films/all-films.pug
+include ../../site/jury-program/jury-program.pug
+
+mixin programs
+    .programs
+        .programs__tabs
+            .programs__btn
+                ul
+                    li: button.btn.btn-line Российский конкурс
+                    li.active: button.btn.btn-line Международный конкурс
+                    li: button.btn.btn-line Спецпоказ
+            .programs__sort
+                .programs-sort
+                    .programs-sort__title Сортировать по рейтингу
+                    .programs-sort__list
+                        ul
+                            li: a(href='#') По названию (А-Я)
+                            li: a(href='#') Сначала высокие оценки
+                            li: a(href='#') Сначала низкие оценки
+                            li: a(href='#') Сначала новые
+                            li: a(href='#') Сначала старые
+                 
+        .programs__item
+            .programs-item
+               
+                .programs-item__head
+                    .programs-item__name
+                        .programs-item__title: a(href='#') Полный метр
+                        .programs-item__desc Краткое описание
+                    .programs-item__nav
+                        span.nav-program-prev: +icons('#ic_arr-up', 24)
+                        span.nav-program-next: +icons('#ic_arr-down', 24)
+
+                .programs-item__list
+                    each item, index in moderator.films
+                        if index <= 4
+                            .programs-item__film: +minicard-film(item)
+
+                .programs-item__jury
+                    +jury-program()
+                     
+
+
+        .programs__item
+            .programs-item
+               
+                .programs-item__head
+                    .programs-item__name
+                        .programs-item__title: a(href='#') Короткий метр
+                        .programs-item__desc Краткое описание
+                    .programs-item__nav
+                        span.nav-program-prev: +icons('#ic_arr-up', 24)
+                        span.nav-program-next: +icons('#ic_arr-down', 24)
+
+                .programs-item__list
+                    each item, index in moderator.films
+                        if index > 4 && index <= 9
+                            .programs-item__film: +minicard-film(item)
+                
+                .programs-item__jury
+                    +jury-program()
