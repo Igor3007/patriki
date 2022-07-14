@@ -8333,6 +8333,11 @@ div[data-lang]:not(.active) {
     max-width: 1440px;
   }
 
+  main .container {
+    padding: 0 30px;
+    max-width: 1500px;
+  }
+
   .page-text__h1 h1 {
     font-size: 36px;
   }

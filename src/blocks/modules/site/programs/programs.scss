@@ -76,6 +76,11 @@
 
         & a {
             color: $main;
+            font-size: 22px;
+
+            @media screen and (min-width: $w992) {
+                font-size: 32px;
+            }
         }
     }
 
@@ -89,9 +94,13 @@
 .programs {
     &__tabs {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         padding-top: 25px;
         padding-bottom: 45px;
+
+        @media screen and (min-width: $w760) {
+            align-items: center;
+        }
     }
 
     &__btn {
@@ -100,15 +109,37 @@
             display: flex;
             align-items: center;
             margin: -5px;
+            flex-direction: column;
+
+            @media screen and (min-width: $w760) {
+                flex-direction: row;
+            }
 
             & li {
                 padding: 5px;
+                width: 100%;
+
+                @media screen and (min-width: $w760) {
+                    width: auto;
+                }
+
+                &:hover {
+                    &.active {
+                        & .btn {
+                            color: #fff;
+                        }
+                    }
+                }
 
                 &.active {
                     & .btn {
                         font-weight: 700;
                         color: #000;
                     }
+                }
+
+                & .btn {
+                    width: 100%;
                 }
             }
         }
@@ -125,12 +156,43 @@
         margin-left: auto;
     }
 
+    &__item {
+        &:first-child {
+            & .nav-program-prev {
+                opacity: 0.5;
+                pointer-events: none;
+                background: #D6D6D6;
+
+                & svg {
+                    stroke: $main2;
+                }
+            }
+        }
+
+        &:last-child {
+            & .nav-program-next {
+                opacity: 0.5;
+                pointer-events: none;
+                background: #D6D6D6;
+
+                & svg {
+                    stroke: $main2;
+                }
+            }
+        }
+    }
+
 }
 
 
 
 .programs-sort {
     position: relative;
+    margin-left: 10px;
+
+    @media screen and (min-width: $w992) {
+        margin-left: 0;
+    }
 
     &:hover {
         & .programs-sort__list {
@@ -143,11 +205,21 @@
     &__title {
         border: 1px solid #BCBCBC;
         height: 52px;
-        padding: 0 25px 0 25px;
+
         display: flex;
         align-items: center;
-        font-size: 14px;
         cursor: pointer;
+        font-size: 0;
+        width: 52px;
+        padding: 0;
+        justify-content: center;
+
+        @media screen and (min-width: $w992) {
+            padding: 0 25px 0 25px;
+            font-size: 14px;
+            width: auto;
+
+        }
 
         &::after {
             content: '';
@@ -158,8 +230,11 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 16px;
-            margin-left: 10px;
-            margin-right: -10px;
+
+            @media screen and (min-width: $w992) {
+                margin-left: 10px;
+                margin-right: -10px;
+            }
         }
     }
 
@@ -175,6 +250,7 @@
         transition: 0.34s ease;
         transform: translateY(-10px);
         opacity: 0;
+        min-width: 220px;
 
         & ul {
             & li {

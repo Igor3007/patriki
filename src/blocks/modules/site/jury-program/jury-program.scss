@@ -1,0 +1,129 @@
+.jury-program {
+
+    padding-top: 35px;
+    padding-bottom: 15px;
+
+    &__title {
+        @include section-title;
+        text-align: left;
+        padding-bottom: 20px;
+
+
+    }
+
+    &__list {
+        @include row-flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #fff;
+
+        &--light {
+            background-color: #E7E6F5;
+        }
+
+        @media screen and (min-width: 359px) {
+            width: 100%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w760) {
+            width: 50%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 50%;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: $w1200) {
+            width: 33.33%;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            width: 25%;
+            padding: 10px;
+        }
+    }
+}
+
+.card-jury {
+    background: #F5F5F5;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    transition: 0.5s ease;
+
+    &:hover {
+
+        background-color: $main;
+
+        & .card-jury {
+
+            &__photo {
+                & .bgimage {
+                    background-color: $main2;
+                }
+            }
+
+            &__desc,
+            &__post,
+            &__name {
+                color: #fff;
+
+                & a {
+                    color: #FFF;
+                }
+            }
+        }
+    }
+
+    &__photo {
+        width: 50px;
+        flex-shrink: 0;
+        margin-right: 15px;
+
+        @media screen and (min-width: $w992) {
+            width: 64px;
+            margin-right: 20px;
+        }
+
+        & .bgimage {
+            @include bgimage-contain;
+            padding-top: 100%;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+    }
+
+    &__name {
+        font-size: 16px;
+        font-weight: 600;
+        color: $main;
+        margin-bottom: 0.2em;
+
+        & a {
+            color: $main;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__post {
+        color: $main2;
+        margin-bottom: 0.3em;
+    }
+
+    &__desc {
+        color: $main;
+    }
+}

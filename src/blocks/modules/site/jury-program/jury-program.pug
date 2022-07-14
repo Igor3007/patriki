@@ -2,9 +2,16 @@ mixin jury-program
     .jury-program
         .jury-program__title Жюри программы
         .jury-program__list
-            .item item 
-            .item item 
-            .item item 
-            .item item 
-            .item item 
-            .item item 
+            each item in site.jury
+                .jury-program__item: +card-jury(item)
+                
+             
+mixin card-jury(data)
+    .card-jury
+        .card-jury__photo
+            a(href='#'): +bgimage(data.img)
+        .card-jury__main
+            .card-jury__user
+                .card-jury__name: a(href='#')= data.name
+                .card-jury__post= data.post
+            .card-jury__desc= data.desc

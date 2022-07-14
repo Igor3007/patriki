@@ -131,6 +131,13 @@ input[type="date"] {
     }
 }
 
+main .container {
+    @media screen and (min-width: $w1440) {
+        padding: 0 30px;
+        max-width: 1500px;
+    }
+}
+
 .pull-right {
     justify-content: flex-end !important;
 }
