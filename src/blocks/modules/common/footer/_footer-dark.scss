@@ -1,0 +1,30 @@
+.dark-mode {
+
+    & .footer {
+        &__nav ul a {
+            color: #fff;
+        }
+
+        &__social {
+            & svg {
+                fill: #fff;
+            }
+
+            & a {
+                color: #fff;
+            }
+        }
+
+        &__contact {
+            & a {
+                color: #fff;
+            }
+        }
+
+        &__logo {
+            &-desc {
+                color: $gray-74;
+            }
+        }
+    }
+}

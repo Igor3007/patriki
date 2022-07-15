@@ -238,6 +238,11 @@
 
             & li {
                 padding-bottom: 0.2em;
+                font-size: 12px;
+
+                @media screen and (min-width: $w576) {
+                    font-size: 14px;
+                }
 
                 & span {
                     display: block;
@@ -264,11 +269,7 @@
 
     &__title {
 
-        &:hover {
-            & a {
-                text-decoration: underline !important;
-            }
-        }
+
 
         & a {
             font-weight: 600;
@@ -276,6 +277,11 @@
             line-height: 150%;
             color: #525166;
 
+            &:hover {
+
+                text-decoration: underline !important;
+
+            }
 
         }
 
@@ -385,6 +391,41 @@
 
         &--not-vote {
             color: $orange;
+        }
+    }
+}
+
+.dark-mode {
+    & .minicard-film {
+        &__title {
+            & a {
+                color: #fff;
+            }
+        }
+
+        &__year {
+            color: $gray-74;
+        }
+
+        &__duration {
+            color: $gray-74;
+        }
+
+        &__flags {
+            & ul {
+                & li {
+                    & .bgimage {
+                        background-color: $main-dark-3;
+                        border: 1px solid $main-dark-3;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+
+        &__cover picture {
+            background-color: $main-dark-2;
+            color: $main-dark-2;
         }
     }
 }

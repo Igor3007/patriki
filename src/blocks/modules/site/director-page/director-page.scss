@@ -9,6 +9,7 @@ $width: 890px;
     @media screen and (min-width: $w992) {
         display: flex;
         padding-top: 45px;
+        padding-bottom: 35px;
     }
 
     &__photo {
@@ -104,7 +105,11 @@ $width: 890px;
             font-weight: 600;
             color: $main;
             display: inline-block;
+            cursor: pointer;
 
+            &:hover {
+                text-decoration: underline;
+            }
 
         }
 
@@ -125,9 +130,9 @@ $width: 890px;
     max-width: $width;
 
     &__title {
-        @include section-title;
+        @include section-title-h3;
         text-align: left;
-        padding-bottom: 20px
+        padding-bottom: 22px
     }
 
     &__list {
@@ -259,7 +264,7 @@ $width: 890px;
     padding: 25px 0;
 
     &__title {
-        @include section-title;
+        @include section-title-h3;
         text-align: left;
         padding-bottom: 20px
     }
@@ -352,10 +357,18 @@ $width: 890px;
 
     padding: 25px 0;
 
+
+
     &__title {
-        @include section-title;
+        @include section-title-h3;
         text-align: left;
-        padding-bottom: 20px
+        padding-bottom: 20px;
+
+        @media screen and (min-width: $w992) {
+            padding-bottom: 30px;
+        }
+
+
     }
 
     &__list {

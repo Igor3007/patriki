@@ -186,7 +186,7 @@
 
 
 
-.programs-sort {
+.dropdown-sort {
     position: relative;
     margin-left: 10px;
 
@@ -195,7 +195,7 @@
     }
 
     &:hover {
-        & .programs-sort__list {
+        & .dropdown-sort__list {
             transform: translateY(0);
             opacity: 1;
             visibility: visible;
@@ -261,6 +261,41 @@
 
                 &:hover {
                     background-color: #EBEBEB;
+                }
+            }
+        }
+    }
+}
+
+.dark-mode {
+
+
+
+    & .dropdown-sort {
+
+        &:hover {
+            & .dropdown-sort__title {
+                background-color: $main-dark-2;
+            }
+        }
+
+        &__title {
+            border: none;
+            background-color: $main-dark-1;
+            color: $gray-74;
+            border-radius: 5px;
+        }
+
+        &__list {
+            background-color: $main-dark-2;
+
+            & li {
+                & a {
+                    color: #fff;
+
+                    &:hover {
+                        background-color: $main-dark-3;
+                    }
                 }
             }
         }

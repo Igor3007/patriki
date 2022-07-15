@@ -1,0 +1,21 @@
+include ../../moderator/all-films/all-films.pug
+
+mixin hall-films
+    .hall-films
+        .hall-films__bar
+            .hall-films__find
+                form(action='#' method='POST')
+                    input(type="" placeholder="Искать по названию" data-find="film-input")
+            .hall-films__sort
+                .dropdown-sort
+                    .dropdown-sort__title Сортировать по рейтингу
+                    .dropdown-sort__list
+                        ul
+                            li: a(href='#') По названию (А-Я)
+                            li: a(href='#') Сначала высокие оценки
+                            li: a(href='#') Сначала низкие оценки
+                            li: a(href='#') Сначала новые
+                            li: a(href='#') Сначала старые
+        .hall-films__list(data-find="film-container")
+            each item in moderator.films
+                .hall-films__item: +minicard-film(item)

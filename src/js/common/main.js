@@ -47,6 +47,41 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
+    //hall search
 
+    function findFilm() {
+
+        this.items = document.querySelectorAll('[data-find="film-container"] > div')
+        this.input = document.querySelector('[data-find="film-input"]')
+
+
+
+        this.init = function () {
+            this.addEvents()
+        }
+
+        this.render = function (q) {
+            this.items.forEach(item => {
+                if (item.querySelector('.minicard-film__title')) {
+                    if (item.querySelector('.minicard-film__title').innerText.toLowerCase().trim().indexOf(q.toLowerCase().trim()) !== -1) {
+                        item.style.display = 'block'
+                    } else {
+                        item.style.display = 'none'
+                    }
+                }
+            })
+        }
+
+        this.addEvents = function () {
+            this.input.addEventListener('keyup', (e) => {
+                this.render(e.target.value)
+            })
+        }
+
+
+    }
+
+    const instanseFindFilm = new findFilm();
+    instanseFindFilm.init()
 
 });

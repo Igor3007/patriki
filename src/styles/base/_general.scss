@@ -395,11 +395,15 @@ main .container {
 
 @mixin section-title-site {
     font-weight: 700;
-    font-size: 48px;
+    font-size: 36px;
     line-height: 133%;
     text-align: center;
     text-transform: uppercase;
     color: $main;
+
+    @media screen and (min-width: $w992) {
+        font-size: 48px;
+    }
 
     @media screen and (min-width: $w1440) {
         font-size: 60px;
@@ -416,6 +420,19 @@ main .container {
 
     @media screen and (min-width: $w1440) {
         font-size: 28px;
+    }
+}
+
+@mixin section-title-h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 133%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $main;
+
+    @media screen and (min-width: $w576) {
+        font-size: 24px;
     }
 }
 

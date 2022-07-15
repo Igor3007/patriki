@@ -69,7 +69,7 @@ mixin minicard-film(data)
                         span Рейтинг зрителей:
                         span 6.2
 
-        .minicard-film__title: a(href='#')= data.title
+        .minicard-film__title: a(href=data.link)= data.title
         .minicard-film__year=data.year
         .minicard-film__country
             .minicard-film__flags

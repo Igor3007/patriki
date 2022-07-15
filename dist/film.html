@@ -72,11 +72,11 @@
     </style>
     <link rel="stylesheet" href="styles/site.css?v=1.0">
   </head>
-  <body class="perf-no-animation">
+  <body class="perf-no-animation dark-mode">
     <header>
       <div class="container">
         <div class="header header--site">
-          <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo.svg"></span></a></div>
+          <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo-dark.svg"></span></a></div>
           <div class="header__nav">
             <div class="header__nav-container" data-menu="container">
               <div class="header__nav-info">
@@ -132,12 +132,131 @@
       </div>
     </header>
     <main> 
+      <div class="container">
+        <div class="page-site">
+          <div class="page-site__breadcrumbs">
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">Кинозал                 </a></li>
+              <li><a href="#">Трое                 </a></li>
+            </ul>
+          </div>
+          <div class="page-site__content"> 
+            <div class="page-film"> 
+              <div class="page-film__details">
+                <div class="film-details">
+                  <div class="film-details__title">
+                    <h1>Трое</h1>
+                  </div>
+                  <div class="film-details__info">
+                    <ul> 
+                      <li>Российский конкурс</li>
+                      <li>Полный метр</li>
+                    </ul>
+                  </div>
+                  <div class="film-details__wrp">
+                    <div class="film-details__cover">
+                      <picture>
+                        <source srcset="/img/common/cover5.webp" type="image/webp"/><img src="/img/common/cover5.jpg" loading="lazy" alt="image"/>
+                      </picture>
+                    </div>
+                    <div class="film-details__prop">
+                      <div class="film-details__year">
+                        <ul>
+                          <li>2020</li>
+                          <li>122 мин.</li>
+                        </ul>
+                      </div>
+                      <div class="film-details__list">
+                        <ul>
+                          <li><small>Жанр:</small><span>Драма</span></li>
+                          <li><small>Страна:</small><span>Россия</span></li>
+                          <li><small>Режиссер:</small><span><a href="director-details.html">Анна Меликян                       </a></span></li>
+                          <li><small>Продюсер:</small><span>Анна Меликян                        </span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="film-seans">
+                  <div class="film-seans__title">Ближайшие показы</div>
+                  <div class="film-seans__list">
+                    <div class="seans-list">
+                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                      <div class="seans-list__time">15:00</div>
+                    </div>
+                    <div class="seans-list">
+                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                      <div class="seans-list__time">16:00</div>
+                    </div>
+                    <div class="seans-list">
+                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                      <div class="seans-list__time">17:00</div>
+                    </div>
+                    <div class="seans-list">
+                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                      <div class="seans-list__time">18:00</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="film-grade">
+                  <div class="film-grade__title">Оценка зрителей</div>
+                  <div class="film-grade__wrp">
+                    <div class="film-grade__total"><span>6.4</span></div>
+                    <div class="film-grade__add">
+                      <button class="btn btn-white"> 
+                        <svg width="16" height="16">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_star-solid"></use>
+                        </svg><span class="hide-desctop">Оценить фильм</span><span class="hide-mobile">Оценить</span>
+                      </button>
+                    </div>
+                    <div class="film-grade__review">
+                      <button class="btn btn-white"> <span class="hide-desctop">Написать рецензию</span><span class="hide-mobile">Рецензировать</span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="page-film__main">
+                <div class="page-film__title">Трое</div>
+                <div class="page-film__info">
+                  <ul> 
+                    <li>Российский конкурс</li>
+                    <li>Полный метр</li>
+                  </ul>
+                </div>
+                <div class="page-film__player">
+                  <div class="player-video"></div>
+                </div>
+                <div class="page-film__description">Московский психолог, автор мотивационных роликов Злата считает, что у них с Сашей прекрасный брак, который помог им обоим реализовать себя и подарил десять лет образцовой совместной жизни — для полноценного счастья не хватает только ребенка. Саша же, видимо, считает иначе, потому что втайне от жены он встречается с другой женщиной. Ее зовут Вероника, она живет в Петербурге, проводит экскурсии и увлекается поэзией. Вероника помогла Саше выбраться из воды, когда он попытался утопиться с увесистой телепремией на шее. Успешный шоумен-комик, безропотный муж, нежный влюбленный, — он разрывается между несколькими ролями, между двумя столицами, между очень разными женщинами. Но всегда ли возможно сделать выбор?</div>
+                <div class="page-film__team">
+                  <div class="film-team">
+                    <div class="film-team__post">Оператор:</div>
+                    <div class="film-team__name">Николай Желудович</div>
+                  </div>
+                  <div class="film-team">
+                    <div class="film-team__post">Звукорежиссер:</div>
+                    <div class="film-team__name">Константин Познеков</div>
+                  </div>
+                  <div class="film-team">
+                    <div class="film-team__post">Художник по костюмам:</div>
+                    <div class="film-team__name">Екатерина Джагарова</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="film-comments">
+              <div class="film-comments__title">Комментарии <span>16</span></div>
+              <div class="film-comments__content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="container">
         <div class="footer footer--site">
           <div class="footer__logo">
-            <div class="footer__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo.svg"></span>
+            <div class="footer__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo-dark.svg"></span>
             </div>
             <div class="footer__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
           </div>
@@ -173,7 +292,8 @@
         </div>
       </div>
     </footer>
-    <script src="/js/vendor.js"> </script>
-    <script src="/js/common.js"> </script>
+    <script src="js/vendor.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"> </script>
   </body>
 </html>

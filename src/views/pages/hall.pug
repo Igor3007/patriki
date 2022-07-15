@@ -1,0 +1,23 @@
+extends ../layouts/site-dark
+include ../../blocks/modules/site/hall-films/hall-films.pug
+ 
+
+block variables
+  include ../../data/data.pug
+  - const title = "PFF"
+
+
+block content
+    .container
+        .page-site
+            .page-site__breadcrumbs
+                ul
+                    li: a(href='#') Главная
+                    li: a(href='#') Кинозал                 
+                   
+            .page-site__title
+                h1 Кинозал 
+
+            .page-site__content 
+                +hall-films()
+                 

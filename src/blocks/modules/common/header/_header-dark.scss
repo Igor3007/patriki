@@ -1,0 +1,138 @@
+.dark-mode {
+
+    & header {
+        background-color: $main-dark;
+    }
+
+    & .header {
+
+
+        &__nav-menu ul {
+            & li {
+
+                border-color: $main-dark-2;
+
+                & a {
+
+                    transition: background-color .7s;
+                    color: #fff;
+
+                    &:hover {
+                        background-color: #fff !important;
+                        color: #000 !important;
+                    }
+
+                    &::after {
+                        background-color: $main-dark;
+                    }
+
+                    &::before {
+                        filter: invert(1);
+                        background-color: #000;
+                    }
+                }
+            }
+        }
+
+        &__login a {
+            color: #fff;
+        }
+
+        &__social {
+            & svg {
+                fill: #fff;
+            }
+        }
+
+        &-info {
+            & a {
+                color: $gray-74;
+            }
+        }
+
+        &__pa-btn {
+            background-color: transparent;
+            border-left: 1px solid $main;
+            border-right: 1px solid $main;
+        }
+
+        &__nav-container {
+            &.open {
+                background-color: $main-dark-2;
+
+                & .select-styled {
+                    background-color: $main-dark-3;
+
+                    & span {
+                        color: #fff;
+                    }
+                }
+
+                & .header {
+                    &__nav-menu {
+                        & ul li {
+                            border-bottom: 1px solid $main-dark-3;
+
+                            & a {
+
+                                font-size: 14px;
+                                font-weight: 600;
+
+                                &:hover {
+                                    background-color: $main-dark-3;
+                                    color: #fff;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .btn-burger {
+        & i {
+            background-color: #fff;
+        }
+    }
+
+
+
+    & .af-select {
+
+        & .select-styled {
+            &::after {
+                filter: invert(1);
+            }
+        }
+
+        & .select-styled:hover,
+        & .select-styled:active,
+        & .select-styled.active {
+            background-color: $main-dark-3;
+
+            & span {
+                color: $gray-74;
+            }
+        }
+
+        & .select-options {
+            background-color: $main-dark-2;
+
+            & li {
+
+                border-color: $main-dark-2;
+                color: #fff;
+
+                &.active {
+                    background-color: $main-dark-3;
+                }
+
+                &:hover {
+                    background-color: $main-dark-3;
+                }
+            }
+        }
+    }
+}

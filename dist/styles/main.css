@@ -2293,6 +2293,10 @@ a.link-primary {
   width: auto;
 }
 
+.dark-mode {
+  background-color: #111111;
+}
+
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;
@@ -5784,6 +5788,7 @@ div[data-lang]:not(.active) {
 
 .minicard-film__details ul li {
   padding-bottom: 0.2em;
+  font-size: 12px;
 }
 
 .minicard-film__details ul li span {
@@ -5815,15 +5820,15 @@ div[data-lang]:not(.active) {
   padding-bottom: 0.5em;
 }
 
-.minicard-film__title:hover a {
-  text-decoration: underline !important;
-}
-
 .minicard-film__title a {
   font-weight: 600;
   font-size: 14px;
   line-height: 150%;
   color: #525166;
+}
+
+.minicard-film__title a:hover {
+  text-decoration: underline !important;
 }
 
 .minicard-film__year {
@@ -5915,6 +5920,29 @@ div[data-lang]:not(.active) {
 
 .film-group__title--not-vote {
   color: #EB7D00;
+}
+
+.dark-mode .minicard-film__title a {
+  color: #fff;
+}
+
+.dark-mode .minicard-film__year {
+  color: #ABA9BC;
+}
+
+.dark-mode .minicard-film__duration {
+  color: #ABA9BC;
+}
+
+.dark-mode .minicard-film__flags ul li .bgimage {
+  background-color: #5A5970;
+  border: 1px solid #5A5970;
+  border-radius: 2px;
+}
+
+.dark-mode .minicard-film__cover picture {
+  background-color: #424152;
+  color: #424152;
 }
 
 .profile-block {
@@ -7449,6 +7477,10 @@ div[data-lang]:not(.active) {
 
   .film-poster__image picture {
     padding-top: 80%;
+  }
+
+  .minicard-film__details ul li {
+    font-size: 14px;
   }
 
   .directors-card__submit .btn {

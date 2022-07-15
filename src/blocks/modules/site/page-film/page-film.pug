@@ -1,0 +1,79 @@
+mixin page-film()
+    .page-film 
+        .page-film__details
+            .film-details
+                .film-details__title: h1 Трое
+                .film-details__info
+                    ul 
+                        li Российский конкурс
+                        li Полный метр
+                .film-details__wrp
+                    .film-details__cover: +picture('/img/common/cover5')
+                    .film-details__prop
+                        .film-details__year
+                            ul
+                                li 2020
+                                li 122 мин.
+                        .film-details__list
+                            ul
+                                li
+                                    small Жанр:
+                                    span Драма
+                                li
+                                    small Страна:
+                                    span Россия
+                                li
+                                    small Режиссер:
+                                    span: a(href='director-details.html') Анна Меликян                       
+                                li
+                                    small Продюсер:
+                                    span Анна Меликян                        
+            .film-seans
+                .film-seans__title Ближайшие показы
+                
+                .film-seans__list
+                    each item in [15,16,17,18]
+                        .seans-list
+                            .seans-list__date 
+                                    span 23.11 
+                                    span ВТ
+                            .seans-list__time= item +':00'
+                     
+            .film-grade
+                .film-grade__title Оценка зрителей
+                .film-grade__wrp
+                    .film-grade__total: span 6.4
+                    .film-grade__add
+                        button.btn.btn-white 
+                            +icons('#ic_star-solid', 16)
+                            span.hide-desctop Оценить фильм
+                            span.hide-mobile Оценить
+                    .film-grade__review
+                        button.btn.btn-white 
+                            span.hide-desctop Написать рецензию
+                            span.hide-mobile Рецензировать
+                
+ 
+        .page-film__main
+            .page-film__title Трое
+            .page-film__info
+                ul 
+                    li Российский конкурс
+                    li Полный метр
+            .page-film__player
+                .player-video
+            .page-film__description Московский психолог, автор мотивационных роликов Злата считает, что у них с Сашей прекрасный брак, который помог им обоим реализовать себя и подарил десять лет образцовой совместной жизни — для полноценного счастья не хватает только ребенка. Саша же, видимо, считает иначе, потому что втайне от жены он встречается с другой женщиной. Ее зовут Вероника, она живет в Петербурге, проводит экскурсии и увлекается поэзией. Вероника помогла Саше выбраться из воды, когда он попытался утопиться с увесистой телепремией на шее. Успешный шоумен-комик, безропотный муж, нежный влюбленный, — он разрывается между несколькими ролями, между двумя столицами, между очень разными женщинами. Но всегда ли возможно сделать выбор?
+            .page-film__team
+                .film-team
+                    .film-team__post Оператор:
+                    .film-team__name Николай Желудович
+                .film-team
+                    .film-team__post Звукорежиссер:
+                    .film-team__name Константин Познеков
+                .film-team
+                    .film-team__post Художник по костюмам:
+                    .film-team__name Екатерина Джагарова
+
+    .film-comments
+        .film-comments__title Комментарии <span>16</span>
+        .film-comments__content
