@@ -54,6 +54,7 @@ footer {
         &-desc {
             flex-grow: 1;
             padding: 15px;
+            color: $main;
 
             @media screen and (min-width: $w1376) {
                 padding-left: 0;
@@ -239,9 +240,9 @@ footer {
 
         & ul {
             & a {
-                color: $main;
+                color: $main2;
                 text-transform: uppercase;
-                font-weight: 700;
+                font-weight: 600;
 
                 &:hover {
                     text-decoration: underline;

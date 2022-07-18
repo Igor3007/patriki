@@ -3529,7 +3529,7 @@ header {
 }
 
 .header-info__lang .af-select {
-  min-width: 100px;
+  min-width: 135px;
 }
 
 .header-info__lang .af-select .select-styled:not(.active) span {
@@ -3616,6 +3616,7 @@ footer {
 .footer__logo-desc {
   flex-grow: 1;
   padding: 15px;
+  color: #525166;
 }
 
 .footer__logo-desc br {
@@ -3645,9 +3646,9 @@ footer {
 }
 
 .footer__contact ul a {
-  color: #525166;
+  color: #92919F;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .footer__contact ul a:hover {
@@ -8366,8 +8367,8 @@ div[data-lang]:not(.active) {
   }
 
   main .container {
-    padding: 0 30px;
-    max-width: 1500px;
+    padding: 0 48px;
+    max-width: 1440px;
   }
 
   .page-text__h1 h1 {

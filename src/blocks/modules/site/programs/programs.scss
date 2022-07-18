@@ -31,7 +31,7 @@
 
         @media screen and (min-width: $w1440) {
             width: 20%;
-            padding: 10px;
+            padding: 12px;
         }
 
     }
@@ -66,9 +66,14 @@
         background: #F5F5F5;
         display: flex;
         align-items: center;
-        padding-left: 30px;
+        padding-left: 48px;
         border-top: 1px solid #ABA9BC;
-        margin-bottom: 35px
+        margin-bottom: 35px;
+
+        @media screen and (min-width: $w1440) {
+            margin-left: -48px;
+            margin-right: -48px;
+        }
     }
 
     &__title {
@@ -133,13 +138,15 @@
 
                 &.active {
                     & .btn {
-                        font-weight: 700;
-                        color: #000;
+                        color: $main2;
+                        font-weight: 600;
                     }
                 }
 
                 & .btn {
                     width: 100%;
+                    font-weight: 700;
+                    color: $main;
                 }
             }
         }
@@ -182,6 +189,16 @@
         }
     }
 
+    & .minicard-film {
+        &__cover {
+            border-radius: 0;
+        }
+
+        &__image {
+            border-radius: 0;
+        }
+    }
+
 }
 
 
@@ -189,6 +206,10 @@
 .dropdown-sort {
     position: relative;
     margin-left: 10px;
+
+    @media screen and (min-width: $w1376) {
+        min-width: 300px;
+    }
 
     @media screen and (min-width: $w992) {
         margin-left: 0;
@@ -232,7 +253,7 @@
             background-size: 16px;
 
             @media screen and (min-width: $w992) {
-                margin-left: 10px;
+                margin-left: auto;
                 margin-right: -10px;
             }
         }
@@ -259,6 +280,7 @@
                     display: block;
                 }
 
+                &.active,
                 &:hover {
                     background-color: #EBEBEB;
                 }
