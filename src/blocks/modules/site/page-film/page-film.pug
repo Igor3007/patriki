@@ -1,4 +1,4 @@
-mixin page-film()
+mixin page-film(data)
     .page-film 
         .page-film__details
             .film-details
@@ -43,20 +43,32 @@ mixin page-film()
                                         span 23.11 
                                         span ВТ
                                 .seans-list__time= item +':00' 
-                     
-            .film-grade
-                .film-grade__title Оценка зрителей
-                .film-grade__wrp
-                    .film-grade__total: span 6.4
-                    .film-grade__add
-                        button.btn.btn-white 
-                            +icons('#ic_star-solid', 16)
-                            span.hide-desctop Оценить фильм
-                            span.hide-mobile Оценить
-                    .film-grade__review
-                        button.btn.btn-white 
-                            span.hide-desctop Написать рецензию
-                            span.hide-mobile Рецензировать
+
+            if data.grade
+                .film-grade
+                    .film-grade__title Оценка зрителей
+                    .film-grade__wrp
+                        .film-grade__total: span 6.4
+                        .film-grade__add
+                            button.btn.btn-white 
+                                span Ваша оценка 7.5
+                        .film-grade__review
+                            button.btn.btn-white 
+                                span Ваша рецензия 
+            else  
+                .film-grade
+                    .film-grade__title Оценка зрителей
+                    .film-grade__wrp
+                        .film-grade__total: span 6.4
+                        .film-grade__add
+                            button.btn.btn-white 
+                                +icons('#ic_star-solid', 16)
+                                span.hide-desctop Оценить фильм
+                                span.hide-mobile Оценить
+                        .film-grade__review
+                            button.btn.btn-white 
+                                span.hide-desctop Написать рецензию
+                                span.hide-mobile Рецензировать
                 
  
         .page-film__main

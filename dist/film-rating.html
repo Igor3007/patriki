@@ -226,10 +226,14 @@
                   <div class="film-grade__wrp">
                     <div class="film-grade__total"><span>6.4</span></div>
                     <div class="film-grade__add">
-                      <button class="btn btn-white"> <span>Ваша оценка 7.5</span></button>
+                      <button class="btn btn-white"> 
+                        <svg width="16" height="16">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_star-solid"></use>
+                        </svg><span class="hide-desctop">Оценить фильм</span><span class="hide-mobile">Оценить</span>
+                      </button>
                     </div>
                     <div class="film-grade__review">
-                      <button class="btn btn-white"> <span>Ваша рецензия </span></button>
+                      <button class="btn btn-white"> <span class="hide-desctop">Написать рецензию</span><span class="hide-mobile">Рецензировать</span></button>
                     </div>
                   </div>
                 </div>
@@ -262,143 +266,220 @@
                 </div>
               </div>
             </div>
-            <div class="user-review">
-              <div class="user-review__wrp">
-                <div class="user-review__head">
-                  <div class="user-review__title">Рецензии пользователей </div>
-                  <div class="user-review__arrow">
-                    <svg width="25" height="25">
-                      <use xlink:href="/img/sprites/sprite.svg#ic_arr-down"></use>
-                    </svg>
+            <div class="block-rating"> 
+              <div class="block-rating__list">
+                <div class="block-rating__item">
+                  <div class="card-rating">
+                    <div class="card-rating__details">
+                      <div class="card-rating__cover">
+                        <picture>
+                          <source srcset="/img/common/jury/jury.webp" type="image/webp"/><img src="/img/common/jury/jury.jpg" loading="lazy" alt="image"/>
+                        </picture>
+                      </div>
+                      <div class="card-rating__info">
+                        <div class="card-rating__name"><a href="#">Константин Длиннофамильный</a></div>
+                        <div class="card-rating__status card-rating__status--viewed">Просмотрен</div>
+                      </div>
+                    </div>
+                    <div class="card-rating__grade" data-title="Оценки">
+                      <ul>
+                        <li><span>Инновационный подход</span><span>92</span></li>
+                        <li><span>Режиссерская работа</span><span>54</span></li>
+                        <li><span>Актуальность</span><span>12</span></li>
+                        <li><span>Художественная ценность</span><span>76</span></li>
+                        <li><span>Сценарий</span><span>54</span></li>
+                        <li><span>Актерская игра</span><span>22</span></li>
+                        <li><span>Операторская работа</span><span>54</span></li>
+                        <li><span>Графика</span><span>3</span></li>
+                        <li><span>Монтаж</span><span>100</span></li>
+                        <li><span>Музыка</span><span>45</span></li>
+                      </ul>
+                    </div>
+                    <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.4</span></div>
                   </div>
                 </div>
-                <div class="user-review__list">
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
+                <div class="block-rating__item">
+                  <div class="card-rating">
+                    <div class="card-rating__details">
+                      <div class="card-rating__cover">
+                        <picture>
+                          <source srcset="/img/common/jury/jury1.webp" type="image/webp"/><img src="/img/common/jury/jury1.jpg" loading="lazy" alt="image"/>
+                        </picture>
                       </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Иван зверев</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
+                      <div class="card-rating__info">
+                        <div class="card-rating__name"><a href="#">Елизавета Измайлова</a></div>
+                        <div class="card-rating__status card-rating__status--noviewed">Не просмотрен</div>
                       </div>
-                      <div class="item-user-review__total"><span>8</span></div>
                     </div>
+                    <div class="card-rating__grade" data-title="Оценки">
+                      <ul>
+                        <li><span>Инновационный подход</span><span>92</span></li>
+                        <li><span>Режиссерская работа</span><span>54</span></li>
+                        <li><span>Актуальность</span><span>12</span></li>
+                        <li><span>Художественная ценность</span><span>76</span></li>
+                        <li><span>Сценарий</span><span>54</span></li>
+                        <li><span>Актерская игра</span><span>22</span></li>
+                        <li><span>Операторская работа</span><span>54</span></li>
+                        <li><span>Графика</span><span>3</span></li>
+                        <li><span>Монтаж</span><span>100</span></li>
+                        <li><span>Музыка</span><span>45</span></li>
+                      </ul>
+                    </div>
+                    <div class="card-rating__total" data-title="Итоговый рейтинг"><span>-</span></div>
                   </div>
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
+                </div>
+                <div class="block-rating__item">
+                  <div class="card-rating">
+                    <div class="card-rating__details">
+                      <div class="card-rating__cover">
+                        <picture>
+                          <source srcset="/img/common/jury/jury2.webp" type="image/webp"/><img src="/img/common/jury/jury2.jpg" loading="lazy" alt="image"/>
+                        </picture>
                       </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Анна Жигулёва</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
+                      <div class="card-rating__info">
+                        <div class="card-rating__name"><a href="#">Михаил Тестовый</a></div>
+                        <div class="card-rating__status card-rating__status--nograde">Не поставлена оценка</div>
                       </div>
-                      <div class="item-user-review__total"><span>8</span></div>
                     </div>
-                  </div>
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/img_user.png"></span>
-                      </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Иван Иванов</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
-                      </div>
-                      <div class="item-user-review__total"><span>8</span></div>
+                    <div class="card-rating__grade" data-title="Оценки">
+                      <ul>
+                        <li><span>Инновационный подход</span><span>92</span></li>
+                        <li><span>Режиссерская работа</span><span>54</span></li>
+                        <li><span>Актуальность</span><span>12</span></li>
+                        <li><span>Художественная ценность</span><span>76</span></li>
+                        <li><span>Сценарий</span><span>54</span></li>
+                        <li><span>Актерская игра</span><span>22</span></li>
+                        <li><span>Операторская работа</span><span>54</span></li>
+                        <li><span>Графика</span><span>3</span></li>
+                        <li><span>Монтаж</span><span>100</span></li>
+                        <li><span>Музыка</span><span>45</span></li>
+                      </ul>
                     </div>
-                  </div>
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
-                      </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Василиса Ельская</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
-                      </div>
-                      <div class="item-user-review__total"><span>8</span></div>
-                    </div>
-                  </div>
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
-                      </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Анастасия Старовойтова</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
-                      </div>
-                      <div class="item-user-review__total"><span>8</span></div>
-                    </div>
-                  </div>
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/img_user.png"></span>
-                      </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Евгений горовой</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
-                      </div>
-                      <div class="item-user-review__total"><span>8</span></div>
-                    </div>
-                  </div>
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/user.jpg"></span>
-                      </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Иннокентий островский</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
-                      </div>
-                      <div class="item-user-review__total"><span>8</span></div>
-                    </div>
-                  </div>
-                  <div class="user-review__item">
-                    <div class="item-user-review">
-                      <div class="item-user-review__photo"><span class="bgimage lazyload" data-bg="/img/common/user2.jpg"></span>
-                      </div>
-                      <div class="item-user-review__main">
-                        <div class="item-user-review__user">
-                          <div class="item-user-review__name">Анна Жигулёва</div>
-                          <div class="item-user-review__lang">RU</div>
-                        </div>
-                        <div class="item-user-review__link"><a href="#">Читать</a></div>
-                      </div>
-                      <div class="item-user-review__total"><span>8</span></div>
-                    </div>
+                    <div class="card-rating__total" data-title="Итоговый рейтинг"><span>-</span></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="juru-comment">
-              <div class="juru-comment__wrp">
-                <div class="juru-comment__title">Комментарий в кинозал  </div>
-                <div class="juru-comment__content">
-                  <div class="juru-comment__textarea">
-                    <textarea placeholder="Ваше сообщение..."></textarea>
+            <div class="film-comments">
+              <div class="film-comments__wrp">
+                <div class="film-comments__title">Комментарии <span>16</span></div>
+                <div class="film-comments__content">
+                  <div class="film-comments__add">
+                    <div class="film-comments__textarea">
+                      <textarea placeholder="Ваше сообщение..."></textarea>
+                    </div>
+                    <div class="film-comments__send">
+                      <button>
+                        <svg width="24" height="24">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
-                  <div class="juru-comment__action">
-                    <div class="juru-comment__save">Сохранить</div>
-                    <div class="juru-comment__public">Опубликовать</div>
-                    <div class="juru-comment__remove">Снять с публикации</div>
+                  <div class="film-comments__list">
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user3.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user5.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user6.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user7.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                  </div>
+                  <div class="film-comments__more">
+                    <button class="btn btn-line">Показать все</button>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,7 @@
 extends ../layouts/site-dark
 include ../../blocks/modules/site/page-film/page-film.pug
+include ../../blocks/modules/site/page-film/card-rating.pug
+ 
  
 
 block variables
@@ -20,5 +22,7 @@ block content
                 +page-film({
                     grade: false
                 })
+                +site-rating()
                 +film-comments()
+                 
                  
