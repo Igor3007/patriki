@@ -31,13 +31,18 @@ mixin page-film()
             .film-seans
                 .film-seans__title Ближайшие показы
                 
-                .film-seans__list
-                    each item in [15,16,17,18]
-                        .seans-list
-                            .seans-list__date 
-                                    span 23.11 
-                                    span ВТ
-                            .seans-list__time= item +':00'
+                .film-seans__wrp
+                    .film-seans__nav
+                        .film-seans__nav-prev(data-se-slider="prev"): +icons('#ic_season-back', 15)
+                        .film-seans__nav-next(data-se-slider="next"): +icons('#ic_season-next', 15)
+
+                    .film-seans__list
+                        each item in [15,16,17,18,19,20]
+                            .seans-list
+                                .seans-list__date 
+                                        span 23.11 
+                                        span ВТ
+                                .seans-list__time= item +':00' 
                      
             .film-grade
                 .film-grade__title Оценка зрителей
@@ -74,6 +79,55 @@ mixin page-film()
                     .film-team__post Художник по костюмам:
                     .film-team__name Екатерина Джагарова
 
+
+mixin film-comments
+
     .film-comments
-        .film-comments__title Комментарии <span>16</span>
-        .film-comments__content
+        .film-comments__wrp
+            .film-comments__title Комментарии <span>16</span>
+            .film-comments__content
+                .film-comments__add
+                    .film-comments__textarea
+                        textarea(placeholder="Ваше сообщение...")
+                    .film-comments__send
+                        button: +icons('#ic_send', 24)
+
+
+                .film-comments__list
+                    each item in ['user3.jpg', 'user5.jpg', 'user6.jpg', 'user7.jpg']
+                        +item-message(item)
+                .film-comments__more
+                    button.btn.btn-line Показать все
+
+
+mixin juru-comment
+    .juru-comment
+        .juru-comment__wrp
+            .juru-comment__title Комментарий в кинозал  
+            .juru-comment__content
+                .juru-comment__textarea
+                    textarea(placeholder="Ваше сообщение...")
+                .juru-comment__action
+                    .juru-comment__save Сохранить
+                    .juru-comment__public Опубликовать
+                    .juru-comment__remove Снять с публикации
+                     
+
+
+
+mixin item-message(data)
+  .item-message(data-comment="item" data-comment-id="123")
+    .item-message__head
+      .item-message__photo: +bgimage('/img/common/'+data)
+      .item-message__detail
+        .item-message__name Бронислав Андреев,
+        .item-message__date Сегодня в 19.30
+    .item-message__main
+      span Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.
+    .item-message__action(data-comment-action="container")
+        .item-message__default(data-comment-action="pane-default")
+            span.item-message__default-reply(data-comment-action="reply") Ответить
+        .item-message__reply(data-comment-action="pane-reply")
+          .item-message__reply-field: textarea(placeholder="Введите")
+          .item-message__reply-button(data-comment-action="send"): +icons('#ic_send')
+    .item-message__answers(data-comment="answers") 

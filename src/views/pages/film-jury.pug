@@ -1,5 +1,6 @@
 extends ../layouts/site-dark
 include ../../blocks/modules/site/page-film/page-film.pug
+include ../../blocks/modules/site/page-film/user-review.pug
  
 
 block variables
@@ -18,5 +19,6 @@ block content
 
             .page-site__content 
                 +page-film()
-                +film-comments()
+                +user-review
+                +juru-comment
                  

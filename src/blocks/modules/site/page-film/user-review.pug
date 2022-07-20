@@ -1,0 +1,23 @@
+mixin user-review
+    .user-review
+        .user-review__wrp
+            .user-review__head
+                .user-review__title Рецензии пользователей 
+                .user-review__arrow: +icons('#ic_arr-down')
+            .user-review__list
+                each item in moderator.msgrUser
+                    .user-review__item: +item-user-review(item)
+                
+
+mixin item-user-review(data)
+    .item-user-review
+        .item-user-review__photo
+            +bgimage(data.logo)
+        .item-user-review__main
+            .item-user-review__user
+                .item-user-review__name= data.name
+                .item-user-review__lang RU
+            .item-user-review__link: a(href='#') Читать
+        .item-user-review__total
+            span 8
+             
