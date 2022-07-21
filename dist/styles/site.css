@@ -4772,16 +4772,17 @@ footer {
 
 .dark-mode .item-message--my .item-message__main span {
   background-color: #292833;
-  padding: 10px 20px;
+  padding: 10px 15px;
 }
 
 .dark-mode .item-message__main span {
   background-color: transparent;
   font-weight: 500;
-  line-height: 170%;
+  line-height: 160%;
   color: #fff;
   padding-top: 4px;
   padding-left: 0;
+  font-size: 13px;
 }
 
 .dark-mode .item-message__detail {
@@ -7207,6 +7208,11 @@ footer {
     width: 160px;
   }
 
+  .dark-mode .item-message__main span {
+    font-size: 14px;
+    line-height: 170%;
+  }
+
   .your-review__grade {
     margin-top: 0;
   }
@@ -8438,6 +8444,10 @@ footer {
   header .container {
     max-width: none;
     padding-right: 0;
+  }
+
+  .dark-mode .item-message__answers {
+    padding-left: 45px;
   }
 }
 
