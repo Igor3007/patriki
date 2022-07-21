@@ -133,10 +133,17 @@
 
         &__content {
             background-color: transparent;
+            padding: 10px 20px;
         }
 
         &__close {
-            top: 25px;
+            top: 20px;
+            right: 20px;
+
+            @media screen and (min-width: $w760) {
+                top: 25px;
+                right: 15px;
+            }
         }
     }
 }

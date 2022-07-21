@@ -30,9 +30,15 @@
         font-size: 14px;
         display: flex;
         align-items: center;
+        margin-top: 10px;
+
+        @media screen and (min-width: $w480) {
+            margin-top: 0;
+        }
 
         @media screen and (min-width: $w760) {
             font-size: 16px;
+
         }
 
         & span {

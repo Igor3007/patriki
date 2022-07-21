@@ -3282,10 +3282,12 @@ input {
 
 .dark-mode .af-popup__content {
   background-color: transparent;
+  padding: 10px 20px;
 }
 
 .dark-mode .af-popup__close {
-  top: 25px;
+  top: 20px;
+  right: 20px;
 }
 
 header {
@@ -7688,6 +7690,11 @@ div[data-lang]:not(.active) {
   .form__subitem {
     padding: 12px 10px;
     margin-bottom: 0;
+  }
+
+  .dark-mode .af-popup__close {
+    top: 25px;
+    right: 15px;
   }
 
   .footer__contact {

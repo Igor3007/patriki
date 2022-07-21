@@ -209,6 +209,7 @@
 
                 @media screen and (min-width: $w1440) {
                     padding: 3px 20px;
+
                 }
 
                 & span {
@@ -231,9 +232,9 @@
                         text-align: center;
 
                         @media screen and (min-width: $w760) {
-                            min-width: 33px;
+                            min-width: 40px;
                             font-size: 13px;
-                            padding: 0.1em 0.3em;
+                            padding: 0.15em 0.3em;
                         }
                     }
                 }
