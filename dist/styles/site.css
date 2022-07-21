@@ -1965,7 +1965,7 @@ input[type="date"] {
 }
 
 .container {
-  max-width: 360px;
+  max-width: 400px;
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
@@ -3743,11 +3743,11 @@ header {
 }
 
 .dark-mode .header__nav-container.open {
-  background-color: #424152;
+  background-color: #292833;
 }
 
 .dark-mode .header__nav-container.open .select-styled {
-  background-color: #5A5970;
+  background-color: #424152;
 }
 
 .dark-mode .header__nav-container.open .select-styled span {
@@ -3755,7 +3755,7 @@ header {
 }
 
 .dark-mode .header__nav-container.open .header__nav-menu ul li {
-  border-bottom: 1px solid #5A5970;
+  border-bottom: 1px solid #424152;
 }
 
 .dark-mode .header__nav-container.open .header__nav-menu ul li a {

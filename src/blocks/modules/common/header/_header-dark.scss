@@ -58,10 +58,10 @@
 
         &__nav-container {
             &.open {
-                background-color: $main-dark-2;
+                background-color: $main-dark-1;
 
                 & .select-styled {
-                    background-color: $main-dark-3;
+                    background-color: $main-dark-2;
 
                     & span {
                         color: #fff;
@@ -71,7 +71,7 @@
                 & .header {
                     &__nav-menu {
                         & ul li {
-                            border-bottom: 1px solid $main-dark-3;
+                            border-bottom: 1px solid $main-dark-2;
 
                             & a {
 
