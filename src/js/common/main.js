@@ -369,7 +369,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 this.activeSlide--
                 this.changeSlide()
             }
-
         }
 
         this.addEvent = function () {
@@ -395,11 +394,262 @@ document.addEventListener('DOMContentLoaded', function (event) {
     show/hide review
     ===============================*/
 
-    if (document.querySelector('.user-review__arrow')) {
-        document.querySelector('.user-review__arrow').addEventListener('click', function (e) {
+    if (document.querySelector('.user-review__head')) {
+        document.querySelector('.user-review__head').addEventListener('click', function (e) {
             document.querySelector('.user-review__list').classList.toggle('open')
-            this.classList.toggle('open')
+            document.querySelector('.user-review__arrow').classList.toggle('open')
+
+            setTimeout(() => {
+                document.querySelector('.user-review__list').classList.toggle('open-scroll')
+            }, 500)
+
         })
+    }
+
+
+    /* ==========================================
+    Карточка режисера popup
+    ========================================== */
+
+
+
+    if (document.querySelectorAll('[data-modal-hall="open"]').length) {
+        document.querySelectorAll('[data-modal-hall="open"]').forEach(function (item) {
+            item.addEventListener('click', function (event) {
+
+                // if not data-url
+                if (!item.dataset.url) return false;
+
+                let hallPopup = new customModal()
+                let url = item.dataset.url
+
+
+                hallPopup.open('<div><span class="af-spiner" ></span></div>', function (instanse) {
+
+                    window.ajax({
+                        type: 'GET',
+                        url: url,
+                    }, function (status, response) {
+
+                        hallPopup.changeContent(response)
+
+
+
+
+
+                        //init submit form
+
+                        if (document.querySelector('.af-popup form')) {
+
+                            let form = document.querySelector('.af-popup form')
+
+                            form.addEventListener('submit', function (event) {
+                                event.preventDefault()
+                                event.target.querySelector('[type="submit"]').classList.add('btn-loading')
+
+
+                                //ajax send data
+
+                                setTimeout(() => {
+
+                                    if (hallPopup.modal.querySelector('.success-msg')) {
+                                        hallPopup.modal.querySelector('[data-popup-html]').style.display = 'none'
+                                        hallPopup.modal.querySelector('.success-msg').style.display = 'block'
+                                    } else {
+                                        hallPopup.close()
+                                    }
+
+
+
+                                }, 1000)
+
+                            })
+
+                        }
+
+                    })
+                })
+
+
+
+            })
+        })
+    }
+
+    /* ==========================================
+    Выставить оценку popup
+    ========================================== */
+
+    function Grade(modal) {
+
+        this.modal = modal
+        this.btnNext = this.modal.querySelector('[data-grade="next"]')
+        this.btnBack = this.modal.querySelector('[data-grade="back"]')
+        this.btnSend = this.modal.querySelector('[data-grade="send"]')
+        this.items = this.modal.querySelectorAll('[data-step]')
+        this.activeSlide = 0
+
+        this.init = function () {
+            this.btnBack.style.display = (this.activeSlide ? 'flex' : 'none')
+            this.addEvent()
+
+        }
+
+        this.changeSlide = function () {
+
+            this.btnBack.style.display = (this.activeSlide ? 'flex' : 'none')
+
+            this.items.forEach(item => {
+                if (item.classList.contains('active')) {
+                    item.classList.add('slide-hide')
+
+                    setTimeout(() => {
+                        item.classList.remove('active')
+                        item.classList.remove('slide-hide')
+
+                        if (this.items.length) {
+                            this.items[this.activeSlide].classList.add('active')
+                        }
+                    }, 50)
+                }
+
+            })
+
+
+        }
+
+        this.nextSlide = function () {
+            if (this.activeSlide < (this.items.length - 1)) {
+                this.activeSlide++
+                this.changeSlide()
+            }
+        }
+
+        this.prevSlide = function () {
+            if (this.activeSlide > 0) {
+                this.activeSlide--
+                this.changeSlide()
+            }
+        }
+
+        this.addEvent = function () {
+            this.btnNext.addEventListener('click', (e) => {
+                e.preventDefault()
+                this.nextSlide()
+            })
+            this.btnBack.addEventListener('click', (e) => {
+                e.preventDefault()
+                this.prevSlide()
+            })
+
+            this.btnSend.addEventListener('click', (e) => {
+                e.preventDefault()
+
+                if (!this.modal.querySelector('input[name="check-grade"]').checked) {
+                    this.modal.querySelector('.checkbox__elem').classList.add('zoom-check')
+
+                    setTimeout(() => {
+                        this.modal.querySelector('.checkbox__elem').classList.remove('zoom-check')
+                    }, 1000)
+                    return false
+                }
+
+
+
+                //send ajax 
+
+                const form = this.modal.querySelector('form')
+                const formData = new FormData(form)
+
+                this.modal.querySelector('[type="submit"]').classList.add('btn-loading')
+
+                setTimeout(() => {
+
+                    if (this.modal.querySelector('.success-msg')) {
+                        this.modal.querySelector('[data-popup-html]').style.display = 'none'
+                        this.modal.querySelector('.success-msg').style.display = 'block'
+                    }
+
+                }, 1000)
+
+
+            })
+        }
+    }
+
+    if (document.querySelectorAll('[data-modal-grade="open"]').length) {
+        document.querySelectorAll('[data-modal-grade="open"]').forEach(function (item) {
+            item.addEventListener('click', function (event) {
+
+                // if not data-url
+                if (!item.dataset.url) return false;
+
+                let gradePopup = new customModal()
+                let url = item.dataset.url
+
+
+                gradePopup.open('<div><span class="af-spiner" ></span></div>', function (instanse) {
+
+                    window.ajax({
+                        type: 'GET',
+                        url: url,
+                    }, function (status, response) {
+
+                        gradePopup.changeContent(response)
+
+                        //маска для полей
+                        gradePopup.modal.querySelectorAll('input[type="text"]').forEach(item => {
+
+                            var mask = Maska.create(item, {
+                                mask: '#*',
+                                preprocessor: function (value) {
+                                    return (value > 100 ? '100' : value)
+                                }
+                            });
+                        })
+
+                        //init
+
+                        const grade = new Grade(gradePopup.modal);
+
+                        grade.init()
+
+
+                    })
+                })
+
+
+
+            })
+        })
+    }
+
+    /* =============================
+    description
+    =============================*/
+
+    if (document.querySelector('.page-film__more')) {
+
+
+
+        if (document.querySelector('.page-film__description').innerText.length < 200) {
+            document.querySelector('.page-film__more').remove()
+            document.querySelector('.page-film__description').classList.add('js-show-all')
+        } else {
+            document.querySelector('.page-film__more').addEventListener('click', function () {
+
+
+                if (document.querySelector('.page-film__description').classList.contains('js-show-all')) {
+                    document.querySelector('.page-film__more').innerText = document.querySelector('.page-film__more').dataset.textShow
+                } else {
+                    document.querySelector('.page-film__more').innerText = document.querySelector('.page-film__more').dataset.textHide
+                }
+
+                document.querySelector('.page-film__description').classList.toggle('js-show-all')
+            })
+        }
+
+
     }
 
 

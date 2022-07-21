@@ -1,0 +1,91 @@
+
+<div class="grade-film" data-popup-html="">
+  <div class="grade-film__wrp">
+    <div class="grade-film__form">
+      <form action="#" method="POST">
+        <div class="grade-film__steps">
+          <div class="grade-film__step active" data-step="1">
+            <div class="grade-film__title">Оцените фильм</div>
+            <div class="grade-film__desc">Шаг 1. Поставьте оценки от 1 до 100</div>
+            <div class="grade-film__fields">
+              <div class="grade-film__input">
+                <label>Инновационный подход</label>
+                <input type="text" name="input_1"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Режиссерская работа</label>
+                <input type="text" name="input_2"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Актуальность</label>
+                <input type="text" name="input_3"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Художественная ценность</label>
+                <input type="text" name="input_4"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Сценарий</label>
+                <input type="text" name="input_5"/>
+              </div>
+            </div>
+            <div class="grade-film__btn">
+              <button class="btn btn-line" data-grade="next">Далее</button>
+            </div>
+          </div>
+          <div class="grade-film__step" data-step="2">
+            <div class="grade-film__title">Оцените фильм</div>
+            <div class="grade-film__desc">Шаг 2. Поставьте оценки от 1 до 100</div>
+            <div class="grade-film__fields">
+              <div class="grade-film__input">
+                <label>Актерская игра</label>
+                <input type="text" name="input_6"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Операторская работа</label>
+                <input type="text" name="input_7"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Графика</label>
+                <input type="text" name="input_8"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Монтаж</label>
+                <input type="text" name="input_9"/>
+              </div>
+              <div class="grade-film__input">
+                <label>Музыка</label>
+                <input type="text" name="input_10"/>
+              </div>
+            </div>
+            <div class="grade-film__check">
+              <label class="checkbox">
+                <input type="checkbox" name="check-grade"/><span class="checkbox__elem"></span><span class="checkbox__text">Оценки выставлены полностью и проверены</span>
+              </label>
+            </div>
+            <div class="grade-film__note">Внимание, выставив оценки, Вы не сможете их изменить!</div>
+            <div class="grade-film__btn">
+              <button class="btn btn-line btn-white" data-grade="send" type="submit">Оценить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="grade-film__back" data-grade="back">
+    <svg width="25" height="25">
+      <use xlink:href="/img/sprites/sprite.svg#ic_arr-back"></use>
+    </svg><span>Назад</span>
+  </div>
+</div>
+<div class="success-msg"> 
+  <div class="success-msg__wrp">
+    <div class="success-msg__icon">
+      <svg width="50" height="50">
+        <use xlink:href="/img/sprites/sprite.svg#ic_ok-large"></use>
+      </svg>
+    </div>
+    <div class="success-msg__title">Ваши оценки приняты</div>
+    <div class="success-msg__msg">Спасибо, что поделились мнением!</div>
+  </div>
+</div>

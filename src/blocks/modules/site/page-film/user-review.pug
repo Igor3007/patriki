@@ -17,7 +17,7 @@ mixin item-user-review(data)
             .item-user-review__user
                 .item-user-review__name= data.name
                 .item-user-review__lang RU
-            .item-user-review__link: a(href='#') Читать
+            .item-user-review__link: a(href='#' data-modal-hall="open" data-url="_user-review.html") Читать
         .item-user-review__total
             span 8
              

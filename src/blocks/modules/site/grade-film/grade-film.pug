@@ -1,0 +1,55 @@
+mixin  grade-film
+    .grade-film(data-popup-html="")
+        .grade-film__wrp
+            .grade-film__form
+                form(action='#' method='POST')
+                    .grade-film__steps
+                        .grade-film__step.active(data-step="1")
+                            .grade-film__title Оцените фильм
+                            .grade-film__desc Шаг 1. Поставьте оценки от 1 до 100
+                            .grade-film__fields
+                                .grade-film__input
+                                    label Инновационный подход
+                                    input(type="text" name="input_1") 
+                                .grade-film__input
+                                    label Режиссерская работа
+                                    input(type="text" name="input_2") 
+                                .grade-film__input
+                                    label Актуальность
+                                    input(type="text" name="input_3") 
+                                .grade-film__input
+                                    label Художественная ценность
+                                    input(type="text" name="input_4") 
+                                .grade-film__input
+                                    label Сценарий
+                                    input(type="text" name="input_5") 
+                            .grade-film__btn
+                                button.btn.btn-line(data-grade="next") Далее
+                        .grade-film__step(data-step="2")
+                            .grade-film__title Оцените фильм
+                            .grade-film__desc Шаг 2. Поставьте оценки от 1 до 100
+                            .grade-film__fields
+                                .grade-film__input
+                                    label Актерская игра
+                                    input(type="text" name="input_6") 
+                                .grade-film__input
+                                    label Операторская работа
+                                    input(type="text" name="input_7") 
+                                .grade-film__input
+                                    label Графика
+                                    input(type="text" name="input_8") 
+                                .grade-film__input
+                                    label Монтаж
+                                    input(type="text" name="input_9") 
+                                .grade-film__input
+                                    label Музыка
+                                    input(type="text" name="input_10") 
+                            .grade-film__check
+                                +checkbox('Оценки выставлены полностью и проверены', 'check-grade')
+                            .grade-film__note Внимание, выставив оценки, Вы не сможете их изменить!
+                            
+                            .grade-film__btn
+                                button.btn.btn-line.btn-white(data-grade="send" type="submit") Оценить
+        .grade-film__back(data-grade="back")
+            +icons('#ic_arr-back')
+            span Назад

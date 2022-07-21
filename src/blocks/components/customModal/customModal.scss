@@ -99,3 +99,44 @@
     stroke: #fff;
     stroke-width: 2px;
 }
+
+.af-spiner {
+
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+        content: '';
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        border-left-color: transparent !important;
+        margin-left: 10px;
+        transition: transform 0.5s linear;
+        animation: 0.5s linear loadingrotate infinite;
+        display: inline-block;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        position: relative;
+        left: 5px;
+    }
+}
+
+.dark-mode {
+    & .af-popup {
+        background: rgba(17, 17, 17, 0.97);
+
+        &__content {
+            background-color: transparent;
+        }
+
+        &__close {
+            top: 25px;
+        }
+    }
+}

@@ -76,6 +76,52 @@
 
 }
 
+.dark-mode {
+    & .checkbox {
+        &__elem {
+            background-color: $main-dark-2;
+            border-color: $main-dark-2;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            top: 0;
+
+            &:after {
+                left: 4px;
+                top: 4px;
+            }
+        }
+
+        &__text {
+            color: $gray-74;
+            font-weight: 600;
+        }
+
+        & input {
+
+
+            &:checked~.checkbox__elem {
+                background-color: $main-dark-2;
+                z-index: 2;
+
+            }
+
+
+
+            &:checked~.checkbox__elem:after {
+                opacity: 1;
+                border-radius: 0;
+                transform: rotate(-45deg);
+                border-color: $gray-74;
+            }
+        }
+
+
+    }
+
+
+}
+
 
 /* radio */
 

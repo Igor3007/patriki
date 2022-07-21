@@ -1788,6 +1788,18 @@ select {
   }
 }
 
+@keyframes slide-right-hide {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
 @keyframes slide-left {
   from {
     transform: translateX(0);
@@ -1847,6 +1859,20 @@ select {
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes check-zoom {
+  0% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1.2);
   }
 }
 
@@ -2521,6 +2547,37 @@ a.link-primary {
   transform: rotate(-45deg);
 }
 
+.dark-mode .checkbox__elem {
+  background-color: #424152;
+  border-color: #424152;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  top: 0;
+}
+
+.dark-mode .checkbox__elem:after {
+  left: 4px;
+  top: 4px;
+}
+
+.dark-mode .checkbox__text {
+  color: #ABA9BC;
+  font-weight: 600;
+}
+
+.dark-mode .checkbox input:checked ~ .checkbox__elem {
+  background-color: #424152;
+  z-index: 2;
+}
+
+.dark-mode .checkbox input:checked ~ .checkbox__elem:after {
+  opacity: 1;
+  border-radius: 0;
+  transform: rotate(-45deg);
+  border-color: #ABA9BC;
+}
+
 /* radio */
 
 .radio {
@@ -3191,6 +3248,44 @@ input {
   height: 24px;
   stroke: #fff;
   stroke-width: 2px;
+}
+
+.af-spiner {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.af-spiner::after {
+  content: '';
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-left-color: transparent !important;
+  margin-left: 10px;
+  transition: transform 0.5s linear;
+  animation: 0.5s linear loadingrotate infinite;
+  display: inline-block;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  position: relative;
+  left: 5px;
+}
+
+.dark-mode .af-popup {
+  background: rgba(17, 17, 17, 0.97);
+}
+
+.dark-mode .af-popup__content {
+  background-color: transparent;
+}
+
+.dark-mode .af-popup__close {
+  top: 25px;
 }
 
 header {
@@ -4803,16 +4898,22 @@ footer {
 }
 
 .page-film__player .player-video {
-  padding-top: 60%;
+  padding-top: 55%;
   background-color: #1d1d22;
   border: 8px solid #292833;
 }
 
 .page-film__description {
-  padding-bottom: 25px;
+  margin-bottom: 15px;
   font-size: 16px;
   font-weight: 500;
   line-height: 150%;
+  overflow: hidden;
+}
+
+.page-film__more {
+  padding-bottom: 25px;
+  font-weight: 700;
 }
 
 .page-film__team {
@@ -5125,6 +5226,29 @@ footer {
   display: inline;
 }
 
+.film-grade__edit {
+  padding-top: 25px;
+}
+
+.film-grade__count {
+  position: relative;
+  width: 64px;
+  height: 44px;
+  margin-right: 10px;
+  max-width: 64px;
+  background-color: #292833;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.film-grade__count span {
+  font-size: 28px;
+  color: #fff;
+  font-weight: bold;
+}
+
 .film-grade__total {
   width: 98px;
   height: 98px;
@@ -5411,6 +5535,9 @@ footer {
 
 .user-review__list.open {
   max-height: 1000px;
+}
+
+.user-review__list.open.open-scroll {
   overflow-y: auto;
 }
 
@@ -5420,7 +5547,7 @@ footer {
 }
 
 .user-review__head {
-  display: flex;
+  display: inline-flex;
 }
 
 .user-review__arrow {
@@ -5718,6 +5845,472 @@ footer {
 
 .dark-mode .card-rating__total span {
   color: #fff;
+}
+
+.grade-film {
+  color: #fff;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.grade-film__wrp {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.grade-film__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  color: #fff;
+  text-align: left;
+  padding-bottom: 25px;
+}
+
+.grade-film__step {
+  display: none;
+}
+
+.grade-film__step.active {
+  display: block;
+  animation: slide-right 0.4s ease forwards;
+}
+
+.grade-film__step.slide-hide {
+  animation: slide-right-hide 0.4s ease forwards;
+}
+
+.grade-film__desc {
+  color: #5A5970;
+  padding-bottom: 25px;
+}
+
+.grade-film__input {
+  padding-bottom: 25px;
+}
+
+.grade-film__input label {
+  font-size: 14px;
+  color: #ABA9BC;
+  font-weight: 600;
+  display: block;
+  padding-bottom: 7px;
+}
+
+.grade-film__input input {
+  height: 52px;
+  background-color: #292833;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  font-size: 24px;
+  color: #ABA9BC;
+  font-weight: 600;
+}
+
+.grade-film__fields {
+  padding-bottom: 15px;
+}
+
+.grade-film__btn .btn {
+  width: 100%;
+  height: 52px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.grade-film__btn .btn.btn-white {
+  background-color: #fff;
+  color: #222B32;
+}
+
+.grade-film__btn .btn.btn-white:hover {
+  color: #fff;
+}
+
+.grade-film__btn .btn:hover {
+  border-color: #5A5970;
+  background-color: #292833;
+}
+
+.grade-film__check {
+  padding-bottom: 15px;
+}
+
+.grade-film__note {
+  padding-bottom: 25px;
+  color: #5A5970;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.grade-film .checkbox__elem.zoom-check {
+  animation: check-zoom 0.8s ease infinite;
+}
+
+.grade-film__back {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  cursor: pointer;
+}
+
+.grade-film__back span {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.grade-film__back svg {
+  stroke: #fff;
+  filter: invert(1) grayscale(1) brightness(2);
+  width: 1.2em;
+  height: 1.2em;
+  stroke-width: 1.5px;
+}
+
+.review-film-form {
+  color: #fff;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.review-film-form__wrp {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.review-film-form__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  color: #fff;
+  text-align: left;
+  margin-right: 15px;
+  padding-bottom: 5px;
+}
+
+.review-film-form__textarea {
+  width: 100%;
+  flex-grow: 1;
+  background-color: #292833;
+  padding: 8px 10px;
+}
+
+.review-film-form__textarea textarea {
+  background-color: transparent;
+  color: #92919F;
+  font-weight: 500;
+  border: transparent;
+  display: block;
+  resize: none;
+  min-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  transition: 0.3s ease;
+  padding: 8px 10px 8px 10px;
+  width: 100%;
+  min-height: 170px;
+}
+
+.review-film-form__textarea textarea:focus {
+  resize: vertical;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.review-film-form__desc {
+  color: #5A5970;
+  padding-bottom: 25px;
+}
+
+.review-film-form__label {
+  color: #ABA9BC;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.review-film-form__textarea {
+  margin-bottom: 10px;
+}
+
+.review-film-form__note {
+  padding-bottom: 35px;
+  color: #5A5970;
+}
+
+.review-film-form__btn .btn {
+  width: 100%;
+  height: 52px;
+  color: #111111;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.your-review {
+  color: #fff;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.your-review__wrp {
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+.your-review__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  color: #fff;
+  text-align: left;
+  margin-right: 15px;
+}
+
+.your-review__head {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+}
+
+.your-review__grade {
+  background-color: #292833;
+  padding: 10px 20px;
+  color: #ABA9BC;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.your-review__grade span {
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+}
+
+.your-review__text {
+  padding-bottom: 35px;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.your-review__subtitle {
+  color: #ABA9BC;
+  padding-bottom: 1em;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 500;
+}
+
+.your-review__comment {
+  background-color: #292833;
+  padding: 1em 1.2em;
+  margin-bottom: 1em;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.review-grade {
+  color: #fff;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.review-grade__wrp {
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+.review-grade__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  color: #fff;
+  text-align: left;
+  padding-bottom: 25px;
+}
+
+.review-grade__text {
+  padding-bottom: 35px;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.review-grade__add {
+  display: flex;
+  background-color: #292833;
+  padding: 8px 10px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.review-grade__textarea {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.review-grade__textarea textarea {
+  background-color: transparent;
+  color: #92919F;
+  font-weight: 500;
+  border: transparent;
+  display: block;
+  resize: none;
+  min-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  transition: 0.3s ease;
+  padding: 10px 10px 8px 10px;
+  width: 100%;
+}
+
+.review-grade__textarea textarea:focus {
+  resize: vertical;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.review-grade__photo {
+  padding-bottom: 25px;
+}
+
+.review-grade__photo picture img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0Ljk5IDI0LjU4N2MuMDk0Ljc3Ni0uNTQ0IDEuNDEzLTEuMzE3IDEuNDEzSDEyLjMyN2MtLjc3MyAwLTEuNDExLS42MzctMS4zMTgtMS40MTMuNTI3LTQuMzcxIDMuNDU2LTYuNzE3IDYuOTkxLTYuNzE3IDMuNTM1IDAgNi40NjQgMi4zNDYgNi45OSA2LjcxN3ptLTMuNjQ3LTExLjIwM2MwIDEuODctMS40OTcgMy4zODQtMy4zNDMgMy4zODQtMS44NDYgMC0zLjM0My0xLjUxNS0zLjM0My0zLjM4NFMxNi4xNTQgMTAgMTggMTBjMS44NDYgMCAzLjM0MyAxLjUxNSAzLjM0MyAzLjM4NHoiIGZpbGw9IiM5MjkxOUYiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% auto;
+  background-color: #292833;
+  color: transparent;
+}
+
+.review-grade__send button {
+  background-color: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.review-grade__send button::before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  content: '';
+  display: block;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.review-grade__send button:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: #424152;
+  border-radius: 5px;
+}
+
+.review-grade__send button svg {
+  filter: invert(0.6);
+}
+
+.review-grade__radio label input {
+  display: none;
+}
+
+.review-grade__radio label input:checked ~ span {
+  background-color: #424152;
+}
+
+.review-grade__radio label span {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.review-grade__radio label span:hover {
+  background-color: #424152;
+}
+
+.review-grade__radio ul {
+  display: inline-flex;
+  align-items: center;
+  background-color: #292833;
+  padding: 2px;
+}
+
+.review-grade__save {
+  padding-top: 45px;
+}
+
+.review-grade__save .btn {
+  color: #111111;
+  border-radius: 0;
+  font-size: 14px;
+  height: 52px;
+  width: 100%;
+}
+
+.success-msg {
+  display: none;
+}
+
+.success-msg__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  color: #fff;
+  text-align: left;
+  margin-right: 15px;
+  padding-bottom: 10px;
+}
+
+.success-msg__msg {
+  color: #ABA9BC;
+  padding-bottom: 25px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.success-msg__icon {
+  padding-bottom: 20px;
 }
 
 .all-films__competition {
@@ -6566,6 +7159,10 @@ footer {
     height: 4.5em;
   }
 
+  .review-grade__textarea textarea:focus {
+    height: 4.5em;
+  }
+
   .all-films__tabs {
     margin-right: 0;
   }
@@ -6605,6 +7202,10 @@ footer {
   .about-user__photo {
     width: 160px;
   }
+
+  .review-grade__save .btn {
+    max-width: 200px;
+  }
 }
 
 @media screen and (min-width: 576px) {
@@ -6630,6 +7231,16 @@ footer {
 
   .awards-user__title {
     font-size: 24px;
+  }
+
+  .page-film__more {
+    display: none;
+  }
+
+  .review-grade__radio label span {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
   }
 
   .minicard-film__details ul li {
@@ -6809,12 +7420,12 @@ footer {
   .card-rating__grade ul {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -10px;
+    margin: 0 -20px;
   }
 
   .card-rating__grade ul li {
     width: 50%;
-    padding: 3px 10px;
+    padding: 3px 20px;
   }
 
   .card-rating__grade ul li span:last-child {
@@ -6825,6 +7436,40 @@ footer {
 
   .card-rating__total {
     text-align: right;
+  }
+
+  .your-review__grade {
+    font-size: 16px;
+  }
+
+  .your-review__grade span {
+    font-size: 18px;
+  }
+
+  .your-review__text {
+    font-size: 16px;
+  }
+
+  .your-review__subtitle {
+    font-size: 16px;
+  }
+
+  .your-review__comment {
+    font-size: 16px;
+  }
+
+  .review-grade__text {
+    font-size: 16px;
+  }
+
+  .review-grade__add {
+    display: inline-flex;
+    margin-bottom: 45px;
+  }
+
+  .review-grade__textarea textarea:focus {
+    width: 600px;
+    height: 4.5em;
   }
 
   .all-films__competition ul li {
@@ -7080,7 +7725,7 @@ footer {
 
   .card-rating__grade {
     order: unset;
-    max-width: 480px;
+    max-width: 520px;
     flex-grow: 1;
   }
 
@@ -7108,6 +7753,11 @@ footer {
   .card-rating__total span {
     display: inline-block;
     min-width: 1.5em;
+  }
+
+  .review-grade__textarea textarea:focus {
+    width: 830px;
+    height: 4.5em;
   }
 
   .all-films__item {
@@ -7256,6 +7906,13 @@ footer {
     margin-left: 0;
     border-radius: 0;
   }
+
+  .review-grade__photo picture img {
+    margin-left: 0;
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+  }
 }
 
 @media screen and (min-width: 1376px) {
@@ -7374,7 +8031,7 @@ footer {
   }
 
   .page-film__description {
-    padding-bottom: 35px;
+    margin-bottom: 35px;
   }
 
   .page-film__team .film-team__post {
@@ -7642,13 +8299,33 @@ footer {
   }
 
   .card-rating__grade ul li {
-    padding: 3px 10px;
+    padding: 3px 20px;
   }
 
   .card-rating__total {
     width: 30%;
     max-width: 200px;
     margin-left: auto;
+  }
+
+  .grade-film__title {
+    font-size: 36px;
+  }
+
+  .review-film-form__title {
+    font-size: 36px;
+  }
+
+  .your-review__title {
+    font-size: 28px;
+  }
+
+  .review-grade__title {
+    font-size: 28px;
+  }
+
+  .success-msg__title {
+    font-size: 36px;
   }
 
   .all-films__item {
@@ -7683,6 +8360,16 @@ footer {
 @media screen and (max-width: 992px) {
   .select-options {
     max-height: 30vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .page-film__description:not(.js-show-all) {
+    letter-spacing: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
