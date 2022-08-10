@@ -164,6 +164,45 @@
          }
      }
 
+     &__note {
+
+         width: 100%;
+
+         display: flex;
+         background-color: #292833;
+         padding: 8px 10px;
+         width: auto;
+         margin-bottom: 30px;
+
+         @media screen and (min-width: $w760) {
+             flex-grow: 0;
+         }
+
+         & textarea {
+             background-color: transparent;
+             color: $main2;
+             font-weight: 500;
+             border: transparent;
+             display: block;
+             resize: vertical;
+             min-height: 34px;
+             height: 34px;
+             font-size: 14px;
+             transition: 0.3s ease;
+             padding: 10px 10px 8px 10px;
+             width: 100%;
+
+
+
+             &:focus {
+                 outline: none;
+                 min-height: 90px;
+             }
+
+
+         }
+     }
+
      &__info {
 
          display: none;

@@ -4864,6 +4864,35 @@ footer {
   display: none;
 }
 
+.page-film__note {
+  width: 100%;
+  display: flex;
+  background-color: #292833;
+  padding: 8px 10px;
+  width: auto;
+  margin-bottom: 30px;
+}
+
+.page-film__note textarea {
+  background-color: transparent;
+  color: #92919F;
+  font-weight: 500;
+  border: transparent;
+  display: block;
+  resize: vertical;
+  min-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  transition: 0.3s ease;
+  padding: 10px 10px 8px 10px;
+  width: 100%;
+}
+
+.page-film__note textarea:focus {
+  outline: none;
+  min-height: 90px;
+}
+
 .page-film__info {
   display: none;
 }
@@ -7389,6 +7418,10 @@ footer {
   .hall-films__item {
     width: 33.33%;
     padding: 8px;
+  }
+
+  .page-film__note {
+    flex-grow: 0;
   }
 
   .seans-list__date {
