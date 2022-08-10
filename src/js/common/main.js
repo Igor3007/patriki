@@ -652,6 +652,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
+    //blur textarea
+
+    document.querySelectorAll('.film-comments__textarea textarea').forEach(textarea => {
+        textarea.addEventListener('keyup', function (e) {
+            if (e.target.value.length) {
+                e.target.style.width = e.target.offsetWidth + 'px'
+            } else {
+                e.target.style.width = null
+            }
+        })
+    })
+
 
 
 });
