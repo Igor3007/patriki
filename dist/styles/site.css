@@ -4119,14 +4119,14 @@ footer {
 }
 
 .programs__btn ul li.active .btn {
-  color: #92919F;
-  font-weight: 600;
+  color: #525166;
+  font-weight: 700;
 }
 
 .programs__btn ul li .btn {
   width: 100%;
-  font-weight: 700;
-  color: #525166;
+  font-weight: 600;
+  color: #92919F;
 }
 
 .programs__btn .btn {
@@ -4852,6 +4852,11 @@ footer {
   margin-bottom: 35px;
 }
 
+.page-film__details {
+  display: flex;
+  flex-direction: column;
+}
+
 .page-film__title {
   font-weight: 700;
   font-size: 36px;
@@ -5298,6 +5303,91 @@ footer {
   font-size: 36px;
   color: #fff;
   font-weight: bold;
+}
+
+.film-note__wrapper {
+  display: flex;
+  background-color: #292833;
+  padding: 8px 10px;
+  width: auto;
+  margin-bottom: 30px;
+}
+
+.film-note {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.film-note--focus {
+  flex-grow: 1;
+  min-height: 180px;
+}
+
+.film-note--focus textarea {
+  height: 100% !important;
+  transition: none;
+}
+
+.film-note__send button {
+  background-color: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.film-note__send button:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: #424152;
+  border-radius: 5px;
+}
+
+.film-note__send button::before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  content: '';
+  display: block;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.film-note__send button svg {
+  filter: invert(0.6);
+}
+
+.film-note textarea {
+  background-color: transparent;
+  color: #92919F;
+  font-weight: 500;
+  border: transparent;
+  display: block;
+  resize: none;
+  min-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  transition: 0.3s ease;
+  padding: 10px 10px 8px 10px;
+  width: 100%;
+}
+
+.film-note textarea:focus {
+  resize: vertical;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+}
+
+.film-note textarea:empty {
+  width: 100%;
 }
 
 .film-comments {
@@ -7280,6 +7370,10 @@ footer {
     display: none;
   }
 
+  .film-note--focus {
+    min-height: 100px;
+  }
+
   .review-grade__radio label span {
     width: 48px;
     height: 48px;
@@ -7430,6 +7524,19 @@ footer {
 
   .seans-list__time {
     font-size: 16px;
+  }
+
+  .film-note__wrapper {
+    display: inline-flex;
+    margin-bottom: 15px;
+  }
+
+  .film-note {
+    flex-grow: 0;
+  }
+
+  .film-note textarea:empty {
+    width: 380px;
   }
 
   .film-comments__add {
@@ -7742,6 +7849,10 @@ footer {
 
   .film-seans__list {
     overflow-x: hidden;
+  }
+
+  .film-note textarea {
+    width: 830px;
   }
 
   .film-comments__textarea textarea {

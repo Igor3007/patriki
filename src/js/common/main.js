@@ -664,6 +664,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     })
 
+    //note for film
+
+    document.querySelectorAll('.film-note__wrapper textarea').forEach(textarea => {
+        textarea.addEventListener('focus', e => {
+            e.target.closest('.film-note__wrapper').classList.add('film-note--focus')
+        })
+        textarea.addEventListener('blur', e => {
+            if (e.target.closest('.film-note__wrapper').classList.contains('film-note--focus')) {
+                e.target.closest('.film-note__wrapper').classList.remove('film-note--focus')
+            }
+        })
+    })
+
 
 
 });
