@@ -3596,7 +3596,7 @@ header {
 }
 
 .header__login .user-login__tooltip a {
-  font-size: 11px;
+  font-size: 11px !important;
   color: #fff;
   background-color: #cf1c5d;
   line-height: 1em;
@@ -5437,6 +5437,8 @@ div[data-lang]:not(.active) {
 
 .messenger-contact__detail {
   padding-left: 15px;
+  width: calc(100% - 45px);
+  overflow: hidden;
 }
 
 .messenger-contact__name {
@@ -5446,6 +5448,8 @@ div[data-lang]:not(.active) {
   color: #525166;
   font-weight: bold;
   margin-bottom: 0.2em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .messenger-contact__last {
@@ -5468,6 +5472,10 @@ div[data-lang]:not(.active) {
 
 .item-message {
   padding: 15px 0;
+}
+
+.item-message.closed {
+  display: none;
 }
 
 .item-message__head {
@@ -6271,6 +6279,10 @@ div[data-lang]:not(.active) {
   left: 0;
   right: 0;
   z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: #92919F;
 }
 
 .card-rating__grade {
@@ -6536,7 +6548,7 @@ div[data-lang]:not(.active) {
 .item-message__default-reply,
 .item-message__edit-reply,
 .item-message__delete-reply {
-  margin-left: auto;
+  margin-left: unset;
 }
 
 .item-message__default span,
@@ -8539,7 +8551,6 @@ div[data-lang]:not(.active) {
   }
 
   .header--site .header__login a {
-    padding: 0 1.6em;
     font-size: 18px;
     transition: background-color .7s;
   }
@@ -8553,6 +8564,17 @@ div[data-lang]:not(.active) {
   .header--site .header__social ul li svg {
     width: 28px;
     height: 19px;
+  }
+
+  .header--site .header .user-login__name a {
+    font-size: 18px;
+    transition: background-color .7s;
+  }
+
+  .header--site .header .user-login__name a:hover {
+    color: #A8A8B2;
+    background: #515064;
+    text-decoration: none;
   }
 
   .header--site .header-info a {

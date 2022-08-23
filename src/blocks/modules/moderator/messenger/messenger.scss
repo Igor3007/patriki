@@ -291,6 +291,8 @@
 
      &__detail {
          padding-left: 15px;
+         width: calc(100% - 45px);
+         overflow: hidden;
      }
 
      &__name {
@@ -300,6 +302,9 @@
          color: #525166;
          font-weight: bold;
          margin-bottom: 0.2em;
+         text-overflow: ellipsis;
+         overflow: hidden;
+
      }
 
      &__last {
@@ -323,6 +328,10 @@
  .item-message {
 
      padding: 15px 0;
+
+     &.closed {
+         display: none;
+     }
 
      &__head {
          display: flex;

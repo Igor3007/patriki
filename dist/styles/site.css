@@ -3596,7 +3596,7 @@ header {
 }
 
 .header__login .user-login__tooltip a {
-  font-size: 11px;
+  font-size: 11px !important;
   color: #fff;
   background-color: #cf1c5d;
   line-height: 1em;
@@ -3752,6 +3752,10 @@ header {
   background-color: transparent;
   border-left: 1px solid #525166;
   border-right: 1px solid #525166;
+}
+
+.dark-mode .header__pa-btn .user-login-mobile {
+  background-color: #292833;
 }
 
 .dark-mode .header__nav-container.open {
@@ -4945,6 +4949,17 @@ footer {
   padding-top: 55%;
   background-color: #1d1d22;
   border: 8px solid #292833;
+  position: relative;
+}
+
+.page-film__player .player-video > div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  top: 0;
+  bottom: 0;
+  height: 100% !important;
 }
 
 .page-film__description {
@@ -5122,6 +5137,8 @@ footer {
   display: block;
   font-size: 14px;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .film-details__list ul li span a {
@@ -5731,9 +5748,14 @@ footer {
 .item-user-review__name {
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 275px;
+  display: block;
 }
 
-.item-user-review__name::after {
+.item-user-review__separate {
   content: '';
   width: 5px;
   height: 5px;
@@ -5745,6 +5767,7 @@ footer {
 
 .item-user-review__main {
   margin-left: 15px;
+  flex-grow: 1;
 }
 
 .item-user-review__link a {
@@ -6977,6 +7000,8 @@ footer {
 
 .messenger-contact__detail {
   padding-left: 15px;
+  width: calc(100% - 45px);
+  overflow: hidden;
 }
 
 .messenger-contact__name {
@@ -6986,6 +7011,8 @@ footer {
   color: #525166;
   font-weight: bold;
   margin-bottom: 0.2em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .messenger-contact__last {
@@ -7008,6 +7035,10 @@ footer {
 
 .item-message {
   padding: 15px 0;
+}
+
+.item-message.closed {
+  display: none;
 }
 
 .item-message__head {
@@ -7154,7 +7185,7 @@ footer {
 .item-message__default-reply,
 .item-message__edit-reply,
 .item-message__delete-reply {
-  margin-left: auto;
+  margin-left: unset;
 }
 
 .item-message__default span,
@@ -7819,9 +7850,9 @@ footer {
   }
 
   .page-film__title {
+    margin-top: -10px;
     display: block;
     font-size: 36px;
-    margin-top: -20px;
   }
 
   .page-film__info {
@@ -8065,6 +8096,24 @@ footer {
     padding: 10px;
   }
 
+  .page-film__details {
+    min-width: 340px;
+  }
+
+  .page-film__main {
+    margin-left: 29px;
+  }
+
+  .film-details__cover {
+    width: 100%;
+    max-width: 204px;
+    margin-right: 25px;
+  }
+
+  .film-details__wrp {
+    display: flex;
+  }
+
   .card-rating__info {
     padding-left: 20px;
   }
@@ -8211,15 +8260,6 @@ footer {
   .page-film__team .film-team__name {
     font-size: 16px;
   }
-
-  .film-details__list ul li small {
-    font-size: 16px;
-    padding-bottom: 5px;
-  }
-
-  .film-details__list ul li span {
-    font-size: 16px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -8276,7 +8316,6 @@ footer {
   }
 
   .header--site .header__login a {
-    padding: 0 1.6em;
     font-size: 18px;
     transition: background-color .7s;
   }
@@ -8290,6 +8329,17 @@ footer {
   .header--site .header__social ul li svg {
     width: 28px;
     height: 19px;
+  }
+
+  .header--site .header .user-login__name a {
+    font-size: 18px;
+    transition: background-color .7s;
+  }
+
+  .header--site .header .user-login__name a:hover {
+    color: #A8A8B2;
+    background: #515064;
+    text-decoration: none;
   }
 
   .header--site .header-info a {
@@ -8386,18 +8436,21 @@ footer {
     font-size: 60px;
   }
 
+  .page-film__title {
+    margin-top: -20px;
+  }
+
   .film-details__title h1 {
     font-size: 60px;
   }
 
-  .film-details__cover {
-    width: 100%;
-    max-width: 204px;
-    margin-right: 25px;
+  .film-details__list ul li small {
+    font-size: 16px;
+    padding-bottom: 5px;
   }
 
-  .film-details__wrp {
-    display: flex;
+  .film-details__list ul li span {
+    font-size: 16px;
   }
 
   .film-grade .btn {

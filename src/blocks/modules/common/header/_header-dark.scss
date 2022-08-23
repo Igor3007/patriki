@@ -54,6 +54,10 @@
             background-color: transparent;
             border-left: 1px solid $main;
             border-right: 1px solid $main;
+
+            & .user-login-mobile {
+                background-color: #292833;
+            }
         }
 
         &__nav-container {

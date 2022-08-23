@@ -71,7 +71,7 @@ header {
                 }
 
                 &__login a {
-                    padding: 0 1.6em;
+
                     font-size: 18px;
                     transition: background-color .7s;
 
@@ -88,6 +88,21 @@ header {
                     width: 28px;
                     height: 19px;
 
+                }
+
+                & .user-login {
+                    &__name {
+                        & a {
+                            font-size: 18px;
+                            transition: background-color .7s;
+
+                            &:hover {
+                                color: #A8A8B2;
+                                background: #515064;
+                                text-decoration: none;
+                            }
+                        }
+                    }
                 }
 
 
@@ -502,7 +517,7 @@ header {
                 position: relative;
 
                 & a {
-                    font-size: 11px;
+                    font-size: 11px !important;
                     color: #fff;
                     background-color: $red;
                     line-height: 1em;
