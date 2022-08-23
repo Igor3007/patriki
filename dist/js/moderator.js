@@ -1678,12 +1678,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
-    if (document.querySelectorAll('.block-rating__item').length) {
-        const SORTING = new classSortableRating()
-        SORTING.init()
-    }
+    const SORTING = new classSortableRating()
 
-
+    SORTING.init()
 
 
 

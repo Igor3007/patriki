@@ -44,6 +44,25 @@
     border-radius: 4px;
     padding: 24px;
 
+    &__top {
+        @media screen and (min-width: $w760) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 766px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__film {
+        & a {
+            font-weight: 600;
+            font-size: 14px;
+            color: #525166;
+        }
+    }
+
     &--open {
         & .item-review {
             &__main {

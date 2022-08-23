@@ -3204,6 +3204,18 @@ header {
   align-items: stretch;
 }
 
+.header--site.user-login__name a {
+  padding: 0 1.6em;
+  font-size: 18px;
+  transition: background-color .7s;
+}
+
+.header--site.user-login__name a:hover {
+  color: #A8A8B2;
+  background: #515064;
+  text-decoration: none;
+}
+
 .header__logo .bgimage {
   width: 106px;
   height: 80px;
@@ -4016,16 +4028,21 @@ footer {
 }
 
 .programs__btn ul li:hover.active .btn {
-  color: #fff;
+  color: #525166;
+  background-color: #fff !important;
+  border: 1px solid #BCBCBC !important;
+  cursor: default !important;
 }
 
 .programs__btn ul li.active .btn {
   font-weight: 700;
-  color: #000;
+  color: #525166;
 }
 
 .programs__btn ul li .btn {
   width: 100%;
+  color: #92919F;
+  font-weight: 600;
 }
 
 .programs__btn .btn {
@@ -4039,23 +4056,23 @@ footer {
   margin-left: auto;
 }
 
-.programs__item:first-child .nav-program-prev {
+.programs__item .nav-program-prev.disabled {
   opacity: 0.5;
   pointer-events: none;
   background: #D6D6D6;
 }
 
-.programs__item:first-child .nav-program-prev svg {
+.programs__item .nav-program-prev.disabled svg {
   stroke: #92919F;
 }
 
-.programs__item:last-child .nav-program-next {
+.programs__item .nav-program-next.disabled {
   opacity: 0.5;
   pointer-events: none;
   background: #D6D6D6;
 }
 
-.programs__item:last-child .nav-program-next svg {
+.programs__item .nav-program-next.disabled svg {
   stroke: #92919F;
 }
 
@@ -4260,10 +4277,11 @@ footer {
 
 .about-user__photo .bgimage {
   position: relative;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: block;
+  transition: 0.3s ease;
   padding-top: 100%;
   border-radius: 50%;
   background-color: #ddd;
@@ -5874,7 +5892,7 @@ footer {
   }
 
   .header__login a {
-    padding: 0 3.5em;
+    padding: 0 2.5em;
   }
 
   .footer__logo {

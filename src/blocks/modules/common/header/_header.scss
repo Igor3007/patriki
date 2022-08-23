@@ -17,6 +17,19 @@ header {
     align-items: stretch;
 
     &--site {
+
+        &.user-login__name a {
+            padding: 0 1.6em;
+            font-size: 18px;
+            transition: background-color .7s;
+
+            &:hover {
+                color: #A8A8B2;
+                background: #515064;
+                text-decoration: none;
+            }
+        }
+
         & .header {
             @media screen and (min-width: $w1440) {
                 &__logo {
@@ -68,6 +81,8 @@ header {
                         text-decoration: none;
                     }
                 }
+
+
 
                 &__social ul li svg {
                     width: 28px;
@@ -431,7 +446,7 @@ header {
             padding: 0 2.7em;
 
             @media screen and (min-width: $w1376) {
-                padding: 0 3.5em;
+                padding: 0 2.5em;
             }
 
             &:hover {

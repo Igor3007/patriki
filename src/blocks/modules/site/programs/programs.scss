@@ -126,7 +126,10 @@
                 &:hover {
                     &.active {
                         & .btn {
-                            color: #fff;
+                            color: #525166;
+                            background-color: #fff !important;
+                            border: 1px solid #BCBCBC !important;
+                            cursor: default !important;
                         }
                     }
                 }
@@ -134,12 +137,14 @@
                 &.active {
                     & .btn {
                         font-weight: 700;
-                        color: #000;
+                        color: #525166;
                     }
                 }
 
                 & .btn {
                     width: 100%;
+                    color: #92919F;
+                    font-weight: 600;
                 }
             }
         }
@@ -157,29 +162,29 @@
     }
 
     &__item {
-        &:first-child {
-            & .nav-program-prev {
-                opacity: 0.5;
-                pointer-events: none;
-                background: #D6D6D6;
 
-                & svg {
-                    stroke: $main2;
-                }
+        & .nav-program-prev.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            background: #D6D6D6;
+
+            & svg {
+                stroke: $main2;
             }
         }
 
-        &:last-child {
-            & .nav-program-next {
-                opacity: 0.5;
-                pointer-events: none;
-                background: #D6D6D6;
 
-                & svg {
-                    stroke: $main2;
-                }
+
+        & .nav-program-next.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            background: #D6D6D6;
+
+            & svg {
+                stroke: $main2;
             }
         }
+
     }
 
 }

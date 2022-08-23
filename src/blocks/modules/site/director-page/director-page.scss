@@ -29,7 +29,7 @@ $width: 890px;
         }
 
         & .bgimage {
-            @include bgimage-contain;
+            @include bgimage-cover;
             padding-top: 100%;
             border-radius: 50%;
             background-color: #ddd;
