@@ -1,4 +1,4 @@
-mixin page-film()
+mixin page-film(data)
     .page-film 
         .page-film__details
             .film-details
@@ -31,27 +31,138 @@ mixin page-film()
             .film-seans
                 .film-seans__title Ближайшие показы
                 
-                .film-seans__list
-                    each item in [15,16,17,18]
-                        .seans-list
-                            .seans-list__date 
-                                    span 23.11 
-                                    span ВТ
-                            .seans-list__time= item +':00'
-                     
-            .film-grade
-                .film-grade__title Оценка зрителей
-                .film-grade__wrp
-                    .film-grade__total: span 6.4
-                    .film-grade__add
-                        button.btn.btn-white 
-                            +icons('#ic_star-solid', 16)
-                            span.hide-desctop Оценить фильм
-                            span.hide-mobile Оценить
-                    .film-grade__review
-                        button.btn.btn-white 
-                            span.hide-desctop Написать рецензию
-                            span.hide-mobile Рецензировать
+                .film-seans__wrp
+                    .film-seans__nav
+                        .film-seans__nav-prev(data-se-slider="prev"): +icons('#ic_season-back', 15)
+                        .film-seans__nav-next(data-se-slider="next"): +icons('#ic_season-next', 15)
+
+                    .film-seans__list
+                        each item in [15,16,17,18,19,20]
+                            .seans-list
+                                .seans-list__date 
+                                        span 23.11 
+                                        span ВТ
+                                .seans-list__time= item +':00' 
+
+            if data.grade
+                .film-grade
+                    .film-grade__title Оценка зрителей
+                    .film-grade__wrp
+                        .film-grade__total: span 6.4
+                        .film-grade__add
+                            button.btn.btn-white 
+                                span Ваша оценка 7.5
+                        .film-grade__review
+                            button.btn.btn-white(data-modal-hall="open" data-url="_your-review.html") 
+                                span Ваша рецензия 
+            else  
+                .film-grade
+                    .film-grade__title Оценка зрителей
+                    .film-grade__wrp
+                        .film-grade__total: span 6.4
+                        .film-grade__add
+                            button.btn.btn-white(data-modal-grade="open" data-url="_grade-film.html")  
+                                +icons('#ic_star-solid', 16)
+                                span.hide-desctop Оценить фильм
+                                span.hide-mobile Оценить
+                        .film-grade__review
+                            button.btn.btn-white(data-modal-hall="open" data-url="_review-film-form.html") 
+                                span.hide-desctop Написать рецензию
+                                span.hide-mobile Рецензировать
+
+            if data.note
+                .film-note__wrapper(data-film='126')
+                    .film-note
+                        textarea(name='note' placeholder='Ваша заметка')
+                    .film-note__send
+                        button: +icons('#ic_ok-dark', 20)    
+ 
+        .page-film__main
+            .page-film__title Трое
+            .page-film__info
+                ul 
+                    li Российский конкурс
+                    li Полный метр
+            .page-film__player
+                .player-video
+            
+            .page-film__description Московский психолог, автор мотивационных роликов Злата считает, что у них с Сашей прекрасный брак, который помог им обоим реализовать себя и подарил десять лет образцовой совместной жизни — для полноценного счастья не хватает только ребенка. Саша же, видимо, считает иначе, потому что втайне от жены он встречается с другой женщиной. Ее зовут Вероника, она живет в Петербурге, проводит экскурсии и увлекается поэзией. Вероника помогла Саше выбраться из воды, когда он попытался утопиться с увесистой телепремией на шее. Успешный шоумен-комик, безропотный муж, нежный влюбленный, — он разрывается между несколькими ролями, между двумя столицами, между очень разными женщинами. Но всегда ли возможно сделать выбор?
+            .page-film__more(data-text-show="Подробное описание" data-text-hide="Свернуть") Подробное описание
+            .page-film__team
+                .film-team
+                    .film-team__post Оператор:
+                    .film-team__name Николай Желудович
+                .film-team
+                    .film-team__post Звукорежиссер:
+                    .film-team__name Константин Познеков
+                .film-team
+                    .film-team__post Художник по костюмам:
+                    .film-team__name Екатерина Джагарова
+
+mixin page-film-moderator(data)
+    .page-film 
+        .page-film__details
+            .film-details
+                .film-details__title: h1 Трое
+                .film-details__info
+                    ul 
+                        li Российский конкурс
+                        li Полный метр
+                .film-details__wrp
+                    .film-details__cover: +picture('/img/common/cover5')
+                    .film-details__prop
+                        .film-details__year
+                            ul
+                                li 2020
+                                li 122 мин.
+                        .film-details__list
+                            ul
+                                li
+                                    small Жанр:
+                                    span Драма
+                                li
+                                    small Страна:
+                                    span Россия
+                                li
+                                    small Режиссер:
+                                    span: a(href='director-details.html') Анна Меликян                       
+                                li
+                                    small Продюсер:
+                                    span Анна Меликян                        
+            .film-seans
+                .film-seans__title Ближайшие показы
+                
+                .film-seans__wrp
+                    .film-seans__nav
+                        .film-seans__nav-prev(data-se-slider="prev"): +icons('#ic_season-back', 15)
+                        .film-seans__nav-next(data-se-slider="next"): +icons('#ic_season-next', 15)
+
+                    .film-seans__list
+                        each item in [15,16,17,18,19,20]
+                            .seans-list
+                                .seans-list__date 
+                                        span 23.11 
+                                        span ВТ
+                                .seans-list__time= item +':00' 
+
+            if data.grade
+                .film-grade
+                    .film-grade__title Оценка зрителей
+                    .film-grade__wrp
+                        .film-grade__total: span 6.4
+                        .film-grade__add
+                            button.btn.btn-white 
+                                span Ваша оценка 7.5
+                        .film-grade__review
+                            button.btn.btn-white(data-modal-hall="open" data-url="_your-review.html") 
+                                span Ваша рецензия 
+            else  
+                .film-grade
+                    .film-grade__title Оценка зрителей
+                    .film-grade__count: span 6.4
+                    .film-grade__edit
+                        a(href='/moderator-edit.html' target="_blank"): button.btn.btn-white Редактировать
+                         
                 
  
         .page-film__main
@@ -74,6 +185,55 @@ mixin page-film()
                     .film-team__post Художник по костюмам:
                     .film-team__name Екатерина Джагарова
 
+
+mixin film-comments
+
     .film-comments
-        .film-comments__title Комментарии <span>16</span>
-        .film-comments__content
+        .film-comments__wrp
+            .film-comments__title Комментарии <span>16</span>
+            .film-comments__content
+                .film-comments__add
+                    .film-comments__textarea
+                        textarea(placeholder="Ваше сообщение...")
+                    .film-comments__send
+                        button: +icons('#ic_send', 24)
+
+
+                .film-comments__list
+                    each item in ['user3.jpg', 'user5.jpg', 'user6.jpg', 'user7.jpg']
+                        +item-message(item)
+                .film-comments__more
+                    button.btn.btn-line Показать все
+
+
+mixin juru-comment
+    .juru-comment
+        .juru-comment__wrp
+            .juru-comment__title Комментарий в кинозал  
+            .juru-comment__content
+                .juru-comment__textarea
+                    textarea(placeholder="Ваше сообщение...")
+                .juru-comment__action
+                    .juru-comment__save Сохранить
+                    .juru-comment__public Опубликовать
+                    .juru-comment__remove Снять с публикации
+                     
+
+
+
+mixin item-message(data)
+  .item-message(data-comment="item" data-comment-id="123")
+    .item-message__head
+      .item-message__photo: +bgimage('/img/common/'+data)
+      .item-message__detail
+        .item-message__name Бронислав Андреев,
+        .item-message__date Сегодня в 19.30
+    .item-message__main
+      span Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.
+    .item-message__action(data-comment-action="container")
+        .item-message__default(data-comment-action="pane-default")
+            span.item-message__default-reply(data-comment-action="reply") Ответить
+        .item-message__reply(data-comment-action="pane-reply")
+          .item-message__reply-field: textarea(placeholder="Введите")
+          .item-message__reply-button(data-comment-action="send"): +icons('#ic_send')
+    .item-message__answers(data-comment="answers") 

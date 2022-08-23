@@ -3,6 +3,7 @@
     &__bar {
         display: flex;
         padding-bottom: 35px;
+        padding-top: 25px;
     }
 
     &__sort {
@@ -84,6 +85,12 @@
     & .minicard-film {
         &__rate {
             display: none;
+        }
+
+        &__cover {
+            & picture {
+                padding-top: 143%;
+            }
         }
     }
 }

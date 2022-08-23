@@ -1,0 +1,14 @@
+
+mixin  review-film-form
+    .review-film-form(data-popup-html="")
+        .review-film-form__wrp
+            .review-film-form__title Рецензия на фильм
+            .review-film-form__desc Видят только члены жюри заявленной программы
+            .review-film-form__form
+                form(action='#' method='POST')
+                    .review-film-form__label Текст рецензии
+                    .review-film-form__textarea
+                        textarea(placeholder="Текст рецензии...")
+                    .review-film-form__note Внимание, отправив текст, Вы не сможете его изменить!
+                    .review-film-form__btn
+                        button.btn.btn-line(type="submit") Отправить

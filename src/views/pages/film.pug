@@ -17,5 +17,8 @@ block content
                     li: a(href='#') Трое                 
 
             .page-site__content 
-                +page-film()
+                +page-film({
+                    grade: false
+                })
+                +film-comments()
                  

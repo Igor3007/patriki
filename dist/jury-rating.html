@@ -1,523 +1,541 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Рейтинги</title>
-    <meta name="theme-color" content="#fff">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="#{title}">
-    <meta name="keywords" content="#{title}">
-    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
-    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
-    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
-    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
-    <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
-    <style>@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Рейтинги</title>
+  <meta name="theme-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="#{title}">
+  <meta name="keywords" content="#{title}">
+  <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+  <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+  <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
+  <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
+  <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
+  <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-    </style>
-    <link rel="stylesheet" href="styles/main.css?v=1.0">
-  </head>
-  <body class="perf-no-animation">
-    <header>
-      <div class="container">
-        <div class="header">
-          <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span></a></div>
-          <div class="header__nav">
-            <div class="header__nav-container" data-menu="container">
-              <div class="header__nav-info">
-                <div class="header-info">
-                  <div class="header-info__email"><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></div>
-                  <div class="header-info__phone"><a href="tel:+79055047370">+7 (905) 504-73-70</a></div>
-                  <div class="header-info__lang">
-                    <select>
-                      <option val="ru">Русский</option>
-                      <option val="en">English</option>
-                    </select>
-                  </div>
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="styles/main.css?v=1.0">
+</head>
+
+<body class="perf-no-animation">
+  <header>
+    <div class="container">
+      <div class="header">
+        <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span></a>
+        </div>
+        <div class="header__nav">
+          <div class="header__nav-container" data-menu="container">
+            <div class="header__nav-info">
+              <div class="header-info">
+                <div class="header-info__email"><a
+                    href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></div>
+                <div class="header-info__phone"><a href="tel:+79055047370">+7 (905) 504-73-70</a></div>
+                <div class="header-info__lang">
+                  <select>
+                    <option val="ru">Русский</option>
+                    <option val="en">English</option>
+                  </select>
                 </div>
               </div>
-              <div class="header__nav-menu">
-                <nav>
-                  <ul>
-                    <li><a href="about.html">О фестивале</a></li>
-                    <li><a href="programs.html">Программы</a></li>
-                    <li><a href="hall.html">Кинозал</a></li>
-                    <li><a href="participant.html">участникам</a></li>
-                    <li><a href="events.html">События</a></li>
-                  </ul>
-                </nav>
-              </div>
             </div>
-            <div class="header__nav-btn">
-              <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
+            <div class="header__nav-menu">
+              <nav>
+                <ul>
+                  <li><a href="about.html">О фестивале</a></li>
+                  <li><a href="programs.html">Программы</a></li>
+                  <li><a href="hall.html">Кинозал</a></li>
+                  <li><a href="participant.html">участникам</a></li>
+                  <li><a href="events.html">События</a></li>
+                </ul>
+              </nav>
             </div>
           </div>
-          <div class="header__pa">
-            <div class="header__pa-container">
-              <div class="header__social">
+          <div class="header__nav-btn">
+            <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="header__pa">
+          <div class="header__pa-container">
+            <div class="header__social">
+              <ul>
+                <li><a href="#">
+                    <svg width="25" height="25">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                    </svg></a></li>
+                <li><a href="#">
+                    <svg width="25" height="25">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+            <div class="header__login">
+              <div class="user-login">
+                <div class="user-login__name"><a href="/moderator-profile.html">
+                    <svg width="25" height="25">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
+                    </svg><span>Николай</span></a></div>
+                <div class="user-login__tooltip"><a href="/moderator-messenger.html">1</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="header__pa-btn">
+            <div class="user-login-mobile" title="Николай" data-user-menu="open" data-link="/moderator-orders.html">
+              <span class="bgimage lazyload" data-bg="/img/common/img_user.webp"><span
+                  class="total-messages">3</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section-page-moderator">
+      <div class="container">
+        <div class="page-moderator">
+          <div class="page-moderator__aside">
+            <div class="moderator-aside">
+              <div class="moderator-aside__wrp">
+                <div class="moderator-aside__photo">
+                  <picture>
+                    <source srcset="/img/common/user3.webp" type="image/webp" /><img src="/img/common/user3.jpg"
+                      loading="lazy" alt="image" />
+                  </picture>
+                </div>
+                <div class="moderator-aside__name">Николай Петров</div>
+                <div class="moderator-aside__email">nik_petrov@mail.ru</div>
+                <div class="moderator-aside__nav">
+                  <ul>
+                    <li><a href="jury-films.html">Фильмы</a></li>
+                    <li><a class="badge" href="jury-rating.html">Рейтинги</a></li>
+                    <li><a href="moderator-messenger.html">Сообщения</a></li>
+                    <li><a href="jury-profile.html">Профиль</a></li>
+                    <li><a href="moderator-logout.html">Выйти</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-moderator__content">
+            <div class="head-moderator">
+              <div class="head-moderator__breadcrumb">
                 <ul>
-                  <li><a href="#">
-                      <svg width="25" height="25">
-                        <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
-                      </svg></a></li>
-                  <li><a href="#">
-                      <svg width="25" height="25">
-                        <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
-                      </svg></a></li>
+                  <li><a href="#">Главная</a></li>
+                  <li><a href="#">Личный кабинет</a></li>
+                  <li><a href="#">Рейтинги</a></li>
                 </ul>
               </div>
-              <div class="header__login">
-                <div class="user-login">
-                  <div class="user-login__name"><a href="/moderator-profile.html">
-                      <svg width="25" height="25">
-                        <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
-                      </svg><span>Николай</span></a></div>
-                  <div class="user-login__tooltip"><a href="/moderator-messenger.html">1</a></div>
-                </div>
+              <div class="head-moderator__title">
+                <h1>Рейтинги</h1>
               </div>
             </div>
-            <div class="header__pa-btn">
-              <div class="user-login-mobile" title="Николай" data-user-menu="open" data-link="/moderator-orders.html"><span class="bgimage lazyload" data-bg="/img/common/img_user.webp"><span class="total-messages">3</span></span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <section class="section-page-moderator">
-        <div class="container">
-          <div class="page-moderator">
-            <div class="page-moderator__aside">
-              <div class="moderator-aside">
-                <div class="moderator-aside__wrp">
-                  <div class="moderator-aside__photo">
-                    <picture>
-                      <source srcset="/img/common/user3.webp" type="image/webp"/><img src="/img/common/user3.jpg" loading="lazy" alt="image"/>
-                    </picture>
-                  </div>
-                  <div class="moderator-aside__name">Николай Петров</div>
-                  <div class="moderator-aside__email">nik_petrov@mail.ru</div>
-                  <div class="moderator-aside__nav">
-                    <ul>
-                      <li><a href="jury-films.html">Фильмы</a></li>
-                      <li><a class="badge" href="jury-rating.html">Рейтинги</a></li>
-                      <li><a href="moderator-messenger.html">Сообщения</a></li>
-                      <li><a href="jury-profile.html">Профиль</a></li>
-                      <li><a href="moderator-logout.html">Выйти</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="page-moderator__content">
-              <div class="head-moderator">
-                <div class="head-moderator__breadcrumb">
+            <div class="main-moderator">
+              <div class="block-rating">
+                <div class="block-rating__tabs">
                   <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Личный кабинет</a></li>
-                    <li><a href="#">Рейтинги</a></li>
+                    <li><a class="active" href="#">
+                        <button class="btn btn-line">Личный рейтинг</button></a></li>
+                    <li><a href="#">
+                        <button class="btn btn-line">Рейтинг зрителей</button></a></li>
                   </ul>
                 </div>
-                <div class="head-moderator__title">
-                  <h1>Рейтинги</h1>
+                <div class="block-rating__head">
+                  <ul>
+                    <li class="block-rating__head-name">
+                      Название и год производства<span class="table-sort" data-rating="sort-title">
+                        <ul>
+                          <li data-rating="sort-name">По названию</li>
+                          <li data-rating="sort-year">Год производства</li>
+                        </ul>
+                      </span></li>
+                    <li class="block-rating__head-grade">Оценки</li>
+                    <li class="block-rating__head-total">
+                      Итоговый рейтинг<span class="table-sort-total" data-rating="sort-total"></span></li>
+                  </ul>
                 </div>
-              </div>
-              <div class="main-moderator">
-                <div class="block-rating"> 
-                  <div class="block-rating__tabs">
-                    <ul>
-                      <li><a class="active" href="#">
-                          <button class="btn btn-line">Личный рейтинг</button></a></li>
-                      <li><a href="#">
-                          <button class="btn btn-line">Рейтинг зрителей</button></a></li>
-                    </ul>
+                <div class="block-rating__list">
+                  <div class="block-rating__item">
+                    <div class="card-rating">
+                      <div class="card-rating__details">
+                        <div class="card-rating__position">1</div>
+                        <div class="card-rating__cover">
+                          <picture>
+                            <source srcset="/img/common/cover1.webp" type="image/webp" /><img
+                              src="/img/common/cover1.jpg" loading="lazy" alt="image" />
+                          </picture>
+                        </div>
+                        <div class="card-rating__info">
+                          <div class="card-rating__number">1 место</div>
+                          <div class="card-rating__name"><a href="#">Паразиты 7</a></div>
+                          <div class="card-rating__year" data-year="2021">2021, Пон Джун-хо</div>
+                          <div class="card-rating__duration">
+                            <ul class="car-rating-flag">
+                              <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
+                              </li>
+                            </ul><span>85 мин.</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-rating__grade" data-title="Оценки">
+                        <ul>
+                          <li><span>Инновационный подход</span><span>92</span></li>
+                          <li><span>Режиссерская работа</span><span>54</span></li>
+                          <li><span>Актуальность</span><span>12</span></li>
+                          <li><span>Художественная ценность</span><span>76</span></li>
+                          <li><span>Сценарий</span><span>54</span></li>
+                          <li><span>Актерская игра</span><span>22</span></li>
+                          <li><span>Операторская работа</span><span>54</span></li>
+                          <li><span>Графика</span><span>3</span></li>
+                          <li><span>Монтаж</span><span>100</span></li>
+                          <li><span>Музыка</span><span>45</span></li>
+                        </ul>
+                      </div>
+                      <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.73</span></div>
+                    </div>
                   </div>
-                  <div class="block-rating__head">
-                    <ul>
-                      <li class="block-rating__head-name">
-                         Название и год производства<span class="table-sort" data-rating="sort-title">
-                          <ul> 
-                            <li data-rating="sort-name">По названию</li>
-                            <li data-rating="sort-year">Год производства</li>
-                          </ul></span></li>
-                      <li class="block-rating__head-grade">Оценки</li>
-                      <li class="block-rating__head-total">
-                         Итоговый рейтинг<span class="table-sort-total" data-rating="sort-total"></span></li>
-                    </ul>
+                  <div class="block-rating__item">
+                    <div class="card-rating">
+                      <div class="card-rating__details">
+                        <div class="card-rating__position">2</div>
+                        <div class="card-rating__cover">
+                          <picture>
+                            <source srcset="/img/common/cover2.webp" type="image/webp" /><img
+                              src="/img/common/cover2.jpg" loading="lazy" alt="image" />
+                          </picture>
+                        </div>
+                        <div class="card-rating__info">
+                          <div class="card-rating__number">2 место</div>
+                          <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
+                          <div class="card-rating__year" data-year="2022">2022, Пон Джун-хо</div>
+                          <div class="card-rating__duration">
+                            <ul class="car-rating-flag">
+                              <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
+                              </li>
+                            </ul><span>85 мин.</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-rating__grade" data-title="Оценки">
+                        <ul>
+                          <li><span>Инновационный подход</span><span>92</span></li>
+                          <li><span>Режиссерская работа</span><span>54</span></li>
+                          <li><span>Актуальность</span><span>12</span></li>
+                          <li><span>Художественная ценность</span><span>76</span></li>
+                          <li><span>Сценарий</span><span>54</span></li>
+                          <li><span>Актерская игра</span><span>22</span></li>
+                          <li><span>Операторская работа</span><span>54</span></li>
+                          <li><span>Графика</span><span>3</span></li>
+                          <li><span>Монтаж</span><span>100</span></li>
+                          <li><span>Музыка</span><span>45</span></li>
+                        </ul>
+                      </div>
+                      <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.04</span></div>
+                    </div>
                   </div>
-                  <div class="block-rating__list">
-                    <div class="block-rating__item">
-                      <div class="card-rating">
-                        <div class="card-rating__details">
-                          <div class="card-rating__position">1</div>
-                          <div class="card-rating__cover">
-                            <picture>
-                              <source srcset="/img/common/cover1.webp" type="image/webp"/><img src="/img/common/cover1.jpg" loading="lazy" alt="image"/>
-                            </picture>
-                          </div>
-                          <div class="card-rating__info">
-                            <div class="card-rating__number">1 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 9</a></div>
-                            <div class="card-rating__year" data-year="2021">2021, Пон Джун-хо</div>
-                            <div class="card-rating__duration"> 
-                              <ul class="car-rating-flag">
-                                <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
-                                </li>
-                              </ul><span>85 мин.</span>
-                            </div>
+                  <div class="block-rating__item">
+                    <div class="card-rating">
+                      <div class="card-rating__details">
+                        <div class="card-rating__position">3</div>
+                        <div class="card-rating__cover">
+                          <picture>
+                            <source srcset="/img/common/cover3.webp" type="image/webp" /><img
+                              src="/img/common/cover3.jpg" loading="lazy" alt="image" />
+                          </picture>
+                        </div>
+                        <div class="card-rating__info">
+                          <div class="card-rating__number">3 место</div>
+                          <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
+                          <div class="card-rating__year" data-year="2023">2023, Пон Джун-хо</div>
+                          <div class="card-rating__duration">
+                            <ul class="car-rating-flag">
+                              <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
+                              </li>
+                            </ul><span>85 мин.</span>
                           </div>
                         </div>
-                        <div class="card-rating__grade" data-title="Оценки">
-                          <ul>
-                            <li><span>Инновационный подход</span><span>92</span></li>
-                            <li><span>Режиссерская работа</span><span>54</span></li>
-                            <li><span>Актуальность</span><span>12</span></li>
-                            <li><span>Художественная ценность</span><span>76</span></li>
-                            <li><span>Сценарий</span><span>54</span></li>
-                            <li><span>Актерская игра</span><span>22</span></li>
-                            <li><span>Операторская работа</span><span>54</span></li>
-                            <li><span>Графика</span><span>3</span></li>
-                            <li><span>Монтаж</span><span>100</span></li>
-                            <li><span>Музыка</span><span>45</span></li>
-                          </ul>
-                        </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.70</span></div>
                       </div>
+                      <div class="card-rating__grade" data-title="Оценки">
+                        <ul>
+                          <li><span>Инновационный подход</span><span>92</span></li>
+                          <li><span>Режиссерская работа</span><span>54</span></li>
+                          <li><span>Актуальность</span><span>12</span></li>
+                          <li><span>Художественная ценность</span><span>76</span></li>
+                          <li><span>Сценарий</span><span>54</span></li>
+                          <li><span>Актерская игра</span><span>22</span></li>
+                          <li><span>Операторская работа</span><span>54</span></li>
+                          <li><span>Графика</span><span>3</span></li>
+                          <li><span>Монтаж</span><span>100</span></li>
+                          <li><span>Музыка</span><span>45</span></li>
+                        </ul>
+                      </div>
+                      <div class="card-rating__total" data-title="Итоговый рейтинг"><span>6.95</span></div>
                     </div>
-                    <div class="block-rating__item">
-                      <div class="card-rating">
-                        <div class="card-rating__details">
-                          <div class="card-rating__position">2</div>
-                          <div class="card-rating__cover">
-                            <picture>
-                              <source srcset="/img/common/cover2.webp" type="image/webp"/><img src="/img/common/cover2.jpg" loading="lazy" alt="image"/>
-                            </picture>
-                          </div>
-                          <div class="card-rating__info">
-                            <div class="card-rating__number">2 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
-                            <div class="card-rating__year" data-year="2022">2022, Пон Джун-хо</div>
-                            <div class="card-rating__duration"> 
-                              <ul class="car-rating-flag">
-                                <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
-                                </li>
-                              </ul><span>85 мин.</span>
-                            </div>
+                  </div>
+                  <div class="block-rating__item">
+                    <div class="card-rating">
+                      <div class="card-rating__details">
+                        <div class="card-rating__position">4</div>
+                        <div class="card-rating__cover">
+                          <picture>
+                            <source srcset="/img/common/cover4.webp" type="image/webp" /><img
+                              src="/img/common/cover4.jpg" loading="lazy" alt="image" />
+                          </picture>
+                        </div>
+                        <div class="card-rating__info">
+                          <div class="card-rating__number">4 место</div>
+                          <div class="card-rating__name"><a href="#">Паразиты 7</a></div>
+                          <div class="card-rating__year" data-year="2024">2024, Пон Джун-хо</div>
+                          <div class="card-rating__duration">
+                            <ul class="car-rating-flag">
+                              <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
+                              </li>
+                            </ul><span>85 мин.</span>
                           </div>
                         </div>
-                        <div class="card-rating__grade" data-title="Оценки">
-                          <ul>
-                            <li><span>Инновационный подход</span><span>92</span></li>
-                            <li><span>Режиссерская работа</span><span>54</span></li>
-                            <li><span>Актуальность</span><span>12</span></li>
-                            <li><span>Художественная ценность</span><span>76</span></li>
-                            <li><span>Сценарий</span><span>54</span></li>
-                            <li><span>Актерская игра</span><span>22</span></li>
-                            <li><span>Операторская работа</span><span>54</span></li>
-                            <li><span>Графика</span><span>3</span></li>
-                            <li><span>Монтаж</span><span>100</span></li>
-                            <li><span>Музыка</span><span>45</span></li>
-                          </ul>
-                        </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>5.10</span></div>
                       </div>
+                      <div class="card-rating__grade" data-title="Оценки">
+                        <ul>
+                          <li><span>Инновационный подход</span><span>92</span></li>
+                          <li><span>Режиссерская работа</span><span>54</span></li>
+                          <li><span>Актуальность</span><span>12</span></li>
+                          <li><span>Художественная ценность</span><span>76</span></li>
+                          <li><span>Сценарий</span><span>54</span></li>
+                          <li><span>Актерская игра</span><span>22</span></li>
+                          <li><span>Операторская работа</span><span>54</span></li>
+                          <li><span>Графика</span><span>3</span></li>
+                          <li><span>Монтаж</span><span>100</span></li>
+                          <li><span>Музыка</span><span>45</span></li>
+                        </ul>
+                      </div>
+                      <div class="card-rating__total" data-title="Итоговый рейтинг"><span>9.07</span></div>
                     </div>
-                    <div class="block-rating__item">
-                      <div class="card-rating">
-                        <div class="card-rating__details">
-                          <div class="card-rating__position">3</div>
-                          <div class="card-rating__cover">
-                            <picture>
-                              <source srcset="/img/common/cover3.webp" type="image/webp"/><img src="/img/common/cover3.jpg" loading="lazy" alt="image"/>
-                            </picture>
-                          </div>
-                          <div class="card-rating__info">
-                            <div class="card-rating__number">3 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 9</a></div>
-                            <div class="card-rating__year" data-year="2023">2023, Пон Джун-хо</div>
-                            <div class="card-rating__duration"> 
-                              <ul class="car-rating-flag">
-                                <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
-                                </li>
-                              </ul><span>85 мин.</span>
-                            </div>
+                  </div>
+                  <div class="block-rating__item">
+                    <div class="card-rating">
+                      <div class="card-rating__details">
+                        <div class="card-rating__position">2</div>
+                        <div class="card-rating__cover">
+                          <picture>
+                            <source srcset="/img/common/cover2.webp" type="image/webp" /><img
+                              src="/img/common/cover2.jpg" loading="lazy" alt="image" />
+                          </picture>
+                        </div>
+                        <div class="card-rating__info">
+                          <div class="card-rating__number">2 место</div>
+                          <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
+                          <div class="card-rating__year" data-year="2022">2022, Пон Джун-хо</div>
+                          <div class="card-rating__duration">
+                            <ul class="car-rating-flag">
+                              <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
+                              </li>
+                            </ul><span>85 мин.</span>
                           </div>
                         </div>
-                        <div class="card-rating__grade" data-title="Оценки">
-                          <ul>
-                            <li><span>Инновационный подход</span><span>92</span></li>
-                            <li><span>Режиссерская работа</span><span>54</span></li>
-                            <li><span>Актуальность</span><span>12</span></li>
-                            <li><span>Художественная ценность</span><span>76</span></li>
-                            <li><span>Сценарий</span><span>54</span></li>
-                            <li><span>Актерская игра</span><span>22</span></li>
-                            <li><span>Операторская работа</span><span>54</span></li>
-                            <li><span>Графика</span><span>3</span></li>
-                            <li><span>Монтаж</span><span>100</span></li>
-                            <li><span>Музыка</span><span>45</span></li>
-                          </ul>
-                        </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.59</span></div>
                       </div>
+                      <div class="card-rating__grade" data-title="Оценки">
+                        <ul>
+                          <li><span>Инновационный подход</span><span>92</span></li>
+                          <li><span>Режиссерская работа</span><span>54</span></li>
+                          <li><span>Актуальность</span><span>12</span></li>
+                          <li><span>Художественная ценность</span><span>76</span></li>
+                          <li><span>Сценарий</span><span>54</span></li>
+                          <li><span>Актерская игра</span><span>22</span></li>
+                          <li><span>Операторская работа</span><span>54</span></li>
+                          <li><span>Графика</span><span>3</span></li>
+                          <li><span>Монтаж</span><span>100</span></li>
+                          <li><span>Музыка</span><span>45</span></li>
+                        </ul>
+                      </div>
+                      <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.15</span></div>
                     </div>
-                    <div class="block-rating__item">
-                      <div class="card-rating">
-                        <div class="card-rating__details">
-                          <div class="card-rating__position">4</div>
-                          <div class="card-rating__cover">
-                            <picture>
-                              <source srcset="/img/common/cover4.webp" type="image/webp"/><img src="/img/common/cover4.jpg" loading="lazy" alt="image"/>
-                            </picture>
-                          </div>
-                          <div class="card-rating__info">
-                            <div class="card-rating__number">4 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 8</a></div>
-                            <div class="card-rating__year" data-year="2024">2024, Пон Джун-хо</div>
-                            <div class="card-rating__duration"> 
-                              <ul class="car-rating-flag">
-                                <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
-                                </li>
-                              </ul><span>85 мин.</span>
-                            </div>
+                  </div>
+                  <div class="block-rating__item">
+                    <div class="card-rating">
+                      <div class="card-rating__details">
+                        <div class="card-rating__position">4</div>
+                        <div class="card-rating__cover">
+                          <picture>
+                            <source srcset="/img/common/cover4.webp" type="image/webp" /><img
+                              src="/img/common/cover4.jpg" loading="lazy" alt="image" />
+                          </picture>
+                        </div>
+                        <div class="card-rating__info">
+                          <div class="card-rating__number">4 место</div>
+                          <div class="card-rating__name"><a href="#">Паразиты 10</a></div>
+                          <div class="card-rating__year" data-year="2024">2024, Пон Джун-хо</div>
+                          <div class="card-rating__duration">
+                            <ul class="car-rating-flag">
+                              <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
+                              </li>
+                            </ul><span>85 мин.</span>
                           </div>
                         </div>
-                        <div class="card-rating__grade" data-title="Оценки">
-                          <ul>
-                            <li><span>Инновационный подход</span><span>92</span></li>
-                            <li><span>Режиссерская работа</span><span>54</span></li>
-                            <li><span>Актуальность</span><span>12</span></li>
-                            <li><span>Художественная ценность</span><span>76</span></li>
-                            <li><span>Сценарий</span><span>54</span></li>
-                            <li><span>Актерская игра</span><span>22</span></li>
-                            <li><span>Операторская работа</span><span>54</span></li>
-                            <li><span>Графика</span><span>3</span></li>
-                            <li><span>Монтаж</span><span>100</span></li>
-                            <li><span>Музыка</span><span>45</span></li>
-                          </ul>
-                        </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>9.48</span></div>
                       </div>
+                      <div class="card-rating__grade" data-title="Оценки">
+                        <ul>
+                          <li><span>Инновационный подход</span><span>92</span></li>
+                          <li><span>Режиссерская работа</span><span>54</span></li>
+                          <li><span>Актуальность</span><span>12</span></li>
+                          <li><span>Художественная ценность</span><span>76</span></li>
+                          <li><span>Сценарий</span><span>54</span></li>
+                          <li><span>Актерская игра</span><span>22</span></li>
+                          <li><span>Операторская работа</span><span>54</span></li>
+                          <li><span>Графика</span><span>3</span></li>
+                          <li><span>Монтаж</span><span>100</span></li>
+                          <li><span>Музыка</span><span>45</span></li>
+                        </ul>
+                      </div>
+                      <div class="card-rating__total" data-title="Итоговый рейтинг"><span>5.87</span></div>
                     </div>
-                    <div class="block-rating__item">
-                      <div class="card-rating">
-                        <div class="card-rating__details">
-                          <div class="card-rating__position">2</div>
-                          <div class="card-rating__cover">
-                            <picture>
-                              <source srcset="/img/common/cover2.webp" type="image/webp"/><img src="/img/common/cover2.jpg" loading="lazy" alt="image"/>
-                            </picture>
-                          </div>
-                          <div class="card-rating__info">
-                            <div class="card-rating__number">2 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
-                            <div class="card-rating__year" data-year="2022">2022, Пон Джун-хо</div>
-                            <div class="card-rating__duration"> 
-                              <ul class="car-rating-flag">
-                                <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
-                                </li>
-                              </ul><span>85 мин.</span>
-                            </div>
+                  </div>
+                  <div class="block-rating__item">
+                    <div class="card-rating">
+                      <div class="card-rating__details">
+                        <div class="card-rating__position">3</div>
+                        <div class="card-rating__cover">
+                          <picture>
+                            <source srcset="/img/common/cover3.webp" type="image/webp" /><img
+                              src="/img/common/cover3.jpg" loading="lazy" alt="image" />
+                          </picture>
+                        </div>
+                        <div class="card-rating__info">
+                          <div class="card-rating__number">3 место</div>
+                          <div class="card-rating__name"><a href="#">Паразиты 6</a></div>
+                          <div class="card-rating__year" data-year="2023">2023, Пон Джун-хо</div>
+                          <div class="card-rating__duration">
+                            <ul class="car-rating-flag">
+                              <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
+                              </li>
+                            </ul><span>85 мин.</span>
                           </div>
                         </div>
-                        <div class="card-rating__grade" data-title="Оценки">
-                          <ul>
-                            <li><span>Инновационный подход</span><span>92</span></li>
-                            <li><span>Режиссерская работа</span><span>54</span></li>
-                            <li><span>Актуальность</span><span>12</span></li>
-                            <li><span>Художественная ценность</span><span>76</span></li>
-                            <li><span>Сценарий</span><span>54</span></li>
-                            <li><span>Актерская игра</span><span>22</span></li>
-                            <li><span>Операторская работа</span><span>54</span></li>
-                            <li><span>Графика</span><span>3</span></li>
-                            <li><span>Монтаж</span><span>100</span></li>
-                            <li><span>Музыка</span><span>45</span></li>
-                          </ul>
-                        </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>7.54</span></div>
                       </div>
-                    </div>
-                    <div class="block-rating__item">
-                      <div class="card-rating">
-                        <div class="card-rating__details">
-                          <div class="card-rating__position">4</div>
-                          <div class="card-rating__cover">
-                            <picture>
-                              <source srcset="/img/common/cover4.webp" type="image/webp"/><img src="/img/common/cover4.jpg" loading="lazy" alt="image"/>
-                            </picture>
-                          </div>
-                          <div class="card-rating__info">
-                            <div class="card-rating__number">4 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 7</a></div>
-                            <div class="card-rating__year" data-year="2024">2024, Пон Джун-хо</div>
-                            <div class="card-rating__duration"> 
-                              <ul class="car-rating-flag">
-                                <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
-                                </li>
-                              </ul><span>85 мин.</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-rating__grade" data-title="Оценки">
-                          <ul>
-                            <li><span>Инновационный подход</span><span>92</span></li>
-                            <li><span>Режиссерская работа</span><span>54</span></li>
-                            <li><span>Актуальность</span><span>12</span></li>
-                            <li><span>Художественная ценность</span><span>76</span></li>
-                            <li><span>Сценарий</span><span>54</span></li>
-                            <li><span>Актерская игра</span><span>22</span></li>
-                            <li><span>Операторская работа</span><span>54</span></li>
-                            <li><span>Графика</span><span>3</span></li>
-                            <li><span>Монтаж</span><span>100</span></li>
-                            <li><span>Музыка</span><span>45</span></li>
-                          </ul>
-                        </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>8.93</span></div>
+                      <div class="card-rating__grade" data-title="Оценки">
+                        <ul>
+                          <li><span>Инновационный подход</span><span>92</span></li>
+                          <li><span>Режиссерская работа</span><span>54</span></li>
+                          <li><span>Актуальность</span><span>12</span></li>
+                          <li><span>Художественная ценность</span><span>76</span></li>
+                          <li><span>Сценарий</span><span>54</span></li>
+                          <li><span>Актерская игра</span><span>22</span></li>
+                          <li><span>Операторская работа</span><span>54</span></li>
+                          <li><span>Графика</span><span>3</span></li>
+                          <li><span>Монтаж</span><span>100</span></li>
+                          <li><span>Музыка</span><span>45</span></li>
+                        </ul>
                       </div>
-                    </div>
-                    <div class="block-rating__item">
-                      <div class="card-rating">
-                        <div class="card-rating__details">
-                          <div class="card-rating__position">3</div>
-                          <div class="card-rating__cover">
-                            <picture>
-                              <source srcset="/img/common/cover3.webp" type="image/webp"/><img src="/img/common/cover3.jpg" loading="lazy" alt="image"/>
-                            </picture>
-                          </div>
-                          <div class="card-rating__info">
-                            <div class="card-rating__number">3 место</div>
-                            <div class="card-rating__name"><a href="#">Паразиты 7</a></div>
-                            <div class="card-rating__year" data-year="2023">2023, Пон Джун-хо</div>
-                            <div class="card-rating__duration"> 
-                              <ul class="car-rating-flag">
-                                <li><span class="bgimage lazyload" data-bg="/img/flags/cg.svg"></span>
-                                </li>
-                              </ul><span>85 мин.</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-rating__grade" data-title="Оценки">
-                          <ul>
-                            <li><span>Инновационный подход</span><span>92</span></li>
-                            <li><span>Режиссерская работа</span><span>54</span></li>
-                            <li><span>Актуальность</span><span>12</span></li>
-                            <li><span>Художественная ценность</span><span>76</span></li>
-                            <li><span>Сценарий</span><span>54</span></li>
-                            <li><span>Актерская игра</span><span>22</span></li>
-                            <li><span>Операторская работа</span><span>54</span></li>
-                            <li><span>Графика</span><span>3</span></li>
-                            <li><span>Монтаж</span><span>100</span></li>
-                            <li><span>Музыка</span><span>45</span></li>
-                          </ul>
-                        </div>
-                        <div class="card-rating__total" data-title="Итоговый рейтинг"><span>6.08</span></div>
-                      </div>
+                      <div class="card-rating__total" data-title="Итоговый рейтинг"><span>6.93</span></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="container">
-        <div class="footer">
-          <div class="footer__logo">
-            <div class="footer__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span>
-            </div>
-            <div class="footer__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
-          </div>
-          <div class="footer__nav">
-            <nav>
-              <ul>
-                <li><a href="about.html">О фестивале</a></li>
-                <li><a href="programs.html">Программы</a></li>
-                <li><a href="hall.html">Кинозал</a></li>
-                <li><a href="participant.html">участникам</a></li>
-                <li><a href="events.html">События</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer__social">
-            <ul>
-              <li><a href="#">
-                  <svg width="25" height="25">
-                    <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
-                  </svg><span>vkontakte</span></a></li>
-              <li><a href="#">
-                  <svg width="25" height="25">
-                    <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
-                  </svg><span>Telegram</span></a></li>
-            </ul>
-          </div>
-          <div class="footer__contact">
-            <ul>
-              <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
-              <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
-            </ul>
           </div>
         </div>
       </div>
-    </footer>
-    <script src="/js/vendor.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/lib/OverlayScrollbars.min.js"></script>
-    <script src="/js/moderator.js"></script>
-  </body>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <div class="footer__logo">
+          <div class="footer__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo.png"></span>
+          </div>
+          <div class="footer__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
+        </div>
+        <div class="footer__nav">
+          <nav>
+            <ul>
+              <li><a href="about.html">О фестивале</a></li>
+              <li><a href="programs.html">Программы</a></li>
+              <li><a href="hall.html">Кинозал</a></li>
+              <li><a href="participant.html">участникам</a></li>
+              <li><a href="events.html">События</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__social">
+          <ul>
+            <li><a href="#">
+                <svg width="25" height="25">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                </svg><span>vkontakte</span></a></li>
+            <li><a href="#">
+                <svg width="25" height="25">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                </svg><span>Telegram</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <ul>
+            <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
+            <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/vendor.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/lib/OverlayScrollbars.min.js"></script>
+  <script src="/js/moderator.js"></script>
+</body>
+
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PFF</title>
-    <meta name="theme-color" content="#fff">
+    <meta name="theme-color" content="#111111">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -180,22 +180,44 @@
                 </div>
                 <div class="film-seans">
                   <div class="film-seans__title">Ближайшие показы</div>
-                  <div class="film-seans__list">
-                    <div class="seans-list">
-                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
-                      <div class="seans-list__time">15:00</div>
+                  <div class="film-seans__wrp">
+                    <div class="film-seans__nav">
+                      <div class="film-seans__nav-prev" data-se-slider="prev">
+                        <svg width="15" height="15">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_season-back"></use>
+                        </svg>
+                      </div>
+                      <div class="film-seans__nav-next" data-se-slider="next">
+                        <svg width="15" height="15">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_season-next"></use>
+                        </svg>
+                      </div>
                     </div>
-                    <div class="seans-list">
-                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
-                      <div class="seans-list__time">16:00</div>
-                    </div>
-                    <div class="seans-list">
-                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
-                      <div class="seans-list__time">17:00</div>
-                    </div>
-                    <div class="seans-list">
-                      <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
-                      <div class="seans-list__time">18:00</div>
+                    <div class="film-seans__list">
+                      <div class="seans-list">
+                        <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                        <div class="seans-list__time">15:00</div>
+                      </div>
+                      <div class="seans-list">
+                        <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                        <div class="seans-list__time">16:00</div>
+                      </div>
+                      <div class="seans-list">
+                        <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                        <div class="seans-list__time">17:00</div>
+                      </div>
+                      <div class="seans-list">
+                        <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                        <div class="seans-list__time">18:00</div>
+                      </div>
+                      <div class="seans-list">
+                        <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                        <div class="seans-list__time">19:00</div>
+                      </div>
+                      <div class="seans-list">
+                        <div class="seans-list__date"> <span>23.11 </span><span>ВТ</span></div>
+                        <div class="seans-list__time">20:00</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -204,14 +226,14 @@
                   <div class="film-grade__wrp">
                     <div class="film-grade__total"><span>6.4</span></div>
                     <div class="film-grade__add">
-                      <button class="btn btn-white"> 
+                      <button class="btn btn-white" data-modal-grade="open" data-url="_grade-film.html"> 
                         <svg width="16" height="16">
                           <use xlink:href="/img/sprites/sprite.svg#ic_star-solid"></use>
                         </svg><span class="hide-desctop">Оценить фильм</span><span class="hide-mobile">Оценить</span>
                       </button>
                     </div>
                     <div class="film-grade__review">
-                      <button class="btn btn-white"> <span class="hide-desctop">Написать рецензию</span><span class="hide-mobile">Рецензировать</span></button>
+                      <button class="btn btn-white" data-modal-hall="open" data-url="_review-film-form.html"> <span class="hide-desctop">Написать рецензию</span><span class="hide-mobile">Рецензировать</span></button>
                     </div>
                   </div>
                 </div>
@@ -228,6 +250,7 @@
                   <div class="player-video"></div>
                 </div>
                 <div class="page-film__description">Московский психолог, автор мотивационных роликов Злата считает, что у них с Сашей прекрасный брак, который помог им обоим реализовать себя и подарил десять лет образцовой совместной жизни — для полноценного счастья не хватает только ребенка. Саша же, видимо, считает иначе, потому что втайне от жены он встречается с другой женщиной. Ее зовут Вероника, она живет в Петербурге, проводит экскурсии и увлекается поэзией. Вероника помогла Саше выбраться из воды, когда он попытался утопиться с увесистой телепремией на шее. Успешный шоумен-комик, безропотный муж, нежный влюбленный, — он разрывается между несколькими ролями, между двумя столицами, между очень разными женщинами. Но всегда ли возможно сделать выбор?</div>
+                <div class="page-film__more" data-text-show="Подробное описание" data-text-hide="Свернуть">Подробное описание</div>
                 <div class="page-film__team">
                   <div class="film-team">
                     <div class="film-team__post">Оператор:</div>
@@ -245,8 +268,128 @@
               </div>
             </div>
             <div class="film-comments">
-              <div class="film-comments__title">Комментарии <span>16</span></div>
-              <div class="film-comments__content"></div>
+              <div class="film-comments__wrp">
+                <div class="film-comments__title">Комментарии <span>16</span></div>
+                <div class="film-comments__content">
+                  <div class="film-comments__add">
+                    <div class="film-comments__textarea">
+                      <textarea placeholder="Ваше сообщение..."></textarea>
+                    </div>
+                    <div class="film-comments__send">
+                      <button>
+                        <svg width="24" height="24">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="film-comments__list">
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user3.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user5.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user6.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                    <div class="item-message" data-comment="item" data-comment-id="123">
+                      <div class="item-message__head">
+                        <div class="item-message__photo"><span class="bgimage lazyload" data-bg="/img/common/user7.jpg"></span>
+                        </div>
+                        <div class="item-message__detail">
+                          <div class="item-message__name">Бронислав Андреев,</div>
+                          <div class="item-message__date">Сегодня в 19.30</div>
+                        </div>
+                      </div>
+                      <div class="item-message__main"><span>Профессиональный военный Джексон Бриггс всеми силами пытается вернуться в строй, но из-за травмы головы получает постоянные отказы. Когда умирает один из его сослуживцев, Бриггсу дают задание: с военной базы в штате Вашингтон доставить на похороны в аризонский Ногалес боевую подругу почившего — нервную бельгийскую овчарку Лулу с целым спектром посттравматических расстройств.</span></div>
+                      <div class="item-message__action" data-comment-action="container">
+                        <div class="item-message__default" data-comment-action="pane-default"><span class="item-message__default-reply" data-comment-action="reply">Ответить</span></div>
+                        <div class="item-message__reply" data-comment-action="pane-reply">
+                          <div class="item-message__reply-field">
+                            <textarea placeholder="Введите"></textarea>
+                          </div>
+                          <div class="item-message__reply-button" data-comment-action="send">
+                            <svg width="25" height="25">
+                              <use xlink:href="/img/sprites/sprite.svg#ic_send"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-message__answers" data-comment="answers"> </div>
+                    </div>
+                  </div>
+                  <div class="film-comments__more">
+                    <button class="btn btn-line">Показать все</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

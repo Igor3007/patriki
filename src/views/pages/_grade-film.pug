@@ -1,0 +1,9 @@
+include ../helpers/mixins.pug
+include ../../blocks/modules/site/grade-film/grade-film.pug
+include ../../blocks/modules/site/success-msg/success-msg.pug
+
++grade-film()
++success-msg({
+    title: 'Ваши оценки приняты',
+    desc: 'Спасибо, что поделились мнением!'
+})

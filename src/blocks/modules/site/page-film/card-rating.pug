@@ -1,0 +1,63 @@
+mixin site-rating
+    .block-rating 
+        .block-rating__list
+            each item in site.rating
+                .block-rating__item: +card-rating(item)
+
+
+
+             
+
+mixin card-rating(data)
+    .card-rating
+        .card-rating__details
+            
+            .card-rating__cover
+                +picture(data.img)
+            .card-rating__info
+                 
+                .card-rating__name: a(href='#')= data.name
+
+                if data.statusCode == '--viewed'
+                    .card-rating__status.card-rating__status--viewed= data.status
+                if data.statusCode == '--noviewed'
+                    .card-rating__status.card-rating__status--noviewed= data.status
+                if data.statusCode == '--nograde'
+                    .card-rating__status.card-rating__status--nograde= data.status
+               
+                
+        .card-rating__grade(data-title="Оценки")
+            ul
+                li
+                    span Инновационный подход
+                    span 92
+                li
+                    span Режиссерская работа
+                    span 54
+                li
+                    span Актуальность
+                    span 12
+                li
+                    span Художественная ценность
+                    span 76
+                li
+                    span Сценарий
+                    span 54
+                li
+                    span Актерская игра
+                    span 22
+                li
+                    span Операторская работа
+                    span 54
+                li
+                    span Графика
+                    span 3
+                li
+                    span Монтаж
+                    span 100
+                li
+                    span Музыка
+                    span 45
+        .card-rating__total(data-title="Итоговый рейтинг")
+            span=  data.grade
+        

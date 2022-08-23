@@ -17,13 +17,14 @@
 
         &__contact {
             & a {
-                color: #fff;
+                color: $gray-74;
             }
         }
 
         &__logo {
             &-desc {
                 color: $gray-74;
+                font-weight: 500;
             }
         }
     }

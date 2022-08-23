@@ -1,0 +1,28 @@
+extends ../layouts/site-dark
+include ../../blocks/modules/site/page-film/page-film.pug
+include ../../blocks/modules/site/page-film/card-rating.pug
+ 
+ 
+
+block variables
+  include ../../data/data.pug
+  - const title = "PFF"
+
+
+block content
+    .container
+        .page-site
+            .page-site__breadcrumbs
+                ul
+                    li: a(href='#') Главная
+                    li: a(href='#') Кинозал                 
+                    li: a(href='#') Трое                 
+
+            .page-site__content 
+                +page-film-moderator({
+                    grade: false
+                })
+                +site-rating()
+                +film-comments()
+                 
+                 

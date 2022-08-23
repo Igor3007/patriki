@@ -1,0 +1,23 @@
+.success-msg {
+
+    display: none;
+
+    &__title {
+        @include section-title;
+        color: #fff;
+        text-align: left;
+        margin-right: 15px;
+        padding-bottom: 10px;
+    }
+
+    &__msg {
+        color: $gray-74;
+        padding-bottom: 25px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &__icon {
+        padding-bottom: 20px;
+    }
+}

@@ -1,0 +1,9 @@
+include ../helpers/mixins.pug
+include ../../blocks/modules/site/review-film-form/review-film-form.pug
+include ../../blocks/modules/site/success-msg/success-msg.pug
+
++review-film-form()
++success-msg({
+    title: 'рецензия принята',
+    desc: 'Спасибо, Ваше мнение будет учтено членами жюри!'
+})

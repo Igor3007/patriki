@@ -1678,9 +1678,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
-    const SORTING = new classSortableRating()
+    if (document.querySelector('[data-rating="sort-title"]')) {
+        const SORTING = new classSortableRating()
+        SORTING.init()
+    }
 
-    SORTING.init()
+
 
 
 
