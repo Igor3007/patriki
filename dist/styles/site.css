@@ -6037,8 +6037,10 @@ footer {
 }
 
 .grade-film__desc {
-  color: #5A5970;
+  color: #eee;
   padding-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .grade-film__input {
