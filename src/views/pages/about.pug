@@ -1,16 +1,16 @@
-extends layouts/site
+extends ../layouts/site
 
 block variables
-  include ../data/data.pug
+  include ../../data/data.pug
   - const title = "PFF"
 
 
 block content
-
-
-   include ../blocks/modules/page-default/page-default
+    include ../../blocks/modules/page-default/page-default
 
     +page-default()
+
+
 
 
 

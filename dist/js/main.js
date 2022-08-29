@@ -676,6 +676,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         })
     })
+    
+       //click minicard-film
+
+      if(document.querySelectorAll('.minicard-film__image').length){
+        document.querySelectorAll('.minicard-film__image').forEach(item => {
+            item.addEventListener('click', function(e){
+                let url = e.target.closest('.minicard-film').querySelector('.minicard-film__title a').getAttribute('href')
+                window.location.href = url
+            })
+        })
+    }
 
 
 

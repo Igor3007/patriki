@@ -124,8 +124,11 @@
  .page-film {
 
      margin-bottom: 35px;
+     overflow: hidden;
 
-
+     &__main {
+         flex-grow: 1;
+     }
 
      @media screen and (min-width: $w1440) {
          &__details {
@@ -938,9 +941,7 @@
          &:empty {
              width: 100%;
 
-             @media screen and (min-width: $w760) {
-                 width: 380px;
-             }
+
          }
      }
  }
@@ -1304,6 +1305,8 @@
              height: 36px;
          }
      }
+
+
 
 
  }

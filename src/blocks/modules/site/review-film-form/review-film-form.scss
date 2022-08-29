@@ -54,8 +54,10 @@
     }
 
     &__desc {
-        color: $main-dark-3;
+        color: #eee;
         padding-bottom: 25px;
+        font-size: 16px;
+        font-weight: 600;
     }
 
     &__label {
@@ -70,7 +72,9 @@
 
     &__note {
         padding-bottom: 35px;
-        color: $main-dark-3;
+        color: #eee;
+        font-size: 16px;
+        font-weight: 600;
 
     }
 

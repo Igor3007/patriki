@@ -5903,6 +5903,7 @@ div[data-lang]:not(.active) {
   visibility: hidden;
   transition: 0.3s ease;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .minicard-film__details ul {
@@ -6067,6 +6068,14 @@ div[data-lang]:not(.active) {
 .dark-mode .minicard-film__cover picture {
   background-color: #424152;
   color: #424152;
+}
+
+.about-user__main {
+  flex-grow: 1;
+}
+
+.about-user__main {
+  flex-grow: 1;
 }
 
 .profile-block {

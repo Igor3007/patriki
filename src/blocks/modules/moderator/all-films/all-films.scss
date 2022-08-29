@@ -228,6 +228,7 @@
         visibility: hidden;
         transition: 0.3s ease;
         border-radius: 5px;
+        cursor: pointer;
 
 
 
@@ -428,4 +429,12 @@
             color: $main-dark-2;
         }
     }
+}
+
+.about-user__main {
+    flex-grow: 1;
+}
+
+.about-user__main {
+    flex-grow: 1;
 }

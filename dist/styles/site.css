@@ -4861,6 +4861,11 @@ footer {
 
 .page-film {
   margin-bottom: 35px;
+  overflow: hidden;
+}
+
+.page-film__main {
+  flex-grow: 1;
 }
 
 .page-film__details {
@@ -6099,9 +6104,9 @@ footer {
 
 .grade-film__note {
   padding-bottom: 25px;
-  color: #5A5970;
+  color: #eee;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .grade-film .checkbox__elem.zoom-check {
@@ -6186,8 +6191,10 @@ footer {
 }
 
 .review-film-form__desc {
-  color: #5A5970;
+  color: #eee;
   padding-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .review-film-form__label {
@@ -6202,7 +6209,9 @@ footer {
 
 .review-film-form__note {
   padding-bottom: 35px;
-  color: #5A5970;
+  color: #eee;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .review-film-form__btn .btn {
@@ -6642,6 +6651,7 @@ footer {
   visibility: hidden;
   transition: 0.3s ease;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .minicard-film__details ul {
@@ -6806,6 +6816,14 @@ footer {
 .dark-mode .minicard-film__cover picture {
   background-color: #424152;
   color: #424152;
+}
+
+.about-user__main {
+  flex-grow: 1;
+}
+
+.about-user__main {
+  flex-grow: 1;
 }
 
 .messenger {
@@ -7281,6 +7299,118 @@ footer {
   cursor: pointer;
 }
 
+.section-page-default {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.page-default {
+  position: relative;
+  max-width: 980px;
+}
+
+.page-default::before {
+  content: '';
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-right: 1px solid #525166;
+  border-top: 1px solid #525166;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease;
+}
+
+.page-default::after {
+  content: '';
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-left: 1px solid #525166;
+  border-bottom: 1px solid #525166;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s ease;
+}
+
+.page-default:hover::after {
+  left: -10px;
+  bottom: -10px;
+}
+
+.page-default:hover::before {
+  right: -10px;
+  top: -10px;
+}
+
+.page-default__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #525166;
+  line-height: 140%;
+  margin-bottom: 20px;
+}
+
+.page-default__text {
+  font-weight: 700;
+  font-size: 20px;
+  color: #525166;
+  text-transform: uppercase;
+}
+
+.page-default__text {
+  padding-bottom: 30px;
+}
+
+.page-default__date {
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #525166;
+}
+
+.page-default__date-month {
+  height: 50px;
+  padding: 0 1.5em;
+  background-color: #525166;
+  color: #dcdce0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-default__date-year {
+  background-color: #dcdce0;
+  height: 50px;
+  padding: 0 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-default__date-link a {
+  width: 50px;
+  height: 50px;
+  background-color: #525166;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-default__date-link a svg {
+  width: 16px;
+  height: 16px;
+}
+
+.page-default__date-link a:hover {
+  opacity: 0.9;
+}
+
 @media screen and (min-width: 359px) {
   .programs-item__film {
     width: 50%;
@@ -7422,6 +7552,10 @@ footer {
 
   .minicard-film__details ul li {
     font-size: 14px;
+  }
+
+  .page-default {
+    padding: 20px 30px 40px 40px;
   }
 }
 
@@ -7573,10 +7707,6 @@ footer {
 
   .film-note {
     flex-grow: 0;
-  }
-
-  .film-note textarea:empty {
-    width: 380px;
   }
 
   .film-comments__add {
@@ -7741,6 +7871,42 @@ footer {
 
   .messenger__user {
     display: none;
+  }
+
+  .page-default {
+    padding: 30px 40px 50px 50px;
+  }
+
+  .page-default__title {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+
+  .page-default__text {
+    font-size: 30px;
+  }
+
+  .page-default__text {
+    padding-bottom: 60px;
+  }
+
+  .page-default__date {
+    font-size: 24px;
+  }
+
+  .page-default__date-month {
+    height: 80px;
+    padding: 0 2.5em;
+  }
+
+  .page-default__date-year {
+    height: 80px;
+    padding: 0 2.5em;
+  }
+
+  .page-default__date-link a {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -7982,6 +8148,16 @@ footer {
     display: block;
     width: 70%;
     padding: 0 7px;
+  }
+
+  .page-default::before {
+    width: 80px;
+    height: 80px;
+  }
+
+  .page-default::after {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -8595,6 +8771,14 @@ footer {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .page-default::before {
+    display: none;
+  }
+
+  .page-default::after {
+    display: none;
   }
 }
 

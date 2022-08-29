@@ -1,0 +1,189 @@
+.section-page-default {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 70px 0;
+}
+
+.page-default {
+
+    position: relative;
+
+    max-width: 980px;
+
+    @media screen and (min-width: $w576) {
+        padding: 20px 30px 40px 40px;
+    }
+
+    @media screen and (min-width: $w760) {
+        padding: 30px 40px 50px 50px;
+    }
+
+
+
+    &::before {
+        content: '';
+        width: 60px;
+        height: 60px;
+        display: block;
+        border-right: 1px solid $main;
+        border-top: 1px solid $main;
+
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 0.5s ease;
+
+
+
+        @media screen and (min-width: $w992) {
+            width: 80px;
+            height: 80px;
+        }
+
+        @media screen and (max-width: $w576) {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: '';
+        width: 60px;
+        height: 60px;
+        display: block;
+        border-left: 1px solid $main;
+        border-bottom: 1px solid $main;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: 0.5s ease;
+
+
+
+        @media screen and (min-width: $w992) {
+            width: 80px;
+            height: 80px;
+        }
+
+        @media screen and (max-width: $w576) {
+            display: none;
+        }
+    }
+
+    &:hover {
+        &::after {
+            left: -10px;
+            bottom: -10px;
+        }
+
+        &::before {
+            right: -10px;
+            top: -10px;
+        }
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 700;
+        color: $main;
+        line-height: 140%;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $w760) {
+            font-size: 60px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 20px;
+        color: $main;
+        text-transform: uppercase;
+
+        @media screen and (min-width: $w760) {
+            font-size: 30px;
+        }
+    }
+
+    &__day {}
+
+    &__text {
+        padding-bottom: 30px;
+
+        @media screen and (min-width: $w760) {
+            padding-bottom: 60px;
+        }
+    }
+
+    &__date {
+        display: flex;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $main;
+
+        @media screen and (min-width: $w760) {
+            font-size: 24px;
+        }
+
+        &-month {
+            height: 50px;
+            padding: 0 1.5em;
+            background-color: $main;
+            color: #dcdce0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (min-width: $w760) {
+                height: 80px;
+                padding: 0 2.5em;
+            }
+        }
+
+        &-year {
+            background-color: #dcdce0;
+            height: 50px;
+            padding: 0 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (min-width: $w760) {
+                height: 80px;
+                padding: 0 2.5em;
+            }
+        }
+
+        &-link {
+            & a {
+                width: 50px;
+                height: 50px;
+                background-color: $main;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & svg {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                @media screen and (min-width: $w760) {
+                    width: 80px;
+                    height: 80px;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+
+    }
+
+
+}
