@@ -494,7 +494,7 @@
 
          & picture {
              display: block;
-             padding-top: 150%;
+             padding-top: 146%;
              position: relative;
              background-color: $main-dark-2;
              border-radius: 8px;
@@ -925,9 +925,7 @@
          padding: 10px 10px 8px 10px;
          width: 100%;
 
-         @media screen and (min-width: $w992) {
-             width: 830px;
-         }
+
 
          &:focus {
              resize: vertical;

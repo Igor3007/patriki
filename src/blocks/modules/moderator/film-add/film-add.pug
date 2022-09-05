@@ -168,7 +168,9 @@ mixin film-add()
 
 mixin lineup
   .lineup(data-lineup="1")
-    .lineup__date: +input-material-date('text', 'Дата показа')
+    .lineup__date
+      .clear-calendar
+      +input-material-date('text', 'Дата показа')
     .lineup__time
       .lineup__timeline
         .lineup__title Время

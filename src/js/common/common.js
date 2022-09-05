@@ -303,8 +303,47 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 })
 
             })
+
+            // click on icons
+            input.parentNode.addEventListener('click', function (event) {
+                input.focus()
+            })
         })
     }
+
+    //clear datepicker
+
+    function initClearDatepicker() {
+        if (document.querySelectorAll('.clear-calendar').length) {
+
+            document.querySelectorAll('.clear-calendar').forEach(function (item) {
+
+                console.log(item.parentNode.querySelector('input'))
+
+                item.parentNode.querySelector('input').addEventListener('changeDate', function () {
+                    item.style.display = 'block'
+                })
+
+                // asasas
+
+                item.addEventListener('click', function (e) {
+                    e.stopPropagation(true)
+
+                    let container = e.target.closest('.lineup__date')
+
+                    container.querySelector('input').value = ''
+                    container.querySelector('input').removeAttribute('area-valid')
+
+                    item.style.display = 'none'
+
+
+
+                })
+            })
+        }
+    }
+
+    initClearDatepicker()
 
     /* =========================================
     копировать в буфер

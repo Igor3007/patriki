@@ -2323,6 +2323,35 @@ a.link-primary {
   background-color: #111111;
 }
 
+.clear-calendar {
+  position: absolute;
+  right: 68px;
+  top: 30px;
+  z-index: 5;
+  display: none;
+}
+
+.clear-calendar:hover {
+  transform: scale(1.1);
+}
+
+.lineup__date {
+  position: relative;
+}
+
+.clear-calendar::after {
+  cursor: pointer;
+  content: '';
+  font-size: 14px;
+  width: 9px;
+  height: 9px;
+  display: block;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L1 13' stroke='%2392919F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 1L13 13' stroke='%2392919F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;
@@ -4790,7 +4819,7 @@ footer {
 
 .film-poster__image picture {
   display: block;
-  padding-top: 134%;
+  padding-top: 146%;
   background-color: #DDDDDD;
 }
 
@@ -5856,7 +5885,7 @@ div[data-lang]:not(.active) {
 
 .minicard-film__cover picture {
   display: block;
-  padding-top: 131%;
+  padding-top: 146%;
   position: relative;
   background-color: #eee;
 }
@@ -7613,7 +7642,7 @@ div[data-lang]:not(.active) {
   }
 
   .film-poster__image picture {
-    padding-top: 80%;
+    padding-top: 146%;
   }
 
   .minicard-film__details ul li {
@@ -8078,7 +8107,7 @@ div[data-lang]:not(.active) {
   }
 
   .film-poster__image picture {
-    padding-top: 134%;
+    padding-top: 146%;
   }
 
   .layout-column {
@@ -8974,4 +9003,3 @@ div[data-lang]:not(.active) {
     padding-bottom: 15px;
   }
 }
-/*# sourceMappingURL=maps/main.css.map */
