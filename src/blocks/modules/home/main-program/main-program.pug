@@ -1,0 +1,27 @@
+mixin main-program
+    section.section-main-program
+        .container
+            .main-program
+                .main-program__head
+                    .main-program__title Программа
+                    .main-program__type
+                        .main-program__name: span Российский конкурс
+                        .main-program__nav
+                            .main-program__nav-next(data-slider-prev="program"): +icons('#ic_arr-back')
+                            .main-program__nav-prev(data-slider-next="program"): +icons('#ic_arr-next')
+                .main-program__slider
+                    .splide(data-slider="program")
+                        .splide__track
+                            .splide__list
+                                
+                                .splide__slide(data-program="Международный конкурс")
+                                    a(href='https://lk.patrikifilmfestival.ru/hall/gobelen'): +picture('https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/Sl0tiui6ImoZRhD2')
+                                .splide__slide(data-program="Российский конкурс")
+                                    a(href='https://lk.patrikifilmfestival.ru/hall/vtoroe-solnce'): +picture('https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/6LFk9R0RqYVZGQkD')
+                                .splide__slide(data-program="Российский конкурс")
+                                    a(href='https://lk.patrikifilmfestival.ru/hall/nedo'): +picture('https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/bGKHxj0wCGfiJNnc')
+                
+
+
+                    
+

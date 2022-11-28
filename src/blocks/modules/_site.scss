@@ -1,4 +1,4 @@
-@import "common/header/header";
+@import "common/header/header-with-banner";
 @import "common/header/header-dark";
 @import "common/footer/footer";
 @import "common/footer/footer-dark";
@@ -21,3 +21,11 @@
 @import "moderator/messenger/messenger.scss";
 @import "./moderator/card-comment/card-comment.scss";
 @import "page-default/page-default";
+
+
+//home
+
+@import "home/main-banner/main-banner";
+@import "home/main-program/main-program";
+@import "home/main-events/main-events";
+@import "home/main-partners/main-partners";

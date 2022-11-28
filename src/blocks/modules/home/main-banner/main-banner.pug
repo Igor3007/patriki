@@ -1,0 +1,35 @@
+mixin main-banner
+    section.section-main-banner
+        .container
+            .main-banner
+                .main-banner__large
+                    .main-banner__slider
+                       .splide(data-slider="banner")
+                            .splide__track
+                                .splide__list
+                                    .splide__slide  
+                                        a(href='#page1')
+                                            picture
+                                                source(srcset='/img/common/slider.jpg' type='image/jpeg' media='(min-width: 480px)')
+                                                img(src='/img/common/slider_480.jpg' alt='Image')
+                                     
+                                    .splide__slide  
+                                        a(href='#page1')
+                                            picture
+                                                source(srcset='/img/common/slider.jpg' type='image/jpeg' media='(min-width: 480px)')
+                                                img(src='/img/common/slider_480.jpg' alt='Image')
+                                     
+                                    .splide__slide  
+                                        a(href='#page1')
+                                            picture
+                                                source(srcset='/img/common/slider.jpg' type='image/jpeg' media='(min-width: 480px)')
+                                                img(src='/img/common/slider_480.jpg' alt='Image')
+                                     
+                              
+              
+
+
+                                    
+                .main-banner__small
+                    +picture('/img/common/small')
+

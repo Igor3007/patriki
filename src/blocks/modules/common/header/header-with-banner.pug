@@ -1,0 +1,55 @@
+.container
+  .bn-header
+    .bn-header__logo
+
+      .logo-preloader
+
+      a(href='/'): +bgimage('/img/common/logo2.png')
+    .bn-header__nav
+      .bn-header__nav-container(data-menu="container")
+        .bn-header__nav-banner
+
+          .banner-header
+            picture
+              img(src="/img/common/banner-header.jpg")
+          
+             
+           
+        .bn-header__nav-menu
+          nav
+            ul
+              each item in app.mainMenu
+                li: a(href=item.href)= item.text
+
+      .bn-header__nav-btn
+        .btn-burger(data-menu="btn")
+          i
+          i
+          i
+    .bn-header__pa
+      .bn-header__pa-container
+        .bn-header-info
+          .bn-header-info__lang
+              select
+                option(val="ru") Русский
+                option(val="en") English
+        .bn-header__social
+          ul
+            li: a(href='#'): +icons('#ic_vk')
+            li: a(href='#'): +icons('#ic_tg')
+        .bn-header__login
+            
+              .user-login
+                .user-login__name
+                  a(href='/moderator-profile.html')
+                    +icons('#ic_user')
+                    span Анастасия
+                .user-login__tooltip: a(href='/moderator-messenger.html') 1
+
+           
+      .bn-header__pa-btn
+        .user-login-mobile(title="Анастасия" data-user-menu="open" data-link="/user-orders.html")
+          span.bgimage.lazyload(data-bg='/img/common/user-wooman.jpg')
+            span.total-messages 3
+
+      

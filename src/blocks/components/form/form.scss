@@ -97,13 +97,18 @@ input {
     }
 
     &__note {
-        text-decoration: underline;
+
         font-size: 13px;
         color: $main;
         width: 100%;
 
         & span {
             cursor: pointer;
+        }
+
+        & a {
+            color: $blue;
+            text-decoration: underline;
         }
 
         &--col2 {

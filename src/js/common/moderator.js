@@ -1221,10 +1221,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         directorPopup.changeContent(response)
 
                         //init select
-                        const select = new customSelect({
-                            selector: 'select'
-                        })
-                        select.init()
+
+                        select.reinit('.af-popup select')
 
                         //init repeat fields
                         document.querySelectorAll('[data-add="awards"]').forEach(function (item) {

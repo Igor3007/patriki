@@ -1,0 +1,50 @@
+mixin main-events
+
+    - 
+        const events = [{
+            'image': '/img/common/event/image',
+            'date': '01.05.2022',
+            'title': 'Внимание!',
+            'desc': '15 мая мы закрываем прием заявок на фестиваль Patriki Film Festival',
+        },
+        {
+            'image': '/img/common/event/image-1',
+            'date': '03.05.2022',
+            'title': 'Открытие кинофестиваля Patriki Film Festival',
+            'desc': 'Сегодня на Рождественском бранче Марина Жигалова и Алексей Боков официально объявили о том, что подробная информация об условиях в вкладке Регламент фестиваля.',
+        },
+        {
+            'image': '/img/common/event/image-2',
+            'date': '01.05.2023',
+            'title': 'Открыта подача заявок',
+            'desc': 'Подробная информация об условиях в вкладке Регламент фестиваля.',
+        }]
+
+
+    section.section-main-events
+        .container
+            .main-events
+                .main-events__head
+                    .main-events__title События
+                    .main-events__type
+                        .main-events__nav
+                            .main-events__nav-next(data-slider-prev="events"): +icons('#ic_arr-back')
+                            .main-events__nav-prev(data-slider-next="events"): +icons('#ic_arr-next')
+                .main-events__slider
+                    .splide(data-slider="events") 
+                        .splide__track
+                            .splide__list
+                                each item in events
+                                    .splide__slide: +card-event(item)
+
+                    
+
+
+mixin card-event(data)
+    .card-event
+        .card-event__image
+            a(href='#'): +picture(data.image)
+        .card-event__date= data.date
+        .card-event__title
+            a(href='#')= data.title
+        .card-event__desc= data.desc 

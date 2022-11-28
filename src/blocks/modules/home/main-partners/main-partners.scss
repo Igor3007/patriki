@@ -1,0 +1,39 @@
+.main-partners {
+    &__title {
+        @include section_title;
+        text-align: left;
+
+        padding-bottom: 20px;
+
+        @media screen and (min-width: $w1440) {
+            font-size: 60px;
+        }
+    }
+
+    &__list {
+        @media screen and (min-width: $w992) {
+            display: flex;
+            margin: -20px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            display: flex;
+            margin: -35px;
+            padding-top: 20px;
+        }
+    }
+
+    &__item {
+
+        @media screen and (min-width: $w1440) {
+            padding: 35px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 100%;
+            padding: 20px;
+            max-width: 50%;
+        }
+    }
+
+}

@@ -215,3 +215,63 @@
 
 
 }
+
+.grade-user .grade-filmmarks {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+
+.grade-user .grade-filmmarks .grade-filmmark label {
+  margin: 0;
+  width: 43px;
+  height: 40px;
+  max-width: 43px;
+  background-color: #292833;
+}
+
+.grade-user .grade-filmmarks .grade-filmmark label:hover {
+  background-color: #525166;
+}
+
+.grade-user .grade-filmmarks .grade-filmmark input:checked~label {
+  background-color: #525166;
+}
+
+.grade-user .grade-filmbtn .btn {
+  max-width: 150px;
+  height: 45px;
+}
+
+.grade-user .grade-filmbtn .btn svg {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+}
+
+@media screen and (max-width: 1440px) {
+  .grade-user .grade-filmmarks .grade-filmmark label {
+    width: 34px;
+    height: 34px;
+    max-width: 34px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .grade-user .grade-filmmarks .grade-filmmark label {
+    width: 26px;
+    height: 26px;
+    max-width: 26px;
+
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .grade-user .grade-filmmarks .grade-film__mark label {
+    width: 36px;
+    height: 36px;
+    max-width: 36px;
+
+  }
+}

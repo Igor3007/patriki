@@ -73,25 +73,20 @@
     <link rel="stylesheet" href="styles/site.css?v=1.0">
   </head>
   <body class="perf-no-animation">
-    <header>
+    <header class="header-fixed">
       <div class="container">
-        <div class="header header--site">
-          <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo.svg"></span></a></div>
-          <div class="header__nav">
-            <div class="header__nav-container" data-menu="container">
-              <div class="header__nav-info">
-                <div class="header-info">
-                  <div class="header-info__email"><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></div>
-                  <div class="header-info__phone"><a href="tel:+79055047370">+7 (905) 504-73-70</a></div>
-                  <div class="header-info__lang">
-                    <select>
-                      <option val="ru">Русский</option>
-                      <option val="en">English</option>
-                    </select>
-                  </div>
+        <div class="bn-header">
+          <div class="bn-header__logo">
+            <div class="logo-preloader"></div><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo2.png"></span></a>
+          </div>
+          <div class="bn-header__nav">
+            <div class="bn-header__nav-container" data-menu="container">
+              <div class="bn-header__nav-banner">
+                <div class="banner-header">
+                  <picture><img src="/img/common/banner-header.jpg"></picture>
                 </div>
               </div>
-              <div class="header__nav-menu">
+              <div class="bn-header__nav-menu">
                 <nav>
                   <ul>
                     <li><a href="about.html">О фестивале</a></li>
@@ -103,13 +98,21 @@
                 </nav>
               </div>
             </div>
-            <div class="header__nav-btn">
+            <div class="bn-header__nav-btn">
               <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
             </div>
           </div>
-          <div class="header__pa">
-            <div class="header__pa-container">
-              <div class="header__social">
+          <div class="bn-header__pa">
+            <div class="bn-header__pa-container">
+              <div class="bn-header-info">
+                <div class="bn-header-info__lang">
+                  <select>
+                    <option val="ru">Русский</option>
+                    <option val="en">English</option>
+                  </select>
+                </div>
+              </div>
+              <div class="bn-header__social">
                 <ul>
                   <li><a href="#">
                       <svg width="25" height="25">
@@ -121,17 +124,243 @@
                       </svg></a></li>
                 </ul>
               </div>
-              <div class="header__login"><a href="/login.html">Личный кабинет</a></div>
+              <div class="bn-header__login">
+                <div class="user-login">
+                  <div class="user-login__name"><a href="/moderator-profile.html">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
+                      </svg><span>Анастасия</span></a></div>
+                  <div class="user-login__tooltip"><a href="/moderator-messenger.html">1</a></div>
+                </div>
+              </div>
             </div>
-            <div class="header__pa-btn"><a href="/login.html">
-                <svg width="25" height="25">
-                  <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
-                </svg></a></div>
+            <div class="bn-header__pa-btn">
+              <div class="user-login-mobile" title="Анастасия" data-user-menu="open" data-link="/user-orders.html"><span class="bgimage lazyload" data-bg="/img/common/user-wooman.jpg"><span class="total-messages">3</span></span></div>
+            </div>
           </div>
         </div>
       </div>
     </header>
     <main> 
+      <div id="fullpage">
+        <section class="section">
+          <section class="section-main-banner">
+            <div class="container">
+              <div class="main-banner">
+                <div class="main-banner__large">
+                  <div class="main-banner__slider">
+                    <div class="splide" data-slider="banner">
+                      <div class="splide__track">
+                        <div class="splide__list">
+                          <div class="splide__slide"> <a href="#page1">
+                              <picture>
+                                <source srcset="/img/common/slider.jpg" type="image/jpeg" media="(min-width: 480px)"/><img src="/img/common/slider_480.jpg" alt="Image"/>
+                              </picture></a></div>
+                          <div class="splide__slide"> <a href="#page1">
+                              <picture>
+                                <source srcset="/img/common/slider.jpg" type="image/jpeg" media="(min-width: 480px)"/><img src="/img/common/slider_480.jpg" alt="Image"/>
+                              </picture></a></div>
+                          <div class="splide__slide"> <a href="#page1">
+                              <picture>
+                                <source srcset="/img/common/slider.jpg" type="image/jpeg" media="(min-width: 480px)"/><img src="/img/common/slider_480.jpg" alt="Image"/>
+                              </picture></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-banner__small">
+                  <picture>
+                    <source srcset="/img/common/small.webp" type="image/webp"/><img src="/img/common/small.jpg" loading="lazy" alt="image"/>
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="section">
+          <section class="section-main-program">
+            <div class="container">
+              <div class="main-program">
+                <div class="main-program__head">
+                  <div class="main-program__title">Программа</div>
+                  <div class="main-program__type">
+                    <div class="main-program__name"><span>Российский конкурс</span></div>
+                    <div class="main-program__nav">
+                      <div class="main-program__nav-next" data-slider-prev="program">
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_arr-back"></use>
+                        </svg>
+                      </div>
+                      <div class="main-program__nav-prev" data-slider-next="program">
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_arr-next"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-program__slider">
+                  <div class="splide" data-slider="program">
+                    <div class="splide__track">
+                      <div class="splide__list">
+                        <div class="splide__slide" data-program="Международный конкурс"><a href="https://lk.patrikifilmfestival.ru/hall/gobelen">
+                            <picture>
+                              <source srcset="https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/Sl0tiui6ImoZRhD2.webp" type="image/webp"/><img src="https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/Sl0tiui6ImoZRhD2.jpg" loading="lazy" alt="image"/>
+                            </picture></a></div>
+                        <div class="splide__slide" data-program="Российский конкурс"><a href="https://lk.patrikifilmfestival.ru/hall/vtoroe-solnce">
+                            <picture>
+                              <source srcset="https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/6LFk9R0RqYVZGQkD.webp" type="image/webp"/><img src="https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/6LFk9R0RqYVZGQkD.jpg" loading="lazy" alt="image"/>
+                            </picture></a></div>
+                        <div class="splide__slide" data-program="Российский конкурс"><a href="https://lk.patrikifilmfestival.ru/hall/nedo">
+                            <picture>
+                              <source srcset="https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/bGKHxj0wCGfiJNnc.webp" type="image/webp"/><img src="https://lk.patrikifilmfestival.ru/storage/thumbs/270x360/films/bGKHxj0wCGfiJNnc.jpg" loading="lazy" alt="image"/>
+                            </picture></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="section">
+          <section class="section-main-events">
+            <div class="container">
+              <div class="main-events">
+                <div class="main-events__head">
+                  <div class="main-events__title">События</div>
+                  <div class="main-events__type">
+                    <div class="main-events__nav">
+                      <div class="main-events__nav-next" data-slider-prev="events">
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_arr-back"></use>
+                        </svg>
+                      </div>
+                      <div class="main-events__nav-prev" data-slider-next="events">
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_arr-next"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-events__slider">
+                  <div class="splide" data-slider="events"> 
+                    <div class="splide__track">
+                      <div class="splide__list">
+                        <div class="splide__slide">
+                          <div class="card-event">
+                            <div class="card-event__image"><a href="#">
+                                <picture>
+                                  <source srcset="/img/common/event/image.webp" type="image/webp"/><img src="/img/common/event/image.jpg" loading="lazy" alt="image"/>
+                                </picture></a></div>
+                            <div class="card-event__date">01.05.2022</div>
+                            <div class="card-event__title"><a href="#">Внимание!</a></div>
+                            <div class="card-event__desc">15 мая мы закрываем прием заявок на фестиваль Patriki Film Festival</div>
+                          </div>
+                        </div>
+                        <div class="splide__slide">
+                          <div class="card-event">
+                            <div class="card-event__image"><a href="#">
+                                <picture>
+                                  <source srcset="/img/common/event/image-1.webp" type="image/webp"/><img src="/img/common/event/image-1.jpg" loading="lazy" alt="image"/>
+                                </picture></a></div>
+                            <div class="card-event__date">03.05.2022</div>
+                            <div class="card-event__title"><a href="#">Открытие кинофестиваля Patriki Film Festival</a></div>
+                            <div class="card-event__desc">Сегодня на Рождественском бранче Марина Жигалова и Алексей Боков официально объявили о том, что подробная информация об условиях в вкладке Регламент фестиваля.</div>
+                          </div>
+                        </div>
+                        <div class="splide__slide">
+                          <div class="card-event">
+                            <div class="card-event__image"><a href="#">
+                                <picture>
+                                  <source srcset="/img/common/event/image-2.webp" type="image/webp"/><img src="/img/common/event/image-2.jpg" loading="lazy" alt="image"/>
+                                </picture></a></div>
+                            <div class="card-event__date">01.05.2023</div>
+                            <div class="card-event__title"><a href="#">Открыта подача заявок</a></div>
+                            <div class="card-event__desc">Подробная информация об условиях в вкладке Регламент фестиваля.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="section">
+          <section class="section-main-partners">
+            <div class="container">
+              <div class="main-partners">
+                <div class="main-partners__title"> Партнеры</div>
+                <div class="main-partners__list">
+                  <div class="main-partners__item">
+                    <div class="card-partners">
+                      <div class="card-partners__video"><a href="https://imedia.ru">
+                          <video style="object-fit: cover; background-size: cover; width: 100%; height: 100%" preload="auto" playsinline="" autoplay="" loop="" muted="" data-keepplaying="">
+                            <source src="https://dev.patrikifilmfestival.ru/video/Independent Media_short.mp4" type="video/mp4"/>
+                            <source src="https://dev.patrikifilmfestival.ru/video/Independent Media_short.webm" type="video/webm"/>
+                          </video></a></div>
+                    </div>
+                  </div>
+                  <div class="main-partners__item">
+                    <div class="card-partners">
+                      <div class="card-partners__video"><a href="https://start.ru"></a>
+                        <video style="object-fit: cover; background-size: cover; width: 100%; height: 100%" preload="auto" playsinline="" autoplay="" loop="" muted="" data-keepplaying="">
+                          <source src="https://dev.patrikifilmfestival.ru/video/start_lp.mp4" type="video/mp4"/>
+                          <source src="https://dev.patrikifilmfestival.ru/video/start_lp.webm" type="video/webm"/>
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="section fp-auto-height">
+          <div class="container">
+            <div class="footer footer--site">
+              <div class="footer__logo">
+                <div class="footer__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo.svg"></span>
+                </div>
+                <div class="footer__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
+              </div>
+              <div class="footer__nav">
+                <nav>
+                  <ul>
+                    <li><a href="about.html">О фестивале</a></li>
+                    <li><a href="programs.html">Программы</a></li>
+                    <li><a href="hall.html">Кинозал</a></li>
+                    <li><a href="participant.html">участникам</a></li>
+                    <li><a href="events.html">События</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="footer__social">
+                <ul>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                      </svg><span>vkontakte</span></a></li>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                      </svg><span>Telegram</span></a></li>
+                </ul>
+              </div>
+              <div class="footer__contact">
+                <ul>
+                  <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
+                  <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer>
       <div class="container">
@@ -174,6 +403,7 @@
       </div>
     </footer>
     <script src="/js/vendor.js"> </script>
+    <script src="/js/lib/splide.min.js"> </script>
     <script src="/js/common.js"> </script>
   </body>
 </html>

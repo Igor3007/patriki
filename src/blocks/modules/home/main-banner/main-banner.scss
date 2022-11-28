@@ -1,0 +1,124 @@
+.main-banner {
+
+    padding: 40px 0;
+
+    @media screen and (min-width: $w1200) {
+        display: flex;
+        margin: 0 -10px;
+    }
+
+    &__small {
+        display: none;
+
+        @media screen and (min-width: $w1200) {
+            display: block;
+            width: 24%;
+            margin: 0 10px;
+            padding-top: 13px;
+        }
+    }
+
+    &__large {
+        @media screen and (min-width: $w1200) {
+            width: 76%;
+            margin: 0 10px;
+        }
+    }
+
+
+
+    &__slider {
+
+
+        & .splide {
+
+            &__slide {
+                & picture {
+                    position: relative;
+                    background-color: #eee;
+                    display: block;
+
+                    @media screen and (min-width: $w1200) {
+                        padding-top: 56%;
+                    }
+
+                    & img {
+                        @media screen and (min-width: $w1200) {
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+
+            &__pagination {
+                position: relative;
+                padding-top: 15px;
+
+                &__page {
+                    background-color: $gray;
+                    border-radius: 0;
+                    width: 10px;
+                    height: 10px;
+                    opacity: 1;
+                    transform: none;
+                    margin: 0 6px;
+
+                    &.is-active {
+                        transform: none;
+                        background-color: $main;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.button-play {
+    width: 10px;
+    height: 16px;
+    box-sizing: border-box;
+    transition: border 200ms;
+    cursor: pointer;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 0 solid transparent;
+    display: block;
+}
+
+.button-play.play {
+    border-top: 8px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid $main;
+}
+
+.playing .button-play,
+.button-play.pause {
+    border-top: 0px solid transparent;
+    border-right: 3px solid $main;
+    border-bottom: 0px solid transparent;
+    border-left: 3px solid $main;
+    width: 9px;
+    height: 15px;
+}
+
+.button-play.play {
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.main-banner__slider .splide__pagination {
+    position: relative;
+    padding-top: 15px;
+    justify-content: flex-end;
+}
+
+.fp-watermark {
+    display: none;
+}

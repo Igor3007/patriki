@@ -74,7 +74,9 @@ section {
 
 main {
     width: 100%;
-    min-height: 85vh;
+    min-height: 55vh;
+
+
 }
 
 input[type="date"]::-webkit-inner-spin-button,
@@ -527,4 +529,15 @@ table {
 
 a.link-primary {
     color: $main;
+}
+
+/* ============================================= */
+
+.section.fp-section {
+
+    padding-top: 80px;
+
+    @media screen and (min-width: $w1200) {
+        padding-top: 240px;
+    }
 }
