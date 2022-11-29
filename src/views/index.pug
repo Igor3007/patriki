@@ -1,4 +1,4 @@
-extends layouts/site
+extends layouts/home
 include ../blocks/modules/page-default/page-default
 
 include ../blocks/modules/home/main-banner/main-banner
@@ -17,12 +17,16 @@ block content
   
     div#fullpage
 
-      section.section: +main-banner() 
-      section.section: +main-program() 
-      section.section: +main-events() 
-      section.section: +main-partners() 
-      section.section.fp-auto-height
-        include ../blocks/modules/common/footer/footer-site.pug
+      section.section.section-fp-home: +main-banner() 
+      section.section.section-fp-home: +main-program() 
+      section.section.section-fp-home: +main-events() 
+      section.section.section-fp-home.partners-footer 
+        .section-fp-wrap
+          +main-partners() 
+          footer
+            include ../blocks/modules/common/footer/footer-min.pug 
+       
+        
  
      
 

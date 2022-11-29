@@ -1,4 +1,5 @@
 header {
+
     border-bottom: 1px solid $main;
     position: relative;
     z-index: 10;
@@ -117,6 +118,8 @@ header {
 
 
             }
+
+            @media screen and (min-width: $w1200) {}
         }
 
         @media screen and (min-width: $w1440) {
@@ -245,6 +248,10 @@ header {
                         @media screen and (min-width: $w1440) {
                             font-size: 16px;
                             height: 80px;
+                        }
+
+                        @media screen and (min-width: $w1200) {
+                            height: 45px;
                         }
 
 
@@ -409,7 +416,13 @@ header {
 
     &__social {
 
-        height: 50%;
+        @media screen and (min-width: $w1440) {
+            height: 50%;
+        }
+
+        @media screen and (min-width: $w1200) {
+            height: 45px;
+        }
 
 
         & ul {
@@ -460,8 +473,16 @@ header {
     }
 
     &__login {
-        height: 50%;
+
         border-top: 1px solid $main;
+
+        @media screen and (min-width: $w1440) {
+            height: 50%;
+        }
+
+        @media screen and (min-width: $w1200) {
+            height: 45px;
+        }
 
         & a {
             font-weight: 700;
@@ -576,6 +597,11 @@ header {
         border-bottom: 1px solid #525166;
     }
 
+    @media screen and (min-width: $w1200) {
+        height: 67px;
+        border-bottom: 1px solid #525166;
+    }
+
     &>div {
 
         @media screen and (min-width: $w1200) {
@@ -648,7 +674,7 @@ header {
 
         & .bn-header__nav {
             &-menu {
-                height: auto;
+                height: 100%;
 
                 & ul {
                     flex-direction: column;
@@ -718,5 +744,31 @@ header {
             width: 100%;
         }
     }
+
+}
+
+.banner-header-mobile {
+
+    height: 55px;
+    overflow: hidden;
+    position: relative;
+    background-color: #515064;
+
+    @media screen and (min-width: $w480) {
+        display: none;
+    }
+
+
+
+    & img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
 
 }

@@ -1,20 +1,22 @@
+.section-main-events {
+    padding: 40px 0;
+}
+
 .main-events {
 
     &__head {
-        padding-bottom: 15px;
+        padding-bottom: 35px;
 
-        @media screen and (min-width: $w992) {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__title {
         @include section_title;
         text-align: left;
 
-        padding-bottom: 20px;
+
 
         @media screen and (min-width: $w1440) {
             font-size: 60px;
@@ -67,9 +69,13 @@
 
                 & picture {
                     display: block;
-                    padding-top: 66%;
+                    padding-top: 80%;
                     position: relative;
                     background-color: #eee;
+
+                    @media screen and (min-width: $w480) {
+                        padding-top: 66%;
+                    }
 
                     & img {
                         position: absolute;
@@ -77,6 +83,7 @@
                         top: 0;
                         width: 100%;
                         height: 100%;
+                        object-fit: cover;
                     }
                 }
             }
@@ -192,9 +199,4 @@
         color: #92919F;
         @include line-clamp(2);
     }
-}
-
-
-.section.fp-auto-height .fp-overflow {
-    border-top: 1px solid #333
 }

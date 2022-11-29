@@ -11,6 +11,9 @@
     }
 
     &__list {
+
+        padding-bottom: 30px;
+
         @media screen and (min-width: $w992) {
             display: flex;
             margin: -20px;
@@ -25,6 +28,8 @@
 
     &__item {
 
+        margin-bottom: 10px;
+
         @media screen and (min-width: $w1440) {
             padding: 35px;
         }
@@ -36,4 +41,46 @@
         }
     }
 
+}
+
+.card-partners {
+    &__video {
+        & a {
+            display: block;
+            padding-top: 45%;
+            background-color: #eee;
+            position: relative;
+
+            & video {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+
+.partners-footer {
+    height: 100%;
+}
+
+.partners-footer .fp-overflow {
+    height: 100%
+}
+
+.section-fp-wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.section-fp-wrap footer {
+    margin-top: auto
 }

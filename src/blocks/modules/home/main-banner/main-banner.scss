@@ -1,3 +1,9 @@
+.section-main-banner {
+    @media screen and (max-width: $w480) {
+        padding-top: 116px;
+    }
+}
+
 .main-banner {
 
     padding: 40px 0;
@@ -43,6 +49,9 @@
                     }
 
                     & img {
+
+                        width: 100%;
+
                         @media screen and (min-width: $w1200) {
                             left: 0;
                             top: 0;
@@ -59,13 +68,13 @@
                 padding-top: 15px;
 
                 &__page {
-                    background-color: $gray;
+                    background-color: #ABA9BC;
                     border-radius: 0;
                     width: 10px;
                     height: 10px;
                     opacity: 1;
                     transform: none;
-                    margin: 0 6px;
+                    margin: 0 9px;
 
                     &.is-active {
                         transform: none;
@@ -80,7 +89,7 @@
 
 .button-play {
     width: 10px;
-    height: 16px;
+    height: 14px;
     box-sizing: border-box;
     transition: border 200ms;
     cursor: pointer;
@@ -105,17 +114,18 @@
     border-bottom: 0px solid transparent;
     border-left: 3px solid $main;
     width: 9px;
-    height: 15px;
+    height: 14px;
 }
 
-.button-play.play {
+li.button-play {
     margin-right: 10px;
-    margin-top: 2px;
+    position: relative;
+    top: 3px;
 }
 
 .main-banner__slider .splide__pagination {
     position: relative;
-    padding-top: 15px;
+    padding-top: 20px;
     justify-content: flex-end;
 }
 

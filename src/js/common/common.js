@@ -134,6 +134,11 @@
                  window.userMenuInstance.close()
              }
 
+             if (document.querySelector('.banner-header')) {
+                 document.querySelector('.banner-header').style.display = 'none'
+                 document.querySelector('.banner-header-mobile').style.display = 'none'
+             }
+
              this.el.classList.add('open')
              this.button.classList.add('open')
              document.body.classList.add('hidden')
@@ -145,6 +150,11 @@
 
              this.el.classList.add('close-animate')
              this.button.classList.remove('open')
+
+             if (document.querySelector('.banner-header')) {
+                 document.querySelector('.banner-header').style.display = 'block'
+                 document.querySelector('.banner-header-mobile').style.display = 'block'
+             }
 
              setTimeout(() => {
                  this.el.classList.remove('open')
@@ -218,6 +228,11 @@
              }
 
              this.close = function () {
+
+                 if (!this.container) {
+                     return false
+                 }
+
                  this.container.classList.remove('open')
                  this.btn.classList.remove('open')
                  document.body.classList.remove('hidden-profile')
@@ -391,18 +406,17 @@
      scroll
      ======================================================*/
 
-     new fullpage('#fullpage', {
-         //options here
-         autoScrolling: true,
-         scrollHorizontally: true,
-         fitToSectionDelay: 100,
-         fitToSection: true,
-         fitToSectionDelay: 100,
-         scrollingSpeed: 550,
-
-
-
-     });
+     if (document.body.clientWidth > 480) {
+         new fullpage('#fullpage', {
+             //options here
+             autoScrolling: true,
+             scrollHorizontally: true,
+             fitToSectionDelay: 100,
+             fitToSection: true,
+             fitToSectionDelay: 100,
+             scrollingSpeed: 550,
+         });
+     }
 
      /*==================================================
      splide
@@ -547,7 +561,7 @@
 
          sliderBanner.on('mounted', (Slide) => {
 
-             const play = document.createElement('span')
+             const play = document.createElement('li')
 
              play.classList.add('button-play')
              play.classList.add('play')
