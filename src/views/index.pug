@@ -5,6 +5,7 @@ include ../blocks/modules/home/main-banner/main-banner
 include ../blocks/modules/home/main-program/main-program
 include ../blocks/modules/home/main-events/main-events
 include ../blocks/modules/home/main-partners/main-partners
+include ../blocks/modules/home/main-advice/main-advice
 
 
 block variables
@@ -20,6 +21,7 @@ block content
       section.section.section-fp-home: +main-banner() 
       section.section.section-fp-home: +main-program() 
       section.section.section-fp-home: +main-events() 
+      section.section.section-fp-home: +main-advice() 
       section.section.section-fp-home.partners-footer 
         .section-fp-wrap
           +main-partners() 

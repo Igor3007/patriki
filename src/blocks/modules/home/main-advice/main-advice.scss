@@ -1,0 +1,58 @@
+.section-main-events {
+    padding: 40px 0;
+}
+
+.main-advice {
+    &__head {
+        padding-bottom: 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        @include section_title;
+        text-align: left;
+
+
+
+        @media screen and (min-width: $w1440) {
+            font-size: 60px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        margin: 0 -5px;
+        overflow-x: auto;
+        margin-right: -15px;
+
+        @media screen and (min-width: $w576) {
+            justify-content: center;
+            margin: 0 -12px;
+
+        }
+    }
+
+    &__item {
+
+        padding: 5px;
+        min-width: 90%;
+
+        @media screen and (min-width: $w576) {
+            padding: 0 12px;
+            max-width: 268px;
+            flex-basis: 220px;
+            min-width: 220px;
+        }
+
+
+        flex-grow: 1;
+        width: 100%;
+
+        & picture {
+            @include picture(155%, cover);
+        }
+    }
+}
