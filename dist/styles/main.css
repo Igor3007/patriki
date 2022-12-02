@@ -3372,8 +3372,14 @@ a.link-primary {
 
 /* ============================================= */
 
-.section.fp-section {
-  padding-top: 80px;
+.home-fullpage {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.home-fullpage > * {
+  width: 100%;
 }
 
 #status {
@@ -3521,6 +3527,10 @@ a.link-primary {
 
 .dark-mode {
   background-color: #111111;
+}
+
+.gray-mode {
+  background-color: #525166;
 }
 
 .clear-calendar {
@@ -9494,10 +9504,6 @@ div[data-lang]:not(.active) {
 
   .formated-text h6 {
     font-size: 14px;
-  }
-
-  .section.fp-section {
-    padding-top: 240px;
   }
 
   .orders-block.orders-block--invites .table-card__td:nth-last-child(1) {

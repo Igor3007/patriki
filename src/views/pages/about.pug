@@ -1,4 +1,11 @@
-extends ../layouts/site
+extends ../layouts/site-gray
+
+include ../../blocks/modules/about/about-main/about-main
+include ../../blocks/modules/about/about-advice/about-advice
+include ../../blocks/modules/about/about-founder/about-founder
+include ../../blocks/modules/about/about-history/about-history
+include ../../blocks/modules/about/about-team/about-team
+include ../../blocks/modules/about/about-media/about-media
 
 block variables
   include ../../data/data.pug
@@ -6,9 +13,25 @@ block variables
 
 
 block content
-    include ../../blocks/modules/page-default/page-default
-
-    +page-default() 
+  .fp-about
+    .splide(data-slider="about")
+        .splide__track
+          .splide__list
+            .splide__slide: +about-main()
+            .splide__slide: +about-history()
+            .splide__slide: +about-advice()
+            .splide__slide: +about-founder()
+            .splide__slide: +about-team()
+            .splide__slide: +about-media()
+    
+    .fp-about__nav
+      .fp-about__nav-slide Фестиваль
+      .fp-about__nav-action
+        .fp-about__nav-prev: +icons('#ic_arr-back', 20)
+        .fp-about__nav-dots
+          ul
+            li
+        .fp-about__nav-next: +icons('#ic_arr-back', 20)
 
       
 
@@ -16,5 +39,6 @@ block content
 
 block scripts
   script(src="/js/vendor.js") 
+  script(src="/js/lib/splide.min.js")
   script(src="/js/common.js") 
  

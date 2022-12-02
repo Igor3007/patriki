@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PFF</title>
-    <meta name="theme-color" content="#fff">
+    <meta name="theme-color" content="#111111">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -72,8 +72,8 @@
     </style>
     <link rel="stylesheet" href="styles/site.css?v=1.0">
   </head>
-  <body class="perf-no-animation">
-    <header class="header-fixed">
+  <body class="perf-no-animation gray-mode">
+    <header>
       <div class="banner-header-mobile">
         <picture><img src="/img/common/banner-header.jpg"></picture>
       </div>
@@ -92,9 +92,9 @@
               <div class="bn-header__nav-menu">
                 <nav>
                   <ul>
-                    <li><a href="https://patrikifilmfestival.ru/">О фестивале</a></li>
-                    <li><a href="https://lk.patrikifilmfestival.ru/programs">Программы</a></li>
-                    <li><a href="https://lk.patrikifilmfestival.ru/hall">Кинозал</a></li>
+                    <li><a href="about.html">О фестивале</a></li>
+                    <li><a href="programs.html">Программы</a></li>
+                    <li><a href="hall.html">Кинозал</a></li>
                     <li><a href="https://lk.patrikifilmfestival.ru/participants">участникам</a></li>
                     <li><a href="https://lk.patrikifilmfestival.ru/events">События</a></li>
                   </ul>
@@ -145,24 +145,317 @@
       </div>
     </header>
     <main> 
-            <section class="section-page-default">
-              <div class="container">
-                <div class="page-default">
-                  <div class="page-default__title">МЕЖДУНАРОДНЫЙ ОНЛАЙН КИНОФЕСТИВАЛЬ</div>
-                  <div class="page-default__day">
-                    <div class="page-default__text">Срок подачи заявок</div>
-                    <div class="page-default__date">
-                      <div class="page-default__date-month">Апрель</div>
-                      <div class="page-default__date-year">2022</div>
-                      <div class="page-default__date-link"><a href="#">
-                          <svg width="25" height="25">
-                            <use xlink:href="/img/sprites/sprite.svg#ic_arr-link"></use>
-                          </svg></a></div>
+      <div class="fp-about">
+        <div class="splide" data-slider="about">
+          <div class="splide__track">
+            <div class="splide__list">
+              <div class="splide__slide">
+                <section class="section-about-main">
+                  <div class="container">
+                    <div class="about-main">
+                      <div class="about-main__left">
+                        <div class="about-main__title"><img src="/img/common/about-title.svg"/></div>
+                        <div class="about-main__desc">Наша миссия  —  поиск новых имен и инновационных подходов в кино</div>
+                      </div>
+                      <div class="about-main__right">
+                        <picture>
+                          <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                        </picture>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </section>
               </div>
-            </section>
+              <div class="splide__slide">
+                <section class="section-about-history">
+                  <div class="container">
+                    <div class="about-history">
+                      <div class="about-history__title">История</div>
+                      <div class="about-history__wrp">
+                        <div class="about-history__total">
+                          <div class="total-history">
+                            <div class="total-history__year">5 лет</div>
+                            <div class="total-history__title">успешно проводим кинофестиваль</div>
+                            <div class="total-history__desc">
+                              <p>> 30 мероприятий: лекций, паблик-токов</p>
+                              <p>> 15 кинопоказов</p>
+                              <p>Премьера фильма «Трое»</p>
+                              <p>4 благотворительных футбольных матчей с фондом Хабенского</p>
+                            </div>
+                            <div class="total-history__nav">
+                              <div class="total-history__nav-prev" data-slider-prev="about-history">
+                                <svg width="20" height="20">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_arr-back"></use>
+                                </svg>
+                              </div>
+                              <div class="total-history__nav-next" data-slider-next="about-history">
+                                <svg width="20" height="20">
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_arr-next"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="about-history__slider">
+                          <div class="splide" data-slider="about-history">
+                            <div class="splide__track">
+                              <div class="splide__list">
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="splide__slide">
+                                  <div class="card-history">
+                                    <div class="card-history__year">2022</div>
+                                    <div class="card-history__desc">Российская программа авторского кино</div>
+                                    <div class="card-history__img">
+                                      <picture>
+                                        <source srcset="/img/common/main_img.webp" type="image/webp"/><img src="/img/common/main_img.jpg" loading="lazy" alt="image"/>
+                                      </picture>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="splide__slide">
+                <section class="section-about-advice">
+                  <div class="container">
+                    <div class="about-advice"> 
+                      <div class="about-advice__head">
+                        <div class="about-advice__title">Попечительский совет</div>
+                      </div>
+                      <div class="about-advice__list">
+                        <div class="about-advice__item">
+                          <div class="card-advice">
+                            <div class="card-advice__image">
+                              <picture>
+                                <source srcset="/img/common/s1.webp" type="image/webp"/><img src="/img/common/s1.jpg" loading="lazy" alt="image"/>
+                              </picture>
+                            </div>
+                            <div class="card-advice__desc">
+                              <h3>Константин Хабенский</h3>
+                              <p>Народный артист РФ, заслуженный артист РФ, лауреат Государственной премии Российской Федерации. Режиссер фильма «Собибор», премьера которого прошла во многих столицах мира. Основатель Благотворительного фонда Константина Хабенского.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="about-advice__item">
+                          <div class="card-advice">
+                            <div class="card-advice__image">
+                              <picture>
+                                <source srcset="/img/common/s2.webp" type="image/webp"/><img src="/img/common/s2.jpg" loading="lazy" alt="image"/>
+                              </picture>
+                            </div>
+                            <div class="card-advice__desc">
+                              <h3>Константин Хабенский</h3>
+                              <p>Народный артист РФ, заслуженный артист РФ, лауреат Государственной премии Российской Федерации. Режиссер фильма «Собибор», премьера которого прошла во многих столицах мира. Основатель Благотворительного фонда Константина Хабенского.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="about-advice__item">
+                          <div class="card-advice">
+                            <div class="card-advice__image">
+                              <picture>
+                                <source srcset="/img/common/s3.webp" type="image/webp"/><img src="/img/common/s3.jpg" loading="lazy" alt="image"/>
+                              </picture>
+                            </div>
+                            <div class="card-advice__desc">
+                              <h3>Константин Хабенский</h3>
+                              <p>Народный артист РФ, заслуженный артист РФ, лауреат Государственной премии Российской Федерации. Режиссер фильма «Собибор», премьера которого прошла во многих столицах мира. Основатель Благотворительного фонда Константина Хабенского.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="splide__slide">
+                <section class="section-about-founder">
+                  <div class="container">
+                    <div class="about-founder">
+                      <div class="about-founder__title">Основатели</div>
+                      <div class="about-founder__content">
+                        <div class="about-founder__left">
+                          <div class="card-founder">
+                            <div class="card-founder__title">Алексей Боков</div>
+                            <div class="card-founder__desc">
+                              <p>Событийный продюсер. Запустил программу Сергея Шолохова «Тихий Дом» на Первом канале, до 1999 много работал на телерынке.</p>
+                              <p>Продюсировал премию в области современного искусства «Инновация», выставки Айдан Салаховой (ММОМА, Saatchi Gallery), проект Павла Каплевича «ПроЯвление»в Третьяковской галерее, а также в разные годы церемонии ТЭФИ, GQ «Человек года», Международный кинофестиваль им. Андрея Тарковского «Зеркало», фестиваль современной хореографии Context и др</p>
+                              <p>Событийный продюсер. Запустил программу Сергея Шолохова «Тихий Дом» на Первом канале, до 1999 много работал на телерынке.</p>
+                              <p>Продюсировал премию в области современного искусства «Инновация», выставки Айдан Салаховой (ММОМА, Saatchi Gallery), проект Павла Каплевича «ПроЯвление»в Третьяковской галерее, а также в разные годы церемонии ТЭФИ, GQ «Человек года», Международный кинофестиваль им. Андрея Тарковского «Зеркало», фестиваль современной хореографии Context и др</p>
+                            </div>
+                            <div class="card-founder__more"><span>Подробнее</span></div>
+                          </div>
+                        </div>
+                        <div class="about-founder__middle">
+                          <picture>
+                            <source srcset="/img/common/founder.webp" type="image/webp"/><img src="/img/common/founder.jpg" loading="lazy" alt="image"/>
+                          </picture>
+                        </div>
+                        <div class="about-founder__right">
+                          <div class="card-founder">
+                            <div class="card-founder__title">Марина Жигалова</div>
+                            <div class="card-founder__desc">
+                              <p>Инвестор, продюсер, один из ведущих лидеров российского медиарынка.</p>
+                              <p>Продюсер более десятка фильмов и сериалов, в том числе «Книга мастеров» (2009), «После школы» (2012), «Последний богатырь» (2017), «Счастье — это. .» (2015, 2019), а также ряда короткометражных фильмов.</p>
+                              <p>Председатель жюри короткометражных фильмов 42-го Московского кинофестиваля и жюри кинопрокатчиков фестиваля «Кинотавр» 2015; член жюри</p>
+                              <p>Инвестор, продюсер, один из ведущих лидеров российского медиарынка.</p>
+                              <p>Продюсер более десятка фильмов и сериалов, в том числе «Книга мастеров» (2009), «После школы» (2012), «Последний богатырь» (2017), «Счастье — это. .» (2015, 2019), а также ряда короткометражных фильмов.</p>
+                              <p>Председатель жюри короткометражных фильмов 42-го Московского кинофестиваля и жюри кинопрокатчиков фестиваля «Кинотавр» 2015; член жюри</p>
+                            </div>
+                            <div class="card-founder__more"><span>Подробнее</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="splide__slide">
+                <section class="section-about-team">
+                  <div class="container">
+                    <div class="about-team">
+                      <div class="about-team__title">Наша команда</div>
+                      <div class="about-team__list">
+                        <div class="about-team__item">
+                          <div class="team-member">
+                            <div class="team-member__img">
+                              <picture class="d12"><img src="/img/common/s1.jpg"/></picture>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="about-team__item">
+                          <div class="team-member">
+                            <div class="team-member__img">
+                              <picture class="d12"><img src="/img/common/s2.jpg"/></picture>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="about-team__item">
+                          <div class="team-member">
+                            <div class="team-member__img">
+                              <picture class="d12"><img src="/img/common/s3.jpg"/></picture>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="splide__slide">
+                <section class="section-about-media">
+                  <div class="container">
+                    <div class="about-media">
+                      <h1>about-media</h1>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fp-about__nav">
+          <div class="fp-about__nav-slide">Фестиваль</div>
+          <div class="fp-about__nav-action">
+            <div class="fp-about__nav-prev">
+              <svg width="20" height="20">
+                <use xlink:href="/img/sprites/sprite.svg#ic_arr-back"></use>
+              </svg>
+            </div>
+            <div class="fp-about__nav-dots">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <div class="fp-about__nav-next">
+              <svg width="20" height="20">
+                <use xlink:href="/img/sprites/sprite.svg#ic_arr-back"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="container">
@@ -210,6 +503,7 @@
       </div>
     </footer>
     <script src="/js/vendor.js"> </script>
+    <script src="/js/lib/splide.min.js"></script>
     <script src="/js/common.js"> </script>
   </body>
 </html>

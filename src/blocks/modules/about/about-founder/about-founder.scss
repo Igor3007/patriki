@@ -1,0 +1,146 @@
+.section-about-founder {
+    position: relative;
+    padding: 16px 0;
+
+    @media screen and (min-width: $w1200) {
+        padding: 48px 0;
+    }
+}
+
+
+.about-founder {
+
+
+
+    &__title {
+        @include section_title;
+        text-align: left;
+        color: #fff;
+        padding-bottom: 30px;
+
+        @media screen and (min-width: $w1440) {
+            font-size: 60px;
+        }
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__left {
+        @media screen and (min-width: $w1200) {
+            width: 100%;
+            flex-grow: 1;
+        }
+    }
+
+    &__right {
+        @media screen and (min-width: $w1200) {
+            width: 100%;
+            flex-grow: 1;
+        }
+    }
+
+    &__middle {
+        @media screen and (min-width: $w1200) {
+            width: 285px;
+            min-width: 285px;
+            margin: 0 40px;
+        }
+    }
+}
+
+.card-founder {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        @media screen and (min-width: $w1200) {
+            padding-bottom: 15px;
+        }
+    }
+
+    &__desc {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 175%;
+        color: #FFFFFF;
+
+
+        @include line-clamp(8);
+        overflow: hidden;
+
+        & p {
+            margin-bottom: 25px;
+        }
+
+    }
+
+    &__more {
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: auto;
+
+        & span {
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: '';
+                width: 15px;
+                height: 11px;
+                display: inline-block;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-left: 10px;
+                margin-bottom: -2px;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSIxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSA5bDQtNC00LTQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
+            }
+        }
+    }
+
+}
+
+
+.dark-mode,
+.gray-mode {
+    & .about-founder {
+        color: #fff;
+    }
+
+    & .af-popup {
+        background: rgba(0, 0, 0, 0.95);
+    }
+}
+
+
+.founder-desc {
+    background: #525166;
+    margin: -15px;
+    padding: 45px 40px;
+    max-width: 1115px;
+
+    & .card-founder {
+        &__more {
+            display: none;
+        }
+
+        &__desc {
+            & p {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+
+}

@@ -74,42 +74,48 @@
   </head>
   <body class="perf-no-animation dark-mode">
     <header>
+      <div class="banner-header-mobile">
+        <picture><img src="/img/common/banner-header.jpg"></picture>
+      </div>
       <div class="container">
-        <div class="header header--site">
-          <div class="header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo-dark.svg"></span></a></div>
-          <div class="header__nav">
-            <div class="header__nav-container" data-menu="container">
-              <div class="header__nav-info">
-                <div class="header-info">
-                  <div class="header-info__email"><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></div>
-                  <div class="header-info__phone"><a href="tel:+79055047370">+7 (905) 504-73-70</a></div>
-                  <div class="header-info__lang">
-                    <select>
-                      <option val="ru">Русский</option>
-                      <option val="en">English</option>
-                    </select>
-                  </div>
+        <div class="bn-header">
+          <div class="bn-header__logo">
+            <div class="logo-preloader"></div><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo2.png"></span></a>
+          </div>
+          <div class="bn-header__nav">
+            <div class="bn-header__nav-container" data-menu="container">
+              <div class="bn-header__nav-banner">
+                <div class="banner-header">
+                  <picture><img src="/img/common/banner-header.jpg"></picture>
                 </div>
               </div>
-              <div class="header__nav-menu">
+              <div class="bn-header__nav-menu">
                 <nav>
                   <ul>
-                    <li><a href="https://patrikifilmfestival.ru/">О фестивале</a></li>
-                    <li><a href="https://lk.patrikifilmfestival.ru/programs">Программы</a></li>
-                    <li><a href="https://lk.patrikifilmfestival.ru/hall">Кинозал</a></li>
+                    <li><a href="about.html">О фестивале</a></li>
+                    <li><a href="programs.html">Программы</a></li>
+                    <li><a href="hall.html">Кинозал</a></li>
                     <li><a href="https://lk.patrikifilmfestival.ru/participants">участникам</a></li>
                     <li><a href="https://lk.patrikifilmfestival.ru/events">События</a></li>
                   </ul>
                 </nav>
               </div>
             </div>
-            <div class="header__nav-btn">
+            <div class="bn-header__nav-btn">
               <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
             </div>
           </div>
-          <div class="header__pa">
-            <div class="header__pa-container">
-              <div class="header__social">
+          <div class="bn-header__pa">
+            <div class="bn-header__pa-container">
+              <div class="bn-header-info">
+                <div class="bn-header-info__lang">
+                  <select>
+                    <option val="ru">Русский</option>
+                    <option val="en">English</option>
+                  </select>
+                </div>
+              </div>
+              <div class="bn-header__social">
                 <ul>
                   <li><a href="#">
                       <svg width="25" height="25">
@@ -121,12 +127,19 @@
                       </svg></a></li>
                 </ul>
               </div>
-              <div class="header__login"><a href="/login.html">Личный кабинет</a></div>
+              <div class="bn-header__login">
+                <div class="user-login">
+                  <div class="user-login__name"><a href="/moderator-profile.html">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
+                      </svg><span>Анастасия</span></a></div>
+                  <div class="user-login__tooltip"><a href="/moderator-messenger.html">1</a></div>
+                </div>
+              </div>
             </div>
-            <div class="header__pa-btn"><a href="/login.html">
-                <svg width="25" height="25">
-                  <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
-                </svg></a></div>
+            <div class="bn-header__pa-btn">
+              <div class="user-login-mobile" title="Анастасия" data-user-menu="open" data-link="/user-orders.html"><span class="bgimage lazyload" data-bg="/img/common/user-wooman.jpg"><span class="total-messages">3</span></span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -406,9 +419,9 @@
           <div class="footer__nav">
             <nav>
               <ul>
-                <li><a href="https://patrikifilmfestival.ru/">О фестивале</a></li>
-                <li><a href="https://lk.patrikifilmfestival.ru/programs">Программы</a></li>
-                <li><a href="https://lk.patrikifilmfestival.ru/hall">Кинозал</a></li>
+                <li><a href="about.html">О фестивале</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="hall.html">Кинозал</a></li>
                 <li><a href="https://lk.patrikifilmfestival.ru/participants">участникам</a></li>
                 <li><a href="https://lk.patrikifilmfestival.ru/events">События</a></li>
               </ul>

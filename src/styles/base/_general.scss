@@ -533,11 +533,21 @@ a.link-primary {
 
 /* ============================================= */
 
-.section.fp-section {
+// .section.fp-section {
 
-    padding-top: 80px;
+//     padding-top: 80px;
 
-    @media screen and (min-width: $w1200) {
-        padding-top: 240px;
-    }
+//     @media screen and (min-width: $w1200) {
+//         padding-top: 240px;
+//     }
+// }
+
+.home-fullpage {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.home-fullpage>* {
+    width: 100%;
 }

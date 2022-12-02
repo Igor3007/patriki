@@ -15,18 +15,30 @@ block variables
 
 block content 
   
-  
-    div#fullpage
+      .splide(data-slider="home")
+        .splide__track
+          .splide__list
+            .splide__slide
+              .home-fullpage
+                +main-banner() 
+            .splide__slide
+              .home-fullpage
+                +main-program() 
+            .splide__slide
+              .home-fullpage
+                +main-events() 
+            .splide__slide
+              .home-fullpage
+                +main-advice() 
+            .splide__slide
+              .home-fullpage
+                .section-fp-wrap
+                  +main-partners() 
+                  footer
+                    include ../blocks/modules/common/footer/footer-min.pug 
 
-      section.section.section-fp-home: +main-banner() 
-      section.section.section-fp-home: +main-program() 
-      section.section.section-fp-home: +main-events() 
-      section.section.section-fp-home: +main-advice() 
-      section.section.section-fp-home.partners-footer 
-        .section-fp-wrap
-          +main-partners() 
-          footer
-            include ../blocks/modules/common/footer/footer-min.pug 
+ 
+        
        
         
  

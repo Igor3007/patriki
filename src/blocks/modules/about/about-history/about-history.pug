@@ -1,0 +1,35 @@
+mixin about-history
+    section.section-about-history
+        .container
+            .about-history
+                .about-history__title История
+                .about-history__wrp
+                    .about-history__total
+                        +total-history
+                    .about-history__slider
+                        .splide(data-slider="about-history")
+                            .splide__track
+                                .splide__list
+                                    each item in [1,1,1,1,1,1,1,1]
+                                        .splide__slide: +card-history
+
+mixin card-history
+    .card-history
+        .card-history__year 2022
+        .card-history__desc Российская программа авторского кино
+        .card-history__img
+            +picture('/img/common/main_img')
+
+mixin total-history
+
+    .total-history
+        .total-history__year 5 лет
+        .total-history__title успешно проводим кинофестиваль
+        .total-history__desc
+            p > 30 мероприятий: лекций, паблик-токов
+            p > 15 кинопоказов
+            p Премьера фильма «Трое»
+            p 4 благотворительных футбольных матчей с фондом Хабенского
+        .total-history__nav
+            .total-history__nav-prev(data-slider-prev="about-history"): +icons('#ic_arr-back', 20)
+            .total-history__nav-next(data-slider-next="about-history"): +icons('#ic_arr-next', 20)

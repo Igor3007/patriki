@@ -1,0 +1,79 @@
+ .section-about-team {
+     position: relative;
+     padding: 16px 0;
+
+     @media screen and (min-width: $w1200) {
+         padding: 48px 0;
+     }
+ }
+
+
+ .about-team {
+
+
+
+     &__title {
+         @include section_title;
+         text-align: left;
+         color: #fff;
+         padding-bottom: 30px;
+
+         @media screen and (min-width: $w1440) {
+             font-size: 60px;
+         }
+     }
+
+     &__list {
+         display: flex;
+         margin: 0 -5px;
+         overflow-x: auto;
+         margin-right: -15px;
+
+         @media screen and (min-width: $w576) {
+             justify-content: center;
+             margin: 0 -12px;
+
+         }
+     }
+
+     &__item {
+
+         padding: 5px;
+         min-width: 90%;
+         width: 100%;
+
+         @media screen and (min-width: $w576) {
+             padding: 0 12px;
+             width: 100%;
+             max-width: 285px;
+             min-width: auto;
+             flex-basis: 285px;
+             flex-grow: 1;
+
+         }
+
+     }
+ }
+
+ .team-member {
+     &__img {
+         & picture {
+
+             margin-left: -15px;
+             width: 100%;
+             transform: skew(-15deg);
+             background: #403f4f;
+             display: block;
+
+             @include picture(155%, cover);
+
+             & img {
+                 width: 145%;
+                 height: 110%;
+                 transform: skew(15deg);
+                 max-width: none;
+                 margin-left: -20%;
+             }
+         }
+     }
+ }

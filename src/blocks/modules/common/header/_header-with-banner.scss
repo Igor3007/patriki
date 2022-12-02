@@ -616,9 +616,10 @@ header {
 
     &__lang {
         margin-left: auto;
+        margin-right: auto !important;
 
         & .af-select {
-            min-width: 135px;
+            min-width: 118px;
 
             & .select-styled:not(.active) span {
                 color: #92919F;
@@ -771,4 +772,159 @@ header {
     }
 
 
+}
+
+.dark-mode {
+
+    & .bn-header {
+        background-color: transparent;
+
+        &__pa {
+            &-btn {
+                & .user-login-mobile {
+                    background-color: $main-dark;
+                }
+            }
+        }
+
+        &__logo {
+            border-color: $main-dark-2;
+
+            & .bgimage {
+                filter: invert(1) grayscale(1) brightness(1.5);
+
+            }
+        }
+
+        &__nav {
+            &-menu {
+
+                & li {
+                    border-color: $main-dark-2;
+                }
+
+                & a {
+                    color: $main-dark;
+
+                    @media screen and (min-width: $w1200) {
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        background-color: $main;
+                        text-decoration: none;
+                        color: #fff;
+
+                        @media screen and (min-width: $w1200) {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__social {
+            & svg {
+                fill: #fff;
+            }
+        }
+    }
+
+}
+
+.gray-mode {
+
+    & header {
+        border-color: $gray-74;
+    }
+
+    & .bn-header {
+        background-color: transparent;
+
+        &-info {
+            border-color: $gray-74;
+        }
+
+        &__pa {
+            &-container {
+                border-color: $gray-74;
+            }
+
+            & .user-login-mobile {
+                background-color: $main;
+                border-color: $gray-74;
+            }
+
+            & .select-styled {
+
+                &:not(:hover) {
+                    & span {
+                        color: #fff;
+                    }
+
+                    &::after {
+                        filter: invert(1);
+                    }
+                }
+
+            }
+        }
+
+        &__logo {
+            border-color: $gray-74;
+
+            & .bgimage {
+                filter: invert(1) grayscale(1) brightness(1.5);
+
+            }
+        }
+
+        &__nav {
+            &-menu {
+
+                & li {
+                    border-color: $gray-74;
+                }
+
+                & a {
+                    color: $main;
+
+                    @media screen and (min-width: $w1200) {
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        background-color: $main;
+                        text-decoration: none;
+                        color: #fff;
+
+                        @media screen and (min-width: $w1200) {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__login {
+            border-color: $gray-74;
+        }
+
+        &__social {
+
+            & ul li {
+                border-color: $gray-74;
+            }
+
+            & svg {
+                fill: #fff;
+            }
+        }
+
+        & .btn-burger {
+            & i {
+                background-color: #fff;
+            }
+        }
+    }
 }

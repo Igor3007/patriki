@@ -6,7 +6,6 @@
 
     &__head {
         padding-bottom: 35px;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -15,7 +14,6 @@
     &__title {
         @include section_title;
         text-align: left;
-
 
 
         @media screen and (min-width: $w1440) {
@@ -29,7 +27,6 @@
 
         display: flex;
         margin: -0px;
-
 
 
         &-prev,

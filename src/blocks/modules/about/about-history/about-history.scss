@@ -1,0 +1,177 @@
+.section-about-history {
+    position: relative;
+    padding: 16px 0;
+
+    @media screen and (min-width: $w1200) {
+        padding: 48px 0;
+    }
+}
+
+.about-history {
+
+    &__wrp {
+        display: flex;
+    }
+
+    &__total {
+        min-width: 390px;
+    }
+
+    &__slider {
+
+        padding-left: 30px;
+        width: calc(100% - 390px);
+
+
+        & .splide {
+            width: 100%;
+
+            &__slide {
+
+                opacity: 0.3;
+                transition: opacity 0.5s ease;
+
+
+                &.is-prev,
+                &.is-next {
+                    opacity: 1;
+
+                }
+
+                &.is-active {
+                    opacity: 1;
+
+                }
+            }
+        }
+
+    }
+
+
+
+    &__title {
+        @include section_title;
+        text-align: left;
+        color: #fff;
+        padding-bottom: 30px;
+
+        @media screen and (min-width: $w1440) {
+            font-size: 60px;
+        }
+    }
+
+    & .splide {
+        &__slide {
+            width: 318px;
+        }
+    }
+
+}
+
+.total-history {
+    background-color: $main1-2;
+    padding: 40px 30px;
+    color: #fff;
+
+    &__year {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 133%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 133%;
+        color: #FFFFFF;
+    }
+
+    &__desc {
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 500;
+    }
+
+    &__nav {
+        display: flex;
+        margin-bottom: -40px;
+        justify-content: flex-end;
+        margin-right: -30px;
+
+        &-prev,
+        &-next {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -50%;
+                bottom: -50%;
+                display: block;
+                width: 0;
+                height: 0;
+                background-color: $main;
+                transition: 0.9s ease;
+                border-radius: 50%;
+            }
+
+            &:hover {
+                &::before {
+                    width: 200%;
+                    height: 200%;
+
+                }
+            }
+        }
+
+        & svg {
+            filter: invert(1) brightness(2) grayscale(1);
+        }
+    }
+}
+
+.card-history {
+    background-color: $main1-2;
+    padding: 40px 30px;
+    color: #fff;
+
+
+    &__desc {
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 400;
+        margin-bottom: 20px;
+        height: 121px;
+        @include line-clamp(4);
+    }
+
+    &__year {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 133%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $gray-74;
+        margin-bottom: 20px
+    }
+
+    &__img {
+
+        margin: 0 -30px -40px -30px;
+
+        & picture {
+            @include picture(50%, cover);
+        }
+    }
+}

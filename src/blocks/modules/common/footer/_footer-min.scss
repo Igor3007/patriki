@@ -96,7 +96,7 @@ footer {
                 flex-direction: column;
                 width: 100%;
                 flex-grow: 1;
-                max-width: 204px;
+                /* max-width: 204px; */
                 padding-top: 20px;
                 height: 100%;
 
@@ -251,4 +251,53 @@ footer {
             }
         }
     }
+}
+
+.gray-mode {
+
+    & footer {
+        border-color: $gray-74;
+    }
+
+    & .footer-min {
+
+        &__logo {
+            border-color: $gray-74;
+
+            & .bgimage {
+                filter: invert(1) grayscale(1) brightness(1.5);
+
+            }
+        }
+
+        &__contact {
+
+            border-color: $gray-74;
+
+            & ul {
+                & a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &__social ul li a {
+            color: #fff
+        }
+
+        &__nav {
+            & ul {
+
+                border-color: $gray-74;
+
+                & a {
+                    color: #fff;
+                }
+            }
+        }
+
+
+
+    }
+
 }

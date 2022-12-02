@@ -1,0 +1,120 @@
+.section-about-advice {
+    position: relative;
+    padding: 16px 0;
+
+    @media screen and (min-width: $w1200) {
+        padding: 48px 0;
+    }
+}
+
+.about-advice {
+    &__head {
+        padding-bottom: 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        @include section_title;
+        text-align: left;
+        color: #fff;
+
+
+
+        @media screen and (min-width: $w1440) {
+            font-size: 60px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        margin: 0 -5px;
+        overflow-x: auto;
+        margin-right: -15px;
+
+        @media screen and (min-width: $w576) {
+            justify-content: center;
+            margin: 0 -12px;
+
+        }
+    }
+
+    &__item {
+
+        padding: 5px;
+        min-width: 90%;
+        width: 100%;
+
+        @media screen and (min-width: $w576) {
+            padding: 0 12px;
+            width: 100%;
+            max-width: 285px;
+            min-width: auto;
+            flex-basis: 285px;
+            flex-grow: 1;
+
+        }
+
+    }
+}
+
+
+.card-advice {
+
+    position: relative;
+
+    &:hover {
+        & .card-advice {
+            &__desc {
+                opacity: 1;
+                visibility: visible;
+
+                & p {
+                    transform: translateY(0px);
+                }
+
+                & h3 {
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+
+
+    &__image {
+        & picture {
+            @include picture(155%, cover);
+        }
+    }
+
+    &__desc {
+        position: absolute;
+        background-color: $main;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #4b4a5c;
+        color: #fff;
+        padding: 15px;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease;
+
+        & p {
+            font-size: 16px;
+            line-height: 140%;
+            font-weight: 500;
+            transform: translateY(10px);
+            transition: 0.3s 0.1s ease;
+        }
+
+        & h3 {
+            font-size: 20px;
+            transform: translateY(10px);
+            transition: 0.3s ease;
+        }
+    }
+}
