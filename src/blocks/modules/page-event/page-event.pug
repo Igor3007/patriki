@@ -15,12 +15,14 @@ mixin page-event
 
                 .page-events__all
                     .events-all
-                        .events-all__item: 
+                        .events-all__item: +card-event()
+                        .events-all__item: +card-event()
+                        .events-all__item: +card-event()
 
 
 mixin card-event()
     .event-card
-        .event-card__image: +picture('/dist/img/common/about-media-1')
+        .event-card__image: +picture('/img/common/about-media-1')
         .event-card__date
             span 25.05.2022
         .event-card__title

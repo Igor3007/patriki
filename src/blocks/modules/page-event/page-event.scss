@@ -1,0 +1,17 @@
+.page-events {
+    &__top {
+        display: flex;
+    }
+
+
+    &__title {
+        @include section_title;
+        text-align: left;
+
+
+
+        @media screen and (min-width: $w1440) {
+            font-size: 60px;
+        }
+    }
+}
