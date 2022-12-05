@@ -1,0 +1,28 @@
+mixin page-event
+    section.section-page-events
+        .container
+            .page-events
+                .page-event__title События
+
+                .page-events__top
+                    .page-events__main
+                        +card-event()
+                    .page-events__aside
+                        .event-aside
+                            .event-aside__item: +card-event()
+                            .event-aside__item: +card-event()
+                            .event-aside__item: +card-event()
+
+                .page-events__all
+                    .events-all
+                        .events-all__item: 
+
+
+mixin card-event()
+    .event-card
+        .event-card__image: +picture('/dist/img/common/about-media-1')
+        .event-card__date
+            span 25.05.2022
+        .event-card__title
+            a(href='#') Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело»
+        .event-card__desc Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело»
