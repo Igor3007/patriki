@@ -1,4 +1,21 @@
 mixin about-media
     section.section-about-media
-        .container
-            .about-media: h1 about-media
+      
+            .about-media
+                .about-media__title
+                    .container  Сми о нас
+                .about-media__slider
+                    .splide(data-slider="about-media")
+                        .splide__track
+                            .splide__list
+                                each item in [1,2,3,4,5]
+                                    .splide__slide: +about-news(item)
+
+mixin about-news(data)
+    .about-news
+        .about-news__image
+            a(href='#')
+                +picture('/img/common/about-media-'+data)
+
+        .about-news__title
+            a(href='#') Даррен Аронофски возглавит жюри онлайн-кинофестиваля Patriki Film Festival

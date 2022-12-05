@@ -710,6 +710,82 @@
 
      }
 
+     /* ===================================
+     about team
+     ===================================*/
+
+     if (document.querySelector('[data-slider="about-team"]')) {
+         var aboutTeam = new Splide('[data-slider="about-team"]', {
+
+             perPage: 1,
+             autoWidth: true,
+             updateOnMove: true,
+             pagination: false,
+             arrows: false,
+             padding: 60,
+             focus: 'center',
+             flickMaxPages: 3,
+             start: 1
+
+         });
+
+         aboutTeam.mount()
+
+
+         document.querySelectorAll('[data-team="popup"]').forEach(item => {
+             item.addEventListener('click', function () {
+
+
+                 const popupTeam = new customModal()
+                 popupTeam.open('<div class="team-desc" >' + item.innerHTML + '</div>')
+
+
+             })
+         })
+
+     }
+
+     /* =================================================
+     about media
+     =================================================*/
+
+     if (document.querySelector('[data-slider="about-media"]')) {
+
+
+         var sliderMedia = new Splide('[data-slider="about-media"]', {
+
+             type: 'loop',
+             perPage: 3,
+             focus: 'center',
+             //autoplay: true,
+             //interval: 8000,
+             flickMaxPages: 3,
+             updateOnMove: true,
+             pagination: false,
+             padding: '13%',
+             throttle: 300,
+             gap: 10,
+
+             breakpoints: {
+                 767: {
+                     perPage: 1,
+                     padding: '0%'
+                 },
+
+                 992: {
+                     perPage: 1.5,
+                     padding: '0%'
+                 },
+             }
+         });
+
+
+
+         sliderMedia.mount();
+
+
+     }
+
 
 
 
