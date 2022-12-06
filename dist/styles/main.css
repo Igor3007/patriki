@@ -3191,7 +3191,7 @@ input[type="date"] {
   margin-bottom: 25px;
   line-height: 120%;
   color: #525166;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .formated-text .table {
@@ -3253,7 +3253,7 @@ input[type="date"] {
 .formated-text div:not([class]),
 .formated-text p {
   margin: 20px 0;
-  color: #666;
+  color: #525166;
   line-height: 150%;
 }
 
@@ -3287,7 +3287,7 @@ input[type="date"] {
 .formated-text img {
   width: 100%;
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 0px;
   margin: 35px 0;
 }
 
@@ -3318,10 +3318,11 @@ input[type="date"] {
 
 .formated-text strong {
   color: #525166;
+  font-weight: 600;
 }
 
 :root {
-  --fancybox-accent-color: #BF3232;
+  --fancybox-accent-color: $main;
   --carousel-button-width: 48px;
   --carousel-button-height: 48px;
   --carousel-button-svg-width: 27px;
@@ -8964,6 +8965,10 @@ div[data-lang]:not(.active) {
     padding-left: 30px;
   }
 
+  .formated-text strong {
+    font-size: 16px;
+  }
+
   table th {
     padding: 15px 20px;
     font-size: 16px;
@@ -9342,6 +9347,23 @@ div[data-lang]:not(.active) {
   .splide__slide.is-active .main-program__title {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  body * {
+    scrollbar-color: #525166 #7b7a99;
+    scrollbar-width: thin !important;
+  }
+
+  body *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body *::-webkit-scrollbar-track {
+    background-color: #7b7a99;
+  }
+
+  body *::-webkit-scrollbar-thumb {
+    background-color: #525166;
   }
 
   .header__social ul li a {

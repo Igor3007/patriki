@@ -732,6 +732,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
         });
 
         sliderPage.mount();
+
+
+        // document.querySelectorAll('.main-advice__item').forEach(item => {
+        //     item.addEventListener('mouseenter', e => {
+
+        //         console.log('wff')
+
+        //         sliderPage.options = {
+        //             whell: false,
+        //         };
+        //     })
+        // })
+
     }
 
     /* =============================================
@@ -1099,6 +1112,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
+    /* ========================================
+    card-advice popup
+    ========================================*/
+
+    if (document.querySelector('.card-advice')) {
+        document.querySelectorAll('.card-advice').forEach(item => {
+            item.addEventListener('click', e => {
+                const popup = new customModal()
+                popup.open('<div class="founder-desc" >' + item.innerHTML + '</div>')
+            })
+        })
+    }
 
 
 });

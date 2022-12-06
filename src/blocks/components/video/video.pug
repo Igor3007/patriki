@@ -6,8 +6,8 @@ mixin video (data)
       if data.title
         .video__title= data.title
       .video__button
-        +icons('#ic_play', 70)
-        span Watch the video
+        +icons('#ic_play-white', 70)
+     
 
 mixin video-review (data)
   .video(data-id=""+data.link+"")
@@ -17,5 +17,5 @@ mixin video-review (data)
       if data.title
         .video__title= data.title
       .video__button
-        +icons('#ic_play', 52)
+        +icons('#ic_play-white', 52)
         span Watch the video review

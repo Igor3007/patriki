@@ -1,18 +1,14 @@
 .video {
     margin: 0 auto;
     position: relative;
-    background: #000;
+    background: $main;
     border-radius: 10px;
     overflow: hidden;
     margin-top: rem(20);
 
 
 
-    &:hover {
-        & svg {
-            animation: hoverWave linear 1.2s infinite;
-        }
-    }
+
 
     & iframe {
         border: none;
@@ -94,7 +90,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.82);
+        background-color: rgba(0, 0, 0, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -102,7 +98,7 @@
         transition: 0.3s ease;
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.62);
+            background-color: rgba(0, 0, 0, 0.1);
         }
     }
 

@@ -98,6 +98,7 @@
         visibility: hidden;
         opacity: 0;
         transition: 0.3s ease;
+        overflow-y: auto;
 
         & p {
             font-size: 16px;
@@ -111,6 +112,41 @@
             font-size: 20px;
             transform: translateY(10px);
             transition: 0.3s ease;
+        }
+    }
+}
+
+.founder-desc {
+
+    @media screen and (min-width: $w760) {
+        display: flex;
+    }
+
+    & .card-advice__desc {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background-color: transparent;
+
+        & p {
+            color: #fff;
+        }
+
+        & h3 {
+            text-transform: uppercase;
+        }
+
+        @media screen and (min-width: $w760) {
+            padding-left: 35px;
+        }
+    }
+
+    & .card-advice__image {
+
+        width: 100%;
+
+        @media screen and (min-width: $w760) {
+            max-width: 250px;
         }
     }
 }
