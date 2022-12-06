@@ -56,3 +56,61 @@
         }
     }
 }
+
+.card-advice {
+
+    position: relative;
+
+    &:hover {
+        & .card-advice {
+            &__desc {
+                opacity: 1;
+                visibility: visible;
+
+                & p {
+                    transform: translateY(0px);
+                }
+
+                & h3 {
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+
+
+    &__image {
+        & picture {
+            @include picture(155%, cover);
+        }
+    }
+
+    &__desc {
+        position: absolute;
+        background-color: $main;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #4b4a5c;
+        color: #fff;
+        padding: 15px;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease;
+
+        & p {
+            font-size: 16px;
+            line-height: 140%;
+            font-weight: 500;
+            transform: translateY(10px);
+            transition: 0.3s 0.1s ease;
+        }
+
+        & h3 {
+            font-size: 20px;
+            transform: translateY(10px);
+            transition: 0.3s ease;
+        }
+    }
+}

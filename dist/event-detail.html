@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>События - PFF</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="#{title}">
+    <meta name="keywords" content="#{title}">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
+    <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
+    <style>@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+    </style>
+    <link rel="stylesheet" href="styles/site.css?v=1.0">
+  </head>
+  <body class="perf-no-animation">
+    <header> 
+      <div class="banner-header-mobile">
+        <picture><img src="/img/common/banner-header.jpg"></picture>
+      </div>
+      <div class="container">
+        <div class="bn-header">
+          <div class="bn-header__logo">
+            <div class="logo-preloader"></div><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo2.png"></span></a>
+          </div>
+          <div class="bn-header__nav">
+            <div class="bn-header__nav-container" data-menu="container">
+              <div class="bn-header__nav-banner">
+                <div class="banner-header">
+                  <picture><img src="/img/common/banner-header.jpg"></picture>
+                </div>
+              </div>
+              <div class="bn-header__nav-menu">
+                <nav>
+                  <ul>
+                    <li><a href="about.html">О фестивале</a></li>
+                    <li><a href="programs.html">Программы</a></li>
+                    <li><a href="hall.html">Кинозал</a></li>
+                    <li><a href="https://lk.patrikifilmfestival.ru/participants">участникам</a></li>
+                    <li><a href="events.html">События</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="bn-header__nav-btn">
+              <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="bn-header__pa">
+            <div class="bn-header__pa-container">
+              <div class="bn-header-info">
+                <div class="bn-header-info__lang">
+                  <select>
+                    <option val="ru">Русский</option>
+                    <option val="en">English</option>
+                  </select>
+                </div>
+              </div>
+              <div class="bn-header__social">
+                <ul>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                      </svg></a></li>
+                  <li><a href="#">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+              <div class="bn-header__login">
+                <div class="user-login">
+                  <div class="user-login__name"><a href="/moderator-profile.html">
+                      <svg width="25" height="25">
+                        <use xlink:href="/img/sprites/sprite.svg#ic_user"></use>
+                      </svg><span>Анастасия</span></a></div>
+                  <div class="user-login__tooltip"><a href="/moderator-messenger.html">1</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="bn-header__pa-btn">
+              <div class="user-login-mobile" title="Анастасия" data-user-menu="open" data-link="/user-orders.html"><span class="bgimage lazyload" data-bg="/img/common/user-wooman.jpg"><span class="total-messages">3</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main> 
+      <div class="event-detail">
+        <div class="event-detail__breadcrumb">
+          <div class="container">
+            <div class="breadcrumb">
+              <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="#">События</a></li>
+                <li><a href="#">Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело»</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="event-detail__content"></div>
+        <div class="container">
+          <div class="event-detail__title">
+            <h1>Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело»</h1>
+          </div>
+          <div class="event-detail__slider">
+            <div class="splide" data-slider="main-event">
+              <div class="splide__track">
+                <div class="splide__list">
+                  <div class="splide__slide"> 
+                    <div class="event-card-main__image">
+                      <picture>
+                        <source srcset="/img/common/events/main.webp" type="image/webp"/><img src="/img/common/events/main.jpg" loading="lazy" alt="image"/>
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="splide__slide"> 
+                    <div class="event-card-main__image">
+                      <picture>
+                        <source srcset="/img/common/events/main.webp" type="image/webp"/><img src="/img/common/events/main.jpg" loading="lazy" alt="image"/>
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="event-detail__fulltext formated-text"></div><strong>25 мая в рамках «Cinema Night» на Startup Village кинофестиваль Patriki Film Festival представил фильм «Дело». Перед кинопоказом прошла встреча с режиссером Алексеем Германом. Модератором выступил Алексей Боков – основатель кинофестиваля Patriki Film Festival.</strong>
+          <h1>header h1</h1>
+          <h2>header h2</h2>
+          <h3>header h3</h3>
+          <h4>header h4</h4>
+          <h5>header h5</h5>
+          <ul>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+          </ul>
+          <ol>
+            <li>numberlist</li>
+            <li>numberlist</li>
+            <li>numberlist</li>
+            <li>numberlist</li>
+            <li>numberlist</li>
+          </ol><a href="#">link</a><img src="/img/common/events/main.jpg"/>
+          <p>В начале встречи Алексей Герман рассказал о том, как возникла идея создать фильм «Дело» в условиях пандемии: «У меня была серия идей для фильма, которые можно было сделать в одном пространстве, и дальше я отбирал, что мне казалось ближе и интереснее». Главный замысел  «человек в замкнутом пространстве» возник еще до эпидемии и был основан на воспоминаниях, литературе и личных переживаниях.</p>
+          <p>Также, кинорежиссер упомянул звездный актерский состав, задействованный в фильме. Под Мераба Нинидзе, Анну Михалкову и Светлану Ходченкову специально писали сценарий.</p>
+          <p>В ходе беседы поговорили о современных технологиях в киноиндустрии: о фильме «Воздух» и сложных этапах производства этого масштабного проекта. Алексей Герман подтвердил, что в России впервые в экспериментальном порядке использовали такую совокупность разных методов съемки. LED-панели «с вшитыми туда динамическими эффектами», полноразмерные модели самолетов и возможность изменять траекторию полета, специальные подвесы – гимблы, игровой движок Unreal Engine и возможность интегрировать графику прямо в кадр на съемочной площадке. «Это было крайне сложно. Очевидно, что за этим есть будущее. Мы являемся носителями уникального опыта, которого нет ни у кого в Восточной Европе», – сказал Алексей Герман.</p>
+          <p>В завершении режиссер поделился своими мыслями о технологическом будущем российской киноиндустрии. «Виртуальные студии будут развиваться. И будет развиваться система с экранами. Однако, для того чтобы она развивалась, она должна совмещаться с реальными предметами. Это работает только так. Это не работает в отрыве. Мир позади и мир впереди должен быть сложным и многофактурным. У нас пока это не очень умеют делать».</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-min footer-min--site">
+          <div class="footer-min__logo">
+            <div class="footer-min__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo2.png"></span>
+            </div>
+            <div class="footer-min__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
+          </div>
+          <div class="footer-min__nav"> 
+            <nav>
+              <ul>
+                <li><a href="about.html">О фестивале</a></li>
+                <li><a href="programs.html">Программы</a></li>
+              </ul>
+              <ul>
+                <li><a href="hall.html">Кинозал</a></li>
+                <li><a href="participant.html">участникам</a></li>
+              </ul>
+              <ul>
+                <li><a href="events.html">События</a></li>
+                <li><a href="login.html">Личный кабинет</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-min__social">
+            <ul>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                  </svg><span>vkontakte</span></a></li>
+              <li><a href="#">
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                  </svg><span>Telegram</span></a></li>
+            </ul>
+          </div>
+          <div class="footer-min__contact">
+            <ul>
+              <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
+              <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
+              <li><a href="policy.html">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/vendor.js"> </script>
+    <script src="/js/common.js"> </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

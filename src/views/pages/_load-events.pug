@@ -1,0 +1,24 @@
+include ../helpers/mixins.pug
+include ../../blocks/modules/page-event/page-event.pug
+
+-
+    const eventAllLoad = [
+            {
+                'image':'/img/common/events/main',
+                'title':'Даррен Аронофски возглавит жюри российского кинофестиваля на Патриках',
+                'desc':'',
+            },
+            {
+                'image':'/img/common/events/all-2',
+                'title':'Открытие онлайн-кинофестиваля Patriki Film Festival',
+                'desc':'',
+            },
+            {
+                'image':'/img/common/events/all-2',
+                'title':'Церемония вручния статуэток от кинофестиваля Patriki Film Festival ',
+                'desc':'',
+            },
+        ]
+
+each item in eventAllLoad
+    .events-all__item: +card-event(item) 

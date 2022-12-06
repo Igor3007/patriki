@@ -1,0 +1,24 @@
+extends ../layouts/site
+
+include ../../blocks/modules/event-detail/event-detail.pug
+
+block variables
+  include ../../data/data.pug
+  - const title = "События - PFF"
+
+
+block content
+  +event-detail()
+
+
+
+
+         
+
+ 
+
+block scripts
+  script(src="/js/vendor.js") 
+  script(src="/js/common.js") 
+  script(src="/js/main.js")
+ 

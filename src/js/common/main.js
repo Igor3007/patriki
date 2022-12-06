@@ -387,8 +387,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
-    const instanseSeansSlider = new seansSlider(document.querySelector('.film-seans'))
-    instanseSeansSlider.init()
+    if (document.querySelector('.film-seans')) {
+
+        const instanseSeansSlider = new seansSlider(document.querySelector('.film-seans'))
+        instanseSeansSlider.init()
+
+    }
 
     /* ===============================
     show/hide review
@@ -676,16 +680,423 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         })
     })
-    
-       //click minicard-film
 
-      if(document.querySelectorAll('.minicard-film__image').length){
+    //click minicard-film
+
+    if (document.querySelectorAll('.minicard-film__image').length) {
         document.querySelectorAll('.minicard-film__image').forEach(item => {
-            item.addEventListener('click', function(e){
+            item.addEventListener('click', function (e) {
                 let url = e.target.closest('.minicard-film').querySelector('.minicard-film__title a').getAttribute('href')
                 window.location.href = url
             })
         })
+    }
+
+
+    /*======================================================================================================================================
+     splide
+    ======================================================================================================================================*/
+
+    if (document.querySelector('[data-slider="home"]') && document.body.clientWidth > 992) {
+        var sliderPage = new Splide('[data-slider="home"]', {
+
+            //type: 'loop',
+            //perPage: 1,
+            //autoplay: true,
+            //interval: 8000,
+            //updateOnMove: true,
+            pagination: false,
+            arrows: false,
+
+
+            height: 'calc(100vh - 240px)',
+
+            direction: 'ttb',
+
+            wheel: true,
+            wheelMinThreshold: 50,
+            //wheelMinThreshold: '',
+            wheelSleep: 150,
+
+            breakpoints: {
+
+                767: {
+                    height: 'auto',
+                    wheel: false,
+                },
+
+
+            }
+
+
+        });
+
+        sliderPage.mount();
+    }
+
+    /* =============================================
+    about history
+    =============================================*/
+
+    if (document.querySelector('[data-slider="about-history"]')) {
+        var sliderAboutHistory = new Splide('[data-slider="about-history"]', {
+
+            arrows: false,
+            pagination: false,
+            gap: 30,
+            autoWidth: true,
+            start: 0,
+            perPage: 1,
+            flickMaxPages: 3,
+            updateOnMove: true,
+            throttle: 300,
+
+
+            breakpoints: {
+                760: {
+                    perPage: 1,
+                    gap: 15,
+                },
+            },
+
+
+
+        });
+
+
+        const prevHistory = document.querySelector('[data-slider-prev="about-history"]')
+        const nextHistory = document.querySelector('[data-slider-next="about-history"]')
+
+        prevHistory.addEventListener('click', e => {
+            sliderAboutHistory.go('<')
+        })
+
+        nextHistory.addEventListener('click', e => {
+            sliderAboutHistory.go('>')
+        })
+
+        sliderAboutHistory.mount();
+    }
+
+    /* ============================================
+    slider="about"
+    ============================================*/
+
+
+    if (document.querySelector('[data-slider="about"]')) {
+        var sliderPage = new Splide('[data-slider="about"]', {
+
+            pagination: false,
+            arrows: false,
+            height: 'calc(100vh - 240px)',
+
+            wheel: true,
+            wheelMinThreshold: 50,
+            wheelSleep: 150,
+
+            drag: false,
+
+            breakpoints: {
+                767: {
+                    height: 'auto',
+                    wheel: false,
+                },
+            }
+
+        });
+
+        sliderPage.mount();
+    }
+
+
+
+    if (document.querySelector('[data-slider="program"]')) {
+
+        var sliderProgram = new Splide('[data-slider="program"]', {
+
+            type: 'loop',
+            perPage: 2,
+            focus: 'center',
+            //autoplay: true,
+            //interval: 8000,
+            flickMaxPages: 3,
+            updateOnMove: true,
+            pagination: false,
+            padding: '13%',
+            throttle: 300,
+            gap: 10,
+
+            breakpoints: {
+                767: {
+                    perPage: 1,
+                    padding: '0%'
+                },
+
+                992: {
+                    perPage: 1.5,
+                    padding: '0%'
+                },
+            }
+        });
+
+        const prevButton = document.querySelector('[data-slider-prev="program"]')
+        const nextButton = document.querySelector('[data-slider-next="program"]')
+
+        prevButton.addEventListener('click', e => {
+            sliderProgram.go('<')
+        })
+
+        nextButton.addEventListener('click', e => {
+            sliderProgram.go('>')
+        })
+
+        sliderProgram.on('active', (Slide) => {
+
+            const textContainer = document.querySelector('.main-program__name span')
+
+            textContainer.classList.add('change-transition-right')
+
+
+            setTimeout(() => {
+                textContainer.innerHTML = Slide.slide.getAttribute('data-program')
+                textContainer.classList.remove('change-transition-right')
+            }, 300)
+        })
+
+
+        sliderProgram.mount();
+
+    }
+
+
+    /*==================================================
+    events
+    ==================================================*/
+
+    if (document.querySelector('[data-slider="events"]')) {
+
+        var sliderEvents = new Splide('[data-slider="events"]', {
+
+            type: 'loop',
+            perPage: 3,
+            focus: 'center',
+            //autoplay: true,
+            //interval: 8000,
+            flickMaxPages: 3,
+            updateOnMove: true,
+            pagination: false,
+            arrows: false,
+            throttle: 300,
+            gap: 30,
+            breakpoints: {
+
+                767: {
+                    perPage: 1,
+
+                },
+
+                992: {
+                    perPage: 2,
+
+                },
+            }
+
+        });
+
+        const prevButton = document.querySelector('[data-slider-prev="events"]')
+        const nextButton = document.querySelector('[data-slider-next="events"]')
+
+        prevButton.addEventListener('click', e => {
+            sliderEvents.go('<')
+        })
+
+        nextButton.addEventListener('click', e => {
+            sliderEvents.go('>')
+        })
+
+
+
+        sliderEvents.mount();
+
+    }
+
+    /* ===================================================
+    main
+    ===================================================*/
+
+    if (document.querySelector('[data-slider="banner"]')) {
+
+        var sliderBanner = new Splide('[data-slider="banner"]', {
+
+            type: 'loop',
+            perPage: 1,
+            focus: 'center',
+            autoplay: true,
+            interval: 8000,
+            flickMaxPages: 3,
+            updateOnMove: true,
+            pagination: true,
+            throttle: 300,
+            arrows: false
+        });
+
+        sliderBanner.on('mounted', (Slide) => {
+
+            const play = document.createElement('li')
+
+            play.classList.add('button-play')
+            play.classList.add('play')
+
+            play.addEventListener('click', function (e) {
+                e.target.classList.toggle('pause')
+            })
+
+            const pagination = sliderBanner.root.querySelector('.splide__pagination')
+
+            pagination.insertBefore(play, pagination.firstElementChild);
+
+        })
+
+        sliderBanner.mount();
+
+    }
+
+
+    /* popup founder details*/
+
+    if (document.querySelectorAll('.card-founder__more').length) {
+
+        document.querySelectorAll('.card-founder__more').forEach(item => {
+            item.addEventListener('click', function (e) {
+
+                const popup = new customModal()
+                popup.open('<div class="founder-desc" >' + e.target.closest('.card-founder').innerHTML + '</div>')
+
+            })
+        })
+
+    }
+
+    /* ===================================
+    about team
+    ===================================*/
+
+    if (document.querySelector('[data-slider="about-team"]')) {
+        var aboutTeam = new Splide('[data-slider="about-team"]', {
+
+            perPage: 1,
+            autoWidth: true,
+            updateOnMove: true,
+            pagination: false,
+            arrows: false,
+            padding: 60,
+            focus: 'center',
+            flickMaxPages: 3,
+            start: 1
+
+        });
+
+        aboutTeam.mount()
+
+
+        document.querySelectorAll('[data-team="popup"]').forEach(item => {
+            item.addEventListener('click', function () {
+
+
+                const popupTeam = new customModal()
+                popupTeam.open('<div class="team-desc" >' + item.innerHTML + '</div>')
+
+
+            })
+        })
+
+    }
+
+    /* =================================================
+    about media
+    =================================================*/
+
+    if (document.querySelector('[data-slider="about-media"]')) {
+
+
+        var sliderMedia = new Splide('[data-slider="about-media"]', {
+
+            type: 'loop',
+            perPage: 3,
+            focus: 'center',
+            //autoplay: true,
+            //interval: 8000,
+            flickMaxPages: 3,
+            updateOnMove: true,
+            pagination: false,
+            padding: '13%',
+            throttle: 300,
+            gap: 10,
+
+            breakpoints: {
+                767: {
+                    perPage: 1,
+                    padding: '0%'
+                },
+
+                992: {
+                    perPage: 1.5,
+                    padding: '0%'
+                },
+            }
+        });
+
+
+
+        sliderMedia.mount();
+
+
+    }
+
+
+    /* ======================================================
+    download more events
+    ======================================================*/
+
+    if (document.querySelector('[data-events="load"]')) {
+
+        document.querySelector('[data-events="load"]').addEventListener('click', (e) => {
+
+            window.ajax({
+                type: 'GET', //на бою заменить на POST
+                url: '/_load-events.html',
+                data: {
+                    page: '10'
+                }
+            }, function (status, response) {
+
+                if (document.querySelector('[data-events="load-container"]'))
+                    document.querySelector('[data-events="load-container"]').innerHTML += response
+
+            })
+
+        })
+
+    }
+
+    /* ====================================================
+    slider main-event
+    ====================================================*/
+
+    if (document.querySelector('[data-slider="main-event"]')) {
+
+        var sliderMainEvent = new Splide('[data-slider="main-event"]', {
+            perPage: 1,
+            pagination: false,
+            throttle: 300,
+            gap: 10,
+            updateOnMove: true,
+        });
+
+
+
+        sliderMainEvent.mount();
+
     }
 
 

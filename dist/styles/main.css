@@ -8765,7 +8765,7 @@ div[data-lang]:not(.active) {
 @media screen and (min-width: 480px) {
   .container {
     padding: 0 16px;
-    max-width: 360px;
+    max-width: 400px;
   }
 
   .af-popup__container {
@@ -9325,6 +9325,23 @@ div[data-lang]:not(.active) {
   .container {
     padding: 0 30px;
     max-width: 990px;
+  }
+
+  .main-partners__title,
+  .main-advice__title,
+  .main-events__title,
+  .main-program__title {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  .splide__slide.is-active .main-partners__title,
+  .splide__slide.is-active .main-advice__title,
+  .splide__slide.is-active .main-events__title,
+  .splide__slide.is-active .main-program__title {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .header__social ul li a {
@@ -10117,6 +10134,16 @@ div[data-lang]:not(.active) {
 @media screen and (max-width: 992px) {
   .select-options {
     max-height: 30vh;
+  }
+
+  .splide-mobile-disabled-992.splide {
+    display: block;
+    visibility: visible;
+  }
+
+  .splide-mobile-disabled-992.splide > .splide__track > .splide__list {
+    display: block;
+    backface-visibility: visible;
   }
 }
 

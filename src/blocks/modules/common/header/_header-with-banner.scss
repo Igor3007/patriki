@@ -141,6 +141,8 @@ header {
 
     &__logo {
 
+
+
         @media screen and (min-width: $w1200) {
             min-width: 235px;
             display: flex;
@@ -150,6 +152,10 @@ header {
         & .bgimage {
             width: 106px;
             height: 80px;
+
+            opacity: 0;
+
+            animation: fade-to 3s ease forwards;
 
             @include bgimage-contain;
 
@@ -533,6 +539,7 @@ header {
             &__name {
                 & a {
                     font-weight: 600;
+                    font-size: 16px;
                     text-decoration: none;
 
                     & span {
@@ -731,7 +738,11 @@ header {
     }
 }
 
-
+@keyframes fade-to {
+    to {
+        opacity: 1;
+    }
+}
 
 
 .banner-header {
@@ -740,9 +751,20 @@ header {
     & picture {
         display: block;
         width: 100%;
+        height: 160px;
+        position: relative;
 
         & img {
             width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            opacity: 0;
+            transition: 0.5s ease;
+            animation: fade-to 2s ease forwards;
         }
     }
 
@@ -881,6 +903,10 @@ header {
 
         &__nav {
             &-menu {
+
+                & ul {
+                    border-top: 1px solid $gray-74;
+                }
 
                 & li {
                     border-color: $gray-74;

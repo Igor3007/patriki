@@ -1,6 +1,14 @@
 footer {
     border-top: 1px solid $main;
 
+
+
+}
+
+main footer .container {
+    @media screen and (min-width: $w1440) {
+        padding: 0
+    }
 }
 
 .footer-min {
@@ -226,10 +234,11 @@ footer {
             border-left: 1px solid $main;
             padding: 20px 40px;
             align-items: start;
+            min-width: 325px;
 
             & ul {
                 & li {
-                    padding: 8px 0;
+                    padding: 4px 0;
                 }
             }
         }
@@ -239,6 +248,7 @@ footer {
                 color: $main2;
                 text-transform: uppercase;
                 font-weight: 600;
+                font-size: 12px;
 
                 &:hover {
                     text-decoration: underline;
@@ -251,6 +261,8 @@ footer {
             }
         }
     }
+
+
 }
 
 .gray-mode {
@@ -282,13 +294,71 @@ footer {
         }
 
         &__social ul li a {
-            color: #fff
+            color: #fff;
+
+            & svg {
+                fill: #fff;
+            }
         }
 
         &__nav {
             & ul {
 
                 border-color: $gray-74;
+
+                & a {
+                    color: #fff;
+                }
+            }
+        }
+
+
+
+    }
+
+}
+
+
+.dark-mode {
+
+    & footer {
+        border-color: $main;
+    }
+
+    & .footer-min {
+
+        &__logo {
+            border-color: $main;
+
+            & .bgimage {
+                filter: invert(1) grayscale(1) brightness(1.5);
+
+            }
+        }
+
+        &__contact {
+
+            border-color: $main;
+
+            & ul {
+                & a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &__social ul li a {
+            color: #fff;
+
+            & svg {
+                fill: #fff;
+            }
+        }
+
+        &__nav {
+            & ul {
+
+                border-color: $main;
 
                 & a {
                     color: #fff;

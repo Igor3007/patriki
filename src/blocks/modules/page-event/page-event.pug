@@ -1,30 +1,95 @@
+
+
+
+
 mixin page-event
+
+    -
+        const eventMin = [
+            {
+                'image':'/img/common/events/min-1',
+                'title':'Отличные новости! Получили более 3000 заявок со всего мира!!',
+                'desc':'',
+            },
+            {
+                'image':'/img/common/events/min-2',
+                'title':'ВНИМАНИЕ!',
+                'desc':'',
+            },
+            {
+                'image':'/img/common/events/min-3',
+                'title':'ОТКРЫТА ПОДАЧА ЗАЯВОК. ',
+                'desc':'Подробная информация об условиях в вкладке Регламент фестиваля  информация об условиях в вкладкеестиваля  информация об условиях в вкладкеестиваля  информация об условиях в вкладкеестиваля  информация об условиях в вкладке',
+            },
+        ]
+
+        const eventAll = [
+            {
+                'image':'/img/common/events/all-1',
+                'title':'Даррен Аронофски возглавит жюри российского кинофестиваля на Патриках',
+                'desc':'',
+            },
+            {
+                'image':'/img/common/events/all-2',
+                'title':'Открытие онлайн-кинофестиваля Patriki Film Festival',
+                'desc':'',
+            },
+            {
+                'image':'/img/common/about-media-1',
+                'title':'Церемония вручния статуэток от кинофестиваля Patriki Film Festival ',
+                'desc':'',
+            },
+        ]
+
     section.section-page-events
         .container
             .page-events
-                .page-event__title События
+                .page-events__title События
 
                 .page-events__top
                     .page-events__main
-                        +card-event()
+                        +card-event-main({
+                            'image':'/img/common/events/main',
+                            'title':'Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело»',
+                            'desc':'',
+                        })
                     .page-events__aside
                         .event-aside
-                            .event-aside__item: +card-event()
-                            .event-aside__item: +card-event()
-                            .event-aside__item: +card-event()
+                            each item in eventMin
+                                .event-aside__item: +card-event(item) 
 
                 .page-events__all
                     .events-all
-                        .events-all__item: +card-event()
-                        .events-all__item: +card-event()
-                        .events-all__item: +card-event()
+                        .events-all__list(data-events="load-container")
+                            each item in eventAll
+                                .events-all__item: +card-event(item)
 
+                        .events-all__more
+                            button.btn(data-events="load" data-page="1") Показать еще
 
-mixin card-event()
-    .event-card
-        .event-card__image: +picture('/img/common/about-media-1')
-        .event-card__date
+mixin card-event-main(data)
+    .event-card-main 
+        .event-card-main__slider
+            .splide(data-slider="main-event")
+                .splide__track
+                    .splide__list
+                        .splide__slide 
+                            .event-card-main__image: +picture('/img/common/events/main')
+                        .splide__slide 
+                            .event-card-main__image: +picture('/img/common/events/main')
+        .event-card-main__date
             span 25.05.2022
-        .event-card__title
-            a(href='#') Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело»
-        .event-card__desc Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело»
+        .event-card-main__title
+            a(href='event-detail.html')= data.title
+        .event-card-main__desc= (data.desc ? data.desc : 'Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело»')
+
+mixin card-event(data)
+    .event-card
+        .event-card__image
+            a(href='event-detail.html'): +picture(data.image) 
+        .event-card__main
+            .event-card__date
+                span 25.05.2022
+            .event-card__title
+                a(href='event-detail.html')= data.title
+            .event-card__desc= (data.desc ? data.desc : 'Встреча с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело» с режиссером Алексеем Германом и кинопоказ фильма «Дело»')
