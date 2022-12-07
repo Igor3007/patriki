@@ -3383,6 +3383,14 @@ a.link-primary {
   width: 100%;
 }
 
+.embed-container {
+  height: 100%;
+}
+
+.embed-container iframe {
+  height: 100%;
+}
+
 #status {
   position: fixed;
   bottom: 20px;

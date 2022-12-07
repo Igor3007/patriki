@@ -1,4 +1,34 @@
 mixin about-history
+
+    -
+        const history = [
+            {
+                'year':'2022',
+                'desc':'Российская программа авторского кино',
+                'img':'/img/common/hst-2022'
+            },
+            {
+                'year':'2021',
+                'desc':'Фестиваль расширяет границы и выходит на международный уровень',
+                'img':'/img/common/hst-2021'
+            },
+            {
+                'year':'2020',
+                'desc':'Фестиваль впервые прошел онлайн как и на офлайн площадках и собрал более 300.000 человек',
+                'img':'/img/common/hst-2020'
+            },
+            {
+                'year':'2019',
+                'desc':'Премьеры фильмов и сериалов, дискуссии, круглые столы и другие мероприятия',
+                'img':'/img/common/hst-2019'
+            },
+            {
+                'year':'2018',
+                'desc':'Торжественное открытие кинофестиваля Patriki Film Festival, кинопоказы на Патриаршем пруду',
+                'img':'/img/common/hst-2018'
+            },
+        ]
+
     section.section-about-history
         .container
             .about-history
@@ -10,15 +40,15 @@ mixin about-history
                         .splide(data-slider="about-history")
                             .splide__track
                                 .splide__list
-                                    each item in [1,1,1,1,1,1,1,1]
-                                        .splide__slide: +card-history
+                                    each item in history
+                                        .splide__slide: +card-history(item)
 
-mixin card-history
+mixin card-history(data)
     .card-history
-        .card-history__year 2022
-        .card-history__desc Российская программа авторского кино
+        .card-history__year= data.year
+        .card-history__desc= data.desc
         .card-history__img
-            +picture('/img/common/main_img')
+            +picture(data.img)
 
 mixin total-history
 

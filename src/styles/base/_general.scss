@@ -559,6 +559,14 @@ a.link-primary {
     width: 100%;
 }
 
+.embed-container {
+    height: 100%;
+}
+
+.embed-container iframe {
+    height: 100%;
+}
+
 
 @media screen and (max-width: $w992) {
     .splide-mobile-disabled-992 {

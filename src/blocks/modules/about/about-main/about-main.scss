@@ -38,14 +38,14 @@
 
     &__desc {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 150%;
         color: #FFFFFF;
 
         margin-top: auto;
 
         @media screen and (min-width: $w1200) {
-            max-width: calc(100% - 980px);
+            max-width: calc(100% - 940px);
             padding: 40px;
             color: #CACAE6;
         }

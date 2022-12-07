@@ -699,51 +699,54 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     if (document.querySelector('[data-slider="home"]') && document.body.clientWidth > 992) {
         var sliderPage = new Splide('[data-slider="home"]', {
-
-            //type: 'loop',
-            //perPage: 1,
-            //autoplay: true,
-            //interval: 8000,
-            //updateOnMove: true,
             pagination: false,
             arrows: false,
-
-
             height: 'calc(100vh - 240px)',
-
             direction: 'ttb',
-
             wheel: true,
             wheelMinThreshold: 50,
-            //wheelMinThreshold: '',
             wheelSleep: 150,
 
-            breakpoints: {
-
-                767: {
-                    height: 'auto',
-                    wheel: false,
-                },
-
-
-            }
-
-
         });
+
+
 
         sliderPage.mount();
 
 
-        // document.querySelectorAll('.main-advice__item').forEach(item => {
-        //     item.addEventListener('mouseenter', e => {
+        document.querySelectorAll('.main-advice__item').forEach(item => {
+            item.addEventListener('mouseenter', e => {
 
-        //         console.log('wff')
+                //console.log(sliderPage.root.querySelector('.splide__track'))
 
-        //         sliderPage.options = {
-        //             whell: false,
-        //         };
-        //     })
-        // })
+
+
+                //sliderPage.destroy()
+
+
+                sliderPage.options = {
+                    wheel: false,
+
+                }
+
+                sliderPage.refresh()
+
+
+
+            })
+            item.addEventListener('mouseleave', e => {
+
+                //console.log(sliderPage.root.querySelector('.splide__track'))
+
+
+
+                // sliderPageNoWhell.destroy()
+                // sliderPage.mount()
+
+
+
+            })
+        })
 
     }
 
@@ -797,7 +800,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
     if (document.querySelector('[data-slider="about"]')) {
-        var sliderPage = new Splide('[data-slider="about"]', {
+        var sliderPageAbout = new Splide('[data-slider="about"]', {
 
             pagination: false,
             arrows: false,
@@ -818,7 +821,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         });
 
-        sliderPage.mount();
+        sliderPageAbout.mount();
     }
 
 

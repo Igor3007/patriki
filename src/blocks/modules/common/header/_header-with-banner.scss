@@ -503,6 +503,7 @@ header {
 
             @media screen and (min-width: $w1376) {
                 padding: 0 2.5em;
+                font-size: 16px;
             }
 
             &:hover {
@@ -850,6 +851,17 @@ header {
                 fill: #fff;
             }
         }
+
+        &__login {
+            & a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            &:hover {
+                background-color: $main;
+            }
+        }
     }
 
 }
@@ -945,6 +957,15 @@ header {
             & svg {
                 fill: #fff;
             }
+        }
+
+        &__login {
+            & a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+
         }
 
         & .btn-burger {

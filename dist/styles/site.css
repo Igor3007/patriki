@@ -3383,6 +3383,14 @@ a.link-primary {
   width: 100%;
 }
 
+.embed-container {
+  height: 100%;
+}
+
+.embed-container iframe {
+  height: 100%;
+}
+
 #status {
   position: fixed;
   bottom: 20px;
@@ -5076,6 +5084,15 @@ header.header-fixed {
   fill: #fff;
 }
 
+.dark-mode .bn-header__login a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dark-mode .bn-header__login:hover {
+  background-color: #525166;
+}
+
 .gray-mode header {
   border-color: #ABA9BC;
 }
@@ -5141,6 +5158,11 @@ header.header-fixed {
 
 .gray-mode .bn-header__social svg {
   fill: #fff;
+}
+
+.gray-mode .bn-header__login a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .gray-mode .bn-header .btn-burger i {
@@ -9720,7 +9742,7 @@ li.button-play {
 
 .about-main__desc {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 150%;
   color: #FFFFFF;
   margin-top: auto;
@@ -11842,7 +11864,7 @@ li.button-play {
   }
 
   .about-main__desc {
-    max-width: calc(100% - 980px);
+    max-width: calc(100% - 940px);
     padding: 40px;
     color: #CACAE6;
   }
@@ -11928,6 +11950,7 @@ li.button-play {
 
   .bn-header__login a {
     padding: 0 2.5em;
+    font-size: 16px;
   }
 
   .footer__logo {
