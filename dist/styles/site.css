@@ -6650,6 +6650,10 @@ footer {
   flex-grow: 1;
 }
 
+.page-film__trailer {
+  padding-bottom: 20px;
+}
+
 .page-film__details {
   display: flex;
   flex-direction: column;
@@ -7582,6 +7586,35 @@ footer {
   line-height: 24px;
   /* identical to box height, or 133% */
   text-align: center;
+}
+
+.player-trailer {
+  width: 130vh;
+  padding-top: 60%;
+  background: #2e2b3a;
+  position: relative;
+  max-width: 100%;
+}
+
+.player-trailer iframe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  top: 0;
+  border: none;
+}
+
+.ic-play-trailer {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjciIGhlaWdodD0iNzYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYzIDMxLjA3MmM1LjMzMyAzLjA3OSA1LjMzMyAxMC43NzcgMCAxMy44NTZMMTIgNzQuMzczYy01LjMzMyAzLjA4LTEyLS43Ny0xMi02LjkyOFY4LjU1NUMwIDIuMzk3IDYuNjY3LTEuNDUyIDEyIDEuNjI3bDUxIDI5LjQ0NXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 12px;
 }
 
 .block-rating__list {

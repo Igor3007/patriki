@@ -1178,4 +1178,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
 
+    /* ===========================================
+    trailer
+    =========================================== */
+
+    if (document.querySelectorAll('[data-trailer-link]').length) {
+
+
+
+        document.querySelectorAll('[data-trailer-link]').forEach(item => {
+            item.addEventListener('click', e => {
+                const popup = new customModal()
+                popup.open('<div class="player-trailer" ><iframe src="' + item.dataset.trailerLink + '" ></iframe></div>')
+            })
+        })
+    }
+
+
 });
