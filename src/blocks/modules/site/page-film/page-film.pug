@@ -8,7 +8,9 @@ mixin page-film(data)
                         li Российский конкурс
                         li Полный метр
                 .film-details__wrp
-                    .film-details__cover: +picture('/img/common/cover5')
+                    .film-details__cover
+                        +picture('/img/common/cover5')
+                        .film-details__censor: span 12+
                     .film-details__prop
                         .film-details__year
                             ul
