@@ -69,7 +69,7 @@
                         padding-top: 56%;
                     }
 
-                    @media screen and (max-height: $w760) {
+                    @media screen and (min-width: $w1200) and (max-height: $w760) {
                         padding-top: 50%;
                     }
 

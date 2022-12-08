@@ -12119,6 +12119,12 @@ li.button-play {
   }
 }
 
+@media screen and (min-width: 1200px) and (max-height: 767px) {
+  .main-banner__slider .splide__slide picture {
+    padding-top: 50%;
+  }
+}
+
 @media screen and (min-width: 1376px) and (min-height: 760px) {
   .bn-header__logo .bgimage {
     width: 212px;
@@ -13066,10 +13072,6 @@ li.button-play {
 }
 
 @media screen and (max-height: 767px) {
-  .main-banner__slider .splide__slide picture {
-    padding-top: 50%;
-  }
-
   .main-program__title {
     font-size: 36px;
     padding-bottom: 0;
