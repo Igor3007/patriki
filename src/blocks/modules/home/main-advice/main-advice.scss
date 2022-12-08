@@ -119,7 +119,29 @@
     }
 }
 
-.founder-desc {
+.jury-desc {
+    background: #525166;
+    margin: -15px;
+    padding: 45px 40px;
+    max-width: 1115px;
+
+    & .card-founder {
+        &__more {
+            display: none;
+        }
+
+        &__desc {
+            & p {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+
+}
+
+
+.jury-desc {
 
     @media screen and (min-width: $w760) {
         display: flex;

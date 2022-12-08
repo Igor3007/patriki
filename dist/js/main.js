@@ -1140,7 +1140,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         document.querySelectorAll('.card-advice').forEach(item => {
             item.addEventListener('click', e => {
                 const popup = new customModal()
-                popup.open('<div class="founder-desc" >' + item.innerHTML + '</div>')
+                popup.open('<div class="jury-desc" >' + item.innerHTML + '</div>')
             })
         })
     }

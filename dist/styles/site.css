@@ -9748,22 +9748,37 @@ li.button-play {
   transition: 0.3s ease;
 }
 
-.founder-desc .card-advice__desc {
+.jury-desc {
+  background: #525166;
+  margin: -15px;
+  padding: 45px 40px;
+  max-width: 1115px;
+}
+
+.jury-desc .card-founder__more {
+  display: none;
+}
+
+.jury-desc .card-founder__desc p {
+  margin-bottom: 15px;
+}
+
+.jury-desc .card-advice__desc {
   position: static;
   opacity: 1;
   visibility: visible;
   background-color: transparent;
 }
 
-.founder-desc .card-advice__desc p {
+.jury-desc .card-advice__desc p {
   color: #fff;
 }
 
-.founder-desc .card-advice__desc h3 {
+.jury-desc .card-advice__desc h3 {
   text-transform: uppercase;
 }
 
-.founder-desc .card-advice__image {
+.jury-desc .card-advice__image {
   width: 100%;
 }
 
@@ -11324,15 +11339,15 @@ li.button-play {
     height: 80px;
   }
 
-  .founder-desc {
+  .jury-desc {
     display: flex;
   }
 
-  .founder-desc .card-advice__desc {
+  .jury-desc .card-advice__desc {
     padding-left: 35px;
   }
 
-  .founder-desc .card-advice__image {
+  .jury-desc .card-advice__image {
     max-width: 250px;
   }
 
