@@ -1,4 +1,49 @@
  .dark-mode {
+
+     & .grade-film {
+         &__marks {
+             display: flex;
+             margin: -2px;
+
+             padding-top: 10px;
+             padding-bottom: 10px;
+         }
+
+         &__mark {
+
+             flex-grow: 1;
+             margin: 2px;
+
+             & label {
+                 background-color: #292833;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 padding: 10px 0;
+                 width: 100%;
+                 font-weight: 700;
+                 cursor: pointer;
+
+                 &:hover {
+                     background: $main-dark-2;
+                 }
+             }
+
+
+
+             & input {
+                 display: none;
+
+                 &:checked~label {
+                     background: $main-dark-2;
+                 }
+
+             }
+         }
+
+     }
+
+
      & .page-film {
          color: #fff;
 

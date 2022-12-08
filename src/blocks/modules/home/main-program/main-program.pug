@@ -1,14 +1,16 @@
 mixin main-program
     section.section-main-program
-        .container
+        
             .main-program
                 .main-program__head
-                    .main-program__title Программа
-                    .main-program__type
-                        .main-program__name: span Российский конкурс
-                        .main-program__nav
-                            .main-program__nav-next(data-slider-prev="program"): +icons('#ic_arr-back')
-                            .main-program__nav-prev(data-slider-next="program"): +icons('#ic_arr-next')
+                    .container
+                        .main-program__title Программа
+                        .main-program__type
+                            .main-program__name: span Российский конкурс
+                            .main-program__nav
+                                .main-program__nav-next(data-slider-prev="program"): +icons('#ic_arr-back')
+                                .main-program__nav-prev(data-slider-next="program"): +icons('#ic_arr-next')
+                                
                 .main-program__slider
                     .splide(data-slider="program")
                         .splide__track

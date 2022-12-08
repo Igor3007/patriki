@@ -24,27 +24,29 @@
 
     &__list {
         display: flex;
-        margin: 0 -5px;
+        //margin: 0 -5px;
         overflow-x: auto;
         margin-right: -15px;
+        padding: 10px 0;
 
         @media screen and (min-width: $w576) {
-            justify-content: center;
-            margin: 0 -12px;
+            justify-content: safe center;
+            //margin: 0 -12px;
 
         }
     }
 
     &__item {
 
-        padding: 5px;
+        //padding: 5px;
         min-width: 90%;
 
+
         @media screen and (min-width: $w576) {
-            padding: 0 12px;
-            max-width: 268px;
-            flex-basis: 220px;
-            min-width: 220px;
+            //padding: 0 12px;
+            max-width: 320px;
+            flex-basis: 320px;
+            min-width: 320px;
         }
 
 
@@ -66,6 +68,7 @@
             &__desc {
                 opacity: 1;
                 visibility: visible;
+                background-color: rgba(75, 74, 92, 0.87);
 
                 & p {
                     transform: translateY(0px);
@@ -87,7 +90,7 @@
 
     &__desc {
         position: absolute;
-        background-color: $main;
+
         left: 0;
         top: 0;
         width: 100%;

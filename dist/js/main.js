@@ -831,14 +831,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
         var sliderProgram = new Splide('[data-slider="program"]', {
 
             type: 'loop',
-            perPage: 2,
+            perPage: 5.5,
             focus: 'center',
             //autoplay: true,
             //interval: 8000,
             flickMaxPages: 3,
             updateOnMove: true,
             pagination: false,
-            padding: '13%',
+
             throttle: 300,
             gap: 10,
 
@@ -878,6 +878,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 textContainer.classList.remove('change-transition-right')
             }, 300)
         })
+
+
+
 
 
         sliderProgram.mount();

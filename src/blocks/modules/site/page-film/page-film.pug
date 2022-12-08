@@ -160,6 +160,14 @@ mixin page-film-moderator(data)
                 .film-grade
                     .film-grade__title Оценка зрителей
                     .film-grade__count: span 6.4
+                    form#markForm.grade-user(action='#' method='POST')
+                  
+                        .grade-film__marks
+                            each item in [1,2,3,4,5,6,7,8,9,10]
+                                .grade-film__mark
+                                    input( id="mark-"+item type='radio' name='mark' value=item)
+                                    label(for='mark-'+item)= item
+                        
                     .film-grade__edit
                         a(href='/moderator-edit.html' target="_blank"): button.btn.btn-white Редактировать
                          
