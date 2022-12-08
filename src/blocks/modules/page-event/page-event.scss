@@ -286,10 +286,12 @@
 
         @media screen and (min-width: $w992) {
             width: 33.33%;
+            max-width: 33.33%;
         }
 
         @media screen and (min-width: $w760) {
             width: 50%;
+            max-width: 50%;
         }
 
     }

@@ -831,16 +831,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
         var sliderProgram = new Splide('[data-slider="program"]', {
 
             type: 'loop',
-            perPage: 5.5,
+            perPage: 5,
             focus: 'center',
             //autoplay: true,
             //interval: 8000,
             flickMaxPages: 3,
             updateOnMove: true,
             pagination: false,
-
+            //padding: '20',
             throttle: 300,
             gap: 10,
+            start: 1,
 
             breakpoints: {
                 767: {
@@ -869,14 +870,29 @@ document.addEventListener('DOMContentLoaded', function (event) {
         sliderProgram.on('active', (Slide) => {
 
             const textContainer = document.querySelector('.main-program__name span')
-
             textContainer.classList.add('change-transition-right')
-
 
             setTimeout(() => {
                 textContainer.innerHTML = Slide.slide.getAttribute('data-program')
                 textContainer.classList.remove('change-transition-right')
             }, 300)
+
+
+            // Slide.slide.parentNode.querySelectorAll('.splide__slide').forEach(item => {
+            //     if (item.classList.contains('slide---next')) {
+            //         item.classList.remove('slide---next')
+            //     }
+            //     if (item.classList.contains('slide---prev')) {
+            //         item.classList.remove('slide---prev')
+            //     }
+            // })
+
+
+
+
+            // Slide.slide.nextElementSibling.classList.add('slide---next')
+            // Slide.slide.previousElementSibling.classList.add('slide---prev')
+
         })
 
 
@@ -1112,8 +1128,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             updateOnMove: true,
         });
 
-
-
         sliderMainEvent.mount();
 
     }
@@ -1127,6 +1141,38 @@ document.addEventListener('DOMContentLoaded', function (event) {
             item.addEventListener('click', e => {
                 const popup = new customModal()
                 popup.open('<div class="founder-desc" >' + item.innerHTML + '</div>')
+            })
+        })
+    }
+
+    /* ===========================================
+    video
+    =========================================== */
+
+    if (document.querySelectorAll('.video').length) {
+
+        function youtube_parser(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            var match = url.match(regExp);
+            return (match && match[7].length == 11) ? match[7] : false;
+        }
+
+        document.querySelectorAll('.video').forEach(item => {
+            item.addEventListener('click', e => {
+
+                let id = youtube_parser(item.dataset.id)
+
+                let iframe = document.createElement('iframe');
+                iframe.setAttribute('src', 'https://www.youtube.com/embed/' + id + '?autoplay=1&autohide=1&border=0&wmode=opaque&enablejsapi=1&rel=0&showinfo=0')
+                iframe.setAttribute('width', item.clientWidth + 'px')
+                iframe.setAttribute('height', (item.clientHeight) + 'px')
+                iframe.setAttribute('allowfullscreen', 'true')
+                iframe.classList.add('play')
+                item.classList.add('play')
+
+                item.innerHTML = '';
+                item.append(iframe);
+
             })
         })
     }
