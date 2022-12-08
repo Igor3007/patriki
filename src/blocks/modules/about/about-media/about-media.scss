@@ -21,6 +21,13 @@
     }
 
     &__slider {
+
+        padding: 0 16px;
+
+        @media screen and (min-width: $w576) {
+            padding: 0;
+        }
+
         & .splide {
             &__slide {
 

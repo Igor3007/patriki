@@ -25,9 +25,23 @@
 
     &__content {
         display: flex;
+
+        @media screen and (max-width: $w576) {
+            overflow-x: auto;
+        }
+
     }
 
     &__left {
+
+        min-width: 80vw;
+        padding-left: 15px;
+
+        @media screen and (min-width: $w992) {
+            min-width: auto;
+            padding-left: 0;
+        }
+
         @media screen and (min-width: $w1200) {
             width: 100%;
             flex-grow: 1;
@@ -35,6 +49,15 @@
     }
 
     &__right {
+
+        min-width: 80vw;
+        padding-left: 15px;
+
+        @media screen and (min-width: $w992) {
+            min-width: auto;
+            padding-left: 0;
+        }
+
         @media screen and (min-width: $w1200) {
             width: 100%;
             flex-grow: 1;
@@ -42,6 +65,17 @@
     }
 
     &__middle {
+
+        min-width: 80vw;
+        order: -1;
+
+        @media screen and (min-width: $w992) {
+            min-width: auto;
+            order: 0;
+        }
+
+
+
         @media screen and (min-width: $w1200) {
             width: 285px;
             min-width: 285px;

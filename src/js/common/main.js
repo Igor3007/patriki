@@ -799,7 +799,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     ============================================*/
 
 
-    if (document.querySelector('[data-slider="about"]')) {
+    if (document.querySelector('[data-slider="about"]') && document.body.clientWidth > 992) {
         var sliderPageAbout = new Splide('[data-slider="about"]', {
 
             pagination: false,

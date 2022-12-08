@@ -40,7 +40,7 @@ header {
         }
 
         & .bn-header {
-            @media screen and (min-width: $w1440) {
+            @media screen and (min-width: $w1440) and (min-height: 760px) {
                 &__logo {
 
                     padding: 28px 21px;
@@ -122,7 +122,7 @@ header {
             @media screen and (min-width: $w1200) {}
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: $w1440) and (min-height: 760px) {
             & .bn-header-info {
                 & a {
                     font-size: 18px;
@@ -164,7 +164,7 @@ header {
                 height: (80px * 1.2);
             }
 
-            @media screen and (min-width: $w1376) {
+            @media screen and (min-width: $w1376) and (min-height: 760px) {
                 width: (106px * 2);
                 height: (80px * 2);
             }
@@ -172,7 +172,7 @@ header {
 
         }
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: $w1440) and (min-height: 760px) {
             //border-left: 1px solid $main;
             padding: 10px;
         }
@@ -251,7 +251,7 @@ header {
                         position: relative;
                         font-size: 13px;
 
-                        @media screen and (min-width: $w1440) {
+                        @media screen and (min-width: $w1440) and (min-height: 760px) {
                             font-size: 16px;
                             height: 80px;
                         }
@@ -422,7 +422,7 @@ header {
 
     &__social {
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: $w1440) and (min-height: 760px) {
             height: 50%;
         }
 
@@ -482,7 +482,7 @@ header {
 
         border-top: 1px solid $main;
 
-        @media screen and (min-width: $w1440) {
+        @media screen and (min-width: $w1440) and (min-height: 760px) {
             height: 50%;
         }
 
@@ -501,7 +501,7 @@ header {
             text-transform: uppercase;
             padding: 0 2.7em;
 
-            @media screen and (min-width: $w1376) {
+            @media screen and (min-width: $w1376) and (min-height: 760px) {
                 padding: 0 2.5em;
                 font-size: 16px;
             }
@@ -597,7 +597,7 @@ header {
     padding: 0 15px;
     height: 100%;
 
-    @media screen and (min-width: $w1440) {
+    @media screen and (min-width: $w1440) and (min-height: 760px) {
         padding: 0 15px 0 35px;
 
         height: 80px;
@@ -606,7 +606,7 @@ header {
     }
 
     @media screen and (min-width: $w1200) {
-        height: 67px;
+        height: 45px;
         border-bottom: 1px solid #525166;
     }
 
@@ -752,8 +752,13 @@ header {
     & picture {
         display: block;
         width: 100%;
-        height: 160px;
+        height: 91px;
         position: relative;
+
+        @media screen and (min-width: $w1440) and (min-height: 760px) {
+            height: 160px;
+        }
+
 
         & img {
             width: 100%;
@@ -766,6 +771,7 @@ header {
             opacity: 0;
             transition: 0.5s ease;
             animation: fade-to 2s ease forwards;
+            object-fit: cover;
         }
     }
 

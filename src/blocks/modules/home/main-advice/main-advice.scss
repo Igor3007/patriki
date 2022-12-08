@@ -4,7 +4,7 @@
 
 .main-advice {
     &__head {
-        padding-bottom: 40px;
+        padding-bottom: 35px;
 
         display: flex;
         justify-content: space-between;
@@ -15,11 +15,15 @@
         @include section_title;
         text-align: left;
 
-
-
         @media screen and (min-width: $w1440) {
             font-size: 60px;
         }
+
+        @media screen and (max-height: $w760) {
+            font-size: 36px;
+            padding-bottom: 0px;
+        }
+
     }
 
     &__list {
@@ -44,9 +48,8 @@
 
         @media screen and (min-width: $w576) {
             //padding: 0 12px;
-            max-width: 320px;
-            flex-basis: 320px;
-            min-width: 320px;
+            max-width: 33vh;
+            min-width: 33vh;
         }
 
 

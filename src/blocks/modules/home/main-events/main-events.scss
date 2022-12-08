@@ -19,6 +19,11 @@
         @media screen and (min-width: $w1440) {
             font-size: 60px;
         }
+
+        @media screen and (max-height: $w760) {
+            font-size: 36px;
+            padding-bottom: 0px;
+        }
     }
 
 

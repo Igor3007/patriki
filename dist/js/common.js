@@ -379,6 +379,7 @@
      /* =================================================
      scroll
      ================================================= */
+
      window.scrollToTargetAdjusted = function (elem) {
 
          //elem string selector
