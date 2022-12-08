@@ -12,6 +12,8 @@
     height: 100%;
     min-height: 85vh;
 
+
+
     &__aside {
 
 
@@ -32,6 +34,26 @@
             padding: 40px 45px 75px 45px;
         }
     }
+
+    @media screen and (min-width: $w992) {
+        * {
+            scrollbar-color: #c3c3d7 #e6e6ef;
+            scrollbar-width: thin !important;
+        }
+
+        *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background-color: #e6e6ef;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #c3c3d7;
+        }
+    }
+
 }
 
 .main-moderator {

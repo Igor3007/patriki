@@ -52,6 +52,8 @@ mixin minicard-film(data)
     .minicard-film
         .minicard-film__image
             .minicard-film__cover: +picture(data.image)
+            .minicard-film__censor
+                span(title="Возрастные ограничения 12+") 12+
             .minicard-film__rate
                 span(style="background-color: "+data.colorRate+"")= data.rate
             .minicard-film__details

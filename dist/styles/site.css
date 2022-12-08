@@ -8411,6 +8411,17 @@ footer {
   flex-direction: column;
 }
 
+.minicard-film__censor {
+  position: absolute;
+  color: #fff;
+  z-index: 111;
+  top: 7px;
+  right: 12px;
+  font-weight: bold;
+  text-shadow: 0 0px 2px #000;
+  font-size: 12px;
+}
+
 .minicard-film__cover {
   position: relative;
   z-index: 1;

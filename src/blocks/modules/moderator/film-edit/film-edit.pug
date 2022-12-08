@@ -125,7 +125,23 @@ mixin film-edit()
                 
           .form__label Информация о фильме
           .form__item
-            .form__subitem: +select-edit('Страна происхождения', ['Россия','Армения','Китай','Турция'])
+            .form__subitem
+              select(placeholder="Страна происхождения")
+                option(value="") Россия
+                option(value="") Армения
+                option(value="") Китай
+                option(value="") Турция
+            
+            
+            .form__subitem: +input-material('text', 'Возрастные ограничения')
+          .form__item
+            .form__subitem
+              select(placeholder="Субтитры" multiple name="subtitles[]")
+                option(value="91199") Русский
+                option(value="91299" selected ) Немецкий
+                option(value="91399" selected ) Английский
+                option(value="91499") Португальский
+                option(value="91599") Польский
             
           .form__item
             .form__item 

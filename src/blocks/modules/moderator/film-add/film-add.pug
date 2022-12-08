@@ -134,6 +134,10 @@ mixin film-add()
                 option(value="") Армения
                 option(value="") Китай
                 option(value="") Турция
+            
+             
+            .form__subitem: +input-material('text', 'Возрастные ограничения')
+          .form__item
             .form__subitem
               select(placeholder="Субтитры" multiple name="subtitles[]")
                 option(value="91199") Русский
