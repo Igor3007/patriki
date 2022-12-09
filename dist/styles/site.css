@@ -5415,7 +5415,7 @@ footer {
 }
 
 .gray-mode .footer-min__logo-desc {
-  color: #fff;
+  color: #ABA9BC;
 }
 
 .gray-mode .footer-min__contact {
@@ -5452,6 +5452,10 @@ footer {
 
 .dark-mode .footer-min__logo .bgimage {
   filter: invert(1) grayscale(1) brightness(1.5);
+}
+
+.dark-mode .footer-min__logo-desc {
+  color: #fff;
 }
 
 .dark-mode .footer-min__contact {
@@ -10018,18 +10022,26 @@ li.button-play {
 }
 
 .about-founder__left {
-  min-width: 80vw;
-  padding-left: 15px;
+  width: 50%;
+  max-width: 50%;
+  min-width: 50%;
 }
 
 .about-founder__right {
-  min-width: 80vw;
-  padding-left: 15px;
+  width: 50%;
+  max-width: 50%;
+  min-width: 50%;
 }
 
 .about-founder__middle {
-  min-width: 80vw;
+  width: 100%;
+  min-width: 100%;
   order: -1;
+  margin-bottom: 25px;
+}
+
+.about-founder__middle img {
+  width: 100%;
 }
 
 .card-founder {
@@ -10040,7 +10052,7 @@ li.button-play {
 
 .card-founder__title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 150%;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -10065,7 +10077,7 @@ li.button-play {
 }
 
 .card-founder__more {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   margin-top: auto;
@@ -11089,6 +11101,10 @@ li.button-play {
     flex-grow: 1;
   }
 
+  .card-founder__more {
+    font-size: 16px;
+  }
+
   .about-team__item {
     padding: 0 12px;
     width: 100%;
@@ -11818,6 +11834,10 @@ li.button-play {
   .about-founder__middle {
     min-width: auto;
     order: 0;
+  }
+
+  .card-founder__title {
+    font-size: 24px;
   }
 
   .about-history__total {
@@ -12920,6 +12940,18 @@ li.button-play {
     backface-visibility: visible;
   }
 
+  .about-founder__content {
+    flex-wrap: wrap;
+  }
+
+  .about-founder__left .card-founder__desc {
+    display: none;
+  }
+
+  .about-founder__right .card-founder__desc {
+    display: none;
+  }
+
   .about-history__wrp {
     overflow-x: auto;
   }
@@ -12963,6 +12995,10 @@ li.button-play {
   .card-history__img {
     margin-top: auto;
   }
+
+  .fp-about__nav {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -12988,10 +13024,6 @@ li.button-play {
 
   .page-default::after {
     display: none;
-  }
-
-  .about-founder__content {
-    overflow-x: auto;
   }
 
   .event-aside .event-card__title a {
