@@ -170,6 +170,9 @@
         }
 
         &__desc {
+
+            -webkit-line-clamp: unset;
+
             & p {
                 margin-bottom: 15px;
             }

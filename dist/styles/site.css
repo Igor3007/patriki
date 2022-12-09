@@ -10104,6 +10104,10 @@ li.button-play {
   display: none;
 }
 
+.founder-desc .card-founder__desc {
+  -webkit-line-clamp: unset;
+}
+
 .founder-desc .card-founder__desc p {
   margin-bottom: 15px;
 }
