@@ -116,13 +116,19 @@
 .fp-about {
 
 
+    & .splide.is-initialized.splide-mobile-disabled-992>.splide__track {
+        @media screen and (max-width: $w1376) {
+            height: auto !important;
+        }
+    }
 
     &__nav {
         display: flex;
         justify-content: center;
         flex-direction: column;
-
         padding-bottom: 40px;
+
+
 
         &-slide {
             font-weight: 700;
@@ -131,6 +137,30 @@
             text-align: center;
             color: #FFFFFF;
             text-transform: uppercase;
+
+            & div {
+                display: none;
+                opacity: 0;
+
+
+                @keyframes to-fade-up {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                &.is-active {
+                    display: block;
+                    animation: to-fade-up 0.3s ease forwards;
+                }
+
+            }
         }
 
         &-next,
@@ -171,15 +201,19 @@
 
                     padding: 6px;
 
+                    &.is-active {
+                        & span {
+                            background-color: #aaa;
+                        }
+                    }
+
                     & span {
                         width: 10px;
                         height: 10px;
                         background-color: #fff;
                         display: block;
 
-                        &.is-active {
-                            background-color: #aaa;
-                        }
+
 
                     }
                 }
@@ -187,4 +221,59 @@
         }
 
     }
+}
+
+@keyframes to-fade-left {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fp-about {
+    & .splide {
+
+        @media screen and (min-width: $w992) {
+
+            padding-bottom: 22px;
+
+            & .about-main__title,
+            & .about-media__title,
+            & .about-team__title,
+            & .about-founder__title,
+            & .about-advice__title,
+            & .about-history__title {
+                opacity: 0;
+            }
+        }
+
+        &__slide {
+
+
+
+            @media screen and (min-width: $w992) {
+                height: calc(-360px + 100vh) !important;
+            }
+
+            &.is-active {
+
+                & .about-main__title,
+                & .about-media__title,
+                & .about-team__title,
+                & .about-founder__title,
+                & .about-advice__title,
+                & .about-history__title {
+                    animation: to-fade-left 0.3s ease forwards;
+                }
+            }
+        }
+
+    }
+
+
 }

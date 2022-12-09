@@ -11,16 +11,53 @@
 
     &__wrp {
         display: flex;
+
+        @media screen and (max-width: $w992) {
+            overflow-x: auto;
+        }
+
     }
 
     &__total {
-        min-width: 390px;
+
+        min-width: 100%;
+
+        @media screen and (min-width: $w992) {
+            min-width: 390px;
+        }
     }
 
     &__slider {
 
         padding-left: 30px;
         width: calc(100% - 390px);
+
+        @media screen and (max-width: $w992) {
+            width: auto;
+
+
+            & .splide {
+                display: block;
+                visibility: visible;
+                height: 100%;
+
+                &>.splide__track {
+                    height: 100%;
+
+                    &>.splide__list {
+                        display: flex;
+                        backface-visibility: visible;
+                        height: 100%;
+                    }
+
+                    & .splide__slide {
+                        opacity: 1;
+                        margin-right: 15px;
+                        height: 100%;
+                    }
+                }
+            }
+        }
 
 
         & .splide {
@@ -30,6 +67,8 @@
 
                 opacity: 0.3;
                 transition: opacity 0.5s ease;
+
+
 
 
                 &.is-prev,
@@ -55,9 +94,15 @@
         color: #fff;
         padding-bottom: 30px;
 
+
+
+
+
         @media screen and (min-width: $w1440) {
             font-size: 60px;
         }
+
+
     }
 
     & .splide {
@@ -99,6 +144,14 @@
         margin-bottom: -40px;
         justify-content: flex-end;
         margin-right: -30px;
+
+        &-prev {
+
+            @media screen and (max-width: $w992) {
+                display: none;
+            }
+
+        }
 
         &-prev,
         &-next {
@@ -145,6 +198,12 @@
     padding: 40px 30px;
     color: #fff;
 
+    @media screen and (max-width: $w992) {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
 
     &__desc {
         font-size: 16px;
@@ -169,6 +228,10 @@
     &__img {
 
         margin: 0 -30px -40px -30px;
+
+        @media screen and (max-width: $w992) {
+            margin-top: auto;
+        }
 
         & picture {
             @include picture(50%, cover);

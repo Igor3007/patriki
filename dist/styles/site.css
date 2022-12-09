@@ -9872,6 +9872,7 @@ li.button-play {
   line-height: 150%;
   color: #FFFFFF;
   margin-top: auto;
+  max-width: 100%;
 }
 
 .about-main__right {
@@ -10122,7 +10123,7 @@ li.button-play {
 }
 
 .about-history__total {
-  min-width: 390px;
+  min-width: 100%;
 }
 
 .about-history__slider {
@@ -10535,6 +10536,28 @@ li.button-play {
   text-transform: uppercase;
 }
 
+.fp-about__nav-slide div {
+  display: none;
+  opacity: 0;
+}
+
+@keyframes to-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fp-about__nav-slide div.is-active {
+  display: block;
+  animation: to-fade-up 0.3s ease forwards;
+}
+
 .fp-about__nav-next,
 .fp-about__nav-prev {
   width: 25px;
@@ -10572,6 +10595,10 @@ li.button-play {
   padding: 6px;
 }
 
+.fp-about__nav-dots ul li.is-active span {
+  background-color: #aaa;
+}
+
 .fp-about__nav-dots ul li span {
   width: 10px;
   height: 10px;
@@ -10579,8 +10606,25 @@ li.button-play {
   display: block;
 }
 
-.fp-about__nav-dots ul li span.is-active {
-  background-color: #aaa;
+@keyframes to-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fp-about .splide__slide.is-active .about-main__title,
+.fp-about .splide__slide.is-active .about-media__title,
+.fp-about .splide__slide.is-active .about-team__title,
+.fp-about .splide__slide.is-active .about-founder__title,
+.fp-about .splide__slide.is-active .about-advice__title,
+.fp-about .splide__slide.is-active .about-history__title {
+  animation: to-fade-left 0.3s ease forwards;
 }
 
 .section-page-events {
@@ -11772,8 +11816,29 @@ li.button-play {
     order: 0;
   }
 
+  .about-history__total {
+    min-width: 390px;
+  }
+
   .about-media__slider .splide__arrow {
     display: block;
+  }
+
+  .fp-about .splide {
+    padding-bottom: 22px;
+  }
+
+  .fp-about .splide .about-main__title,
+  .fp-about .splide .about-media__title,
+  .fp-about .splide .about-team__title,
+  .fp-about .splide .about-founder__title,
+  .fp-about .splide .about-advice__title,
+  .fp-about .splide .about-history__title {
+    opacity: 0;
+  }
+
+  .fp-about .splide__slide {
+    height: calc(-360px + 100vh) !important;
   }
 
   .event-card-main__slider .splide__arrow {
@@ -12048,12 +12113,6 @@ li.button-play {
     margin-right: auto;
   }
 
-  .about-main__desc {
-    max-width: calc(100% - 940px);
-    padding: 40px;
-    color: #CACAE6;
-  }
-
   .about-main__right picture {
     height: 55vh;
     max-width: 873px;
@@ -12079,8 +12138,8 @@ li.button-play {
   }
 
   .about-founder__middle {
-    width: 285px;
-    min-width: 285px;
+    width: 258px;
+    min-width: 258px;
     margin: 0 40px;
   }
 
@@ -12645,6 +12704,12 @@ li.button-play {
     font-size: 60px;
   }
 
+  .about-main__desc {
+    max-width: calc(100% - 940px);
+    padding: 40px;
+    color: #CACAE6;
+  }
+
   .about-advice__title {
     font-size: 36px;
   }
@@ -12810,6 +12875,12 @@ li.button-play {
   }
 }
 
+@media screen and (max-width: 1376px) {
+  .fp-about .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
+    height: auto !important;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .af-select {
     height: 45px;
@@ -12843,6 +12914,50 @@ li.button-play {
   .splide-mobile-disabled-992.splide > .splide__track > .splide__list {
     display: block;
     backface-visibility: visible;
+  }
+
+  .about-history__wrp {
+    overflow-x: auto;
+  }
+
+  .about-history__slider {
+    width: auto;
+  }
+
+  .about-history__slider .splide {
+    display: block;
+    visibility: visible;
+    height: 100%;
+  }
+
+  .about-history__slider .splide > .splide__track {
+    height: 100%;
+  }
+
+  .about-history__slider .splide > .splide__track > .splide__list {
+    display: flex;
+    backface-visibility: visible;
+    height: 100%;
+  }
+
+  .about-history__slider .splide > .splide__track .splide__slide {
+    opacity: 1;
+    margin-right: 15px;
+    height: 100%;
+  }
+
+  .total-history__nav-prev {
+    display: none;
+  }
+
+  .card-history {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card-history__img {
+    margin-top: auto;
   }
 }
 

@@ -754,7 +754,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     about history
     =============================================*/
 
-    if (document.querySelector('[data-slider="about-history"]')) {
+    if (document.querySelector('[data-slider="about-history"]') && document.body.clientWidth > 992) {
         var sliderAboutHistory = new Splide('[data-slider="about-history"]', {
 
             arrows: false,
@@ -794,6 +794,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
         sliderAboutHistory.mount();
     }
 
+    if (document.querySelector('[data-slider-next="about-history"]') && document.body.clientWidth < 992) {
+
+        document.querySelector('[data-slider-next="about-history"]').addEventListener('click', function () {
+            document.querySelector('.about-history__wrp').scrollBy({
+                left: document.querySelector('.total-history').clientWidth,
+                behavior: 'smooth'
+            })
+        })
+
+    }
+
     /* ============================================
     slider="about"
     ============================================*/
@@ -821,6 +832,85 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         });
 
+
+        const prevButtonAbout = document.querySelector('[data-slider-prev="about"]')
+        const nextButtonAbout = document.querySelector('[data-slider-next="about"]')
+
+        prevButtonAbout.addEventListener('click', e => {
+            sliderPageAbout.go('<')
+        })
+
+        nextButtonAbout.addEventListener('click', e => {
+            sliderPageAbout.go('>')
+        })
+
+        function splideSlideName() {
+
+            this.elems = document.querySelectorAll('[data-splide-title]')
+            this.slideContainer = document.querySelector('.fp-about__nav-slide')
+            this.dotsContainer = document.querySelector('.fp-about__nav-dots ul')
+
+            this.create = function () {
+
+                this.slideContainer.innerHTML = ''
+                this.dotsContainer.innerHTML = ''
+
+                this.elems.forEach((item, index) => {
+
+                    let slide = document.createElement('div')
+                    slide.innerHTML = '' + item.dataset.splideTitle + ''
+
+                    let dot = document.createElement('li')
+                    dot.innerHTML = '<span class="dots-slider"></span>'
+
+                    if (!index) {
+                        dot.classList.add('is-active')
+                        slide.classList.add('is-active')
+                    }
+
+                    this.slideContainer.append(slide)
+                    this.dotsContainer.append(dot)
+
+                })
+
+            }
+
+            this.change = function (indexCurrent) {
+                this.elems.forEach((item, index) => {
+
+                    if (index == indexCurrent) {
+
+                        this.slideContainer.children[index].classList.add('is-active')
+                        this.dotsContainer.children[index].classList.add('is-active')
+
+                    } else {
+
+                        if (this.slideContainer.children[index].classList.contains('is-active')) {
+                            this.slideContainer.children[index].classList.remove('is-active')
+                        }
+                        if (this.dotsContainer.children[index].classList.contains('is-active')) {
+                            this.dotsContainer.children[index].classList.remove('is-active')
+                        }
+
+                    }
+
+                })
+            }
+
+        }
+
+        const splideSlide = new splideSlideName()
+
+
+        sliderPageAbout.on('mounted', function () {
+            splideSlide.create()
+        })
+
+        sliderPageAbout.on('move', function (newIndex, prevIndex, destIndex) {
+            splideSlide.change(newIndex)
+        })
+
+
         sliderPageAbout.mount();
     }
 
@@ -841,7 +931,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             //padding: '20',
             throttle: 300,
             gap: 10,
-            start: 1,
+            start: 0,
 
             breakpoints: {
                 767: {
