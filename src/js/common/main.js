@@ -1159,15 +1159,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
             gap: 10,
 
             breakpoints: {
-                767: {
-                    perPage: 1,
-                    padding: '0%'
+                992: {
+
+                    autoWidth: true,
+                    padding: '0%',
+                    focus: false,
+                    padding: 0,
+
                 },
 
-                992: {
-                    perPage: 1.5,
-                    padding: '0%'
-                },
+
             }
         });
 

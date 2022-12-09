@@ -32,10 +32,17 @@
             &__slide {
 
                 & .about-news__title {
-                    transform: scale(0.9);
-                    margin-top: -25px;
+
                     transition: 0.3s ease;
                     opacity: 0.3;
+
+                    @media screen and (min-width: $w992) {
+                        margin-top: -25px;
+                        transform: scale(0.9);
+
+                    }
+
+
                 }
 
 
@@ -43,6 +50,8 @@
                     & picture {
                         transform: scale(1);
                         opacity: 1;
+
+
                     }
 
                     & .about-news__title {
@@ -56,9 +65,14 @@
                     display: block;
                     padding-top: 74%;
                     position: relative;
-                    transform: scale(0.9);
                     transition: 0.3s ease;
-                    opacity: 0.3;
+
+                    @media screen and (min-width: $w992) {
+                        transform: scale(0.9);
+                        opacity: 0.3;
+                    }
+
+
 
                     & img {
                         position: absolute;
@@ -81,12 +95,12 @@
 
                 &--next {
                     right: 5.2em;
-                    top: 44%;
+                    top: 32%;
                 }
 
                 &--prev {
                     left: 5.2em;
-                    top: 44%;
+                    top: 32%;
                 }
 
                 @media screen and (min-width: $w992) {
@@ -98,6 +112,17 @@
 }
 
 .about-news {
+
+    width: 75vw;
+
+    @media screen and (min-width: $w760) {
+        width: 50vw;
+    }
+
+    @media screen and (min-width: $w992) {
+        width: auto;
+    }
+
     &__title {
         & a {
             font-weight: 700;
@@ -110,6 +135,8 @@
     &__image {
         padding-bottom: 15px;
     }
+
+
 }
 
 
