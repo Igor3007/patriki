@@ -5414,6 +5414,10 @@ footer {
   filter: invert(1) grayscale(1) brightness(1.5);
 }
 
+.gray-mode .footer-min__logo-desc {
+  color: #fff;
+}
+
 .gray-mode .footer-min__contact {
   border-color: #ABA9BC;
 }

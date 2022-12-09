@@ -280,6 +280,10 @@ main footer .container {
                 filter: invert(1) grayscale(1) brightness(1.5);
 
             }
+
+            &-desc {
+                color: $gray-74;
+            }
         }
 
         &__contact {
@@ -333,6 +337,10 @@ main footer .container {
             & .bgimage {
                 filter: invert(1) grayscale(1) brightness(1.5);
 
+            }
+
+            &-desc {
+                color: #fff;
             }
         }
 
