@@ -39,6 +39,7 @@
     &__nav {
         margin-left: auto;
         margin-top: -1px;
+        visibility: hidden;
 
         & span {
             display: flex;

@@ -401,6 +401,32 @@
          });
      }
 
+     /* =================================================
+     preloader
+     ================================================= */
+
+     if (document.querySelector('.logo-preloader')) {
+
+         document.querySelector('.logo-preloader').addEventListener('click', function () {
+             this.classList.toggle('loaded')
+         })
+
+
+         setTimeout((e) => {
+             document.querySelector('.logo-preloader').classList.toggle('loaded')
+         }, 1500)
+
+         setTimeout((e) => {
+             document.querySelector('.logo-preloader').remove()
+         }, 3000)
+
+
+
+     }
+
+
+
+
 
 
 

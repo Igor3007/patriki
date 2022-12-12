@@ -3391,6 +3391,12 @@ a.link-primary {
   height: 100%;
 }
 
+.embed-container--text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #status {
   position: fixed;
   bottom: 20px;
@@ -3602,6 +3608,84 @@ a.link-primary {
   width: 14px;
   height: 14px;
   min-width: 14px;
+}
+
+.logo-preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 5;
+  display: none;
+}
+
+.logo-preloader .container {
+  position: relative;
+  height: 100vh;
+}
+
+.logo-preloader.loaded {
+  opacity: 0;
+  transition: 0.9s ease 0.6s;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.logo-preloader.loaded .logo-preloader__wrp {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 62px;
+  top: 16px;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.logo-preloader__wrp {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(4);
+  transition: 1s ease;
+}
+
+@keyframes fade-to-preloader-text {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.preloader-text {
+  width: 100px;
+  height: 105px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+  transform: translateX(-40%);
+  opacity: 0;
+  transition: 0.3s ease;
+  animation: fade-to-preloader-text 1.5s ease forwards;
+}
+
+.preloader-image {
+  width: 80px;
+  height: 80px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: -40px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fade-to 1.5s ease forwards;
 }
 
 .btn {
@@ -5818,6 +5902,7 @@ footer {
 .programs-item__nav {
   margin-left: auto;
   margin-top: -1px;
+  visibility: hidden;
 }
 
 .programs-item__nav span {
@@ -8434,7 +8519,7 @@ footer {
 .minicard-film__censor {
   position: absolute;
   color: #fff;
-  z-index: 111;
+  z-index: 2;
   top: 7px;
   right: 12px;
   font-weight: bold;
@@ -11522,7 +11607,7 @@ li.button-play {
   .main-advice__title,
   .main-events__title,
   .main-program__title {
-    transform: translateY(20px);
+    transform: translateX(-10px);
     opacity: 0;
     transition: 0.3s ease;
   }
@@ -11533,6 +11618,45 @@ li.button-play {
   .splide__slide.is-active .main-program__title {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  /* ========== title ========== */
+
+  .main-banner__small,
+  .main-banner__large,
+  .main-partners__list,
+  .main-advice__list,
+  .main-program__slider {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s ease 0.3s;
+  }
+
+  .splide__slide.is-active .main-banner__large,
+  .splide__slide.is-active .main-partners__list,
+  .splide__slide.is-active .main-advice__list,
+  .splide__slide.is-active .main-program__slider {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .splide__slide.is-active .main-banner__small {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+
+  /* ========== event ============= */
+
+  .splide__slide .card-event {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s ease 0.3s;
+  }
+
+  .splide-mobile-disabled-992 > .splide__track > .splide__list > .splide__slide.is-active .card-event {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   body * {
@@ -11946,6 +12070,10 @@ li.button-play {
     padding-right: 20px;
   }
 
+  .logo-preloader {
+    display: block;
+  }
+
   .bn-header__logo {
     min-width: 235px;
     display: flex;
@@ -12230,19 +12358,23 @@ li.button-play {
   }
 }
 
-@media screen and (min-width: 1376px) and (min-height: 760px) {
-  .bn-header__logo .bgimage {
-    width: 212px;
-    height: 160px;
-  }
-
-  .bn-header__login a {
-    padding: 0 2.5em;
-    font-size: 16px;
-  }
-}
-
 @media screen and (min-width: 1376px) {
+  .logo-preloader.loaded .logo-preloader__wrp {
+    top: 44px;
+    left: 20px;
+  }
+
+  .preloader-text {
+    width: 146px;
+    height: 150px;
+  }
+
+  .preloader-image {
+    width: 130px;
+    height: 130px;
+    margin-left: -70px;
+  }
+
   .bn-header__logo {
     padding: 8px 45px;
   }
@@ -12875,6 +13007,11 @@ li.button-play {
     font-size: 16px;
   }
 
+  .bn-header__logo .bgimage {
+    width: 212px;
+    height: 160px;
+  }
+
   .bn-header__logo {
     padding: 10px;
   }
@@ -12890,6 +13027,11 @@ li.button-play {
 
   .bn-header__login {
     height: 50%;
+  }
+
+  .bn-header__login a {
+    padding: 0 2.5em;
+    font-size: 16px;
   }
 
   .bn-header-info {
