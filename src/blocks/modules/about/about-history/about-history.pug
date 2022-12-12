@@ -32,10 +32,14 @@ mixin about-history
     section.section-about-history
         .container
             .about-history
-                .about-history__title История
+                .about-history__head
+                    .about-history__title История
+                    .about-history__type
+                        .about-history__nav
+                            .about-history__nav-next(data-slider-prev="about-history"): +icons('#ic_arr-back')
+                            .about-history__nav-prev(data-slider-next="about-history"): +icons('#ic_arr-next')
                 .about-history__wrp
-                    .about-history__total
-                        +total-history
+                     
                     .about-history__slider
                         .splide(data-slider="about-history")
                             .splide__track

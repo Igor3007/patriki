@@ -754,7 +754,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     about history
     =============================================*/
 
-    if (document.querySelector('[data-slider="about-history"]') && document.body.clientWidth > 992) {
+    if (document.querySelector('[data-slider="about-history"]')) {
         var sliderAboutHistory = new Splide('[data-slider="about-history"]', {
 
             arrows: false,
@@ -762,7 +762,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             gap: 30,
             autoWidth: true,
             start: 0,
-            perPage: 1,
+            perPage: 4,
             flickMaxPages: 3,
             updateOnMove: true,
             throttle: 300,
@@ -779,31 +779,37 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         });
 
+        if (document.querySelector('[data-slider-prev="about-history"]')) {
 
-        const prevHistory = document.querySelector('[data-slider-prev="about-history"]')
-        const nextHistory = document.querySelector('[data-slider-next="about-history"]')
+            const prevHistory = document.querySelector('[data-slider-prev="about-history"]')
+            const nextHistory = document.querySelector('[data-slider-next="about-history"]')
 
-        prevHistory.addEventListener('click', e => {
-            sliderAboutHistory.go('<')
-        })
+            prevHistory.addEventListener('click', e => {
+                sliderAboutHistory.go('<')
+            })
 
-        nextHistory.addEventListener('click', e => {
-            sliderAboutHistory.go('>')
-        })
+            nextHistory.addEventListener('click', e => {
+                sliderAboutHistory.go('>')
+            })
+        }
+
+
+
+
 
         sliderAboutHistory.mount();
     }
 
-    if (document.querySelector('[data-slider-next="about-history"]') && document.body.clientWidth < 992) {
+    // if (document.querySelector('[data-slider-next="about-history"]') && document.body.clientWidth < 992) {
 
-        document.querySelector('[data-slider-next="about-history"]').addEventListener('click', function () {
-            document.querySelector('.about-history__wrp').scrollBy({
-                left: document.querySelector('.total-history').clientWidth,
-                behavior: 'smooth'
-            })
-        })
+    //     document.querySelector('[data-slider-next="about-history"]').addEventListener('click', function () {
+    //         document.querySelector('.about-history__wrp').scrollBy({
+    //             left: document.querySelector('.total-history').clientWidth,
+    //             behavior: 'smooth'
+    //         })
+    //     })
 
-    }
+    // }
 
     /* ============================================
     slider="about"
