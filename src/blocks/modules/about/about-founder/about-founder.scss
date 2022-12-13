@@ -141,12 +141,20 @@
         color: #FFFFFF;
 
 
-        @include line-clamp(8);
+        @include line-clamp(10);
         overflow: hidden;
 
         & p {
             margin-bottom: 25px;
+            display: inline;
+
+            &::after {
+                content: " \A\A";
+                white-space: pre;
+            }
         }
+
+
 
     }
 

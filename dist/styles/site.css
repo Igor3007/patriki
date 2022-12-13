@@ -10175,7 +10175,7 @@ li.button-play {
   color: #FFFFFF;
   letter-spacing: normal;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
   overflow: hidden;
@@ -10183,6 +10183,12 @@ li.button-play {
 
 .card-founder__desc p {
   margin-bottom: 25px;
+  display: inline;
+}
+
+.card-founder__desc p::after {
+  content: " \A\A";
+  white-space: pre;
 }
 
 .card-founder__more {
