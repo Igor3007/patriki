@@ -1229,6 +1229,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
+
     /* ========================================
     card-advice popup
     ========================================*/
@@ -1289,6 +1290,65 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 popup.open('<div class="player-trailer" ><iframe src="' + item.dataset.trailerLink + '" ></iframe></div>')
             })
         })
+    }
+
+    /* ====================================================
+    slider main-advice 
+    ====================================================*/
+
+    if (document.querySelector('[data-slider="main-advice"]')) {
+
+        const countSlide = document.querySelectorAll('[data-slider="main-advice"] .card-advice');
+
+        var sliderMainAdvice = new Splide('[data-slider="main-advice"]', {
+            perPage: (countSlide.length < 5 ? countSlide.length : 4),
+            pagination: false,
+            arrows: false,
+            gap: 0,
+
+            breakpoints: {
+
+                992: {
+                    perPage: 3,
+                },
+
+                760: {
+                    perPage: 1,
+                    gap: 15,
+                },
+            },
+        });
+
+
+
+
+        if (document.querySelector('.main-advice__nav')) {
+
+            if (countSlide.length < 5 && document.body.clientWidth > 992) {
+                document.querySelector('.main-advice__nav').style.display = 'none';
+            } else {
+                document.querySelector('.main-advice__nav').style.display = 'flex';
+            }
+
+        }
+
+
+        if (document.querySelector('[data-slider-prev="main-advice"]')) {
+
+            const prevButton = document.querySelector('[data-slider-prev="main-advice"]')
+            const nextButton = document.querySelector('[data-slider-next="main-advice"]')
+
+            prevButton.addEventListener('click', e => {
+                sliderMainAdvice.go('<')
+            })
+
+            nextButton.addEventListener('click', e => {
+                sliderMainAdvice.go('>')
+            })
+        }
+
+        sliderMainAdvice.mount();
+
     }
 
 

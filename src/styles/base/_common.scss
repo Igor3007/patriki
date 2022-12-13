@@ -292,7 +292,9 @@
     display: none;
 
     @media screen and (min-width: $w1200) {
-        display: block;
+        &.load {
+            display: block;
+        }
     }
 
     & .container {

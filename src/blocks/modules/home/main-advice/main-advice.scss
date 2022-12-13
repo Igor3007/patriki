@@ -26,11 +26,42 @@
 
     }
 
+    &__nav {
+
+        display: flex;
+        margin: -0px;
+
+
+        &-prev,
+        &-next {
+            margin: 2px;
+            width: 48px;
+            height: 48px;
+            background-color: #f5f5f5;
+            cursor: pointer;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: #eee;
+            }
+
+            & svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+
     &__list {
         display: flex;
         //margin: 0 -5px;
-        overflow-x: auto;
-        margin-right: -15px;
+
+
         padding: 10px 0;
 
         @media screen and (min-width: $w576) {
@@ -40,33 +71,44 @@
         }
     }
 
-    &__item {
+    &__slider {
 
-        //padding: 5px;
-        min-width: 90%;
+        width: 100%;
 
         @media screen and (min-width: $w1440) {
-
-            max-width: 305px;
-            min-width: 305px;
+            max-width: 90%;
+            margin: 0 auto;
         }
 
-        @media screen and (min-width: $w1200) {
+    }
 
-            max-width: 280px;
-            min-width: 280px;
-        }
+    &__item {
 
-
-        @media screen and (min-width: $w576) {
-
-            max-width: 230px;
-            min-width: 230px;
-        }
+        // flex-grow: 1;
+        // width: 100%;
 
 
-        flex-grow: 1;
-        width: 100%;
+        // @media screen and (min-width: $w1440) {
+
+        //     max-width: 305px;
+        //     min-width: 305px;
+        // }
+
+        // @media screen and (min-width: $w1200) {
+
+        //     max-width: 280px;
+        //     min-width: 280px;
+        // }
+
+
+        // @media screen and (min-width: $w576) {
+
+        //     max-width: 230px;
+        //     min-width: 230px;
+        // }
+
+
+
 
         & picture {
             @include picture(155%, cover);

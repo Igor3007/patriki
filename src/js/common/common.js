@@ -405,22 +405,35 @@
      preloader
      ================================================= */
 
-     if (document.querySelector('.logo-preloader')) {
+     function getCookie(name) {
+         let matches = document.cookie.match(new RegExp(
+             "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+         ));
+         return matches ? decodeURIComponent(matches[1]) : undefined;
+     }
+
+     function setCookie(name, value) {
+         let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+         document.cookie = updatedCookie;
+     }
+
+     if (document.querySelector('.logo-preloader') && getCookie('preloader') == undefined) {
+
+         setCookie('preloader', 1);
+
+         document.querySelector('.logo-preloader').classList.add('load')
 
          document.querySelector('.logo-preloader').addEventListener('click', function () {
              this.classList.toggle('loaded')
          })
 
-
          setTimeout((e) => {
-             document.querySelector('.logo-preloader').classList.toggle('loaded')
+             document.querySelector('.logo-preloader').classList.add('loaded')
          }, 1500)
 
          setTimeout((e) => {
              document.querySelector('.logo-preloader').remove()
          }, 3000)
-
-
 
      }
 

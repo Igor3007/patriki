@@ -9708,7 +9708,7 @@ div[data-lang]:not(.active) {
     padding-right: 20px;
   }
 
-  .logo-preloader {
+  .logo-preloader.load {
     display: block;
   }
 
