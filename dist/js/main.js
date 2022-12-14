@@ -715,34 +715,53 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
         document.querySelectorAll('.main-advice__item').forEach(item => {
+
+            let topss = 0
+
+
+            // item.querySelector('.card-advice__desc').addEventListener('wheel', e => {
+            //     e.stopPropagation();
+
+            //     if (e.wheelDelta < 0) {
+            //         topss = topss + 10
+            //     }
+
+            //     if (e.wheelDelta > 0) {
+            //         topss = (topss > 10 ? topss - 10 : 0)
+            //     }
+
+            //     console.log(topss)
+
+            //     item.scrollTop({
+            //         top: 100,
+
+            //     })
+
+            // })
+
             item.addEventListener('mouseenter', e => {
 
-                //console.log(sliderPage.root.querySelector('.splide__track'))
-
-
-
-                //sliderPage.destroy()
-
-
                 sliderPage.options = {
-                    wheel: false,
-
+                    wheelMinThreshold: 500,
                 }
+
+
 
                 sliderPage.refresh()
 
 
 
+
+                //item.querySelector('.card-advice__desc').EventTarget
             })
+
             item.addEventListener('mouseleave', e => {
 
-                //console.log(sliderPage.root.querySelector('.splide__track'))
+                sliderPage.options = {
+                    wheelMinThreshold: 50,
+                }
 
-
-
-                // sliderPageNoWhell.destroy()
-                // sliderPage.mount()
-
+                sliderPage.refresh()
 
 
             })
@@ -824,8 +843,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
             height: 'calc(100vh - 240px)',
 
             wheel: true,
-            wheelMinThreshold: 50,
-            wheelSleep: 150,
+            wheelMinThreshold: 100,
+            wheelSleep: 500,
+
 
             drag: false,
 
@@ -869,6 +889,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     let dot = document.createElement('li')
                     dot.innerHTML = '<span class="dots-slider"></span>'
 
+                    this.addClickEvent(dot, index);
+
                     if (!index) {
                         dot.classList.add('is-active')
                         slide.classList.add('is-active')
@@ -877,6 +899,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     this.slideContainer.append(slide)
                     this.dotsContainer.append(dot)
 
+                })
+
+            }
+
+            this.addClickEvent = function (elem, index) {
+
+                elem.addEventListener('click', (e) => {
+                    sliderPageAbout.go(index)
                 })
 
             }
@@ -907,13 +937,28 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         const splideSlide = new splideSlideName()
 
-
         sliderPageAbout.on('mounted', function () {
             splideSlide.create()
         })
 
         sliderPageAbout.on('move', function (newIndex, prevIndex, destIndex) {
             splideSlide.change(newIndex)
+        })
+
+        sliderPageAbout.on('active', function (newIndex) {
+
+            if ((sliderPageAbout.length - 1) == newIndex.index) {
+                window.scrollTo({
+                    top: 121,
+                    behavior: 'smooth'
+                })
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            }
+
         })
 
 

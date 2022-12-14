@@ -174,11 +174,66 @@
             transition: 0.3s ease;
         }
     }
+
+    &__text {
+
+        overflow: hidden;
+        @include line-clamp(15);
+
+        @media screen and (min-width: $w1200) {
+            @include line-clamp(15);
+        }
+
+        @media screen and (min-width: $w760) {
+            @include line-clamp(11);
+        }
+
+        & * {
+            display: inline;
+        }
+
+        & * {
+            &::after {
+                content: " \A\A";
+                white-space: pre;
+            }
+        }
+
+
+
+    }
+
+    &__more {
+        margin-top: auto;
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+
+        & span {
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+.af-popup {
+    & .card-advice__text {
+        display: block;
+    }
+
+    & .card-advice__more {
+        display: none;
+    }
 }
 
 .jury-desc {
     background: #525166;
-    margin: -15px;
+    margin: -10px;
     padding: 45px 40px;
     max-width: 1115px;
 
@@ -209,6 +264,7 @@
         opacity: 1;
         visibility: visible;
         background-color: transparent;
+        padding: 15px 0;
 
         & p {
             color: #fff;

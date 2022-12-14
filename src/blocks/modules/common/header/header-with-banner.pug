@@ -17,15 +17,15 @@
           .banner-header
             picture
               img(src="/img/common/banner-header.jpg")
-          
-             
-           
         .bn-header__nav-menu
           nav
             ul
               each item in app.mainMenu
                 li: a(href=item.href)= item.text
-
+        .bn-header__nav-lang
+          ul
+            li: a(href='#') EN
+            li: a(href='#' class="active") RU
       .bn-header__nav-btn
         .btn-burger(data-menu="btn")
           i

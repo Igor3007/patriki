@@ -331,6 +331,52 @@ header {
             }
 
         }
+
+        &-lang {
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            @media screen and (min-width: $w992) {
+                display: none;
+            }
+
+            & ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+
+                & li {
+                    & a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #fff;
+                        width: 50px;
+                        height: 35px;
+                        background-color: #ccc;
+                        font-weight: 600;
+                        color: $main;
+
+                        &.active {
+                            background-color: $main;
+                            color: #fff;
+                            box-shadow: 0px 0 4px 0px #000;
+                        }
+                    }
+                }
+
+            }
+        }
     }
 
     &__pa {
@@ -850,6 +896,8 @@ header {
                     }
                 }
             }
+
+
         }
 
         &__social {

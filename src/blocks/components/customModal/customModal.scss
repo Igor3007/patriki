@@ -90,6 +90,10 @@
     cursor: pointer;
     z-index: 101;
     top: 11px;
+
+    @media screen and (max-width: $w480) {
+        right: 10px;
+    }
 }
 
 .af-popup__close svg {

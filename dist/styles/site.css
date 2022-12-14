@@ -4812,6 +4812,42 @@ header.header-fixed {
   border-left: 1px solid #525166;
 }
 
+.bn-header__nav-lang {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bn-header__nav-lang ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bn-header__nav-lang ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 50px;
+  height: 35px;
+  background-color: #ccc;
+  font-weight: 600;
+  color: #525166;
+}
+
+.bn-header__nav-lang ul li a.active {
+  background-color: #525166;
+  color: #fff;
+  box-shadow: 0px 0 4px 0px #000;
+}
+
 .bn-header__pa {
   display: flex;
   align-items: center;
@@ -6836,7 +6872,7 @@ footer {
 }
 
 .page-film__player .player-video {
-  padding-top: 55%;
+  padding-top: 55.2%;
   background-color: #1d1d22;
   border: 8px solid #292833;
   position: relative;
@@ -9927,9 +9963,51 @@ li.button-play {
   transition: 0.3s ease;
 }
 
+.card-advice__text {
+  overflow: hidden;
+  letter-spacing: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-advice__text * {
+  display: inline;
+}
+
+.card-advice__text *::after {
+  content: " \A\A";
+  white-space: pre;
+}
+
+.card-advice__more {
+  margin-top: auto;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.card-advice__more span {
+  font-weight: 600;
+}
+
+.card-advice__more span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.af-popup .card-advice__text {
+  display: block;
+}
+
+.af-popup .card-advice__more {
+  display: none;
+}
+
 .jury-desc {
   background: #525166;
-  margin: -15px;
+  margin: -10px;
   padding: 45px 40px;
   max-width: 1115px;
 }
@@ -9947,6 +10025,7 @@ li.button-play {
   opacity: 1;
   visibility: visible;
   background-color: transparent;
+  padding: 15px 0;
 }
 
 .jury-desc .card-advice__desc p {
@@ -10773,6 +10852,7 @@ li.button-play {
   height: 10px;
   background-color: #fff;
   display: block;
+  cursor: pointer;
 }
 
 @keyframes to-fade-left {
@@ -11638,6 +11718,14 @@ li.button-play {
     height: 80px;
   }
 
+  .card-advice__text {
+    letter-spacing: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   .jury-desc {
     display: flex;
   }
@@ -11741,6 +11829,10 @@ li.button-play {
 
   body *::-webkit-scrollbar-thumb {
     background-color: #525166;
+  }
+
+  .bn-header__nav-lang {
+    display: none;
   }
 
   .bn-header__social ul li a {
@@ -12334,6 +12426,14 @@ li.button-play {
     height: 100%;
     position: absolute;
     object-fit: cover;
+  }
+
+  .card-advice__text {
+    letter-spacing: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .section-about-main {
@@ -13289,6 +13389,10 @@ li.button-play {
     padding-bottom: 0;
     margin-bottom: 0;
     width: 100%;
+  }
+
+  .af-popup__close {
+    right: 10px;
   }
 
   header .container {

@@ -10430,6 +10430,10 @@ div[data-lang]:not(.active) {
     width: 100%;
   }
 
+  .af-popup__close {
+    right: 10px;
+  }
+
   header .container {
     max-width: none;
     padding-right: 0;
