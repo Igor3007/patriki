@@ -709,62 +709,27 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         });
 
-
-
         sliderPage.mount();
-
 
         document.querySelectorAll('.main-advice__item').forEach(item => {
 
-            let topss = 0
+            // item.addEventListener('mouseenter', e => {
 
-
-            // item.querySelector('.card-advice__desc').addEventListener('wheel', e => {
-            //     e.stopPropagation();
-
-            //     if (e.wheelDelta < 0) {
-            //         topss = topss + 10
+            //     sliderPage.options = {
+            //         wheelMinThreshold: 500,
             //     }
 
-            //     if (e.wheelDelta > 0) {
-            //         topss = (topss > 10 ? topss - 10 : 0)
-            //     }
-
-            //     console.log(topss)
-
-            //     item.scrollTop({
-            //         top: 100,
-
-            //     })
-
+            //     sliderPage.refresh()
             // })
 
-            item.addEventListener('mouseenter', e => {
+            // item.addEventListener('mouseleave', e => {
 
-                sliderPage.options = {
-                    wheelMinThreshold: 500,
-                }
+            //     sliderPage.options = {
+            //         wheelMinThreshold: 50,
+            //     }
 
-
-
-                sliderPage.refresh()
-
-
-
-
-                //item.querySelector('.card-advice__desc').EventTarget
-            })
-
-            item.addEventListener('mouseleave', e => {
-
-                sliderPage.options = {
-                    wheelMinThreshold: 50,
-                }
-
-                sliderPage.refresh()
-
-
-            })
+            //     sliderPage.refresh()
+            // })
         })
 
     }
@@ -819,16 +784,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         sliderAboutHistory.mount();
     }
 
-    // if (document.querySelector('[data-slider-next="about-history"]') && document.body.clientWidth < 992) {
-
-    //     document.querySelector('[data-slider-next="about-history"]').addEventListener('click', function () {
-    //         document.querySelector('.about-history__wrp').scrollBy({
-    //             left: document.querySelector('.total-history').clientWidth,
-    //             behavior: 'smooth'
-    //         })
-    //     })
-
-    // }
 
     /* ============================================
     slider="about"
@@ -1019,21 +974,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }, 300)
 
 
-            // Slide.slide.parentNode.querySelectorAll('.splide__slide').forEach(item => {
-            //     if (item.classList.contains('slide---next')) {
-            //         item.classList.remove('slide---next')
-            //     }
-            //     if (item.classList.contains('slide---prev')) {
-            //         item.classList.remove('slide---prev')
-            //     }
-            // })
-
-
-
-
-            // Slide.slide.nextElementSibling.classList.add('slide---next')
-            // Slide.slide.previousElementSibling.classList.add('slide---prev')
-
         })
 
 
@@ -1056,8 +996,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             type: 'loop',
             perPage: 3,
             focus: 'center',
-            //autoplay: true,
-            //interval: 8000,
             flickMaxPages: 3,
             updateOnMove: true,
             pagination: false,
@@ -1240,7 +1178,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         document.querySelector('[data-events="load"]').addEventListener('click', (e) => {
 
             window.ajax({
-                type: 'GET', //на бою заменить на POST
+                type: 'GET',
                 url: '/_load-events.html',
                 data: {
                     page: '10'
