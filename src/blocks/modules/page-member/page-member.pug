@@ -1,0 +1,47 @@
+include ../../components/breadcrumb/breadcrumb.pug
+
+mixin page-member
+    section.section-page-member
+        .page-member
+            .page-member__breadcrumbs
+                +breadcrumb([
+                    'Главная',
+                    'Регламент'
+                ])
+            .page-member__title: h1 Заявка на участие в фестивале
+            .page-member__reg
+                span(data-reg="open") Регламент кинофестиваля
+            .page-member__desc Отправьте свои данные. Мы свяжемся с вами сразу после рассмотрения заявки.
+            .page-member__form
+                form(action='#' method='POST')
+                    .form
+                      .form__item
+                        .form__subitem
+                            span.form-label ФИО *
+                            input(type="text" placeholder="Введите имя полностью")
+                      .form__item
+                        .form__subitem
+                            span.form-label Электронная почта *
+                            input(type="email" placeholder="Например, ivanov@yandex.ru")
+                      .form__item
+                        .form__subitem
+                            .form-phone 
+                                span.form-label Телефон *
+                                input(type="email" placeholder="Введите номер телефона")
+                            .add-phone + Добавить телефон
+                      .form__item
+                        .form__subitem
+                            span.form-label Организация *
+                            input(type="email" placeholder="Введите название организации")
+                      .form__item
+                        .form__subitem
+                            span.form-label Дополнительная информация *
+                            textarea(placeholder="Введите текст комментария или вопроса")
+                      .form__item
+                        .form__subitem
+                            +checkbox('Нажимая кнопку, вы соглашаетесь на обработку персональных данных')
+
+                      .form__item
+                        .form__subitem
+                            button.btn(type="submit") Отправить
+                        

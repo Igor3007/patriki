@@ -798,7 +798,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             height: 'calc(100vh - 240px)',
 
             wheel: true,
-            wheelMinThreshold: 100,
+            wheelMinThreshold: 50,
             wheelSleep: 500,
 
 
@@ -897,27 +897,52 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
 
         sliderPageAbout.on('move', function (newIndex, prevIndex, destIndex) {
-            splideSlide.change(newIndex)
+            console.log('move event')
         })
 
         sliderPageAbout.on('active', function (newIndex) {
 
+            function scrollDirection(e) {
+
+                if (e.wheelDelta > 0) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+
+                    setTimeout(() => {
+                        sliderPageAbout.options = {
+                            wheelMinThreshold: 50,
+                        }
+                    }, 500)
+
+                } else {
+                    window.scrollTo({
+                        top: document.querySelector('footer').clientHeight,
+                        behavior: 'smooth'
+                    })
+                }
+
+            }
+
             if ((sliderPageAbout.length - 1) == newIndex.index) {
-                window.scrollTo({
-                    top: 121,
-                    behavior: 'smooth'
-                })
+
+                sliderPageAbout.options = {
+                    wheelMinThreshold: 500,
+                }
+
+                sliderPageAbout.root.onwheel = function (e) {
+                    scrollDirection(e)
+                }
+
             } else {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
+                sliderPageAbout.root.onwheel = false;
             }
 
         })
 
-
         sliderPageAbout.mount();
+
     }
 
 
@@ -1275,6 +1300,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     }
 
+    /* ===========================================
+    popup reglament
+    =========================================== */
+
+    if (document.querySelectorAll('[data-regulations="open"]').length) {
+
+
+
+        document.querySelectorAll('[data-regulations="open"]').forEach(item => {
+            item.addEventListener('click', e => {
+                const popup = new customModal()
+                popup.open(document.getElementById('participant').innerHTML)
+            })
+        })
+    }
+
     /* ====================================================
     slider main-advice 
     ====================================================*/
@@ -1333,6 +1374,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         sliderMainAdvice.mount();
 
     }
+
+
 
 
 });

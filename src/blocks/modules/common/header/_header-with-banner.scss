@@ -334,10 +334,7 @@ header {
 
         &-lang {
 
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+
             padding: 25px 15px;
 
             display: flex;
@@ -345,7 +342,7 @@ header {
             align-items: center;
 
 
-            @media screen and (min-width: $w992) {
+            @media screen and (min-width: $w1200) {
                 display: none;
             }
 
@@ -361,11 +358,12 @@ header {
                         align-items: center;
                         justify-content: center;
                         color: #fff;
-                        width: 50px;
+                        min-width: 50px;
                         height: 35px;
                         background-color: #ccc;
                         font-weight: 600;
                         color: $main;
+                        padding: 0 20px;
 
                         &.active {
                             background-color: $main;
@@ -711,7 +709,7 @@ header {
         display: flex;
         background-color: $select-background;
         right: 0;
-        flex-direction: column-reverse;
+        flex-direction: column;
         bottom: 0;
         top: 80px;
 
@@ -830,8 +828,24 @@ header {
     position: relative;
     background-color: #515064;
 
-    @media screen and (min-width: $w480) {
+    @media screen and (min-width: $w1200) {
         display: none;
+    }
+
+    @media screen and (min-width: $w992) {
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: -65px;
+        height: 65px;
+        top: 7px;
+    }
+
+    @media screen and (min-width: $w760) {
+        max-width: 300px;
+        margin: 0 auto;
+        margin-bottom: -65px;
+        height: 65px;
+        top: 7px;
     }
 
 
@@ -1027,5 +1041,14 @@ header {
                 background-color: #fff;
             }
         }
+    }
+}
+
+.bn-header-lang {
+    &__title {
+        text-align: center;
+        padding-bottom: 10px;
+        font-weight: 600;
+        color: #6d6b71;
     }
 }

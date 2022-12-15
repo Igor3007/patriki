@@ -23,9 +23,12 @@
               each item in app.mainMenu
                 li: a(href=item.href)= item.text
         .bn-header__nav-lang
-          ul
-            li: a(href='#') EN
-            li: a(href='#' class="active") RU
+          .bn-header-lang
+            .bn-header-lang__title Язык сайта
+            .bn-header-lang__toggle
+              ul
+                li: a(href='#') ENGLISH
+                li: a(href='#' class="active") РУССКИЙ
       .bn-header__nav-btn
         .btn-burger(data-menu="btn")
           i

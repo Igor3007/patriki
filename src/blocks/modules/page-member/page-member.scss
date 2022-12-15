@@ -1,0 +1,112 @@
+.section-page-member {
+    @include section-padding;
+}
+
+.page-member {
+
+    &__breadcrumbs {
+        text-align: center;
+
+        & .breadcrumb {
+            & ul {
+                justify-content: center;
+            }
+        }
+
+    }
+
+    &__desc {
+        max-width: 450px;
+        margin: 0 auto;
+        font-size: 16px;
+        font-weight: 500;
+
+        padding-bottom: 20px;
+
+        @media screen and (min-width: $w760) {
+            padding-bottom: 30px;
+        }
+    }
+
+    &__title {
+
+        padding-bottom: 30px;
+
+        & h1 {
+            @include section-title();
+
+            @media screen and (max-width: $w760) {
+                font-size: 24px;
+            }
+
+        }
+    }
+
+    &__reg {
+
+        text-align: center;
+        padding-bottom: 30px;
+        font-size: 16px;
+        font-weight: 600;
+
+        & span {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+
+                width: 18px;
+                height: 18px;
+                display: inline-block;
+
+                background-size: contain;
+                background-position: center;
+                margin-left: 10px;
+
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE0LjMzMyA5Ljg4OXY1LjMzM0ExLjc3OCAxLjc3OCAwIDAxMTIuNTU2IDE3SDIuNzc4QTEuNzc4IDEuNzc4IDAgMDExIDE1LjIyMlY1LjQ0NGExLjc3OCAxLjc3OCAwIDAxMS43NzgtMS43NzdIOC4xMU0xMS42NjcgMUgxN20wIDB2NS4zMzNNMTcgMWwtOS43NzggOS43NzgiIHN0cm9rZT0iIzUyNTE2NiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=');
+            }
+        }
+
+
+    }
+
+    &__form {
+        max-width: 450px;
+        margin: 0 auto;
+
+        & .form-label {
+            display: block;
+            padding-bottom: 5px;
+            width: 100%;
+            color: #92919F;
+        }
+
+        & .form {
+            &__item {
+                margin-bottom: 10px;
+
+                @media screen and (min-width: $w760) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            & .btn {
+                width: 100%;
+            }
+        }
+
+
+    }
+}
+
+.form-phone {
+    width: 100%;
+
+    & input {
+        width: 100% !important;
+    }
+}
