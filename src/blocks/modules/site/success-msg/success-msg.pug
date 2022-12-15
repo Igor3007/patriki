@@ -1,6 +1,7 @@
 mixin success-msg(data)
     .success-msg 
         .success-msg__wrp
-            .success-msg__icon: +icons('#ic_ok-large', 50)
+            .success-msg__icon
+                +bgimage('/img/common/logo-white.png')
             .success-msg__title= data.title
             .success-msg__msg= data.desc

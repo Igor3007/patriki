@@ -567,6 +567,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 this.modal.querySelector('[type="submit"]').classList.add('btn-loading')
 
+                var total = 0;
+
+                formData.forEach(item => {
+                    if (!isNaN(item)) total += Number(item)
+                })
+
+                if (document.querySelector('[data-modal-grade="open"]')) {
+                    document.querySelector('[data-modal-grade="open"]').innerHTML = 'Ваша оцкенка ' + ((total / 9) / 10).toFixed(1)
+                }
+
                 setTimeout(() => {
 
                     if (this.modal.querySelector('.success-msg')) {

@@ -19,5 +19,12 @@
 
     &__icon {
         padding-bottom: 20px;
+
+        & .bgimage {
+            width: 150px;
+            height: 100px;
+            @include bgimage-contain;
+        }
+
     }
 }
