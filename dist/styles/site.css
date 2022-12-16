@@ -9897,6 +9897,7 @@ li.button-play {
 
 .main-advice__slider {
   width: 100%;
+  margin-right: -1px;
 }
 
 .main-advice__item picture {
