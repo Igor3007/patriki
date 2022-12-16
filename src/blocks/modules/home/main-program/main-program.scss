@@ -9,7 +9,11 @@
 .main-program {
 
     &__head {
-        padding-bottom: 15px;
+        padding-bottom: 45px;
+
+        @media screen and (min-width: $w992) {
+            padding-bottom: 15px;
+        }
 
         & .container {
             @media screen and (min-width: $w992) {
@@ -32,7 +36,7 @@
 
         @media screen and (max-height: $w760) {
             font-size: 36px;
-            padding-bottom: 0;
+            padding-bottom: 20px;
         }
     }
 
@@ -73,6 +77,12 @@
     }
 
     &__slider {
+
+
+
+        @media screen and (min-width: 1930px) {
+            max-width: 1440px;
+        }
 
 
         margin: 0 auto;

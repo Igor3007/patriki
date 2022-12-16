@@ -976,13 +976,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             breakpoints: {
                 767: {
-                    perPage: 1,
-                    padding: '0%'
+                    perPage: 2,
+                    padding: '0%',
+                    gap: -10,
+                    flickMaxPages: 1,
                 },
 
                 992: {
-                    perPage: 1.5,
-                    padding: '0%'
+                    perPage: 3,
+                    padding: '0%',
+                    gap: 0
                 },
             }
         });

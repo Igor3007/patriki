@@ -9485,7 +9485,7 @@ li.button-play {
 }
 
 .main-program__head {
-  padding-bottom: 15px;
+  padding-bottom: 45px;
 }
 
 .main-program__title {
@@ -12129,7 +12129,6 @@ li.button-play {
 
   .card-rating__grade {
     order: unset;
-    max-width: 520px;
     flex-grow: 1;
   }
 
@@ -12193,6 +12192,10 @@ li.button-play {
   .page-default::after {
     width: 80px;
     height: 80px;
+  }
+
+  .main-program__head {
+    padding-bottom: 15px;
   }
 
   .main-program__head .container {
@@ -12518,7 +12521,7 @@ li.button-play {
 
   .main-banner__small {
     display: block;
-    width: 24%;
+    width: 23%;
     margin: 0 10px;
   }
 
@@ -12539,7 +12542,7 @@ li.button-play {
   }
 
   .main-banner__large {
-    width: 76%;
+    width: 77%;
     margin: 0 10px;
   }
 
@@ -12645,7 +12648,7 @@ li.button-play {
 
 @media screen and (min-width: 1200px) and (max-height: 767px) {
   .main-banner__slider .splide__slide picture {
-    padding-top: 50%;
+    padding-top: 56%;
   }
 }
 
@@ -13346,6 +13349,12 @@ li.button-play {
   }
 }
 
+@media screen and (min-width: 1930px) {
+  .main-program__slider {
+    max-width: 1440px;
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
     height: calc(100vh - 138px) !important;
@@ -13382,6 +13391,12 @@ li.button-play {
     width: 26px;
     height: 26px;
     max-width: 26px;
+  }
+}
+
+@media screen and (max-height: 760px) and (max-width: 1200px) {
+  .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
+    height: calc(100vh - 138px) !important;
   }
 }
 
@@ -13560,6 +13575,12 @@ li.button-play {
   }
 }
 
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
+    height: calc(100vh - 80px) !important;
+  }
+}
+
 @media screen and (min-width: 992px) and (max-width: 1375.98px) {
   .footer__social {
     display: flex;
@@ -13660,16 +13681,24 @@ li.button-play {
   }
 }
 
-@media screen and (max-height: 760px) {
-  .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
-    height: calc(100vh - 138px) !important;
+@media screen and (max-height: 860px) {
+  .main-banner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-height: 670px) {
+  .main-banner {
+    max-width: 1100px;
+    margin: 0 auto;
   }
 }
 
 @media screen and (max-height: 767px) {
   .main-program__title {
     font-size: 36px;
-    padding-bottom: 0;
+    padding-bottom: 20px;
   }
 
   .main-events__title {
@@ -13679,7 +13708,7 @@ li.button-play {
 
   .main-partners__title {
     font-size: 36px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
   }
 
   .main-advice__title {

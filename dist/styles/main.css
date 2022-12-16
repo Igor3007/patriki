@@ -10323,6 +10323,12 @@ div[data-lang]:not(.active) {
   }
 }
 
+@media screen and (max-height: 760px) and (max-width: 1200px) {
+  .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
+    height: calc(100vh - 138px) !important;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .moderator-aside__nav ul li:last-child {
     padding-top: 30px;
@@ -10474,6 +10480,12 @@ div[data-lang]:not(.active) {
   }
 }
 
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
+    height: calc(100vh - 80px) !important;
+  }
+}
+
 @media screen and (min-width: 992px) and (max-width: 1375.98px) {
   .footer__social {
     display: flex;
@@ -10542,12 +10554,6 @@ div[data-lang]:not(.active) {
 
   .splide.is-focus-in .splide__track > .splide__list > .splide__slide:focus {
     border-color: #0bf;
-  }
-}
-
-@media screen and (max-height: 760px) {
-  .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
-    height: calc(100vh - 138px) !important;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */

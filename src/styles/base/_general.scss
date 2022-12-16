@@ -694,7 +694,15 @@ a.link-primary {
     }
 }
 
-@media screen and (max-height: 760px) {
+
+
+@media screen and (min-width: $w992) and (max-width: $w1200) {
+    .splide.is-initialized.splide-mobile-disabled-992>.splide__track {
+        height: calc(100vh - 80px) !important;
+    }
+}
+
+@media screen and (max-height: 760px) and (max-width: $w1200) {
     .splide.is-initialized.splide-mobile-disabled-992>.splide__track {
         height: calc(100vh - 138px) !important;
     }
