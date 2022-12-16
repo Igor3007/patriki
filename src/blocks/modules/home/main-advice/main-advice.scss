@@ -112,6 +112,10 @@
 
         & picture {
             @include picture(155%, cover);
+
+            @media screen and (max-height: $w760) {
+                padding-top: 136%;
+            }
         }
     }
 }
