@@ -12628,7 +12628,7 @@ li.button-play {
   .card-advice__text {
     letter-spacing: normal;
     display: -webkit-box;
-    -webkit-line-clamp: 15;
+    -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -13239,8 +13239,15 @@ li.button-play {
   }
 
   .main-advice__slider {
-    max-width: 90%;
     margin: 0 auto;
+  }
+
+  .card-advice__text {
+    letter-spacing: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .about-main__desc {

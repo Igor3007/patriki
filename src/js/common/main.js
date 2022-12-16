@@ -964,12 +964,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
             type: 'loop',
             perPage: 5,
             focus: 'center',
-            //autoplay: true,
-            //interval: 8000,
             flickMaxPages: 3,
             updateOnMove: true,
             pagination: false,
-            //padding: '20',
             throttle: 300,
             gap: 10,
             start: 0,
@@ -1013,10 +1010,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
         })
-
-
-
-
 
         sliderProgram.mount();
 
@@ -1340,12 +1333,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
         const countSlide = document.querySelectorAll('[data-slider="main-advice"] .card-advice');
 
         var sliderMainAdvice = new Splide('[data-slider="main-advice"]', {
-            perPage: (countSlide.length < 5 ? countSlide.length : 4),
+            perPage: (countSlide.length < 6 ? countSlide.length : 5),
             pagination: false,
             arrows: false,
             gap: 0,
 
             breakpoints: {
+
+                1200: {
+                    perPage: 4,
+                },
 
                 992: {
                     perPage: 3,
@@ -1355,6 +1352,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     perPage: 1,
                     gap: 15,
                 },
+
             },
         });
 
@@ -1363,7 +1361,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         if (document.querySelector('.main-advice__nav')) {
 
-            if (countSlide.length < 5 && document.body.clientWidth > 992) {
+            if (countSlide.length < 6 && document.body.clientWidth > 1200) {
                 document.querySelector('.main-advice__nav').style.display = 'none';
             } else {
                 document.querySelector('.main-advice__nav').style.display = 'flex';
