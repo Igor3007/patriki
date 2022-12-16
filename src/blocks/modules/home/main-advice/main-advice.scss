@@ -76,7 +76,6 @@
         width: 100%;
 
         @media screen and (min-width: $w1440) {
-            max-width: 90%;
             margin: 0 auto;
         }
 
@@ -184,8 +183,12 @@
         overflow: hidden;
         @include line-clamp(15);
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: $w1440) {
             @include line-clamp(15);
+        }
+
+        @media screen and (min-width: $w1200) {
+            @include line-clamp(10);
         }
 
         @media screen and (min-width: $w760) {
