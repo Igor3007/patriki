@@ -1,381 +1,440 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PFF</title>
-    <meta name="theme-color" content="#fff">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="#{title}">
-    <meta name="keywords" content="#{title}">
-    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
-    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
-    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
-    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
-    <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
-    <style>@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PFF</title>
+  <meta name="theme-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="#{title}">
+  <meta name="keywords" content="#{title}">
+  <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+  <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+  <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-900.woff2" as="font" crossorigin>
+  <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-700.woff2" as="font" crossorigin>
+  <link rel="preload" href="/fonts/museo/subset-MuseoSansCyrl-300.woff2" as="font" crossorigin>
+  <link rel="prefetch" href="/img/sprites/sprite.svg" as="image" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-300.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-300.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-500.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-500.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
 
-@font-face {
-    font-family: 'Museo Sans Cyrl';
-    src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-    </style>
-    <link rel="stylesheet" href="styles/site.css?v=1.0">
-  </head>
-  <body class="perf-no-animation">
-    <header> 
-      <div class="banner-header-mobile">
-        <picture><img src="/img/common/banner-header.jpg"></picture>
-      </div>
-      <div class="container">
-        <div class="bn-header">
-          <div class="bn-header__logo"><a href="/"><span class="bgimage lazyload" data-bg="/img/common/logo2.png"></span></a></div>
-          <div class="bn-header__nav">
-            <div class="bn-header__nav-container" data-menu="container">
-              <div class="bn-header__nav-banner">
-                <div class="banner-header">
-                  <picture><img src="/img/common/banner-header.jpg"></picture>
-                </div>
-              </div>
-              <div class="bn-header__nav-menu">
-                <nav>
-                  <ul>
-                    <li><a href="about.html">О фестивале</a></li>
-                    <li><a href="programs.html">Программы</a></li>
-                    <li><a href="hall.html">Кинозал</a></li>
-                    <li><a href="participant.html">участникам</a></li>
-                    <li><a href="events.html">События</a></li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="bn-header__nav-lang">
-                <div class="bn-header-lang">
-                  <div class="bn-header-lang__title">Язык сайта</div>
-                  <div class="bn-header-lang__toggle">
-                    <ul>
-                      <li><a href="#">ENGLISH</a></li>
-                      <li><a class="active" href="#">РУССКИЙ</a></li>
-                    </ul>
-                  </div>
-                </div>
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-700.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-700.woff") format("woff");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Museo Sans Cyrl';
+      src: url("/fonts/museo/subset-MuseoSansCyrl-900.woff2") format("woff2"), url("/fonts/museo/subset-MuseoSansCyrl-900.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="styles/site.css?v=1.0">
+</head>
+
+<body class="perf-no-animation">
+  <header>
+    <div class="banner-header-mobile">
+      <picture><img src="/img/common/banner-header.jpg"></picture>
+    </div>
+    <div class="container">
+      <div class="bn-header">
+        <div class="bn-header__logo"><a href="/"><span class="bgimage lazyload"
+              data-bg="/img/common/logo2.png"></span></a></div>
+        <div class="bn-header__nav">
+          <div class="bn-header__nav-container" data-menu="container">
+            <div class="bn-header__nav-banner">
+              <div class="banner-header">
+                <picture><img src="/img/common/banner-header.jpg"></picture>
               </div>
             </div>
-            <div class="bn-header__nav-btn">
-              <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
-            </div>
-          </div>
-          <div class="bn-header__pa">
-            <div class="bn-header__pa-container">
-              <div class="bn-header-info">
-                <div class="bn-header-info__lang">
-                  <select>
-                    <option val="ru">Русский</option>
-                    <option val="en">English</option>
-                  </select>
-                </div>
-              </div>
-              <div class="bn-header__social">
+            <div class="bn-header__nav-menu">
+              <nav>
                 <ul>
-                  <li><a href="#">
-                      <svg width="25" height="25">
-                        <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
-                      </svg></a></li>
-                  <li><a href="#">
-                      <svg width="25" height="25">
-                        <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
-                      </svg></a></li>
+                  <li><a href="about.html">О фестивале</a></li>
+                  <li><a href="programs.html">Программы</a></li>
+                  <li><a href="hall.html">Кинозал</a></li>
+                  <li><a href="participant.html">участникам</a></li>
+                  <li><a href="events.html">События</a></li>
                 </ul>
+              </nav>
+            </div>
+            <div class="bn-header__nav-lang">
+              <div class="bn-header-lang">
+                <div class="bn-header-lang__title">Язык сайта</div>
+                <div class="bn-header-lang__toggle">
+                  <ul>
+                    <li><a href="#">ENGLISH</a></li>
+                    <li><a class="active" href="#">РУССКИЙ</a></li>
+                  </ul>
+                </div>
               </div>
-              <div class="bn-header__login"><a href="/moderator-profile.html">Личный кабинет</a></div>
             </div>
-            <div class="bn-header__pa-btn">
-              <div class="user-login-mobile" title="Анастасия" data-user-menu="open" data-link="/user-orders.html"><span class="bgimage lazyload" data-bg="/img/common/user-wooman.jpg"><span class="total-messages">3</span></span></div>
+          </div>
+          <div class="bn-header__nav-btn">
+            <div class="btn-burger" data-menu="btn"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="bn-header__pa">
+          <div class="bn-header__pa-container">
+            <div class="bn-header-info">
+              <div class="bn-header-info__lang">
+                <select>
+                  <option val="ru">Русский</option>
+                  <option val="en">English</option>
+                </select>
+              </div>
             </div>
+            <div class="bn-header__social">
+              <ul>
+                <li><a href="#">
+                    <svg width="25" height="25">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                    </svg></a></li>
+                <li><a href="#">
+                    <svg width="25" height="25">
+                      <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+            <div class="bn-header__login"><a href="/moderator-profile.html">Личный кабинет</a></div>
+          </div>
+          <div class="bn-header__pa-btn">
+            <div class="user-login-mobile" title="Анастасия" data-user-menu="open" data-link="/user-orders.html"><span
+                class="bgimage lazyload" data-bg="/img/common/user-wooman.jpg"><span
+                  class="total-messages">3</span></span></div>
           </div>
         </div>
       </div>
-      <div class="logo-preloader">
-        <div class="container">
-          <div class="logo-preloader__wrp"><span class="preloader-text" style="background-image: url(/img/common/preloader-text.svg)"></span><span class="preloader-image" style="background-image: url(/img/common/preloader-image.png)"></span></div>
-        </div>
-      </div>
-    </header>
-    <main> 
+    </div>
+    <div class="logo-preloader">
       <div class="container">
-              <section class="section-page-member">
-                <div class="page-member">
-                  <div class="page-member__breadcrumbs">
-                          <div class="breadcrumb">
-                            <ul>
-                              <li><a href="/">Главная</a></li>
-                              <li><a href="#">Регламент</a></li>
-                            </ul>
-                          </div>
-                  </div>
-                  <div class="page-member__title">
-                    <h1>Заявка на участие в фестивале</h1>
-                  </div>
-                  <div class="page-member__reg"><span data-regulations="open">Регламент кинофестиваля</span></div>
-                  <div class="page-member__desc">Отправьте свои данные. Мы свяжемся с вами сразу после рассмотрения заявки.</div>
-                  <div class="page-member__form">
-                    <form action="#" method="POST">
-                      <div class="form">
-                        <div class="form__item">
-                          <div class="form__subitem"><span class="form-label">ФИО *</span>
-                            <input type="text" required="required" placeholder="Введите имя полностью">
-                          </div>
-                        </div>
-                        <div class="form__item">
-                          <div class="form__subitem"><span class="form-label">Электронная почта *</span>
-                            <input type="email" required="required" placeholder="Например, ivanov@yandex.ru">
-                          </div>
-                        </div>
-                        <div class="form__item">
-                          <div class="form__subitem">
-                            <div class="form-phone" data-number-repeat="container"><span class="form-label">Телефон *</span>
-                              <input type="tel" required="required" placeholder="Введите номер телефона">
-                            </div>
-                            <div class="add-phone" data-number-repeat="add">+ Добавить телефон</div>
-                          </div>
-                        </div>
-                        <div class="form__item">
-                          <div class="form__subitem"><span class="form-label">Организация *</span>
-                            <input type="text" required="required" placeholder="Введите название организации">
-                          </div>
-                        </div>
-                        <div class="form__item">
-                          <div class="form__subitem"><span class="form-label">Дополнительная информация *</span>
-                            <textarea placeholder="Введите текст комментария или вопроса"></textarea>
-                          </div>
-                        </div>
-                        <div class="form__item">
-                          <div class="form__subitem">
-                            <label class="checkbox">
-                              <input type="checkbox" name="undefined"/><span class="checkbox__elem"></span><span class="checkbox__text">Нажимая кнопку, вы соглашаетесь на обработку <a target="_blank" href="/policy.html" >персональных данных</a> </span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="form__item">
-                          <div class="form__subitem">
-                            <button class="btn" type="submit">Отправить</button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
+        <div class="logo-preloader__wrp"><span class="preloader-text"
+            style="background-image: url(/img/common/preloader-text.svg)"></span><span class="preloader-image"
+            style="background-image: url(/img/common/preloader-image.png)"></span></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <section class="section-page-member">
+        <div class="page-member">
+          <div class="page-member__breadcrumbs">
+            <div class="breadcrumb">
+              <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="#">Регламент</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="page-member__title">
+            <h1>Заявка на участие в фестивале</h1>
+          </div>
+          <div class="page-member__reg"><span data-regulations="open">Регламент кинофестиваля</span></div>
+          <div class="page-member__desc">Отправьте свои данные. Мы свяжемся с вами сразу после рассмотрения заявки.
+          </div>
+          <div class="page-member__form">
+            <form action="#" method="POST">
+              <div class="form">
+                <div class="form__item">
+                  <div class="form__subitem"><span class="form-label">ФИО *</span>
+                    <input type="text" required="required" placeholder="Введите имя полностью">
                   </div>
                 </div>
-              </section>
-        <div class="participant formated-text" style="display: none" id="participant">
-          <h3>Положение о проведении 4-го кинофестиваля «Patriki Film Festival».</h3>
-          <h4>Статья 1 </h4>
-          <p>Ежегодный международный открытый кинофестиваль «Patriki Film Festival», (далее – «Фестиваль») является смотром-конкурсом фильмов, получивших экспертную оценку членов отборочной комиссии.</p>
-          <h4>Статья 2</h4>
-          <p>Задача Фестиваля — презентация новых кинопроектов, поддержка творческих поисков кинематографистов, объединение профессионалов и любителей кино, презентация кинопроектов, премьеры фильмов со всего мира.</p>
-          <h4>Статья 3</h4>
-          <p>4-ый международный открытый кинофестиваль «Patriki Film Festival» проходит в Москве с 20 декабря 2021 года по 22 августа 2022 года.</p>
-          <h4>Статья 4</h4><strong>Программа фестиваля включает: </strong>
-          <ul>
-            <li>Основной конкурс; </li>
-            <li>Онлайн показы; </li>
-            <li> Внеконкурсный показ; </li>
-            <li>Ретроспективный показ; </li>
-            <li>
-              Мастер-классы, пресс-конференции, спецпоказы, конференции, презентации проектов;
-              Культурно-развлекательная программа
-            </li>
-            <li>
-              (Решение о проведении культурной программы фестиваля будет
-              зависеть от текущей эпидемиологической обстановки на момент проведения фестиваля)
-            </li>
-          </ul>
-          <h4>Статья 5</h4>
-          <p>
-            Отбор фильмов для участия в Фестивале осуществляет отборочная комиссия.
-            Прием фильмов для рассмотрения отборочной комиссией осуществляется через сайт https://patrikifilmfestival.ru.
-            Продлили крайний срок подачи заявок на фестиваль до 30 апреля 2022 года.
-            В программах фестиваля могут участвовать только фильмы, ранее не демонстрировавшиеся публично.
-            Программу работы Фестиваля и порядок демонстрации фильмов определяет Дирекция Фестиваля. Каждый фильм может быть показан в течение фестиваля не более пяти раз, включая показы для прессы.
-          </p>
-          <h4>Статья 6</h4>
-          <p>
-            В конкурсных программах отдается предпочтение мировым и международным премьерам.
-            В Основном конкурсе принимают участие не менее 7 фильмов.
-            Для участия в основной конкурсной программе Фестиваля принимаются художественные полнометражные фильмы продолжительностью не менее 60 (шестидесяти) минут, не транслировавшиеся по телевидению, не выходившие в кинотеатральный, DVD и VoD-прокат, не размещенные в свободном доступе в сети Интернет, не размещенных в онлайн-кинотеатрах и на онлайн-платформах, и не имевших публичных показов. В случае отбора цифровые копии фильма предоставляются в сроки, указанные в регистрационной форме, только в формате Digital Cinema Package (DCP).
-          </p>
-          <p>
-            Демонстрационные копии фильмов, участвующих в Конкурсах фестиваля, должны быть на языке оригинала с английскими субтитрами, в случае если оригинальный язык не английский.
-            Копии фильмов, участвующих в Конкурсах фестиваля, должны быть переданы Дирекции Фестиваля не позднее 30 апреля 2022 г. Фильмы, присланные после указанных сроков, не рассматриваются.
-          </p>
-          <p>
-            Статья 7
-            Окончательное решение о включении фильма в конкурсную программу Фестиваля принимает Отборочная комиссия, которая оставляет за собой право не объяснять причину отказа и не давать комментариев.
-          </p>
-          <h4>Статья 8 </h4>
-          <p>
-            Картины, участвующие во внеконкурсной программе, не должны быть ранее демонстрированы на территории Российской Федерации.
-            В Ретроспективных программах фильмы демонстрируются в формате 35 мм или в формате DCP. Для внеконкурсных программ предпочтительным форматом является DCP на языке оригинала с английскими субтитрами, в случае если оригинальный язык не английский.
-            Носители должны быть переданы Дирекции Фестиваля  не позднее 30 апреля 2022 г.
-          </p>
-          <h4>Статья 9 </h4>
-          <p>Все условия и сроки являются обязательными к исполнению, в ином случае Дирекция Фестиваля оставляет за собой право исключить фильм из программы кинофестиваля.</p>
-          <h4>Статья 10</h4>
-          <p>В рамках проведения Фестиваля фильмы конкурсной или любой другой программы могут быть показаны не более 3 (трех) раз без письменного разрешения продюсера фильма или его полномочного представителя</p>
-          <h3>Документация</h3>
-          <h4>Статья 11</h4><strong>В случае принятия решения о включении фильма в программу Фестиваля, путем получения официального приглашения, и  подтверждения участия, в адрес Дирекции необходимо направить документацию, информационные и промо-материалы в соответствии с регистрационной формой участника Фестиваля в сроки, определенные Дирекцией Фестиваля.</strong><strong>Одновременно с сообщением об участии в адрес Дирекции Фестиваля должны быть направлены следующие документы:</strong>
-          <ul>
-            <li>регистрационная форма, заверенная подписью и печатью с указанием наличия или отсутствия в фильме кадров/сцен употребления алкоголя и табака, сцен насилия, сцен содержания допустимой ненормативной лексики (употребление нецензурной брани), заполненная в соответствии с данными удостоверения национального фильма (УНФ) и прокатного удостоверения (ПУ), выданных уполномоченным органом и действительными на момент проведения Фестиваля.</li>
-            <li>    удостоверение национального фильма (УНФ)</li>
-            <li>копия прокатного удостоверения (ПУ)</li>
-            <li>заверенный подписью и печатью Договор о передаче прав на публичное исполнение (показ) аудиовизуального произведения с правообладателем указанным в удостоверении национального фильма (УНФ) или прокатном удостоверении (ПУ), выданными уполномоченным органом и действительными на момент проведения Фестиваля;</li>
-            <li>Полный текст фильма в оригинале и на одном из следующих языков: русском, английском;</li>
-            <li>Субтитровый лист на английском языке, онлайн просмотровка/DVD с английскими субтитрами;</li>
-            <li>материалы для каталога (синопсис, биография и фильмография режиссера, фотография режиссера, фотографии или стоп-кадры из фильма (изображения главных героев фильма) — желательно крупные планы, рекламные материалы, пресс-материалы, Материалы для каталога (сведения о создателях фильма, фотографии).</li>
-            <li> трейлер для использования в рекламных, имиджевых, презентационных целях; </li>
-            <li>нарезка фильма для использования в Торжественных Церемониях Открытия и Закрытия Фестиваля (без наличия сцен употребления алкоголя, табака, наркотиков и не содержащих любовных сцен, и сцен насилия в соответствии с возрастным ограничением 0+</li>
-            <li>плакаты фильма (основной имидж) — только формат А1 (не возвращаются);</li>
-            <li>материалы для сайта Фестиваля (пресс-релиз, фотографии/стоп-кадры из фильма (изображение главных героев фильма — крупные планы.</li>
-          </ul>
-          <h4>Статья 12</h4>
-          <p>Копии фильмов, отобранных для конкурсной и официальных программ Фестиваля, не должны содержать никаких рекламных материалов, прикрепленных к фильму. В случае их наличия — Дирекция Фестиваля оставляет за собой право не осуществлять показ фильма и потребовать другую копию.</p>
-          <h4>Транспортировка и страхование фильмокопий</h4>
-          <h3>Статья 13</h3>
-          <p>Дирекция осуществляет транспортировку копий к месту показа и обратно. Копии фильмов забираются из Дирекции Фестиваля не позднее указанного числа.</p>
-          <h3>Гости</h3>
-          <h4>Статья 13</h4>
-          <p>
-            Вопросы о приглашении гостей, сроках и условиях их пребывания и аккредитации на фестивале решает Дирекция Фестиваля.
-            Заявки на аккредитацию должны быть переданы Дирекции Фестиваля не позднее март 2022 г.
-          </p>
-          <h3>Жюри</h3>
-          <h4>Статья 14</h4>
-          <p>
-            Для оценки конкурсных фильмов создаются Международное жюри Основного конкурса. Режиссер Даррен Аронофски возглавит жюри кинофестиваля «Patriki Film Festival».
-            Фильмы конкурсной программы оценивает основное Жюри, состоящее из ведущих мастеров культуры и кино.
-          </p>
-          <p>В состав Жюри не могут входить лица, участвующие в создании или коммерческом прокате конкурсных картин. Жюри не имеет права не присуждать приз по какой-либо из номинаций или делить призы внутри номинаций. Все члены Жюри обязуются воздерживаться от публичных высказываний по поводу конкурсных картин до оглашения результатов на Торжественном Закрытии Фестиваля.</p>
-          <h3>Призы</h3>
-          <h4>Статья 15</h4><strong> Международное жюри Основного конкурса присуждает следующие призы статуэтки</strong>
-          <ul>
-            <li>Главный приз - за лучший фильм (вручается режиссеру  фильма);</li>
-            <li>Специальный приз жюри - (вручается в соответствии с решением жюри);</li>
-            <li>Приз за инновационность.</li>
-          </ul><strong>На фестивале также учреждены следующие призы: </strong>
-          <ul>
-            <li>Приз «Independent Media» за лучший фильм Основного конкурса (вручается режиссеру фильма);</li>
-            <li>Приз зрительских симпатий лучшему фильму Основного конкурса в соответствии с результатами опроса зрителей (вручается режиссеру фильма);</li>
-            <li> Предполагается личное участие призеров в церемониях награждения.</li>
-          </ul>
-          <h3>Заключительные положения</h3>
-          <h4>Статья 16</h4>
-          <p>Участие в фестивале предусматривает соблюдение всех пунктов настоящего Положения.</p>
-          <h4>Статья 17</h4>
-          <p>
-            На кинофестивале будут соблюдены все рекомендованные меры безопасности. В этом году в связи с определенными ограничениями и правилами проведения кинопоказов и других мероприятий.
-            Все гости и участники обязаны соблюдать на кинофестивале санитарно-эпидемиологические рекомендации Роспотребнадзора и обеспечить себя всеми необходимыми средствами защиты самостоятельно.
-            Фестиваль не несет ответственности за здоровье приглашенных гостей и участников.
-          </p>
-          <h4>Статья 18</h4><strong>Контакты</strong><br><a href="http://www.patrikifilmfestival.ru">www.patrikifilmfestival.ru</a><br><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div class="container">
-        <div class="footer-min footer-min--site">
-          <div class="footer-min__logo">
-            <div class="footer-min__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo2.png"></span>
-            </div>
-            <div class="footer-min__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы</div>
-          </div>
-          <div class="footer-min__nav"> 
-            <nav>
-              <ul>
-                <li><a href="about.html">О фестивале</a></li>
-                <li><a href="programs.html">Программы</a></li>
-              </ul>
-              <ul>
-                <li><a href="hall.html">Кинозал</a></li>
-                <li><a href="participant.html">участникам</a></li>
-              </ul>
-              <ul>
-                <li><a href="events.html">События</a></li>
-                <li><a href="login.html">Личный кабинет</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer-min__social">
-            <ul>
-              <li><a href="#">
-                  <svg width="25" height="25">
-                    <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
-                  </svg><span>vkontakte</span></a></li>
-              <li><a href="#">
-                  <svg width="25" height="25">
-                    <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
-                  </svg><span>Telegram</span></a></li>
-            </ul>
-          </div>
-          <div class="footer-min__contact">
-            <ul>
-              <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
-              <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
-              <li><a href="policy.html">Политика конфиденциальности</a></li>
-            </ul>
+                <div class="form__item">
+                  <div class="form__subitem"><span class="form-label">Электронная почта *</span>
+                    <input type="email" required="required" placeholder="Например, ivanov@yandex.ru">
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="form__subitem">
+                    <div class="form-phone" data-number-repeat="container"><span class="form-label">Телефон *</span>
+                      <input type="tel" required="required" placeholder="Введите номер телефона">
+                    </div>
+                    <div class="add-phone" data-number-repeat="add">+ Добавить телефон</div>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="form__subitem"><span class="form-label">Организация *</span>
+                    <input type="text" required="required" placeholder="Введите название организации">
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="form__subitem"><span class="form-label">Дополнительная информация *</span>
+                    <textarea placeholder="Введите текст комментария или вопроса"></textarea>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="form__subitem">
+                    <label class="checkbox">
+                      <input type="checkbox" checked="checked" name="undefined" /><span
+                        class="checkbox__elem"></span><span class="checkbox__text">Нажимая кнопку, вы соглашаетесь на
+                        обработку <a target="_blank" href="/policy.html">персональных данных</a> </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form__item">
+                  <div class="form__subitem">
+                    <button class="btn" type="submit">Отправить</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
+      </section>
+      <div class="participant formated-text" style="display: none" id="participant">
+        <h3>Положение о проведении 4-го кинофестиваля «Patriki Film Festival».</h3>
+        <h4>Статья 1 </h4>
+        <p>Ежегодный международный открытый кинофестиваль «Patriki Film Festival», (далее – «Фестиваль») является
+          смотром-конкурсом фильмов, получивших экспертную оценку членов отборочной комиссии.</p>
+        <h4>Статья 2</h4>
+        <p>Задача Фестиваля — презентация новых кинопроектов, поддержка творческих поисков кинематографистов,
+          объединение профессионалов и любителей кино, презентация кинопроектов, премьеры фильмов со всего мира.</p>
+        <h4>Статья 3</h4>
+        <p>4-ый международный открытый кинофестиваль «Patriki Film Festival» проходит в Москве с 20 декабря 2021 года по
+          22 августа 2022 года.</p>
+        <h4>Статья 4</h4><strong>Программа фестиваля включает: </strong>
+        <ul>
+          <li>Основной конкурс; </li>
+          <li>Онлайн показы; </li>
+          <li> Внеконкурсный показ; </li>
+          <li>Ретроспективный показ; </li>
+          <li>
+            Мастер-классы, пресс-конференции, спецпоказы, конференции, презентации проектов;
+            Культурно-развлекательная программа
+          </li>
+          <li>
+            (Решение о проведении культурной программы фестиваля будет
+            зависеть от текущей эпидемиологической обстановки на момент проведения фестиваля)
+          </li>
+        </ul>
+        <h4>Статья 5</h4>
+        <p>
+          Отбор фильмов для участия в Фестивале осуществляет отборочная комиссия.
+          Прием фильмов для рассмотрения отборочной комиссией осуществляется через сайт https://patrikifilmfestival.ru.
+          Продлили крайний срок подачи заявок на фестиваль до 30 апреля 2022 года.
+          В программах фестиваля могут участвовать только фильмы, ранее не демонстрировавшиеся публично.
+          Программу работы Фестиваля и порядок демонстрации фильмов определяет Дирекция Фестиваля. Каждый фильм может
+          быть показан в течение фестиваля не более пяти раз, включая показы для прессы.
+        </p>
+        <h4>Статья 6</h4>
+        <p>
+          В конкурсных программах отдается предпочтение мировым и международным премьерам.
+          В Основном конкурсе принимают участие не менее 7 фильмов.
+          Для участия в основной конкурсной программе Фестиваля принимаются художественные полнометражные фильмы
+          продолжительностью не менее 60 (шестидесяти) минут, не транслировавшиеся по телевидению, не выходившие в
+          кинотеатральный, DVD и VoD-прокат, не размещенные в свободном доступе в сети Интернет, не размещенных в
+          онлайн-кинотеатрах и на онлайн-платформах, и не имевших публичных показов. В случае отбора цифровые копии
+          фильма предоставляются в сроки, указанные в регистрационной форме, только в формате Digital Cinema Package
+          (DCP).
+        </p>
+        <p>
+          Демонстрационные копии фильмов, участвующих в Конкурсах фестиваля, должны быть на языке оригинала с
+          английскими субтитрами, в случае если оригинальный язык не английский.
+          Копии фильмов, участвующих в Конкурсах фестиваля, должны быть переданы Дирекции Фестиваля не позднее 30 апреля
+          2022 г. Фильмы, присланные после указанных сроков, не рассматриваются.
+        </p>
+        <p>
+          Статья 7
+          Окончательное решение о включении фильма в конкурсную программу Фестиваля принимает Отборочная комиссия,
+          которая оставляет за собой право не объяснять причину отказа и не давать комментариев.
+        </p>
+        <h4>Статья 8 </h4>
+        <p>
+          Картины, участвующие во внеконкурсной программе, не должны быть ранее демонстрированы на территории Российской
+          Федерации.
+          В Ретроспективных программах фильмы демонстрируются в формате 35 мм или в формате DCP. Для внеконкурсных
+          программ предпочтительным форматом является DCP на языке оригинала с английскими субтитрами, в случае если
+          оригинальный язык не английский.
+          Носители должны быть переданы Дирекции Фестиваля не позднее 30 апреля 2022 г.
+        </p>
+        <h4>Статья 9 </h4>
+        <p>Все условия и сроки являются обязательными к исполнению, в ином случае Дирекция Фестиваля оставляет за собой
+          право исключить фильм из программы кинофестиваля.</p>
+        <h4>Статья 10</h4>
+        <p>В рамках проведения Фестиваля фильмы конкурсной или любой другой программы могут быть показаны не более 3
+          (трех) раз без письменного разрешения продюсера фильма или его полномочного представителя</p>
+        <h3>Документация</h3>
+        <h4>Статья 11</h4><strong>В случае принятия решения о включении фильма в программу Фестиваля, путем получения
+          официального приглашения, и подтверждения участия, в адрес Дирекции необходимо направить документацию,
+          информационные и промо-материалы в соответствии с регистрационной формой участника Фестиваля в сроки,
+          определенные Дирекцией Фестиваля.</strong><strong>Одновременно с сообщением об участии в адрес Дирекции
+          Фестиваля должны быть направлены следующие документы:</strong>
+        <ul>
+          <li>регистрационная форма, заверенная подписью и печатью с указанием наличия или отсутствия в фильме
+            кадров/сцен употребления алкоголя и табака, сцен насилия, сцен содержания допустимой ненормативной лексики
+            (употребление нецензурной брани), заполненная в соответствии с данными удостоверения национального фильма
+            (УНФ) и прокатного удостоверения (ПУ), выданных уполномоченным органом и действительными на момент
+            проведения Фестиваля.</li>
+          <li> удостоверение национального фильма (УНФ)</li>
+          <li>копия прокатного удостоверения (ПУ)</li>
+          <li>заверенный подписью и печатью Договор о передаче прав на публичное исполнение (показ) аудиовизуального
+            произведения с правообладателем указанным в удостоверении национального фильма (УНФ) или прокатном
+            удостоверении (ПУ), выданными уполномоченным органом и действительными на момент проведения Фестиваля;</li>
+          <li>Полный текст фильма в оригинале и на одном из следующих языков: русском, английском;</li>
+          <li>Субтитровый лист на английском языке, онлайн просмотровка/DVD с английскими субтитрами;</li>
+          <li>материалы для каталога (синопсис, биография и фильмография режиссера, фотография режиссера, фотографии или
+            стоп-кадры из фильма (изображения главных героев фильма) — желательно крупные планы, рекламные материалы,
+            пресс-материалы, Материалы для каталога (сведения о создателях фильма, фотографии).</li>
+          <li> трейлер для использования в рекламных, имиджевых, презентационных целях; </li>
+          <li>нарезка фильма для использования в Торжественных Церемониях Открытия и Закрытия Фестиваля (без наличия
+            сцен употребления алкоголя, табака, наркотиков и не содержащих любовных сцен, и сцен насилия в соответствии
+            с возрастным ограничением 0+</li>
+          <li>плакаты фильма (основной имидж) — только формат А1 (не возвращаются);</li>
+          <li>материалы для сайта Фестиваля (пресс-релиз, фотографии/стоп-кадры из фильма (изображение главных героев
+            фильма — крупные планы.</li>
+        </ul>
+        <h4>Статья 12</h4>
+        <p>Копии фильмов, отобранных для конкурсной и официальных программ Фестиваля, не должны содержать никаких
+          рекламных материалов, прикрепленных к фильму. В случае их наличия — Дирекция Фестиваля оставляет за собой
+          право не осуществлять показ фильма и потребовать другую копию.</p>
+        <h4>Транспортировка и страхование фильмокопий</h4>
+        <h3>Статья 13</h3>
+        <p>Дирекция осуществляет транспортировку копий к месту показа и обратно. Копии фильмов забираются из Дирекции
+          Фестиваля не позднее указанного числа.</p>
+        <h3>Гости</h3>
+        <h4>Статья 13</h4>
+        <p>
+          Вопросы о приглашении гостей, сроках и условиях их пребывания и аккредитации на фестивале решает Дирекция
+          Фестиваля.
+          Заявки на аккредитацию должны быть переданы Дирекции Фестиваля не позднее март 2022 г.
+        </p>
+        <h3>Жюри</h3>
+        <h4>Статья 14</h4>
+        <p>
+          Для оценки конкурсных фильмов создаются Международное жюри Основного конкурса. Режиссер Даррен Аронофски
+          возглавит жюри кинофестиваля «Patriki Film Festival».
+          Фильмы конкурсной программы оценивает основное Жюри, состоящее из ведущих мастеров культуры и кино.
+        </p>
+        <p>В состав Жюри не могут входить лица, участвующие в создании или коммерческом прокате конкурсных картин. Жюри
+          не имеет права не присуждать приз по какой-либо из номинаций или делить призы внутри номинаций. Все члены Жюри
+          обязуются воздерживаться от публичных высказываний по поводу конкурсных картин до оглашения результатов на
+          Торжественном Закрытии Фестиваля.</p>
+        <h3>Призы</h3>
+        <h4>Статья 15</h4><strong> Международное жюри Основного конкурса присуждает следующие призы статуэтки</strong>
+        <ul>
+          <li>Главный приз - за лучший фильм (вручается режиссеру фильма);</li>
+          <li>Специальный приз жюри - (вручается в соответствии с решением жюри);</li>
+          <li>Приз за инновационность.</li>
+        </ul><strong>На фестивале также учреждены следующие призы: </strong>
+        <ul>
+          <li>Приз «Independent Media» за лучший фильм Основного конкурса (вручается режиссеру фильма);</li>
+          <li>Приз зрительских симпатий лучшему фильму Основного конкурса в соответствии с результатами опроса зрителей
+            (вручается режиссеру фильма);</li>
+          <li> Предполагается личное участие призеров в церемониях награждения.</li>
+        </ul>
+        <h3>Заключительные положения</h3>
+        <h4>Статья 16</h4>
+        <p>Участие в фестивале предусматривает соблюдение всех пунктов настоящего Положения.</p>
+        <h4>Статья 17</h4>
+        <p>
+          На кинофестивале будут соблюдены все рекомендованные меры безопасности. В этом году в связи с определенными
+          ограничениями и правилами проведения кинопоказов и других мероприятий.
+          Все гости и участники обязаны соблюдать на кинофестивале санитарно-эпидемиологические рекомендации
+          Роспотребнадзора и обеспечить себя всеми необходимыми средствами защиты самостоятельно.
+          Фестиваль не несет ответственности за здоровье приглашенных гостей и участников.
+        </p>
+        <h4>Статья 18</h4><strong>Контакты</strong><br><a
+          href="http://www.patrikifilmfestival.ru">www.patrikifilmfestival.ru</a><br><a
+          href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a>
       </div>
-    </footer>
-    <script src="/js/vendor.js"> </script>
-    <script src="/js/main.js"> </script>
-    <script src="/js/common.js"> </script>
-  </body>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-min footer-min--site">
+        <div class="footer-min__logo">
+          <div class="footer-min__logo-img"><span class="bgimage lazyload" data-bg="/img/common/logo2.png"></span>
+          </div>
+          <div class="footer-min__logo-desc">Международный онлайн кинофестиваль, <br> интегрированный в жизнь Москвы
+          </div>
+        </div>
+        <div class="footer-min__nav">
+          <nav>
+            <ul>
+              <li><a href="about.html">О фестивале</a></li>
+              <li><a href="programs.html">Программы</a></li>
+            </ul>
+            <ul>
+              <li><a href="hall.html">Кинозал</a></li>
+              <li><a href="participant.html">участникам</a></li>
+            </ul>
+            <ul>
+              <li><a href="events.html">События</a></li>
+              <li><a href="login.html">Личный кабинет</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-min__social">
+          <ul>
+            <li><a href="#">
+                <svg width="25" height="25">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_vk"></use>
+                </svg><span>vkontakte</span></a></li>
+            <li><a href="#">
+                <svg width="25" height="25">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_tg"></use>
+                </svg><span>Telegram</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-min__contact">
+          <ul>
+            <li><a href="tel:+7 (905) 504-73-70">+7 (905) 504-73-70</a></li>
+            <li><a href="mailto:info@patrikifilmfestival.ru">info@patrikifilmfestival.ru</a></li>
+            <li><a href="policy.html">Политика конфиденциальности</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/vendor.js"> </script>
+  <script src="/js/main.js"> </script>
+  <script src="/js/common.js"> </script>
+</body>
+
 </html>
