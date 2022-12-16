@@ -978,7 +978,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 767: {
                     perPage: 2,
                     padding: '0%',
-                    gap: -10,
+                    gap: -15,
                     flickMaxPages: 1,
                 },
 
@@ -1323,8 +1323,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         document.querySelectorAll('[data-regulations="open"]').forEach(item => {
             item.addEventListener('click', e => {
-                const popup = new customModal()
-                popup.open(document.getElementById('participant').innerHTML)
+                const popup = new customModal({
+                    mobileInBottom: true
+                })
+                popup.open('<div class="popup-regulations" >' + document.getElementById('participant').outerHTML + '</div>')
             })
         })
     }
@@ -1385,6 +1387,31 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
 
         sliderMainAdvice.mount();
+
+    }
+
+    /* ===========================================
+    data-number-repeat="add"
+    ===========================================*/
+
+    if (document.querySelector('[data-number-repeat="add"]')) {
+        const button = document.querySelector('[data-number-repeat="add"]')
+        const container = document.querySelector('[data-number-repeat="container"]')
+
+        button.addEventListener('click', (e) => {
+
+            const input = container.querySelector('input').cloneNode(true)
+            input.value = '';
+
+            container.append(input)
+
+            if (container.querySelectorAll('input').length >= 3) {
+                button.remove()
+            }
+
+
+        })
+
 
     }
 

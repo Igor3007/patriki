@@ -10,7 +10,7 @@ mixin page-member
                 ])
             .page-member__title: h1 Заявка на участие в фестивале
             .page-member__reg
-                span(data-reg="open") Регламент кинофестиваля
+                span(data-regulations="open") Регламент кинофестиваля
             .page-member__desc Отправьте свои данные. Мы свяжемся с вами сразу после рассмотрения заявки.
             .page-member__form
                 form(action='#' method='POST')
@@ -18,28 +18,28 @@ mixin page-member
                       .form__item
                         .form__subitem
                             span.form-label ФИО *
-                            input(type="text" placeholder="Введите имя полностью")
+                            input(type="text" required="required" placeholder="Введите имя полностью")
                       .form__item
                         .form__subitem
                             span.form-label Электронная почта *
-                            input(type="email" placeholder="Например, ivanov@yandex.ru")
+                            input(type="email" required="required" placeholder="Например, ivanov@yandex.ru")
                       .form__item
                         .form__subitem
-                            .form-phone 
+                            .form-phone(data-number-repeat="container")
                                 span.form-label Телефон *
-                                input(type="email" placeholder="Введите номер телефона")
-                            .add-phone + Добавить телефон
+                                input(type="tel" required="required" placeholder="Введите номер телефона")
+                            .add-phone(data-number-repeat="add") + Добавить телефон
                       .form__item
                         .form__subitem
                             span.form-label Организация *
-                            input(type="email" placeholder="Введите название организации")
+                            input(type="text" required="required" placeholder="Введите название организации")
                       .form__item
                         .form__subitem
                             span.form-label Дополнительная информация *
                             textarea(placeholder="Введите текст комментария или вопроса")
                       .form__item
                         .form__subitem
-                            +checkbox('Нажимая кнопку, вы соглашаетесь на обработку персональных данных')
+                            +checkbox('Нажимая кнопку, вы соглашаетесь на обработку <a target="_blank" href="/policy.html" >персональных данных</a> ')
 
                       .form__item
                         .form__subitem
