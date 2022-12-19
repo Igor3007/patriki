@@ -186,3 +186,15 @@
 
     }
 }
+
+.policy-text {
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    color: $main2;
+
+    & a {
+        text-decoration: underline;
+        color: $main;
+    }
+}

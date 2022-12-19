@@ -11025,6 +11025,18 @@ li.button-play {
   margin-bottom: 0;
 }
 
+.policy-text {
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  color: #92919F;
+}
+
+.policy-text a {
+  text-decoration: underline;
+  color: #525166;
+}
+
 .section-page-events {
   position: relative;
   padding: 35px 0;

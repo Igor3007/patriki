@@ -31,17 +31,22 @@ mixin page-member
                             .add-phone(data-number-repeat="add") + Добавить телефон
                       .form__item
                         .form__subitem
-                            span.form-label Организация *
-                            input(type="text" required="required" placeholder="Введите название организации")
+                            span.form-label Организация
+                            input(type="text"   placeholder="Введите название организации")
                       .form__item
                         .form__subitem
-                            span.form-label Дополнительная информация *
+                            span.form-label Дополнительная информация
                             textarea(placeholder="Введите текст комментария или вопроса")
                       .form__item
                         .form__subitem
-                            +checkbox('Нажимая кнопку, вы соглашаетесь на обработку <a target="_blank" href="/policy.html" >персональных данных</a> ')
-
+                            button.btn(type="submit") Отправить
                       .form__item
                         .form__subitem
-                            button.btn(type="submit") Отправить
+                            .policy-text 
+                                | Нажимая кнопку Отправить вы принимаете  <br>
+                                a(href='#policy') Условия пользовательского соглашения
+                                |   <br>
+                                a(href='policy.html') Политику обработки персональных данных 
+
+                      
                         
