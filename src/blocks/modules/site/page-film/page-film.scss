@@ -1504,3 +1504,40 @@
      background-repeat: no-repeat;
      margin-right: 12px;
  }
+
+
+ .film-details__fav {
+     position: absolute;
+     z-index: 2;
+     top: 7px;
+     left: 0px;
+
+     & span {
+         display: flex;
+         padding: 3px 6px 3px 14px;
+         background-color: #fff;
+         align-items: center;
+         border-radius: 0px 3px 3px 0px;
+         cursor: pointer;
+
+         &:hover {
+             & svg {
+                 stroke: $main2;
+                 fill: $main2
+             }
+         }
+
+         &.active {
+             & svg {
+                 stroke: $main;
+                 fill: $main
+             }
+         }
+     }
+
+     & svg {
+         stroke: #ddd;
+         fill: #ddd
+     }
+
+ }

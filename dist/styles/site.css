@@ -7767,6 +7767,37 @@ footer {
   margin-right: 12px;
 }
 
+.film-details__fav {
+  position: absolute;
+  z-index: 2;
+  top: 7px;
+  left: 0px;
+}
+
+.film-details__fav span {
+  display: flex;
+  padding: 3px 6px 3px 14px;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 0px 3px 3px 0px;
+  cursor: pointer;
+}
+
+.film-details__fav span:hover svg {
+  stroke: #92919F;
+  fill: #92919F;
+}
+
+.film-details__fav span.active svg {
+  stroke: #525166;
+  fill: #525166;
+}
+
+.film-details__fav svg {
+  stroke: #ddd;
+  fill: #ddd;
+}
+
 .block-rating__list {
   padding-bottom: 45px;
 }

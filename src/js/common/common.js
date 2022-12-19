@@ -437,6 +437,91 @@
 
      }
 
+     /* ===========================================
+     wishlist
+     ===========================================*/
+
+     function WishList() {
+
+         this.elemCookie = 'wishlist';
+         this.elemTotal = document.querySelector('[data-totalwishlist]');
+
+         this.init = function () {
+             this.getTotal()
+         }
+
+         this.getTotal = function () {
+
+             // if (this.getArray().length) {
+             //     this.elemTotal.classList.remove('hide');
+             //     this.elemTotal.innerText = this.getArray().length;
+             // }
+
+         }
+
+         this.getArray = function () {
+             if (!Cookies.get(this.elemCookie)) return new Array()
+
+             return String(Cookies.get(this.elemCookie)).split(',')
+         }
+
+         this.add = function (id) {
+             var array = this.getArray();
+             array.push(id)
+             array = Array.from(new Set(array))
+
+             Cookies.set(this.elemCookie, array.join(','), {
+                 expires: 7
+             })
+             this.getTotal()
+             return array;
+         }
+
+         this.remove = function (id) {
+
+             var array = this.getArray();
+             var result = array.filter(function (item) {
+                 return item != id
+             })
+
+             Cookies.set(this.elemCookie, result.join(','), {
+                 expires: 7
+             })
+             this.getTotal()
+             return array;
+
+         }
+     }
+
+
+
+     /* init wishList  */
+
+     const WL = new WishList();
+     WL.init()
+
+     const wishlist = document.querySelectorAll('[data-wishlist]');
+     const arrayWishList = WL.getArray()
+
+     wishlist.forEach(function (item, index) {
+
+         const product_id = item.dataset.wishlist;
+
+         if (arrayWishList.lastIndexOf(product_id) !== -1) {
+             item.classList.add('active')
+         }
+
+         item.addEventListener('click', function (event) {
+             if (this.classList.contains('active')) {
+                 WL.remove(product_id)
+                 this.classList.remove('active')
+             } else {
+                 WL.add(product_id)
+                 this.classList.add('active')
+             }
+         })
+     })
+
 
 
 

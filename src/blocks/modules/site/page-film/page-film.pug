@@ -11,6 +11,8 @@ mixin page-film(data)
                     .film-details__cover
                         +picture('/img/common/cover5')
                         .film-details__censor: span 12+
+                        .film-details__fav
+                            span(data-wishlist="122"): +icons('#ic_heart-solid', 18)
                     .film-details__prop
                         .film-details__year
                             ul
