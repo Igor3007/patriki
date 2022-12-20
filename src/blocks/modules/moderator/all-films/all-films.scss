@@ -407,6 +407,27 @@
     }
 }
 
+.block-info {
+    padding: 15px;
+    background-color: #d9d3e44d;
+    margin-bottom: 25px;
+    border-left: 3px solid #f2b238;
+    color: $main;
+
+    & strong {
+        font-weight: 600;
+    }
+
+}
+
+.about-user__main {
+    flex-grow: 1;
+}
+
+.about-user__main {
+    flex-grow: 1;
+}
+
 .dark-mode {
     & .minicard-film {
         &__title {
@@ -440,12 +461,4 @@
             color: $main-dark-2;
         }
     }
-}
-
-.about-user__main {
-    flex-grow: 1;
-}
-
-.about-user__main {
-    flex-grow: 1;
 }

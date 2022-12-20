@@ -1,4 +1,6 @@
 mixin all-films
+
+    
      
     .all-films__tabs
         ul
@@ -18,6 +20,12 @@ mixin all-films
             .all-films__item(class=(item.light ? 'all-films__item--light':'')): +minicard-film(item)
 
 mixin all-films-group
+
+    .block-info
+        | <strong>Номинации:</strong> <br>
+        | - Гран-при <br>
+        | - Приз За новизну оптики и поиск художественной формы <br>
+        | - Специальный приз жюри
      
     .all-films__tabs.all-films__tabs--group
         ul

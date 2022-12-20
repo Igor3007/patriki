@@ -7432,6 +7432,26 @@ div[data-lang]:not(.active) {
   color: #EB7D00;
 }
 
+.block-info {
+  padding: 15px;
+  background-color: #d9d3e44d;
+  margin-bottom: 25px;
+  border-left: 3px solid #f2b238;
+  color: #525166;
+}
+
+.block-info strong {
+  font-weight: 600;
+}
+
+.about-user__main {
+  flex-grow: 1;
+}
+
+.about-user__main {
+  flex-grow: 1;
+}
+
 .dark-mode .minicard-film__title a {
   color: #fff;
 }
@@ -7453,14 +7473,6 @@ div[data-lang]:not(.active) {
 .dark-mode .minicard-film__cover picture {
   background-color: #424152;
   color: #424152;
-}
-
-.about-user__main {
-  flex-grow: 1;
-}
-
-.about-user__main {
-  flex-grow: 1;
 }
 
 .profile-block {
