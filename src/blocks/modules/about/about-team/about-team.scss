@@ -41,12 +41,20 @@
          min-width: 300px;
          width: 300px;
 
-         @media screen and (min-width: $w576) {
-             padding: 0 12px;
-             width: 100%;
+         @media screen and (min-width: $w1440) {
              max-width: 285px;
              min-width: 285px;
              flex-basis: 285px;
+         }
+
+
+
+         @media screen and (min-width: $w576) {
+             padding: 0 12px;
+             width: 100%;
+             max-width: 220px;
+             min-width: 220px;
+             flex-basis: 220px;
 
 
          }

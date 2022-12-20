@@ -11531,13 +11531,9 @@ li.button-play {
   .about-team__item {
     padding: 0 12px;
     width: 100%;
-    max-width: 285px;
-    min-width: 285px;
-    flex-basis: 285px;
-  }
-
-  .about-media__slider {
-    padding: 0;
+    max-width: 220px;
+    min-width: 220px;
+    flex-basis: 220px;
   }
 
   .section-page-member {
@@ -12359,8 +12355,22 @@ li.button-play {
     order: 0;
   }
 
+  .about-founder__middle {
+    width: 200px;
+    min-width: 200px;
+    margin: 0 40px;
+  }
+
   .card-founder__title {
     font-size: 24px;
+  }
+
+  .card-founder__desc {
+    letter-spacing: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .about-history .splide__slide {
@@ -12373,6 +12383,10 @@ li.button-play {
 
   .card-history__img {
     margin: 0 -20px -15px -20px;
+  }
+
+  .about-media__slider {
+    padding: 0;
   }
 
   .about-media__slider .splide__slide .about-news__title {
@@ -12735,22 +12749,8 @@ li.button-play {
     flex-grow: 1;
   }
 
-  .about-founder__middle {
-    width: 200px;
-    min-width: 200px;
-    margin: 0 40px;
-  }
-
   .card-founder__title {
     padding-bottom: 15px;
-  }
-
-  .card-founder__desc {
-    letter-spacing: normal;
-    display: -webkit-box;
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
   .section-about-history {
@@ -13422,6 +13422,12 @@ li.button-play {
 
   .about-team__title {
     font-size: 60px;
+  }
+
+  .about-team__item {
+    max-width: 285px;
+    min-width: 285px;
+    flex-basis: 285px;
   }
 
   .about-media__title {

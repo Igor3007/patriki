@@ -109,7 +109,7 @@
             margin: 0 40px;
         }
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: $w992) {
             width: 200px;
             min-width: 200px;
             margin: 0 40px;
@@ -154,7 +154,7 @@
             @include line-clamp(10);
         }
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: $w992) {
             @include line-clamp(8);
         }
 
