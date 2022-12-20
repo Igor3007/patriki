@@ -763,6 +763,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
             breakpoints: {
+
+
                 760: {
                     perPage: 1,
                     gap: 15,
@@ -811,7 +813,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             wheelMinThreshold: 50,
             wheelSleep: 500,
 
-
             drag: false,
 
             breakpoints: {
@@ -827,13 +828,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
         const prevButtonAbout = document.querySelector('[data-slider-prev="about"]')
         const nextButtonAbout = document.querySelector('[data-slider-next="about"]')
 
-        prevButtonAbout.addEventListener('click', e => {
-            sliderPageAbout.go('<')
-        })
+        if (prevButtonAbout) {
+            prevButtonAbout.addEventListener('click', e => {
+                sliderPageAbout.go('<')
+            })
+        }
 
-        nextButtonAbout.addEventListener('click', e => {
-            sliderPageAbout.go('>')
-        })
+        if (nextButtonAbout) {
+            nextButtonAbout.addEventListener('click', e => {
+                sliderPageAbout.go('>')
+            })
+        }
 
         function splideSlideName() {
 
@@ -902,12 +907,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         const splideSlide = new splideSlideName()
 
+
         sliderPageAbout.on('mounted', function () {
             splideSlide.create()
         })
 
         sliderPageAbout.on('move', function (newIndex, prevIndex, destIndex) {
-            console.log('move event')
+            splideSlide.change(newIndex)
         })
 
         sliderPageAbout.on('active', function (newIndex) {
@@ -928,7 +934,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 } else {
                     window.scrollTo({
-                        top: document.querySelector('footer').clientHeight,
+                        top: document.querySelector('footer').clientHeight + 100,
                         behavior: 'smooth'
                     })
                 }
@@ -952,7 +958,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
 
         sliderPageAbout.mount();
-
     }
 
 

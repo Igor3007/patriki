@@ -28,11 +28,17 @@
             width: 100%;
             margin-left: auto;
 
-            @media screen and (min-width: $w1200) {
+            @media screen and (min-width: $w1440) {
                 max-width: 695px;
+
+            }
+
+            @media screen and (min-width: $w1200) {
+                max-width: 550px;
                 margin-left: 0;
                 margin-right: auto;
             }
+
         }
     }
 

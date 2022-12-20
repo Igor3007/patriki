@@ -47,12 +47,19 @@
         min-width: 90%;
         width: 100%;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: $w1440) {
             padding: 0 12px;
-            width: 100%;
             max-width: 285px;
             min-width: auto;
             flex-basis: 285px;
+            flex-grow: 1;
+        }
+
+        @media screen and (min-width: $w576) {
+            padding: 0 12px;
+            max-width: 220px;
+            min-width: auto;
+            flex-basis: 220px;
             flex-grow: 1;
 
         }
@@ -104,11 +111,16 @@
         transition: 0.3s ease;
 
         & p {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 140%;
             font-weight: 500;
             transform: translateY(10px);
             transition: 0.3s 0.1s ease;
+
+            @media screen and (min-width: $w1440) {
+                font-size: 16px;
+            }
+
         }
 
         & h3 {

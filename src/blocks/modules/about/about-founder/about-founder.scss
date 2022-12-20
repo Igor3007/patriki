@@ -103,9 +103,15 @@
 
 
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: $w1440) {
             width: 258px;
             min-width: 258px;
+            margin: 0 40px;
+        }
+
+        @media screen and (min-width: $w1200) {
+            width: 200px;
+            min-width: 200px;
             margin: 0 40px;
         }
     }
@@ -137,20 +143,29 @@
     &__desc {
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 175%;
         color: #FFFFFF;
-
-
-        @include line-clamp(10);
         overflow: hidden;
+        @include line-clamp(10);
+
+        @media screen and (min-width: $w1440) {
+            font-size: 16px;
+            @include line-clamp(10);
+        }
+
+        @media screen and (min-width: $w1200) {
+            @include line-clamp(8);
+        }
+
+
 
         & p {
             margin-bottom: 25px;
             display: inline;
 
             &::after {
-                content: " \A\A";
+                content: " \A";
                 white-space: pre;
             }
         }

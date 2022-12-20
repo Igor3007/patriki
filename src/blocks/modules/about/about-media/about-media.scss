@@ -67,7 +67,12 @@
                     position: relative;
                     transition: 0.3s ease;
 
+                    @media screen and (min-width: $w1440) {
+                        padding-top: 74%;
+                    }
+
                     @media screen and (min-width: $w992) {
+                        padding-top: 61%;
                         transform: scale(0.9);
                         opacity: 0.3;
                     }
@@ -86,21 +91,45 @@
             }
 
             &__arrow {
-                width: 48px;
-                height: 48px;
+                width: 38px;
+                height: 38px;
                 border-radius: 0;
                 background-color: #f5f5f5;
                 display: none;
                 opacity: 1;
 
+                @media screen and (min-width: $w1440) {
+                    width: 48px;
+                    height: 48px;
+                }
+
+                & svg {
+                    position: relative;
+                    top: 2px;
+                    width: 16px;
+                    height: 14px;
+                }
+
                 &--next {
                     right: 5.2em;
-                    top: 32%;
+
+                    @media screen and (min-width: $w1440) {
+                        top: 32%;
+                    }
+
+                    top: 40%;
+
                 }
 
                 &--prev {
                     left: 5.2em;
-                    top: 32%;
+
+                    @media screen and (min-width: $w1440) {
+                        top: 32%;
+                    }
+
+                    top: 40%;
+
                 }
 
                 @media screen and (min-width: $w992) {
@@ -126,9 +155,17 @@
     &__title {
         & a {
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 156%;
             color: #FFFFFF;
+
+            @media screen and (min-width: $w1440) {
+                font-size: 18px;
+            }
+
+            @media screen and (min-width: $w992) {
+                font-size: 16px;
+            }
         }
     }
 
@@ -145,7 +182,11 @@
 
     & .splide.is-initialized.splide-mobile-disabled-992>.splide__track {
         @media screen and (max-width: $w1376) {
-            height: auto !important;
+            height: calc(100vh - 240px) !important;
+        }
+
+        @media screen and (max-width: $w992) {
+            height: calc(100vh - 240px) !important;
         }
     }
 
