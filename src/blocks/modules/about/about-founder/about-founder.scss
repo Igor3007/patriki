@@ -125,10 +125,14 @@
 
     &__title {
         font-weight: 700;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 150%;
         text-transform: uppercase;
         color: #FFFFFF;
+
+        @media screen and (min-width: $w375) {
+            font-size: 16px;
+        }
 
         @media screen and (min-width: $w992) {
             font-size: 24px;

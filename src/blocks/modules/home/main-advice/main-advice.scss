@@ -242,8 +242,12 @@
 .jury-desc {
     background: #525166;
     margin: -10px;
-    padding: 45px 40px;
+    padding: 25px 25px;
     max-width: 1115px;
+
+    @media screen and (min-width: $w576) {
+        padding: 45px 40px;
+    }
 
     & .card-founder {
         &__more {
@@ -276,10 +280,19 @@
 
         & p {
             color: #fff;
+
+            @media screen and (max-width: $w576) {
+                font-size: 15px;
+                line-height: 155%;
+            }
         }
 
         & h3 {
             text-transform: uppercase;
+
+            @media screen and (max-width: $w576) {
+                font-size: 22px;
+            }
         }
 
         @media screen and (min-width: $w760) {

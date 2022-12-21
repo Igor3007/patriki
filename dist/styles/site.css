@@ -10068,7 +10068,7 @@ li.button-play {
 .jury-desc {
   background: #525166;
   margin: -10px;
-  padding: 45px 40px;
+  padding: 25px 25px;
   max-width: 1115px;
 }
 
@@ -10305,7 +10305,7 @@ li.button-play {
 
 .card-founder__title {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -10685,10 +10685,11 @@ li.button-play {
 .af-popup__content .team-desc {
   display: flex;
   max-width: 1115px;
-  margin: -15px;
-  padding: 40px;
+  margin: -10px;
+  padding: 25px;
   background-color: #403f4f;
   color: #fff;
+  flex-direction: column;
 }
 
 .af-popup__content .team-member__main {
@@ -11412,6 +11413,10 @@ li.button-play {
   .juru-comment__textarea textarea:focus {
     height: 4.5em;
   }
+
+  .card-founder__title {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 480px) {
@@ -11524,6 +11529,10 @@ li.button-play {
 
   .main-advice__list {
     justify-content: safe center;
+  }
+
+  .jury-desc {
+    padding: 45px 40px;
   }
 
   .about-advice__list {
@@ -12398,6 +12407,11 @@ li.button-play {
 
   .card-history__img {
     margin: 0 -20px -15px -20px;
+  }
+
+  .af-popup__content .team-desc {
+    flex-direction: row;
+    padding: 40px;
   }
 
   .about-media__slider {
@@ -13693,6 +13707,15 @@ li.button-play {
     margin: 0 -30px -40px -30px;
   }
 
+  .af-popup__content .team-desc .team-member__main {
+    padding-left: 0;
+    padding-top: 25px;
+  }
+
+  .af-popup__content .team-desc .team-member__name {
+    padding-bottom: 0;
+  }
+
   .fp-about .splide.is-initialized.splide-mobile-disabled-992 > .splide__track {
     height: calc(100vh - 240px) !important;
   }
@@ -13744,6 +13767,21 @@ li.button-play {
 
   .page-default::after {
     display: none;
+  }
+
+  .jury-desc .card-advice__desc p {
+    font-size: 15px;
+    line-height: 155%;
+  }
+
+  .jury-desc .card-advice__desc h3 {
+    font-size: 22px;
+  }
+
+  .af-popup__content .team-desc .team-member__img {
+    width: 100%;
+    min-width: auto;
+    max-width: none;
   }
 
   .event-aside .event-card__title a {
@@ -13824,6 +13862,10 @@ li.button-play {
 
   .dark-mode .item-message__answers {
     padding-left: 45px;
+  }
+
+  .af-popup__content .team-desc .team-member__desc {
+    font-size: 15px;
   }
 }
 

@@ -1141,8 +1141,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
             arrows: false,
             padding: 60,
             focus: 'center',
-            flickMaxPages: 3,
-            start: 1
+            flickMaxPages: 1,
+            start: 0
 
         });
 
