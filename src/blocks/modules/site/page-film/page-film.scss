@@ -1560,3 +1560,21 @@
          }
      }
  }
+
+
+ .page-film__details .film-grade__wrp {
+     padding-left: 0
+ }
+
+ .page-film__details .film-grade__wrp .film-grade__total {
+     position: relative;
+     margin-bottom: 15px
+ }
+
+ @media screen and (min-width: 576px) {
+     .main-advice__item {
+         max-width: 280px;
+         width: 100%;
+         min-width: auto;
+     }
+ }
