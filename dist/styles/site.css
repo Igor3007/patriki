@@ -4653,10 +4653,9 @@ input {
   width: 40px;
   min-width: 40px;
   height: 40px;
-  border: 3px solid #fff;
+  border: 3px solid #000;
   border-radius: 50%;
   border-left-color: transparent !important;
-  margin-left: 10px;
   transition: transform 0.5s linear;
   animation: 0.5s linear loadingrotate infinite;
   display: inline-block;
@@ -4664,6 +4663,17 @@ input {
   flex-wrap: nowrap;
   position: relative;
   left: 5px;
+}
+
+.dark-mode .af-spiner,
+.gray-mode .af-spiner {
+  background-color: #000;
+  margin: -10px;
+}
+
+.dark-mode .af-spiner::after,
+.gray-mode .af-spiner::after {
+  border: 3px solid #525166;
 }
 
 .dark-mode .af-popup {
@@ -11574,6 +11584,146 @@ li.button-play {
   padding-bottom: 30px;
 }
 
+.film-preview {
+  background: rgba(0, 0, 0, 0.95);
+  margin: -10px;
+  padding: 10px;
+  color: #fff;
+  max-width: 900px;
+}
+
+.film-preview__cover {
+  position: relative;
+  z-index: 1;
+  border-radius: 7px;
+  padding-bottom: 25px;
+}
+
+.film-preview__cover picture {
+  display: block;
+  padding-top: 146%;
+  position: relative;
+  background-color: #424152;
+  border-radius: 8px;
+}
+
+.film-preview__cover picture img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+}
+
+.film-preview__title {
+  display: block;
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  text-align: left;
+  color: #fff;
+}
+
+.film-preview__description {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  overflow: hidden;
+}
+
+.film-preview__year {
+  padding-bottom: 21px;
+}
+
+.film-preview__year ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.film-preview__year ul li {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.film-preview__year ul li::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  display: block;
+  border-radius: 50%;
+  background-color: #5A5970;
+  margin: 0 10px;
+}
+
+.film-preview__year ul li:last-child::after {
+  display: none;
+}
+
+.film-preview__censor {
+  position: absolute;
+  color: #fff;
+  z-index: 111;
+  top: 7px;
+  right: 12px;
+  font-weight: bold;
+  text-shadow: 0 0px 2px #000;
+  font-size: 12px;
+}
+
+.film-preview__list {
+  padding-bottom: 25px;
+}
+
+.film-preview__list ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+
+.film-preview__list ul li {
+  flex-grow: 1;
+  flex-basis: 150px;
+  max-width: 190px;
+  margin: 5px;
+  margin-bottom: 15px;
+}
+
+.film-preview__list ul li small {
+  display: block;
+  font-size: 14px;
+  color: #ABA9BC;
+}
+
+.film-preview__list ul li span {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.film-preview__list ul li span a {
+  color: #fff;
+}
+
+.film-preview__list ul li span a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 359px) {
   .programs-item__film {
     width: 50%;
@@ -12226,6 +12376,21 @@ li.button-play {
     width: 33.33%;
     padding: 8px;
   }
+
+  .film-preview {
+    display: flex;
+    padding: 30px;
+  }
+
+  .film-preview__left {
+    width: 204px;
+    min-width: 204px;
+  }
+
+  .film-preview__right {
+    width: calc(100% - 204px);
+    padding-left: 24px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -12757,6 +12922,14 @@ li.button-play {
   .archive-films__jury {
     font-size: 20px;
   }
+
+  .film-preview__title {
+    font-size: 48px;
+  }
+
+  .film-preview__year ul {
+    justify-content: flex-start;
+  }
 }
 
 @media screen and (min-width: 992px) and (min-height: 767px) {
@@ -13098,6 +13271,12 @@ li.button-play {
 
   .section-event-detail {
     padding: 48px 0;
+  }
+
+  .film-preview__cover {
+    width: 100%;
+    max-width: 204px;
+    margin-right: 25px;
   }
 }
 
@@ -13824,6 +14003,19 @@ li.button-play {
   .archive-films__program {
     padding-bottom: 13px;
   }
+
+  .film-preview__title {
+    font-size: 60px;
+  }
+
+  .film-preview__list ul li small {
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+
+  .film-preview__list ul li span {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1440px) and (min-height: 760px) {
@@ -14179,7 +14371,8 @@ li.button-play {
   }
 
   .af-popup__close {
-    right: 10px;
+    right: 20px;
+    top: 15px;
   }
 
   header .container {

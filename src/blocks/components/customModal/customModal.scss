@@ -92,7 +92,8 @@
     top: 11px;
 
     @media screen and (max-width: $w480) {
-        right: 10px;
+        right: 20px;
+        top: 15px;
     }
 }
 
@@ -117,10 +118,10 @@
         width: 40px;
         min-width: 40px;
         height: 40px;
-        border: 3px solid #fff;
+        border: 3px solid #000;
         border-radius: 50%;
         border-left-color: transparent !important;
-        margin-left: 10px;
+
         transition: transform 0.5s linear;
         animation: 0.5s linear loadingrotate infinite;
         display: inline-block;
@@ -130,6 +131,20 @@
         left: 5px;
     }
 }
+
+.dark-mode,
+.gray-mode {
+    & .af-spiner {
+        background-color: #000;
+        margin: -10px;
+
+        &::after {
+            border: 3px solid $main;
+        }
+
+    }
+}
+
 
 .dark-mode {
     & .af-popup {

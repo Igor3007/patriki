@@ -4653,10 +4653,9 @@ input {
   width: 40px;
   min-width: 40px;
   height: 40px;
-  border: 3px solid #fff;
+  border: 3px solid #000;
   border-radius: 50%;
   border-left-color: transparent !important;
-  margin-left: 10px;
   transition: transform 0.5s linear;
   animation: 0.5s linear loadingrotate infinite;
   display: inline-block;
@@ -4664,6 +4663,17 @@ input {
   flex-wrap: nowrap;
   position: relative;
   left: 5px;
+}
+
+.dark-mode .af-spiner,
+.gray-mode .af-spiner {
+  background-color: #000;
+  margin: -10px;
+}
+
+.dark-mode .af-spiner::after,
+.gray-mode .af-spiner::after {
+  border: 3px solid #525166;
 }
 
 .dark-mode .af-popup {
@@ -10511,7 +10521,8 @@ div[data-lang]:not(.active) {
   }
 
   .af-popup__close {
-    right: 10px;
+    right: 20px;
+    top: 15px;
   }
 
   header .container {

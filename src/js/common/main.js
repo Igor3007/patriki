@@ -1418,6 +1418,43 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
+    /* ============================================
+    archive film preview 
+    ============================================*/
+
+    if (document.querySelector('[data-popup="film"]')) {
+
+        const items = document.querySelectorAll('[data-popup="film"]')
+
+        items.forEach(item => {
+            item.addEventListener('click', e => {
+                // if not data-url
+                if (!item.dataset.url) return false;
+
+                let filmPopup = new customModal()
+                let url = item.dataset.url
+
+
+                filmPopup.open('<div><span class="af-spiner" ></span></div>', function (instanse) {
+
+                    window.ajax({
+                        type: 'GET',
+                        url: url,
+                    }, function (status, response) {
+                        filmPopup.changeContent(response)
+                    })
+                })
+
+            })
+        })
+
+
+
+
+
+
+    }
+
 
 
 
