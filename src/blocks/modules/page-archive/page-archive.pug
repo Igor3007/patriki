@@ -1,0 +1,43 @@
+include ../moderator/all-films/all-films.pug
+
+mixin page-archive
+    .page-archive
+        .page-archive__yaers
+            .page-archive__yaers-prev: a(href='#'): +icons('#ic_season-back', 20)
+            .page-archive__yaers-current 2022
+            .page-archive__yaers-next: a(href='#'): +icons('#ic_season-next', 20)
+        .page-archive__text
+            h2 Программы фестиваля 2022:
+            ul
+                li – экспериментальное и дебютное российское кино;
+                li – внеконкурсная программа;
+                li – спецпоказы.
+
+            h2 Номинации и победители:
+            ul
+              li – Grand-prix фестиваля PFF — картина «Призрачно-белый» режиссера Марии Игнатенко;
+              li – Приз «За новизну оптики и поиск художественной формы» — фильм «Зачем снятся сны» режиссера Тихона Пендюрина;
+              li – Специальный приз жюри «За искренность» — фильм «Тембот» режиссера Тины Мастафовой;
+              li – Специальный приз от онлайн-кинотеатра START и журнала «Сеанс» — фильм «Второе солнце» режиссера Рината Ташимова.
+
+        .page-archive__films
+            .archive-films
+                .archive-films__title Фильмы
+                .archive-films__programs
+                    .archive-films__program
+                        .archive-films__subtitle экспериментальное и дебютное российское кино
+                        .archive-films__label Жюри программы:
+                        .archive-films__jury Алексей Герман, Александр Цыпкин, Надежда Михалкова, Василий Степанов, Алексаей Акимов
+                        .archive-films__list
+                            each item,index in moderator.films
+                                if index < 5
+                                    .archive-films__item: +minicard-film(item)
+                                    
+                    .archive-films__program
+                        .archive-films__subtitle Внеконкурсная программа
+                        .archive-films__label Жюри программы:
+                        .archive-films__jury Алексей Герман, Александр Цыпкин, Надежда Михалкова, Василий Степанов, Алексаей Акимов
+                        .archive-films__list
+                            each item,index in moderator.films
+                                if index >= 5 && index < 10
+                                    .archive-films__item: +minicard-film(item)

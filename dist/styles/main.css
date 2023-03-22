@@ -3693,6 +3693,22 @@ a.link-primary {
   animation: fade-to 1.5s ease forwards;
 }
 
+.main-banner__large {
+  background-color: #eee;
+}
+
+.main-banner__large .event-card-main__desc,
+.main-banner__large .event-card-main__title,
+.main-banner__large .event-card-main__date {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 3px;
+}
+
+.main-banner__large .event-card-main__desc {
+  padding-bottom: 15px;
+}
+
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;
@@ -7452,6 +7468,10 @@ div[data-lang]:not(.active) {
   flex-grow: 1;
 }
 
+/* ==================================================== */
+
+/* ==================================================== */
+
 .dark-mode .minicard-film__title a {
   color: #fff;
 }
@@ -7473,6 +7493,33 @@ div[data-lang]:not(.active) {
 .dark-mode .minicard-film__cover picture {
   background-color: #424152;
   color: #424152;
+}
+
+.gray-mode .minicard-film__title a {
+  color: #fff;
+}
+
+.gray-mode .minicard-film__year {
+  color: #ABA9BC;
+}
+
+.gray-mode .minicard-film__duration {
+  color: #ABA9BC;
+}
+
+.gray-mode .minicard-film__flags ul li .bgimage {
+  background-color: #5A5970;
+  border: 1px solid #5A5970;
+  border-radius: 2px;
+}
+
+.gray-mode .minicard-film__cover picture {
+  background-color: #424152;
+  color: #424152;
+}
+
+.gray-mode .minicard-film__details {
+  background-color: #424152;
 }
 
 .profile-block {
@@ -9529,6 +9576,10 @@ div[data-lang]:not(.active) {
     background-color: #525166;
   }
 
+  .main-banner__slider .splide__slide picture {
+    height: 65vh;
+  }
+
   .header__social ul li a {
     background-color: transparent;
     width: 100%;
@@ -9731,6 +9782,11 @@ div[data-lang]:not(.active) {
 
   .logo-preloader.load {
     display: block;
+  }
+
+  .main-banner__slider .splide__slide picture {
+    padding-top: 48%;
+    height: auto;
   }
 
   .header__logo {
@@ -10376,6 +10432,12 @@ div[data-lang]:not(.active) {
   .splide-mobile-disabled-992.splide > .splide__track > .splide__list {
     display: block;
     backface-visibility: visible;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .main-banner__large .event-card-main__desc {
+    display: block;
   }
 }
 

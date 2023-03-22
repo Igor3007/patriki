@@ -93,3 +93,25 @@
         }
     }
 }
+
+.gray-mode {
+    & .page-site {
+        &__breadcrumbs {
+            & a {
+                color: $gray-74;
+            }
+
+            & li {
+                &::after {
+                    filter: invert(1);
+                }
+            }
+        }
+
+        &__title {
+            & h1 {
+                color: #fff;
+            }
+        }
+    }
+}

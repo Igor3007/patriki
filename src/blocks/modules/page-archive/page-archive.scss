@@ -1,0 +1,211 @@
+.page-archive {
+
+    padding-bottom: 60px;
+
+    &__text {
+        padding-bottom: 25px;
+
+        @media screen and (min-width: $w992) {
+            padding-top: 5px;
+        }
+
+        & * {
+            color: #fff;
+            font-size: 16px;
+
+            @media screen and (min-width: $w992) {
+                font-size: 20px;
+            }
+        }
+
+        & h2 {
+            margin-bottom: 1em;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 143%;
+
+            @media screen and (min-width: $w992) {
+                font-size: 28px;
+                margin-top: 30px;
+            }
+        }
+
+        & ul {
+            margin-bottom: 1em;
+
+            & li {
+                padding-bottom: 14px;
+                line-height: 143%;
+            }
+        }
+    }
+
+    &__yaers {
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        margin-top: -45px;
+        padding-bottom: 30px;
+
+        @media screen and (min-width: $w992) {
+            margin-top: -60px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            margin-top: -70px;
+        }
+
+        &-next,
+        &-prev {
+            & a {
+                width: 42px;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media screen and (min-width: $w760) {
+                    width: 56px;
+                    height: 56px;
+                }
+
+                &:hover {
+                    background-color: #616079;
+                }
+            }
+
+        }
+
+        &-current {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 143%;
+            color: #fff;
+            padding: 0 15px;
+
+            @media screen and (min-width: $w760) {
+                font-size: 36px;
+                padding: 0 20px;
+            }
+        }
+    }
+
+    &__films {
+        @media screen and (min-width: $w1440) {
+            padding-top: 28px;
+        }
+    }
+}
+
+
+.archive-films {
+
+    color: #fff;
+    line-height: 146%;
+
+    &__list {
+        @include row-flex;
+    }
+
+    &__item {
+
+        margin-bottom: 20px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 8px;
+
+        @media screen and (min-width: 359px) {
+            width: 50%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w760) {
+            width: 33.33%;
+            padding: 8px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 25%;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            width: 20%;
+            padding: 10px;
+        }
+
+    }
+
+    &__title {
+
+        @include section-title-site;
+        text-align: left;
+        color: #fff;
+
+        padding-bottom: 0.5em;
+
+        @media screen and (min-width: $w1440) {
+            padding-bottom: 0.7em;
+        }
+    }
+
+    &__label {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 32px;
+        padding-bottom: 1em;
+
+        @media screen and (min-width: $w992) {
+            font-size: 20px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            padding-bottom: 1em;
+
+        }
+
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 143%;
+        text-transform: uppercase;
+        padding-bottom: 0.6em;
+
+        @media screen and (min-width: $w992) {
+            font-size: 28px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            padding-bottom: 1.3em;
+        }
+    }
+
+    &__jury {
+        padding-bottom: 15px;
+        font-size: 16px;
+
+        @media screen and (min-width: $w992) {
+            font-size: 20px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            padding-bottom: 1.35em;
+        }
+    }
+
+    &__program {
+        padding-bottom: 30px;
+
+        @media screen and (min-width: $w1440) {
+            padding-bottom: 13px;
+        }
+    }
+
+
+
+
+}

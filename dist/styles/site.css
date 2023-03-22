@@ -3693,6 +3693,22 @@ a.link-primary {
   animation: fade-to 1.5s ease forwards;
 }
 
+.main-banner__large {
+  background-color: #eee;
+}
+
+.main-banner__large .event-card-main__desc,
+.main-banner__large .event-card-main__title,
+.main-banner__large .event-card-main__date {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 3px;
+}
+
+.main-banner__large .event-card-main__desc {
+  padding-bottom: 15px;
+}
+
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;
@@ -5965,6 +5981,18 @@ footer {
 }
 
 .dark-mode .page-site__title h1 {
+  color: #fff;
+}
+
+.gray-mode .page-site__breadcrumbs a {
+  color: #ABA9BC;
+}
+
+.gray-mode .page-site__breadcrumbs li::after {
+  filter: invert(1);
+}
+
+.gray-mode .page-site__title h1 {
   color: #fff;
 }
 
@@ -8878,6 +8906,10 @@ footer {
   flex-grow: 1;
 }
 
+/* ==================================================== */
+
+/* ==================================================== */
+
 .dark-mode .minicard-film__title a {
   color: #fff;
 }
@@ -8899,6 +8931,33 @@ footer {
 .dark-mode .minicard-film__cover picture {
   background-color: #424152;
   color: #424152;
+}
+
+.gray-mode .minicard-film__title a {
+  color: #fff;
+}
+
+.gray-mode .minicard-film__year {
+  color: #ABA9BC;
+}
+
+.gray-mode .minicard-film__duration {
+  color: #ABA9BC;
+}
+
+.gray-mode .minicard-film__flags ul li .bgimage {
+  background-color: #5A5970;
+  border: 1px solid #5A5970;
+  border-radius: 2px;
+}
+
+.gray-mode .minicard-film__cover picture {
+  background-color: #424152;
+  color: #424152;
+}
+
+.gray-mode .minicard-film__details {
+  background-color: #424152;
 }
 
 .messenger {
@@ -11401,6 +11460,120 @@ li.button-play {
   text-align: left;
 }
 
+.page-archive {
+  padding-bottom: 60px;
+}
+
+.page-archive__text {
+  padding-bottom: 25px;
+}
+
+.page-archive__text * {
+  color: #fff;
+  font-size: 16px;
+}
+
+.page-archive__text h2 {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 143%;
+}
+
+.page-archive__text ul {
+  margin-bottom: 1em;
+}
+
+.page-archive__text ul li {
+  padding-bottom: 14px;
+  line-height: 143%;
+}
+
+.page-archive__yaers {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -45px;
+  padding-bottom: 30px;
+}
+
+.page-archive__yaers-next a,
+.page-archive__yaers-prev a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-archive__yaers-next a:hover,
+.page-archive__yaers-prev a:hover {
+  background-color: #616079;
+}
+
+.page-archive__yaers-current {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 143%;
+  color: #fff;
+  padding: 0 15px;
+}
+
+.archive-films {
+  color: #fff;
+  line-height: 146%;
+}
+
+.archive-films__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.archive-films__item {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+}
+
+.archive-films__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  text-align: left;
+  color: #fff;
+  padding-bottom: 0.5em;
+}
+
+.archive-films__label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  padding-bottom: 1em;
+}
+
+.archive-films__subtitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 143%;
+  text-transform: uppercase;
+  padding-bottom: 0.6em;
+}
+
+.archive-films__jury {
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+.archive-films__program {
+  padding-bottom: 30px;
+}
+
 @media screen and (min-width: 359px) {
   .programs-item__film {
     width: 50%;
@@ -11433,6 +11606,11 @@ li.button-play {
   }
 
   .film-group__item {
+    width: 50%;
+    padding: 8px;
+  }
+
+  .archive-films__item {
     width: 50%;
     padding: 8px;
   }
@@ -12032,6 +12210,22 @@ li.button-play {
     width: 50%;
     max-width: 50%;
   }
+
+  .page-archive__yaers-next a,
+  .page-archive__yaers-prev a {
+    width: 56px;
+    height: 56px;
+  }
+
+  .page-archive__yaers-current {
+    font-size: 36px;
+    padding: 0 20px;
+  }
+
+  .archive-films__item {
+    width: 33.33%;
+    padding: 8px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -12111,6 +12305,10 @@ li.button-play {
 
   body *::-webkit-scrollbar-thumb {
     background-color: #525166;
+  }
+
+  .main-banner__slider .splide__slide picture {
+    height: 65vh;
   }
 
   .bn-header__social ul li a {
@@ -12521,6 +12719,44 @@ li.button-play {
   .event-detail__slider .splide__arrow {
     display: block;
   }
+
+  .page-archive__text {
+    padding-top: 5px;
+  }
+
+  .page-archive__text * {
+    font-size: 20px;
+  }
+
+  .page-archive__text h2 {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .page-archive__yaers {
+    margin-top: -60px;
+  }
+
+  .archive-films__item {
+    width: 25%;
+    padding: 10px;
+  }
+
+  .archive-films__title {
+    font-size: 48px;
+  }
+
+  .archive-films__label {
+    font-size: 20px;
+  }
+
+  .archive-films__subtitle {
+    font-size: 28px;
+  }
+
+  .archive-films__jury {
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 992px) and (min-height: 767px) {
@@ -12570,6 +12806,11 @@ li.button-play {
 
   .logo-preloader.load {
     display: block;
+  }
+
+  .main-banner__slider .splide__slide picture {
+    padding-top: 48%;
+    height: auto;
   }
 
   .bn-header__logo {
@@ -13546,6 +13787,43 @@ li.button-play {
   .event-detail__title h1 {
     font-size: 36px;
   }
+
+  .page-archive__yaers {
+    margin-top: -70px;
+  }
+
+  .page-archive__films {
+    padding-top: 28px;
+  }
+
+  .archive-films__item {
+    width: 20%;
+    padding: 10px;
+  }
+
+  .archive-films__title {
+    font-size: 60px;
+  }
+
+  .archive-films__title {
+    padding-bottom: 0.7em;
+  }
+
+  .archive-films__label {
+    padding-bottom: 1em;
+  }
+
+  .archive-films__subtitle {
+    padding-bottom: 1.3em;
+  }
+
+  .archive-films__jury {
+    padding-bottom: 1.35em;
+  }
+
+  .archive-films__program {
+    padding-bottom: 13px;
+  }
 }
 
 @media screen and (min-width: 1440px) and (min-height: 760px) {
@@ -13765,6 +14043,12 @@ li.button-play {
 
   .fp-about__nav {
     display: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .main-banner__large .event-card-main__desc {
+    display: block;
   }
 }
 

@@ -428,6 +428,9 @@
     flex-grow: 1;
 }
 
+/* ==================================================== */
+/* ==================================================== */
+
 .dark-mode {
     & .minicard-film {
         &__title {
@@ -461,4 +464,45 @@
             color: $main-dark-2;
         }
     }
+}
+
+.gray-mode {
+
+    & .minicard-film {
+        &__title {
+            & a {
+                color: #fff;
+            }
+        }
+
+        &__year {
+            color: $gray-74;
+        }
+
+        &__duration {
+            color: $gray-74;
+        }
+
+        &__flags {
+            & ul {
+                & li {
+                    & .bgimage {
+                        background-color: $main-dark-3;
+                        border: 1px solid $main-dark-3;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+
+        &__cover picture {
+            background-color: $main-dark-2;
+            color: $main-dark-2;
+        }
+
+        &__details {
+            background-color: $main-dark-2;
+        }
+    }
+
 }
