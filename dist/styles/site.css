@@ -11553,8 +11553,8 @@ li.button-play {
   position: absolute;
   right: 0;
   bottom: 0;
-  left: 40%;
-  top: 50%;
+  left: 20%;
+  top: 35%;
   z-index: 5;
 }
 
@@ -11562,7 +11562,7 @@ li.button-play {
   width: 100%;
   height: 100%;
   display: block;
-  background-position: right bottom;
+  background-position: right top;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -12397,8 +12397,12 @@ li.button-play {
   }
 
   .archive-films__item .minicard-film__award {
-    bottom: 0;
     left: 50%;
+    top: 50%;
+  }
+
+  .archive-films__item .minicard-film__award .bgimage {
+    background-position: right bottom;
   }
 
   .film-preview {
