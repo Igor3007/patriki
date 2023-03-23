@@ -1,6 +1,6 @@
 include ../moderator/all-films/all-films.pug
 
-mixin minicard-film-archive(data)
+mixin minicard-film-archive(data, index)
     .minicard-film(data-popup="film" data-url="/_archive-film.html")
         .minicard-film__image
             .minicard-film__cover: +picture(data.image)
@@ -31,6 +31,10 @@ mixin minicard-film-archive(data)
                     li: +bgimage('/img/flags/ru.svg')
                     li: +bgimage('/img/flags/de.svg')
             .minicard-film__duration 85 мин
+
+        if index == 2
+            .minicard-film__award: +bgimage('/img/common/prize_img.png')
+
 
 mixin page-archive
     .page-archive
@@ -63,7 +67,7 @@ mixin page-archive
                         .archive-films__list
                             each item,index in moderator.films
                                 if index < 5
-                                    .archive-films__item: +minicard-film-archive(item)
+                                    .archive-films__item: +minicard-film-archive(item, index)
                                     
                     .archive-films__program
                         .archive-films__subtitle Внеконкурсная программа
@@ -72,4 +76,4 @@ mixin page-archive
                         .archive-films__list
                             each item,index in moderator.films
                                 if index >= 5 && index < 10
-                                    .archive-films__item: +minicard-film-archive(item)
+                                    .archive-films__item: +minicard-film-archive(item, index)

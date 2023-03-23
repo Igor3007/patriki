@@ -97,6 +97,8 @@
             padding-top: 28px;
         }
     }
+
+
 }
 
 
@@ -115,6 +117,7 @@
         border-radius: 5px;
         width: 100%;
         padding: 8px;
+        position: relative;
 
         @media screen and (min-width: 359px) {
             width: 50%;
@@ -134,6 +137,34 @@
         @media screen and (min-width: $w1440) {
             width: 20%;
             padding: 10px;
+        }
+
+        & .minicard-film {
+            &__award {
+
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 40%;
+                top: 50%;
+                z-index: 5;
+
+                @media screen and (min-width: $w760) {
+                    bottom: 0;
+                    left: 50%;
+                }
+
+
+
+                & .bgimage {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    background-position: right bottom;
+                    background-repeat: no-repeat;
+                    background-size: contain
+                }
+            }
         }
 
     }
