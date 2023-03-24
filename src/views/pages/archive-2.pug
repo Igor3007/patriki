@@ -1,0 +1,25 @@
+extends ../layouts/site-gray
+
+include ../../blocks/modules/page-archive/page-archive.pug
+include ../../blocks/modules/site/jury-program/jury-program.pug
+
+block variables
+  include ../../data/data.pug
+  - const title = "О фетивале - PFF"
+
+
+block content
+    .container
+        .page-site
+            .page-site__breadcrumbs
+                ul
+                    li: a(href='#') Главная
+                    li: a(href='#') О фестивале                 
+                    li: a(href='#') История                 
+                    li: a(href='#') Архив                 
+                   
+            .page-site__title
+                h1 патрики-2022 
+
+            .page-site__content 
+                +page-archive-2()

@@ -127,3 +127,61 @@
         color: $main;
     }
 }
+
+.gray-mode {
+    & .card-jury {
+        background: #616079;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        transition: 0.5s ease;
+
+        &:hover {
+
+            background-color: $main-dark-2;
+
+            & .card-jury {
+
+                &__photo {
+                    & .bgimage {
+                        background-color: $main2;
+                    }
+                }
+
+                &__desc,
+                &__post,
+                &__name {
+                    color: #fff;
+
+                    & a {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+
+        &__photo {
+            & .bgimage {
+                background-color: $main-dark-2;
+            }
+        }
+
+        &__name {
+
+            & a {
+                color: #fff;
+            }
+        }
+
+        &__post {
+            color: $main2;
+            margin-bottom: 0.6em;
+            transition: color 0.4s ease;
+        }
+
+        &__desc {
+            color: #fff;
+        }
+    }
+
+}

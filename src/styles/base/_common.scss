@@ -394,38 +394,45 @@
 
 
 .main-banner__large {
-  background-color: #eee;
+    background-color: #eee;
 }
 
 .main-banner__large .event-card-main__desc,
 .main-banner__large .event-card-main__title,
 .main-banner__large .event-card-main__date {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 3px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 3px;
 }
 
 .main-banner__large .event-card-main__desc {
-  padding-bottom: 15px
+    margin-bottom: 15px
 }
 
 @media screen and (max-width: 991px) {
-  .main-banner__large .event-card-main__desc {
-    display: block;
-  }
+    .main-banner__large .event-card-main__desc {
+        display: block;
+    }
 }
 
 
 
 @media screen and (min-width: 992px) {
-  .main-banner__slider .splide__slide picture {
-    height: 65vh;
-  }
+    .main-banner__slider .splide__slide picture {
+        height: 65vh;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-  .main-banner__slider .splide__slide picture {
-    padding-top: 48%;
-    height: auto
-  }
+    .main-banner__slider.event-card-main__slider picture {
+        padding-top: 0;
+        height: calc(65vh - 135px);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .main-banner__slider.event-card-main__slider picture {
+        padding-top: 0;
+        height: calc(75vh - 232px);
+    }
 }

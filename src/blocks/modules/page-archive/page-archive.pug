@@ -77,3 +77,69 @@ mixin page-archive
                             each item,index in moderator.films
                                 if index >= 5 && index < 10
                                     .archive-films__item: +minicard-film-archive(item, index)
+
+mixin card-nomination(data)
+    .card-nomination
+        .card-nomination__image: +picture('/img/common/about-media-3')
+        .card-nomination__main
+            .card-nomination__text= data.text
+            .card-nomination__film= data.film
+
+ 
+
+mixin page-archive-2
+    .page-archive
+        .page-archive__yaers
+            .page-archive__yaers-label год:
+            .page-archive__yaers-list
+                ul
+                    li: a(href='#') 2022
+                    li: a(href='#') 2021
+                    li.active: a(href='#') 2020
+                    li: a(href='#') 2019
+                    li: a(href='#') 2018
+
+        .page-archive__box
+            .archive-box
+                .archive-box__title Программы фестиваля
+                .archive-box__list
+                    ul
+                        li: span – экспериментальное и дебютное российское кино;
+                        li: span – внеконкурсная программа;
+                        li: span – спецпоказы. 
+
+        .page-archive__box
+            .archive-box
+                .archive-box__title Номинации и победители:
+                .archive-box__list
+                    .archive-box__items
+                        each item in site.nomenation
+                            .archive-box__item
+                                +card-nomination(item) 
+            
+
+        .page-archive__films
+            .archive-films
+                .archive-films__title Фильмы по программам
+                .archive-films__programs
+                    .archive-films__program
+                        .archive-films__subtitle экспериментальное и дебютное российское кино
+                        .archive-films__label Жюри программы:
+                        .archive-films__jury
+                            each item in site.jury2
+                                .archive-films__card: +card-jury(item)
+
+                        .archive-films__label Фильмы:
+                        .archive-films__list
+                            each item,index in moderator.films
+                                if index < 5
+                                    .archive-films__item: +minicard-film-archive(item, index)
+                                    
+                    .archive-films__program
+                        .archive-films__subtitle Внеконкурсная программа
+                        .archive-films__label Фильмы:
+                        
+                        .archive-films__list
+                            each item,index in moderator.films
+                                if index >= 5 && index < 10
+                                    .archive-films__item: +minicard-film-archive(item, index)
