@@ -3706,7 +3706,7 @@ a.link-primary {
 }
 
 .main-banner__large .event-card-main__desc {
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .btn {
@@ -6329,6 +6329,52 @@ footer {
 
 .card-jury__desc {
   color: #525166;
+}
+
+.gray-mode .card-jury {
+  background: #616079;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  transition: 0.5s ease;
+}
+
+.gray-mode .card-jury:hover {
+  background-color: #424152;
+}
+
+.gray-mode .card-jury:hover .card-jury__photo .bgimage {
+  background-color: #92919F;
+}
+
+.gray-mode .card-jury:hover .card-jury__desc,
+.gray-mode .card-jury:hover .card-jury__post,
+.gray-mode .card-jury:hover .card-jury__name {
+  color: #fff;
+}
+
+.gray-mode .card-jury:hover .card-jury__desc a,
+.gray-mode .card-jury:hover .card-jury__post a,
+.gray-mode .card-jury:hover .card-jury__name a {
+  color: #FFF;
+}
+
+.gray-mode .card-jury__photo .bgimage {
+  background-color: #424152;
+}
+
+.gray-mode .card-jury__name a {
+  color: #fff;
+}
+
+.gray-mode .card-jury__post {
+  color: #92919F;
+  margin-bottom: 0.6em;
+  transition: color 0.4s ease;
+}
+
+.gray-mode .card-jury__desc {
+  color: #fff;
 }
 
 .about-user {
@@ -11501,10 +11547,11 @@ li.button-play {
 
 .page-archive__yaers {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  margin-top: -45px;
   padding-bottom: 30px;
+  padding-top: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .page-archive__yaers-next a,
@@ -11527,6 +11574,46 @@ li.button-play {
   line-height: 143%;
   color: #fff;
   padding: 0 15px;
+}
+
+.page-archive__yaers-label {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+  line-height: 143%;
+  text-transform: uppercase;
+  margin-right: 15px;
+  display: none;
+}
+
+.page-archive__yaers-list ul {
+  display: flex;
+  margin: -2px;
+}
+
+.page-archive__yaers-list ul li {
+  padding: 2px;
+}
+
+.page-archive__yaers-list ul li a {
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  background-color: #616079;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-archive__yaers-list ul li a:hover {
+  background-color: #6B6985;
+}
+
+.page-archive__yaers-list ul li.active a {
+  font-weight: 700;
 }
 
 .archive-films {
@@ -11569,7 +11656,7 @@ li.button-play {
 
 .archive-films__title {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 133%;
   text-align: center;
   text-transform: uppercase;
@@ -11596,7 +11683,14 @@ li.button-play {
 
 .archive-films__jury {
   padding-bottom: 15px;
-  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px;
+}
+
+.archive-films__card {
+  width: 100%;
+  padding: 12px;
 }
 
 .archive-films__program {
@@ -11741,6 +11835,96 @@ li.button-play {
 
 .film-preview__list ul li span a:hover {
   text-decoration: underline;
+}
+
+.archive-box {
+  padding-bottom: 68px;
+}
+
+.archive-box__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 133%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #525166;
+  color: #fff;
+  text-align: left;
+  padding-bottom: 0.65em;
+}
+
+.archive-box__list ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px;
+}
+
+.archive-box__list ul li {
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+}
+
+.archive-box__list ul li span {
+  display: block;
+  background-color: #616079;
+  padding: 19px 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.archive-box__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px;
+}
+
+.archive-box__item {
+  width: 100%;
+  padding: 12px;
+}
+
+.card-nomination {
+  background-color: #616079;
+  padding: 32px 32px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.card-nomination__main {
+  padding-left: 16px;
+  color: #fff;
+}
+
+.card-nomination__image {
+  max-width: 64px;
+  min-width: 64px;
+}
+
+.card-nomination__image picture {
+  position: relative;
+  display: block;
+  padding-top: 150%;
+}
+
+.card-nomination__image picture img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-nomination__text {
+  font-size: 14px;
+  padding-bottom: 0.8em;
+}
+
+.card-nomination__film {
+  font-size: 14px;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 359px) {
@@ -12380,6 +12564,10 @@ li.button-play {
     max-width: 50%;
   }
 
+  .page-archive__yaers {
+    justify-content: flex-end;
+  }
+
   .page-archive__yaers-next a,
   .page-archive__yaers-prev a {
     width: 56px;
@@ -12389,6 +12577,10 @@ li.button-play {
   .page-archive__yaers-current {
     font-size: 36px;
     padding: 0 20px;
+  }
+
+  .page-archive__yaers-label {
+    display: block;
   }
 
   .archive-films__item {
@@ -12418,6 +12610,14 @@ li.button-play {
   .film-preview__right {
     width: calc(100% - 204px);
     padding-left: 24px;
+  }
+
+  .archive-box__list ul li {
+    width: 50%;
+  }
+
+  .archive-box__item {
+    width: 50%;
   }
 }
 
@@ -12926,17 +13126,19 @@ li.button-play {
     margin-top: 30px;
   }
 
-  .page-archive__yaers {
-    margin-top: -60px;
+  .page-archive__yaers-label {
+    font-size: 28px;
+  }
+
+  .page-archive__yaers-list ul li a {
+    padding: 10px 19px;
+    height: 56px;
+    font-size: 24px;
   }
 
   .archive-films__item {
     width: 25%;
     padding: 10px;
-  }
-
-  .archive-films__title {
-    font-size: 48px;
   }
 
   .archive-films__label {
@@ -12947,8 +13149,9 @@ li.button-play {
     font-size: 28px;
   }
 
-  .archive-films__jury {
-    font-size: 20px;
+  .archive-films__card {
+    width: 50%;
+    padding: 12px;
   }
 
   .film-preview__title {
@@ -12957,6 +13160,14 @@ li.button-play {
 
   .film-preview__year ul {
     justify-content: flex-start;
+  }
+
+  .card-nomination__text {
+    font-size: 14px;
+  }
+
+  .card-nomination__film {
+    font-size: 14px;
   }
 }
 
@@ -13009,9 +13220,9 @@ li.button-play {
     display: block;
   }
 
-  .main-banner__slider .splide__slide picture {
-    padding-top: 48%;
-    height: auto;
+  .main-banner__slider.event-card-main__slider picture {
+    padding-top: 0;
+    height: calc(65vh - 135px);
   }
 
   .bn-header__logo {
@@ -13301,10 +13512,20 @@ li.button-play {
     padding: 48px 0;
   }
 
+  .page-archive__yaers {
+    margin-top: -60px;
+    padding-bottom: 58px;
+    padding-top: 0;
+  }
+
   .film-preview__cover {
     width: 100%;
     max-width: 204px;
     margin-right: 25px;
+  }
+
+  .archive-box__item {
+    width: 33.33%;
   }
 }
 
@@ -13571,6 +13792,11 @@ li.button-play {
 
   .page-text__h1 h1 {
     font-size: 36px;
+  }
+
+  .main-banner__slider.event-card-main__slider picture {
+    padding-top: 0;
+    height: calc(75vh - 232px);
   }
 
   .form__item > .form__item {
@@ -13999,21 +14225,17 @@ li.button-play {
     margin-top: -70px;
   }
 
-  .page-archive__films {
-    padding-top: 28px;
-  }
-
   .archive-films__item {
     width: 20%;
     padding: 10px;
   }
 
   .archive-films__title {
-    font-size: 60px;
+    font-size: 36px;
   }
 
   .archive-films__title {
-    padding-bottom: 0.7em;
+    padding-bottom: 1.1em;
   }
 
   .archive-films__label {
@@ -14043,6 +14265,10 @@ li.button-play {
 
   .film-preview__list ul li span {
     font-size: 16px;
+  }
+
+  .archive-box__title {
+    font-size: 36px;
   }
 }
 

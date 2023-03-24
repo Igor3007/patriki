@@ -1455,6 +1455,43 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     }
 
+    /* ===========================================
+    scroll to active
+    ===========================================*/
+
+    window.scrollElement = function (container, elem) {
+
+        var rect = elem.getBoundingClientRect();
+        var rectContainer = container.getBoundingClientRect();
+
+        let elemOffset = {
+            top: rect.top + document.body.scrollTop,
+            left: rect.left + document.body.scrollLeft
+        }
+
+        let containerOffset = {
+            top: rectContainer.top + document.body.scrollTop,
+            left: rectContainer.left + document.body.scrollLeft
+        }
+
+        let leftPX = elemOffset.left - containerOffset.left + container.scrollLeft - (container.offsetWidth / 2) + (elem.offsetWidth / 2) + 5
+
+        container.scrollTo({
+            left: leftPX,
+            behavior: 'smooth'
+        });
+
+    }
+
+    if (document.querySelector('.page-archive__yaers-list') && document.body.clientWidth <= 992) {
+
+        let container = document.querySelector('.page-archive__yaers')
+        let elem = document.querySelector('.page-archive__yaers-list ul li.active')
+
+        window.scrollElement(container, elem);
+
+    }
+
 
 
 

@@ -3706,7 +3706,7 @@ a.link-primary {
 }
 
 .main-banner__large .event-card-main__desc {
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .btn {
@@ -9794,9 +9794,9 @@ div[data-lang]:not(.active) {
     display: block;
   }
 
-  .main-banner__slider .splide__slide picture {
-    padding-top: 48%;
-    height: auto;
+  .main-banner__slider.event-card-main__slider picture {
+    padding-top: 0;
+    height: calc(65vh - 135px);
   }
 
   .header__logo {
@@ -10100,6 +10100,11 @@ div[data-lang]:not(.active) {
 
   .page-text__h1 h1 {
     font-size: 36px;
+  }
+
+  .main-banner__slider.event-card-main__slider picture {
+    padding-top: 0;
+    height: calc(75vh - 232px);
   }
 
   .form__item > .form__item {
