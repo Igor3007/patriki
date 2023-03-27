@@ -3693,22 +3693,6 @@ a.link-primary {
   animation: fade-to 1.5s ease forwards;
 }
 
-.main-banner__large {
-  background-color: #eee;
-}
-
-.main-banner__large .event-card-main__desc,
-.main-banner__large .event-card-main__title,
-.main-banner__large .event-card-main__date {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 3px;
-}
-
-.main-banner__large .event-card-main__desc {
-  margin-bottom: 15px;
-}
-
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;
@@ -9586,10 +9570,6 @@ div[data-lang]:not(.active) {
     background-color: #525166;
   }
 
-  .main-banner__slider .splide__slide picture {
-    height: 65vh;
-  }
-
   .header__social ul li a {
     background-color: transparent;
     width: 100%;
@@ -9792,11 +9772,6 @@ div[data-lang]:not(.active) {
 
   .logo-preloader.load {
     display: block;
-  }
-
-  .main-banner__slider.event-card-main__slider picture {
-    padding-top: 0;
-    height: calc(65vh - 135px);
   }
 
   .header__logo {
@@ -10100,11 +10075,6 @@ div[data-lang]:not(.active) {
 
   .page-text__h1 h1 {
     font-size: 36px;
-  }
-
-  .main-banner__slider.event-card-main__slider picture {
-    padding-top: 0;
-    height: calc(75vh - 232px);
   }
 
   .form__item > .form__item {
@@ -10447,12 +10417,6 @@ div[data-lang]:not(.active) {
   .splide-mobile-disabled-992.splide > .splide__track > .splide__list {
     display: block;
     backface-visibility: visible;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .main-banner__large .event-card-main__desc {
-    display: block;
   }
 }
 

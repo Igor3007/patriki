@@ -7,13 +7,26 @@ mixin main-banner
                        .splide(data-slider="banner")
                             .splide__track
                                 .splide__list
-                                    .splide__slide  
-                                        a(href='#page1')
-                                            picture
-                                                source(srcset='/img/common/slider.jpg' type='image/jpeg' media='(min-width: 480px)')
-                                                img(src='/img/common/slider_480.jpg' alt='Image')
-                                     
-                                     
+                                    .splide__slide
+                                        .image-banner
+                                            a(href='#page1')
+                                                picture
+                                                    source(srcset='/img/common/slider.jpg' type='image/jpeg' media='(min-width: 480px)')
+                                                    img(src='/img/common/slider_480.jpg' alt='Image')
+
+                                    .splide__slide
+                                        .news-banner
+                                            .news-banner__image
+                                                a(href='#page1')
+                                                    picture
+                                                        source(srcset='https://patrikifilmfestival.ru/storage/thumbs/1020x560/24/WhatsApp-Image-2023-02-22-at-15.34.51.webp' type='image/jpeg' media='(min-width: 480px)')
+                                                        img(src='/img/common/slider_480.jpg' alt='Image')
+                                            .news-banner__main
+                                                .news-banner__date 22.02.2023
+                                                .news-banner__title: a(href='#') ГЛАВНЫЕ НОМИНАНТЫ НА «ОСКАР» 2023 ГОДА: КТО ЗАБЕРЕТ ДОМОЙ ЗАВЕТНЫЕ СТАТУЭТКИ И ПОЧЕМУ
+                                                .news-banner__desc 12 марта Американская академия кинематографических искусств и наук объявит победителей премии «Оскар»-2023. Кто же стал номинантом в этом году и что нового мы увидели в кино благодаря этому выбору? На этот непростой вопрос отвечает директор кинофестиваля Patriki Film Festival Ирина Миролюбова.
+                                        
+                                        
                               
               
 
