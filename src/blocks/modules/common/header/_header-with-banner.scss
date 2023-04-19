@@ -375,6 +375,15 @@ header {
 
             }
         }
+
+        &-contacts {
+            @media screen and (min-width: $w1200) {
+                display: none;
+            }
+
+            padding: 15px 15px 0 15px;
+
+        }
     }
 
     &__pa {
@@ -624,6 +633,51 @@ header {
 
                     & .hide-tooltip {
                         display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bn-header-contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    &__email,
+    &__phone {
+        font-weight: 600;
+        color: $main;
+        padding-bottom: 5px;
+    }
+
+    &__social {
+
+        padding-top: 15px;
+
+        & ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -3px;
+
+            & li {
+                padding: 3px;
+
+                & a {
+                    display: flex;
+                    border: 1px solid $main;
+                    width: 36px;
+                    height: 36px;
+                    align-items: center;
+                    justify-content: center;
+
+                    & svg {
+                        width: 18px;
+                        fill: $main;
                     }
                 }
             }

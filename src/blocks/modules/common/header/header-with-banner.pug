@@ -22,6 +22,21 @@
             ul
               each item in app.mainMenu
                 li: a(href=item.href)= item.text
+        
+
+        .bn-header__nav-contacts
+          .bn-header-contacts
+            .bn-header-contacts__phone
+              a(href='tel:+7 (905) 504-73-70')
+                span +7 (905) 504-73-70
+            .bn-header-contacts__email
+              a(href='mailto:info@patrikifilmfestival.ru')
+                span info@patrikifilmfestival.ru
+            .bn-header-contacts__social
+              ul
+                li: a(href='https://vk.com/patrikifilmfestival'): +icons('#ic_vk')
+                li: a(href='https://t.me/patrikifilmfestival'): +icons('#ic_tg')
+
         .bn-header__nav-lang
           .bn-header-lang
             .bn-header-lang__title Язык сайта
@@ -29,6 +44,7 @@
               ul
                 li: a(href='#') ENGLISH
                 li: a(href='#' class="active") РУССКИЙ
+
       .bn-header__nav-btn
         .btn-burger(data-menu="btn")
           i
