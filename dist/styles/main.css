@@ -3693,6 +3693,19 @@ a.link-primary {
   animation: fade-to 1.5s ease forwards;
 }
 
+.splide[data-slider="main-advice"]:not(.is-initialized) {
+  visibility: visible;
+}
+
+.splide[data-slider="main-advice"]:not(.is-initialized) .splide__slide {
+  width: 25%;
+}
+
+.splide[data-slider="main-advice"]:not(.is-initialized) .splide__list {
+  display: flex;
+  justify-content: center;
+}
+
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;
@@ -4941,8 +4954,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 200px;
-  width: 200px;
   padding: 0 1em;
 }
 

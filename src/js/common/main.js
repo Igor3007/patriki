@@ -1306,7 +1306,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
         document.querySelectorAll('[data-trailer-link]').forEach(item => {
             item.addEventListener('click', e => {
                 const popup = new customModal()
-                popup.open('<div class="player-trailer" ><iframe src="' + item.dataset.trailerLink + '" ></iframe></div>')
+
+                let text = '<div>Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: синтетическое тестирование способствует подготовке и реализации новых предложений. <strong>Высокий уровень</strong> вовлечения представителей целевой аудитории является четким доказательством простого факта: убеждённость некоторых оппонентов позволяет оценить значение модели развития.<br><br><em>Ясность нашей позиции очевидна: выбранный нами инновационный путь однозначно определяет каждого участника как способного принимать собственные решения касаемо новых принципов формирования материально-технической и кадровой базы. Вот вам яркий пример современных тенденций — понимание сути ресурсосберегающих технологий играет важную роль в формировании распределения внутренних резервов и ресурсов. А ещё реплицированные с зарубежных источников, современные исследования ограничены исключительно образом мышления.</em><br><br>Повседневная практика показывает, что начало повседневной работы по формированию позиции напрямую зависит от экономической целесообразности принимаемых решений. В частности, существующая теория <del>однозначно </del>определяет каждого участника как способного принимать собственные решения касаемо системы массового участия. Задача организации, в особенности же начало повседневной работы по формированию позиции предопределяет высокую востребованность распределения внутренних резервов и ресурсов. Но высокотехнологичная концепция общественного уклада создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса кластеризации усилий.<br><br>Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: консультация с широким активом влечет за собой процесс внедрения и модернизации экономической целесообразности принимаемых решений. А ещё непосредственные участники технического прогресса, превозмогая сложившуюся непростую экономическую ситуацию, разоблачены.<br><br>В частности, разбавленное изрядной долей эмпатии, рациональное мышление представляет собой интересный эксперимент проверки распределения внутренних резервов и ресурсов. Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования призывают нас к новым свершениям, которые, в свою очередь, должны быть в равной степени предоставлены сами себе. Разнообразный и богатый опыт говорит нам, что экономическая повестка сегодняшнего дня не даёт нам иного выбора, кроме определения новых предложений. Ясность нашей позиции очевидна: современная методология разработки создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса анализа существующих паттернов поведения. Являясь всего лишь частью общей картины, сделанные на базе интернет-аналитики выводы рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок.</div>';
+
+                popup.open(
+                    `<div class="player-trailer" >
+                        <div class = "player-trailer__iframe">
+                            <iframe allowfullscreen="" src="${item.dataset.trailerLink}"></iframe>
+                        </div>
+                        ${text.length ? `<div class = "player-trailer__desc  ">${text}</div>` : ''}
+                    </div>`
+                )
             })
         })
     }
@@ -1333,63 +1343,81 @@ document.addEventListener('DOMContentLoaded', function (event) {
     slider main-advice 
     ====================================================*/
 
+
     if (document.querySelector('[data-slider="main-advice"]')) {
 
-        const countSlide = document.querySelectorAll('[data-slider="main-advice"] .card-advice');
+        if (document.querySelectorAll('[data-slider="main-advice"]') > 4 || document.body.clientWidth < 992) {
 
-        var sliderMainAdvice = new Splide('[data-slider="main-advice"]', {
-            perPage: (countSlide.length < 6 ? countSlide.length : 5),
-            pagination: false,
-            arrows: false,
-            gap: 0,
+            document.querySelectorAll('[data-slider="main-advice"]').forEach(item => {
+                let countSlide = item.querySelectorAll('.card-advice');
 
-            breakpoints: {
+                var sliderMainAdvice = new Splide(item, {
+                    //perPage: (countSlide.length < 6 ? countSlide.length : 5),
+                    perPage: (countSlide.length < 6 ? 4 : 5),
+                    pagination: false,
+                    arrows: false,
+                    gap: 0,
+                    // focus: 'center',
 
-                1200: {
-                    perPage: 4,
-                },
+                    breakpoints: {
 
-                992: {
-                    perPage: 3,
-                },
+                        1200: {
+                            perPage: 4,
+                        },
 
-                760: {
-                    perPage: 1,
-                    gap: 15,
-                },
+                        992: {
+                            perPage: 3,
+                        },
 
-            },
-        });
+                        760: {
+                            perPage: 1,
+                            gap: 15,
+                        },
+
+                    },
+                });
 
 
+                let wrapper = item.closest('.section-main-advice');
+
+                if (wrapper.querySelector('.main-advice__nav')) {
+
+                    if (countSlide.length < 5 && document.body.clientWidth > 1200) {
+                        wrapper.querySelector('.main-advice__nav').style.display = 'none';
+                    } else {
+                        wrapper.querySelector('.main-advice__nav').style.display = 'flex';
+                    }
+
+                }
 
 
-        if (document.querySelector('.main-advice__nav')) {
+                if (wrapper.querySelector('[data-slider-prev="main-advice"]')) {
 
-            if (countSlide.length < 6 && document.body.clientWidth > 1200) {
-                document.querySelector('.main-advice__nav').style.display = 'none';
-            } else {
-                document.querySelector('.main-advice__nav').style.display = 'flex';
+                    let prevButton = wrapper.querySelector('[data-slider-prev="main-advice"]')
+                    let nextButton = wrapper.querySelector('[data-slider-next="main-advice"]')
+
+                    prevButton.addEventListener('click', e => {
+                        sliderMainAdvice.go('<')
+                    })
+
+                    nextButton.addEventListener('click', e => {
+                        sliderMainAdvice.go('>')
+                    })
+                }
+
+                sliderMainAdvice.mount();
+
+
+            });
+
+        } else {
+
+            if (document.querySelector('[data-slider-prev="main-advice"]')) {
+                document.querySelector('[data-slider-prev="main-advice"]').style.display = 'none'
+                document.querySelector('[data-slider-next="main-advice"]').style.display = 'none'
             }
 
         }
-
-
-        if (document.querySelector('[data-slider-prev="main-advice"]')) {
-
-            const prevButton = document.querySelector('[data-slider-prev="main-advice"]')
-            const nextButton = document.querySelector('[data-slider-next="main-advice"]')
-
-            prevButton.addEventListener('click', e => {
-                sliderMainAdvice.go('<')
-            })
-
-            nextButton.addEventListener('click', e => {
-                sliderMainAdvice.go('>')
-            })
-        }
-
-        sliderMainAdvice.mount();
 
     }
 
@@ -1447,11 +1475,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
             })
         })
-
-
-
-
-
 
     }
 

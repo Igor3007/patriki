@@ -389,3 +389,18 @@
     }
 
 }
+
+
+.splide[data-slider="main-advice"]:not(.is-initialized) {
+  visibility: visible;
+}
+
+
+.splide[data-slider="main-advice"]:not(.is-initialized) .splide__slide {
+  width: 25%
+}
+
+.splide[data-slider="main-advice"]:not(.is-initialized) .splide__list {
+  display: flex;
+  justify-content: center
+}

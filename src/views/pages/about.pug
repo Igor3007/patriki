@@ -9,11 +9,34 @@ include ../../blocks/modules/about/about-media/about-media
 
 block variables
   include ../../data/data.pug
-  - const title = "Дневник фестиваля - PFF"
+  - const title = "О фетивале - PFF"
 
 
 block content
-  
+  .fp-about
+    .splide.splide-mobile-disabled-992(data-slider="about")
+        .splide__track
+          .splide__list
+            .splide__slide(data-splide-title="Фестиваль"): +about-main()
+            .splide__slide(data-splide-title="История"): +about-history()
+            .splide__slide(data-splide-title="Попечительский совет"): +about-advice()
+            .splide__slide(data-splide-title="Основатели"): +about-founder()
+            .splide__slide(data-splide-title="Команда"): +about-team()
+            .splide__slide(data-splide-title="Сми о нас"): +about-media()
+    
+    .fp-about__nav
+      .fp-about__nav-slide Фестиваль
+      .fp-about__nav-action
+        .fp-about__nav-prev(data-slider-prev="about"): +icons('#ic_arr-back', 20)
+        .fp-about__nav-dots
+          ul
+            li: span.dots-slider
+            li: span.dots-slider.is-active
+            li: span.dots-slider
+            li: span.dots-slider
+            li: span.dots-slider
+        .fp-about__nav-next(data-slider-next="about"): +icons('#ic_arr-next', 20)
+
       
 
 

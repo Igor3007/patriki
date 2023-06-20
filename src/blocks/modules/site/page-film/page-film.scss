@@ -1488,22 +1488,43 @@
 
 
  .player-trailer {
-     width: 130vh;
-     padding-top: 60%;
-     background: #2e2b3a;
-     position: relative;
-     max-width: 100%;
 
-     & iframe {
-         position: absolute;
-         left: 0;
-         right: 0;
-         width: 100%;
-         height: 100%;
-         z-index: 5;
-         top: 0;
-         border: none;
+     width: 130vh;
+     background-color: #2e2b3a;
+     margin: -10px;
+     max-width: calc(100% + 20px);
+
+     &__iframe {
+
+         padding-top: 60%;
+         background: #2e2b3a;
+         position: relative;
+         max-width: 100%;
+
+         & iframe {
+             position: absolute;
+             left: 0;
+             right: 0;
+             width: 100%;
+             height: 100%;
+             z-index: 5;
+             top: 0;
+             border: none;
+         }
+
      }
+
+
+     &__desc {
+         color: #fff;
+         padding: 15px 17px;
+
+         @media screen and (min-width: $w480) {
+             padding: 25px;
+         }
+     }
+
+
 
  }
 
