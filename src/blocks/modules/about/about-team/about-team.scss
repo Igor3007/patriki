@@ -177,6 +177,11 @@
              padding: 40px;
          }
 
+         &>.team-member__post,
+         &>.team-member__name {
+             display: none;
+         }
+
          & .team-member {
              &__main {
 
@@ -190,8 +195,13 @@
              }
 
              &__name {
+
+                 text-align: left !important;
+                 padding-left: 0;
+
                  @media screen and (max-width: $w992) {
                      padding-bottom: 0;
+
                  }
              }
 
@@ -260,5 +270,7 @@
              line-height: 156%;
              color: #FFFFFF;
          }
+
+
      }
  }

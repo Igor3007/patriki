@@ -11022,6 +11022,16 @@ li.button-play {
   flex-direction: column;
 }
 
+.af-popup__content .team-desc > .team-member__post,
+.af-popup__content .team-desc > .team-member__name {
+  display: none;
+}
+
+.af-popup__content .team-desc .team-member__name {
+  text-align: left !important;
+  padding-left: 0;
+}
+
 .af-popup__content .team-member__main {
   display: block;
   padding-left: 30px;
