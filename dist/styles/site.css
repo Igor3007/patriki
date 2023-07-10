@@ -10383,6 +10383,14 @@ li.button-play {
   width: 100%;
 }
 
+.card-advice__text h3 {
+  display: none;
+}
+
+.jury-desc .card-advice__text h3 {
+  display: block;
+}
+
 .section-about-main {
   position: relative;
   padding: 16px 0;
