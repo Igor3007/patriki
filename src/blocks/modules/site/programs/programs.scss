@@ -70,6 +70,8 @@
         padding-left: 48px;
         border-top: 1px solid #ABA9BC;
         margin-bottom: 35px;
+        justify-content: flex-start;
+        padding-top: 5px;
 
         @media screen and (min-width: $w1440) {
             margin-left: -48px;
@@ -79,6 +81,7 @@
 
     &__title {
         @include section-title;
+        text-align: left;
 
         & a {
             color: $main;
@@ -92,6 +95,7 @@
 
     &__desc {
         color: $main2;
+        padding-bottom: 15px;
     }
 
 

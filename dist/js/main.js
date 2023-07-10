@@ -1343,6 +1343,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     slider main-advice 
     ====================================================*/
 
+
     if (document.querySelector('[data-slider="main-advice"]')) {
         document.querySelectorAll('[data-slider="main-advice"]').forEach(item => {
             let countSlide = item.querySelectorAll('.card-advice');
@@ -1412,7 +1413,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         });
     }
-
     /* ===========================================
     data-number-repeat="add"
     ===========================================*/

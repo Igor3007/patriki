@@ -96,6 +96,10 @@
         }
     }
 
+    &__wrp {
+        position: relative;
+    }
+
     &__desc {
         position: absolute;
         background-color: $main;
@@ -154,4 +158,9 @@
 .jury-desc .card-advice__post,
 .jury-desc .card-advice__name {
     display: none
+}
+
+
+.jury-desc .card-advice__wrp {
+    display: flex
 }

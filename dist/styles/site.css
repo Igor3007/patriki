@@ -6105,6 +6105,8 @@ footer {
   padding-left: 48px;
   border-top: 1px solid #ABA9BC;
   margin-bottom: 35px;
+  justify-content: flex-start;
+  padding-top: 5px;
 }
 
 .programs-item__title {
@@ -6114,6 +6116,7 @@ footer {
   text-align: center;
   text-transform: uppercase;
   color: #525166;
+  text-align: left;
 }
 
 .programs-item__title a {
@@ -6123,6 +6126,7 @@ footer {
 
 .programs-item__desc {
   color: #92919F;
+  padding-bottom: 15px;
 }
 
 .programs__tabs {
@@ -10503,6 +10507,10 @@ li.button-play {
   object-fit: cover;
 }
 
+.card-advice__wrp {
+  position: relative;
+}
+
 .card-advice__desc {
   position: absolute;
   background-color: #525166;
@@ -10552,6 +10560,10 @@ li.button-play {
 .jury-desc .card-advice__post,
 .jury-desc .card-advice__name {
   display: none;
+}
+
+.jury-desc .card-advice__wrp {
+  display: flex;
 }
 
 .section-about-founder {
