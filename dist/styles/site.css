@@ -3706,6 +3706,11 @@ a.link-primary {
   justify-content: center;
 }
 
+.main-banner__small .splide__track,
+.main-banner__small > .splide {
+  height: 100%;
+}
+
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;
@@ -10527,6 +10532,28 @@ li.button-play {
   transition: 0.3s ease;
 }
 
+.card-advice__name {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 14px;
+  color: #525166;
+}
+
+.card-advice__post {
+  text-align: center;
+  font-weight: 600;
+  color: #525166;
+  font-size: 16px;
+  padding-top: 14px;
+}
+
+.jury-desc .card-advice__post,
+.jury-desc .card-advice__name {
+  display: none;
+}
+
 .section-about-founder {
   position: relative;
   padding: 16px 0;
@@ -10880,7 +10907,7 @@ li.button-play {
 }
 
 .about-team__list .splide {
-  max-width: 950px;
+  max-width: 1510px;
   margin: 0 auto;
 }
 
@@ -10888,6 +10915,23 @@ li.button-play {
   padding: 5px;
   min-width: 300px;
   width: 300px;
+}
+
+.team-member__post {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+.team-member__name {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  padding-left: 46px;
+  padding-bottom: 12px;
 }
 
 .team-member__img picture {
@@ -10900,7 +10944,7 @@ li.button-play {
   cursor: pointer;
   position: relative;
   display: block;
-  padding-top: 155%;
+  padding-top: 130%;
 }
 
 .team-member__img picture img {
@@ -13611,6 +13655,11 @@ li.button-play {
 
   .section-about-team {
     padding: 48px 0;
+  }
+
+  .about-team__list .splide {
+    display: flex;
+    justify-content: center;
   }
 
   .section-about-media {

@@ -404,3 +404,8 @@
   display: flex;
   justify-content: center
 }
+
+.main-banner__small .splide__track,
+.main-banner__small>.splide {
+  height: 100%
+}

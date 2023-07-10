@@ -1343,13 +1343,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
     slider main-advice 
     ====================================================*/
 
-
     if (document.querySelector('[data-slider="main-advice"]')) {
+        document.querySelectorAll('[data-slider="main-advice"]').forEach(item => {
+            let countSlide = item.querySelectorAll('.card-advice');
 
-        if (document.querySelectorAll('[data-slider="main-advice"]') > 4 || document.body.clientWidth < 992) {
-
-            document.querySelectorAll('[data-slider="main-advice"]').forEach(item => {
-                let countSlide = item.querySelectorAll('.card-advice');
+            if (countSlide.length > 3 || document.body.clientWidth < 992) {
 
                 var sliderMainAdvice = new Splide(item, {
                     //perPage: (countSlide.length < 6 ? countSlide.length : 5),
@@ -1382,7 +1380,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 if (wrapper.querySelector('.main-advice__nav')) {
 
-                    if (countSlide.length < 6 && document.body.clientWidth > 1200) {
+                    if (countSlide.length < 5 && document.body.clientWidth > 1200) {
                         wrapper.querySelector('.main-advice__nav').style.display = 'none';
                     } else {
                         wrapper.querySelector('.main-advice__nav').style.display = 'flex';
@@ -1406,19 +1404,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 }
 
                 sliderMainAdvice.mount();
-
-
-            });
-
-        } else {
-
-            if (document.querySelector('[data-slider-prev="main-advice"]')) {
-                document.querySelector('[data-slider-prev="main-advice"]').style.display = 'none'
-                document.querySelector('[data-slider-next="main-advice"]').style.display = 'none'
+            } else {
+                if (document.querySelector('[data-slider-prev="main-advice"]')) {
+                    document.querySelector('[data-slider-prev="main-advice"]').style.display = 'none'
+                    document.querySelector('[data-slider-next="main-advice"]').style.display = 'none'
+                }
             }
-
-        }
-
+        });
     }
 
     /* ===========================================

@@ -3706,6 +3706,11 @@ a.link-primary {
   justify-content: center;
 }
 
+.main-banner__small .splide__track,
+.main-banner__small > .splide {
+  height: 100%;
+}
+
 .btn {
   padding: 0.8em 2.5em 0.85em 2.5em;
   background: #525166;

@@ -8,5 +8,8 @@ mixin about-main
                     .about-main__desc Наша миссия  —  поиск новых имен и инновационных подходов в кино
 
                 .about-main__right
-                    +picture('/img/common/main_img')
+                    picture
+                        source(srcset="/img/common/main_img.jpg" type="image/jpeg" media="(min-width: 992px)" )
+                        img(src="/img/common/about-team-5.jpg")
+                     
             

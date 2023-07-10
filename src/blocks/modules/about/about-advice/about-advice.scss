@@ -128,5 +128,30 @@
             transform: translateY(10px);
             transition: 0.3s ease;
         }
+
+
     }
+
+    &__name {
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 14px;
+        color: #525166;
+    }
+
+    &__post {
+        text-align: center;
+        font-weight: 600;
+        color: #525166;
+        font-size: 16px;
+        padding-top: 14px;
+    }
+}
+
+
+.jury-desc .card-advice__post,
+.jury-desc .card-advice__name {
+    display: none
 }

@@ -25,11 +25,23 @@
 
      &__list {
 
+
+
          & .splide {
-             max-width: 950px;
+             max-width: 1510px;
              margin: 0 auto;
 
+             @media screen and (min-width: $w1200) {
+                 display: flex;
+                 justify-content: center;
+             }
+
+
              &__slide {}
+
+             &__list {
+                 // justify-content: center;
+             }
 
          }
 
@@ -63,6 +75,26 @@
  }
 
  .team-member {
+
+
+     &__post {
+         font-size: 16px;
+         color: #fff;
+         font-weight: 600;
+         padding-top: 10px;
+     }
+
+
+     &__name {
+         color: #fff;
+         text-align: center;
+         text-transform: uppercase;
+         font-weight: 700;
+         font-size: 16px;
+         padding-left: 46px;
+         padding-bottom: 12px;
+     }
+
      &__img {
          & picture {
 
@@ -74,7 +106,7 @@
              overflow: hidden;
              cursor: pointer;
 
-             @include picture(155%, cover);
+             @include picture(130%, cover);
 
              & img {
                  width: 130%;
